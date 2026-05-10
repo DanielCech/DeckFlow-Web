@@ -1,2 +1,2 @@
-# Flashcards-Web
-A web page for the Flashcards app
+# DeckFlow-Web
+A web page for the DeckFlow app
