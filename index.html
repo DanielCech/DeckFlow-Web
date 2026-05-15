@@ -34,7 +34,8 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#features">Features</a>
+      <a href="#devices">Features</a>
+      <a href="#ai">AI Decks</a>
       <a href="#algorithm">Algorithm</a>
       <a href="#guide">Guide</a>
       <a href="#about">About</a>
@@ -51,11 +52,12 @@
     <ol>
       <li data-target="hero"><span>01</span><em>Open</em></li>
       <li data-target="devices"><span>02</span><em>Everywhere</em></li>
-      <li data-target="study"><span>03</span><em>Study</em></li>
-      <li data-target="algorithm"><span>04</span><em>Algorithm</em></li>
-      <li data-target="markdown"><span>05</span><em>Markdown</em></li>
-      <li data-target="audio"><span>06</span><em>Listen</em></li>
-      <li data-target="theme"><span>07</span><em>Day / Night</em></li>
+      <li data-target="ai"><span>03</span><em>AI Decks</em></li>
+      <li data-target="study"><span>04</span><em>Study</em></li>
+      <li data-target="algorithm"><span>05</span><em>Algorithm</em></li>
+      <li data-target="markdown"><span>06</span><em>Markdown</em></li>
+      <li data-target="audio"><span>07</span><em>Listen</em></li>
+      <li data-target="theme"><span>08</span><em>Day / Night</em></li>
     </ol>
   </aside>
 
@@ -94,6 +96,14 @@
           <li><strong>Offline first</strong></li>
         </ul>
       </div>
+
+      <a class="float-pill" href="#ai" aria-label="Jump to AI deck generation">
+        <span class="float-pill__spark" aria-hidden="true">✦</span>
+        <span class="float-pill__text">
+          <em>New —</em> generate decks with your favorite AI agent
+        </span>
+        <span class="float-pill__arrow" aria-hidden="true">→</span>
+      </a>
 
       <div class="hero__scroll" aria-hidden="true">
         <span></span>
@@ -147,10 +157,80 @@
       </div>
     </section>
 
+    <!-- AI Flashcards Creation -->
+    <section class="section section--ai" id="ai" data-section>
+      <header class="section__head section__head--right">
+        <span class="section__number">03</span>
+        <div>
+          <h2 class="headline">Let the AI <em>write the deck.</em></h2>
+          <p class="kicker">
+            Install the DeckFlow skill into your favorite agentic tool —
+            <em>Claude Code</em>, <em>Codex</em>, or <em>OpenCode</em> — and ask for the
+            cards you need. The agent drafts, structures and exports a
+            <code>.flashcard</code> archive that DeckFlow imports in a single drag.
+            No manual typing, no copy-paste, no broken formatting.
+          </p>
+        </div>
+      </header>
+
+      <div class="ai">
+        <div class="ai__terminal" role="img" aria-label="Terminal demo of generating a flashcard deck with an AI agent">
+          <div class="ai__terminal-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <em>deckflow ~ claude-code</em>
+          </div>
+          <pre class="ai__terminal-body" aria-hidden="true"><code><span class="term-prompt">~</span> <span class="term-cmd">claude</span> &gt; <span class="term-user">Make me a deck of 30 Spanish irregular verbs in present tense, with example sentences.</span>
+
+<span class="term-meta">▸ skill</span> deckflow-cards
+<span class="term-meta">▸ model</span> claude-opus-4-7
+<span class="term-meta">▸ output</span> spanish-irregulars.flashcard.zip
+
+<span class="term-ok">✓</span> Drafted <span class="term-h">30 cards</span> across <span class="term-h">3 interests</span>
+<span class="term-ok">✓</span> Wrote markdown for fronts &amp; backs
+<span class="term-ok">✓</span> Bundled audio cues and resources
+<span class="term-ok">✓</span> Exported <span class="term-h">spanish-irregulars.flashcard.zip</span>
+
+<span class="term-prompt">~</span> <span class="term-dim">Drop the file onto DeckFlow on your Mac.</span><span class="term-caret">▍</span></code></pre>
+        </div>
+
+        <aside class="ai__panel">
+          <h3 class="ai__panel-title">A skill for every agent</h3>
+          <ul class="ai__agents">
+            <li>
+              <span class="ai__dot" style="--c: #ffcd57"></span>
+              <strong>Claude Code</strong>
+              <em>Drop the skill into <code>~/.claude/skills</code> and call <code>/deckflow</code>.</em>
+            </li>
+            <li>
+              <span class="ai__dot" style="--c: #a1ced7"></span>
+              <strong>Codex</strong>
+              <em>Register the helper and let GPT-class models draft the deck.</em>
+            </li>
+            <li>
+              <span class="ai__dot" style="--c: #8fc28a"></span>
+              <strong>OpenCode</strong>
+              <em>Same envelope, same output — your stack, your choice.</em>
+            </li>
+          </ul>
+
+          <ol class="ai__flow">
+            <li><strong>Ask</strong><em>Describe a topic in plain language.</em></li>
+            <li><strong>Generate</strong><em>The agent drafts markdown cards, examples, audio cues.</em></li>
+            <li><strong>Import</strong><em>Drop the <code>.flashcard</code> file onto DeckFlow. Done.</em></li>
+          </ol>
+        </aside>
+      </div>
+
+      <p class="ai__note">
+        <span class="ai__note-mark">✦</span>
+        Installation instructions and the skill bundle ship with the public beta.
+      </p>
+    </section>
+
     <!-- Study -->
     <section class="section section--study" id="study" data-section>
       <header class="section__head section__head--right">
-        <span class="section__number">03</span>
+        <span class="section__number">04</span>
         <div>
           <h2 class="headline">A library you can <em>swipe through.</em></h2>
           <p class="kicker">
@@ -185,7 +265,7 @@
     <!-- Algorithm / Stats -->
     <section class="section section--algorithm" id="algorithm" data-section>
       <header class="section__head">
-        <span class="section__number">04</span>
+        <span class="section__number">05</span>
         <div>
           <h2 class="headline">A patient algorithm.<br/><em>Five states. Infinite memory.</em></h2>
           <p class="kicker">
@@ -228,7 +308,7 @@
     <!-- Markdown -->
     <section class="section section--markdown" id="markdown" data-section>
       <header class="section__head section__head--right">
-        <span class="section__number">05</span>
+        <span class="section__number">06</span>
         <div>
           <h2 class="headline">Cards that <em>read like essays.</em></h2>
           <p class="kicker">
@@ -262,7 +342,7 @@ in an opium-touched reverie of 1797.
     <!-- Audio / Widget -->
     <section class="section section--audio" id="audio" data-section>
       <header class="section__head">
-        <span class="section__number">06</span>
+        <span class="section__number">07</span>
         <div>
           <h2 class="headline">Decks that <em>speak.</em></h2>
           <p class="kicker">
@@ -299,7 +379,7 @@ in an opium-touched reverie of 1797.
     <!-- Dark / Light -->
     <section class="section section--theme" id="theme" data-section>
       <header class="section__head section__head--right">
-        <span class="section__number">07</span>
+        <span class="section__number">08</span>
         <div>
           <h2 class="headline">Dark by candlelight.<br/><em>Light by morning.</em></h2>
           <p class="kicker">
@@ -354,7 +434,8 @@ in an opium-touched reverie of 1797.
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
-        <a href="#features">Features</a>
+        <a href="#devices">Features</a>
+        <a href="#ai">AI Decks</a>
         <a href="#algorithm">Algorithm</a>
         <a href="#guide">Guide</a>
         <a href="#about">About</a>

@@ -28,7 +28,8 @@
     const candidates = section.querySelectorAll(
       '.eyebrow, .display, .headline, .lede, .kicker, .hero__actions, .hero__meta, ' +
       '.placeholder, .tile, .algo__flow li, .algo__formula, .markdown__sample, ' +
-      '.widget, .split, .duo__chips, .cta'
+      '.widget, .split, .duo__chips, .cta, ' +
+      '.float-pill, .ai__terminal, .ai__panel, .ai__note'
     );
     candidates.forEach((el, i) => {
       el.setAttribute('data-reveal', '');
