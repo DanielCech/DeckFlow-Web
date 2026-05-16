@@ -1,2 +1,2 @@
-# DeckFlow-Web
-A web page for the DeckFlow app
+# JustFlip-Web
+A web page for the JustFlip app

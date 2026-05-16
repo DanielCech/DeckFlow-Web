@@ -1,4 +1,4 @@
-/* DeckFlow — landing page interactions
+/* JustFlip — landing page interactions
    ----------------------------------------------------- */
 
 (() => {
