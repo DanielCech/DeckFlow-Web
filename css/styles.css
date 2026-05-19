@@ -380,7 +380,7 @@ code {
 }
 .rail li span {
   width: 28px;
-  text-align: right;
+  text-align: left;
   font-variant-numeric: tabular-nums;
 }
 .rail li em {
