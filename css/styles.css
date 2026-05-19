@@ -254,7 +254,94 @@ code {
 .nav__links a:hover { color: var(--on-surface); }
 .nav__links a:hover::after { right: 0; }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
 .nav__cta { padding: 0.6rem 1rem; font-size: 0.88rem; }
+
+/* ---------------------------------------------------
+   Language switcher
+   ------------------------------------------------- */
+.lang-s {
+  position: relative;
+}
+.lang-s__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.55rem;
+  background: transparent;
+  border: 1px solid rgba(78,70,53,0.3);
+  border-radius: var(--radius-sm);
+  color: var(--on-surface-variant);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 280ms var(--ease), color 280ms var(--ease);
+  font-family: inherit;
+  line-height: 1;
+}
+.lang-s__btn:hover {
+  border-color: rgba(255,205,87,0.35);
+  color: var(--on-surface);
+}
+.lang-s__flag {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-block;
+}
+.lang-s__arrow {
+  font-size: 0.6rem;
+  transition: transform 240ms var(--ease);
+  display: inline-block;
+}
+.lang-s.is-open .lang-s__arrow {
+  transform: rotate(180deg);
+}
+.lang-s__dd {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 130px;
+  background: var(--surface-low);
+  border: 1px solid rgba(78,70,53,0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem;
+  display: none;
+  z-index: 60;
+  box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+}
+.lang-s.is-open .lang-s__dd {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.lang-s__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: var(--on-surface-variant);
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+.lang-s__item:hover {
+  background: var(--surface-high);
+  color: var(--on-surface);
+}
+.lang-s__item.is-active {
+  color: var(--primary-container);
+  font-weight: 600;
+}
 
 @media (max-width: 760px) {
   .nav { grid-template-columns: 1fr auto; }

@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#131313" />
-  <title>JustFlip! — Study by Spaced Repetition. Quietly Brilliant.</title>
-  <meta name="description" content="JustFlip! is a flashcard learning app for iPhone, iPad and Mac. Spaced repetition, Tinder-style review, rich markdown cards, spoken decks and a home screen widget — synced across every device through iCloud." />
+  <title data-i18n="meta.title">JustFlip! — Study by Spaced Repetition. Quietly Brilliant.</title>
+  <meta name="description" content="JustFlip! is a flashcard learning app for iPhone, iPad and Mac. Spaced repetition, Tinder-style review, rich markdown cards, spoken decks and a home screen widget — synced across every device through iCloud." data-i18n-attr="content" data-i18n-content="meta.description" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,30 +25,32 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#devices">Features</a>
-      <a href="#ai">AI Decks</a>
-      <a href="#algorithm">Algorithm</a>
-      <a href="#guide">Guide</a>
-      <a href="#about">About</a>
+      <a href="#devices" data-i18n="nav.features">Features</a>
+      <a href="#ai" data-i18n="nav.aiDecks">AI Decks</a>
+      <a href="#algorithm" data-i18n="nav.algorithm">Algorithm</a>
+      <a href="#guide" data-i18n="nav.guide">Guide</a>
+      <a href="#about" data-i18n="nav.about">About</a>
     </nav>
 
-    <a class="btn btn--primary nav__cta" href="#download">
-      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
-      <span>App Store</span>
-    </a>
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__cta" href="#download">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
+        <span data-i18n="nav.appStore">App Store</span>
+      </a>
+    </div>
   </header>
 
   <!-- Section indicator rail -->
   <aside class="rail" aria-hidden="true">
     <ol>
-      <li data-target="hero"><span>01</span><em>Open</em></li>
-      <li data-target="devices"><span>02</span><em>Everywhere</em></li>
-      <li data-target="ai"><span>03</span><em>AI Decks</em></li>
-      <li data-target="study"><span>04</span><em>Study</em></li>
-      <li data-target="algorithm"><span>05</span><em>Algorithm</em></li>
-      <li data-target="markdown"><span>06</span><em>Markdown</em></li>
-      <li data-target="audio"><span>07</span><em>Listen</em></li>
-      <li data-target="theme"><span>08</span><em>Day / Night</em></li>
+      <li data-target="hero"><span>01</span><em data-i18n="rail.open">Open</em></li>
+      <li data-target="devices"><span>02</span><em data-i18n="rail.everywhere">Everywhere</em></li>
+      <li data-target="ai"><span>03</span><em data-i18n="rail.aiDecks">AI Decks</em></li>
+      <li data-target="study"><span>04</span><em data-i18n="rail.study">Study</em></li>
+      <li data-target="algorithm"><span>05</span><em data-i18n="rail.algorithm">Algorithm</em></li>
+      <li data-target="markdown"><span>06</span><em data-i18n="rail.markdown">Markdown</em></li>
+      <li data-target="audio"><span>07</span><em data-i18n="rail.listen">Listen</em></li>
+      <li data-target="theme"><span>08</span><em data-i18n="rail.dayNight">Day / Night</em></li>
     </ol>
   </aside>
 
@@ -62,12 +64,12 @@
       </div>
 
       <div class="hero__inner">
-        <p class="eyebrow">A flashcard app for the effective studying</p>
-        <h1 class="display">
+        <p class="eyebrow" data-i18n="hero.eyebrow">A flashcard app for the effective studying</p>
+        <h1 class="display" data-i18n="hero.title">
           Study quietly.<br/>
           <em>Remember everything.</em>
         </h1>
-        <p class="lede">
+        <p class="lede" data-i18n="hero.lede">
           JustFlip! is a spaced-repetition flashcard app for iPhone, iPad and Mac.
           Curate your decks on the desktop, review them on the go, and trust an
           SM-2 inspired engine to surface the right card at the right moment.
@@ -76,21 +78,21 @@
         <div class="hero__actions">
           <a class="btn btn--primary" href="#download">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
-            <span>Download on the App Store</span>
+            <span data-i18n="hero.downloadCta">Download on the App Store</span>
           </a>
-          <a class="btn btn--ghost" href="#features">Explore the features</a>
+          <a class="btn btn--ghost" href="#features" data-i18n="hero.exploreCta">Explore the features</a>
         </div>
 
         <ul class="hero__meta">
-          <li><strong>iOS · iPadOS · macOS</strong></li>
-          <li><strong>iCloud sync</strong> built in</li>
-          <li><strong>Offline first</strong></li>
+          <li data-i18n="hero.metaPlatforms"><strong>iOS · iPadOS · macOS</strong></li>
+          <li data-i18n="hero.metaSync"><strong>iCloud sync</strong> built in</li>
+          <li data-i18n="hero.metaOffline"><strong>Offline first</strong></li>
         </ul>
       </div>
 
-      <a class="float-pill" href="#ai" aria-label="Jump to AI deck generation">
+      <a class="float-pill" href="#ai" aria-label="Jump to AI deck generation" data-i18n-attr="aria-label" data-i18n-aria-label="ai.jumpAria">
         <span class="float-pill__spark" aria-hidden="true">✦</span>
-        <span class="float-pill__text">
+        <span class="float-pill__text" data-i18n="hero.floatPillText">
           <em>New —</em> generate decks with your favorite AI agent
         </span>
         <span class="float-pill__arrow" aria-hidden="true">→</span>
@@ -98,7 +100,7 @@
 
       <div class="hero__scroll" aria-hidden="true">
         <span></span>
-        <em>Scroll</em>
+        <em data-i18n="hero.scroll">Scroll</em>
       </div>
     </section>
 
@@ -107,8 +109,8 @@
       <header class="section__head">
         <span class="section__number">02</span>
         <div>
-          <h2 class="headline">One library.<br/><em>Three companions.</em></h2>
-          <p class="kicker">
+          <h2 class="headline" data-i18n="devices.title">One library.<br/><em>Three companions.</em></h2>
+          <p class="kicker" data-i18n="devices.kicker">
             Capture and curate on the Mac. Review on the iPhone over morning coffee.
             Annotate on the iPad in the margins. iCloud keeps every card, every interval
             and every streak in perfect sync — without ever asking you to think about it.
@@ -119,7 +121,7 @@
       <div class="devices">
         <figure class="devices__stage placeholder" data-parallax="0.05">
           <div class="placeholder__chrome">
-            <span class="placeholder__label">Image · iPhone, iPad &amp; Mac with synced decks</span>
+            <span class="placeholder__label" data-i18n="devices.stageLabel">Image · iPhone, iPad &amp; Mac with synced decks</span>
             <div class="placeholder__icons" aria-hidden="true">
               <span class="ph-iphone"></span>
               <span class="ph-ipad"></span>
@@ -130,19 +132,19 @@
 
         <div class="devices__list">
           <div class="tile">
-            <span class="tile__num">macOS</span>
-            <h3>The curator</h3>
-            <p>Import <code>.flashcard</code> archives by drag-and-drop, manage interests, edit cards in a dedicated editor.</p>
+            <span class="tile__num" data-i18n="devices.macos">macOS</span>
+            <h3 data-i18n="devices.macosTitle">The curator</h3>
+            <p data-i18n="devices.macosDesc">Import <code>.flashcard</code> archives by drag-and-drop, manage interests, edit cards in a dedicated editor.</p>
           </div>
           <div class="tile">
-            <span class="tile__num">iPadOS</span>
-            <h3>The studio</h3>
-            <p>A wide canvas for long-form review sessions with Pencil-friendly typography and split view.</p>
+            <span class="tile__num" data-i18n="devices.ipados">iPadOS</span>
+            <h3 data-i18n="devices.ipadosTitle">The studio</h3>
+            <p data-i18n="devices.ipadosDesc">A wide canvas for long-form review sessions with Pencil-friendly typography and split view.</p>
           </div>
           <div class="tile">
-            <span class="tile__num">iOS</span>
-            <h3>The pocket tutor</h3>
-            <p>Daily reviews, a quiet widget on the home screen, and progress tracked card-by-card.</p>
+            <span class="tile__num" data-i18n="devices.ios">iOS</span>
+            <h3 data-i18n="devices.iosTitle">The pocket tutor</h3>
+            <p data-i18n="devices.iosDesc">Daily reviews, a quiet widget on the home screen, and progress tracked card-by-card.</p>
           </div>
         </div>
       </div>
@@ -153,8 +155,8 @@
       <header class="section__head section__head--right">
         <span class="section__number">03</span>
         <div>
-          <h2 class="headline">Let the AI <em>write the deck.</em></h2>
-          <p class="kicker">
+          <h2 class="headline" data-i18n="ai.title">Let the AI <em>write the deck.</em></h2>
+          <p class="kicker" data-i18n="ai.kicker">
             Install the JustFlip! skill into your favorite agentic tool —
             <em>Claude Code</em>, <em>Codex</em>, or <em>OpenCode</em> — and ask for the
             cards you need. The agent drafts, structures and exports a
@@ -165,7 +167,7 @@
       </header>
 
       <div class="ai">
-        <div class="ai__terminal" role="img" aria-label="Terminal demo of generating a flashcard deck with an AI agent">
+        <div class="ai__terminal" role="img" data-i18n-attr="aria-label" data-i18n-aria-label="ai.terminalAria" aria-label="Terminal demo of generating a flashcard deck with an AI agent">
           <div class="ai__terminal-bar" aria-hidden="true">
             <span></span><span></span><span></span>
             <em>justflip ~ claude-code</em>
@@ -185,36 +187,36 @@
         </div>
 
         <aside class="ai__panel">
-          <h3 class="ai__panel-title">A skill for every agent</h3>
+          <h3 class="ai__panel-title" data-i18n="ai.panelTitle">A skill for every agent</h3>
           <ul class="ai__agents">
             <li>
               <span class="ai__dot" style="--c: #ffcd57"></span>
               <strong>Claude Code</strong>
-              <em>Drop the skill into <code>~/.claude/skills</code> and call <code>/justflip</code>.</em>
+              <em data-i18n="ai.claudeDesc">Drop the skill into <code>~/.claude/skills</code> and call <code>/justflip</code>.</em>
             </li>
             <li>
               <span class="ai__dot" style="--c: #a1ced7"></span>
               <strong>Codex</strong>
-              <em>Register the helper and let GPT-class models draft the deck.</em>
+              <em data-i18n="ai.codexDesc">Register the helper and let GPT-class models draft the deck.</em>
             </li>
             <li>
               <span class="ai__dot" style="--c: #8fc28a"></span>
               <strong>OpenCode</strong>
-              <em>Same envelope, same output — your stack, your choice.</em>
+              <em data-i18n="ai.opencodeDesc">Same envelope, same output — your stack, your choice.</em>
             </li>
           </ul>
 
           <ol class="ai__flow">
-            <li><strong>Ask</strong><em>Describe a topic in plain language.</em></li>
-            <li><strong>Generate</strong><em>The agent drafts markdown cards, examples, audio cues.</em></li>
-            <li><strong>Import</strong><em>Drop the <code>.flashcard</code> file onto JustFlip!. Done.</em></li>
+            <li><strong data-i18n="ai.step1Title">Ask</strong><em data-i18n="ai.step1Desc">Describe a topic in plain language.</em></li>
+            <li><strong data-i18n="ai.step2Title">Generate</strong><em data-i18n="ai.step2Desc">The agent drafts markdown cards, examples, audio cues.</em></li>
+            <li><strong data-i18n="ai.step3Title">Import</strong><em data-i18n="ai.step3Desc">Drop the <code>.flashcard</code> file onto JustFlip!. Done.</em></li>
           </ol>
         </aside>
       </div>
 
       <p class="ai__note">
         <span class="ai__note-mark">✦</span>
-        Installation instructions and the skill bundle ship with the public beta.
+        <span data-i18n="ai.note">Installation instructions and the skill bundle ship with the public beta.</span>
       </p>
     </section>
 
@@ -223,8 +225,8 @@
       <header class="section__head section__head--right">
         <span class="section__number">04</span>
         <div>
-          <h2 class="headline">A library you can <em>swipe through.</em></h2>
-          <p class="kicker">
+          <h2 class="headline" data-i18n="study.title">A library you can <em>swipe through.</em></h2>
+          <p class="kicker" data-i18n="study.kicker">
             Browse decks as a calm, editorial list — or enter a focused review and
             judge each card with a Tinder-style swipe. Right for <em>good</em>,
             left for <em>again</em>, up for <em>easy</em>. The flow stays in your hand.
@@ -235,20 +237,20 @@
       <div class="duo">
         <figure class="duo__a placeholder placeholder--phone" data-parallax="0.08">
           <div class="placeholder__chrome">
-            <span class="placeholder__label">Image · Card list screen</span>
+            <span class="placeholder__label" data-i18n="study.cardListLabel">Image · Card list screen</span>
           </div>
         </figure>
         <figure class="duo__b placeholder placeholder--phone placeholder--tilt" data-parallax="-0.06">
           <div class="placeholder__chrome">
-            <span class="placeholder__label">Image · Swipe-to-review screen</span>
+            <span class="placeholder__label" data-i18n="study.swipeLabel">Image · Swipe-to-review screen</span>
           </div>
         </figure>
 
         <div class="duo__chips" aria-hidden="true">
-          <span class="chip chip--again">Again</span>
-          <span class="chip chip--hard">Hard</span>
-          <span class="chip chip--good">Good</span>
-          <span class="chip chip--easy">Easy</span>
+          <span class="chip chip--again" data-i18n="study.chipAgain">Again</span>
+          <span class="chip chip--hard" data-i18n="study.chipHard">Hard</span>
+          <span class="chip chip--good" data-i18n="study.chipGood">Good</span>
+          <span class="chip chip--easy" data-i18n="study.chipEasy">Easy</span>
         </div>
       </div>
     </section>
@@ -258,8 +260,8 @@
       <header class="section__head">
         <span class="section__number">05</span>
         <div>
-          <h2 class="headline">A patient algorithm.<br/><em>Five states. Infinite memory.</em></h2>
-          <p class="kicker">
+          <h2 class="headline" data-i18n="algorithm.title">A patient algorithm.<br/><em>Five states. Infinite memory.</em></h2>
+          <p class="kicker" data-i18n="algorithm.kicker">
             JustFlip! runs a refined SM-2 engine across five learning states.
             Cards travel through <em>unseen</em>, <em>learning</em>, <em>reviewing</em>,
             <em>relearning</em> and <em>graduated</em>, each with its own interval and ease.
@@ -271,16 +273,16 @@
       <div class="algo">
         <figure class="algo__stats placeholder" data-parallax="0.04">
           <div class="placeholder__chrome">
-            <span class="placeholder__label">Image · Progress &amp; urgency dashboard</span>
+            <span class="placeholder__label" data-i18n="algorithm.statsLabel">Image · Progress &amp; urgency dashboard</span>
           </div>
         </figure>
 
         <ol class="algo__flow">
-          <li><span class="orb orb--unseen"></span><strong>Unseen</strong><em>Never studied — ready for first contact.</em></li>
-          <li><span class="orb orb--learning"></span><strong>Learning</strong><em>Minutes to a day. Fresh memory taking shape.</em></li>
-          <li><span class="orb orb--reviewing"></span><strong>Reviewing</strong><em>Days to weeks. The interval grows by ease.</em></li>
-          <li><span class="orb orb--relearning"></span><strong>Relearning</strong><em>Forgotten? Back to short intervals, gently.</em></li>
-          <li><span class="orb orb--graduated"></span><strong>Graduated</strong><em>Weeks to months. Long-term retention.</em></li>
+          <li><span class="orb orb--unseen"></span><strong data-i18n="algorithm.unseen">Unseen</strong><em data-i18n="algorithm.unseenDesc">Never studied — ready for first contact.</em></li>
+          <li><span class="orb orb--learning"></span><strong data-i18n="algorithm.learning">Learning</strong><em data-i18n="algorithm.learningDesc">Minutes to a day. Fresh memory taking shape.</em></li>
+          <li><span class="orb orb--reviewing"></span><strong data-i18n="algorithm.reviewing">Reviewing</strong><em data-i18n="algorithm.reviewingDesc">Days to weeks. The interval grows by ease.</em></li>
+          <li><span class="orb orb--relearning"></span><strong data-i18n="algorithm.relearning">Relearning</strong><em data-i18n="algorithm.relearningDesc">Forgotten? Back to short intervals, gently.</em></li>
+          <li><span class="orb orb--graduated"></span><strong data-i18n="algorithm.graduated">Graduated</strong><em data-i18n="algorithm.graduatedDesc">Weeks to months. Long-term retention.</em></li>
         </ol>
       </div>
 
@@ -292,7 +294,7 @@
           <span class="formula__op">×</span>
           <span class="formula__ef">easeFactor</span>
         </div>
-        <p class="formula__note">Ease grows on <em>easy</em>, settles on <em>good</em>, and contracts on <em>hard</em> or <em>again</em> — never below 1.3.</p>
+        <p class="formula__note" data-i18n="algorithm.formulaNote">Ease grows on <em>easy</em>, settles on <em>good</em>, and contracts on <em>hard</em> or <em>again</em> — never below 1.3.</p>
       </div>
     </section>
 
@@ -301,8 +303,8 @@
       <header class="section__head section__head--right">
         <span class="section__number">06</span>
         <div>
-          <h2 class="headline">Cards that <em>read like essays.</em></h2>
-          <p class="kicker">
+          <h2 class="headline" data-i18n="markdown.title">Cards that <em>read like essays.</em></h2>
+          <p class="kicker" data-i18n="markdown.kicker">
             Define your cards in rich Markdown — headings, lists, code blocks, inline math,
             images and links. JustFlip! renders them with editorial typography so a card can
             be a one-line cue or a small piece of scholarship.
@@ -313,7 +315,7 @@
       <div class="markdown">
         <figure class="markdown__shot placeholder placeholder--phone" data-parallax="0.06">
           <div class="placeholder__chrome">
-            <span class="placeholder__label">Image · Markdown-rich card definition</span>
+            <span class="placeholder__label" data-i18n="markdown.label">Image · Markdown-rich card definition</span>
           </div>
         </figure>
 
@@ -335,8 +337,8 @@ in an opium-touched reverie of 1797.
       <header class="section__head">
         <span class="section__number">07</span>
         <div>
-          <h2 class="headline">Decks that <em>speak.</em></h2>
-          <p class="kicker">
+          <h2 class="headline" data-i18n="audio.title">Decks that <em>speak.</em></h2>
+          <p class="kicker" data-i18n="audio.kicker">
             Let your cards read themselves out loud while you walk, cook, or drive.
             JustFlip!'s home-screen widget keeps the next review one tap away — a small,
             golden invitation to do five minutes of practice.
@@ -347,7 +349,7 @@ in an opium-touched reverie of 1797.
       <div class="audio">
         <figure class="audio__phone placeholder placeholder--phone" data-parallax="0.05">
           <div class="placeholder__chrome">
-            <span class="placeholder__label">Image · Spoken cards player</span>
+            <span class="placeholder__label" data-i18n="audio.phoneLabel">Image · Spoken cards player</span>
           </div>
         </figure>
 
@@ -356,12 +358,12 @@ in an opium-touched reverie of 1797.
             <span class="widget__title">JustFlip!</span>
             <span class="widget__dot"></span>
           </div>
-          <p class="widget__deck">Romantic Poets · EN</p>
-          <p class="widget__card">"Kubla Khan" — Coleridge</p>
+          <p class="widget__deck" data-i18n="audio.widgetDeck">Romantic Poets · EN</p>
+          <p class="widget__card" data-i18n="audio.widgetCard">"Kubla Khan" — Coleridge</p>
           <div class="widget__progress"><span style="--p:62%"></span></div>
           <div class="widget__footer">
-            <span>14 due today</span>
-            <span>Tap to study</span>
+            <span data-i18n="audio.widgetDue">14 due today</span>
+            <span data-i18n="audio.widgetTap">Tap to study</span>
           </div>
         </div>
       </div>
@@ -372,8 +374,8 @@ in an opium-touched reverie of 1797.
       <header class="section__head section__head--right">
         <span class="section__number">08</span>
         <div>
-          <h2 class="headline">Dark by candlelight.<br/><em>Light by morning.</em></h2>
-          <p class="kicker">
+          <h2 class="headline" data-i18n="theme.title">Dark by candlelight.<br/><em>Light by morning.</em></h2>
+          <p class="kicker" data-i18n="theme.kicker">
             JustFlip! respects the system. Switch from a deep, scholarly dark to a soft
             parchment light — the gold and slate of the design system stay true at any hour.
           </p>
@@ -382,10 +384,10 @@ in an opium-touched reverie of 1797.
 
       <div class="split placeholder">
         <div class="split__half split__half--dark">
-          <span class="placeholder__label">Image · Dark mode</span>
+          <span class="placeholder__label" data-i18n="theme.darkLabel">Image · Dark mode</span>
         </div>
         <div class="split__half split__half--light">
-          <span class="placeholder__label placeholder__label--inv">Image · Light mode</span>
+          <span class="placeholder__label placeholder__label--inv" data-i18n="theme.lightLabel">Image · Light mode</span>
         </div>
         <div class="split__seam" aria-hidden="true"></div>
       </div>
@@ -394,17 +396,17 @@ in an opium-touched reverie of 1797.
     <!-- Download -->
     <section class="section section--cta" id="download" data-section>
       <div class="cta">
-        <p class="eyebrow">Available soon on Apple platforms</p>
-        <h2 class="display display--sm">Bring JustFlip! to your shelf.</h2>
-        <p class="lede">
+        <p class="eyebrow" data-i18n="cta.eyebrow">Available soon on Apple platforms</p>
+        <h2 class="display display--sm" data-i18n="cta.title">Bring JustFlip! to your shelf.</h2>
+        <p class="lede" data-i18n="cta.lede">
           One purchase. Three platforms. A lifetime of well-spaced review.
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
-            <span>Download on the App Store</span>
+            <span data-i18n="cta.download">Download on the App Store</span>
           </a>
-          <a class="btn btn--ghost" href="#about">Read the guide</a>
+          <a class="btn btn--ghost" href="#about" data-i18n="cta.readGuide">Read the guide</a>
         </div>
       </div>
     </section>
@@ -421,25 +423,26 @@ in an opium-touched reverie of 1797.
           </svg>
         </span>
         <strong>JustFlip!</strong>
-        <span class="footer__tag">A flashcard companion for life-long learners.</span>
+        <span class="footer__tag" data-i18n="footer.tagline">A flashcard companion for life-long learners.</span>
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
-        <a href="#devices">Features</a>
-        <a href="#ai">AI Decks</a>
-        <a href="#algorithm">Algorithm</a>
-        <a href="#guide">Guide</a>
-        <a href="#about">About</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms &amp; Conditions</a>
-        <a href="#">Support</a>
-        <a href="mailto:hello@justflip.me">Contact</a>
+        <a href="#devices" data-i18n="footer.features">Features</a>
+        <a href="#ai" data-i18n="footer.aiDecks">AI Decks</a>
+        <a href="#algorithm" data-i18n="footer.algorithm">Algorithm</a>
+        <a href="#guide" data-i18n="footer.guide">Guide</a>
+        <a href="#about" data-i18n="footer.about">About</a>
+        <a href="#" data-i18n="footer.privacy">Privacy</a>
+        <a href="#" data-i18n="footer.terms">Terms &amp; Conditions</a>
+        <a href="#" data-i18n="footer.support">Support</a>
+        <a href="mailto:hello@justflip.me" data-i18n="footer.contact">Contact</a>
       </nav>
 
-      <p class="footer__copy">© <span id="year"></span> JustFlip! Crafted in Prague. Apple, the Apple logo, iPhone, iPad and Mac are trademarks of Apple Inc.</p>
+      <p class="footer__copy" data-i18n="footer.copyright">© <span id="year"></span> JustFlip! Crafted in Prague. Apple, the Apple logo, iPhone, iPad and Mac are trademarks of Apple Inc.</p>
     </div>
   </footer>
 
+  <script src="js/i18n.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
