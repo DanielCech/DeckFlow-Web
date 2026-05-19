@@ -128,10 +128,14 @@
     }
   };
 
+  const ORIG    = 'data-i18n-o';   // attribute name for original HTML snapshot
+  const ORIG_A  = 'data-i18n-oa';  // attribute name for original attr snapshot
+
   let current   = DEFAULT;
   let msgs      = null;     // null = use HTML (English) defaults
   let switcher  = null;
   let isOpen    = false;
+  let originalsSaved = false;
 
   /* ---------------------------------------------------
    * Detect preferred locale
@@ -164,10 +168,67 @@
   }
 
   /* ---------------------------------------------------
+   * Save / restore the original DOM so we can switch
+   * back to English without a page reload.
+   * ------------------------------------------------- */
+  function saveOriginals() {
+    if (originalsSaved) return;
+    originalsSaved = true;
+
+    // Snapshot innerHTML of every translatable element
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      if (!el.hasAttribute(ORIG)) {
+        el.setAttribute(ORIG, el.innerHTML);
+      }
+    });
+
+    // Snapshot translatable attributes (aria-label, content, …)
+    document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+      const attrs = el.getAttribute('data-i18n-attr').split(',');
+      attrs.forEach((attr) => {
+        attr = attr.trim();
+        const key = ORIG_A + '-' + attr;
+        if (!el.hasAttribute(key)) {
+          el.setAttribute(key, el.getAttribute(attr) || '');
+        }
+      });
+    });
+  }
+
+  function restoreOriginals() {
+    if (!originalsSaved) return;
+
+    // Restore innerHTML
+    document.querySelectorAll('[' + ORIG + ']').forEach((el) => {
+      el.innerHTML = el.getAttribute(ORIG);
+      el.removeAttribute(ORIG);
+    });
+
+    // Restore attributes
+    document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+      const attrs = el.getAttribute('data-i18n-attr').split(',');
+      attrs.forEach((attr) => {
+        attr = attr.trim();
+        const key = ORIG_A + '-' + attr;
+        const val = el.getAttribute(key);
+        if (val !== null) {
+          el.setAttribute(attr, val);
+          el.removeAttribute(key);
+        }
+      });
+    });
+
+    originalsSaved = false;
+  }
+
+  /* ---------------------------------------------------
    * Translate: walk all [data-i18n] elements in the DOM
    * ------------------------------------------------- */
   function translate() {
     const year = new Date().getFullYear();
+
+    // Snapshot the English originals before first translation
+    saveOriginals();
 
     // If msgs is null, every element keeps its original (English) HTML
     if (!msgs) {
@@ -210,6 +271,19 @@
    * ------------------------------------------------- */
   function setLocale(locale) {
     if (locale === current) return;
+
+    // Switching TO English = restore original HTML
+    if (locale === DEFAULT) {
+      restoreOriginals();
+      current = locale;
+      msgs = null;
+      try { w.localStorage.setItem(STORAGE, locale); } catch (_) { /* noop */ }
+      document.documentElement.lang = current;
+      updateSwitcherUI();
+      updateBtnAriaLabel();
+      return;
+    }
+
     load(locale);
     if (!msgs) {
       console.warn('[i18n] Could not load "' + locale + '" — keeping "' + current + '"');
