@@ -1037,6 +1037,35 @@ main { display: block; }
   .duo__chips { position: static; padding-top: 1rem; }
 }
 
+/* Phone screenshot frame (study duo + others) */
+.phone-frame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 38px;
+  overflow: hidden;
+  line-height: 0;
+  background: var(--surface-low);
+}
+.phone-frame__shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(78,70,53,0.2);
+  box-shadow:
+    0 40px 80px -30px rgba(0,0,0,0.6),
+    0 30px 60px -30px rgba(240,192,75,0.18);
+  pointer-events: none;
+  z-index: 2;
+}
+.phone-frame--tilt { transform: rotate(4deg); }
+
 /* =====================================================================
    Algorithm
    ===================================================================== */
@@ -1275,6 +1304,29 @@ main { display: block; }
   width: 1px;
   background: linear-gradient(180deg, transparent, rgba(255,205,87,0.4), transparent);
   transform: translateX(-50%);
+}
+.split__shot {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  border-radius: 36px;
+  box-shadow:
+    0 0 0 2px rgba(78,70,53,0.15),
+    0 0 0 7px var(--surface-lowest),
+    0 20px 40px -16px rgba(0,0,0,0.5);
+}
+.split__half--dark .split__shot {
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.08),
+    0 0 0 7px rgba(0,0,0,0.3),
+    0 20px 40px -16px rgba(0,0,0,0.6);
+}
+.split__half--light .split__shot {
+  box-shadow:
+    0 0 0 2px rgba(78,70,53,0.15),
+    0 0 0 7px #e7dcc4,
+    0 20px 40px -16px rgba(0,0,0,0.25);
 }
 
 /* =====================================================================
