@@ -443,7 +443,9 @@ main { display: block; }
   position: relative;
   min-height: 100svh;
   display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
   padding: clamp(6rem, 12vh, 9rem) var(--gutter) clamp(4rem, 8vh, 7rem);
   max-width: var(--maxw);
   margin: 0 auto;
@@ -513,6 +515,16 @@ main { display: block; }
   color: var(--outline);
 }
 
+.hero__visual {
+  position: relative;
+  z-index: 1;
+}
+.hero__visual img {
+  display: block;
+  max-width: 340px;
+  height: auto;
+}
+
 .hero__scroll {
   position: absolute;
   left: var(--gutter);
@@ -534,6 +546,21 @@ main { display: block; }
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero__visual {
+    justify-self: center;
+  }
+  .hero__visual img {
+    max-width: 260px;
+  }
+  .hero__actions { justify-content: center; }
+  .hero__meta { justify-content: center; }
+}
+
 .hero__scroll span::after {
   content: "";
   position: absolute;
@@ -919,7 +946,7 @@ main { display: block; }
   padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
   background: var(--primary-container);
-  color: var(--on-primary-container);
+  color: #000;
   font-size: 0.82rem;
   font-weight: 600;
   text-decoration: none;
@@ -1543,6 +1570,12 @@ main { display: block; }
   position: relative;
 }
 .cta .hero__actions { justify-content: center; }
+.cta__langs {
+  text-align: center;
+  margin: 2rem 0 0;
+  font-size: 0.9rem;
+  color: var(--on-surface-variant);
+}
 .cta::before {
   content: "";
   position: absolute;
