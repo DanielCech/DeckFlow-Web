@@ -40,19 +40,14 @@
   "devices.iosDesc": "Daily reviews, a quiet widget on the home screen, and progress tracked card-by-card.",
 
   "ai.title": "Let the AI <em>write the deck.</em>",
-  "ai.kicker": "Install the JustFlip! skill into your favorite agentic tool — <em>Claude Code</em>, <em>Codex</em>, or <em>OpenCode</em> — and ask for the cards you need. The agent drafts, structures and exports a <code>.flashcard</code> archive that JustFlip! imports in a single drag. No manual typing, no copy-paste, no broken formatting.",
+  "ai.kicker": "Two ways to create decks — full rich-content cards with agentic coding tools, or simple text-only sets directly in ChatGPT.",
   "ai.terminalAria": "Terminal demo of generating a flashcard deck with an AI agent",
-  "ai.panelTitle": "A skill for every agent",
-  "ai.claudeDesc": "Drop the skill into <code>~/.claude/skills</code> and call <code>/justflip</code>.",
-  "ai.codexDesc": "Register the helper and let GPT-class models draft the deck.",
-  "ai.opencodeDesc": "Same envelope, same output — your stack, your choice.",
-  "ai.step1Title": "Ask",
-  "ai.step1Desc": "Describe a topic in plain language.",
-  "ai.step2Title": "Generate",
-  "ai.step2Desc": "The agent drafts markdown cards, examples, audio cues.",
-  "ai.step3Title": "Import",
-  "ai.step3Desc": "Drop the <code>.flashcard</code> file onto JustFlip!. Done.",
-  "ai.note": "Installation instructions and the skill bundle ship with the public beta.",
+  "ai.panelTitle": "Choose your approach",
+  "ai.richTitle": "Full rich-content cards",
+  "ai.richDesc": "Generate decks with images, sounds, audio cues, and Markdown formatting. Requires an agentic coding tool like Claude Code, Codex or OpenCode.",
+  "ai.textTitle": "Simple text-only cards",
+  "ai.textDesc": "Quick text-only flashcards — no images or audio. Create them directly in ChatGPT.",
+  "ai.chatgptLabel": "JustFlip GPT → Open",
 
   "study.title": "A library you can <em>swipe through.</em>",
   "study.kicker": "Browse decks as a calm, editorial list — or enter a focused review and judge each card with a Tinder-style swipe. Right for <em>good</em>, left for <em>again</em>, up for <em>easy</em>. The flow stays in your hand.",
@@ -86,7 +81,7 @@
   "audio.kicker": "Let your cards read themselves out loud while you walk, cook, or drive. JustFlip!'s home-screen widget keeps the next review one tap away — a small, golden invitation to do five minutes of practice.",
   "audio.phoneLabel": "Image · Spoken cards player",
   "audio.widgetDeck": "Romantic Poets · EN",
-  "audio.widgetCard": "\"Kubla Khan\" — Coleridge",
+  "audio.widgetCard": "English ↔ German",
   "audio.widgetDue": "14 due today",
   "audio.widgetTap": "Tap to study",
 
@@ -115,6 +110,10 @@
 
   "meta.title": "JustFlip! — Study by Spaced Repetition. Quietly Brilliant.",
   "meta.description": "JustFlip! is a flashcard learning app for iPhone, iPad and Mac. Spaced repetition, Tinder-style review, rich markdown cards, spoken decks and a home screen widget — synced across every device through iCloud.",
+
+  "ai.quote1": "\"Create 10 flashcards for English irregular verbs.\"",
+  "ai.quote2": "\"The most important math theorems about trigonometry.\"",
+  "ai.quote3": "\"The first 10 U.S. presidents\"",
 
   "ai.jumpAria": "Jump to AI deck generation",
 

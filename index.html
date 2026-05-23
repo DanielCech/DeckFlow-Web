@@ -126,34 +126,7 @@
       </header>
 
       <div class="devices">
-        <figure class="devices__stage placeholder" data-parallax="0.05">
-          <div class="placeholder__chrome">
-            <span class="placeholder__label" data-i18n="devices.stageLabel">Image · iPhone, iPad &amp; Mac with synced decks</span>
-            <div class="placeholder__icons" aria-hidden="true">
-              <span class="ph-iphone"></span>
-              <span class="ph-ipad"></span>
-              <span class="ph-mac"></span>
-            </div>
-          </div>
-        </figure>
-
-        <div class="devices__list">
-          <div class="tile">
-            <span class="tile__num" data-i18n="devices.macos">macOS</span>
-            <h3 data-i18n="devices.macosTitle">The curator</h3>
-            <p data-i18n="devices.macosDesc">Import <code>.flashcard</code> archives by drag-and-drop, manage interests, edit cards in a dedicated editor.</p>
-          </div>
-          <div class="tile">
-            <span class="tile__num" data-i18n="devices.ipados">iPadOS</span>
-            <h3 data-i18n="devices.ipadosTitle">The studio</h3>
-            <p data-i18n="devices.ipadosDesc">A wide canvas for long-form review sessions with Pencil-friendly typography and split view.</p>
-          </div>
-          <div class="tile">
-            <span class="tile__num" data-i18n="devices.ios">iOS</span>
-            <h3 data-i18n="devices.iosTitle">The pocket tutor</h3>
-            <p data-i18n="devices.iosDesc">Daily reviews, a quiet widget on the home screen, and progress tracked card-by-card.</p>
-          </div>
-        </div>
+        <img class="devices__stage" src="images/trio.png" alt="iPhone, iPad and Mac with synced decks" data-parallax="0.05">
       </div>
     </section>
 
@@ -164,67 +137,66 @@
         <div>
           <h2 class="headline" data-i18n="ai.title">Let the AI <em>write the deck.</em></h2>
           <p class="kicker" data-i18n="ai.kicker">
-            Install the JustFlip! skill into your favorite agentic tool —
-            <em>Claude Code</em>, <em>Codex</em>, or <em>OpenCode</em> — and ask for the
-            cards you need. The agent drafts, structures and exports a
-            <code>.flashcard</code> archive that JustFlip! imports in a single drag.
-            No manual typing, no copy-paste, no broken formatting.
+            Two ways to create decks — full rich-content cards with agentic coding
+            tools, or simple text-only sets directly in ChatGPT.
           </p>
         </div>
       </header>
 
       <div class="ai">
-        <div class="ai__terminal" role="img" data-i18n-attr="aria-label" data-i18n-aria-label="ai.terminalAria" aria-label="Terminal demo of generating a flashcard deck with an AI agent">
-          <div class="ai__terminal-bar" aria-hidden="true">
-            <span></span><span></span><span></span>
-            <em>justflip ~ claude-code</em>
+        <div class="ai__quotes" role="img" data-i18n-attr="aria-label" data-i18n-aria-label="ai.terminalAria" aria-label="Terminal demo of generating a flashcard deck with an AI agent">
+          <div class="ai__quote ai__quote--1" data-parallax="0.04">
+            <span class="ai__quote-text" data-i18n="ai.quote1">"Create 10 flashcards for English irregular verbs."</span>
           </div>
-          <pre class="ai__terminal-body" aria-hidden="true"><code><span class="term-prompt">~</span> <span class="term-cmd">claude</span> &gt; <span class="term-user">Make me a deck of 30 Spanish irregular verbs in present tense, with example sentences.</span>
-
-<span class="term-meta">▸ skill</span> justflip-cards
-<span class="term-meta">▸ model</span> claude-opus-4-7
-<span class="term-meta">▸ output</span> spanish-irregulars.flashcard.zip
-
-<span class="term-ok">✓</span> Drafted <span class="term-h">30 cards</span> across <span class="term-h">3 interests</span>
-<span class="term-ok">✓</span> Wrote markdown for fronts &amp; backs
-<span class="term-ok">✓</span> Bundled audio cues and resources
-<span class="term-ok">✓</span> Exported <span class="term-h">spanish-irregulars.flashcard.zip</span>
-
-<span class="term-prompt">~</span> <span class="term-dim">Drop the file onto JustFlip! on your Mac.</span><span class="term-caret">▍</span></code></pre>
+          <div class="ai__quote ai__quote--2" data-parallax="-0.03">
+            <span class="ai__quote-text" data-i18n="ai.quote2">"The most important math theorems about trigonometry."</span>
+          </div>
+          <div class="ai__quote ai__quote--3" data-parallax="0.05">
+            <span class="ai__quote-text" data-i18n="ai.quote3">"The first 10 U.S. presidents"</span>
+          </div>
         </div>
 
         <aside class="ai__panel">
-          <h3 class="ai__panel-title" data-i18n="ai.panelTitle">A skill for every agent</h3>
-          <ul class="ai__agents">
-            <li>
-              <span class="ai__dot" style="--c: #ffcd57"></span>
-              <strong>Claude Code</strong>
-              <em data-i18n="ai.claudeDesc">Drop the skill into <code>~/.claude/skills</code> and call <code>/justflip</code>.</em>
-            </li>
-            <li>
-              <span class="ai__dot" style="--c: #a1ced7"></span>
-              <strong>Codex</strong>
-              <em data-i18n="ai.codexDesc">Register the helper and let GPT-class models draft the deck.</em>
-            </li>
-            <li>
-              <span class="ai__dot" style="--c: #8fc28a"></span>
-              <strong>OpenCode</strong>
-              <em data-i18n="ai.opencodeDesc">Same envelope, same output — your stack, your choice.</em>
-            </li>
-          </ul>
+          <h3 class="ai__panel-title" data-i18n="ai.panelTitle">Choose your approach</h3>
+          <div class="ai__options">
 
-          <ol class="ai__flow">
-            <li><strong data-i18n="ai.step1Title">Ask</strong><em data-i18n="ai.step1Desc">Describe a topic in plain language.</em></li>
-            <li><strong data-i18n="ai.step2Title">Generate</strong><em data-i18n="ai.step2Desc">The agent drafts markdown cards, examples, audio cues.</em></li>
-            <li><strong data-i18n="ai.step3Title">Import</strong><em data-i18n="ai.step3Desc">Drop the <code>.flashcard</code> file onto JustFlip!. Done.</em></li>
-          </ol>
+            <div class="ai__option">
+              <div class="ai__option-head">
+                <span class="ai__option-badge" style="--c: #8fc28a">Rich</span>
+                <h4 data-i18n="ai.richTitle">Full rich-content cards</h4>
+              </div>
+              <p data-i18n="ai.richDesc">
+                Generate decks with images, sounds, audio cues, and Markdown formatting.
+                Requires an agentic coding tool like Claude Code, Codex or OpenCode.
+              </p>
+              <div class="ai__option-code">npx skills add DanielCech/JustFlip-Skills</div>
+              <div class="ai__option-tools">
+                <span style="--c: #ffcd57">●</span> Claude Code
+                <span style="--c: #a1ced7">●</span> Codex
+                <span style="--c: #8fc28a">●</span> OpenCode
+              </div>
+            </div>
+
+            <div class="ai__option ai__option--alt">
+              <div class="ai__option-head">
+                <span class="ai__option-badge" style="--c: #a1ced7">Text</span>
+                <h4 data-i18n="ai.textTitle">Simple text-only cards</h4>
+              </div>
+              <p data-i18n="ai.textDesc">
+                Quick text-only flashcards — no images or audio.
+                Create them directly in ChatGPT.
+              </p>
+              <a class="ai__option-link"
+                 href="https://chatgpt.com/g/g-6a0e2d7077088191bea995395b5178c7-justflip-app-flashcards-generator"
+                 target="_blank"
+                 data-i18n="ai.chatgptLabel">
+                JustFlip GPT → Open
+              </a>
+            </div>
+
+          </div>
         </aside>
       </div>
-
-      <p class="ai__note">
-        <span class="ai__note-mark">✦</span>
-        <span data-i18n="ai.note">Installation instructions and the skill bundle ship with the public beta.</span>
-      </p>
     </section>
 
     <!-- Study -->
@@ -316,22 +288,26 @@
       </header>
 
       <div class="markdown">
-        <figure class="markdown__shot placeholder placeholder--phone" data-parallax="0.06">
-          <div class="placeholder__chrome">
-            <span class="placeholder__label" data-i18n="markdown.label">Image · Markdown-rich card definition</span>
-          </div>
+        <figure class="markdown__shot phone-frame" data-parallax="0.06">
+          <img class="phone-frame__shot" src="images/markdown.png" alt="" data-i18n-attr="alt" data-i18n-alt="markdown.label" width="1206" height="2622" loading="lazy">
         </figure>
 
-        <pre class="markdown__sample" aria-hidden="true"><code><span class="md-h"># Coleridge — <em>Kubla Khan</em></span>
+        <pre class="markdown__sample" aria-hidden="true"><code><span class="md-h"># Header 1</span>
+<span class="md-h">## Header 2</span>
+<span class="md-h">### Header 3</span>
 
-A vision-poem of <span class="md-strong">Xanadu</span>, composed
-in an opium-touched reverie of 1797.
+<span class="md-strong">**bold**</span>
+<span class="md-em">*italics*</span>
 
-<span class="md-list">- caverns measureless to man</span>
-<span class="md-list">- a sunless sea</span>
-<span class="md-list">- a damsel with a dulcimer</span>
+<span class="md-code">`inline code`</span>
+<span class="md-code">```</span>
+<span class="md-code">code block</span>
+<span class="md-code">```</span>
 
-> *"In Xanadu did Kubla Khan a stately pleasure-dome decree."*</code></pre>
+<span class="md-math">$inline math$</span>
+<span class="md-math">$$</span>
+<span class="md-math">math block</span>
+<span class="md-math">$$</span></code></pre>
       </div>
     </section>
 
@@ -350,19 +326,27 @@ in an opium-touched reverie of 1797.
       </header>
 
       <div class="audio">
-        <figure class="audio__phone placeholder placeholder--phone" data-parallax="0.05">
-          <div class="placeholder__chrome">
-            <span class="placeholder__label" data-i18n="audio.phoneLabel">Image · Spoken cards player</span>
+        <div class="audio__cards" role="img" data-i18n-attr="aria-label" data-i18n-aria-label="audio.phoneLabel" aria-label="Image · Spoken cards player">
+          <div class="audio__card audio__card--front" data-parallax="0.06">
+            <img class="audio__card-shot" src="images/streight-ahead.png" alt="" width="1206" height="859" loading="lazy">
+            <div class="audio__bubble audio__bubble--en">
+              <span class="audio__bubble-text">streɪt əˈhɛd</span>
+            </div>
           </div>
-        </figure>
+          <div class="audio__card audio__card--back" data-parallax="-0.04">
+            <img class="audio__card-shot" src="images/geradeaus.png" alt="" width="1206" height="866" loading="lazy">
+            <div class="audio__bubble audio__bubble--de">
+              <span class="audio__bubble-text audio__bubble-text--de">gəʁa:dəaʊ̯s</span>
+            </div>
+          </div>
+        </div>
 
         <div class="widget" aria-hidden="true">
           <div class="widget__head">
             <span class="widget__title">JustFlip!</span>
             <span class="widget__dot"></span>
           </div>
-          <p class="widget__deck" data-i18n="audio.widgetDeck">Romantic Poets · EN</p>
-          <p class="widget__card" data-i18n="audio.widgetCard">"Kubla Khan" — Coleridge</p>
+          <p class="widget__card" data-i18n="audio.widgetCard">English ↔ German </p>
           <div class="widget__progress"><span style="--p:62%"></span></div>
           <div class="widget__footer">
             <span data-i18n="audio.widgetDue">14 due today</span>
