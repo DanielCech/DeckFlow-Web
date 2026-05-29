@@ -249,9 +249,38 @@
       </header>
 
       <div class="algo">
-        <figure class="algo__stats placeholder" data-parallax="0.04">
-          <div class="placeholder__chrome">
-            <span class="placeholder__label" data-i18n="algorithm.statsLabel">Image · Progress &amp; urgency dashboard</span>
+        <figure class="algo__stats algo__visual placeholder" data-parallax="0.04" aria-label="Animated progress and urgency dashboard" data-i18n-attr="aria-label" data-i18n-aria-label="algorithm.statsLabel">
+          <div class="algo__dashboard" data-algo-dashboard data-progress-target="78" data-progress-duration="1400" data-urgency-cycle="2400">
+            <div class="algo__metric algo__metric--progress" aria-hidden="true">
+              <span class="algo__metric-value" data-algo-progress-value>0%</span>
+              <span class="algo__metric-label" data-i18n="algorithm.progressLabel">Progress</span>
+            </div>
+
+            <div class="algo__ring" aria-hidden="true">
+              <svg class="algo__ring-svg" viewBox="0 0 220 220" role="presentation">
+                <defs>
+                  <linearGradient id="algo-ring-gradient" x1="36" y1="28" x2="184" y2="192" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#ffedd1" />
+                    <stop offset="58%" stop-color="#d8a84a" />
+                    <stop offset="100%" stop-color="#ffcd57" />
+                  </linearGradient>
+                </defs>
+                <circle class="algo__ring-track" cx="110" cy="110" r="84" />
+                <circle class="algo__ring-progress" cx="110" cy="110" r="84" stroke="url(#algo-ring-gradient)" />
+              </svg>
+              <span class="algo__orb"></span>
+            </div>
+
+            <div class="algo__metric algo__metric--urgency" aria-hidden="true">
+              <div class="algo__urgency" data-algo-urgency>
+                <span class="algo__urgency-dot"></span>
+                <span class="algo__urgency-dot"></span>
+                <span class="algo__urgency-dot"></span>
+                <span class="algo__urgency-dot"></span>
+                <span class="algo__urgency-dot"></span>
+              </div>
+              <span class="algo__metric-label algo__metric-label--warm" data-i18n="algorithm.urgencyLabel">Urgency</span>
+            </div>
           </div>
         </figure>
 

@@ -60,7 +60,9 @@
 
   "algorithm.title": "A patient algorithm.<br/><em>Five states. Infinite memory.</em>",
   "algorithm.kicker": "JustFlip! runs a refined SM-2 engine across five learning states. Cards travel through <em>unseen</em>, <em>learning</em>, <em>reviewing</em>, <em>relearning</em> and <em>graduated</em>, each with its own interval and ease. Urgency tells you what is most worth your time today.",
-  "algorithm.statsLabel": "Image · Progress & urgency dashboard",
+  "algorithm.statsLabel": "Animated · Progress & urgency dashboard",
+  "algorithm.progressLabel": "Progress",
+  "algorithm.urgencyLabel": "Urgency",
   "algorithm.unseen": "Unseen",
   "algorithm.unseenDesc": "Never studied — ready for first contact.",
   "algorithm.learning": "Learning",

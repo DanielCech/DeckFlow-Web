@@ -60,7 +60,9 @@
 
   "algorithm.title": "Trpělivý algoritmus.<br/><em>Pět stavů. Nekonečná paměť.</em>",
   "algorithm.kicker": "JustFlip! používá vylepšený SM-2 engine s pěti stavy učení. Karty procházejí stavy <em>nenaučené</em>, <em>učící se</em>, <em>opakované</em>, <em>přeučované</em> a <em>absolvované</em>, každý s vlastním intervalem a obtížností. Naléhavost ti říká, co si dnes zaslouží tvůj čas.",
-  "algorithm.statsLabel": "Obrázek · Progress a dashboard naléhavosti",
+  "algorithm.statsLabel": "Animovaný · Progress a dashboard naléhavosti",
+  "algorithm.progressLabel": "Pokrok",
+  "algorithm.urgencyLabel": "Naléhavost",
   "algorithm.unseen": "Nenaučené",
   "algorithm.unseenDesc": "Ještě nestudováno — připraveno k prvnímu kontaktu.",
   "algorithm.learning": "Učící se",

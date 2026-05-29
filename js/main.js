@@ -27,7 +27,7 @@
   sections.forEach((section) => {
     const candidates = section.querySelectorAll(
       '.eyebrow, .display, .headline, .lede, .kicker, .hero__actions, .hero__meta, ' +
-      '.placeholder, .tile, .algo__flow li, .algo__formula, .markdown__sample, ' +
+      '.placeholder, .algo__visual, .tile, .algo__flow li, .algo__formula, .markdown__sample, ' +
       '.widget, .split, .duo__chips, .cta, ' +
       '.float-pill, .ai__terminal, .ai__panel, .ai__note'
     );
@@ -50,6 +50,106 @@
     document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
   } else {
     document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
+  }
+
+  /* ---------------------------------------------------
+   * Algorithm illustration: count-up ring + urgency cycle.
+   * Mirrors the onboarding progress/urgency panel.
+   * ------------------------------------------------- */
+  const algorithmDashboard = document.querySelector('[data-algo-dashboard]');
+  if (algorithmDashboard) {
+    const progressValue = algorithmDashboard.querySelector('[data-algo-progress-value]');
+    const ringProgress = algorithmDashboard.querySelector('.algo__ring-progress');
+    const urgencyDots = Array.from(algorithmDashboard.querySelectorAll('.algo__urgency-dot'));
+    const progressTarget = Number(algorithmDashboard.dataset.progressTarget || 78);
+    const progressDuration = Number(algorithmDashboard.dataset.progressDuration || 1400);
+    const urgencyCycle = Number(algorithmDashboard.dataset.urgencyCycle || 2400);
+    const urgencyPalette = ['#8c8a7a', '#e0914f', '#f0c04b', '#d9745e', '#c45c4b'];
+    const ringLength = ringProgress?.getTotalLength?.() || 0;
+    let activeUrgency = 0;
+    let hasStarted = false;
+
+    const hexToRgba = (hex, alpha) => {
+      const normalized = hex.replace('#', '');
+      const value = normalized.length === 3
+        ? normalized.split('').map((char) => char + char).join('')
+        : normalized;
+      const int = Number.parseInt(value, 16);
+      const r = (int >> 16) & 255;
+      const g = (int >> 8) & 255;
+      const b = int & 255;
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    };
+
+    const setUrgency = (index) => {
+      activeUrgency = ((index % urgencyPalette.length) + urgencyPalette.length) % urgencyPalette.length;
+      const color = urgencyPalette[activeUrgency];
+
+      algorithmDashboard.style.setProperty('--algo-urgency-color', color);
+      algorithmDashboard.style.setProperty('--algo-urgency-glow', hexToRgba(color, 0.38));
+
+      urgencyDots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === activeUrgency);
+      });
+    };
+
+    const setProgress = (value) => {
+      const clamped = Math.max(0, Math.min(progressTarget, value));
+      if (progressValue) progressValue.textContent = `${Math.round(clamped)}%`;
+      if (ringProgress && ringLength > 0) {
+        ringProgress.style.strokeDasharray = `${ringLength}`;
+        ringProgress.style.strokeDashoffset = `${ringLength * (1 - clamped / 100)}`;
+      }
+    };
+
+    const animateProgress = () => {
+      if (prefersReducedMotion) return;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min(1, (now - start) / progressDuration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setProgress(progressTarget * eased);
+        if (progress < 1) {
+          window.requestAnimationFrame(tick);
+        } else {
+          setProgress(progressTarget);
+        }
+      };
+      window.requestAnimationFrame(tick);
+    };
+
+    const start = () => {
+      if (hasStarted) return;
+      hasStarted = true;
+
+      if (prefersReducedMotion) {
+        setProgress(progressTarget);
+        setUrgency(2);
+        return;
+      }
+
+      setProgress(0);
+      setUrgency(0);
+      animateProgress();
+
+      window.setInterval(() => {
+        setUrgency(activeUrgency + 1);
+      }, urgencyCycle);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const dashboardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          start();
+          dashboardObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' });
+
+      dashboardObserver.observe(algorithmDashboard);
+    } else {
+      start();
+    }
   }
 
   /* ---------------------------------------------------
