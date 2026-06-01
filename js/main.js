@@ -253,30 +253,187 @@
     const status = document.querySelector('[data-copy-status]');
     let statusTimer;
 
-    // Show a random example each visit so the empty editor never
-    // feels stale. Mix of simple topics, exam-style requests, language
-    // and "turn this page / article into a deck" prompts.
-    const EXAMPLE_PROMPTS = [
-      'Create a deck of all US presidents and their dates in office.',
-      '20 essential French verbs with their English meanings.',
-      'The most important trigonometry identities and formulas.',
-      'First 20 elements of the periodic table — symbol, atomic number and one fact each.',
-      'Key machine learning concepts: overfitting, regularization, gradient descent, bias vs. variance. One card each.',
-      'Turn this article into a study deck:\nhttps://en.wikipedia.org/wiki/Roman_Empire\nFocus on the emperors and the key dates.',
-      'Czech phrases for ordering food in a restaurant, with English translations.',
-      'Make a deck from the notes below — cover the cell cycle, the phases of mitosis and the main checkpoints.\n\n[paste your notes here]',
-      'Major and minor scales with their key signatures.',
-      'The 27 amendments to the US Constitution, one card per amendment.',
-      'Spaced-repetition flashcards for the SI base units and what each one measures.',
-      'Summarize this lecture transcript into 15 flashcards on the core ideas:\n\n[paste the transcript here]',
-      'Key events of World War II in chronological order, with years.',
-      'Common Spanish irregular verbs in the present tense (yo / tú / él forms).',
-      'Define the most important data structures: array, linked list, stack, queue, hash map, binary tree. One card each.'
-    ];
-    if (requestField) {
-      const pick = EXAMPLE_PROMPTS[Math.floor(Math.random() * EXAMPLE_PROMPTS.length)];
-      requestField.setAttribute('placeholder', 'e.g. ' + pick);
-    }
+    // Show a random example each visit so the empty editor never feels
+    // stale. Localized per language; mix of simple topics, exam-style
+    // requests, language drills and "turn this page / notes into a deck".
+    const EXAMPLES = {
+      en: { eg: "e.g. ", items: [
+        "Create a deck of all US presidents and their dates in office.",
+        "20 essential French verbs with their English meanings.",
+        "The most important trigonometry identities and formulas.",
+        "First 20 elements of the periodic table — symbol, atomic number and one fact each.",
+        "Key machine learning concepts: overfitting, regularization, gradient descent, bias vs. variance. One card each.",
+        "Turn this article into a study deck:\nhttps://en.wikipedia.org/wiki/Roman_Empire\nFocus on the emperors and the key dates.",
+        "Czech phrases for ordering food in a restaurant, with English translations.",
+        "Make a deck from the notes below — cover the cell cycle, the phases of mitosis and the main checkpoints.\n\n[paste your notes here]",
+        "Major and minor scales with their key signatures.",
+        "The 27 amendments to the US Constitution, one card per amendment.",
+        "Spaced-repetition flashcards for the SI base units and what each one measures.",
+        "Summarize this lecture transcript into 15 flashcards on the core ideas:\n\n[paste the transcript here]",
+        "Key events of World War II in chronological order, with years.",
+        "Common Spanish irregular verbs in the present tense (yo / tú / él forms).",
+        "Define the most important data structures: array, linked list, stack, queue, hash map, binary tree. One card each."
+      ] },
+      cs: { eg: "např. ", items: [
+        "Vytvoř balíček všech amerických prezidentů a období jejich vlády.",
+        "20 základních francouzských sloves s českým významem.",
+        "Nejdůležitější trigonometrické identity a vzorce.",
+        "Prvních 20 prvků periodické tabulky — značka, protonové číslo a jeden fakt ke každému.",
+        "Klíčové pojmy strojového učení: přeučení, regularizace, gradientní sestup, bias vs. rozptyl. Ke každému jedna karta.",
+        "Udělej z tohoto článku studijní balíček:\nhttps://cs.wikipedia.org/wiki/Římská_říše\nZaměř se na císaře a klíčová data.",
+        "Anglické fráze pro objednávání jídla v restauraci, s českým překladem.",
+        "Vytvoř balíček z poznámek níže — pokryj buněčný cyklus, fáze mitózy a hlavní kontrolní body.\n\n[sem vlož své poznámky]",
+        "Durové a mollové stupnice s jejich předznamenáními.",
+        "27 dodatků Ústavy USA, jedna karta na dodatek.",
+        "Karty pro základní jednotky SI a co každá měří.",
+        "Shrň tento přepis přednášky do 15 karet s hlavními myšlenkami:\n\n[sem vlož přepis]",
+        "Klíčové události druhé světové války chronologicky, s letopočty.",
+        "Běžná nepravidelná španělská slovesa v přítomném čase (tvary yo / tú / él).",
+        "Definuj nejdůležitější datové struktury: pole, spojový seznam, zásobník, fronta, hashovací tabulka, binární strom. Ke každé jednu kartu."
+      ] },
+      de: { eg: "z. B. ", items: [
+        "Erstelle ein Deck mit allen US-Präsidenten und ihren Amtszeiten.",
+        "20 wichtige französische Verben mit ihrer deutschen Bedeutung.",
+        "Die wichtigsten trigonometrischen Identitäten und Formeln.",
+        "Die ersten 20 Elemente des Periodensystems — Symbol, Ordnungszahl und je eine Tatsache.",
+        "Zentrale Machine-Learning-Konzepte: Overfitting, Regularisierung, Gradientenabstieg, Bias vs. Varianz. Je eine Karte.",
+        "Mach aus diesem Artikel ein Lern-Deck:\nhttps://de.wikipedia.org/wiki/Römisches_Reich\nKonzentriere dich auf die Kaiser und die wichtigsten Daten.",
+        "Tschechische Sätze, um im Restaurant Essen zu bestellen, mit deutscher Übersetzung.",
+        "Erstelle ein Deck aus den folgenden Notizen — behandle den Zellzyklus, die Phasen der Mitose und die wichtigsten Kontrollpunkte.\n\n[Notizen hier einfügen]",
+        "Dur- und Moll-Tonleitern mit ihren Vorzeichen.",
+        "Die 27 Zusatzartikel der US-Verfassung, eine Karte pro Artikel.",
+        "Karten für die SI-Basiseinheiten und was jede misst.",
+        "Fasse dieses Vorlesungstranskript in 15 Karten zu den Kernideen zusammen:\n\n[Transkript hier einfügen]",
+        "Wichtige Ereignisse des Zweiten Weltkriegs in chronologischer Reihenfolge, mit Jahreszahlen.",
+        "Häufige unregelmäßige spanische Verben im Präsens (Formen yo / tú / él).",
+        "Definiere die wichtigsten Datenstrukturen: Array, verkettete Liste, Stack, Queue, Hashmap, Binärbaum. Je eine Karte."
+      ] },
+      es: { eg: "p. ej. ", items: [
+        "Crea un deck con todos los presidentes de EE. UU. y sus periodos en el cargo.",
+        "20 verbos franceses esenciales con su significado en español.",
+        "Las identidades y fórmulas de trigonometría más importantes.",
+        "Los primeros 20 elementos de la tabla periódica: símbolo, número atómico y un dato de cada uno.",
+        "Conceptos clave de machine learning: sobreajuste, regularización, descenso de gradiente, sesgo vs. varianza. Una tarjeta por concepto.",
+        "Convierte este artículo en un deck de estudio:\nhttps://es.wikipedia.org/wiki/Imperio_romano\nCéntrate en los emperadores y las fechas clave.",
+        "Frases en checo para pedir comida en un restaurante, con traducción al español.",
+        "Crea un deck con las notas de abajo: cubre el ciclo celular, las fases de la mitosis y los puntos de control principales.\n\n[pega tus notas aquí]",
+        "Escalas mayores y menores con sus armaduras de clave.",
+        "Las 27 enmiendas de la Constitución de EE. UU., una tarjeta por enmienda.",
+        "Tarjetas para las unidades básicas del SI y qué mide cada una.",
+        "Resume esta transcripción de clase en 15 tarjetas con las ideas principales:\n\n[pega la transcripción aquí]",
+        "Eventos clave de la Segunda Guerra Mundial en orden cronológico, con años.",
+        "Verbos irregulares comunes en español en presente (formas yo / tú / él).",
+        "Define las estructuras de datos más importantes: array, lista enlazada, pila, cola, tabla hash, árbol binario. Una tarjeta por cada una."
+      ] },
+      fr: { eg: "p. ex. ", items: [
+        "Crée un deck de tous les présidents des États-Unis et leurs mandats.",
+        "20 verbes français essentiels avec leur traduction anglaise.",
+        "Les identités et formules de trigonométrie les plus importantes.",
+        "Les 20 premiers éléments du tableau périodique — symbole, numéro atomique et un fait pour chacun.",
+        "Concepts clés du machine learning : surapprentissage, régularisation, descente de gradient, biais vs variance. Une carte chacun.",
+        "Transforme cet article en deck de révision :\nhttps://fr.wikipedia.org/wiki/Empire_romain\nConcentre-toi sur les empereurs et les dates clés.",
+        "Phrases en tchèque pour commander à manger au restaurant, avec leur traduction française.",
+        "Crée un deck à partir des notes ci-dessous — couvre le cycle cellulaire, les phases de la mitose et les principaux points de contrôle.\n\n[colle tes notes ici]",
+        "Gammes majeures et mineures avec leurs armures.",
+        "Les 27 amendements de la Constitution des États-Unis, une carte par amendement.",
+        "Des cartes pour les unités de base du SI et ce que chacune mesure.",
+        "Résume cette transcription de cours en 15 cartes sur les idées principales :\n\n[colle la transcription ici]",
+        "Événements clés de la Seconde Guerre mondiale dans l'ordre chronologique, avec les années.",
+        "Verbes irréguliers espagnols courants au présent (formes yo / tú / él).",
+        "Définis les structures de données les plus importantes : tableau, liste chaînée, pile, file, table de hachage, arbre binaire. Une carte chacune."
+      ] },
+      it: { eg: "es. ", items: [
+        "Crea un deck con tutti i presidenti degli Stati Uniti e i loro mandati.",
+        "20 verbi francesi essenziali con il loro significato in italiano.",
+        "Le identità e le formule di trigonometria più importanti.",
+        "I primi 20 elementi della tavola periodica — simbolo, numero atomico e un fatto per ciascuno.",
+        "Concetti chiave del machine learning: overfitting, regolarizzazione, discesa del gradiente, bias vs varianza. Una carta ciascuno.",
+        "Trasforma questo articolo in un deck di studio:\nhttps://it.wikipedia.org/wiki/Impero_romano\nConcentrati sugli imperatori e sulle date chiave.",
+        "Frasi in ceco per ordinare da mangiare al ristorante, con traduzione in italiano.",
+        "Crea un deck dagli appunti qui sotto — copri il ciclo cellulare, le fasi della mitosi e i principali checkpoint.\n\n[incolla qui i tuoi appunti]",
+        "Scale maggiori e minori con le loro armature di chiave.",
+        "I 27 emendamenti della Costituzione degli Stati Uniti, una carta per emendamento.",
+        "Carte per le unità di base del SI e cosa misura ciascuna.",
+        "Riassumi questa trascrizione di lezione in 15 carte sulle idee principali:\n\n[incolla qui la trascrizione]",
+        "Eventi chiave della Seconda guerra mondiale in ordine cronologico, con gli anni.",
+        "Verbi irregolari spagnoli comuni al presente (forme yo / tú / él).",
+        "Definisci le strutture dati più importanti: array, lista concatenata, stack, coda, hash map, albero binario. Una carta ciascuna."
+      ] },
+      "pt-br": { eg: "ex.: ", items: [
+        "Crie um deck com todos os presidentes dos EUA e seus mandatos.",
+        "20 verbos franceses essenciais com o significado em português.",
+        "As identidades e fórmulas de trigonometria mais importantes.",
+        "Os primeiros 20 elementos da tabela periódica — símbolo, número atômico e um fato de cada.",
+        "Conceitos-chave de machine learning: overfitting, regularização, gradiente descendente, viés vs. variância. Uma carta para cada.",
+        "Transforme este artigo em um deck de estudo:\nhttps://pt.wikipedia.org/wiki/Império_Romano\nFoque nos imperadores e nas datas principais.",
+        "Frases em tcheco para pedir comida em um restaurante, com tradução para o português.",
+        "Crie um deck com as anotações abaixo — cubra o ciclo celular, as fases da mitose e os principais pontos de verificação.\n\n[cole suas anotações aqui]",
+        "Escalas maiores e menores com suas armaduras de clave.",
+        "As 27 emendas da Constituição dos EUA, uma carta por emenda.",
+        "Cartas para as unidades básicas do SI e o que cada uma mede.",
+        "Resuma esta transcrição de aula em 15 cartas com as ideias principais:\n\n[cole a transcrição aqui]",
+        "Principais eventos da Segunda Guerra Mundial em ordem cronológica, com os anos.",
+        "Verbos irregulares comuns do espanhol no presente (formas yo / tú / él).",
+        "Defina as estruturas de dados mais importantes: array, lista encadeada, pilha, fila, tabela hash, árvore binária. Uma carta para cada."
+      ] },
+      ja: { eg: "例: ", items: [
+        "アメリカ歴代大統領と在任期間をまとめたデッキを作って。",
+        "重要なフランス語の動詞 20 個と日本語の意味。",
+        "最も重要な三角関数の公式と恒等式。",
+        "周期表の最初の 20 元素 — 元素記号、原子番号、それぞれの豆知識を 1 つずつ。",
+        "機械学習の主要概念：過学習、正則化、勾配降下法、バイアスとバリアンス。それぞれ 1 枚ずつ。",
+        "この記事を学習デッキにして：\nhttps://ja.wikipedia.org/wiki/ローマ帝国\n皇帝と重要な年号に注目して。",
+        "レストランで料理を注文するためのチェコ語フレーズと日本語訳。",
+        "下のメモからデッキを作って — 細胞周期、有糸分裂の各期、主なチェックポイントを扱って。\n\n[ここにメモを貼り付け]",
+        "長調と短調の音階と調号。",
+        "アメリカ合衆国憲法の 27 の修正条項、1 条につき 1 枚。",
+        "SI 基本単位と、それぞれが何を測るかのカード。",
+        "この講義の文字起こしを、要点をまとめた 15 枚のカードに要約して：\n\n[ここに文字起こしを貼り付け]",
+        "第二次世界大戦の主な出来事を年号付きで時系列に。",
+        "よく使うスペイン語の不規則動詞の現在形（yo / tú / él の形）。",
+        "最も重要なデータ構造を定義して：配列、連結リスト、スタック、キュー、ハッシュマップ、二分木。それぞれ 1 枚ずつ。"
+      ] },
+      ko: { eg: "예: ", items: [
+        "미국 역대 대통령과 재임 기간을 담은 덱을 만들어 줘.",
+        "꼭 필요한 프랑스어 동사 20개와 한국어 뜻.",
+        "가장 중요한 삼각함수 공식과 항등식.",
+        "주기율표의 처음 20개 원소 — 기호, 원자번호, 각각의 사실 하나씩.",
+        "머신러닝 핵심 개념: 과적합, 정규화, 경사하강법, 편향 대 분산. 각 1장씩.",
+        "이 글을 학습 덱으로 만들어 줘:\nhttps://ko.wikipedia.org/wiki/로마_제국\n황제와 주요 연도에 초점을 맞춰 줘.",
+        "식당에서 음식을 주문할 때 쓰는 체코어 표현과 한국어 번역.",
+        "아래 메모로 덱을 만들어 줘 — 세포 주기, 유사분열의 단계, 주요 체크포인트를 다뤄 줘.\n\n[여기에 메모를 붙여넣으세요]",
+        "장조와 단조 음계와 조표.",
+        "미국 헌법의 27개 수정 조항, 조항당 1장.",
+        "SI 기본 단위와 각각이 무엇을 측정하는지에 대한 카드.",
+        "이 강의 녹취록을 핵심 아이디어를 담은 15장의 카드로 요약해 줘:\n\n[여기에 녹취록을 붙여넣으세요]",
+        "제2차 세계대전의 주요 사건을 연도와 함께 시간순으로.",
+        "자주 쓰는 스페인어 불규칙 동사의 현재형 (yo / tú / él 형태).",
+        "가장 중요한 자료구조를 정의해 줘: 배열, 연결 리스트, 스택, 큐, 해시맵, 이진 트리. 각 1장씩."
+      ] }
+    };
+
+    const placeholderLocale = () => {
+      const lang = (document.documentElement.lang || 'en').toLowerCase();
+      return EXAMPLES[lang] ? lang : 'en';
+    };
+
+    const updatePlaceholder = () => {
+      if (!requestField) return;
+      const set = EXAMPLES[placeholderLocale()];
+      const pick = set.items[Math.floor(Math.random() * set.items.length)];
+      requestField.setAttribute('placeholder', set.eg + pick);
+    };
+
+    updatePlaceholder();
+
+    // Refresh the example when the language switcher (built by i18n.js)
+    // changes locale. The click handler runs after i18n has updated
+    // document.documentElement.lang, so a 0ms defer reads the new value.
+    document.addEventListener('click', (e) => {
+      if (e.target.closest && e.target.closest('.lang-s__item')) {
+        window.setTimeout(updatePlaceholder, 0);
+      }
+    });
 
     const setStatus = (message) => {
       if (!status) return;
@@ -343,9 +500,10 @@
       button.addEventListener('click', () => {
         if (requestField) {
           requestField.value = '';
+          updatePlaceholder();
           requestField.focus();
         }
-        setStatus('Cleared.');
+        setStatus(button.dataset.clearedStatus || 'Cleared.');
       });
     });
   }

@@ -96,8 +96,13 @@
             <span class="prompt-editor__meta" data-i18n="prompt.textareaMeta">Returns an importable JustFlip .flashcards file</span>
           </div>
           <div class="prompt-editor__actions">
-            <button class="btn btn--ghost prompt-editor__btn" type="button" data-reset-prompt data-i18n="prompt.resetButton">Clear</button>
-            <button class="btn btn--primary prompt-editor__btn" type="button" data-copy-prompt data-copy-success="Full prompt copied — paste it into Claude or Gemini." data-copy-fail="Could not copy automatically. Expand the instructions, select the text and copy it manually.">
+            <button class="btn btn--ghost prompt-editor__btn" type="button" data-reset-prompt
+                    data-cleared-status="Cleared."
+                    data-i18n="prompt.resetButton" data-i18n-attr="data-cleared-status" data-i18n-data-cleared-status="prompt.cleared">Clear</button>
+            <button class="btn btn--primary prompt-editor__btn" type="button" data-copy-prompt
+                    data-copy-success="Full prompt copied — paste it into Claude or Gemini."
+                    data-copy-fail="Could not copy automatically. Expand the instructions, select the text and copy it manually."
+                    data-i18n-attr="data-copy-success,data-copy-fail" data-i18n-data-copy-success="prompt.copySuccess" data-i18n-data-copy-fail="prompt.copyFail">
               <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
               <span data-i18n="prompt.copyButton">Copy full prompt</span>
             </button>

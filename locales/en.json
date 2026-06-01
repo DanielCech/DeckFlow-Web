@@ -152,6 +152,9 @@
   "prompt.openClaude": "Open Claude",
   "prompt.openGemini": "Open Gemini",
   "prompt.openChatGPT": "Open JustFlip GPT",
+  "prompt.copySuccess": "Full prompt copied — paste it into Claude or Gemini.",
+  "prompt.copyFail": "Could not copy automatically. Expand the instructions, select the text and copy it manually.",
+  "prompt.cleared": "Cleared.",
 
   "lang.switchLabel": "Switch language",
   "lang.en": "English",
