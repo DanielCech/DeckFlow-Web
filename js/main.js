@@ -29,7 +29,8 @@
       '.eyebrow, .display, .headline, .lede, .kicker, .hero__actions, .hero__meta, ' +
       '.placeholder, .algo__visual, .tile, .algo__flow li, .algo__formula, .markdown__sample, ' +
       '.widget, .split, .duo__chips, .cta, ' +
-      '.float-pill, .ai__terminal, .ai__panel, .ai__note'
+      '.float-pill, .ai__terminal, .ai__panel, .ai__note, ' +
+      '.prompt-hero__panel, .prompt-editor, .prompt-steps, .prompt-platforms'
     );
     candidates.forEach((el, i) => {
       el.setAttribute('data-reveal', '');
@@ -240,4 +241,112 @@
       window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
   });
+
+  /* ---------------------------------------------------
+   * Prompt page: bundle the user's request with the
+   * read-only build instructions and copy the whole
+   * thing to the clipboard.
+   * ------------------------------------------------- */
+  const instructionsField = document.querySelector('[data-prompt-instructions]');
+  const requestField = document.querySelector('[data-user-request]');
+  if (instructionsField) {
+    const status = document.querySelector('[data-copy-status]');
+    let statusTimer;
+
+    // Show a random example each visit so the empty editor never
+    // feels stale. Mix of simple topics, exam-style requests, language
+    // and "turn this page / article into a deck" prompts.
+    const EXAMPLE_PROMPTS = [
+      'Create a deck of all US presidents and their dates in office.',
+      '20 essential French verbs with their English meanings.',
+      'The most important trigonometry identities and formulas.',
+      'First 20 elements of the periodic table — symbol, atomic number and one fact each.',
+      'Key machine learning concepts: overfitting, regularization, gradient descent, bias vs. variance. One card each.',
+      'Turn this article into a study deck:\nhttps://en.wikipedia.org/wiki/Roman_Empire\nFocus on the emperors and the key dates.',
+      'Czech phrases for ordering food in a restaurant, with English translations.',
+      'Make a deck from the notes below — cover the cell cycle, the phases of mitosis and the main checkpoints.\n\n[paste your notes here]',
+      'Major and minor scales with their key signatures.',
+      'The 27 amendments to the US Constitution, one card per amendment.',
+      'Spaced-repetition flashcards for the SI base units and what each one measures.',
+      'Summarize this lecture transcript into 15 flashcards on the core ideas:\n\n[paste the transcript here]',
+      'Key events of World War II in chronological order, with years.',
+      'Common Spanish irregular verbs in the present tense (yo / tú / él forms).',
+      'Define the most important data structures: array, linked list, stack, queue, hash map, binary tree. One card each.'
+    ];
+    if (requestField) {
+      const pick = EXAMPLE_PROMPTS[Math.floor(Math.random() * EXAMPLE_PROMPTS.length)];
+      requestField.setAttribute('placeholder', 'e.g. ' + pick);
+    }
+
+    const setStatus = (message) => {
+      if (!status) return;
+      status.textContent = message;
+      window.clearTimeout(statusTimer);
+      statusTimer = window.setTimeout(() => {
+        status.textContent = '';
+      }, 4000);
+    };
+
+    // Compose: build instructions first, then the user's material,
+    // matching the prompt's own "after these instructions, wait for
+    // the user's source material" expectation.
+    const buildFullPrompt = () => {
+      const instructions = instructionsField.value;
+      const request = requestField ? requestField.value.trim() : '';
+      if (!request) return instructions;
+      return instructions +
+        '\n\n---\n\n# Here is what I want you to turn into a deck\n\n' +
+        request;
+    };
+
+    const fallbackCopy = (text) => {
+      // Stage the combined text in a temporary element so we never
+      // overwrite the user's request field.
+      const scratch = document.createElement('textarea');
+      scratch.value = text;
+      scratch.setAttribute('readonly', '');
+      scratch.style.position = 'fixed';
+      scratch.style.top = '-1000px';
+      scratch.style.opacity = '0';
+      document.body.appendChild(scratch);
+      scratch.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+      document.body.removeChild(scratch);
+      return ok;
+    };
+
+    document.querySelectorAll('[data-copy-prompt]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const successMessage = button.dataset.copySuccess || 'Prompt copied.';
+        const failMessage = button.dataset.copyFail || 'Select the text and copy it manually.';
+        const fullPrompt = buildFullPrompt();
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(fullPrompt);
+          } else if (!fallbackCopy(fullPrompt)) {
+            throw new Error('copy command failed');
+          }
+          setStatus(successMessage);
+        } catch (_) {
+          if (fallbackCopy(fullPrompt)) {
+            setStatus(successMessage);
+          } else {
+            setStatus(failMessage);
+          }
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-reset-prompt]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (requestField) {
+          requestField.value = '';
+          requestField.focus();
+        }
+        setStatus('Cleared.');
+      });
+    });
+  }
 })();
