@@ -38,7 +38,7 @@
   "devices.ipadosDesc": "Široké plátno pro dlouhé studijní sezení s typografií přívětivou k tužce a rozděleným zobrazením.",
   "devices.ios": "iOS",
   "devices.iosTitle": "Kapesní učitel",
-  "devices.iosDesc": "Denní opakování, tichý widget na domovské obrazovce a sledování pokroku kartu po kartě.",
+  "devices.iosDesc": "Denní opakování, mluvené balíčky bez použití rukou a sledování pokroku kartu po kartě.",
 
   "ai.title": "Nech AI <em>napsat balíček.</em>",
   "ai.kicker": "Dva způsoby, jak vytvářet balíčky — plnohodnotné karty s obrázky a zvuky pomocí agentních nástrojů, nebo jednoduché textové sady přímo v ChatGPT.",
@@ -82,12 +82,12 @@
   "markdown.label": "Obrázek · Ukázka karty v Markdownu",
 
   "audio.title": "Balíčky, které <em>mluví.</em>",
-  "audio.kicker": "Nech si karty předčítat nahlas, zatímco chodíš, vaříš nebo řídíš. Widget JustFlip! na domovské obrazovce udržuje další opakování jedno klepnutí daleko — malé, zlaté pozvání k pěti minutám učení.",
+  "audio.kicker": "Nech si karty předčítat nahlas, zatímco chodíš, vaříš nebo řídíš. Živá aktivita na zamčené obrazovce udržuje přehrávání na očích — malé, zlaté pozvání k pěti minutám učení.",
   "audio.phoneLabel": "Obrázek · Přehrávač mluvených karet",
   "audio.widgetDeck": "Romantičtí básníci · EN",
   "audio.widgetCard": "Angličtina ↔ Němčina",
-  "audio.widgetDue": "14 dnes k opakování",
-  "audio.widgetTap": "Klepni pro učení",
+  "audio.widgetDue": "Právě hraje",
+  "audio.widgetTap": "Karta 8 z 13",
 
   "theme.title": "Tma při svíčkách.<br/><em>Světlo za úsvitu.</em>",
   "theme.kicker": "JustFlip! respektuje systém. Přepni z hluboké, učené tmy do jemného pergamenového světla — zlatá a břidlicová zůstávají věrné v kteroukoli hodinu.",
@@ -155,7 +155,7 @@
   "footer.copyright": "© {year} JustFlip! Vytvořeno v Praze. Apple, logo Apple, iPhone, iPad a Mac jsou ochranné známky společnosti Apple Inc.",
 
   "meta.title": "JustFlip! — Kartičky s metodou spaced repetition. Uč se v klidu.",
-  "meta.description": "JustFlip! je aplikace pro učení s kartičkami pro iPhone, iPad a Mac. Spaced repetition, swipe hodnocení jako u Tinderu, bohaté markdown karty, mluvené balíčky a widget na domovské obrazovce — synchronizované napříč všemi zařízeními přes iCloud.",
+  "meta.description": "JustFlip! je aplikace pro učení s kartičkami pro iPhone, iPad a Mac. Spaced repetition, swipe hodnocení jako u Tinderu, bohaté markdown karty a mluvené balíčky s živou aktivitou na zamčené obrazovce — synchronizované napříč všemi zařízeními přes iCloud.",
 
   "ai.quote1": "\"Vytvoř 10 kartiček pro nepravidelná slovesa v angličtině.\"",
   "ai.quote2": "\"Nejdůležitější matematické věty o trigonometrii.\"",
@@ -240,10 +240,12 @@
   "privacy.noCollect1": "<strong>1.1.</strong> Nevyžaduji registraci účtu.",
   "privacy.noCollect2": "<strong>1.2.</strong> Neshromažďuji, neukládám ani nemám přístup k tvému jménu, e-mailové adrese, heslu ani jiným osobním identifikátorům.",
   "privacy.noCollect3": "<strong>1.3.</strong> Data aplikace (kartičky, obrázky) jsou uložena ve tvém zařízení a v tvém osobním úložišti Apple iCloud. Nemám k těmto datům přístup.",
+  "privacy.noCollect4": "<strong>1.4.</strong> Pokud máš zapnutý iCloud, jsou data aplikace synchronizována mezi tvými zařízeními prostřednictvím služby Apple iCloud (CloudKit). Tuto synchronizaci plně zajišťuje společnost Apple v souladu s vlastními zásadami ochrany soukromí Apple. Nemám přístup k tvým datům v iCloudu ani kontrolu nad službou synchronizace Apple.",
   "privacy.thirdPartyTitle": "2. Služby třetích stran a sběr dat",
   "privacy.thirdPartyLead": "Pro zlepšení výkonu a spolehlivosti Aplikace používám analytické a monitorovací nástroje třetích stran. Tyto nástroje mohou automaticky shromažďovat určité neosobní technické informace:",
   "privacy.thirdParty1": "<strong>2.1. Google Analytics for Firebase</strong><br>Tuto službu používám k pochopení toho, jak uživatelé s Aplikací pracují (např. které funkce používají nejčastěji). Tato data jsou anonymizovaná a agregovaná.",
   "privacy.thirdParty2": "<strong>2.2. Firebase Crashlytics</strong><br>Tuto službu používám ke sledování stability aplikace a ke shromažďování crash reportů. Pokud Aplikace spadne, Crashlytics shromažďuje technické informace o pádu (např. typ zařízení, verzi operačního systému a stav aplikace v okamžiku pádu), aby mi pomohl problém opravit.",
+  "privacy.thirdParty3": "<strong>2.3. RevenueCat</strong><br>Pro správu nákupů v aplikaci a předplatných používám službu RevenueCat. Když provedeš nebo obnovíš nákup, RevenueCat zpracovává náhodně vygenerovaný identifikátor uživatele aplikace a údaje o transakci (například zakoupený produkt a stav nákupu) za účelem ověření tvého přístupu k placeným funkcím. Nezískává tvé jméno ani Apple ID.",
   "privacy.childrenTitle": "3. Soukromí dětí",
   "privacy.children1": "<strong>3.1.</strong> Protože neshromažďuji žádné osobní údaje, Aplikace vědomě neshromažďuje ani nevyžaduje osobní informace od nikoho, včetně dětí mladších 13 let.",
   "privacy.changesTitle": "4. Změny těchto zásad ochrany soukromí",

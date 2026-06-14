@@ -38,7 +38,7 @@
   "devices.ipadosDesc": "Un lienzo amplio para sesiones largas con tipografía amigable para Apple Pencil y vista dividida.",
   "devices.ios": "iOS",
   "devices.iosTitle": "El tutor de bolsillo",
-  "devices.iosDesc": "Repasos diarios, un widget silencioso en la pantalla de inicio y progreso tarjeta por tarjeta.",
+  "devices.iosDesc": "Repasos diarios, decks hablados para estudiar sin manos y progreso tarjeta por tarjeta.",
 
   "ai.title": "Deja que la IA <em>escriba el deck.</em>",
   "ai.kicker": "Dos formas de crear decks: tarjetas completas con imágenes y audio mediante herramientas agénticas, o conjuntos de texto simples directamente en ChatGPT.",
@@ -82,12 +82,12 @@
   "markdown.label": "Imagen · Tarjeta en Markdown",
 
   "audio.title": "Decks que <em>hablan.</em>",
-  "audio.kicker": "Deja que tus tarjetas se lean en voz alta mientras caminas, cocinas o conduces. El widget de JustFlip! en la pantalla de inicio deja el siguiente repaso a un toque de distancia.",
+  "audio.kicker": "Deja que tus tarjetas se lean en voz alta mientras caminas, cocinas o conduces. Una Live Activity en la pantalla de bloqueo mantiene la reproducción a la vista — una pequeña invitación dorada a cinco minutos de práctica.",
   "audio.phoneLabel": "Imagen · Reproductor de tarjetas habladas",
   "audio.widgetDeck": "Poetas románticos · EN",
   "audio.widgetCard": "Inglés ↔ Alemán",
-  "audio.widgetDue": "14 pendientes hoy",
-  "audio.widgetTap": "Toca para estudiar",
+  "audio.widgetDue": "Reproduciendo",
+  "audio.widgetTap": "Tarjeta 8 de 13",
 
   "theme.title": "Oscuro a la luz de las velas.<br/><em>Claro por la mañana.</em>",
   "theme.kicker": "JustFlip! respeta el sistema. Cambia de una oscuridad profunda y académica a una luz suave de pergamino.",
@@ -155,7 +155,7 @@
   "footer.copyright": "© {year} JustFlip! Creado en Praga. Apple, el logotipo de Apple, iPhone, iPad y Mac son marcas comerciales de Apple Inc.",
 
   "meta.title": "JustFlip! — Tarjetas con repetición espaciada. Estudia en calma.",
-  "meta.description": "JustFlip! es una app de tarjetas para iPhone, iPad y Mac. Repetición espaciada, repasos estilo Tinder, tarjetas Markdown enriquecidas, decks hablados y un widget de inicio, sincronizados en todos tus dispositivos mediante iCloud.",
+  "meta.description": "JustFlip! es una app de tarjetas para iPhone, iPad y Mac. Repetición espaciada, repasos estilo Tinder, tarjetas Markdown enriquecidas y decks hablados con Live Activity en la pantalla de bloqueo, sincronizados en todos tus dispositivos mediante iCloud.",
 
   "ai.quote1": "\"Crea 10 tarjetas para verbos irregulares en inglés.\"",
   "ai.quote2": "\"Los teoremas matemáticos más importantes sobre trigonometría.\"",

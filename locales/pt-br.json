@@ -38,7 +38,7 @@
   "devices.ipadosDesc": "Uma tela ampla para sessões longas com tipografia amigável ao Apple Pencil e visualização dividida.",
   "devices.ios": "iOS",
   "devices.iosTitle": "O tutor de bolso",
-  "devices.iosDesc": "Revisões diárias, um widget silencioso na tela inicial e progresso carta por carta.",
+  "devices.iosDesc": "Revisões diárias, decks falados sem usar as mãos e progresso carta por carta.",
 
   "ai.title": "Deixe a IA <em>escrever o deck.</em>",
   "ai.kicker": "Duas formas de criar decks: cartas completas com imagens e áudio via ferramentas agênticas, ou conjuntos simples de texto diretamente no ChatGPT.",
@@ -82,12 +82,12 @@
   "markdown.label": "Imagem · Carta em Markdown",
 
   "audio.title": "Decks que <em>falam.</em>",
-  "audio.kicker": "Deixe suas cartas lerem em voz alta enquanto você caminha, cozinha ou dirige. O widget do JustFlip! na tela inicial deixa a próxima revisão a um toque de distância.",
+  "audio.kicker": "Deixe suas cartas lerem em voz alta enquanto você caminha, cozinha ou dirige. Uma Atividade ao Vivo na Tela de Bloqueio mantém a reprodução à vista — um pequeno convite dourado para cinco minutos de prática.",
   "audio.phoneLabel": "Imagem · Reprodutor de cartas faladas",
   "audio.widgetDeck": "Poetas românticos · EN",
   "audio.widgetCard": "Inglês ↔ Alemão",
-  "audio.widgetDue": "14 para revisar hoje",
-  "audio.widgetTap": "Toque para estudar",
+  "audio.widgetDue": "Reproduzindo agora",
+  "audio.widgetTap": "Carta 8 de 13",
 
   "theme.title": "Escuro à luz de velas.<br/><em>Claro pela manhã.</em>",
   "theme.kicker": "O JustFlip! respeita o sistema. Alterne de um escuro profundo e acadêmico para uma luz suave de pergaminho.",
@@ -155,7 +155,7 @@
   "footer.copyright": "© {year} JustFlip! Criado em Praga. Apple, o logotipo da Apple, iPhone, iPad e Mac são marcas registradas da Apple Inc.",
 
   "meta.title": "JustFlip! — Flashcards com repetição espaçada. Estude em silêncio.",
-  "meta.description": "JustFlip! é um app de flashcards para iPhone, iPad e Mac. Repetição espaçada, revisão estilo Tinder, cartas Markdown ricas, decks falados e widget da tela inicial — sincronizados entre todos os dispositivos via iCloud.",
+  "meta.description": "JustFlip! é um app de flashcards para iPhone, iPad e Mac. Repetição espaçada, revisão estilo Tinder, cartas Markdown ricas e decks falados com Atividade ao Vivo na Tela de Bloqueio — sincronizados entre todos os dispositivos via iCloud.",
 
   "ai.quote1": "\"Crie 10 flashcards sobre verbos irregulares em inglês.\"",
   "ai.quote2": "\"Os teoremas matemáticos mais importantes sobre trigonometria.\"",

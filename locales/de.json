@@ -38,7 +38,7 @@
   "devices.ipadosDesc": "Eine breite Leinwand für lange Lernsessions mit Apple-Pencil-freundlicher Typografie und Split View.",
   "devices.ios": "iOS",
   "devices.iosTitle": "Der Taschenlehrer",
-  "devices.iosDesc": "Tägliche Wiederholungen, ein stilles Widget auf dem Homescreen und Fortschritt Karte für Karte.",
+  "devices.iosDesc": "Tägliche Wiederholungen, gesprochene Decks zum freihändigen Lernen und Fortschritt Karte für Karte.",
 
   "ai.title": "Lass die KI <em>das Deck schreiben.</em>",
   "ai.kicker": "Zwei Wege, Decks zu erstellen: vollwertige Karten mit Bildern und Audio über agentische Tools oder einfache Textkarten direkt in ChatGPT.",
@@ -82,12 +82,12 @@
   "markdown.label": "Bild · Markdown-Karte",
 
   "audio.title": "Decks, die <em>sprechen.</em>",
-  "audio.kicker": "Lass deine Karten laut vorlesen, während du gehst, kochst oder fährst. Das JustFlip!-Widget auf dem Homescreen hält die nächste Wiederholung nur einen Tipp entfernt.",
+  "audio.kicker": "Lass deine Karten laut vorlesen, während du gehst, kochst oder fährst. Eine Live-Aktivität auf dem Sperrbildschirm behält die Wiedergabe im Blick — eine kleine, goldene Einladung zu fünf Minuten Übung.",
   "audio.phoneLabel": "Bild · Sprachausgabe für Karten",
   "audio.widgetDeck": "Romantische Dichter · EN",
   "audio.widgetCard": "Englisch ↔ Deutsch",
-  "audio.widgetDue": "14 heute fällig",
-  "audio.widgetTap": "Tippen zum Lernen",
+  "audio.widgetDue": "Läuft gerade",
+  "audio.widgetTap": "Karte 8 von 13",
 
   "theme.title": "Dunkel bei Kerzenschein.<br/><em>Hell am Morgen.</em>",
   "theme.kicker": "JustFlip! respektiert das System. Wechsle von tiefem, gelehrtem Dunkel zu sanftem Pergamentlicht.",
@@ -155,7 +155,7 @@
   "footer.copyright": "© {year} JustFlip! Entwickelt in Prag. Apple, das Apple-Logo, iPhone, iPad und Mac sind Marken von Apple Inc.",
 
   "meta.title": "JustFlip! — Karteikarten mit Spaced Repetition. Lerne ruhig.",
-  "meta.description": "JustFlip! ist eine Karteikarten-App für iPhone, iPad und Mac. Spaced Repetition, Tinder-ähnliche Bewertung, reich formatierte Markdown-Karten, gesprochene Decks und ein Homescreen-Widget — über iCloud mit allen Geräten synchronisiert.",
+  "meta.description": "JustFlip! ist eine Karteikarten-App für iPhone, iPad und Mac. Spaced Repetition, Tinder-ähnliche Bewertung, reich formatierte Markdown-Karten und gesprochene Decks mit Live-Aktivität auf dem Sperrbildschirm — über iCloud mit allen Geräten synchronisiert.",
 
   "ai.quote1": "\"Erstelle 10 Karteikarten zu unregelmäßigen Verben im Englischen.\"",
   "ai.quote2": "\"Die wichtigsten mathematischen Sätze zur Trigonometrie.\"",

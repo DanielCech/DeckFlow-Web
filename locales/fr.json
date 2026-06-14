@@ -38,7 +38,7 @@
   "devices.ipadosDesc": "Une large toile pour les longues sessions d’étude avec une typographie adaptée à l’Apple Pencil et le mode Split View.",
   "devices.ios": "iOS",
   "devices.iosTitle": "Le professeur de poche",
-  "devices.iosDesc": "Révisions quotidiennes, widget discret sur l’écran d’accueil et progression carte par carte.",
+  "devices.iosDesc": "Révisions quotidiennes, decks parlés mains libres et progression carte par carte.",
 
   "ai.title": "Laisse l’IA <em>écrire le deck.</em>",
   "ai.kicker": "Deux façons de créer des decks : des cartes complètes avec images et audio via des outils agents, ou de simples ensembles de texte directement dans ChatGPT.",
@@ -82,12 +82,12 @@
   "markdown.label": "Image · Carte en Markdown",
 
   "audio.title": "Des decks qui <em>parlent.</em>",
-  "audio.kicker": "Laisse tes cartes se lire à voix haute pendant que tu marches, cuisines ou conduis. Le widget JustFlip! sur l’écran d’accueil garde la prochaine révision à un tap.",
+  "audio.kicker": "Laisse tes cartes se lire à voix haute pendant que tu marches, cuisines ou conduis. Une activité en direct sur l’écran verrouillé garde la lecture sous les yeux — une petite invitation dorée à cinq minutes de pratique.",
   "audio.phoneLabel": "Image · Lecteur de cartes parlées",
   "audio.widgetDeck": "Poètes romantiques · EN",
   "audio.widgetCard": "Anglais ↔ Allemand",
-  "audio.widgetDue": "14 à réviser aujourd’hui",
-  "audio.widgetTap": "Touchez pour étudier",
+  "audio.widgetDue": "En cours de lecture",
+  "audio.widgetTap": "Carte 8 sur 13",
 
   "theme.title": "Sombre à la lueur des bougies.<br/><em>Clair au matin.</em>",
   "theme.kicker": "JustFlip! respecte le système. Passe d’une obscurité savante à une lumière douce de parchemin.",
@@ -155,7 +155,7 @@
   "footer.copyright": "© {year} JustFlip! Conçu à Prague. Apple, le logo Apple, iPhone, iPad et Mac sont des marques d’Apple Inc.",
 
   "meta.title": "JustFlip! — Cartes à répétition espacée. Étudie calmement.",
-  "meta.description": "JustFlip! est une app de cartes pour iPhone, iPad et Mac. Répétition espacée, révision façon Tinder, cartes Markdown riches, decks parlés et widget d’écran d’accueil — synchronisés sur tous tes appareils via iCloud.",
+  "meta.description": "JustFlip! est une app de cartes pour iPhone, iPad et Mac. Répétition espacée, révision façon Tinder, cartes Markdown riches et decks parlés avec activité en direct sur l’écran verrouillé — synchronisés sur tous tes appareils via iCloud.",
 
   "ai.quote1": "\"Crée 10 cartes sur les verbes irréguliers en anglais.\"",
   "ai.quote2": "\"Les théorèmes mathématiques les plus importants sur la trigonométrie.\"",

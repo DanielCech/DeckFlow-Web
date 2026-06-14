@@ -38,7 +38,7 @@
   "devices.ipadosDesc": "Apple Pencil にやさしいタイポグラフィと分割表示を備えた、長時間の学習に向いた広いキャンバス。",
   "devices.ios": "iOS",
   "devices.iosTitle": "ポケットの先生",
-  "devices.iosDesc": "毎日の復習、ホーム画面の静かなウィジェット、カードごとの進捗管理。",
+  "devices.iosDesc": "毎日の復習、ハンズフリーで聴ける音声デッキ、カードごとの進捗管理。",
 
   "ai.title": "AI に <em>デッキを書かせる。</em>",
   "ai.kicker": "デッキの作り方は 2 通り。エージェント型ツールで画像や音声を含む本格的なカードを作るか、ChatGPT でシンプルなテキストカードを直接作成します。",
@@ -82,12 +82,12 @@
   "markdown.label": "画像 · Markdown カード",
 
   "audio.title": "<em>話す</em> デッキ。",
-  "audio.kicker": "歩きながら、料理しながら、運転しながらカードを音声で読み上げましょう。JustFlip! のホーム画面ウィジェットで次の復習にすぐ触れられます。",
+  "audio.kicker": "歩きながら、料理しながら、運転しながらカードを音声で読み上げましょう。ロック画面のライブアクティビティで再生状況がひと目でわかります。",
   "audio.phoneLabel": "画像 · 音声カードプレーヤー",
   "audio.widgetDeck": "ロマン派詩人 · EN",
   "audio.widgetCard": "英語 ↔ ドイツ語",
-  "audio.widgetDue": "今日 14 枚が対象",
-  "audio.widgetTap": "タップして学習",
+  "audio.widgetDue": "再生中",
+  "audio.widgetTap": "カード 8 / 13",
 
   "theme.title": "ろうそくの灯りでは暗く。<br/><em>朝には明るく。</em>",
   "theme.kicker": "JustFlip! はシステムに従います。深い学術的な暗さから、やわらかな羊皮紙の明るさへ。",
@@ -155,7 +155,7 @@
   "footer.copyright": "© {year} JustFlip! プラハで制作。Apple、Apple ロゴ、iPhone、iPad、Mac は Apple Inc. の商標です。",
 
   "meta.title": "JustFlip! — 間隔反復のフラッシュカード。静かに学ぶ。",
-  "meta.description": "JustFlip! は iPhone、iPad、Mac 向けのフラッシュカード学習アプリです。間隔反復、Tinder 風の復習、豊かな Markdown カード、音声デッキ、ホーム画面ウィジェットを iCloud で全デバイスに同期します。",
+  "meta.description": "JustFlip! は iPhone、iPad、Mac 向けのフラッシュカード学習アプリです。間隔反復、Tinder 風の復習、豊かな Markdown カード、ロック画面のライブアクティビティ付き音声デッキを iCloud で全デバイスに同期します。",
 
   "ai.quote1": "\"英語の不規則動詞について 10 枚のカードを作って。\"",
   "ai.quote2": "\"三角法に関する最も重要な数学定理。\"",

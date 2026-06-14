@@ -38,7 +38,7 @@
   "devices.ipadosDesc": "Apple Pencil 친화적인 타이포그래피와 분할 보기로 긴 학습 세션에 어울리는 넓은 캔버스.",
   "devices.ios": "iOS",
   "devices.iosTitle": "주머니 속 튜터",
-  "devices.iosDesc": "매일 복습, 홈 화면의 조용한 위젯, 카드별 진행 상황 추적.",
+  "devices.iosDesc": "매일 복습, 핸즈프리 음성 덱, 카드별 진행 상황 추적.",
 
   "ai.title": "AI가 <em>덱을 쓰게 하세요.</em>",
   "ai.kicker": "덱을 만드는 두 가지 방법: 에이전트형 도구로 이미지와 오디오를 포함한 완성도 높은 카드를 만들거나, ChatGPT에서 바로 간단한 텍스트 세트를 만들 수 있습니다.",
@@ -82,12 +82,12 @@
   "markdown.label": "이미지 · Markdown 카드",
 
   "audio.title": "<em>말하는</em> 덱.",
-  "audio.kicker": "걷거나 요리하거나 운전하는 동안 카드를 소리 내어 읽어 보세요. JustFlip! 홈 화면 위젯이 다음 복습을 한 번의 탭으로 가져옵니다.",
+  "audio.kicker": "걷거나 요리하거나 운전하는 동안 카드를 소리 내어 읽어 보세요. 잠금 화면의 라이브 액티비티로 재생 상태를 한눈에 확인할 수 있습니다.",
   "audio.phoneLabel": "이미지 · 음성 카드 플레이어",
   "audio.widgetDeck": "낭만주의 시인 · EN",
   "audio.widgetCard": "영어 ↔ 독일어",
-  "audio.widgetDue": "오늘 14개 복습",
-  "audio.widgetTap": "탭하여 학습",
+  "audio.widgetDue": "재생 중",
+  "audio.widgetTap": "카드 8 / 13",
 
   "theme.title": "촛불 아래서는 어둡게.<br/><em>아침에는 밝게.</em>",
   "theme.kicker": "JustFlip!은 시스템을 존중합니다. 깊고 학구적인 어둠에서 부드러운 양피지 같은 밝음으로 전환하세요.",
@@ -155,7 +155,7 @@
   "footer.copyright": "© {year} JustFlip! 프라하에서 제작. Apple, Apple 로고, iPhone, iPad 및 Mac은 Apple Inc.의 상표입니다.",
 
   "meta.title": "JustFlip! — 간격 반복 플래시카드. 조용히 공부하세요.",
-  "meta.description": "JustFlip!는 iPhone, iPad, Mac용 플래시카드 학습 앱입니다. 간격 반복, Tinder 스타일 복습, 풍부한 Markdown 카드, 음성 덱, 홈 화면 위젯을 iCloud로 모든 기기와 동기화합니다.",
+  "meta.description": "JustFlip!는 iPhone, iPad, Mac용 플래시카드 학습 앱입니다. 간격 반복, Tinder 스타일 복습, 풍부한 Markdown 카드, 잠금 화면 라이브 액티비티가 있는 음성 덱을 iCloud로 모든 기기와 동기화합니다.",
 
   "ai.quote1": "\"영어 불규칙 동사에 대한 플래시카드 10장을 만들어 줘.\"",
   "ai.quote2": "\"삼각법에 관한 가장 중요한 수학 정리들.\"",

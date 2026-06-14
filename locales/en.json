@@ -40,7 +40,7 @@
   "devices.ipadosDesc": "A wide canvas for long-form review sessions with Pencil-friendly typography and split view.",
   "devices.ios": "iOS",
   "devices.iosTitle": "The pocket tutor",
-  "devices.iosDesc": "Daily reviews, a quiet widget on the home screen, and progress tracked card-by-card.",
+  "devices.iosDesc": "Daily reviews, hands-free spoken decks, and progress tracked card-by-card.",
 
   "ai.title": "Let the AI <em>write the deck.</em>",
   "ai.kicker": "Two ways to create decks — full rich-content cards with agentic coding tools, or simple text-only sets directly in ChatGPT.",
@@ -107,12 +107,12 @@
   "markdown.label": "Image · Markdown-rich card definition",
 
   "audio.title": "Decks that <em>speak.</em>",
-  "audio.kicker": "Let your cards read themselves out loud while you walk, cook, or drive. JustFlip!'s home-screen widget keeps the next review one tap away — a small, golden invitation to five minutes of practice.",
+  "audio.kicker": "Let your cards read themselves out loud while you walk, cook, or drive. A Live Activity on your Lock Screen keeps the playback in sight — a small, golden invitation to five minutes of practice.",
   "audio.phoneLabel": "Image · Spoken cards player",
   "audio.widgetDeck": "Romantic Poets · EN",
   "audio.widgetCard": "English ↔ German",
-  "audio.widgetDue": "14 due today",
-  "audio.widgetTap": "Tap to study",
+  "audio.widgetDue": "Now playing",
+  "audio.widgetTap": "Card 8 of 13",
 
   "theme.title": "Dark by candlelight.<br/><em>Light by morning.</em>",
   "theme.kicker": "JustFlip! respects the system. Switch from a deep, scholarly dark to a soft parchment light — the gold and slate stay true at any hour.",
@@ -154,7 +154,7 @@
   "footer.copyright": "© {year} JustFlip! Crafted in Prague. Apple, the Apple logo, iPhone, iPad and Mac are trademarks of Apple Inc.",
 
   "meta.title": "JustFlip! — Spaced-repetition flashcards. Study quietly.",
-  "meta.description": "JustFlip! is a flashcard learning app for iPhone, iPad and Mac. Spaced repetition, Tinder-style review, rich markdown cards, spoken decks and a home screen widget — synced across every device through iCloud.",
+  "meta.description": "JustFlip! is a flashcard learning app for iPhone, iPad and Mac. Spaced repetition, Tinder-style review, rich markdown cards and spoken decks with a Lock Screen Live Activity — synced across every device through iCloud.",
 
   "ai.quote1": "\"Create 10 flashcards for English irregular verbs.\"",
   "ai.quote2": "\"The most important math theorems about trigonometry.\"",
@@ -239,10 +239,12 @@
   "privacy.noCollect1": "<strong>1.1.</strong> I do not require account registration.",
   "privacy.noCollect2": "<strong>1.2.</strong> I do not collect, store, or have access to your name, email address, password, or any personal identifiers.",
   "privacy.noCollect3": "<strong>1.3.</strong> Your app data (flashcards, images) is stored on your device and in your personal Apple iCloud storage. I cannot access this data.",
+  "privacy.noCollect4": "<strong>1.4.</strong> If you enable iCloud, your app data is synchronized across your devices through Apple's iCloud (CloudKit) service. This synchronization is operated entirely by Apple under Apple's own privacy policy. I have no access to your iCloud data and no control over Apple's sync service.",
   "privacy.thirdPartyTitle": "2. Third-Party Services &amp; Data Collection",
   "privacy.thirdPartyLead": "To improve the performance and reliability of the Application, I use third-party analytics and monitoring tools. These tools may collect certain non-personal, technical information automatically:",
   "privacy.thirdParty1": "<strong>2.1. Google Analytics for Firebase</strong><br>I use this service to understand how users interact with the Application (e.g., which features are used most frequently). This data is anonymized and aggregated.",
   "privacy.thirdParty2": "<strong>2.2. Firebase Crashlytics</strong><br>I use this service to monitor app stability and collect crash reports. If the Application crashes, Crashlytics collects technical details about the crash (e.g., device type, operating system version, and the state of the app at the time of the crash) to help me fix the issue.",
+  "privacy.thirdParty3": "<strong>2.3. RevenueCat</strong><br>I use RevenueCat to manage in-app purchases and subscriptions. When you make or restore a purchase, RevenueCat processes a randomly generated app-user identifier and transaction data (such as the product purchased and purchase status) to validate your access to paid features. It does not receive your name or Apple ID.",
   "privacy.childrenTitle": "3. Children's Privacy",
   "privacy.children1": "<strong>3.1.</strong> Since I do not collect any personal data, the Application does not knowingly collect or solicit personal information from anyone, including children under the age of 13.",
   "privacy.changesTitle": "4. Changes to This Privacy Policy",
