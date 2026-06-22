@@ -508,4 +508,55 @@
       });
     });
   }
+
+  /* ---------------------------------------------------
+   * Generic "copy this command/snippet" buttons.
+   * Any [data-copy-text="…"] button copies its value to
+   * the clipboard and briefly swaps its label to confirm.
+   * Used by the rich-deck (skill) page install command.
+   * ------------------------------------------------- */
+  const copyTextFallback = (text) => {
+    const scratch = document.createElement('textarea');
+    scratch.value = text;
+    scratch.setAttribute('readonly', '');
+    scratch.style.position = 'fixed';
+    scratch.style.top = '-1000px';
+    scratch.style.opacity = '0';
+    document.body.appendChild(scratch);
+    scratch.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+    document.body.removeChild(scratch);
+    return ok;
+  };
+
+  document.querySelectorAll('[data-copy-text]').forEach((button) => {
+    let labelTimer;
+    button.addEventListener('click', async () => {
+      const text = button.getAttribute('data-copy-text') || '';
+      const label = button.querySelector('[data-copy-label]') || button;
+      const original = label.dataset.copyOriginal || label.textContent;
+      label.dataset.copyOriginal = original;
+      const done = button.dataset.copiedLabel || 'Copied!';
+
+      let ok = true;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else if (!copyTextFallback(text)) {
+          ok = false;
+        }
+      } catch (_) {
+        ok = copyTextFallback(text);
+      }
+
+      label.textContent = ok ? done : (button.dataset.copyFailLabel || 'Press ⌘C');
+      button.classList.toggle('is-copied', ok);
+      window.clearTimeout(labelTimer);
+      labelTimer = window.setTimeout(() => {
+        label.textContent = original;
+        button.classList.remove('is-copied');
+      }, 2200);
+    });
+  });
 })();

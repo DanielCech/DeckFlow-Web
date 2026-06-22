@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#131313" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <title data-i18n="skill.metaTitle">JustFlip! Rich decks from your AI coding agent</title>
+  <meta name="description" content="Install one skill, point your AI coding agent at a folder, and get back a rich JustFlip deck with images, audio and Markdown — no copy-pasting." data-i18n-attr="content" data-i18n-content="skill.metaDescription" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="index.html#top" aria-label="JustFlip! - home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="images/Icon.png" alt="" width="26" height="26">
+      </span>
+      <span class="nav__name">JustFlip!</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#devices" data-i18n="nav.features">Features</a>
+      <a href="index.html#ai" data-i18n="nav.aiDecks">AI Decks</a>
+      <a href="ai-prompt.html" data-i18n="nav.aiPrompt">AI Prompt</a>
+      <a href="ai-skill.html" aria-current="page" data-i18n="nav.richDecks">Rich Decks</a>
+      <a href="index.html#algorithm" data-i18n="nav.algorithm">Algorithm</a>
+      <a href="index.html#guide" data-i18n="nav.guide">Guide</a>
+      <a href="index.html#about" data-i18n="nav.about">About</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__cta" href="index.html#download" aria-label="App Store" data-i18n-attr="aria-label" data-i18n-aria-label="nav.appStore">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
+        <span data-i18n="nav.appStore">App Store</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top" class="prompt-page skill-page">
+
+    <section class="prompt-hero" data-section>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__beam"></div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="prompt-hero__copy">
+        <p class="eyebrow" data-i18n="skill.eyebrow">For Claude Code, Codex, OpenCode &amp; any coding agent</p>
+        <h1 class="display" data-i18n="skill.title">
+          A folder of files.<br/>
+          <em>A rich deck back.</em>
+        </h1>
+        <p class="lede" data-i18n="skill.lede">
+          The AI Prompt page makes quick text-only cards in any chat. This is the other way:
+          add one skill to your AI coding agent and it builds <em>full</em> JustFlip decks —
+          with images, audio and Markdown — straight from the files on your disk. No copy-pasting,
+          no hand-written JSON.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#install" data-i18n="skill.installCta">Install the skill</a>
+          <a class="btn btn--ghost" href="ai-prompt.html" data-i18n="skill.promptCta">Just text? Use the prompt page</a>
+        </div>
+      </div>
+
+      <aside class="prompt-hero__panel">
+        <span class="prompt-hero__panel-kicker" data-i18n="skill.panelKicker">What's different</span>
+        <p data-i18n="skill.panelText">
+          A chat AI returns a text-only <code>.flashcards</code> file. Your coding agent can read
+          local images, audio and notes, so it returns a <code>.flashcards.zip</code> bundle with the
+          media already attached — ready to open in JustFlip.
+        </p>
+      </aside>
+    </section>
+
+    <!-- 01 · Install -->
+    <section class="section section--prompt" id="install" data-section>
+      <header class="section__head">
+        <span class="section__number">01</span>
+        <div>
+          <h2 class="headline" data-i18n="skill.installTitle">Add the JustFlip skill <em>to your agent.</em></h2>
+          <p class="kicker" data-i18n="skill.installKicker">
+            One command installs the <code>justflip-create-flashcards</code> skill into any agent that
+            supports <a href="https://skills.sh" target="_blank" rel="noopener">skills.sh</a>. Run it once
+            in your project, then just ask in plain language.
+          </p>
+        </div>
+      </header>
+
+      <div class="skill-install">
+        <button class="skill-install__cmd" type="button"
+                data-copy-text="npx skills add DanielCech/JustFlip-Skills"
+                data-copied-label="Copied to clipboard"
+                data-copy-fail-label="Press ⌘C to copy"
+                aria-label="Copy install command">
+          <span class="skill-install__prompt" aria-hidden="true">$</span>
+          <code class="skill-install__text">npx skills add DanielCech/JustFlip-Skills</code>
+          <span class="skill-install__copy">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            <span data-copy-label data-i18n="skill.copyButton">Copy</span>
+          </span>
+        </button>
+
+        <div class="skill-points">
+          <article class="skill-point">
+            <span class="skill-point__icon" style="--c:#8fc28a" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z"/></svg>
+            </span>
+            <h3 data-i18n="skill.pointImagesTitle">Images</h3>
+            <p data-i18n="skill.pointImagesText">Attach local photos and diagrams to either side of a card.</p>
+          </article>
+          <article class="skill-point">
+            <span class="skill-point__icon" style="--c:#a1ced7" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+            </span>
+            <h3 data-i18n="skill.pointAudioTitle">Audio</h3>
+            <p data-i18n="skill.pointAudioText">Bundle pronunciation clips and spoken-form hints for TTS.</p>
+          </article>
+          <article class="skill-point">
+            <span class="skill-point__icon" style="--c:#ffcd57" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 5h18v14H3V5zm2 2v10h14V7H5zm2 2h4v2H7V9zm0 4h7v2H7v-2zm9-4h1.5v6H16V9z"/></svg>
+            </span>
+            <h3 data-i18n="skill.pointMarkdownTitle">Markdown &amp; math</h3>
+            <p data-i18n="skill.pointMarkdownText">Rich formatting, code blocks and LaTeX, rendered natively in-app.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · Example session -->
+    <section class="section section--prompt" data-section>
+      <header class="section__head">
+        <span class="section__number">02</span>
+        <div>
+          <h2 class="headline" data-i18n="skill.demoTitle">Point it at a folder. <em>Ask in plain words.</em></h2>
+          <p class="kicker" data-i18n="skill.demoKicker">
+            Say you have a folder of mushroom photos named after each species. Ask your agent to turn the
+            file names into questions and the photos into answers — it reads the folder, builds the deck
+            and packages the images for you.
+          </p>
+        </div>
+      </header>
+
+      <div class="skill-demo">
+        <!-- Terminal mock -->
+        <div class="terminal" role="img" aria-label="Terminal session where a coding agent turns a folder of mushroom photos into a JustFlip deck">
+          <div class="terminal__bar">
+            <span class="terminal__dots" aria-hidden="true">
+              <i style="--c:#e0894a"></i><i style="--c:#ffcd57"></i><i style="--c:#8fc28a"></i>
+            </span>
+            <span class="terminal__title">~/mushrooms — coding agent</span>
+          </div>
+
+          <div class="terminal__body">
+            <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">ls mushrooms/</span></p>
+            <p class="term-line term-out">fly-agaric.jpg&nbsp;&nbsp; chanterelle.jpg&nbsp;&nbsp; porcini.jpg</p>
+            <p class="term-line term-out">morel.jpg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; death-cap.jpg&nbsp;&nbsp;&nbsp; shiitake.jpg</p>
+
+            <p class="term-line term-ask"><span class="term-prompt term-prompt--user">❯</span> <span data-i18n="skill.demoPrompt">This folder contains images of mushrooms. Take the file names as the question text and the mushroom image as the answer. Prepare the flashcards deck.</span></p>
+
+            <p class="term-line term-step"><span class="term-spark">✶</span> <span data-i18n="skill.demoStep1">Reading <code>mushrooms/</code> — found 6 images</span></p>
+            <p class="term-line term-step"><span class="term-spark">✶</span> <span data-i18n="skill.demoStep2">Turning each file name into a question</span></p>
+            <p class="term-line term-step"><span class="term-spark">✶</span> <span data-i18n="skill.demoStep3">Attaching each photo as the answer (<code>a_image</code>)</span></p>
+            <p class="term-line term-step"><span class="term-spark">✶</span> <span data-i18n="skill.demoStep4">Writing <code>content.json</code> + <code>images/</code></span></p>
+            <p class="term-line term-done"><span class="term-check">✓</span> <span data-i18n="skill.demoDone">Wrote <strong>Mushrooms.flashcards.zip</strong> — 6 cards, 6 images</span></p>
+          </div>
+        </div>
+
+        <!-- Output: file + json -->
+        <aside class="skill-output">
+          <a class="skill-file" href="#" aria-disabled="true" onclick="return false;">
+            <span class="skill-file__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5z"/></svg>
+            </span>
+            <span class="skill-file__meta">
+              <strong>Mushrooms.flashcards.zip</strong>
+              <span data-i18n="skill.fileMeta">Open with JustFlip to import · 6 cards</span>
+            </span>
+            <span class="skill-file__badge" data-i18n="skill.fileBadge">ready</span>
+          </a>
+
+          <pre class="skill-json" aria-label="A snippet of the generated content.json"><code><span class="j-p">"format"</span>: <span class="j-s">"flashcard-content"</span>,
+<span class="j-p">"version"</span>: <span class="j-s">"1"</span>,
+<span class="j-p">"interest"</span>: <span class="j-s">"Mycology"</span>,
+<span class="j-p">"deck"</span>: <span class="j-s">"Mushrooms"</span>,
+<span class="j-p">"cards"</span>: [
+  { <span class="j-p">"q"</span>: <span class="j-s">"Fly Agaric"</span>,
+    <span class="j-p">"a_image"</span>: <span class="j-s">"fly-agaric.jpg"</span> },
+  { <span class="j-p">"q"</span>: <span class="j-s">"Chanterelle"</span>,
+    <span class="j-p">"a_image"</span>: <span class="j-s">"chanterelle.jpg"</span> }
+]</code></pre>
+        </aside>
+      </div>
+
+      <!-- Result preview: the cards as they look in the app -->
+      <div class="shroom-result">
+        <p class="shroom-result__label" data-i18n="skill.resultLabel">The deck, as it lands in JustFlip — file name on the front, photo on the back.</p>
+        <div class="shroom-grid">
+          <figure class="shroom-card" style="--cap:#d9745e">
+            <div class="shroom-card__art">
+              <svg class="shroom" viewBox="0 0 140 130" aria-hidden="true">
+                <ellipse cx="70" cy="121" rx="32" ry="6" fill="rgba(0,0,0,.28)"/>
+                <path d="M57 64C53 90 55 107 70 116C85 107 87 90 83 64Z" fill="#f1e6cf"/>
+                <path d="M55 73q15 8 30 0" fill="none" stroke="#dccba8" stroke-width="3" stroke-linecap="round"/>
+                <path d="M20 64C20 30 44 14 70 14C96 14 120 30 120 64C120 64 96 76 70 76C44 76 20 64 20 64Z" fill="var(--cap)"/>
+                <path d="M29 56C31 36 49 22 70 22" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="52" cy="38" r="6" fill="#fff" opacity=".9"/><circle cx="81" cy="34" r="7.5" fill="#fff" opacity=".9"/><circle cx="96" cy="53" r="5" fill="#fff" opacity=".9"/><circle cx="40" cy="55" r="4.5" fill="#fff" opacity=".9"/><circle cx="67" cy="55" r="5.5" fill="#fff" opacity=".9"/>
+              </svg>
+            </div>
+            <figcaption>Fly Agaric</figcaption>
+          </figure>
+
+          <figure class="shroom-card" style="--cap:#f0b54b">
+            <div class="shroom-card__art">
+              <svg class="shroom" viewBox="0 0 140 130" aria-hidden="true">
+                <ellipse cx="70" cy="121" rx="32" ry="6" fill="rgba(0,0,0,.28)"/>
+                <path d="M58 60C52 88 56 108 70 117C84 108 88 88 82 60Z" fill="#f3ead2"/>
+                <path d="M24 62C30 34 48 18 70 18C92 18 110 34 116 62C104 58 92 64 70 64C48 64 36 58 24 62Z" fill="var(--cap)"/>
+                <path d="M40 60C44 40 56 28 70 26" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="4" stroke-linecap="round"/>
+                <path d="M50 62q20 -4 40 0M58 70q12 -3 24 0" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption>Chanterelle</figcaption>
+          </figure>
+
+          <figure class="shroom-card" style="--cap:#b07a4a">
+            <div class="shroom-card__art">
+              <svg class="shroom" viewBox="0 0 140 130" aria-hidden="true">
+                <ellipse cx="70" cy="121" rx="34" ry="6" fill="rgba(0,0,0,.28)"/>
+                <path d="M48 62C44 92 50 110 70 117C90 110 96 92 92 62Z" fill="#efe3c8"/>
+                <path d="M18 60C18 36 40 20 70 20C100 20 122 36 122 60C122 72 96 74 70 74C44 74 18 72 18 60Z" fill="var(--cap)"/>
+                <path d="M30 52C34 36 50 26 70 26" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption>Porcini</figcaption>
+          </figure>
+
+          <figure class="shroom-card" style="--cap:#9a7c58">
+            <div class="shroom-card__art">
+              <svg class="shroom" viewBox="0 0 140 130" aria-hidden="true">
+                <ellipse cx="70" cy="121" rx="28" ry="6" fill="rgba(0,0,0,.28)"/>
+                <path d="M60 72C57 92 60 108 70 116C80 108 83 92 80 72Z" fill="#f1e6cf"/>
+                <path d="M44 70C40 38 54 12 70 12C86 12 100 38 96 70C96 78 82 80 70 80C58 80 44 78 44 70Z" fill="var(--cap)"/>
+                <path d="M56 22q14 6 28 0M50 34q20 8 40 0M48 46q22 9 44 0M48 58q22 9 44 0" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2.4" stroke-linecap="round"/>
+                <path d="M62 16v60M74 16v60" stroke="rgba(0,0,0,.18)" stroke-width="2" />
+              </svg>
+            </div>
+            <figcaption>Morel</figcaption>
+          </figure>
+
+          <figure class="shroom-card" style="--cap:#a8bf8c">
+            <div class="shroom-card__art">
+              <svg class="shroom" viewBox="0 0 140 130" aria-hidden="true">
+                <ellipse cx="70" cy="121" rx="30" ry="6" fill="rgba(0,0,0,.28)"/>
+                <path d="M56 60C50 92 56 110 70 117C84 110 90 92 84 60Z" fill="#f5eeda"/>
+                <path d="M58 78q12 5 24 0" fill="none" stroke="#e3d8bc" stroke-width="3" stroke-linecap="round"/>
+                <path d="M22 60C22 32 44 16 70 16C96 16 118 32 118 60C118 60 96 72 70 72C44 72 22 60 22 60Z" fill="var(--cap)"/>
+                <path d="M30 54C34 36 50 24 70 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption>Death Cap</figcaption>
+          </figure>
+
+          <figure class="shroom-card" style="--cap:#7a5a44">
+            <div class="shroom-card__art">
+              <svg class="shroom" viewBox="0 0 140 130" aria-hidden="true">
+                <ellipse cx="70" cy="121" rx="26" ry="6" fill="rgba(0,0,0,.28)"/>
+                <path d="M61 70C58 90 61 108 70 116C79 108 82 90 79 70Z" fill="#efe3c8"/>
+                <path d="M26 66C26 42 46 24 70 24C94 24 114 42 114 66C114 76 92 78 70 78C48 78 26 76 26 66Z" fill="var(--cap)"/>
+                <path d="M36 60C40 44 54 32 70 32" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="54" cy="50" r="3" fill="rgba(0,0,0,.22)"/><circle cx="86" cy="48" r="3.4" fill="rgba(0,0,0,.22)"/><circle cx="70" cy="58" r="2.6" fill="rgba(0,0,0,.22)"/>
+              </svg>
+            </div>
+            <figcaption>Shiitake</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps + platforms -->
+    <section class="section section--prompt-help" data-section>
+      <div class="prompt-steps">
+        <article>
+          <span>01</span>
+          <h3 data-i18n="skill.step1Title">Install</h3>
+          <p data-i18n="skill.step1Text">Run <code>npx skills add DanielCech/JustFlip-Skills</code> once in your project.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3 data-i18n="skill.step2Title">Ask</h3>
+          <p data-i18n="skill.step2Text">Point the agent at your files and describe the deck you want — in plain language.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3 data-i18n="skill.step3Title">Import</h3>
+          <p data-i18n="skill.step3Text">It writes a <code>.flashcards.zip</code>. Open it with JustFlip and the deck is in.</p>
+        </article>
+      </div>
+
+      <div class="prompt-platforms">
+        <a href="https://claude.com/claude-code" target="_blank" rel="noopener">
+          <span style="--c: #ffcd57">Claude Code</span>
+          <strong data-i18n="skill.platformClaude">Learn more</strong>
+        </a>
+        <a href="https://openai.com/codex" target="_blank" rel="noopener">
+          <span style="--c: #a1ced7">Codex</span>
+          <strong data-i18n="skill.platformCodex">Learn more</strong>
+        </a>
+        <a href="https://opencode.ai" target="_blank" rel="noopener">
+          <span style="--c: #8fc28a">OpenCode</span>
+          <strong data-i18n="skill.platformOpenCode">Learn more</strong>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="about">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="20" height="20">
+            <rect x="4" y="6" width="20" height="22" rx="3" fill="#ffcd57" opacity=".25" transform="rotate(-8 14 17)"/>
+            <rect x="7" y="4" width="20" height="22" rx="3" fill="#ffcd57"/>
+          </svg>
+        </span>
+        <strong>JustFlip!</strong>
+        <span class="footer__tag" data-i18n="footer.tagline">A flashcard companion for lifelong learners.</span>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="index.html#devices" data-i18n="footer.features">Features</a>
+        <a href="index.html#ai" data-i18n="footer.aiDecks">AI Decks</a>
+        <a href="ai-prompt.html" data-i18n="footer.aiPrompt">AI Prompt</a>
+        <a href="ai-skill.html" data-i18n="footer.richDecks">Rich Decks</a>
+        <a href="index.html#algorithm" data-i18n="footer.algorithm">Algorithm</a>
+        <a href="index.html#guide" data-i18n="footer.guide">Guide</a>
+        <a href="index.html#about" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms &amp; Conditions</a>
+        <a href="mailto:daniel.cech@gmail.com" data-i18n="footer.support">Support</a>
+        <a href="mailto:daniel.cech@gmail.com" data-i18n="footer.contact">Contact</a>
+      </nav>
+
+      <p class="footer__copy" data-i18n="footer.copyright">© <span id="year"></span> JustFlip! Crafted in Prague. Apple, the Apple logo, iPhone, iPad and Mac are trademarks of Apple Inc.</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
