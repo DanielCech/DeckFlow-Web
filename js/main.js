@@ -55,6 +55,24 @@
   }
 
   /* ---------------------------------------------------
+   * Deep-link entry (e.g. the iOS app linking straight to
+   * #ai): reveal the targeted section's content right away
+   * so a direct hit never lands on a blank, mid-animation
+   * panel, then make sure it is scrolled into view. Only
+   * runs when the page is opened on a hash — normal in-page
+   * scrolling keeps its fade-up.
+   * ------------------------------------------------- */
+  if (location.hash && location.hash.length > 1) {
+    let target = null;
+    try { target = document.querySelector(location.hash); } catch (_) { target = null; }
+    if (target) {
+      target.classList.add('is-visible');
+      target.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
+      requestAnimationFrame(() => target.scrollIntoView());
+    }
+  }
+
+  /* ---------------------------------------------------
    * Algorithm illustration: count-up ring + urgency cycle.
    * Mirrors the onboarding progress/urgency panel.
    * ------------------------------------------------- */
