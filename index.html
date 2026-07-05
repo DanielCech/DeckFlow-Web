@@ -37,9 +37,9 @@
       <a href="#ai" data-i18n="nav.aiDecks">AI Decks</a>
       <a href="ai-prompt.html" data-i18n="nav.aiPrompt">AI Prompt</a>
       <a href="ai-skill.html" data-i18n="nav.richDecks">Rich Decks</a>
+      <a href="learning.html" data-i18n="nav.learning">Learning</a>
       <a href="#algorithm" data-i18n="nav.algorithm">Algorithm</a>
-      <a href="#guide" data-i18n="nav.guide">Guide</a>
-      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
     </nav>
 
     <div class="nav__actions">
@@ -61,8 +61,9 @@
       <li data-target="science"><em data-i18n="rail.science">Science</em><span>06</span></li>
       <li data-target="markdown"><em data-i18n="rail.markdown">Markdown</em><span>07</span></li>
       <li data-target="audio"><em data-i18n="rail.listen">Listen</em><span>08</span></li>
-      <li data-target="theme"><em data-i18n="rail.dayNight">Day / Night</em><span>09</span></li>
-      <li data-target="access"><em data-i18n="rail.access">Everyone</em><span>10</span></li>
+      <li data-target="glance"><em data-i18n="rail.glance">Glance</em><span>09</span></li>
+      <li data-target="theme"><em data-i18n="rail.dayNight">Day / Night</em><span>10</span></li>
+      <li data-target="access"><em data-i18n="rail.access">Everyone</em><span>11</span></li>
     </ol>
   </aside>
 
@@ -476,10 +477,98 @@
       </div>
     </section>
 
+    <!-- Glance / Today review + Widgets -->
+    <section class="section section--glance" id="glance" data-section>
+      <header class="section__head section__head--right">
+        <span class="section__number">09</span>
+        <div>
+          <h2 class="headline" data-i18n="glance.title">Your day, <em>at a glance.</em></h2>
+          <p class="kicker" data-i18n="glance.kicker">
+            Open your Mac and JustFlip! greets you with today's review — what's due,
+            what's new, and a single warm tap to begin. On iPhone and iPad, Lock Screen
+            and Home Screen widgets keep your due count, your streak and your week's
+            rhythm a glance away — so the next five minutes are never more than a look
+            from where you already are.
+          </p>
+        </div>
+      </header>
+
+      <div class="glance">
+        <div class="glance__stage" role="img" data-i18n-attr="aria-label" data-i18n-aria-label="glance.stageLabel" aria-label="The macOS today-review panel beside iPhone Lock Screen and Home Screen widgets">
+          <div class="glance__glow" aria-hidden="true"></div>
+
+          <!-- macOS — today's review -->
+          <figure class="glance__mac">
+            <div class="glance__mac-inner" data-parallax="0.025">
+              <img class="glance__mac-shot" src="images/today-review-panel.png" alt="" width="1067" height="713" loading="lazy">
+            </div>
+          </figure>
+
+          <!-- iPhone widgets -->
+          <div class="glance__phones" aria-hidden="true">
+            <figure class="glance__phone glance__phone--home">
+              <div class="glance__phone-inner" data-parallax="-0.05">
+                <img src="images/widget2.png" alt="" width="1206" height="2622" loading="lazy">
+              </div>
+            </figure>
+            <figure class="glance__phone glance__phone--lock">
+              <div class="glance__phone-inner" data-parallax="0.07">
+                <img src="images/widget1.png" alt="" width="1206" height="2622" loading="lazy">
+              </div>
+            </figure>
+          </div>
+
+          <!-- Floating glass callouts over the empty canvas -->
+          <div class="glance__chip glance__chip--streak" aria-hidden="true">
+            <div class="glance__chip-inner" data-parallax="0.1">
+              <span class="glance__flame">🔥</span>
+              <span class="glance__chip-figure">
+                <span class="glance__chip-num">6</span>
+                <span class="glance__chip-cap" data-i18n="glance.streak">day streak</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="glance__chip glance__chip--week" aria-hidden="true">
+            <div class="glance__chip-inner" data-parallax="-0.07">
+              <span class="glance__bars">
+                <span style="--h:34%"></span>
+                <span style="--h:56%"></span>
+                <span style="--h:42%"></span>
+                <span class="is-today" style="--h:100%"></span>
+                <span style="--h:64%"></span>
+                <span style="--h:26%"></span>
+                <span style="--h:48%"></span>
+              </span>
+              <span class="glance__chip-cap glance__chip-cap--block" data-i18n="glance.week">This week</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glance__points">
+          <div class="tile glance__point">
+            <span class="tile__num" data-i18n="glance.todayTag">Today's review</span>
+            <h3 data-i18n="glance.todayTitle">Open to what matters</h3>
+            <p data-i18n="glance.todayDesc">The Mac welcomes you with today's review — a daily amount that adapts to how much you actually learn — and starts the session in a single tap.</p>
+          </div>
+          <div class="tile glance__point">
+            <span class="tile__num" data-i18n="glance.lockTag">Lock Screen</span>
+            <h3 data-i18n="glance.lockTitle">A glance before you unlock</h3>
+            <p data-i18n="glance.lockDesc">Cards due and your running streak sit quietly on the Lock Screen, nudging you toward five honest minutes.</p>
+          </div>
+          <div class="tile glance__point">
+            <span class="tile__num" data-i18n="glance.homeTag">Home Screen</span>
+            <h3 data-i18n="glance.homeTitle">A week at a size that fits</h3>
+            <p data-i18n="glance.homeDesc">A Home Screen widget charts your week, so progress stays in view between everything else you opened the phone for.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Dark / Light -->
     <section class="section section--theme" id="theme" data-section>
       <header class="section__head section__head--right">
-        <span class="section__number">09</span>
+        <span class="section__number">10</span>
         <div>
           <h2 class="headline" data-i18n="theme.title">Dark by candlelight.<br/><em>Light by morning.</em></h2>
           <p class="kicker" data-i18n="theme.kicker">
@@ -503,7 +592,7 @@
     <!-- Accessibility / For everyone -->
     <section class="section section--access" id="access" data-section>
       <header class="section__head">
-        <span class="section__number">10</span>
+        <span class="section__number">11</span>
         <div>
           <h2 class="headline" data-i18n="access.title">Learning, <em>for every learner.</em></h2>
           <p class="kicker" data-i18n="access.kicker">
@@ -566,7 +655,7 @@
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
             <span data-i18n="cta.download">Download on the App Store</span>
           </a>
-          <a class="btn btn--ghost" href="#about" data-i18n="cta.readGuide">Read the guide</a>
+          <a class="btn btn--ghost" href="learning.html" data-i18n="cta.readGuide">Read the guide</a>
         </div>
         <p class="cta__langs" data-i18n="cta.langs">Available in <strong>English</strong>, <strong>Deutsch</strong>, <strong>Español</strong>, <strong>Français</strong>, <strong>Italiano</strong>, <strong>Português (Brasil)</strong>, <strong>日本語</strong>, <strong>한국어</strong> &amp; <strong>Čeština</strong>.</p>
       </div>
@@ -592,9 +681,9 @@
         <a href="#ai" data-i18n="footer.aiDecks">AI Decks</a>
         <a href="ai-prompt.html" data-i18n="footer.aiPrompt">AI Prompt</a>
         <a href="ai-skill.html" data-i18n="footer.richDecks">Rich Decks</a>
+        <a href="learning.html" data-i18n="footer.learning">Learning</a>
         <a href="#algorithm" data-i18n="footer.algorithm">Algorithm</a>
-        <a href="#guide" data-i18n="footer.guide">Guide</a>
-        <a href="#about" data-i18n="footer.about">About</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
         <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
         <a href="terms.html" data-i18n="footer.terms">Terms &amp; Conditions</a>
         <a href="mailto:daniel.cech@gmail.com" data-i18n="footer.support">Support</a>

@@ -29,6 +29,7 @@
       '.eyebrow, .display, .headline, .lede, .kicker, .hero__actions, .hero__meta, ' +
       '.placeholder, .algo__visual, .tile, .algo__flow li, .algo__formula, .markdown__sample, ' +
       '.science__chart, .science__quote, ' +
+      '.article-prose, .learning-callout, ' +
       '.widget, .split, .duo__chips, .cta, ' +
       '.float-pill, .ai__terminal, .ai__panel, .ai__note, ' +
       '.prompt-hero__panel, .prompt-editor, .prompt-steps, .prompt-platforms'
