@@ -31,8 +31,10 @@
       '.science__chart, .science__quote, ' +
       '.article-prose, .learning-callout, ' +
       '.widget, .split, .duo__chips, .cta, ' +
-      '.float-pill, .ai__terminal, .ai__panel, .ai__note, ' +
-      '.prompt-hero__panel, .prompt-editor, .prompt-steps, .prompt-platforms'
+      '.float-pill, .ai__terminal, .ai__panel, .ai__note, .ai__flow li, ' +
+      '.prompt-hero__panel, .prompt-editor, .prompt-steps, .prompt-platforms, ' +
+      '.adv-card, .report-card, .tracker-card, .stat-mini, .heatmap, ' +
+      '.spoken-demo, .code-compare, .import-flow, .safety-panel'
     );
     candidates.forEach((el, i) => {
       el.setAttribute('data-reveal', '');

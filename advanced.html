@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#131313" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <title data-i18n="advanced.metaTitle">JustFlip! Advanced — Ask AI, progress trackers, statistics &amp; more</title>
+  <meta name="description" content="Seven tools for people who study seriously: Ask AI tutoring built from your own stats, progress trackers for skills SRS can't grade, real statistics, spoken-form control, code syntax highlighting, CSV/Anki import and automatic backup." data-i18n-attr="content" data-i18n-content="advanced.metaDescription" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="index.html#top" aria-label="JustFlip! - home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="images/Icon.png" alt="" width="26" height="26">
+      </span>
+      <span class="nav__name">JustFlip!</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#devices" data-i18n="nav.features">Features</a>
+      <a href="index.html#ai" data-i18n="nav.aiDecks">AI Decks</a>
+      <a href="ai-prompt.html" data-i18n="nav.aiPrompt">AI Prompt</a>
+      <a href="ai-skill.html" data-i18n="nav.richDecks">Rich Decks</a>
+      <a href="learning.html" data-i18n="nav.learning">Learning</a>
+      <a href="advanced.html" aria-current="page" data-i18n="nav.advanced">Advanced</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__cta" href="https://apps.apple.com/cz/app/justflip-flashcards-learning/id6770141421?mt=12" target="_blank" rel="noopener" aria-label="App Store" data-i18n-attr="aria-label" data-i18n-aria-label="nav.appStore">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
+        <span data-i18n="nav.appStore">App Store</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top" class="prompt-page advanced-page">
+
+    <!-- Hero -->
+    <section class="prompt-hero" data-section>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__beam"></div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="prompt-hero__copy">
+        <p class="eyebrow" data-i18n="advanced.eyebrow">Beyond the basics</p>
+        <h1 class="display" data-i18n="advanced.title">
+          JustFlip!, taken further.<br/>
+          <em>For learners who never stop.</em>
+        </h1>
+        <p class="lede" data-i18n="advanced.lede">
+          Underneath the flip is a growing set of tools for people who study seriously: your
+          own AI tutor briefed on exactly what you're struggling with, tracking for skills no
+          test can grade, a clear picture of how your memory is really trending, cards that say
+          precisely what you tell them to, code that reads like code, decks you already own
+          elsewhere, and a backup story that never leaves your progress to chance.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#ask-ai" data-i18n="advanced.exploreCta">See what's new</a>
+          <a class="btn btn--ghost" href="index.html#download" data-i18n="advanced.downloadCta">Get JustFlip!</a>
+        </div>
+      </div>
+
+      <aside class="prompt-hero__panel">
+        <span class="prompt-hero__panel-kicker" data-i18n="advanced.panelKicker">Still your call</span>
+        <p data-i18n="advanced.panelText">
+          None of this hands your data to a black box. Ask AI leaves the app only when you tap
+          Copy or Share, progress trackers never touch your review queue or statistics, and
+          backups sit quietly in your own iCloud Drive. Advanced doesn't mean less control —
+          it means more of it.
+        </p>
+      </aside>
+    </section>
+
+    <!-- Overview map -->
+    <section class="section section--prompt-help" data-section>
+      <header class="section__head section__head--flush">
+        <div>
+          <h2 class="headline" data-i18n="advanced.gridTitle">Seven ways to go <em>further.</em></h2>
+          <p class="kicker" data-i18n="advanced.gridKicker">A quick map of what's below — tap anything to jump to it.</p>
+        </div>
+      </header>
+
+      <div class="adv-grid">
+        <a class="adv-card" href="#ask-ai">
+          <span class="adv-card__icon" style="--c:#ffcd57" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+          </span>
+          <h3 data-i18n="advanced.gridAskTitle">Ask AI</h3>
+          <p data-i18n="advanced.gridAskText">Turn your mastered and missed cards into a tutoring session with your own AI.</p>
+        </a>
+        <a class="adv-card" href="#progress-trackers">
+          <span class="adv-card__badge badge-pro badge-pro--floating" data-i18n="advanced.badgePro">Pro</span>
+          <span class="adv-card__icon" style="--c:#8fc28a" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><rect x="4" y="14" width="4" height="7" fill="currentColor"/><rect x="10" y="9" width="4" height="12" fill="currentColor"/><rect x="16" y="4" width="4" height="17" fill="currentColor"/></svg>
+          </span>
+          <h3 data-i18n="advanced.gridTrackersTitle">Progress trackers</h3>
+          <p data-i18n="advanced.gridTrackersText">Track guitar songs, gym routines or any skill a flashcard can't grade.</p>
+        </a>
+        <a class="adv-card" href="#advanced-statistics">
+          <span class="adv-card__badge badge-pro badge-pro--floating" data-i18n="advanced.badgePro">Pro</span>
+          <span class="adv-card__icon" style="--c:#a1ced7" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-10"/><circle cx="21" cy="5" r="2" fill="currentColor"/></svg>
+          </span>
+          <h3 data-i18n="advanced.gridStatsTitle">Advanced statistics</h3>
+          <p data-i18n="advanced.gridStatsText">Retention trends, a streak heatmap, deck difficulty and a review forecast.</p>
+        </a>
+        <a class="adv-card" href="#spoken-cards">
+          <span class="adv-card__icon" style="--c:#d9745e" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 9v6h4l5 5V4L8 9H4z"/><path stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" d="M16.5 8.5a5 5 0 0 1 0 7"/></svg>
+          </span>
+          <h3 data-i18n="advanced.gridSpokenTitle">Spoken, your way</h3>
+          <p data-i18n="advanced.gridSpokenText">Write "iOS", have it read as "eye oh ess" — you decide what's spoken.</p>
+        </a>
+        <a class="adv-card" href="#code-highlighting">
+          <span class="adv-card__icon" style="--c:#ffcd57" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M8 6L3 12l5 6M16 6l5 6-5 6"/></svg>
+          </span>
+          <h3 data-i18n="advanced.gridCodeTitle">Code that reads like code</h3>
+          <p data-i18n="advanced.gridCodeText">Fenced code blocks get real syntax colors across 18+ languages.</p>
+        </a>
+        <a class="adv-card" href="#import">
+          <span class="adv-card__icon" style="--c:#8fc28a" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M12 3v10M8 9l4 4 4-4M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
+          </span>
+          <h3 data-i18n="advanced.gridImportTitle">Bring what you already have</h3>
+          <p data-i18n="advanced.gridImportText">Import decks straight from a CSV spreadsheet or an Anki export.</p>
+        </a>
+        <a class="adv-card" href="#data-safety">
+          <span class="adv-card__icon" style="--c:#a1ced7" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7 18a4 4 0 0 1-.5-7.97A5 5 0 0 1 16 8.06 4.5 4.5 0 0 1 17.5 18H7Z"/><path stroke="var(--surface-low)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M9 13l2 2 4-4"/></svg>
+          </span>
+          <h3 data-i18n="advanced.gridBackupTitle">Your data, always safe</h3>
+          <p data-i18n="advanced.gridBackupText">Sync, automatic backups and a 30-day undo — three independent layers.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 01 · Ask AI -->
+    <section class="section section--prompt" id="ask-ai" data-section>
+      <header class="section__head">
+        <span class="section__number">01</span>
+        <div>
+          <h2 class="headline" data-i18n="advanced.askTitle">Ask your own AI — <em>with real context.</em></h2>
+          <p class="kicker" data-i18n="advanced.askKicker">
+            After a while, JustFlip! knows something no chat AI does: exactly which cards
+            you've mastered and which ones you keep missing. Ask AI turns that into a clean,
+            readable report — hand it to ChatGPT, Claude or Gemini and get tutoring that
+            actually knows your gaps. <strong>JustFlip! never calls any AI itself</strong> —
+            it only ever prepares the report; you choose if and where it goes.
+          </p>
+        </div>
+      </header>
+
+      <div class="ask-layout">
+        <ul class="ai__flow ask-modes">
+          <li><strong data-i18n="advanced.askMode1Title">Teach me the prerequisites</strong> <em data-i18n="advanced.askMode1Text">— identify the background knowledge behind what you keep failing, and teach it from the ground up.</em></li>
+          <li><strong data-i18n="advanced.askMode2Title">Explain what I keep getting wrong</strong> <em data-i18n="advanced.askMode2Text">— focused explanations and mnemonics for your struggling cards.</em></li>
+          <li><strong data-i18n="advanced.askMode3Title">Recommend sources</strong> <em data-i18n="advanced.askMode3Text">— books, docs and courses ordered by your actual gaps.</em></li>
+          <li><strong data-i18n="advanced.askMode4Title">Create cards for my gaps</strong> <em data-i18n="advanced.askMode4Text">— get new cards back in JustFlip's import format and close the loop.</em></li>
+        </ul>
+
+        <div class="report-card" role="img" aria-label="A generated study report, showing mastery stats and a struggling card, ready to copy into any chat AI">
+          <div class="report-card__head">
+            <span class="report-card__dot" aria-hidden="true"></span>
+            <span data-i18n="advanced.reportFileName">Study Report — Android Basics.md</span>
+          </div>
+          <div class="report-card__bar-row">
+            <div class="report-card__bar"><span style="--p:68%"></span></div>
+            <span class="report-card__stat" data-i18n="advanced.reportStat">68% retention</span>
+          </div>
+          <pre class="report-card__doc" aria-hidden="true"><code><span class="rc-h">## Cards you keep missing</span>
+### What triggers onCreate() twice?
+<strong>Answer:</strong> A configuration change (e.g. rotation)
+recreates the Activity by default.
+<em>Stats: failed 4 of 6 · ease 1.8 · avg 21s</em>
+
+<span class="rc-h">## Cards you've mastered</span>
+- What is a Fragment?
+- What does findViewById do?
+- …and 23 more</code></pre>
+          <div class="report-card__dest">
+            <span data-i18n="advanced.reportDestLabel">Copy once, paste anywhere</span>
+            <div class="report-card__dest-chips" aria-hidden="true">
+              <span>ChatGPT</span><span>Claude</span><span>Gemini</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="report-note">
+        <span class="badge-pro" data-i18n="advanced.badgePro">Pro</span>
+        <span data-i18n="advanced.askProNote">Single-card reports are free. Full deck and interest reports — the ones that reveal your whole failure pattern — are part of JustFlip! Pro.</span>
+      </p>
+    </section>
+
+    <!-- 02 · Progress Trackers -->
+    <section class="section section--prompt" id="progress-trackers" data-section>
+      <header class="section__head section__head--right">
+        <span class="section__number">02</span>
+        <div>
+          <h2 class="headline" data-i18n="advanced.trackTitle">Track what a test <em>can't grade.</em></h2>
+          <p class="kicker" data-i18n="advanced.trackKicker">
+            Some things aren't a recall problem: a guitar repertoire, a gym routine, a long-running
+            project. A progress tracker lives right inside your deck as a name and a self-judged
+            completion bar — you move the slider, nobody quizzes you. Trackers are strictly
+            outside spaced repetition: they never enter your review queue, never affect streaks
+            or due counts, and blend gently into deck mastery so a "Songs" deck reads its real
+            progress instead of 0%.
+          </p>
+          <span class="badge-pro" data-i18n="advanced.badgePro">Pro</span>
+        </div>
+      </header>
+
+      <div class="tracker-card">
+        <div class="tracker-card__head">
+          <strong data-i18n="advanced.trackDeckName">Guitar Repertoire</strong>
+          <span data-i18n="advanced.trackDeckMeta">3 trackers · self-evaluated</span>
+        </div>
+        <div class="tracker-row">
+          <span class="tracker-row__name" data-i18n="advanced.trackSong1">Blackbird — fingerpicking</span>
+          <span class="tracker-row__pct">60%</span>
+          <span class="tracker-row__bar"><span style="--p:60%"></span></span>
+        </div>
+        <div class="tracker-row">
+          <span class="tracker-row__name" data-i18n="advanced.trackSong2">Landslide — full arrangement</span>
+          <span class="tracker-row__pct">85%</span>
+          <span class="tracker-row__bar"><span style="--p:85%"></span></span>
+        </div>
+        <div class="tracker-row">
+          <span class="tracker-row__name" data-i18n="advanced.trackSong3">Wonderwall — chord transitions</span>
+          <span class="tracker-row__pct">35%</span>
+          <span class="tracker-row__bar"><span style="--p:35%"></span></span>
+        </div>
+        <div class="tracker-detail" aria-hidden="true">
+          <span class="tracker-detail__pct">60%</span>
+          <span class="tracker-detail__slider"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · Advanced Statistics -->
+    <section class="section section--prompt" id="advanced-statistics" data-section>
+      <header class="section__head">
+        <span class="section__number">03</span>
+        <div>
+          <h2 class="headline" data-i18n="advanced.statsTitle">See your memory, <em>not just your streak.</em></h2>
+          <p class="kicker" data-i18n="advanced.statsKicker">
+            A deeper statistics screen turns your review history into an honest picture: is
+            retention actually improving, is a backlog building, which decks are genuinely
+            hard? It's built to answer "am I learning better, not just more," not to decorate
+            a dashboard with vanity numbers.
+          </p>
+          <span class="badge-pro" data-i18n="advanced.badgePro">Pro</span>
+        </div>
+      </header>
+
+      <div class="stat-mini">
+        <div class="science">
+          <figure class="science__chart" aria-label="Chart showing retention trending upward over the last 90 days, with mature-card retention above overall retention" data-i18n-attr="aria-label" data-i18n-aria-label="advanced.statsChartLabel">
+            <div class="science__legend" aria-hidden="true">
+              <span class="science__legend-item science__legend-item--spaced" data-i18n="advanced.statsChartMature">Mature retention</span>
+              <span class="science__legend-item science__legend-item--cram" data-i18n="advanced.statsChartOverall">Overall retention</span>
+            </div>
+            <svg class="science__svg" viewBox="0 0 660 260" role="presentation" aria-hidden="true">
+              <defs>
+                <linearGradient id="science-line-gradient" x1="60" y1="0" x2="620" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ffedd1" />
+                  <stop offset="55%" stop-color="#f0c04b" />
+                  <stop offset="100%" stop-color="#ffcd57" />
+                </linearGradient>
+              </defs>
+              <line class="science__axis" x1="60" y1="18" x2="60" y2="222" />
+              <line class="science__axis" x1="60" y1="222" x2="628" y2="222" />
+              <path class="science__line science__line--cram" pathLength="1" d="M60,150 C 160,140 260,120 360,110 C 460,100 550,88 620,80" />
+              <path class="science__line science__line--spaced" pathLength="1" stroke="url(#science-line-gradient)" d="M60,130 C 160,110 260,96 360,70 C 460,52 550,44 620,34" />
+              <circle class="science__dot" cx="60" cy="130" r="5" />
+              <circle class="science__dot" cx="360" cy="70" r="5" />
+              <circle class="science__dot" cx="620" cy="34" r="5" />
+            </svg>
+            <span class="science__axis-label science__axis-label--y" data-i18n="advanced.statsChartY">Retention</span>
+            <span class="science__axis-label science__axis-label--x" data-i18n="advanced.statsChartX">Last 90 days</span>
+            <p class="science__chart-note" data-i18n="advanced.statsChartNote">Mature retention up 7 points since your last dip.</p>
+          </figure>
+
+          <div class="stat-mini__side">
+            <div class="heatmap" aria-label="Study calendar heatmap, darker squares mean more reviews that day" role="img">
+              <span style="--i:1" data-lvl="1"></span><span style="--i:2" data-lvl="2"></span><span style="--i:3" data-lvl="0"></span><span style="--i:4" data-lvl="3"></span><span style="--i:5" data-lvl="2"></span><span style="--i:6" data-lvl="4"></span><span style="--i:7" data-lvl="1"></span>
+              <span style="--i:8" data-lvl="2"></span><span style="--i:9" data-lvl="3"></span><span style="--i:10" data-lvl="1"></span><span style="--i:11" data-lvl="0"></span><span style="--i:12" data-lvl="2"></span><span style="--i:13" data-lvl="4"></span><span style="--i:14" data-lvl="3"></span>
+              <span style="--i:15" data-lvl="2"></span><span style="--i:16" data-lvl="1"></span><span style="--i:17" data-lvl="3"></span><span style="--i:18" data-lvl="4"></span><span style="--i:19" data-lvl="2"></span><span style="--i:20" data-lvl="1"></span><span style="--i:21" data-lvl="0"></span>
+            </div>
+            <p class="heatmap__caption" data-i18n="advanced.statsHeatmapCaption">14-day streak · darker means more reviews</p>
+          </div>
+        </div>
+
+        <div class="learning-points">
+          <div class="tile">
+            <span class="tile__num" data-i18n="advanced.statsTile1Tag">Retention trends</span>
+            <h3 data-i18n="advanced.statsTile1Title">Are you actually improving?</h3>
+            <p data-i18n="advanced.statsTile1Text">Overall vs. mature retention over 7/30/90 days — the number that matters more than any streak.</p>
+          </div>
+          <div class="tile">
+            <span class="tile__num" data-i18n="advanced.statsTile2Tag">Streak &amp; heatmap</span>
+            <h3 data-i18n="advanced.statsTile2Title">A habit you can see</h3>
+            <p data-i18n="advanced.statsTile2Text">A GitHub-style calendar of every study day, plus your current and longest streak.</p>
+          </div>
+          <div class="tile">
+            <span class="tile__num" data-i18n="advanced.statsTile3Tag">Difficulty &amp; forecast</span>
+            <h3 data-i18n="advanced.statsTile3Title">Know what's coming</h3>
+            <p data-i18n="advanced.statsTile3Text">A ranked view of your hardest decks, and how many cards are due over the next 7 or 30 days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Spoken Cards -->
+    <section class="section section--prompt" id="spoken-cards" data-section>
+      <header class="section__head section__head--right">
+        <span class="section__number">04</span>
+        <div>
+          <h2 class="headline" data-i18n="advanced.spokenTitle">Hear cards <em>exactly how you wrote them to sound.</em></h2>
+          <p class="kicker" data-i18n="advanced.spokenKicker">
+            JustFlip! already reads your cards aloud. The advanced part is control: any word,
+            formula or image can carry its own spoken form, separate from what's shown on the
+            card. Write the abbreviation, spell out the pronunciation — text-to-speech says
+            what you meant, not just what's on the page.
+          </p>
+        </div>
+      </header>
+
+      <div class="spoken-demo">
+        <div class="spoken-demo__card">
+          <span class="spoken-demo__label" data-i18n="advanced.spokenWrittenLabel">Written on the card</span>
+          <p class="spoken-demo__text">Do you know how to enable <strong>iOS</strong> background app refresh?</p>
+        </div>
+        <div class="spoken-demo__arrow" aria-hidden="true">→</div>
+        <div class="spoken-demo__card spoken-demo__card--spoken">
+          <span class="spoken-demo__label" data-i18n="advanced.spokenSaidLabel">What JustFlip! says out loud</span>
+          <p class="spoken-demo__text">"Do you know how to enable <em>eye oh ess</em> background app refresh?"</p>
+        </div>
+      </div>
+      <pre class="spoken-demo__markup" aria-hidden="true"><code>Do you know how to enable [iOS]{eye oh ess} background app refresh?</code></pre>
+
+      <p class="report-note">
+        <span class="badge-pro" data-i18n="advanced.badgePro">Pro</span>
+        <span data-i18n="advanced.spokenProNote">Writing spoken overrides is free. Background listening — a Live Activity that keeps a deck playing on your Lock Screen while you walk, cook or drive — is part of JustFlip! Pro.</span>
+      </p>
+    </section>
+
+    <!-- 05 · Code Syntax Highlighting -->
+    <section class="section section--prompt" id="code-highlighting" data-section>
+      <header class="section__head">
+        <span class="section__number">05</span>
+        <div>
+          <h2 class="headline" data-i18n="advanced.codeTitle">Code that <em>reads like code.</em></h2>
+          <p class="kicker" data-i18n="advanced.codeKicker">
+            Fenced code blocks in your cards get real semantic highlighting — keywords, strings,
+            comments, numbers, types and function names, each their own color — across Swift,
+            Python, JavaScript/TypeScript, Java, Kotlin, C/C++/C#, Go, Rust, Ruby, PHP, SQL,
+            Bash, JSON, YAML and more. No third-party library, no setup: just fence your code
+            with a language tag.
+          </p>
+        </div>
+      </header>
+
+      <div class="code-compare">
+        <div>
+          <span class="code-compare__label" data-i18n="advanced.codePlainLabel">Plain fence</span>
+          <pre><code>func retentionRate(_ reviews: [Review]) -> Double {
+    // share of reviews graded good or easy
+    let good = reviews.filter { $0.grade >= 2 }.count
+    return Double(good) / Double(reviews.count)
+}</code></pre>
+        </div>
+        <div>
+          <span class="code-compare__label" data-i18n="advanced.codeHighlightedLabel">```swift — highlighted</span>
+          <pre><code><span class="tok-keyword">func</span> <span class="tok-function">retentionRate</span>(_ reviews: [<span class="tok-type">Review</span>]) -&gt; <span class="tok-type">Double</span> {
+    <span class="tok-comment">// share of reviews graded good or easy</span>
+    <span class="tok-keyword">let</span> good = reviews.<span class="tok-function">filter</span> { $0.grade &gt;= <span class="tok-number">2</span> }.count
+    <span class="tok-keyword">return</span> <span class="tok-type">Double</span>(good) / <span class="tok-type">Double</span>(reviews.count)
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · Import -->
+    <section class="section section--prompt" id="import" data-section>
+      <header class="section__head section__head--right">
+        <span class="section__number">06</span>
+        <div>
+          <h2 class="headline" data-i18n="advanced.importTitle">Bring what you <em>already have.</em></h2>
+          <p class="kicker" data-i18n="advanced.importKicker">
+            Switching from a spreadsheet or from Anki shouldn't mean retyping years of cards.
+            Drop in a CSV — or an Anki export — and JustFlip! reads it directly: no AI step,
+            no reformatting, just your existing decks, in your library.
+          </p>
+        </div>
+      </header>
+
+      <div class="import-flow">
+        <a class="skill-file" href="#" aria-disabled="true" onclick="return false;">
+          <span class="skill-file__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 5h18v14H3V5zm2 2v10h14V7H5zm2 2h4v2H7V9zm0 4h7v2H7v-2zm9-4h1.5v6H16V9z"/></svg>
+          </span>
+          <span class="skill-file__meta">
+            <strong data-i18n="advanced.importCsvName">SpanishVocabulary.csv</strong>
+            <span data-i18n="advanced.importCsvMeta">Two-column spreadsheet · 48 cards</span>
+          </span>
+          <span class="skill-file__badge" data-i18n="advanced.importReady">ready</span>
+        </a>
+        <a class="skill-file" href="#" aria-disabled="true" onclick="return false;">
+          <span class="skill-file__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5z"/></svg>
+          </span>
+          <span class="skill-file__meta">
+            <strong data-i18n="advanced.importAnkiName">Biology101.apkg</strong>
+            <span data-i18n="advanced.importAnkiMeta">Anki export · 186 cards, incl. media</span>
+          </span>
+          <span class="skill-file__badge" data-i18n="advanced.importReady">ready</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 07 · Data Safety -->
+    <section class="section section--prompt" id="data-safety" data-section>
+      <header class="section__head">
+        <span class="section__number">07</span>
+        <div>
+          <h2 class="headline" data-i18n="advanced.safetyTitle">Your progress is the one thing <em>that can't be re-typed.</em></h2>
+          <p class="kicker" data-i18n="advanced.safetyKicker">
+            Card content can always be re-imported. Every response, interval and ease factor
+            cannot. That's why data safety isn't one feature — it's three independent layers:
+            live iCloud sync across your devices, silent automatic backups to your own iCloud
+            Drive, and a manual export you can trigger any time. Delete something by accident?
+            It waits 30 days in Recently Deleted before it's ever really gone.
+          </p>
+        </div>
+      </header>
+
+      <div class="safety-panel">
+        <div class="safety-panel__head">
+          <span class="safety-panel__title" data-i18n="advanced.safetyPanelTitle">Data Safety</span>
+        </div>
+        <div class="safety-row">
+          <span class="safety-row__label" data-i18n="advanced.safetyRow1Label">iCloud Sync</span>
+          <span class="safety-row__value"><span class="safety-dot" aria-hidden="true"></span> <span data-i18n="advanced.safetyRow1Value">Up to date</span></span>
+        </div>
+        <div class="safety-row">
+          <span class="safety-row__label" data-i18n="advanced.safetyRow2Label">Last full backup</span>
+          <span class="safety-row__value" data-i18n="advanced.safetyRow2Value">Today, 02:14</span>
+        </div>
+        <div class="safety-row">
+          <span class="safety-row__label" data-i18n="advanced.safetyRow3Label">Last progress snapshot</span>
+          <span class="safety-row__value" data-i18n="advanced.safetyRow3Value">1 hour ago</span>
+        </div>
+        <div class="safety-row">
+          <span class="safety-row__label" data-i18n="advanced.safetyRow4Label">Backup location</span>
+          <span class="safety-row__value" data-i18n="advanced.safetyRow4Value">iCloud Drive</span>
+        </div>
+        <div class="safety-row">
+          <span class="safety-row__label" data-i18n="advanced.safetyRow5Label">Recently Deleted</span>
+          <span class="safety-row__value" data-i18n="advanced.safetyRow5Value">2 items ›</span>
+        </div>
+        <div class="safety-panel__actions" aria-hidden="true">
+          <span class="btn btn--primary btn--sm" data-i18n="advanced.safetyActionExport">Export Backup Now</span>
+          <span class="btn btn--ghost btn--sm" data-i18n="advanced.safetyActionRestore">Restore from Backup…</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--cta" data-section>
+      <div class="cta">
+        <p class="eyebrow" data-i18n="advanced.ctaEyebrow">Seven ways to go further</p>
+        <h2 class="display display--sm" data-i18n="advanced.ctaTitle">Advanced, without the noise.</h2>
+        <p class="lede" data-i18n="advanced.ctaLede">
+          Every one of these stays true to the same idea: JustFlip! reports, tracks and backs
+          up in the background — you decide what leaves the app, and when.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://apps.apple.com/cz/app/justflip-flashcards-learning/id6770141421?mt=12" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
+            <span data-i18n="cta.download">Download on the App Store</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="about">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="20" height="20">
+            <rect x="4" y="6" width="20" height="22" rx="3" fill="#ffcd57" opacity=".25" transform="rotate(-8 14 17)"/>
+            <rect x="7" y="4" width="20" height="22" rx="3" fill="#ffcd57"/>
+          </svg>
+        </span>
+        <strong>JustFlip!</strong>
+        <span class="footer__tag" data-i18n="footer.tagline">A flashcard companion for lifelong learners.</span>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="index.html#devices" data-i18n="footer.features">Features</a>
+        <a href="index.html#ai" data-i18n="footer.aiDecks">AI Decks</a>
+        <a href="ai-prompt.html" data-i18n="footer.aiPrompt">AI Prompt</a>
+        <a href="ai-skill.html" data-i18n="footer.richDecks">Rich Decks</a>
+        <a href="learning.html" data-i18n="footer.learning">Learning</a>
+        <a href="advanced.html" data-i18n="footer.advanced">Advanced</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms &amp; Conditions</a>
+        <a href="mailto:daniel.cech@gmail.com" data-i18n="footer.support">Support</a>
+        <a href="mailto:daniel.cech@gmail.com" data-i18n="footer.contact">Contact</a>
+      </nav>
+
+      <p class="footer__copy" data-i18n="footer.copyright">© <span id="year"></span> JustFlip! Crafted in Prague. Apple, the Apple logo, iPhone, iPad and Mac are trademarks of Apple Inc.</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
