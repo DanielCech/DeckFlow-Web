@@ -2780,6 +2780,99 @@ main { display: block; }
 }
 
 /* =====================================================================
+   Apple Watch
+   ===================================================================== */
+
+.watch__meta { margin-top: 1.6rem; }
+
+.watch {
+  display: flex;
+  justify-content: center;
+}
+
+.watch__stage {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 422 / 514;
+  margin: 0 auto;
+}
+
+.watch__glow {
+  position: absolute;
+  inset: -32%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(54% 54% at 50% 40%, rgba(240,192,75,0.24), transparent 68%),
+    radial-gradient(42% 42% at 72% 74%, rgba(161,206,215,0.12), transparent 70%);
+  filter: blur(30px);
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+.watch__device {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  filter:
+    drop-shadow(0 46px 80px -28px rgba(0,0,0,0.78))
+    drop-shadow(0 22px 44px -26px rgba(240,192,75,0.22));
+}
+.watch__video {
+  position: absolute;
+  left: 10.19%;
+  top: 11.09%;
+  width: 76.07%;
+  height: 76.46%;
+  object-fit: cover;
+  background: #000;
+}
+.watch__frame {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.watch__chip {
+  position: absolute;
+  right: -6%;
+  bottom: 6%;
+  z-index: 3;
+  animation: glanceFloat 7s ease-in-out infinite;
+}
+.watch__chip-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(57,57,57,0.92), rgba(24,23,23,0.94));
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,205,87,0.24),
+    0 24px 48px -22px rgba(0,0,0,0.7),
+    0 10px 28px -18px rgba(240,192,75,0.4);
+}
+.watch__chip-icon { font-size: 1.15rem; line-height: 1; }
+.watch__chip-cap {
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: var(--on-surface);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .watch__glow,
+  .watch__chip { animation: none; }
+}
+
+/* =====================================================================
    Split / Theme
    ===================================================================== */
 

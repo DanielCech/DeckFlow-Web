@@ -62,8 +62,9 @@
       <li data-target="markdown"><em data-i18n="rail.markdown">Markdown</em><span>07</span></li>
       <li data-target="audio"><em data-i18n="rail.listen">Listen</em><span>08</span></li>
       <li data-target="glance"><em data-i18n="rail.glance">Glance</em><span>09</span></li>
-      <li data-target="theme"><em data-i18n="rail.dayNight">Day / Night</em><span>10</span></li>
-      <li data-target="access"><em data-i18n="rail.access">Everyone</em><span>11</span></li>
+      <li data-target="watch"><em data-i18n="rail.watch">Watch</em><span>10</span></li>
+      <li data-target="theme"><em data-i18n="rail.dayNight">Day / Night</em><span>11</span></li>
+      <li data-target="access"><em data-i18n="rail.access">Everyone</em><span>12</span></li>
     </ol>
   </aside>
 
@@ -83,7 +84,7 @@
           <em>Remember everything.</em>
         </h1>
         <p class="lede" data-i18n="hero.lede">
-          JustFlip! is a spaced-repetition flashcard app for iPhone, iPad and Mac.
+          JustFlip! is a spaced-repetition flashcard app for iPhone, iPad, Mac and Apple Watch.
           Curate your decks on the desktop, review them on the go, and let an
           SM-2-inspired engine surface the right card at the right moment.
         </p>
@@ -97,7 +98,7 @@
         </div>
 
         <ul class="hero__meta">
-          <li data-i18n="hero.metaPlatforms"><strong>iOS · iPadOS · macOS</strong></li>
+          <li data-i18n="hero.metaPlatforms"><strong>iOS · iPadOS · macOS · watchOS</strong></li>
           <li data-i18n="hero.metaSync"><strong>iCloud sync</strong> built in</li>
           <li data-i18n="hero.metaOffline"><strong>Offline first</strong></li>
         </ul>
@@ -500,7 +501,7 @@
           <!-- macOS — today's review -->
           <figure class="glance__mac">
             <div class="glance__mac-inner" data-parallax="0.025">
-              <img class="glance__mac-shot" src="images/today-review-panel.png" alt="" width="1067" height="713" loading="lazy">
+              <img class="glance__mac-shot" data-image-locale="en" data-image-base="images/today-review-panel" src="images/today-review-panel-en.png" alt="" width="1109" height="693" loading="lazy">
             </div>
           </figure>
 
@@ -565,10 +566,46 @@
       </div>
     </section>
 
+    <!-- Apple Watch -->
+    <section class="section section--watch" id="watch" data-section>
+      <header class="section__head">
+        <span class="section__number">10</span>
+        <div>
+          <h2 class="headline" data-i18n="watch.title">On your wrist, <em>too.</em></h2>
+          <p class="kicker" data-i18n="watch.kicker">
+            Feel the tap, glance down, rate the card — the same spaced-repetition engine,
+            three inches from your pulse. Turn the Digital Crown to keep reading; a firm
+            press marks it Again, Hard, Good or Easy. No phone required.
+          </p>
+          <ul class="hero__meta watch__meta">
+            <li data-i18n="watch.metaCrown"><strong>Digital Crown</strong> scroll</li>
+            <li data-i18n="watch.metaTap"><strong>Haptic tap</strong> to start</li>
+            <li data-i18n="watch.metaRate"><strong>Rate</strong> without your phone</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="watch">
+        <div class="watch__stage" role="img" data-i18n-attr="aria-label" data-i18n-aria-label="watch.stageAria" aria-label="Video — reviewing a flashcard deck on Apple Watch">
+          <div class="watch__glow" aria-hidden="true"></div>
+          <div class="watch__device" data-parallax="0.05">
+            <video class="watch__video" data-video-locale="en" src="images/watch-review-en.mp4" poster="images/watch-poster.png" autoplay muted loop playsinline aria-hidden="true"></video>
+            <img class="watch__frame" src="images/watch-frame.png" alt="" aria-hidden="true">
+          </div>
+          <div class="watch__chip" aria-hidden="true">
+            <div class="watch__chip-inner" data-parallax="-0.06">
+              <span class="watch__chip-icon">🌐</span>
+              <span class="watch__chip-cap" data-i18n="watch.langChip">In all 9 languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Dark / Light -->
     <section class="section section--theme" id="theme" data-section>
       <header class="section__head section__head--right">
-        <span class="section__number">10</span>
+        <span class="section__number">11</span>
         <div>
           <h2 class="headline" data-i18n="theme.title">Dark by candlelight.<br/><em>Light by morning.</em></h2>
           <p class="kicker" data-i18n="theme.kicker">
@@ -580,10 +617,10 @@
 
       <div class="split">
         <div class="split__half split__half--dark">
-          <img class="split__shot" src="images/theme-dark.png" alt="Dark mode" width="230" height="500" loading="lazy">
+          <img class="split__shot" data-image-locale="en" data-image-base="images/theme-dark" src="images/theme-dark-en.png" alt="Dark mode" width="230" height="500" loading="lazy">
         </div>
         <div class="split__half split__half--light">
-          <img class="split__shot" src="images/theme-light.png" alt="Light mode" width="230" height="500" loading="lazy">
+          <img class="split__shot" data-image-locale="en" data-image-base="images/theme-light" src="images/theme-light-en.png" alt="Light mode" width="230" height="500" loading="lazy">
         </div>
         <div class="split__seam" aria-hidden="true"></div>
       </div>
@@ -592,7 +629,7 @@
     <!-- Accessibility / For everyone -->
     <section class="section section--access" id="access" data-section>
       <header class="section__head">
-        <span class="section__number">11</span>
+        <span class="section__number">12</span>
         <div>
           <h2 class="headline" data-i18n="access.title">Learning, <em>for every learner.</em></h2>
           <p class="kicker" data-i18n="access.kicker">
@@ -645,7 +682,7 @@
     <!-- Download -->
     <section class="section section--cta" id="download" data-section>
       <div class="cta">
-        <p class="eyebrow" data-i18n="cta.eyebrow">Available now on Mac — iPhone &amp; iPad coming soon</p>
+        <p class="eyebrow" data-i18n="cta.eyebrow">Available now on Mac, iPhone, iPad and Apple Watch</p>
         <h2 class="display display--sm" data-i18n="cta.title">Bring JustFlip! to your shelf.</h2>
         <p class="lede" data-i18n="cta.lede">
           One purchase. Three platforms. A lifetime of well-spaced review.

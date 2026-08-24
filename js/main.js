@@ -34,7 +34,8 @@
       '.float-pill, .ai__terminal, .ai__panel, .ai__note, .ai__flow li, ' +
       '.prompt-hero__panel, .prompt-editor, .prompt-steps, .prompt-platforms, ' +
       '.adv-card, .report-card, .tracker-card, .stat-mini, .heatmap, ' +
-      '.spoken-demo, .code-compare, .import-flow, .safety-panel'
+      '.spoken-demo, .code-compare, .import-flow, .safety-panel, ' +
+      '.watch__stage'
     );
     candidates.forEach((el, i) => {
       el.setAttribute('data-reveal', '');
@@ -263,6 +264,26 @@
       window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
   });
+
+  /* ---------------------------------------------------
+   * Apple Watch video: pause off-screen to save battery
+   * and data, and respect reduced motion with the poster.
+   * ------------------------------------------------- */
+  const watchVideo = document.querySelector('.watch__video');
+  if (watchVideo) {
+    if (prefersReducedMotion) {
+      watchVideo.removeAttribute('autoplay');
+      watchVideo.pause();
+    } else if ('IntersectionObserver' in window) {
+      const watchIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) watchVideo.play().catch(() => {});
+          else watchVideo.pause();
+        });
+      }, { threshold: 0.2 });
+      watchIO.observe(watchVideo);
+    }
+  }
 
   /* ---------------------------------------------------
    * Prompt page: bundle the user's request with the
