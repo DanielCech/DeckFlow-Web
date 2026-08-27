@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#131313" />
+  <link rel="canonical" href="https://just-flip.app/accessibility" />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <title>JustFlip! Accessibility — Learning for more learners</title>
+  <meta name="description" content="An honest, living report of JustFlip!'s accessibility features, implementation status, validation work and known limitations." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="../index.html" aria-label="JustFlip! — home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="../images/Icon.png" alt="" width="26" height="26">
+      </span>
+      <span class="nav__name">JustFlip!</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="../index.html#devices">Features</a>
+      <a href="../index.html#ai">AI Decks</a>
+      <a href="../ai-prompt.html">AI Prompt</a>
+      <a href="../ai-skill.html">Rich Decks</a>
+      <a href="../learning.html">Learning</a>
+      <a href="../advanced.html">Advanced</a>
+      <a href="./" aria-current="page">Accessibility</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__cta" href="https://apps.apple.com/cz/app/justflip-flashcards-learning/id6770141421?mt=12" target="_blank" rel="noopener" aria-label="App Store">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
+        <span>App Store</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top" class="prompt-page accessibility-page">
+
+    <section class="prompt-hero accessibility-hero" data-section>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__beam"></div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="prompt-hero__copy">
+        <p class="eyebrow">Accessibility report · English</p>
+        <h1 class="display">We take accessibility seriously.<br/><em>Learning should meet you where you are.</em></h1>
+        <p class="lede">
+          JustFlip! is built to make active recall usable with the tools many learners rely on.
+          This is a living report of what is implemented, what is ready for device validation,
+          and what we deliberately do not claim yet.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#report">Read the report</a>
+          <a class="btn btn--ghost" href="mailto:daniel.cech@gmail.com?subject=JustFlip%20accessibility%20feedback">Report an issue</a>
+        </div>
+        <div class="accessibility-hero__meta" aria-label="Report metadata">
+          <span><strong>Updated</strong> 15 August 2026</span>
+          <span><strong>Platforms</strong> iPhone · iPad · Mac</span>
+          <span><strong>Method</strong> code audit + common-task matrix</span>
+        </div>
+      </div>
+
+      <aside class="prompt-hero__panel accessibility-status-panel">
+        <span class="prompt-hero__panel-kicker">The honest headline</span>
+        <p>
+          The accessibility implementation is substantial and the automated audit now runs
+          across all 12 primary screens. The remaining work is human: device passes for each
+          platform, voice-only testing, and measured contrast values.
+        </p>
+        <div class="accessibility-status-panel__rule"></div>
+        <div class="accessibility-status-panel__stat">
+          <strong>6</strong>
+          <span>categories are ready or close to device validation</span>
+        </div>
+        <div class="accessibility-status-panel__stat">
+          <strong>1</strong>
+          <span>category is blocked on measured contrast</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section section--prompt accessibility-overview" data-section>
+      <header class="section__head section__head--flush">
+        <div>
+          <span class="section__number">01</span>
+          <h2 class="headline">A useful report, <em>not a marketing checkbox.</em></h2>
+          <p class="kicker">
+            Apple’s Accessibility Nutrition Label is a public promise. We are treating it as
+            an evidence boundary: a feature is only claimable after its common tasks work on
+            the device category where we publish it.
+          </p>
+        </div>
+      </header>
+
+      <div class="a11y-status-grid" aria-label="Accessibility status summary">
+        <article class="a11y-status-card a11y-status-card--ready">
+          <span class="a11y-status-card__icon" aria-hidden="true">✓</span>
+          <span class="a11y-status-card__label">Ready to test</span>
+          <h3>Dark Interface</h3>
+          <p>Adaptive light and dark palettes are implemented; device validation remains.</p>
+        </article>
+        <article class="a11y-status-card a11y-status-card--ready">
+          <span class="a11y-status-card__icon" aria-hidden="true">✓</span>
+          <span class="a11y-status-card__label">Ready to test</span>
+          <h3>Reduced Motion</h3>
+          <p>Primary animations respect the system setting, including the card flip.</p>
+        </article>
+        <article class="a11y-status-card a11y-status-card--ready">
+          <span class="a11y-status-card__icon" aria-hidden="true">✓</span>
+          <span class="a11y-status-card__label">Ready to test</span>
+          <h3>Differentiate Without Color</h3>
+          <p>Status indicators add symbols, dots, outlines or visible values beyond color.</p>
+        </article>
+        <article class="a11y-status-card a11y-status-card--close">
+          <span class="a11y-status-card__icon" aria-hidden="true">~</span>
+          <span class="a11y-status-card__label">Close</span>
+          <h3>VoiceOver + Voice Control</h3>
+          <p>Semantic coverage is in place; the custom controls still need human passes.</p>
+        </article>
+        <article class="a11y-status-card a11y-status-card--blocked">
+          <span class="a11y-status-card__icon" aria-hidden="true">!</span>
+          <span class="a11y-status-card__label">Blocked on measurement</span>
+          <h3>Sufficient Contrast</h3>
+          <p>We will not guess at the gilded palette; the contrast pairs need measuring.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--prompt accessibility-report-section" id="report" data-section>
+      <header class="section__head">
+        <span class="section__number">02</span>
+        <div>
+          <h2 class="headline">Accessibility <em>coverage.</em></h2>
+          <p class="kicker">
+            The table below separates the user-facing feature from its sub-features, evidence,
+            and current verification state. “Implemented” describes the product and code; it is
+            not the same as a completed Apple label declaration.
+          </p>
+        </div>
+      </header>
+
+      <div class="a11y-table-wrap">
+        <table class="a11y-table">
+          <caption>JustFlip! accessibility feature inventory and current validation status.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Area</th>
+              <th scope="col">Feature and sub-features</th>
+              <th scope="col">What JustFlip! does</th>
+              <th scope="col">Status today</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a11y-table__group"><th colspan="4" scope="rowgroup"><span class="a11y-group-icon" aria-hidden="true">◉</span> Voice &amp; navigation</th></tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">◉</span> VoiceOver</th>
+              <td><strong>Screen reading</strong><small>Labels · traits · hints · reading order</small></td>
+              <td>Interactive elements have meaningful descriptions, and native list/form semantics are used where possible. Composite rows are combined so a deck, tracker or metric is not announced as a pile of unrelated fragments.</td>
+              <td><span class="a11y-badge a11y-badge--close">Close</span><small>Code coverage is complete enough for a device pass. Custom slider and context menus are the known risk areas.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">↻</span> Review flow</th>
+              <td><strong>Cards and grading</strong><small>Flip action · question/answer announcement · response hints</small></td>
+              <td>The card is exposed as one stable accessibility element. VoiceOver can reach a named flip action, hear a Question/Answer announcement, and hear the estimated interval on Again, Hard, Good and Easy.</td>
+              <td><span class="a11y-badge a11y-badge--close">Close</span><small>Needs the full common-task pass on each claimed device category.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">▦</span> Rich content</th>
+              <td><strong>Charts and images</strong><small>Point-by-point charts · image descriptions · fallbacks</small></td>
+              <td>Statistics charts expose dates and values. Card editors provide an optional image-description field, and authored descriptions travel with imported/exported cards. Standalone and inline images have a localized generic fallback when no description was authored.</td>
+              <td><span class="a11y-badge a11y-badge--close">Close</span><small>Authoring, importing and reviewing described images still need a human VoiceOver pass.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">⌁</span> Voice Control</th>
+              <td><strong>Voice-driven control</strong><small>Visible labels · input-label aliases · named actions</small></td>
+              <td>Controls expose names and traits that Voice Control can use. Review grading and postpone controls have explicit input-label support where spoken commands may differ from the visual label.</td>
+              <td><span class="a11y-badge a11y-badge--close">Close</span><small>Not yet driven end to end by voice on iPhone, iPad and Mac. The custom slider and menus need testing.</small></td>
+            </tr>
+
+            <tr class="a11y-table__group"><th colspan="4" scope="rowgroup"><span class="a11y-group-icon" aria-hidden="true">Aa</span> Text, touch &amp; layout</th></tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">Aa</span> Larger Text</th>
+              <td><strong>Dynamic Type</strong><small>Scalable controls · card body · adaptive layouts</small></td>
+              <td>Typography uses scalable system styles and metrics. Card content now scales too, rather than being rendered at a fixed size. Statistics grids and other constrained layouts adapt at accessibility sizes.</td>
+              <td><span class="a11y-badge a11y-badge--ready">Effectively done</span><small>AX5 device validation remains. The audit’s last 9 findings are system-capped controls or unattributed elements.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">44</span> Touch targets</th>
+              <td><strong>Comfortable interaction</strong><small>Markup toolbar · scrolling overflow · hit regions</small></td>
+              <td>Icon-only card-editor markup controls use 44-point hit regions without enlarging the visible glyphs. The toolbar can scroll horizontally instead of clipping at narrow widths or large text sizes.</td>
+              <td><span class="a11y-badge a11y-badge--implemented">Implemented</span><small>One small onboarding hit target is still recorded for follow-up.</small></td>
+            </tr>
+
+            <tr class="a11y-table__group"><th colspan="4" scope="rowgroup"><span class="a11y-group-icon" aria-hidden="true">◐</span> Motion &amp; visual perception</th></tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">☾</span> Dark Interface</th>
+              <td><strong>System appearance</strong><small>Light/dark colorsets · no forced appearance</small></td>
+              <td>The app follows the system appearance and uses adaptive light/dark colorsets throughout the design system. It does not force a light or dark interface.</td>
+              <td><span class="a11y-badge a11y-badge--ready">Ready to test</span><small>Walk CT1–CT8 on iPhone, iPad and Mac.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">≈</span> Reduced Motion</th>
+              <td><strong>Calmer transitions</strong><small>Card flip · onboarding · progress · review results</small></td>
+              <td>Primary animation sites are gated by the system Reduce Motion setting. This includes card flipping, onboarding illustrations, review-result motion, tracker fills, sync pulses and other transitions. A mirrored answer-side issue was fixed.</td>
+              <td><span class="a11y-badge a11y-badge--ready">Ready to test</span><small>Full device regression remains.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">●</span> Without color alone</th>
+              <td><strong>Differentiate Without Color</strong><small>Symbols · visible values · heatmap dots · outlines</small></td>
+              <td>Learning urgency and response indicators add distinct symbols when requested. Statistics use positions, point marks and visible percentages; the consistency heatmap adds dots and a distinct today outline in grayscale-friendly mode.</td>
+              <td><span class="a11y-badge a11y-badge--ready">Ready to test</span><small>Enable Differentiate Without Color plus grayscale, then walk CT1–CT8.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">◒</span> Sufficient Contrast</th>
+              <td><strong>Measured contrast</strong><small>Gilded palette · light/dark pairs · chart tints</small></td>
+              <td>At-risk foreground/background pairs are enumerated for measurement, prioritizing gold-family text, secondary/tertiary text and chart marks. We will change only measured failures or add an accessibility-specific variant.</td>
+              <td><span class="a11y-badge a11y-badge--blocked">Blocked</span><small>About 64 audit findings and the contrast-pair list still require Accessibility Inspector measurements. Not claimable yet.</small></td>
+            </tr>
+
+            <tr class="a11y-table__group"><th colspan="4" scope="rowgroup"><span class="a11y-group-icon" aria-hidden="true">◖</span> Spoken learning &amp; media</th></tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">)))</span> Spoken cards</th>
+              <td><strong>Text-to-speech</strong><small>Card text · language-aware voices · spoken overrides</small></td>
+              <td>Cards can be read aloud with system speech, including language-aware voices and authored spoken forms for math, images or other content whose visual form needs a different pronunciation. User-attached audio is also supported.</td>
+              <td><span class="a11y-badge a11y-badge--implemented">Shipped</span><small>This is a learning feature and does not replace the separate VoiceOver label.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">—</span> Captions</th>
+              <td><strong>Not applicable</strong><small>No prerecorded video or editorial audio</small></td>
+              <td>JustFlip! speaks user-authored card content and has no prerecorded video/audio that requires captions. We will leave this nutrition-label category unclaimed.</td>
+              <td><span class="a11y-badge a11y-badge--not-applicable">Do not claim</span><small>Not a missing feature; it is the accurate scope of the product.</small></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">—</span> Audio Descriptions</th>
+              <td><strong>Not applicable</strong><small>No video content to describe</small></td>
+              <td>There is no prerecorded video in the app that needs an audio-description track. We will leave this nutrition-label category unclaimed.</td>
+              <td><span class="a11y-badge a11y-badge--not-applicable">Do not claim</span><small>Accuracy matters more than a symmetrical label.</small></td>
+            </tr>
+
+            <tr class="a11y-table__group"><th colspan="4" scope="rowgroup"><span class="a11y-group-icon" aria-hidden="true">⌘</span> Platforms &amp; verification</th></tr>
+            <tr>
+              <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">⌘</span> Device scope</th>
+              <td><strong>One core workflow</strong><small>iPhone · iPad · Mac Catalyst · Apple Watch companion</small></td>
+              <td>The core study experience spans iPhone, iPad and Mac; Apple Watch provides a focused review companion. Accessibility label decisions are made per device category, not inferred from another platform.</td>
+              <td><span class="a11y-badge a11y-badge--pending">Per-platform</span><small>Each claimed category must pass its common tasks on every platform where it is published.</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section section--prompt accessibility-tasks-section" id="common-tasks" data-section>
+      <header class="section__head section__head--right">
+        <span class="section__number">03</span>
+        <div>
+          <h2 class="headline">The common-task <em>gate.</em></h2>
+          <p class="kicker">
+            A label is only honest when the complete study workflow works with the setting
+            enabled. These are the eight tasks used for device validation.
+          </p>
+        </div>
+      </header>
+
+      <div class="a11y-task-table-wrap">
+        <table class="a11y-task-table">
+          <caption>Common tasks used to validate each accessibility category.</caption>
+          <thead><tr><th scope="col">ID</th><th scope="col">Common task</th><th scope="col">What is exercised</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">CT1</th><td>Onboarding</td><td>Complete or skip first-run onboarding.</td></tr>
+            <tr><th scope="row">CT2</th><td>Create content</td><td>Add an interest, deck and card, including an image and its description.</td></tr>
+            <tr><th scope="row">CT3</th><td>Review</td><td>Start a review, flip a card, grade it and finish the session.</td></tr>
+            <tr><th scope="row">CT4</th><td>Browse and organize</td><td>Open interest → deck → cards; search; move or merge; set priority; postpone.</td></tr>
+            <tr><th scope="row">CT5</th><td>Statistics</td><td>Open Statistics, change scope, and read retention, forecast and heatmap.</td></tr>
+            <tr><th scope="row">CT6</th><td>Settings and data</td><td>Change a setting, view sync status, export statistics and open the starter library.</td></tr>
+            <tr><th scope="row">CT7</th><td>Purchase flow</td><td>Open the Pro paywall and read plan and comparison details.</td></tr>
+            <tr><th scope="row">CT8</th><td>Import</td><td>Import a <code>.flashcards</code>, CSV or Anki file through the document picker.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="learning-callout accessibility-callout">
+        <span class="learning-callout__kicker">Our rule for publishing</span>
+        <h3>One blocked task keeps a category unclaimed for that device.</h3>
+        <p>
+          Automated audits give us a useful regression gate, but code evidence is not device
+          certification. The remaining validation covers iPhone, iPad and Mac Catalyst, with
+          Larger Text tested on iPhone and iPad. This page will change as those passes are completed.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section section--prompt accessibility-contact-section" id="contact" data-section>
+      <div class="accessibility-contact-card">
+        <div>
+          <p class="eyebrow">Keep the report honest</p>
+          <h2 class="headline">Found a barrier? <em>Tell us.</em></h2>
+          <p class="kicker">
+            Accessibility feedback is especially valuable when it includes the device, OS
+            version, JustFlip! version, setting enabled and the task that became difficult.
+            We read every message and use it to update both the app and this report.
+          </p>
+        </div>
+        <a class="btn btn--primary" href="mailto:daniel.cech@gmail.com?subject=JustFlip%20accessibility%20feedback">Email accessibility feedback →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="about">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="20" height="20"><rect x="4" y="6" width="20" height="22" rx="3" fill="#ffcd57" opacity=".25" transform="rotate(-8 14 17)"/><rect x="7" y="4" width="20" height="22" rx="3" fill="#ffcd57"/></svg>
+        </span>
+        <strong>JustFlip!</strong>
+        <span class="footer__tag">A flashcard companion for lifelong learners.</span>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="../index.html#devices">Features</a>
+        <a href="../index.html#ai">AI Decks</a>
+        <a href="../ai-prompt.html">AI Prompt</a>
+        <a href="../ai-skill.html">Rich Decks</a>
+        <a href="../learning.html">Learning</a>
+        <a href="../advanced.html">Advanced</a>
+        <a href="./" aria-current="page">Accessibility</a>
+        <a href="../about.html">About</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms &amp; Conditions</a>
+        <a href="mailto:daniel.cech@gmail.com">Support</a>
+        <a href="mailto:daniel.cech@gmail.com">Contact</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> JustFlip! Crafted in Prague. Apple, the Apple logo, iPhone, iPad and Mac are trademarks of Apple Inc.</p>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

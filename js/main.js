@@ -271,6 +271,13 @@
    * ------------------------------------------------- */
   const watchVideo = document.querySelector('.watch__video');
   if (watchVideo) {
+    // Belt-and-suspenders repeat: some browsers don't reliably honor the
+    // native `loop` attribute after a programmatic src swap (locale switch).
+    watchVideo.addEventListener('ended', () => {
+      watchVideo.currentTime = 0;
+      watchVideo.play().catch(() => {});
+    });
+
     if (prefersReducedMotion) {
       watchVideo.removeAttribute('autoplay');
       watchVideo.pause();
