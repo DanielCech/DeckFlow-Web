@@ -41,6 +41,22 @@ for i, c in enumerate(deck["cards"], 1):
         assert 0 <= c.get("progress", 0) <= 100, f"card {i}: progress 0-100"
     else:
         assert "progress" not in c, f"card {i}: progress only on trackers"
+    # A {spoken} hint is consumed only after $math$, ![img], a $$ fence, or
+    # [visible]. Anywhere else the braces are PRINTED on the card. Strip what the
+    # app consumes (code is never parsed; math braces are LaTeX) — anything left
+    # is a bug the reader sees.
+    for side in ("q", "a"):
+        t = c.get(side, "")
+        fence = chr(96) * 3  # a literal triple backtick would end this block
+        x = re.sub(fence + r".*?" + fence, " ", t, flags=re.S)
+        x = re.sub(r"`[^`\n]*`", " ", x)
+        x = re.sub(r"\$\$.*?\$\$(\{[^}\n]*\})?", " ", x, flags=re.S)
+        x = re.sub(r"\$[^$\n]+\$(\{[^}\n]*\})?", " ", x)
+        x = re.sub(r"!\[[^\]\n]*\](\{[^}\n]*\})?", " ", x)
+        x = re.sub(r"\[[^\]\n]*\]\{[^}\n]*\}", " ", x)
+        assert "{" not in x, f"card {i} {side}: spoken hint needs a host — use [visible]{{spoken}}"
+        fences = [ln for ln in t.split("\n") if ln.strip().startswith(":::")]
+        assert len(fences) % 2 == 0, f"card {i} {side}: unbalanced ::: display block"
 
 fname = re.sub(r'[\\/:*?"<>|]', "_", DECK) + ".flashcards"
 with open(fname, "w", encoding="utf-8") as f:
@@ -64,9 +80,17 @@ A tracker is a non-review card: a name plus a 0–100 % bar the user adjusts the
 
 # Content quality
 **Languages:** always set `deck_q_lang`/`deck_a_lang` (BCP 47: `en`, `cs`, `de`, …).
-**TTS overrides:** append `{spoken form}` after acronyms, technical terms, and odd pronunciations; visible text stays clean, the app reads the bracket aloud. `[CRDT]{see-ar-dee-tee}`, `colonel{kər-nəl}`. Be generous.
+**TTS overrides:** a `{spoken form}` hint is consumed **only** directly after one of four hosts — inline math `$c^2${c squared}`, an image `![id]{…}`, a block-math closing fence `$${…}`, or bracketed text `[visible]{spoken}`. After plain text or `*italic*` the braces are printed on the card: `colonel{kər-nəl}` renders as `colonel{kər-nəl}` — always bracket it, `[colonel]{kər-nəl}`. The bracket form nests inside emphasis: `*[F♯ major]{F sharp major}*`. Braces inside code are safe (code is never parsed). Add hints for what TTS gets wrong — `♯`/`♭`, formulas, acronyms, romanised syllables, degree lists like `[1 – ♭3 – 5]{one, minor third, perfect fifth}` — not to repeat text that already reads correctly.
 **Math (LaTeX, rendered in-app — never images):** inline `$E=mc^2${E equals m c squared}`; block: `$$` on its own line before and after, `{spoken form}` right after the closing `$$`; nothing between LaTeX and spoken form. SwiftMath renders each `$…$` span as a unit — one unsupported command makes the whole span show as raw text. Use: `\frac`, `\sqrt`, `\sqrt[n]{}`, `\binom`, `\overline`, `\underline`, `\left…\right`, `^`/`_`, `\mathbb` `\mathrm` `\mathbf` `\text`, `\,` `\;` `\quad`, `\cdot` `\times` `\pm` `\neq` `\leq` `\geq` `\propto` `\sin` `\cos` `\lim` `\pi`. Never: `\dfrac`/`\tfrac`/`\cfrac` (use `\frac`); `\bigl`/`\big`/`\Big`/`\bigg` (use `\left…\right` or plain parens). No non-ASCII inside math — write `30^\circ`, never `30°`.
 **Code:** standard fenced Markdown blocks with a language tag right after the opening fence — the app highlights natively from the tag. Tags (aliases): `swift`, `python` (`py`), `javascript` (`js`, `jsx`, `node`), `typescript` (`ts`, `tsx`), `java`, `kotlin` (`kt`), `c` (`h`), `cpp` (`c++`, `cc`, `cxx`, `hpp`), `csharp` (`cs`, `c#`), `objectivec` (`objc`, `m`), `go` (`golang`), `rust` (`rs`), `ruby` (`rb`), `php`, `sql`, `bash` (`sh`, `shell`, `zsh`), `smalltalk` (`st`, `pharo`), `json`, `yaml` (`yml`). Unknown tags safely fall back to plain monospace — still tag with the real language name. Keep code lines under ~30 characters for phone screens. Never emit token/span JSON or custom highlighting markup — highlighting derives from the tag only. Use `inline code` for identifiers; fences for multi-line snippets.
+**Display blocks:** when a whole side **is** the thing being recognised — a kana, kanji, letter, chemical symbol, IPA sign, note name, or single short word — wrap it in a `::: hero` block so it renders large and centred instead of small in the corner of an empty card. `::: center` is the same centring at body size. Content inside parses normally, so hints and math still work; keep explanatory notes *outside* the block so they stay body text. Never wrap a sentence or a definition. An unknown style name renders as an ordinary paragraph.
+```text
+::: hero
+あ
+:::
+
+Not *si* — the whole s-row shifts here.
+```
 **Precision:** `q` ≤ 200 chars, `a` ≤ 500 (the builder enforces this). One fact per card; questions self-contained (no "as mentioned above"). Music: `♯`/`♭` Unicode, never `#`/`b`. Simple Markdown only. Factual accuracy is critical — unlearning wrong facts is hard; drop trivia and filler.
 
 # Workflow
