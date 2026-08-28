@@ -80,9 +80,11 @@
         <span class="prompt-hero__panel-kicker">The honest headline</span>
         <p>
           The accessibility implementation is substantial and the automated audit now runs
-          across all 12 primary screens. The remaining work is chiefly human: device passes for
-          each platform, voice-only testing, and measured contrast values. A short list of code
-          follow-ups is still open, and each one is named in the table below.
+          across all 12 primary screens, under every system setting the label is claimed
+          against. Contrast is no longer waiting on a person: every colour in the design system
+          is measured automatically, in light, dark and both Increase Contrast appearances.
+          What remains is device work — and of that, only VoiceOver and Voice Control genuinely
+          need a human.
         </p>
         <div class="accessibility-status-panel__rule"></div>
         <div class="accessibility-status-panel__stat">
@@ -90,8 +92,8 @@
           <span>categories are ready or close to device validation</span>
         </div>
         <div class="accessibility-status-panel__stat">
-          <strong>1</strong>
-          <span>category is blocked on measured contrast</span>
+          <strong>0</strong>
+          <span>categories are blocked on measurement</span>
         </div>
         <div class="accessibility-status-panel__stat">
           <strong>0</strong>
@@ -139,11 +141,11 @@
           <h3>VoiceOver + Voice Control</h3>
           <p>Semantic coverage is in place; the custom controls still need human passes.</p>
         </article>
-        <article class="a11y-status-card a11y-status-card--blocked">
-          <span class="a11y-status-card__icon" aria-hidden="true">!</span>
-          <span class="a11y-status-card__label">Blocked on measurement</span>
+        <article class="a11y-status-card a11y-status-card--ready">
+          <span class="a11y-status-card__icon" aria-hidden="true">✓</span>
+          <span class="a11y-status-card__label">Measured and fixed</span>
           <h3>Sufficient Contrast</h3>
-          <p>We will not guess at the gilded palette; the contrast pairs need measuring.</p>
+          <p>Every design-system pair now clears 4.5:1 in light, dark and Increase Contrast.</p>
         </article>
       </div>
     </section>
@@ -235,8 +237,8 @@
             <tr>
               <th scope="row"><span class="a11y-feature-icon" aria-hidden="true">◒</span> Sufficient Contrast</th>
               <td><strong>Measured contrast</strong><small>Gilded palette · light/dark pairs · chart tints</small></td>
-              <td>At-risk foreground/background pairs are enumerated for measurement, prioritizing gold-family text, secondary/tertiary text and chart marks. We will change only measured failures or add an accessibility-specific variant.</td>
-              <td><span class="a11y-badge a11y-badge--blocked">Blocked</span><small>About 64 audit findings and the contrast-pair list still require Accessibility Inspector measurements. Not claimable yet.</small></td>
+              <td>Every colour is an asset-catalog entry, so its contrast ratio is computed rather than sampled — in light, dark, and both Increase Contrast appearances at once. Gold that decorates and gold that is read are now separate tokens: glows and gradients keep their values, text does not. The review grade buttons, which had taken the system red/orange/green/blue, now use a palette measured against the app’s own surfaces.</td>
+              <td><span class="a11y-badge a11y-badge--ready">Measured</span><small>The worst finding was a screen title at 1.57:1, and the review buttons at 1.90:1. Every declared pair now clears 4.5:1 in all four appearances.</small></td>
             </tr>
 
             <tr class="a11y-table__group"><th colspan="4" scope="rowgroup"><span class="a11y-group-icon" aria-hidden="true">◖</span> Spoken learning &amp; media</th></tr>
