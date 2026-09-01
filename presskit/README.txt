@@ -11,7 +11,9 @@ Contents
 - iphone-review.png — iPhone review screenshot
 - mac-today-review.png — Mac Today review screenshot
 - apple-watch.png — Apple Watch screenshot
-- justflip-promo-watch.mp4 — 39-second English promo video
+- justflip-promo-watch.mp4 — 39-second English Apple Watch promo video
+- justflip-trailer.mp4 — 61-second English product trailer
+- justflip-trailer-poster.jpg — poster frame for the product trailer
 
 About JustFlip!
 ---------------

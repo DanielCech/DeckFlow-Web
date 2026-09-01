@@ -699,6 +699,65 @@ main { display: block; }
 }
 
 /* =====================================================================
+   Product trailer
+   ===================================================================== */
+
+.trailer {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 8rem) var(--gutter) clamp(5rem, 10vw, 9rem);
+}
+
+.trailer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,205,87,0.24), transparent);
+}
+
+.trailer__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.trailer__copy {
+  max-width: 700px;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.trailer__copy .headline {
+  margin-bottom: 1rem;
+}
+
+.trailer__frame {
+  margin: 0;
+}
+
+.trailer__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255,205,87,0.18);
+  border-radius: var(--radius-lg);
+  background: var(--surface-lowest);
+  box-shadow:
+    0 30px 70px -38px rgba(0,0,0,0.9),
+    0 0 0 1px rgba(255,237,209,0.04);
+}
+
+.trailer__frame figcaption {
+  margin-top: 0.8rem;
+  color: var(--on-surface-variant);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =====================================================================
    AI section
    ===================================================================== */
 

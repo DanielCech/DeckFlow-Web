@@ -35,7 +35,7 @@
       '.prompt-hero__panel, .prompt-editor, .prompt-steps, .prompt-platforms, ' +
       '.adv-card, .report-card, .tracker-card, .stat-mini, .heatmap, ' +
       '.spoken-demo, .code-compare, .import-flow, .safety-panel, ' +
-      '.watch__stage'
+      '.watch__stage, .trailer__copy, .trailer__frame'
     );
     candidates.forEach((el, i) => {
       el.setAttribute('data-reveal', '');
