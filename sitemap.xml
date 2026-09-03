@@ -26,6 +26,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://just-flip.app/ai-skill.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://just-flip.app/accessibility</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

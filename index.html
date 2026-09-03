@@ -13,7 +13,7 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <title data-i18n="meta.title">JustFlip! — Spaced-repetition flashcards. Study quietly.</title>
-  <meta name="description" content="JustFlip! is a flashcard learning app for iPhone, iPad and Mac. Spaced repetition, Tinder-style review, rich markdown cards and spoken decks with a Lock Screen Live Activity — synced across every device through iCloud." data-i18n-attr="content" data-i18n-content="meta.description" />
+  <meta name="description" content="JustFlip! is a spaced-repetition flashcard app for iPhone, iPad, Mac and Apple Watch. Review on your wrist or from a Lock Screen Live Activity, write cards in rich Markdown and listen to spoken decks — offline, and synced through iCloud." data-i18n-attr="content" data-i18n-content="meta.description" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,13 +33,13 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#devices" data-i18n="nav.features">Features</a>
+      <a href="#top" data-i18n="nav.features">Features</a>
       <a href="#ai" data-i18n="nav.aiDecks">AI Decks</a>
       <a href="ai-prompt.html" data-i18n="nav.aiPrompt">AI Prompt</a>
       <a href="ai-skill.html" data-i18n="nav.richDecks">Rich Decks</a>
       <a href="learning.html" data-i18n="nav.learning">Learning</a>
       <a href="advanced.html" data-i18n="nav.advanced">Advanced</a>
-      <a href="accessibility/">Accessibility</a>
+      <a href="accessibility/" data-i18n="accessibility.navLabel">Accessibility</a>
       <a href="about.html" data-i18n="nav.about">About</a>
     </nav>
 
@@ -50,24 +50,6 @@
       </a>
     </div>
   </header>
-
-  <!-- Section indicator rail -->
-  <aside class="rail" aria-hidden="true">
-    <ol>
-      <li data-target="hero"><em data-i18n="rail.open">Open</em><span>01</span></li>
-      <li data-target="devices"><em data-i18n="rail.everywhere">Everywhere</em><span>02</span></li>
-      <li data-target="ai"><em data-i18n="rail.aiDecks">AI Decks</em><span>03</span></li>
-      <li data-target="study"><em data-i18n="rail.study">Study</em><span>04</span></li>
-      <li data-target="algorithm"><em data-i18n="rail.algorithm">Algorithm</em><span>05</span></li>
-      <li data-target="science"><em data-i18n="rail.science">Science</em><span>06</span></li>
-      <li data-target="markdown"><em data-i18n="rail.markdown">Markdown</em><span>07</span></li>
-      <li data-target="audio"><em data-i18n="rail.listen">Listen</em><span>08</span></li>
-      <li data-target="glance"><em data-i18n="rail.glance">Glance</em><span>09</span></li>
-      <li data-target="watch"><em data-i18n="rail.watch">Watch</em><span>10</span></li>
-      <li data-target="theme"><em data-i18n="rail.dayNight">Day / Night</em><span>11</span></li>
-      <li data-target="access"><em data-i18n="rail.access">Everyone</em><span>12</span></li>
-    </ol>
-  </aside>
 
   <main id="top">
 
@@ -85,9 +67,10 @@
           <em>Remember everything.</em>
         </h1>
         <p class="lede" data-i18n="hero.lede">
-          JustFlip! is a spaced-repetition flashcard app for iPhone, iPad, Mac and Apple Watch.
-          Curate your decks on the desktop, review them on the go, and let an
-          SM-2-inspired engine surface the right card at the right moment.
+          JustFlip! is the spaced-repetition flashcard app that lives quietly across every
+          Apple device you own. Curate decks on the Mac, review them on iPhone or iPad —
+          or rate a card from your wrist, without reaching for your phone. An SM-2-inspired
+          engine surfaces the right card at the right moment.
         </p>
 
         <div class="hero__actions">
@@ -95,7 +78,7 @@
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
             <span data-i18n="hero.downloadCta">Download on the App Store</span>
           </a>
-          <a class="btn btn--ghost" href="#features" data-i18n="hero.exploreCta">Explore the features</a>
+          <a class="btn btn--ghost" href="#devices" data-i18n="hero.exploreCta">Explore the features</a>
         </div>
 
         <ul class="hero__meta">
@@ -103,9 +86,24 @@
           <li data-i18n="hero.metaSync"><strong>iCloud sync</strong> built in</li>
           <li data-i18n="hero.metaOffline"><strong>Offline first</strong></li>
         </ul>
+
+        <ul class="hero__usp">
+          <li>
+            <a href="#watch">
+              <span class="hero__usp-label" data-i18n="hero.uspWatchLabel">Review on Apple Watch</span>
+              <span class="hero__usp-note" data-i18n="hero.uspWatchNote">Feel the tap, turn the Crown, rate the card. No phone required.</span>
+            </a>
+          </li>
+          <li>
+            <a href="#glance">
+              <span class="hero__usp-label" data-i18n="hero.uspLockLabel">Lock Screen Live Activity</span>
+              <span class="hero__usp-note" data-i18n="hero.uspLockNote">Cards due, your streak and spoken playback — before you unlock.</span>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="hero__visual">
-        <img src="images/phone.png" alt="JustFlip! app screenshot on iPhone">
+        <img src="images/phone.png" alt="JustFlip! app screenshot on iPhone" width="1351" height="2718" fetchpriority="high" decoding="async">
       </div>
 
       <a class="float-pill" href="#ai" aria-label="Jump to AI deck generation" data-i18n-attr="aria-label" data-i18n-aria-label="ai.jumpAria">
@@ -120,6 +118,31 @@
         <span></span>
         <em data-i18n="hero.scroll">Scroll</em>
       </div>
+    </section>
+
+    <!-- Trust — only claims a visitor can check for themselves -->
+    <section class="trust" id="trust" data-section aria-labelledby="trust-title">
+      <h2 class="trust__title" id="trust-title" data-i18n="trust.title">What you can check for yourself</h2>
+      <ul class="trust__list">
+        <li class="trust__item">
+          <strong data-i18n="trust.nativeTitle">A native Apple app</strong>
+          <span data-i18n="trust.nativeText">Built for iOS, iPadOS, macOS and watchOS — not a web page in a wrapper.</span>
+        </li>
+        <li class="trust__item">
+          <strong data-i18n="trust.offlineTitle">Offline by default</strong>
+          <span data-i18n="trust.offlineText">Decks, reviews and the scheduling engine all run on device. iCloud only syncs.</span>
+        </li>
+        <li class="trust__item">
+          <strong data-i18n="trust.langTitle">Nine languages</strong>
+          <span data-i18n="trust.langText">The whole app — and this very page — fully localized, not machine-guessed.</span>
+        </li>
+        <li class="trust__item trust__item--link">
+          <a href="accessibility/">
+            <strong data-i18n="trust.a11yTitle">A published accessibility report</strong>
+            <span data-i18n="trust.a11yText">What is implemented, what is measured, and what is still open. →</span>
+          </a>
+        </li>
+      </ul>
     </section>
 
     <!-- Trailer -->
@@ -158,7 +181,7 @@
       </header>
 
       <div class="devices">
-        <img class="devices__stage" src="images/trio.png" alt="iPhone, iPad and Mac with synced decks" data-parallax="0.05">
+        <img class="devices__stage" src="images/trio.png" alt="iPhone, iPad and Mac with synced decks" width="735" height="342" loading="lazy" data-parallax="0.05">
       </div>
     </section>
 
@@ -210,6 +233,13 @@
               <a class="ai__option-link" href="ai-skill.html" data-i18n="ai.richGuideLabel">
                 See how it works →
               </a>
+              <a class="ai__option-link ai__option-link--ghost"
+                 href="https://github.com/DanielCech/JustFlip-Skills"
+                 target="_blank"
+                 rel="noopener"
+                 data-i18n="ai.sourceLabel">
+                Read the skill source on GitHub
+              </a>
             </div>
 
             <div class="ai__option ai__option--alt">
@@ -247,8 +277,9 @@
           <h2 class="headline" data-i18n="study.title">A library you can <em>swipe through.</em></h2>
           <p class="kicker" data-i18n="study.kicker">
             Browse decks as a calm, editorial list — or enter a focused review and
-            judge each card with a Tinder-style swipe. Right for <em>good</em>,
-            left for <em>again</em>, up for <em>easy</em>. The flow stays in your hand.
+            judge each card with a Tinder-style swipe — right for <em>good</em>,
+            left for <em>hard</em>, up for <em>easy</em>, down for <em>again</em> — or tap
+            the same four buttons. The flow stays in your hand.
           </p>
         </div>
       </header>
@@ -262,10 +293,10 @@
         </figure>
 
         <div class="duo__chips" aria-hidden="true">
-          <span class="chip chip--again" data-i18n="study.chipAgain">Again</span>
-          <span class="chip chip--hard" data-i18n="study.chipHard">Hard</span>
-          <span class="chip chip--good" data-i18n="study.chipGood">Good</span>
-          <span class="chip chip--easy" data-i18n="study.chipEasy">Easy</span>
+          <span class="chip chip--again"><em class="chip__dir">&#8595;</em><span data-i18n="study.chipAgain">Again</span></span>
+          <span class="chip chip--hard"><em class="chip__dir">&#8592;</em><span data-i18n="study.chipHard">Hard</span></span>
+          <span class="chip chip--good"><em class="chip__dir">&#8594;</em><span data-i18n="study.chipGood">Good</span></span>
+          <span class="chip chip--easy"><em class="chip__dir">&#8593;</em><span data-i18n="study.chipEasy">Easy</span></span>
         </div>
       </div>
     </section>
@@ -415,6 +446,24 @@
         <p data-i18n="science.quote">“Learning is deeper and more durable when it's effortful.”</p>
         <cite data-i18n="science.quoteAttr">— Make It Stick: The Science of Successful Learning</cite>
       </blockquote>
+    </section>
+
+    <!-- Mid-page CTA -->
+    <section class="section section--cta section--cta-mid" id="try" data-section>
+      <div class="cta">
+        <p class="eyebrow" data-i18n="midcta.eyebrow">Ready to try it?</p>
+        <h2 class="headline" data-i18n="midcta.title">Five honest minutes, <em>tonight.</em></h2>
+        <p class="lede" data-i18n="midcta.lede">
+          Start with a single deck and let the engine decide when it comes back to you.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://apps.apple.com/cz/app/justflip-flashcards-learning/id6770141421?mt=12" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
+            <span data-i18n="cta.download">Download on the App Store</span>
+          </a>
+          <a class="btn btn--ghost" href="#watch" data-i18n="midcta.watchCta">See it on Apple Watch</a>
+        </div>
+      </div>
     </section>
 
     <!-- Markdown -->
@@ -723,6 +772,25 @@
 
   </main>
 
+  <!-- Section indicator rail -->
+  <aside class="rail" aria-hidden="true">
+    <ol>
+      <li data-target="hero"><em data-i18n="rail.open">Open</em><span>01</span></li>
+      <li data-target="devices"><em data-i18n="rail.everywhere">Everywhere</em><span>02</span></li>
+      <li data-target="ai"><em data-i18n="rail.aiDecks">AI Decks</em><span>03</span></li>
+      <li data-target="study"><em data-i18n="rail.study">Study</em><span>04</span></li>
+      <li data-target="algorithm"><em data-i18n="rail.algorithm">Algorithm</em><span>05</span></li>
+      <li data-target="science"><em data-i18n="rail.science">Science</em><span>06</span></li>
+      <li data-target="markdown"><em data-i18n="rail.markdown">Markdown</em><span>07</span></li>
+      <li data-target="audio"><em data-i18n="rail.listen">Listen</em><span>08</span></li>
+      <li data-target="glance"><em data-i18n="rail.glance">Glance</em><span>09</span></li>
+      <li data-target="watch"><em data-i18n="rail.watch">Watch</em><span>10</span></li>
+      <li data-target="theme"><em data-i18n="rail.dayNight">Day / Night</em><span>11</span></li>
+      <li data-target="access"><em data-i18n="rail.access">Everyone</em><span>12</span></li>
+    </ol>
+  </aside>
+
+
   <footer class="footer" id="about">
     <div class="footer__inner">
       <div class="footer__brand">
@@ -737,13 +805,13 @@
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
-        <a href="#devices" data-i18n="footer.features">Features</a>
+        <a href="#top" data-i18n="footer.features">Features</a>
         <a href="#ai" data-i18n="footer.aiDecks">AI Decks</a>
         <a href="ai-prompt.html" data-i18n="footer.aiPrompt">AI Prompt</a>
         <a href="ai-skill.html" data-i18n="footer.richDecks">Rich Decks</a>
         <a href="learning.html" data-i18n="footer.learning">Learning</a>
         <a href="advanced.html" data-i18n="footer.advanced">Advanced</a>
-        <a href="accessibility/">Accessibility</a>
+        <a href="accessibility/" data-i18n="accessibility.navLabel">Accessibility</a>
         <a href="about.html" data-i18n="footer.about">About</a>
         <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
         <a href="terms.html" data-i18n="footer.terms">Terms &amp; Conditions</a>

@@ -35,7 +35,8 @@
       '.prompt-hero__panel, .prompt-editor, .prompt-steps, .prompt-platforms, ' +
       '.adv-card, .report-card, .tracker-card, .stat-mini, .heatmap, ' +
       '.spoken-demo, .code-compare, .import-flow, .safety-panel, ' +
-      '.watch__stage, .trailer__copy, .trailer__frame'
+      '.watch__stage, .trailer__copy, .trailer__frame, ' +
+      '.trust__title, .trust__item, .hero__usp'
     );
     candidates.forEach((el, i) => {
       el.setAttribute('data-reveal', '');
@@ -260,7 +261,11 @@
       const target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 60;
+      const offset = target.getBoundingClientRect().top + window.scrollY - 60;
+      // A target that sits at the very start of the document (#top) should land
+      // on a true top rather than a few pixels down, behind the sticky header.
+      const navH = nav ? nav.getBoundingClientRect().height : 0;
+      const top = offset <= navH ? 0 : offset;
       window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
   });
