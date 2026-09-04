@@ -1,9 +1,12 @@
-This PR is a marketing and conversion tune-up of the landing page based on an external UX/growth review. It lifts the two genuinely rare features — Apple Watch review and the Lock Screen Live Activity — into the hero, adds an honest trust band and a mid-page call to action, corrects the swipe-direction copy that did not match the app, and makes the AI skill install auditable. Every new or changed string is localized across all 9 supported languages and kept in sync with the embedded web bundle.
+This PR is a marketing and conversion tune-up of the landing page based on an external UX/growth review, with a follow-up fix for its GitHub Pages deployment. It lifts the two genuinely rare features — Apple Watch review and the Lock Screen Live Activity — into the hero, adds an honest trust band and a mid-page call to action, corrects the swipe-direction copy that did not match the app, and makes the AI skill install auditable. The explicit Pages workflow now publishes the current `main` branch, and the live HTML, CSS, and JavaScript match the repository.
 
 No invented social proof was added: the review suggested a star rating and download count, and a "zero tracking" claim. Ratings are not published, and `privacy.html` discloses Firebase Analytics, Crashlytics and RevenueCat, so the trust band only states claims a visitor can verify (native platforms, offline operation, nine languages, the published accessibility report).
 
 ## Changes
 
+- Added `.github/workflows/deploy-pages.yml` with the required `pages: write` and `id-token: write` permissions, manual dispatch, and deployment concurrency control.
+- Switched the repository Pages source from legacy branch builds to GitHub Actions while preserving `main:/` and `https://just-flip.app/`.
+- Verified the deployment completed successfully and the public HTML, CSS, and JavaScript hashes match the repository at commit `5330305`.
 - Rewrote the hero lede to lead with the category claim — the flashcard app that lives quietly across every Apple device — and to name wrist review before the SM-2 engine.
 - Added two linked hero pills for Apple Watch review and the Lock Screen Live Activity, so the two differentiating features are visible above the fold instead of appearing as sections 09 and 10.
 - Added a trust band under the hero listing only verifiable claims, with the fourth item linking to the published accessibility report.
