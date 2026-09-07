@@ -8,7 +8,7 @@
   "deck_a_lang": "ja",
   "decks": [
     {
-      "deck": "ひらがな - 基本",
+      "deck": "ひらがな — 基本",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -291,7 +291,7 @@
       "deck_key": "hiragana-basic"
     },
     {
-      "deck": "ひらがな - 有声音と破裂音",
+      "deck": "ひらがな — 濁音と半濁音",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -448,7 +448,7 @@
       "deck_key": "hiragana-voiced-and-plosive"
     },
     {
-      "deck": "ひらがな — 組み合わせ",
+      "deck": "ひらがな — 拗音",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -653,7 +653,7 @@
       "deck_key": "hiragana-combinations"
     },
     {
-      "deck": "カタカナ - 基本",
+      "deck": "カタカナ — 基本",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -936,7 +936,7 @@
       "deck_key": "katakana-basic"
     },
     {
-      "deck": "カタカナ — 有声音と破裂音",
+      "deck": "カタカナ — 濁音と半濁音",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -1093,7 +1093,7 @@
       "deck_key": "katakana-voiced-and-plosive"
     },
     {
-      "deck": "カタカナ — 組み合わせ",
+      "deck": "カタカナ — 拗音",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -1298,7 +1298,7 @@
       "deck_key": "katakana-combinations"
     },
     {
-      "deck": "読書ルール",
+      "deck": "読み方のルール",
       "deck_icon": "book.closed",
       "cards": [
         {

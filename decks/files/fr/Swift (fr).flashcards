@@ -78,7 +78,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Énumérations",
+      "deck": "Enums",
       "deck_icon": "checklist",
       "cards": [
         {
@@ -194,7 +194,7 @@
       "deck_key": "error-handling"
     },
     {
-      "deck": "Fermetures et capture",
+      "deck": "Closures et capture",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -233,7 +233,7 @@
       "deck_key": "closures-and-capture"
     },
     {
-      "deck": "Structures et sémantique des valeurs",
+      "deck": "Structs et sémantique de valeur",
       "deck_icon": "cube",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "Options",
+      "deck": "Optionals",
       "deck_icon": "lightbulb",
       "cards": [
         {

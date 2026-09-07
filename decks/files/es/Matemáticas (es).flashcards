@@ -8,7 +8,7 @@
   "deck_a_lang": "es",
   "decks": [
     {
-      "deck": "Poderes y raíces",
+      "deck": "Potencias y raíces",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a a la m por a a la n}",
@@ -42,7 +42,7 @@
       "deck_key": "powers-and-roots"
     },
     {
-      "deck": "Reglas de logaritmo",
+      "deck": "Reglas de los logaritmos",
       "cards": [
         {
           "q": "$\\log_a(x \\cdot y) = ?${log base a de x multiplicado por y}",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "Derivados",
+      "deck": "Derivadas",
       "cards": [
         {
           "q": "¿Qué significa geométricamente $f'(x_0)${f prima de x cero}?",
@@ -414,7 +414,7 @@
       "deck_key": "derivatives"
     },
     {
-      "deck": "Geometría sólida",
+      "deck": "Geometría del espacio",
       "cards": [
         {
           "q": "Volumen de un **prisma** — $S_p${S p} es el área de la base, $v$ la altura:",

@@ -19,6 +19,7 @@
     "cs": {
       "nav.features": "Funkce",
       "nav.aiDecks": "AI Balíčky",
+      "nav.decks": "Balíčky",
       "nav.aiPrompt": "AI Prompt",
       "nav.richDecks": "Bohaté balíčky",
       "nav.algorithm": "Algoritmus",
@@ -200,6 +201,7 @@
       "footer.tagline": "Společník s kartičkami pro celoživotní učení.",
       "footer.features": "Funkce",
       "footer.aiDecks": "AI Balíčky",
+      "footer.decks": "Balíčky",
       "footer.aiPrompt": "AI Prompt",
       "footer.richDecks": "Bohaté balíčky",
       "footer.algorithm": "Algoritmus",
@@ -567,11 +569,14 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>Import</td><td>Importovat soubor <code>.flashcards</code>, CSV nebo Anki přes výběr dokumentu.</td>",
       "lang.switchLabel": "Přepnout jazyk",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "Připravené balíčky pro učení | JustFlip!",
+      "decks.metaDescription": "Prozkoumej bezplatné připravené balíčky kartiček pro jazyky, hudbu, matematiku, programování a vědu. Nebo si vytvoř vlastní balíček s AI nástroji JustFlip."
     },
     "de": {
       "nav.features": "Funktionen",
       "nav.aiDecks": "KI-Decks",
+      "nav.decks": "Decks",
       "nav.aiPrompt": "KI-Prompt",
       "nav.richDecks": "Rich-Decks",
       "nav.algorithm": "Algorithmus",
@@ -753,6 +758,7 @@
       "footer.tagline": "Ein Karteikarten-Begleiter für lebenslang Lernende.",
       "footer.features": "Funktionen",
       "footer.aiDecks": "KI-Decks",
+      "footer.decks": "Decks",
       "footer.aiPrompt": "KI-Prompt",
       "footer.richDecks": "Rich-Decks",
       "footer.algorithm": "Algorithmus",
@@ -1066,11 +1072,14 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>Import</td><td><code>.flashcards</code>-, CSV- oder Anki-Datei über die Dokumentauswahl importieren.</td>",
       "lang.switchLabel": "Sprache wechseln",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "Kuratierte Decks zum Lernen | JustFlip!",
+      "decks.metaDescription": "Entdecke kostenlose kuratierte Karteikarten-Decks für Sprachen, Musik, Mathematik, Programmierung und Naturwissenschaften. Oder erstelle dein eigenes Deck mit den KI-Werkzeugen von JustFlip."
     },
     "es": {
       "nav.features": "Funciones",
       "nav.aiDecks": "Decks IA",
+      "nav.decks": "Mazos",
       "nav.aiPrompt": "Prompt IA",
       "nav.richDecks": "Decks completos",
       "nav.algorithm": "Algoritmo",
@@ -1252,6 +1261,7 @@
       "footer.tagline": "Un compañero de tarjetas para quienes aprenden toda la vida.",
       "footer.features": "Funciones",
       "footer.aiDecks": "Decks IA",
+      "footer.decks": "Mazos",
       "footer.aiPrompt": "Prompt IA",
       "footer.richDecks": "Decks completos",
       "footer.algorithm": "Algoritmo",
@@ -1565,11 +1575,14 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>Importar</td><td>Importar un archivo <code>.flashcards</code>, CSV o Anki mediante el selector de documentos.</td>",
       "lang.switchLabel": "Cambiar idioma",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "Mazos seleccionados para aprender | JustFlip!",
+      "decks.metaDescription": "Explora mazos de tarjetas gratuitos y seleccionados de idiomas, música, matemáticas, programación y ciencia. O crea tu propio mazo con las herramientas de IA de JustFlip."
     },
     "fr": {
       "nav.features": "Fonctionnalités",
       "nav.aiDecks": "Decks IA",
+      "nav.decks": "Paquets",
       "nav.aiPrompt": "Prompt IA",
       "nav.richDecks": "Decks complets",
       "nav.algorithm": "Algorithme",
@@ -1751,6 +1764,7 @@
       "footer.tagline": "Un compagnon de cartes pour les apprenants de toute la vie.",
       "footer.features": "Fonctionnalités",
       "footer.aiDecks": "Decks IA",
+      "footer.decks": "Paquets",
       "footer.aiPrompt": "Prompt IA",
       "footer.richDecks": "Decks complets",
       "footer.algorithm": "Algorithme",
@@ -2064,11 +2078,14 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>Importer</td><td>Importer un fichier <code>.flashcards</code>, CSV ou Anki via le sélecteur de documents.</td>",
       "lang.switchLabel": "Changer de langue",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "Paquets sélectionnés pour apprendre | JustFlip!",
+      "decks.metaDescription": "Explorez des paquets de cartes gratuits et sélectionnés pour les langues, la musique, les mathématiques, la programmation et les sciences. Ou créez votre propre paquet avec les outils d'IA de JustFlip."
     },
     "it": {
       "nav.features": "Funzionalità",
       "nav.aiDecks": "Deck IA",
+      "nav.decks": "Mazzi",
       "nav.aiPrompt": "Prompt IA",
       "nav.richDecks": "Deck completi",
       "nav.algorithm": "Algoritmo",
@@ -2250,6 +2267,7 @@
       "footer.tagline": "Un compagno di flashcard per chi impara per tutta la vita.",
       "footer.features": "Funzionalità",
       "footer.aiDecks": "Deck IA",
+      "footer.decks": "Mazzi",
       "footer.aiPrompt": "Prompt IA",
       "footer.richDecks": "Deck completi",
       "footer.algorithm": "Algoritmo",
@@ -2563,11 +2581,14 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>Importazione</td><td>Importare un file <code>.flashcards</code>, CSV o Anki dal selettore documenti.</td>",
       "lang.switchLabel": "Cambia lingua",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "Mazzi curati per imparare | JustFlip!",
+      "decks.metaDescription": "Esplora mazzi di flashcard gratuiti e curati per lingue, musica, matematica, programmazione e scienze. Oppure crea il tuo mazzo con gli strumenti di IA di JustFlip."
     },
     "ja": {
       "nav.features": "機能",
       "nav.aiDecks": "AI デッキ",
+      "nav.decks": "デッキ",
       "nav.aiPrompt": "AI プロンプト",
       "nav.richDecks": "本格デッキ",
       "nav.algorithm": "アルゴリズム",
@@ -2749,6 +2770,7 @@
       "footer.tagline": "生涯学習者のためのフラッシュカード相棒。",
       "footer.features": "機能",
       "footer.aiDecks": "AI デッキ",
+      "footer.decks": "デッキ",
       "footer.aiPrompt": "AI プロンプト",
       "footer.richDecks": "本格デッキ",
       "footer.algorithm": "アルゴリズム",
@@ -3062,11 +3084,14 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>インポート</td><td>書類ピッカーから<code>.flashcards</code>、CSV、Ankiファイルをインポートする。</td>",
       "lang.switchLabel": "言語を切り替える",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "学習のための厳選デッキ | JustFlip!",
+      "decks.metaDescription": "言語・音楽・数学・プログラミング・科学の無料の厳選フラッシュカードデッキを見てみましょう。JustFlip の AI ツールで自分だけのデッキを作ることもできます。"
     },
     "ko": {
       "nav.features": "기능",
       "nav.aiDecks": "AI 덱",
+      "nav.decks": "덱",
       "nav.aiPrompt": "AI 프롬프트",
       "nav.richDecks": "완성형 덱",
       "nav.algorithm": "알고리즘",
@@ -3248,6 +3273,7 @@
       "footer.tagline": "평생 학습자를 위한 플래시카드 동반자.",
       "footer.features": "기능",
       "footer.aiDecks": "AI 덱",
+      "footer.decks": "덱",
       "footer.aiPrompt": "AI 프롬프트",
       "footer.richDecks": "완성형 덱",
       "footer.algorithm": "알고리즘",
@@ -3561,11 +3587,14 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>가져오기</td><td>문서 선택기에서 <code>.flashcards</code>, CSV 또는 Anki 파일을 가져옵니다.</td>",
       "lang.switchLabel": "언어 변경",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "학습을 위한 엄선된 덱 | JustFlip!",
+      "decks.metaDescription": "언어, 음악, 수학, 프로그래밍, 과학을 위한 무료 엄선 플래시카드 덱을 살펴보세요. JustFlip의 AI 도구로 나만의 덱을 만들 수도 있습니다."
     },
     "pt-br": {
       "nav.features": "Recursos",
       "nav.aiDecks": "Decks de IA",
+      "nav.decks": "Decks",
       "nav.aiPrompt": "Prompt de IA",
       "nav.richDecks": "Decks completos",
       "nav.algorithm": "Algoritmo",
@@ -3747,6 +3776,7 @@
       "footer.tagline": "Um companheiro de flashcards para aprendizes ao longo da vida.",
       "footer.features": "Recursos",
       "footer.aiDecks": "Decks de IA",
+      "footer.decks": "Decks",
       "footer.aiPrompt": "Prompt de IA",
       "footer.richDecks": "Decks completos",
       "footer.algorithm": "Algoritmo",
@@ -4060,7 +4090,9 @@
       "accessibility.task8": "<th scope=\"row\">CT8</th><td>Importar</td><td>Importar um arquivo <code>.flashcards</code>, CSV ou Anki pelo seletor de documentos.</td>",
       "lang.switchLabel": "Trocar idioma",
       "lang.en": "English",
-      "lang.cs": "Čeština"
+      "lang.cs": "Čeština",
+      "decks.metaTitle": "Decks selecionados para aprender | JustFlip!",
+      "decks.metaDescription": "Explore decks de flashcards gratuitos e selecionados de idiomas, música, matemática, programação e ciências. Ou crie o seu próprio deck com as ferramentas de IA do JustFlip."
     }
   };
 

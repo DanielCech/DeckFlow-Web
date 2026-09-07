@@ -8,7 +8,7 @@
   "deck_a_lang": "fr",
   "decks": [
     {
-      "deck": "Structure et formulaires de l'application",
+      "deck": "Structure de l’app et formulaires",
       "deck_icon": "app.badge",
       "cards": [
         {
@@ -47,7 +47,7 @@
       "deck_key": "app-structure-and-forms"
     },
     {
-      "deck": "État et liaisons",
+      "deck": "State et bindings",
       "deck_icon": "link",
       "cards": [
         {
@@ -90,7 +90,7 @@
       "deck_key": "state-and-bindings"
     },
     {
-      "deck": "Vues et modificateurs",
+      "deck": "Views et modificateurs",
       "deck_icon": "square.stack.3d.up",
       "cards": [
         {
@@ -141,7 +141,7 @@
       "deck_key": "views-and-modifiers"
     },
     {
-      "deck": "Piles, grilles et défilement",
+      "deck": "Stacks, grids et défilement",
       "deck_icon": "square.stack.3d.up",
       "cards": [
         {
@@ -184,7 +184,7 @@
       "deck_key": "stacks-grids-and-scrolling"
     },
     {
-      "deck": "Disposition et géométrie",
+      "deck": "Layout et géométrie",
       "deck_icon": "ruler",
       "cards": [
         {
@@ -309,7 +309,7 @@
       "deck_key": "lists-and-foreach"
     },
     {
-      "deck": "Contrôles d'entrée",
+      "deck": "Contrôles de saisie",
       "deck_icon": "gearshape",
       "cards": [
         {
@@ -348,7 +348,7 @@
       "deck_key": "input-controls"
     },
     {
-      "deck": "Alertes, feuilles et boîtes de dialogue",
+      "deck": "Alerts, sheets et dialogues",
       "deck_icon": "bubble.left",
       "cards": [
         {
@@ -489,7 +489,7 @@
       "deck_key": "animation-and-transitions"
     },
     {
-      "deck": "Gestes, haptiques et minuteries",
+      "deck": "Gestes, haptique et timers",
       "deck_icon": "hand.point.up.left",
       "cards": [
         {
@@ -575,7 +575,7 @@
       "deck_key": "observation-and-data-flow"
     },
     {
-      "deck": "Persistance et codabilité",
+      "deck": "Persistance et Codable",
       "deck_icon": "internaldrive",
       "cards": [
         {
@@ -618,7 +618,7 @@
       "deck_key": "persistence-and-codable"
     },
     {
-      "deck": "Réseautage",
+      "deck": "Networking",
       "deck_icon": "network",
       "cards": [
         {
@@ -743,7 +743,7 @@
       "deck_key": "accessibility"
     },
     {
-      "deck": "Interface utilisateur adaptative et cadres système",
+      "deck": "UI adaptative et frameworks système",
       "deck_icon": "ipad",
       "cards": [
         {

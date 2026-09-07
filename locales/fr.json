@@ -1,6 +1,7 @@
 {
   "nav.features": "Fonctionnalités",
   "nav.aiDecks": "Decks IA",
+  "nav.decks": "Paquets",
   "nav.aiPrompt": "Prompt IA",
   "nav.richDecks": "Decks complets",
   "nav.algorithm": "Algorithme",
@@ -182,6 +183,7 @@
   "footer.tagline": "Un compagnon de cartes pour les apprenants de toute la vie.",
   "footer.features": "Fonctionnalités",
   "footer.aiDecks": "Decks IA",
+  "footer.decks": "Paquets",
   "footer.aiPrompt": "Prompt IA",
   "footer.richDecks": "Decks complets",
   "footer.algorithm": "Algorithme",
@@ -495,5 +497,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>Importer</td><td>Importer un fichier <code>.flashcards</code>, CSV ou Anki via le sélecteur de documents.</td>",
   "lang.switchLabel": "Changer de langue",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "Paquets sélectionnés pour apprendre | JustFlip!",
+  "decks.metaDescription": "Explorez des paquets de cartes gratuits et sélectionnés pour les langues, la musique, les mathématiques, la programmation et les sciences. Ou créez votre propre paquet avec les outils d'IA de JustFlip."
 }

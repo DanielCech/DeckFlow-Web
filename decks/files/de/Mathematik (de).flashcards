@@ -8,7 +8,7 @@
   "deck_a_lang": "de",
   "decks": [
     {
-      "deck": "Kräfte und Wurzeln",
+      "deck": "Potenzen und Wurzeln",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a zu m mal a zu n}",
@@ -238,7 +238,7 @@
       "deck_key": "trigonometric-identities"
     },
     {
-      "deck": "Trigonometrische Funktionen und Umkehrungen",
+      "deck": "Trigonometrische Funktionen und Umkehrfunktionen",
       "cards": [
         {
           "q": "Domäne von $\\sin x${sine x}:",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "Derivate",
+      "deck": "Ableitungen",
       "cards": [
         {
           "q": "Was bedeutet $f'(x_0)${f Primzahl von x Null} geometrisch?",
@@ -414,7 +414,7 @@
       "deck_key": "derivatives"
     },
     {
-      "deck": "Solide Geometrie",
+      "deck": "Raumgeometrie",
       "cards": [
         {
           "q": "Volumen eines **Prismas** – $S_p${S p} ist die Grundfläche, $v$ die Höhe:",

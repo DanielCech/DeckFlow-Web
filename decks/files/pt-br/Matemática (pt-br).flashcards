@@ -8,7 +8,7 @@
   "deck_a_lang": "pt-br",
   "decks": [
     {
-      "deck": "Poderes e Raízes",
+      "deck": "Potências e raízes",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a elevado a m vezes a elevado a n}",
@@ -42,7 +42,7 @@
       "deck_key": "powers-and-roots"
     },
     {
-      "deck": "Regras de logaritmo",
+      "deck": "Regras dos logaritmos",
       "cards": [
         {
           "q": "$\\log_a(x \\cdot y) = ?${log base a de x vezes y}",
@@ -80,7 +80,7 @@
       "deck_key": "logarithm-rules"
     },
     {
-      "deck": "Identidades Algébricas",
+      "deck": "Identidades algébricas",
       "cards": [
         {
           "q": "$(a + b)^2 = ?${a mais b, tudo ao quadrado}",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "Derivados",
+      "deck": "Derivadas",
       "cards": [
         {
           "q": "O que $f'(x_0)${f linha de x zero} significa geometricamente?",
@@ -414,7 +414,7 @@
       "deck_key": "derivatives"
     },
     {
-      "deck": "Geometria Sólida",
+      "deck": "Geometria espacial",
       "cards": [
         {
           "q": "Volume de um **prisma** — $S_p${S p} é a área da base, $v$ a altura:",

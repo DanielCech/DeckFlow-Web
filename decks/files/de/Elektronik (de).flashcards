@@ -8,7 +8,7 @@
   "deck_a_lang": "de",
   "decks": [
     {
-      "deck": "Gesetze und Mengen",
+      "deck": "Gesetze und Größen",
       "deck_icon": "bolt",
       "cards": [
         {
@@ -95,7 +95,7 @@
       "deck_key": "laws-and-quantities"
     },
     {
-      "deck": "Komponenten",
+      "deck": "Bauteile",
       "deck_icon": "cpu",
       "cards": [
         {
@@ -546,7 +546,7 @@
       "deck_key": "motors-and-drivers"
     },
     {
-      "deck": "Messung",
+      "deck": "Messtechnik",
       "deck_icon": "ruler",
       "cards": [
         {

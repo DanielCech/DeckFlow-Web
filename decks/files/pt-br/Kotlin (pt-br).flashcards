@@ -55,7 +55,7 @@
       "deck_key": "syntax-basics"
     },
     {
-      "deck": "Segurança Nula",
+      "deck": "Null safety",
       "deck_icon": "checkmark.shield",
       "cards": [
         {
@@ -141,7 +141,7 @@
       "deck_key": "functions"
     },
     {
-      "deck": "Aulas e OOP",
+      "deck": "Classes e POO",
       "deck_icon": "cube",
       "cards": [
         {
@@ -278,7 +278,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Corrotinas e Fluxo",
+      "deck": "Corrotinas e Flow",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {
@@ -329,7 +329,7 @@
       "deck_key": "coroutines-and-flow"
     },
     {
-      "deck": "Genéricos e Variância",
+      "deck": "Genéricos e variância",
       "deck_icon": "chevron.left.forwardslash.chevron.right",
       "cards": [
         {
@@ -395,7 +395,7 @@
       "deck_key": "multiplatform"
     },
     {
-      "deck": "Gradle e Ferramentas",
+      "deck": "Gradle e ferramentas",
       "deck_icon": "hammer",
       "cards": [
         {

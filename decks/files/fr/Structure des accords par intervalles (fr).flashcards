@@ -11,84 +11,84 @@
   "deck_icon": "pianokeys",
   "cards": [
     {
-      "q": "Quels degrés d'échelle construisent une **triade majeure** ?",
-      "a": "[1 – 3 – 5]{un, tierce majeure, quinte juste}\n\nRacine, tierce majeure, quinte juste."
+      "q": "Quels degrés de la gamme forment un **accord parfait majeur** ?",
+      "a": "[1 – 3 – 5]{un, tierce majeure, quinte juste}\n\nFondamentale, tierce majeure, quinte juste."
     },
     {
-      "q": "Quels degrés d'échelle construisent une **triade mineure** ?",
-      "a": "[1 – ♭3 – 5]{un, tierce mineure, quinte parfaite}\n\nLa triade majeure avec une tierce abaissée."
+      "q": "Quels degrés de la gamme forment un **accord parfait mineur** ?",
+      "a": "[1 – ♭3 – 5]{un, tierce mineure, quinte juste}\n\nL’accord parfait majeur avec la tierce abaissée."
     },
     {
-      "q": "Quels degrés d'échelle construisent une **triade diminuée** ?",
-      "a": "[1 – ♭3 – ♭5]{un, tierce mineure, quinte diminuée}\n\nDeux tierces mineures empilées."
+      "q": "Quels degrés de la gamme forment un **accord diminué** ?",
+      "a": "[1 – ♭3 – ♭5]{un, tierce mineure, quinte diminuée}\n\nDeux tierces mineures superposées."
     },
     {
-      "q": "Quelles échelles de degrés construisent une **triade augmentée** ?",
-      "a": "[1 – 3 – ♯5]{un, tierce majeure, quinte augmentée}\n\nDeux tierces majeures empilées."
+      "q": "Quels degrés de la gamme forment un **accord augmenté** ?",
+      "a": "[1 – 3 – ♯5]{un, tierce majeure, quinte augmentée}\n\nDeux tierces majeures superposées."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **septième dominante** (7) ?",
-      "a": "[1 – 3 – 5 – ♭7]{un, tierce majeure, quinte parfaite, septième mineure}\n\nTriade majeure plus une septième mineure."
+      "q": "Quels degrés de la gamme forment un accord de **septième de dominante** (7) ?",
+      "a": "[1 – 3 – 5 – ♭7]{un, tierce majeure, quinte juste, septième mineure}\n\nAccord parfait majeur plus une septième mineure."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **septième majeure** (maj7) ?",
-      "a": "[1 – 3 – 5 – 7]{un, tierce majeure, quinte parfaite, septième majeure}\n\nTriade majeure plus une septième majeure."
+      "q": "Quels degrés de la gamme forment un accord de **septième majeure** (maj7) ?",
+      "a": "[1 – 3 – 5 – 7]{un, tierce majeure, quinte juste, septième majeure}\n\nAccord parfait majeur plus une septième majeure."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **septième mineure** (m7) ?",
-      "a": "[1 – ♭3 – 5 – ♭7]{un, tierce mineure, quinte parfaite, septième mineure}\n\nTriade mineure plus une septième mineure."
+      "q": "Quels degrés de la gamme forment un accord de **septième mineure** (m7) ?",
+      "a": "[1 – ♭3 – 5 – ♭7]{un, tierce mineure, quinte juste, septième mineure}\n\nAccord parfait mineur plus une septième mineure."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord **septième mineur-majeur** (m♯7 / minMaj7) ?",
-      "a": "[1 – ♭3 – 5 – 7]{un, tierce mineure, quinte parfaite, septième majeure}\n\nTriade mineure plus une septième **majeure** — l'accord tonique de l'harmonique mineure."
+      "q": "Quels degrés de la gamme forment un accord de **septième mineure-majeure** (m♯7 / minMaj7) ?",
+      "a": "[1 – ♭3 – 5 – 7]{un, tierce mineure, quinte juste, septième majeure}\n\nAccord parfait mineur plus une septième **majeure** — l’accord de tonique du mineur harmonique."
     },
     {
-      "q": "Quels degrés d'échelle construisent un accord **de septième à moitié diminuée** (m7♭5 / ø7) ?",
-      "a": "[1 – ♭3 – ♭5 – ♭7]{un, tierce mineure, quinte diminuée, septième mineure}\n\nTriade diminuée plus une septième **mineure**."
+      "q": "Quels degrés de la gamme forment un accord de **septième demi-diminuée** (m7♭5 / ø7) ?",
+      "a": "[1 – ♭3 – ♭5 – ♭7]{un, tierce mineure, quinte diminuée, septième mineure}\n\nAccord diminué plus une septième **mineure**."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de septième **entièrement diminué** (dim7 / °7) ?",
-      "a": "[1 – ♭3 – ♭5 – ♭♭7]{un, tierce mineure, quinte diminuée, septième diminuée}\n\nTrois tierces mineures empilées. Le ♭♭7 sonne comme un sixième."
+      "q": "Quels degrés de la gamme forment un accord de **septième diminuée** (dim7 / °7) ?",
+      "a": "[1 – ♭3 – ♭5 – ♭♭7]{un, tierce mineure, quinte diminuée, septième diminuée}\n\nTrois tierces mineures superposées. La ♭♭7 sonne comme une sixte majeure."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **septième augmentée** (7♯5) ?",
-      "a": "[1 – 3 – ♯5 – ♭7]{un, tierce majeure, quinte augmentée, septième mineure}\n\nTriade augmentée plus une septième mineure."
+      "q": "Quels degrés de la gamme forment un accord de **septième augmentée** (7♯5) ?",
+      "a": "[1 – 3 – ♯5 – ♭7]{un, tierce majeure, quinte augmentée, septième mineure}\n\nAccord augmenté plus une septième mineure."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **sixte majeure** (6) ?",
-      "a": "[1 – 3 – 5 – 6]{un, tierce majeure, quinte juste, sixte majeure}\n\nTriade majeure plus une sixte majeure – pas de septième."
+      "q": "Quels degrés de la gamme forment un accord de **sixte majeure** (6) ?",
+      "a": "[1 – 3 – 5 – 6]{un, tierce majeure, quinte juste, sixte majeure}\n\nAccord parfait majeur plus une sixte majeure — sans septième."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **sixte mineure** (m6) ?",
-      "a": "[1 – ♭3 – 5 – 6]{un, tierce mineure, quinte parfaite, sixte majeure}\n\nTriade mineure avec une sixième **majeure** au sommet."
+      "q": "Quels degrés de la gamme forment un accord de **sixte mineure** (m6) ?",
+      "a": "[1 – ♭3 – 5 – 6]{un, tierce mineure, quinte juste, sixte majeure}\n\nAccord parfait mineur avec une sixte **majeure** au sommet."
     },
     {
-      "q": "Quelle est la différence entre **sus2** et **sus4** ?",
-      "a": "Les deux **omettent le troisième**.\n\n* `sus2` — tierce remplacée par la seconde majeure : 1 – 2 – 5\n* `sus4` — tierce remplacée par la quarte parfaite : 1 – 4 – 5"
+      "q": "Quelle est la différence entre **sus2** et **sus4** ?",
+      "a": "Les deux **omettent la tierce**.\n\n* `sus2` — la tierce est remplacée par la seconde majeure : 1 – 2 – 5\n* `sus4` — la tierce est remplacée par la quarte juste : 1 – 4 – 5"
     },
     {
-      "q": "Quels degrés d'échelle construisent un accord **add9** – et en quoi diffère-t-il d'un accord **9** ?",
-      "a": "`add9` = [1 – 3 – 5 – 9]{un, tierce majeure, quinte juste, neuvième}\n\nUne triade majeure avec une neuvième majeure ajoutée et **pas de septième**. Un accord `9` est une septième dominante plus la neuvième : 1 – 3 – 5 – ♭7 – 9."
+      "q": "Quels degrés de la gamme forment un accord **add9** — et en quoi diffère-t-il d’un accord **9** ?",
+      "a": "`add9` = [1 – 3 – 5 – 9]{un, tierce majeure, quinte juste, neuvième}\n\nUn accord parfait majeur avec une neuvième majeure ajoutée et **sans septième**. Un accord `9` est une septième de dominante plus la neuvième : 1 – 3 – 5 – ♭7 – 9."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **neuvième dominante** (9) ?",
-      "a": "[1 – 3 – 5 – ♭7 – 9]{un, tierce majeure, quinte parfaite, septième mineure, neuvième}\n\nUne septième dominante prolongée par une neuvième majeure."
+      "q": "Quels degrés de la gamme forment un accord de **neuvième de dominante** (9) ?",
+      "a": "[1 – 3 – 5 – ♭7 – 9]{un, tierce majeure, quinte juste, septième mineure, neuvième}\n\nUne septième de dominante étendue par la neuvième majeure."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **onzième** (11) ?",
-      "a": "[1 – 5 – ♭7 – 9 – 11]{un, quinte parfaite, septième mineure, neuvième, onzième}\n\nLa troisième est généralement abandonnée : elle entre en conflit avec la onzième un demi-ton au-dessus."
+      "q": "Quels degrés de la gamme forment un accord de **onzième** (11) ?",
+      "a": "[1 – 5 – ♭7 – 9 – 11]{un, quinte juste, septième mineure, neuvième, onzième}\n\nLa tierce est généralement supprimée : elle frotte avec la onzième, un demi-ton au-dessus."
     },
     {
-      "q": "Quels degrés de gamme construisent un accord de **treizième** (13) ?",
-      "a": "[1 – 3 – 5 – ♭7 – 9 – 13]{un, tierce majeure, quinte parfaite, septième mineure, neuvième, treizième}\n\nLe onzième est normalement omis. En pratique, le voicing conserve 1, 3, ♭7 et 13."
+      "q": "Quels degrés de la gamme forment un accord de **treizième** (13) ?",
+      "a": "[1 – 3 – 5 – ♭7 – 9 – 13]{un, tierce majeure, quinte juste, septième mineure, neuvième, treizième}\n\nLa onzième est normalement omise. En pratique le voicing garde 1, 3, ♭7 et 13."
     },
     {
-      "q": "Quels degrés d'échelle construisent un **accord de puissance** (5) ?",
-      "a": "[1 – 5]{un, cinquième parfaite}\n\nPas de tierce du tout, donc ce n'est ni majeur ni mineur."
+      "q": "Quels degrés de la gamme forment un **power chord** (5) ?",
+      "a": "[1 – 5]{un, quinte juste}\n\nAucune tierce du tout, donc ni majeur ni mineur."
     },
     {
-      "q": "Quelles sont les deux notes qui décident si un accord de septième sonne majeur, mineur, dominant ou diminué ?",
-      "a": "Le **troisième** et le **septième**.\n\nCe sont les tons guides : 3 + 7 est majeur, ♭3 + ♭7 est mineur, 3 + ♭7 est dominant, ♭3 + ♭♭7 est diminué. La quinte peut être omise sans changer la qualité de l'accord."
+      "q": "Quelles deux notes déterminent si un accord de septième sonne majeur, mineur, dominante ou diminué ?",
+      "a": "La **tierce** et la **septième**.\n\nCe sont les notes guides : 3 + 7 est majeur, ♭3 + ♭7 est mineur, 3 + ♭7 est dominante, ♭3 + ♭♭7 est diminué. La quinte peut être omise sans changer la couleur de l’accord."
     }
   ]
 }

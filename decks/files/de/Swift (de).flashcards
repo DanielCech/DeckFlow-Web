@@ -8,7 +8,7 @@
   "deck_a_lang": "de",
   "decks": [
     {
-      "deck": "Werte, Typen und Zeichenfolgen",
+      "deck": "Werte, Typen und Strings",
       "deck_icon": "textformat",
       "cards": [
         {
@@ -51,7 +51,7 @@
       "deck_key": "values-types-and-strings"
     },
     {
-      "deck": "Sammlungen",
+      "deck": "Collections",
       "deck_icon": "list.bullet.rectangle",
       "cards": [
         {
@@ -78,7 +78,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Aufzählungen",
+      "deck": "Enums",
       "deck_icon": "checklist",
       "cards": [
         {
@@ -194,7 +194,7 @@
       "deck_key": "error-handling"
     },
     {
-      "deck": "Schließungen und Erfassung",
+      "deck": "Closures und Capture",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -233,7 +233,7 @@
       "deck_key": "closures-and-capture"
     },
     {
-      "deck": "Strukturen und Wertesemantik",
+      "deck": "Structs und Wertsemantik",
       "deck_icon": "cube",
       "cards": [
         {
@@ -311,7 +311,7 @@
       "deck_key": "classes-and-reference-semantics"
     },
     {
-      "deck": "Protokolle und Erweiterungen",
+      "deck": "Protokolle und Extensions",
       "deck_icon": "checkmark.seal",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "Optionen",
+      "deck": "Optionals",
       "deck_icon": "lightbulb",
       "cards": [
         {

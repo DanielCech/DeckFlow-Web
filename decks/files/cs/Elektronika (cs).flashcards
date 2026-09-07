@@ -95,7 +95,7 @@
       "deck_key": "laws-and-quantities"
     },
     {
-      "deck": "Komponenty",
+      "deck": "Součástky",
       "deck_icon": "cpu",
       "cards": [
         {
@@ -277,7 +277,7 @@
       "deck_key": "digital-logic-and-buses"
     },
     {
-      "deck": "Základy mikrokontroléru",
+      "deck": "Základy mikrokontrolérů",
       "deck_icon": "wrench.and.screwdriver",
       "cards": [
         {
@@ -451,7 +451,7 @@
       "deck_key": "wi-fi-microcontrollers"
     },
     {
-      "deck": "Motory a ovladače",
+      "deck": "Motory a budiče",
       "deck_icon": "gearshape.2",
       "cards": [
         {

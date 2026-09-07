@@ -11,84 +11,84 @@
   "deck_icon": "pianokeys",
   "cards": [
     {
-      "q": "¿Qué grados de escala forman una **tríada mayor**?",
-      "a": "[1 – 3 – 5]{uno, tercera mayor, quinta justa}\n\nRaíz, tercera mayor, quinta justa."
+      "q": "¿Qué grados de la escala forman una **tríada mayor**?",
+      "a": "[1 – 3 – 5]{uno, tercera mayor, quinta justa}\n\nFundamental, tercera mayor, quinta justa."
     },
     {
-      "q": "¿Qué grados de escala forman una **tríada menor**?",
-      "a": "[1 – ♭3 – 5]{uno, tercera menor, quinta perfecta}\n\nLa tríada mayor con un tercio rebajado."
+      "q": "¿Qué grados de la escala forman una **tríada menor**?",
+      "a": "[1 – ♭3 – 5]{uno, tercera menor, quinta justa}\n\nLa tríada mayor con la tercera rebajada."
     },
     {
-      "q": "¿Qué grados de escala forman una **tríada disminuida**?",
+      "q": "¿Qué grados de la escala forman una **tríada disminuida**?",
       "a": "[1 – ♭3 – ♭5]{uno, tercera menor, quinta disminuida}\n\nDos terceras menores apiladas."
     },
     {
-      "q": "¿Qué grados de escala construyen una **tríada aumentada**?",
+      "q": "¿Qué grados de la escala forman una **tríada aumentada**?",
       "a": "[1 – 3 – ♯5]{uno, tercera mayor, quinta aumentada}\n\nDos terceras mayores apiladas."
     },
     {
-      "q": "¿Qué grados de escala forman un acorde de **séptima dominante** (7)?",
-      "a": "[1 – 3 – 5 – ♭7]{uno, tercera mayor, quinta perfecta, séptima menor}\n\nTríada mayor más séptima menor."
+      "q": "¿Qué grados de la escala forman un acorde de **séptima de dominante** (7)?",
+      "a": "[1 – 3 – 5 – ♭7]{uno, tercera mayor, quinta justa, séptima menor}\n\nTríada mayor más una séptima menor."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **séptima mayor** (maj7)?",
-      "a": "[1 – 3 – 5 – 7]{uno, tercera mayor, quinta perfecta, séptima mayor}\n\nTríada mayor más séptima mayor."
+      "q": "¿Qué grados de la escala forman un acorde de **séptima mayor** (maj7)?",
+      "a": "[1 – 3 – 5 – 7]{uno, tercera mayor, quinta justa, séptima mayor}\n\nTríada mayor más una séptima mayor."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **séptima menor** (m7)?",
-      "a": "[1 – ♭3 – 5 – ♭7]{uno, tercera menor, quinta justa, séptima menor}\n\nTríada menor más séptima menor."
+      "q": "¿Qué grados de la escala forman un acorde de **séptima menor** (m7)?",
+      "a": "[1 – ♭3 – 5 – ♭7]{uno, tercera menor, quinta justa, séptima menor}\n\nTríada menor más una séptima menor."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **séptima menor-mayor** (m♯7 / minMaj7)?",
-      "a": "[1 – ♭3 – 5 – 7]{uno, tercera menor, quinta perfecta, séptima mayor}\n\nTríada menor más una séptima **mayor**: el acorde tónico de la armónica menor."
+      "q": "¿Qué grados de la escala forman un acorde de **séptima menor-mayor** (m♯7 / minMaj7)?",
+      "a": "[1 – ♭3 – 5 – 7]{uno, tercera menor, quinta justa, séptima mayor}\n\nTríada menor más una séptima **mayor**: el acorde de tónica de la menor armónica."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **séptima medio disminuida** (m7♭5 / ø7)?",
+      "q": "¿Qué grados de la escala forman un acorde de **séptima semidisminuida** (m7♭5 / ø7)?",
       "a": "[1 – ♭3 – ♭5 – ♭7]{uno, tercera menor, quinta disminuida, séptima menor}\n\nTríada disminuida más una séptima **menor**."
     },
     {
-      "q": "¿Qué grados de escala forman un acorde **de séptima totalmente disminuida** (dim7 / °7)?",
-      "a": "[1 – ♭3 – ♭5 – ♭♭7]{uno, tercera menor, quinta disminuida, séptima disminuida}\n\nTres terceras menores apiladas. El ♭♭7 suena igual que un sexto."
+      "q": "¿Qué grados de la escala forman un acorde de **séptima disminuida** (dim7 / °7)?",
+      "a": "[1 – ♭3 – ♭5 – ♭♭7]{uno, tercera menor, quinta disminuida, séptima disminuida}\n\nTres terceras menores apiladas. La ♭♭7 suena igual que una sexta mayor."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **séptima aumentada** (7♯5)?",
-      "a": "[1 – 3 – ♯5 – ♭7]{uno, tercera mayor, quinta aumentada, séptima menor}\n\nTríada aumentada más séptima menor."
+      "q": "¿Qué grados de la escala forman un acorde de **séptima aumentada** (7♯5)?",
+      "a": "[1 – 3 – ♯5 – ♭7]{uno, tercera mayor, quinta aumentada, séptima menor}\n\nTríada aumentada más una séptima menor."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **sexta mayor** (6)?",
-      "a": "[1 – 3 – 5 – 6]{uno, tercera mayor, quinta perfecta, sexta mayor}\n\nTríada mayor más una sexta mayor, no una séptima."
+      "q": "¿Qué grados de la escala forman un acorde de **sexta mayor** (6)?",
+      "a": "[1 – 3 – 5 – 6]{uno, tercera mayor, quinta justa, sexta mayor}\n\nTríada mayor más una sexta mayor, sin séptima."
     },
     {
-      "q": "¿Qué grados de escala forman un acorde de **sexta menor** (m6)?",
+      "q": "¿Qué grados de la escala forman un acorde de **sexta menor** (m6)?",
       "a": "[1 – ♭3 – 5 – 6]{uno, tercera menor, quinta justa, sexta mayor}\n\nTríada menor con una sexta **mayor** encima."
     },
     {
       "q": "¿Cuál es la diferencia entre **sus2** y **sus4**?",
-      "a": "Ambos **omiten el tercero**.\n\n* `sus2` — tercero reemplazado por el segundo mayor: 1 – 2 – 5\n* `sus4` — tercero reemplazado por el cuarto perfecto: 1 – 4 – 5"
+      "a": "Ambos **omiten la tercera**.\n\n* `sus2` — la tercera se sustituye por la segunda mayor: 1 – 2 – 5\n* `sus4` — la tercera se sustituye por la cuarta justa: 1 – 4 – 5"
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde **add9** y en qué se diferencia de un acorde **9**?",
-      "a": "`add9` = [1 – 3 – 5 – 9]{uno, tercera mayor, quinta justa, novena}\n\nUna tríada mayor con una novena mayor agregada y **sin séptima**. Un acorde `9` es una séptima dominante más la novena: 1 – 3 – 5 – ♭7 – 9."
+      "q": "¿Qué grados de la escala forman un acorde **add9** y en qué se diferencia de un acorde **9**?",
+      "a": "`add9` = [1 – 3 – 5 – 9]{uno, tercera mayor, quinta justa, novena}\n\nUna tríada mayor con una novena mayor añadida y **sin séptima**. Un acorde `9` es una séptima de dominante más la novena: 1 – 3 – 5 – ♭7 – 9."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **novena dominante** (9)?",
-      "a": "[1 – 3 – 5 – ♭7 – 9]{uno, tercera mayor, quinta justa, séptima menor, novena}\n\nUna séptima dominante ampliada por una novena mayor."
+      "q": "¿Qué grados de la escala forman un acorde de **novena de dominante** (9)?",
+      "a": "[1 – 3 – 5 – ♭7 – 9]{uno, tercera mayor, quinta justa, séptima menor, novena}\n\nUna séptima de dominante ampliada con la novena mayor."
     },
     {
-      "q": "¿Qué grados de escala forman un acorde de **undécima** (11)?",
-      "a": "[1 – 5 – ♭7 – 9 – 11]{uno, quinta justa, séptima menor, novena, undécima}\n\nEl tercero suele omitirse: choca con el undécimo un semitono por encima de él."
+      "q": "¿Qué grados de la escala forman un acorde de **oncena** (11)?",
+      "a": "[1 – 5 – ♭7 – 9 – 11]{uno, quinta justa, séptima menor, novena, oncena}\n\nLa tercera suele omitirse: choca con la oncena, un semitono por encima."
     },
     {
-      "q": "¿Qué grados de escala construyen un acorde de **decimotercera** (13)?",
-      "a": "[1 – 3 – 5 – ♭7 – 9 – 13]{uno, tercera mayor, quinta justa, séptima menor, novena, decimotercera}\n\nNormalmente se omite el undécimo. En la práctica, la sonorización se mantiene en 1, 3, ♭ 7 y 13."
+      "q": "¿Qué grados de la escala forman un acorde de **trecena** (13)?",
+      "a": "[1 – 3 – 5 – ♭7 – 9 – 13]{uno, tercera mayor, quinta justa, séptima menor, novena, trecena}\n\nLa oncena se omite normalmente. En la práctica el voicing conserva 1, 3, ♭7 y 13."
     },
     {
-      "q": "¿Qué grados de escala forman un **acorde de potencia** (5)?",
-      "a": "[1 – 5]{uno, quinta justa}\n\nNo hay tercera en absoluto, por lo que no es ni mayor ni menor."
+      "q": "¿Qué grados de la escala forman un **acorde de quinta** o power chord (5)?",
+      "a": "[1 – 5]{uno, quinta justa}\n\nSin tercera alguna, así que no es ni mayor ni menor."
     },
     {
       "q": "¿Qué dos notas deciden si un acorde de séptima suena mayor, menor, dominante o disminuido?",
-      "a": "El **tercero** y el **séptimo**.\n\nSon los tonos guía: 3 + 7 es mayor, ♭3 + ♭7 es menor, 3 + ♭7 es dominante, ♭3 + ♭♭7 es disminuido. La quinta se puede omitir sin cambiar la calidad del acorde."
+      "a": "La **tercera** y la **séptima**.\n\nSon las notas guía: 3 + 7 es mayor, ♭3 + ♭7 es menor, 3 + ♭7 es dominante, ♭3 + ♭♭7 es disminuido. La quinta puede omitirse sin cambiar el carácter del acorde."
     }
   ]
 }

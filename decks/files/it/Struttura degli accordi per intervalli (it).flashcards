@@ -11,84 +11,84 @@
   "deck_icon": "pianokeys",
   "cards": [
     {
-      "q": "Quali gradi della scala costruiscono una **triade maggiore**?",
-      "a": "[1 – 3 – 5]{uno, terza maggiore, quinta perfetta}\n\nRadice, terza maggiore, quinta perfetta."
+      "q": "Quali gradi della scala formano una **triade maggiore**?",
+      "a": "[1 – 3 – 5]{uno, terza maggiore, quinta giusta}\n\nFondamentale, terza maggiore, quinta giusta."
     },
     {
-      "q": "Quali gradi della scala costruiscono una **triade minore**?",
-      "a": "[1 – ♭3 – 5]{uno, terza minore, quinta perfetta}\n\nLa triade maggiore con la terza abbassata."
+      "q": "Quali gradi della scala formano una **triade minore**?",
+      "a": "[1 – ♭3 – 5]{uno, terza minore, quinta giusta}\n\nLa triade maggiore con la terza abbassata."
     },
     {
-      "q": "Quali gradi della scala costruiscono una **triade diminuita**?",
+      "q": "Quali gradi della scala formano una **triade diminuita**?",
       "a": "[1 – ♭3 – ♭5]{uno, terza minore, quinta diminuita}\n\nDue terze minori sovrapposte."
     },
     {
-      "q": "Quali gradi di scala costruiscono una **triade aumentata**?",
-      "a": "[1 – 3 – ♯5]{uno, terza maggiore, quinta superflua}\n\nDue terze maggiori impilate."
+      "q": "Quali gradi della scala formano una **triade aumentata**?",
+      "a": "[1 – 3 – ♯5]{uno, terza maggiore, quinta aumentata}\n\nDue terze maggiori sovrapposte."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **settima dominante** (7)?",
-      "a": "[1 – 3 – 5 – ♭7]{uno, terza maggiore, quinta perfetta, settima minore}\n\nTriade maggiore più settima minore."
+      "q": "Quali gradi della scala formano un accordo di **settima di dominante** (7)?",
+      "a": "[1 – 3 – 5 – ♭7]{uno, terza maggiore, quinta giusta, settima minore}\n\nTriade maggiore più una settima minore."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **settima maggiore** (mag7)?",
-      "a": "[1 – 3 – 5 – 7]{uno, terza maggiore, quinta giusta, settima maggiore}\n\nTriade maggiore più settima maggiore."
+      "q": "Quali gradi della scala formano un accordo di **settima maggiore** (maj7)?",
+      "a": "[1 – 3 – 5 – 7]{uno, terza maggiore, quinta giusta, settima maggiore}\n\nTriade maggiore più una settima maggiore."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **settima minore** (m7)?",
-      "a": "[1 – ♭3 – 5 – ♭7]{uno, terza minore, quinta perfetta, settima minore}\n\nTriade minore più settima minore."
+      "q": "Quali gradi della scala formano un accordo di **settima minore** (m7)?",
+      "a": "[1 – ♭3 – 5 – ♭7]{uno, terza minore, quinta giusta, settima minore}\n\nTriade minore più una settima minore."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo **minore-maggiore settima** (m♯7 / minMag7)?",
-      "a": "[1 – ♭3 – 5 – 7]{uno, terza minore, quinta perfetta, settima maggiore}\n\nTriade minore più una settima **maggiore**: l'accordo tonico della minore armonica."
+      "q": "Quali gradi della scala formano un accordo di **settima minore-maggiore** (m♯7 / minMaj7)?",
+      "a": "[1 – ♭3 – 5 – 7]{uno, terza minore, quinta giusta, settima maggiore}\n\nTriade minore più una settima **maggiore**: l’accordo di tonica del minore armonico."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo **settimo diminuito a metà** (m7♭5 / ø7)?",
+      "q": "Quali gradi della scala formano un accordo di **settima semidiminuita** (m7♭5 / ø7)?",
       "a": "[1 – ♭3 – ♭5 – ♭7]{uno, terza minore, quinta diminuita, settima minore}\n\nTriade diminuita più una settima **minore**."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo **di settima completamente diminuito** (dim7 / °7)?",
-      "a": "[1 – ♭3 – ♭5 – ♭♭7]{uno, terza minore, quinta diminuita, settima diminuita}\n\nTre terze minori impilate. Il ♭♭7 suona come un sesto."
+      "q": "Quali gradi della scala formano un accordo di **settima diminuita** (dim7 / °7)?",
+      "a": "[1 – ♭3 – ♭5 – ♭♭7]{uno, terza minore, quinta diminuita, settima diminuita}\n\nTre terze minori sovrapposte. La ♭♭7 suona come una sesta maggiore."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **settima aumentata** (7♯5)?",
-      "a": "[1 – 3 – ♯5 – ♭7]{uno, terza maggiore, quinta superflua, settima minore}\n\nTriade aumentata più settima minore."
+      "q": "Quali gradi della scala formano un accordo di **settima aumentata** (7♯5)?",
+      "a": "[1 – 3 – ♯5 – ♭7]{uno, terza maggiore, quinta aumentata, settima minore}\n\nTriade aumentata più una settima minore."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **sesta maggiore** (6)?",
-      "a": "[1 – 3 – 5 – 6]{uno, terza maggiore, quinta giusta, sesta maggiore}\n\nTriade maggiore più sesta maggiore – nessuna settima."
+      "q": "Quali gradi della scala formano un accordo di **sesta maggiore** (6)?",
+      "a": "[1 – 3 – 5 – 6]{uno, terza maggiore, quinta giusta, sesta maggiore}\n\nTriade maggiore più una sesta maggiore, senza settima."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **sesta minore** (m6)?",
-      "a": "[1 – ♭3 – 5 – 6]{uno, terza minore, quinta perfetta, sesta maggiore}\n\nTriade minore con una sesta **maggiore** in alto."
+      "q": "Quali gradi della scala formano un accordo di **sesta minore** (m6)?",
+      "a": "[1 – ♭3 – 5 – 6]{uno, terza minore, quinta giusta, sesta maggiore}\n\nTriade minore con una sesta **maggiore** in cima."
     },
     {
-      "q": "Qual è la differenza tra **sus2** e **sus4**?",
-      "a": "Entrambi **omettono il terzo**.\n\n* `sus2` — terza sostituita dalla seconda maggiore: 1 – 2 – 5\n* `sus4` — terza sostituita dalla quarta giusta: 1 – 4 – 5"
+      "q": "Qual è la differenza fra **sus2** e **sus4**?",
+      "a": "Entrambi **omettono la terza**.\n\n* `sus2` — la terza è sostituita dalla seconda maggiore: 1 – 2 – 5\n* `sus4` — la terza è sostituita dalla quarta giusta: 1 – 4 – 5"
     },
     {
-      "q": "Quali gradi di scala costruiscono un accordo **add9** e in cosa differisce da un accordo **9**?",
-      "a": "`add9` = [1 – 3 – 5 – 9]{uno, terza maggiore, quinta perfetta, nona}\n\nUna triade maggiore con una nona maggiore aggiunta e **senza settima**. Un accordo `9` è una settima dominante più la nona: 1 – 3 – 5 – ♭7 – 9."
+      "q": "Quali gradi della scala formano un accordo **add9** — e in che cosa differisce da un accordo **9**?",
+      "a": "`add9` = [1 – 3 – 5 – 9]{uno, terza maggiore, quinta giusta, nona}\n\nUna triade maggiore con una nona maggiore aggiunta e **senza settima**. Un accordo `9` è una settima di dominante più la nona: 1 – 3 – 5 – ♭7 – 9."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **nona dominante** (9)?",
-      "a": "[1 – 3 – 5 – ♭7 – 9]{uno, terza maggiore, quinta perfetta, settima minore, nona}\n\nUna settima dominante estesa per una nona maggiore."
+      "q": "Quali gradi della scala formano un accordo di **nona di dominante** (9)?",
+      "a": "[1 – 3 – 5 – ♭7 – 9]{uno, terza maggiore, quinta giusta, settima minore, nona}\n\nUna settima di dominante estesa con la nona maggiore."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **undicesima** (11)?",
-      "a": "[1 – 5 – ♭7 – 9 – 11]{uno, quinta perfetta, settima minore, nona, undicesima}\n\nLa terza viene solitamente abbassata: cozza con l'undicesima un semitono sopra."
+      "q": "Quali gradi della scala formano un accordo di **undicesima** (11)?",
+      "a": "[1 – 5 – ♭7 – 9 – 11]{uno, quinta giusta, settima minore, nona, undicesima}\n\nLa terza di solito viene omessa: confligge con l’undicesima, un semitono più in alto."
     },
     {
-      "q": "Quali gradi della scala costruiscono un accordo di **tredicesima** (13)?",
-      "a": "[1 – 3 – 5 – ♭7 – 9 – 13]{uno, terza maggiore, quinta perfetta, settima minore, nona, tredicesima}\n\nL'undicesimo viene normalmente omesso. In pratica l'intonazione mantiene 1, 3, ♭7 e 13."
+      "q": "Quali gradi della scala formano un accordo di **tredicesima** (13)?",
+      "a": "[1 – 3 – 5 – ♭7 – 9 – 13]{uno, terza maggiore, quinta giusta, settima minore, nona, tredicesima}\n\nL’undicesima viene normalmente omessa. In pratica il voicing tiene 1, 3, ♭7 e 13."
     },
     {
-      "q": "Quali gradi della scala costruiscono un **accordo di potenza** (5)?",
-      "a": "[1 – 5]{uno, quinta perfetta}\n\nNessuna terza, quindi non è né maggiore né minore."
+      "q": "Quali gradi della scala formano un **power chord** (5)?",
+      "a": "[1 – 5]{uno, quinta giusta}\n\nNessuna terza, quindi non è né maggiore né minore."
     },
     {
-      "q": "Quali due note determinano se un accordo di settima suona maggiore, minore, dominante o diminuito?",
-      "a": "Il **terzo** e il **settimo**.\n\nSono i toni guida: 3 + 7 è maggiore, ♭3 + ♭7 è minore, 3 + ♭7 è dominante, ♭3 + ♭♭7 è diminuito. La quinta può essere omessa senza modificare la qualità dell'accordo."
+      "q": "Quali due note decidono se un accordo di settima suona maggiore, minore, di dominante o diminuito?",
+      "a": "La **terza** e la **settima**.\n\nSono le note guida: 3 + 7 è maggiore, ♭3 + ♭7 è minore, 3 + ♭7 è di dominante, ♭3 + ♭♭7 è diminuito. La quinta può essere omessa senza cambiare il carattere dell’accordo."
     }
   ]
 }

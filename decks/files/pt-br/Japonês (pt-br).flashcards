@@ -8,7 +8,7 @@
   "deck_a_lang": "pt-br",
   "decks": [
     {
-      "deck": "Hiragana – Básico",
+      "deck": "Hiragana — Básico",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -291,7 +291,7 @@
       "deck_key": "hiragana-basic"
     },
     {
-      "deck": "Hiragana – Dublado e Plosivo",
+      "deck": "Hiragana — Sonoras e oclusivas",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -448,7 +448,7 @@
       "deck_key": "hiragana-voiced-and-plosive"
     },
     {
-      "deck": "Hiragana – Combinações",
+      "deck": "Hiragana — Combinações",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -653,7 +653,7 @@
       "deck_key": "hiragana-combinations"
     },
     {
-      "deck": "Katakana – Básico",
+      "deck": "Katakana — Básico",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -936,7 +936,7 @@
       "deck_key": "katakana-basic"
     },
     {
-      "deck": "Katakana – Dublado e Plosivo",
+      "deck": "Katakana — Sonoras e oclusivas",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -1093,7 +1093,7 @@
       "deck_key": "katakana-voiced-and-plosive"
     },
     {
-      "deck": "Katakana – Combinações",
+      "deck": "Katakana — Combinações",
       "deck_icon": "character.book.closed",
       "cards": [
         {

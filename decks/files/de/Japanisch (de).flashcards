@@ -8,7 +8,7 @@
   "deck_a_lang": "de",
   "decks": [
     {
-      "deck": "Hiragana – Grundlegend",
+      "deck": "Hiragana – Grundlagen",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -653,7 +653,7 @@
       "deck_key": "hiragana-combinations"
     },
     {
-      "deck": "Katakana – Grundlegend",
+      "deck": "Katakana – Grundlagen",
       "deck_icon": "character.book.closed",
       "cards": [
         {

@@ -8,7 +8,7 @@
   "deck_a_lang": "ko",
   "decks": [
     {
-      "deck": "힘과 뿌리",
+      "deck": "거듭제곱과 근",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a의 m 곱하기 a의 n}",
@@ -42,7 +42,7 @@
       "deck_key": "powers-and-roots"
     },
     {
-      "deck": "로그 규칙",
+      "deck": "로그 법칙",
       "cards": [
         {
           "q": "$\\log_a(x \\cdot y) = ?${x x y의 로그 베이스 a}",
@@ -184,7 +184,7 @@
       "deck_key": "trigonometric-values"
     },
     {
-      "deck": "삼각법적 항등식",
+      "deck": "삼각함수 항등식",
       "cards": [
         {
           "q": "피타고라스 항등식: $\\sin^2 x + \\cos^2 x = ?${사인 제곱 x 더하기 코사인 제곱 x}",
@@ -238,7 +238,7 @@
       "deck_key": "trigonometric-identities"
     },
     {
-      "deck": "삼각함수와 역함수",
+      "deck": "삼각함수와 역삼각함수",
       "cards": [
         {
           "q": "$\\sin x${sine x}의 도메인:",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "파생상품",
+      "deck": "미분",
       "cards": [
         {
           "q": "$f'(x_0)${f prime of x nought}은 기하학적으로 무엇을 의미하나요?",
@@ -414,7 +414,7 @@
       "deck_key": "derivatives"
     },
     {
-      "deck": "솔리드 기하학",
+      "deck": "입체기하",
       "cards": [
         {
           "q": "**프리즘**의 부피 — $S_p${S p}는 기본 면적, $v$ 높이:",

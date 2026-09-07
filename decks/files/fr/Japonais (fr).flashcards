@@ -8,7 +8,7 @@
   "deck_a_lang": "fr",
   "decks": [
     {
-      "deck": "Hiragana — Basique",
+      "deck": "Hiragana — Bases",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -291,7 +291,7 @@
       "deck_key": "hiragana-basic"
     },
     {
-      "deck": "Hiragana – voisé et plosif",
+      "deck": "Hiragana — Voisées et occlusives",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -653,7 +653,7 @@
       "deck_key": "hiragana-combinations"
     },
     {
-      "deck": "Katakana — De base",
+      "deck": "Katakana — Bases",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -936,7 +936,7 @@
       "deck_key": "katakana-basic"
     },
     {
-      "deck": "Katakana – voisé et plosif",
+      "deck": "Katakana — Voisées et occlusives",
       "deck_icon": "character.book.closed",
       "cards": [
         {

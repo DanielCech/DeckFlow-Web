@@ -8,7 +8,7 @@
   "deck_a_lang": "it",
   "decks": [
     {
-      "deck": "Poteri e radici",
+      "deck": "Potenze e radici",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a alla m volte a alla n}",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "Derivati",
+      "deck": "Derivate",
       "cards": [
         {
           "q": "Cosa significa geometricamente $f'(x_0)${f primo di x zero}?",

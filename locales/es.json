@@ -1,6 +1,7 @@
 {
   "nav.features": "Funciones",
   "nav.aiDecks": "Decks IA",
+  "nav.decks": "Mazos",
   "nav.aiPrompt": "Prompt IA",
   "nav.richDecks": "Decks completos",
   "nav.algorithm": "Algoritmo",
@@ -182,6 +183,7 @@
   "footer.tagline": "Un compañero de tarjetas para quienes aprenden toda la vida.",
   "footer.features": "Funciones",
   "footer.aiDecks": "Decks IA",
+  "footer.decks": "Mazos",
   "footer.aiPrompt": "Prompt IA",
   "footer.richDecks": "Decks completos",
   "footer.algorithm": "Algoritmo",
@@ -495,5 +497,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>Importar</td><td>Importar un archivo <code>.flashcards</code>, CSV o Anki mediante el selector de documentos.</td>",
   "lang.switchLabel": "Cambiar idioma",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "Mazos seleccionados para aprender | JustFlip!",
+  "decks.metaDescription": "Explora mazos de tarjetas gratuitos y seleccionados de idiomas, música, matemáticas, programación y ciencia. O crea tu propio mazo con las herramientas de IA de JustFlip."
 }

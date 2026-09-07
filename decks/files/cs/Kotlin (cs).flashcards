@@ -55,7 +55,7 @@
       "deck_key": "syntax-basics"
     },
     {
-      "deck": "Nulová bezpečnost",
+      "deck": "Null safety",
       "deck_icon": "checkmark.shield",
       "cards": [
         {
@@ -204,7 +204,7 @@
       "deck_key": "classes-and-oop"
     },
     {
-      "deck": "Funkce rozsahu",
+      "deck": "Scope funkce",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -235,7 +235,7 @@
       "deck_key": "scope-functions"
     },
     {
-      "deck": "Sbírky",
+      "deck": "Kolekce",
       "deck_icon": "list.bullet.rectangle",
       "cards": [
         {
@@ -278,7 +278,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Coroutines a Flow",
+      "deck": "Korutiny a Flow",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {
@@ -356,7 +356,7 @@
       "deck_key": "generics-and-variance"
     },
     {
-      "deck": "Multiplatformní",
+      "deck": "Multiplatforma",
       "deck_icon": "building.2",
       "cards": [
         {

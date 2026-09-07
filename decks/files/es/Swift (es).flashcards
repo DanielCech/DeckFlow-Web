@@ -78,7 +78,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Enumeraciones",
+      "deck": "Enums",
       "deck_icon": "checklist",
       "cards": [
         {
@@ -101,7 +101,7 @@
       "deck_key": "enums"
     },
     {
-      "deck": "Controlar el flujo",
+      "deck": "Flujo de control",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {
@@ -194,7 +194,7 @@
       "deck_key": "error-handling"
     },
     {
-      "deck": "Cierres y Captura",
+      "deck": "Closures y captura",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -233,7 +233,7 @@
       "deck_key": "closures-and-capture"
     },
     {
-      "deck": "Estructuras y semántica de valores",
+      "deck": "Structs y semántica de valor",
       "deck_icon": "cube",
       "cards": [
         {
@@ -311,7 +311,7 @@
       "deck_key": "classes-and-reference-semantics"
     },
     {
-      "deck": "Protocolos y Extensiones",
+      "deck": "Protocolos y extensiones",
       "deck_icon": "checkmark.seal",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "Opcionales",
+      "deck": "Optionals",
       "deck_icon": "lightbulb",
       "cards": [
         {

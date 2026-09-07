@@ -55,7 +55,7 @@
       "deck_key": "syntax-basics"
     },
     {
-      "deck": "ヌルセーフティ",
+      "deck": "Null 安全性",
       "deck_icon": "checkmark.shield",
       "cards": [
         {
@@ -94,7 +94,7 @@
       "deck_key": "null-safety"
     },
     {
-      "deck": "機能",
+      "deck": "関数",
       "deck_icon": "function",
       "cards": [
         {
@@ -141,7 +141,7 @@
       "deck_key": "functions"
     },
     {
-      "deck": "クラスとOOP",
+      "deck": "クラスと OOP",
       "deck_icon": "cube",
       "cards": [
         {
@@ -278,7 +278,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "コルーチンとフロー",
+      "deck": "コルーチンと Flow",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {
@@ -329,7 +329,7 @@
       "deck_key": "coroutines-and-flow"
     },
     {
-      "deck": "ジェネリックとバリアンス",
+      "deck": "ジェネリクスと変性",
       "deck_icon": "chevron.left.forwardslash.chevron.right",
       "cards": [
         {
@@ -395,7 +395,7 @@
       "deck_key": "multiplatform"
     },
     {
-      "deck": "Gradle と工具",
+      "deck": "Gradle とツール",
       "deck_icon": "hammer",
       "cards": [
         {

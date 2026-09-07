@@ -1,6 +1,7 @@
 {
   "nav.features": "Funktionen",
   "nav.aiDecks": "KI-Decks",
+  "nav.decks": "Decks",
   "nav.aiPrompt": "KI-Prompt",
   "nav.richDecks": "Rich-Decks",
   "nav.algorithm": "Algorithmus",
@@ -182,6 +183,7 @@
   "footer.tagline": "Ein Karteikarten-Begleiter für lebenslang Lernende.",
   "footer.features": "Funktionen",
   "footer.aiDecks": "KI-Decks",
+  "footer.decks": "Decks",
   "footer.aiPrompt": "KI-Prompt",
   "footer.richDecks": "Rich-Decks",
   "footer.algorithm": "Algorithmus",
@@ -495,5 +497,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>Import</td><td><code>.flashcards</code>-, CSV- oder Anki-Datei über die Dokumentauswahl importieren.</td>",
   "lang.switchLabel": "Sprache wechseln",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "Kuratierte Decks zum Lernen | JustFlip!",
+  "decks.metaDescription": "Entdecke kostenlose kuratierte Karteikarten-Decks für Sprachen, Musik, Mathematik, Programmierung und Naturwissenschaften. Oder erstelle dein eigenes Deck mit den KI-Werkzeugen von JustFlip."
 }

@@ -291,7 +291,7 @@
       "deck_key": "hiragana-basic"
     },
     {
-      "deck": "히라가나 — 유성 및 파열음",
+      "deck": "히라가나 — 탁음과 반탁음",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -448,7 +448,7 @@
       "deck_key": "hiragana-voiced-and-plosive"
     },
     {
-      "deck": "히라가나 — 조합",
+      "deck": "히라가나 — 요음",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -936,7 +936,7 @@
       "deck_key": "katakana-basic"
     },
     {
-      "deck": "가타카나 — 유성 및 파열음",
+      "deck": "가타카나 — 탁음과 반탁음",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -1093,7 +1093,7 @@
       "deck_key": "katakana-voiced-and-plosive"
     },
     {
-      "deck": "가타카나 — 조합",
+      "deck": "가타카나 — 요음",
       "deck_icon": "character.book.closed",
       "cards": [
         {
@@ -1298,7 +1298,7 @@
       "deck_key": "katakana-combinations"
     },
     {
-      "deck": "독서 규칙",
+      "deck": "읽기 규칙",
       "deck_icon": "book.closed",
       "cards": [
         {

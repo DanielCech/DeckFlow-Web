@@ -8,7 +8,7 @@
   "deck_a_lang": "es",
   "decks": [
     {
-      "deck": "Conceptos básicos de sintaxis",
+      "deck": "Fundamentos de sintaxis",
       "deck_icon": "textformat",
       "cards": [
         {
@@ -55,7 +55,7 @@
       "deck_key": "syntax-basics"
     },
     {
-      "deck": "Seguridad nula",
+      "deck": "Null safety",
       "deck_icon": "checkmark.shield",
       "cards": [
         {
@@ -204,7 +204,7 @@
       "deck_key": "classes-and-oop"
     },
     {
-      "deck": "Funciones de alcance",
+      "deck": "Funciones de ámbito",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -278,7 +278,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Corrutinas y flujo",
+      "deck": "Corrutinas y Flow",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {
@@ -329,7 +329,7 @@
       "deck_key": "coroutines-and-flow"
     },
     {
-      "deck": "Genéricos y variación",
+      "deck": "Genéricos y varianza",
       "deck_icon": "chevron.left.forwardslash.chevron.right",
       "cards": [
         {

@@ -51,7 +51,7 @@
       "deck_key": "values-types-and-strings"
     },
     {
-      "deck": "Sbírky",
+      "deck": "Kolekce",
       "deck_icon": "list.bullet.rectangle",
       "cards": [
         {
@@ -78,7 +78,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Výčty",
+      "deck": "Výčtové typy",
       "deck_icon": "checklist",
       "cards": [
         {
@@ -194,7 +194,7 @@
       "deck_key": "error-handling"
     },
     {
-      "deck": "Uzávěry a zachycení",
+      "deck": "Closures a zachytávání",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "Volitelné",
+      "deck": "Optionals",
       "deck_icon": "lightbulb",
       "cards": [
         {

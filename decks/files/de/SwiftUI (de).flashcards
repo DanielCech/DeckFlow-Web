@@ -47,7 +47,7 @@
       "deck_key": "app-structure-and-forms"
     },
     {
-      "deck": "Zustand und Bindungen",
+      "deck": "State und Bindings",
       "deck_icon": "link",
       "cards": [
         {
@@ -90,7 +90,7 @@
       "deck_key": "state-and-bindings"
     },
     {
-      "deck": "Ansichten und Modifikatoren",
+      "deck": "Views und Modifier",
       "deck_icon": "square.stack.3d.up",
       "cards": [
         {
@@ -141,7 +141,7 @@
       "deck_key": "views-and-modifiers"
     },
     {
-      "deck": "Stapel, Raster und Scrollen",
+      "deck": "Stacks, Grids und Scrolling",
       "deck_icon": "square.stack.3d.up",
       "cards": [
         {
@@ -231,7 +231,7 @@
       "deck_key": "layout-and-geometry"
     },
     {
-      "deck": "Farbe, Farbverläufe und Bilder",
+      "deck": "Farben, Farbverläufe und Bilder",
       "deck_icon": "paintpalette",
       "cards": [
         {
@@ -309,7 +309,7 @@
       "deck_key": "lists-and-foreach"
     },
     {
-      "deck": "Eingabesteuerung",
+      "deck": "Eingabesteuerelemente",
       "deck_icon": "gearshape",
       "cards": [
         {
@@ -348,7 +348,7 @@
       "deck_key": "input-controls"
     },
     {
-      "deck": "Warnungen, Blätter und Dialoge",
+      "deck": "Alerts, Sheets und Dialoge",
       "deck_icon": "bubble.left",
       "cards": [
         {
@@ -532,7 +532,7 @@
       "deck_key": "gestures-haptics-and-timers"
     },
     {
-      "deck": "Beobachtung und Datenfluss",
+      "deck": "Observation und Datenfluss",
       "deck_icon": "binoculars",
       "cards": [
         {
@@ -575,7 +575,7 @@
       "deck_key": "observation-and-data-flow"
     },
     {
-      "deck": "Persistenz und Codierbar",
+      "deck": "Persistenz und Codable",
       "deck_icon": "internaldrive",
       "cards": [
         {
@@ -618,7 +618,7 @@
       "deck_key": "persistence-and-codable"
     },
     {
-      "deck": "Vernetzung",
+      "deck": "Networking",
       "deck_icon": "network",
       "cards": [
         {
@@ -743,7 +743,7 @@
       "deck_key": "accessibility"
     },
     {
-      "deck": "Adaptive UI- und System-Frameworks",
+      "deck": "Adaptive UI und System-Frameworks",
       "deck_icon": "ipad",
       "cards": [
         {

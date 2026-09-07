@@ -3,9 +3,9 @@
     {
       "slug": "japanese-kana",
       "locale": "cs",
-      "title": "Japonci",
-      "interest": "Japonci",
-      "description": "Oba slabikáře kana v plném rozsahu — gojūon, znělé a plosivní formy, stažené kombinace a pravidla čtení, která tabulky vynechávají.",
+      "title": "Japonština",
+      "interest": "Japonština",
+      "description": "Oba slabikáře kana v plném rozsahu — gojúon, znělé a ražené tvary, stažené kombinace a pravidla čtení, která tabulky vynechávají.",
       "category": "languages",
       "capabilities": [
         "speech"
@@ -14,8 +14,8 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "cs",
-      "bytes": 38102,
-      "file": "cs/Japonci.flashcards",
+      "bytes": 38100,
+      "file": "cs/Japonština.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
       "has_license_file": false
@@ -34,7 +34,7 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "de",
-      "bytes": 38649,
+      "bytes": 38647,
       "file": "de/Japanisch.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
@@ -63,9 +63,9 @@
     {
       "slug": "japanese-kana",
       "locale": "es",
-      "title": "japonés",
-      "interest": "japonés",
-      "description": "Ambos silabarios kana completos: gojūon, formas sonoras y explosivas, combinaciones contraídas y las reglas de lectura que las tablas omiten.",
+      "title": "Japonés",
+      "interest": "Japonés",
+      "description": "Ambos silabarios kana completos: gojūon, formas sonoras y oclusivas, combinaciones contraídas y las reglas de lectura que las tablas omiten.",
       "category": "languages",
       "capabilities": [
         "speech"
@@ -74,8 +74,8 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "es",
-      "bytes": 38360,
-      "file": "es/japonés.flashcards",
+      "bytes": 38371,
+      "file": "es/Japonés.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
       "has_license_file": false
@@ -85,7 +85,7 @@
       "locale": "fr",
       "title": "Japonais",
       "interest": "Japonais",
-      "description": "Les deux syllabaires kana dans leur intégralité - gojūon, formes sonores et plosives, combinaisons contractées et règles de lecture que les tableaux omettent.",
+      "description": "Les deux syllabaires kana dans leur intégralité — gojūon, formes voisées et occlusives, combinaisons contractées et les règles de lecture que les tableaux omettent.",
       "category": "languages",
       "capabilities": [
         "speech"
@@ -94,7 +94,7 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "fr",
-      "bytes": 38498,
+      "bytes": 38506,
       "file": "fr/Japonais.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
@@ -103,9 +103,9 @@
     {
       "slug": "japanese-kana",
       "locale": "it",
-      "title": "giapponese",
-      "interest": "giapponese",
-      "description": "Entrambi i sillabari kana per intero: gojūon, forme sonore ed esplosive, combinazioni contratte e regole di lettura che gli schemi tralasciano.",
+      "title": "Giapponese",
+      "interest": "Giapponese",
+      "description": "Entrambi i sillabari kana per intero: gojūon, forme sonore e occlusive, combinazioni contratte e le regole di lettura che le tabelle tralasciano.",
       "category": "languages",
       "capabilities": [
         "speech"
@@ -114,8 +114,8 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "it",
-      "bytes": 38145,
-      "file": "it/giapponese.flashcards",
+      "bytes": 38157,
+      "file": "it/Giapponese.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
       "has_license_file": false
@@ -125,7 +125,7 @@
       "locale": "ja",
       "title": "日本語",
       "interest": "日本語",
-      "description": "両方の仮名音節の完全版、五十音、有声音と破裂音、短縮形の組み合わせ、および表で省略されている読み方規則。",
+      "description": "両方の仮名を網羅 — 五十音、濁音と半濁音、拗音、そして表には載っていない読み方のルール。",
       "category": "languages",
       "capabilities": [
         "speech"
@@ -134,7 +134,7 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 40119,
+      "bytes": 40107,
       "file": "ja/日本語.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
@@ -145,7 +145,7 @@
       "locale": "ko",
       "title": "일본어",
       "interest": "일본어",
-      "description": "두 가나 음절 전체 - 고주온, 유성 및 파열음 형식, 약정 조합 및 차트에서 생략된 읽기 규칙.",
+      "description": "두 가나 음절 문자 전체 — 고주온(五十音), 탁음과 반탁음, 요음, 그리고 표에는 빠져 있는 읽기 규칙.",
       "category": "languages",
       "capabilities": [
         "speech"
@@ -154,7 +154,7 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "ko",
-      "bytes": 38952,
+      "bytes": 38950,
       "file": "ko/일본어.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
@@ -165,7 +165,7 @@
       "locale": "pt-br",
       "title": "Japonês",
       "interest": "Japonês",
-      "description": "Ambos os silabários kana completos — gojūon, formas sonoras e plosivas, combinações contraídas e as regras de leitura que os gráficos deixam de fora.",
+      "description": "Ambos os silabários kana completos — gojūon, formas sonoras e oclusivas, combinações contraídas e as regras de leitura que as tabelas deixam de fora.",
       "category": "languages",
       "capabilities": [
         "speech"
@@ -174,7 +174,7 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "pt-br",
-      "bytes": 38836,
+      "bytes": 38840,
       "file": "pt-br/Japonês.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The standard gojūon ordering of hiragana and katakana, with Hepburn romanisation.",
@@ -185,7 +185,7 @@
       "locale": "cs",
       "title": "Matematika",
       "interest": "Matematika",
-      "description": "Vzorce pro střední školy a první ročníky — algebra, logaritmy, trigonometrie, derivace a tělesová geometrie, vykreslené jako skutečná matematika.",
+      "description": "Vzorce ze střední školy a prvního ročníku vysoké — algebra, logaritmy, goniometrie, derivace a stereometrie, vysázené jako opravdová matematika.",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -195,7 +195,7 @@
       "packs": 8,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 20817,
+      "bytes": 20829,
       "file": "cs/Matematika.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -206,7 +206,7 @@
       "locale": "de",
       "title": "Mathematik",
       "interest": "Mathematik",
-      "description": "Formeln für die Sekundarstufe und das erste Jahr – Algebra, Logarithmen, Trigonometrie, Ableitungen und Volumengeometrie, dargestellt als echte Mathematik.",
+      "description": "Formeln aus Oberstufe und erstem Studienjahr – Algebra, Logarithmen, Trigonometrie, Ableitungen und Raumgeometrie, als echte Mathematik gesetzt.",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -216,7 +216,7 @@
       "packs": 8,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 21519,
+      "bytes": 21525,
       "file": "de/Mathematik.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -248,7 +248,7 @@
       "locale": "es",
       "title": "Matemáticas",
       "interest": "Matemáticas",
-      "description": "Fórmulas de la escuela secundaria y del primer año: álgebra, logaritmos, trigonometría, derivadas y geometría sólida, representadas como matemáticas reales.",
+      "description": "Fórmulas de bachillerato y primer curso: álgebra, logaritmos, trigonometría, derivadas y geometría del espacio, compuestas como matemáticas de verdad.",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -258,7 +258,7 @@
       "packs": 8,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 21292,
+      "bytes": 21303,
       "file": "es/Matemáticas.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -269,7 +269,7 @@
       "locale": "fr",
       "title": "Mathématiques",
       "interest": "Mathématiques",
-      "description": "Formules du secondaire et de première année : algèbre, logarithmes, trigonométrie, dérivées et géométrie solide, rendues comme de véritables mathématiques.",
+      "description": "Formules du lycée et de première année : algèbre, logarithmes, trigonométrie, dérivées et géométrie dans l’espace, composées comme de vraies mathématiques.",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -279,7 +279,7 @@
       "packs": 8,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 21306,
+      "bytes": 21315,
       "file": "fr/Mathématiques.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -290,7 +290,7 @@
       "locale": "it",
       "title": "Matematica",
       "interest": "Matematica",
-      "description": "Formule di scuola secondaria e primo anno: algebra, logaritmi, trigonometria, derivate e geometria solida, rese come matematica reale.",
+      "description": "Formule delle superiori e del primo anno: algebra, logaritmi, trigonometria, derivate e geometria solida, composte come vera matematica.",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -300,7 +300,7 @@
       "packs": 8,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 20886,
+      "bytes": 20887,
       "file": "it/Matematica.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -311,7 +311,7 @@
       "locale": "ja",
       "title": "数学",
       "interest": "数学",
-      "description": "中学校および 1 年生の公式 — 代数、対数、三角法、導関数、立体幾何学を実際の数学として表示します。",
+      "description": "高校と大学初年度の公式 — 代数、対数、三角関数、微分、立体幾何を、本物の数式として組版。",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -321,7 +321,7 @@
       "packs": 8,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 22255,
+      "bytes": 22252,
       "file": "ja/数学.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -332,7 +332,7 @@
       "locale": "ko",
       "title": "수학",
       "interest": "수학",
-      "description": "중학교 및 1학년 공식 — 대수학, 로그, 삼각법, 도함수 및 입체 기하학을 실제 수학으로 표현합니다.",
+      "description": "고등학교와 대학 1학년 공식 — 대수, 로그, 삼각함수, 미분, 입체기하를 진짜 수식으로 조판했습니다.",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -342,7 +342,7 @@
       "packs": 8,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 21297,
+      "bytes": 21296,
       "file": "ko/수학.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -353,7 +353,7 @@
       "locale": "pt-br",
       "title": "Matemática",
       "interest": "Matemática",
-      "description": "Fórmulas do ensino médio e do primeiro ano — álgebra, logaritmos, trigonometria, derivadas e geometria sólida, renderizadas como matemática real.",
+      "description": "Fórmulas do ensino médio e do primeiro ano — álgebra, logaritmos, trigonometria, derivadas e geometria espacial, compostas como matemática de verdade.",
       "category": "mathematics",
       "capabilities": [
         "latex",
@@ -363,7 +363,7 @@
       "packs": 8,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 21121,
+      "bytes": 21127,
       "file": "pt-br/Matemática.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Standard algebraic, logarithmic, trigonometric, differential and solid-geometry identities.",
@@ -374,7 +374,7 @@
       "locale": "cs",
       "title": "Struktura akordů podle intervalů",
       "interest": "Hudební teorie",
-      "description": "Sestavte libovolný akord ze stupňů stupnice – triády, septimy, sexty, suspenze a přidané noty.",
+      "description": "Postav libovolný akord ze stupňů stupnice — kvintakordy, septakordy, sexty, průtahy a přidané tóny.",
       "category": "music",
       "capabilities": [
         "speech"
@@ -383,7 +383,7 @@
       "packs": 1,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 5206,
+      "bytes": 5089,
       "file": "cs/Struktura akordů podle intervalů.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
@@ -403,7 +403,7 @@
       "packs": 1,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 5396,
+      "bytes": 5317,
       "file": "de/Akkordstruktur nach Intervallen.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
@@ -443,7 +443,7 @@
       "packs": 1,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 5408,
+      "bytes": 5399,
       "file": "es/Estructura de acordes por intervalos.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
@@ -454,7 +454,7 @@
       "locale": "fr",
       "title": "Structure des accords par intervalles",
       "interest": "Théorie de la musique",
-      "description": "Construisez n'importe quel accord à partir de degrés de gamme : accords d'accords, septièmes, sixtes, suspensions et notes ajoutées.",
+      "description": "Construisez n’importe quel accord à partir des degrés de la gamme : triades, septièmes, sixtes, accords suspendus et notes ajoutées.",
       "category": "music",
       "capabilities": [
         "speech"
@@ -463,7 +463,7 @@
       "packs": 1,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 5740,
+      "bytes": 5670,
       "file": "fr/Structure des accords par intervalles.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
@@ -483,7 +483,7 @@
       "packs": 1,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 5481,
+      "bytes": 5435,
       "file": "it/Struttura degli accordi per intervalli.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
@@ -492,9 +492,9 @@
     {
       "slug": "music-chord-structure",
       "locale": "ja",
-      "title": "音程ごとのコード構造",
+      "title": "音程で見る和音の構造",
       "interest": "音楽理論",
-      "description": "トライアド、7度、6度、サスペンション、追加ノートなど、スケール度から任意のコードを作成します。",
+      "description": "音階の度数から任意の和音を組み立てる — 三和音、セブンス、シックスス、サスペンデッド、付加音。",
       "category": "music",
       "capabilities": [
         "speech"
@@ -503,8 +503,8 @@
       "packs": 1,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 5954,
-      "file": "ja/音程ごとのコード構造.flashcards",
+      "bytes": 5830,
+      "file": "ja/音程で見る和音の構造.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
       "has_license_file": false
@@ -512,9 +512,9 @@
     {
       "slug": "music-chord-structure",
       "locale": "ko",
-      "title": "간격에 따른 코드 구조",
-      "interest": "음악이론",
-      "description": "3화음, 7도, 6도, 서스펜션 및 추가 음표 등 스케일 수준에 따라 코드를 구성하세요.",
+      "title": "음정으로 보는 코드 구조",
+      "interest": "음악 이론",
+      "description": "음계의 도수로 어떤 코드든 만들어 보세요 — 3화음, 7화음, 6화음, 서스펜디드, 애드 노트.",
       "category": "music",
       "capabilities": [
         "speech"
@@ -523,8 +523,8 @@
       "packs": 1,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 5296,
-      "file": "ko/간격에 따른 코드 구조.flashcards",
+      "bytes": 5151,
+      "file": "ko/음정으로 보는 코드 구조.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
       "has_license_file": false
@@ -533,7 +533,7 @@
       "slug": "music-chord-structure",
       "locale": "pt-br",
       "title": "Estrutura de acordes por intervalos",
-      "interest": "Teoria Musical",
+      "interest": "Teoria musical",
       "description": "Construa qualquer acorde a partir de graus de escala – tríades, sétimas, sextas, suspensões e notas adicionais.",
       "category": "music",
       "capabilities": [
@@ -543,7 +543,7 @@
       "packs": 1,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 5351,
+      "bytes": 5191,
       "file": "pt-br/Estrutura de acordes por intervalos.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Interval formulas for common chord qualities, expressed in scale degrees.",
@@ -552,9 +552,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "cs",
-      "title": "Klíčové podpisy — major",
+      "title": "Durové stupnice",
       "interest": "Hudební teorie",
-      "description": "Rozpoznejte všech patnáct hlavních klíčových podpisů na velkém štábu.",
+      "description": "Poznej všech patnáct durových předznamenání ve velké osnově.",
       "category": "music",
       "capabilities": [
         "images",
@@ -565,8 +565,8 @@
       "packs": 1,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 300974,
-      "file": "cs/Klíčové podpisy — major.flashcards.zip",
+      "bytes": 300742,
+      "file": "cs/Durové stupnice.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -574,9 +574,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "de",
-      "title": "Schlüsselsignaturen – Dur",
+      "title": "Vorzeichen — Dur",
       "interest": "Musiktheorie",
-      "description": "Erkennen Sie alle fünfzehn Haupttonarten des großen Notensystems.",
+      "description": "Erkenne alle fünfzehn Dur-Vorzeichen im großen Notensystem.",
       "category": "music",
       "capabilities": [
         "images",
@@ -587,8 +587,8 @@
       "packs": 1,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 300852,
-      "file": "de/Schlüsselsignaturen – Dur.flashcards.zip",
+      "bytes": 300699,
+      "file": "de/Vorzeichen — Dur.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -618,9 +618,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "es",
-      "title": "Firmas clave: mayor",
+      "title": "Armaduras de clave — Mayores",
       "interest": "Teoría de la música",
-      "description": "Reconoce las quince armaduras principales del gran pentagrama.",
+      "description": "Reconoce las quince armaduras de clave mayores en el pentagrama doble.",
       "category": "music",
       "capabilities": [
         "images",
@@ -631,8 +631,8 @@
       "packs": 1,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 300940,
-      "file": "es/Firmas clave: mayor.flashcards.zip",
+      "bytes": 300910,
+      "file": "es/Armaduras de clave — Mayores.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -640,9 +640,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "fr",
-      "title": "Signatures clés - Majeures",
+      "title": "Armures — Majeures",
       "interest": "Théorie de la musique",
-      "description": "Reconnaissez les quinze armures majeures du grand bâton.",
+      "description": "Reconnaissez les quinze armures majeures sur la portée double.",
       "category": "music",
       "capabilities": [
         "images",
@@ -653,8 +653,8 @@
       "packs": 1,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 300918,
-      "file": "fr/Signatures clés - Majeures.flashcards.zip",
+      "bytes": 300907,
+      "file": "fr/Armures — Majeures.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -662,9 +662,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "it",
-      "title": "Armature di chiave: Maggiore",
+      "title": "Armature di chiave — Maggiori",
       "interest": "Teoria musicale",
-      "description": "Riconoscere tutte le quindici indicazioni di tonalità principali del grande rigo.",
+      "description": "Riconosci tutte e quindici le armature di chiave maggiori nel doppio rigo.",
       "category": "music",
       "capabilities": [
         "images",
@@ -675,8 +675,8 @@
       "packs": 1,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 300968,
-      "file": "it/Armature di chiave: Maggiore.flashcards.zip",
+      "bytes": 300904,
+      "file": "it/Armature di chiave — Maggiori.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -684,9 +684,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "ja",
-      "title": "調号 - メジャー",
+      "title": "調号 — 長調",
       "interest": "音楽理論",
-      "description": "大譜表上の 15 の主要な調号をすべて認識します。",
+      "description": "大譜表に現れる 15 種類すべての長調の調号を見分けられるように。",
       "category": "music",
       "capabilities": [
         "images",
@@ -697,8 +697,8 @@
       "packs": 1,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 300986,
-      "file": "ja/調号 - メジャー.flashcards.zip",
+      "bytes": 300886,
+      "file": "ja/調号 — 長調.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -706,9 +706,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "ko",
-      "title": "주요 서명 - 주요",
-      "interest": "음악이론",
-      "description": "그랜드 보표의 15개 주요 조표를 모두 인식합니다.",
+      "title": "조표 — 장조",
+      "interest": "음악 이론",
+      "description": "큰보표에 나오는 열다섯 가지 장조 조표를 모두 알아보세요.",
       "category": "music",
       "capabilities": [
         "images",
@@ -719,8 +719,8 @@
       "packs": 1,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 300982,
-      "file": "ko/주요 서명 - 주요.flashcards.zip",
+      "bytes": 300878,
+      "file": "ko/조표 — 장조.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -728,9 +728,9 @@
     {
       "slug": "music-key-signatures-major",
       "locale": "pt-br",
-      "title": "Assinaturas principais - principais",
-      "interest": "Teoria Musical",
-      "description": "Reconheça todas as quinze armaduras principais da grande pauta.",
+      "title": "Armaduras de clave — Maiores",
+      "interest": "Teoria musical",
+      "description": "Reconheça todas as quinze armaduras de clave maiores na pauta dupla.",
       "category": "music",
       "capabilities": [
         "images",
@@ -741,8 +741,8 @@
       "packs": 1,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 300948,
-      "file": "pt-br/Assinaturas principais - principais.flashcards.zip",
+      "bytes": 300925,
+      "file": "pt-br/Armaduras de clave — Maiores.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen major key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -750,9 +750,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "cs",
-      "title": "Klíčové podpisy — vedlejší",
+      "title": "Mollové stupnice",
       "interest": "Hudební teorie",
-      "description": "Rozpoznejte všech patnáct vedlejších klíčových podpisů na hlavním štábu.",
+      "description": "Poznej všech patnáct mollových předznamenání ve velké osnově.",
       "category": "music",
       "capabilities": [
         "images",
@@ -763,8 +763,8 @@
       "packs": 1,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 300976,
-      "file": "cs/Klíčové podpisy — vedlejší.flashcards.zip",
+      "bytes": 300745,
+      "file": "cs/Mollové stupnice.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -772,9 +772,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "de",
-      "title": "Tonarten – Moll",
+      "title": "Vorzeichen — Moll",
       "interest": "Musiktheorie",
-      "description": "Erkennen Sie alle fünfzehn Moll-Tonarten im großen Notensystem.",
+      "description": "Erkenne alle fünfzehn Moll-Vorzeichen im großen Notensystem.",
       "category": "music",
       "capabilities": [
         "images",
@@ -785,8 +785,8 @@
       "packs": 1,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 300859,
-      "file": "de/Tonarten – Moll.flashcards.zip",
+      "bytes": 300702,
+      "file": "de/Vorzeichen — Moll.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -816,9 +816,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "es",
-      "title": "Firmas clave: menor",
+      "title": "Armaduras de clave — Menores",
       "interest": "Teoría de la música",
-      "description": "Reconoce las quince armaduras menores del gran pentagrama.",
+      "description": "Reconoce las quince armaduras de clave menores en el pentagrama doble.",
       "category": "music",
       "capabilities": [
         "images",
@@ -829,8 +829,8 @@
       "packs": 1,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 300954,
-      "file": "es/Firmas clave: menor.flashcards.zip",
+      "bytes": 300913,
+      "file": "es/Armaduras de clave — Menores.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -838,9 +838,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "fr",
-      "title": "Signatures clés - Mineur",
+      "title": "Armures — Mineures",
       "interest": "Théorie de la musique",
-      "description": "Reconnaissez les quinze armures mineures de la grande portée.",
+      "description": "Reconnaissez les quinze armures mineures sur la portée double.",
       "category": "music",
       "capabilities": [
         "images",
@@ -851,8 +851,8 @@
       "packs": 1,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 300911,
-      "file": "fr/Signatures clés - Mineur.flashcards.zip",
+      "bytes": 300907,
+      "file": "fr/Armures — Mineures.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -860,9 +860,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "it",
-      "title": "Armature di chiave – Minore",
+      "title": "Armature di chiave — Minori",
       "interest": "Teoria musicale",
-      "description": "Riconoscere tutte le quindici indicazioni di tonalità minori sul pentagramma.",
+      "description": "Riconosci tutte e quindici le armature di chiave minori nel doppio rigo.",
       "category": "music",
       "capabilities": [
         "images",
@@ -873,8 +873,8 @@
       "packs": 1,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 300955,
-      "file": "it/Armature di chiave – Minore.flashcards.zip",
+      "bytes": 300903,
+      "file": "it/Armature di chiave — Minori.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -882,9 +882,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "ja",
-      "title": "調号 - マイナー",
+      "title": "調号 — 短調",
       "interest": "音楽理論",
-      "description": "大譜表上の 15 個の短調記号をすべて認識します。",
+      "description": "大譜表に現れる 15 種類すべての短調の調号を見分けられるように。",
       "category": "music",
       "capabilities": [
         "images",
@@ -895,8 +895,8 @@
       "packs": 1,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 301022,
-      "file": "ja/調号 - マイナー.flashcards.zip",
+      "bytes": 300887,
+      "file": "ja/調号 — 短調.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -904,9 +904,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "ko",
-      "title": "주요 서명 - 사소한",
-      "interest": "음악이론",
-      "description": "대보표의 단조 조표 15개를 모두 인식합니다.",
+      "title": "조표 — 단조",
+      "interest": "음악 이론",
+      "description": "큰보표에 나오는 열다섯 가지 단조 조표를 모두 알아보세요.",
       "category": "music",
       "capabilities": [
         "images",
@@ -917,8 +917,8 @@
       "packs": 1,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 300969,
-      "file": "ko/주요 서명 - 사소한.flashcards.zip",
+      "bytes": 300880,
+      "file": "ko/조표 — 단조.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -926,9 +926,9 @@
     {
       "slug": "music-key-signatures-minor",
       "locale": "pt-br",
-      "title": "Assinaturas Chave - Menores",
-      "interest": "Teoria Musical",
-      "description": "Reconheça todas as quinze armaduras de clave menores na grande pauta.",
+      "title": "Armaduras de clave — Menores",
+      "interest": "Teoria musical",
+      "description": "Reconheça todas as quinze armaduras de clave menores na pauta dupla.",
       "category": "music",
       "capabilities": [
         "images",
@@ -939,8 +939,8 @@
       "packs": 1,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 300935,
-      "file": "pt-br/Assinaturas Chave - Menores.flashcards.zip",
+      "bytes": 300925,
+      "file": "pt-br/Armaduras de clave — Menores.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "The fifteen minor key signatures of common practice notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -948,9 +948,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "cs",
-      "title": "Poznámky o Hůl — Bas",
+      "title": "Noty v basovém klíči",
       "interest": "Hudební teorie",
-      "description": "Pojmenujte každou notu na basové osnově, od dvou řádků níže po dva nahoře.",
+      "description": "Pojmenuj každou notu v basovém klíči, od dvou pomocných linek pod osnovou po dvě nad ní.",
       "category": "music",
       "capabilities": [
         "images",
@@ -961,8 +961,8 @@
       "packs": 1,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 89957,
-      "file": "cs/Poznámky o Hůl — Bas.flashcards.zip",
+      "bytes": 89965,
+      "file": "cs/Noty v basovém klíči.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -970,9 +970,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "de",
-      "title": "Hinweise zum Stab – Bass",
+      "title": "Noten im Bassschlüssel",
       "interest": "Musiktheorie",
-      "description": "Benennen Sie jede Note der Bass-Notenzeile, von zwei Hilfslinien unten bis zwei darüber.",
+      "description": "Benenne jede Note im Bassschlüssel, von zwei Hilfslinien unterhalb bis zwei oberhalb des Systems.",
       "category": "music",
       "capabilities": [
         "images",
@@ -983,8 +983,8 @@
       "packs": 1,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 89947,
-      "file": "de/Hinweise zum Stab – Bass.flashcards.zip",
+      "bytes": 89955,
+      "file": "de/Noten im Bassschlüssel.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1014,9 +1014,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "es",
-      "title": "Notas sobre el pentagrama - Bajo",
+      "title": "Notas en clave de fa",
       "interest": "Teoría de la música",
-      "description": "Nombra cada nota del pentagrama del bajo, desde las dos líneas del libro mayor hasta las dos superiores.",
+      "description": "Nombra cada nota en clave de fa, desde dos líneas adicionales por debajo hasta dos por encima del pentagrama.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1027,8 +1027,8 @@
       "packs": 1,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 89959,
-      "file": "es/Notas sobre el pentagrama - Bajo.flashcards.zip",
+      "bytes": 89952,
+      "file": "es/Notas en clave de fa.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1036,9 +1036,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "fr",
-      "title": "Notes sur la portée — Basse",
+      "title": "Notes en clé de fa",
       "interest": "Théorie de la musique",
-      "description": "Nommez chaque note de la portée de basse, de deux lignes de registre en dessous à deux lignes au-dessus.",
+      "description": "Nommez chaque note en clé de fa, de deux lignes supplémentaires sous la portée à deux au-dessus.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1049,8 +1049,8 @@
       "packs": 1,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 89953,
-      "file": "fr/Notes sur la portée — Basse.flashcards.zip",
+      "bytes": 89947,
+      "file": "fr/Notes en clé de fa.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1058,9 +1058,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "it",
-      "title": "Note sul rigo — Basso",
+      "title": "Note in chiave di basso",
       "interest": "Teoria musicale",
-      "description": "Assegna un nome a ogni nota del rigo di basso, dalle due linee del libro mastro sotto alle due sopra.",
+      "description": "Dai un nome a ogni nota in chiave di basso, da due tagli addizionali sotto il rigo a due sopra.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1071,8 +1071,8 @@
       "packs": 1,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 89941,
-      "file": "it/Note sul rigo — Basso.flashcards.zip",
+      "bytes": 89943,
+      "file": "it/Note in chiave di basso.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1080,9 +1080,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "ja",
-      "title": "五線譜に関するメモ — ベース",
+      "title": "五線譜の音符 — ヘ音記号",
       "interest": "音楽理論",
-      "description": "低音譜表のすべての音符に、下の 2 本の加線から上の 2 本の加線までの名前を付けます。",
+      "description": "ヘ音記号のすべての音符に名前を — 五線の下二本の加線から上二本の加線まで。",
       "category": "music",
       "capabilities": [
         "images",
@@ -1093,8 +1093,8 @@
       "packs": 1,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 90000,
-      "file": "ja/五線譜に関するメモ — ベース.flashcards.zip",
+      "bytes": 90012,
+      "file": "ja/五線譜の音符 — ヘ音記号.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1102,9 +1102,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "ko",
-      "title": "보표에 관한 참고 사항 - 베이스",
-      "interest": "음악이론",
-      "description": "아래 두 줄부터 위 두 줄까지 베이스 보표의 모든 음표에 이름을 지정합니다.",
+      "title": "낮은음자리표의 음표",
+      "interest": "음악 이론",
+      "description": "낮은음자리표의 모든 음표 이름 익히기 — 오선 아래 덧줄 두 개부터 위 덧줄 두 개까지.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1115,8 +1115,8 @@
       "packs": 1,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 89993,
-      "file": "ko/보표에 관한 참고 사항 - 베이스.flashcards.zip",
+      "bytes": 89988,
+      "file": "ko/낮은음자리표의 음표.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1124,9 +1124,9 @@
     {
       "slug": "music-notes-bass",
       "locale": "pt-br",
-      "title": "Notas sobre a pauta — Baixo",
-      "interest": "Teoria Musical",
-      "description": "Nomeie cada nota na pauta do baixo, desde duas linhas de registro abaixo até duas acima.",
+      "title": "Notas na clave de fá",
+      "interest": "Teoria musical",
+      "description": "Nomeie cada nota na clave de fá, de duas linhas suplementares abaixo até duas acima da pauta.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1137,8 +1137,8 @@
       "packs": 1,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 89952,
-      "file": "pt-br/Notas sobre a pauta — Baixo.flashcards.zip",
+      "bytes": 89950,
+      "file": "pt-br/Notas na clave de fá.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1146,9 +1146,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "cs",
-      "title": "Poznámky k hůlce — Treble",
+      "title": "Noty v houslovém klíči",
       "interest": "Hudební teorie",
-      "description": "Pojmenujte každou notu na výškové notě, od dvou řádků níže po dva nahoře.",
+      "description": "Pojmenuj každou notu v houslovém klíči, od dvou pomocných linek pod osnovou po dvě nad ní.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1159,8 +1159,8 @@
       "packs": 1,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 172882,
-      "file": "cs/Poznámky k hůlce — Treble.flashcards.zip",
+      "bytes": 172889,
+      "file": "cs/Noty v houslovém klíči.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1168,9 +1168,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "de",
-      "title": "Hinweise zum Stab – Diskant",
+      "title": "Noten im Violinschlüssel",
       "interest": "Musiktheorie",
-      "description": "Benennen Sie jede Note im Diskantsystem, von zwei Hilfslinien unten bis zwei darüber.",
+      "description": "Benenne jede Note im Violinschlüssel, von zwei Hilfslinien unterhalb bis zwei oberhalb des Systems.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1181,8 +1181,8 @@
       "packs": 1,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 172875,
-      "file": "de/Hinweise zum Stab – Diskant.flashcards.zip",
+      "bytes": 172881,
+      "file": "de/Noten im Violinschlüssel.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1212,9 +1212,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "es",
-      "title": "Notas sobre el pentagrama: agudos",
+      "title": "Notas en clave de sol",
       "interest": "Teoría de la música",
-      "description": "Nombra cada nota en el pentagrama de agudos, desde las dos líneas del libro mayor hasta las dos de arriba.",
+      "description": "Nombra cada nota en clave de sol, desde dos líneas adicionales por debajo hasta dos por encima del pentagrama.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1225,8 +1225,8 @@
       "packs": 1,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 172884,
-      "file": "es/Notas sobre el pentagrama: agudos.flashcards.zip",
+      "bytes": 172876,
+      "file": "es/Notas en clave de sol.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1234,9 +1234,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "fr",
-      "title": "Notes sur la portée - Aigus",
+      "title": "Notes en clé de sol",
       "interest": "Théorie de la musique",
-      "description": "Nommez chaque note sur la portée des aigus, de deux lignes de registre en dessous à deux lignes au-dessus.",
+      "description": "Nommez chaque note en clé de sol, de deux lignes supplémentaires sous la portée à deux au-dessus.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1247,8 +1247,8 @@
       "packs": 1,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 172877,
-      "file": "fr/Notes sur la portée - Aigus.flashcards.zip",
+      "bytes": 172872,
+      "file": "fr/Notes en clé de sol.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1256,9 +1256,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "it",
-      "title": "Note sul pentagramma: violino",
+      "title": "Note in chiave di violino",
       "interest": "Teoria musicale",
-      "description": "Dai un nome a ogni nota sul pentagramma degli acuti, dalle due linee del libro mastro sotto alle due sopra.",
+      "description": "Dai un nome a ogni nota in chiave di violino, da due tagli addizionali sotto il rigo a due sopra.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1270,7 +1270,7 @@
       "q_lang": "it",
       "a_lang": "it",
       "bytes": 172872,
-      "file": "it/Note sul pentagramma: violino.flashcards.zip",
+      "file": "it/Note in chiave di violino.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1278,9 +1278,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "ja",
-      "title": "五線譜に関するメモ — 高音",
+      "title": "五線譜の音符 — ト音記号",
       "interest": "音楽理論",
-      "description": "高音譜のすべての音符に、下の 2 本の加線から 2 本上の加線までの名前を付けます。",
+      "description": "ト音記号のすべての音符に名前を — 五線の下二本の加線から上二本の加線まで。",
       "category": "music",
       "capabilities": [
         "images",
@@ -1291,8 +1291,8 @@
       "packs": 1,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 172919,
-      "file": "ja/五線譜に関するメモ — 高音.flashcards.zip",
+      "bytes": 172935,
+      "file": "ja/五線譜の音符 — ト音記号.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1300,9 +1300,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "ko",
-      "title": "지팡이에 대한 참고 사항 - 고음",
-      "interest": "음악이론",
-      "description": "아래 두 줄부터 위 두 줄까지 고음 보표의 모든 음표에 이름을 지정합니다.",
+      "title": "높은음자리표의 음표",
+      "interest": "음악 이론",
+      "description": "높은음자리표의 모든 음표 이름 익히기 — 오선 아래 덧줄 두 개부터 위 덧줄 두 개까지.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1314,7 +1314,7 @@
       "q_lang": "ko",
       "a_lang": "ko",
       "bytes": 172912,
-      "file": "ko/지팡이에 대한 참고 사항 - 고음.flashcards.zip",
+      "file": "ko/높은음자리표의 음표.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1322,9 +1322,9 @@
     {
       "slug": "music-notes-treble",
       "locale": "pt-br",
-      "title": "Notas sobre a pauta – Treble",
-      "interest": "Teoria Musical",
-      "description": "Nomeie cada nota na pauta de agudos, de duas linhas contábeis abaixo até duas acima.",
+      "title": "Notas na clave de sol",
+      "interest": "Teoria musical",
+      "description": "Nomeie cada nota na clave de sol, de duas linhas suplementares abaixo até duas acima da pauta.",
       "category": "music",
       "capabilities": [
         "images",
@@ -1335,8 +1335,8 @@
       "packs": 1,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 172875,
-      "file": "pt-br/Notas sobre a pauta – Treble.flashcards.zip",
+      "bytes": 172872,
+      "file": "pt-br/Notas na clave de sol.flashcards.zip",
       "assets_origin": "generated",
       "source_of_truth": "Standard Western staff notation. Images engraved with LilyPond 2.26.",
       "has_license_file": true
@@ -1346,7 +1346,7 @@
       "locale": "cs",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "Jazyk Kotlin od začátku do konce – syntaxe, nulová bezpečnost, třídy, rutiny, generika, multiplatformní zdrojové sady a příkazy Gradle, které skutečně píšete.",
+      "description": "Jazyk Kotlin od začátku do konce — syntaxe, null safety, třídy, korutiny, generika, multiplatformní source sety a příkazy Gradle, které opravdu píšeš.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1355,7 +1355,7 @@
       "packs": 10,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 31327,
+      "bytes": 31313,
       "file": "cs/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1366,7 +1366,7 @@
       "locale": "de",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "Die Kotlin-Sprache durchgängig – Syntax, Nullsicherheit, Klassen, Coroutinen, Generika, Multiplattform-Quellsätze und die Gradle-Befehle, die Sie tatsächlich eingeben.",
+      "description": "Die Sprache Kotlin von A bis Z – Syntax, Null Safety, Klassen, Coroutines, Generics, Multiplattform-Source-Sets und die Gradle-Befehle, die du wirklich tippst.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1375,7 +1375,7 @@
       "packs": 10,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 33466,
+      "bytes": 33461,
       "file": "de/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1406,7 +1406,7 @@
       "locale": "es",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "El lenguaje Kotlin de principio a fin: sintaxis, seguridad nula, clases, rutinas, genéricos, conjuntos de fuentes multiplataforma y los comandos Gradle que usted realmente escribe.",
+      "description": "El lenguaje Kotlin de principio a fin: sintaxis, null safety, clases, corrutinas, genéricos, source sets multiplataforma y los comandos Gradle que de verdad escribes.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1415,7 +1415,7 @@
       "packs": 10,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 32776,
+      "bytes": 32763,
       "file": "es/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1426,7 +1426,7 @@
       "locale": "fr",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "Le langage Kotlin de bout en bout : syntaxe, sécurité nulle, classes, coroutines, génériques, ensembles de sources multiplateformes et les commandes Gradle que vous tapez réellement.",
+      "description": "Le langage Kotlin de bout en bout : syntaxe, null safety, classes, coroutines, génériques, source sets multiplateformes et les commandes Gradle que vous tapez vraiment.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1435,7 +1435,7 @@
       "packs": 10,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 33714,
+      "bytes": 33711,
       "file": "fr/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1446,7 +1446,7 @@
       "locale": "it",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "Il linguaggio Kotlin end-to-end: sintassi, sicurezza nulla, classi, coroutine, generici, set di sorgenti multipiattaforma e i comandi Gradle effettivamente digitati.",
+      "description": "Il linguaggio Kotlin dall’inizio alla fine: sintassi, null safety, classi, coroutine, generics, source set multipiattaforma e i comandi Gradle che digiti davvero.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1455,7 +1455,7 @@
       "packs": 10,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 32408,
+      "bytes": 32398,
       "file": "it/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1466,7 +1466,7 @@
       "locale": "ja",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "Kotlin 言語のエンドツーエンド — 構文、null セーフティ、クラス、コルーチン、ジェネリックス、マルチプラットフォーム ソース セット、および実際に入力する Gradle コマンド。",
+      "description": "Kotlin 言語をひととおり — 構文、null 安全性、クラス、コルーチン、ジェネリクス、マルチプラットフォームのソースセット、そして実際に打ち込む Gradle コマンド。",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1475,7 +1475,7 @@
       "packs": 10,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 37951,
+      "bytes": 37935,
       "file": "ja/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1486,7 +1486,7 @@
       "locale": "ko",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "Kotlin 언어 종단 간 — 구문, null 안전성, 클래스, 코루틴, 제네릭, 다중 플랫폼 소스 세트 및 실제로 입력하는 Gradle 명령.",
+      "description": "Kotlin 언어를 처음부터 끝까지 — 문법, null 안전성, 클래스, 코루틴, 제네릭, 멀티플랫폼 소스 세트, 그리고 실제로 입력하는 Gradle 명령까지.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1495,7 +1495,7 @@
       "packs": 10,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 34368,
+      "bytes": 34360,
       "file": "ko/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1506,7 +1506,7 @@
       "locale": "pt-br",
       "title": "Kotlin",
       "interest": "Kotlin",
-      "description": "A linguagem Kotlin de ponta a ponta — sintaxe, segurança nula, classes, corrotinas, genéricos, conjuntos de fontes multiplataforma e os comandos Gradle que você realmente digita.",
+      "description": "A linguagem Kotlin de ponta a ponta — sintaxe, null safety, classes, corrotinas, genéricos, source sets multiplataforma e os comandos Gradle que você realmente digita.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1515,7 +1515,7 @@
       "packs": 10,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 32249,
+      "bytes": 32246,
       "file": "pt-br/Kotlin.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Documented semantics of the Kotlin language, coroutines and the Gradle/KMP toolchain (kotlinlang.org reference).",
@@ -1526,7 +1526,7 @@
       "locale": "cs",
       "title": "Swift",
       "interest": "Swift",
-      "description": "Samotný jazyk Swift — typy, kolekce, tok řízení, uzávěry, hodnotová a referenční sémantika, protokoly, volby a zpracování chyb.",
+      "description": "Samotný jazyk Swift — typy, kolekce, řízení toku, closures, hodnotová a referenční sémantika, protokoly, optionals a zpracování chyb.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1535,7 +1535,7 @@
       "packs": 11,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 33817,
+      "bytes": 33827,
       "file": "cs/Swift.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The Swift language reference and Apple's documented language semantics (Swift 6).",
@@ -1546,7 +1546,7 @@
       "locale": "de",
       "title": "Swift",
       "interest": "Swift",
-      "description": "Die Swift-Sprache selbst – Typen, Sammlungen, Kontrollfluss, Abschlüsse, Wert- und Referenzsemantik, Protokolle, Optionen und Fehlerbehandlung.",
+      "description": "Die Sprache Swift selbst – Typen, Collections, Kontrollfluss, Closures, Wert- und Referenzsemantik, Protokolle, Optionals und Fehlerbehandlung.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1555,7 +1555,7 @@
       "packs": 11,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 36350,
+      "bytes": 36324,
       "file": "de/Swift.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The Swift language reference and Apple's documented language semantics (Swift 6).",
@@ -1586,7 +1586,7 @@
       "locale": "es",
       "title": "Swift",
       "interest": "Swift",
-      "description": "El lenguaje Swift en sí: tipos, colecciones, flujo de control, cierres, semántica de valores y referencias, protocolos, opciones y manejo de errores.",
+      "description": "El lenguaje Swift en sí: tipos, colecciones, flujo de control, closures, semántica de valor y de referencia, protocolos, optionals y manejo de errores.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1595,7 +1595,7 @@
       "packs": 11,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 34888,
+      "bytes": 34872,
       "file": "es/Swift.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The Swift language reference and Apple's documented language semantics (Swift 6).",
@@ -1606,7 +1606,7 @@
       "locale": "fr",
       "title": "Swift",
       "interest": "Swift",
-      "description": "Le langage Swift lui-même : types, collections, flux de contrôle, fermetures, sémantique de valeur et de référence, protocoles, options et gestion des erreurs.",
+      "description": "Le langage Swift lui-même : types, collections, flux de contrôle, closures, sémantique de valeur et de référence, protocoles, optionals et gestion des erreurs.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1615,7 +1615,7 @@
       "packs": 11,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 36509,
+      "bytes": 36495,
       "file": "fr/Swift.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The Swift language reference and Apple's documented language semantics (Swift 6).",
@@ -1626,7 +1626,7 @@
       "locale": "it",
       "title": "Swift",
       "interest": "Swift",
-      "description": "Il linguaggio Swift stesso: tipi, raccolte, flusso di controllo, chiusure, semantica di valori e riferimenti, protocolli, opzioni e gestione degli errori.",
+      "description": "Il linguaggio Swift in sé: tipi, collection, flusso di controllo, closure, semantica di valore e di riferimento, protocolli, optional e gestione degli errori.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1635,7 +1635,7 @@
       "packs": 11,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 35011,
+      "bytes": 34998,
       "file": "it/Swift.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The Swift language reference and Apple's documented language semantics (Swift 6).",
@@ -1646,7 +1646,7 @@
       "locale": "ja",
       "title": "Swift",
       "interest": "Swift",
-      "description": "Swift 言語自体 - 型、コレクション、制御フロー、クロージャ、値と参照のセマンティクス、プロトコル、オプション、エラー処理。",
+      "description": "Swift 言語そのもの — 型、コレクション、制御フロー、クロージャ、値と参照のセマンティクス、プロトコル、オプショナル、エラー処理。",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1655,7 +1655,7 @@
       "packs": 11,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 39933,
+      "bytes": 39930,
       "file": "ja/Swift.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The Swift language reference and Apple's documented language semantics (Swift 6).",
@@ -1666,7 +1666,7 @@
       "locale": "ko",
       "title": "Swift",
       "interest": "Swift",
-      "description": "Swift 언어 자체 — 유형, 컬렉션, 제어 흐름, 클로저, 값 및 참조 의미 체계, 프로토콜, 옵션 및 오류 처리.",
+      "description": "Swift 언어 그 자체 — 타입, 컬렉션, 제어 흐름, 클로저, 값과 참조 의미론, 프로토콜, 옵셔널, 오류 처리.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1686,7 +1686,7 @@
       "locale": "pt-br",
       "title": "Swift",
       "interest": "Swift",
-      "description": "A própria linguagem Swift — tipos, coleções, fluxo de controle, fechamentos, semântica de valor e referência, protocolos, opcionais e tratamento de erros.",
+      "description": "A própria linguagem Swift — tipos, coleções, fluxo de controle, closures, semântica de valor e de referência, protocolos, optionals e tratamento de erros.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1695,7 +1695,7 @@
       "packs": 11,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 34655,
+      "bytes": 34647,
       "file": "pt-br/Swift.flashcards",
       "assets_origin": "none",
       "source_of_truth": "The Swift language reference and Apple's documented language semantics (Swift 6).",
@@ -1706,7 +1706,7 @@
       "locale": "cs",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "Vytváření rozhraní s SwiftUI — stav a vazby, rozvržení, navigace, animace, pozorování, persistence, vytváření sítí a dostupnost.",
+      "description": "Stavba rozhraní ve SwiftUI — state a bindings, layout, navigace, animace, observation, perzistence, síťování a přístupnost.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1715,7 +1715,7 @@
       "packs": 18,
       "q_lang": "cs",
       "a_lang": "cs",
-      "bytes": 70685,
+      "bytes": 70626,
       "file": "cs/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1726,7 +1726,7 @@
       "locale": "de",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "Erstellen von Schnittstellen mit SwiftUI – Zustand und Bindungen, Layout, Navigation, Animation, Beobachtung, Persistenz, Vernetzung und Zugänglichkeit.",
+      "description": "Oberflächen mit SwiftUI bauen – State und Bindings, Layout, Navigation, Animation, Observation, Persistenz, Networking und Barrierefreiheit.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1735,7 +1735,7 @@
       "packs": 18,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 76225,
+      "bytes": 76211,
       "file": "de/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1766,7 +1766,7 @@
       "locale": "es",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "Creación de interfaces con SwiftUI: estado y enlaces, diseño, navegación, animación, observación, persistencia, redes y accesibilidad.",
+      "description": "Crear interfaces con SwiftUI: state y bindings, layout, navegación, animación, observation, persistencia, networking y accesibilidad.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1775,7 +1775,7 @@
       "packs": 18,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 72821,
+      "bytes": 72803,
       "file": "es/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1786,7 +1786,7 @@
       "locale": "fr",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "Création d'interfaces avec SwiftUI — état et liaisons, mise en page, navigation, animation, observation, persistance, mise en réseau et accessibilité.",
+      "description": "Créer des interfaces avec SwiftUI — state et bindings, layout, navigation, animation, observation, persistance, networking et accessibilité.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1795,7 +1795,7 @@
       "packs": 18,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 75472,
+      "bytes": 75423,
       "file": "fr/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1806,7 +1806,7 @@
       "locale": "it",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "Creazione di interfacce con SwiftUI: stato e collegamenti, layout, navigazione, animazione, osservazione, persistenza, networking e accessibilità.",
+      "description": "Costruire interfacce con SwiftUI: state e binding, layout, navigazione, animazione, observation, persistenza, networking e accessibilità.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1815,7 +1815,7 @@
       "packs": 18,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 73031,
+      "bytes": 72984,
       "file": "it/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1826,7 +1826,7 @@
       "locale": "ja",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "SwiftUI によるインターフェイスの構築 — 状態とバインディング、レイアウト、ナビゲーション、アニメーション、観察、永続性、ネットワーキング、アクセシビリティ。",
+      "description": "SwiftUI でのインターフェース構築 — State とバインディング、レイアウト、ナビゲーション、アニメーション、Observation、永続化、ネットワーキング、アクセシビリティ。",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1835,7 +1835,7 @@
       "packs": 18,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 85186,
+      "bytes": 85174,
       "file": "ja/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1846,7 +1846,7 @@
       "locale": "ko",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "SwiftUI로 인터페이스 구축 — 상태 및 바인딩, 레이아웃, 탐색, 애니메이션, 관찰, 지속성, 네트워킹 및 접근성.",
+      "description": "SwiftUI로 인터페이스 만들기 — State와 바인딩, 레이아웃, 내비게이션, 애니메이션, Observation, 퍼시스턴스, 네트워킹, 접근성.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1855,7 +1855,7 @@
       "packs": 18,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 76842,
+      "bytes": 76854,
       "file": "ko/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1866,7 +1866,7 @@
       "locale": "pt-br",
       "title": "SwiftUI",
       "interest": "SwiftUI",
-      "description": "Construindo interfaces com SwiftUI — estado e ligações, layout, navegação, animação, observação, persistência, rede e acessibilidade.",
+      "description": "Construindo interfaces com SwiftUI — state e bindings, layout, navegação, animação, observation, persistência, networking e acessibilidade.",
       "category": "programming",
       "capabilities": [
         "code"
@@ -1875,7 +1875,7 @@
       "packs": 18,
       "q_lang": "pt-br",
       "a_lang": "pt-br",
-      "bytes": 72650,
+      "bytes": 72600,
       "file": "pt-br/SwiftUI.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Apple's SwiftUI, SwiftData and Foundation developer documentation (iOS 17+).",
@@ -1886,7 +1886,7 @@
       "locale": "cs",
       "title": "Elektronika",
       "interest": "Elektronika",
-      "description": "Základy obvodů až po praktickou práci – zákony, součástky, digitální sběrnice, mikrokontroléry, ovladače motorů a jak to všechno měřit, aniž by se cokoli poškodilo.",
+      "description": "Od základů obvodů až k praxi — zákony, součástky, digitální sběrnice, mikrokontroléry, budiče motorů a jak to všechno změřit, aniž bys něco spálil.",
       "category": "science",
       "capabilities": [
         "latex",
@@ -1907,7 +1907,7 @@
       "locale": "de",
       "title": "Elektronik",
       "interest": "Elektronik",
-      "description": "Schaltungsgrundlagen bis hin zur praktischen Arbeit – Gesetze, Komponenten, digitale Busse, Mikrocontroller, Motortreiber und wie man alles misst, ohne etwas zu beschädigen.",
+      "description": "Von den Schaltungsgrundlagen bis zur Praxis – Gesetze, Bauteile, digitale Busse, Mikrocontroller, Motortreiber und wie man alles misst, ohne etwas zu zerstören.",
       "category": "science",
       "capabilities": [
         "latex",
@@ -1917,7 +1917,7 @@
       "packs": 7,
       "q_lang": "de",
       "a_lang": "de",
-      "bytes": 60268,
+      "bytes": 60271,
       "file": "de/Elektronik.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Circuit theory fundamentals, component behaviour, and published microcontroller datasheet figures.",
@@ -1949,7 +1949,7 @@
       "locale": "es",
       "title": "Electrónica",
       "interest": "Electrónica",
-      "description": "Desde los fundamentos de los circuitos hasta el trabajo práctico: leyes, componentes, buses digitales, microcontroladores, controladores de motores y cómo medirlo todo sin dañar nada.",
+      "description": "De los fundamentos de circuitos al trabajo práctico: leyes, componentes, buses digitales, microcontroladores, drivers de motor y cómo medirlo todo sin dañar nada.",
       "category": "science",
       "capabilities": [
         "latex",
@@ -1959,7 +1959,7 @@
       "packs": 7,
       "q_lang": "es",
       "a_lang": "es",
-      "bytes": 59328,
+      "bytes": 59315,
       "file": "es/Electrónica.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Circuit theory fundamentals, component behaviour, and published microcontroller datasheet figures.",
@@ -1970,7 +1970,7 @@
       "locale": "fr",
       "title": "Électronique",
       "interest": "Électronique",
-      "description": "Des principes fondamentaux des circuits aux travaux pratiques : lois, composants, bus numériques, microcontrôleurs, pilotes de moteur et comment tout mesurer sans rien endommager.",
+      "description": "Des principes des circuits à la pratique : lois, composants, bus numériques, microcontrôleurs, drivers de moteur et comment tout mesurer sans rien griller.",
       "category": "science",
       "capabilities": [
         "latex",
@@ -1980,7 +1980,7 @@
       "packs": 7,
       "q_lang": "fr",
       "a_lang": "fr",
-      "bytes": 61992,
+      "bytes": 61991,
       "file": "fr/Électronique.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Circuit theory fundamentals, component behaviour, and published microcontroller datasheet figures.",
@@ -1991,7 +1991,7 @@
       "locale": "it",
       "title": "Elettronica",
       "interest": "Elettronica",
-      "description": "Dai fondamenti dei circuiti fino al lavoro pratico: leggi, componenti, bus digitali, microcontrollori, driver di motori e come misurare il tutto senza danneggiare nulla.",
+      "description": "Dai fondamenti dei circuiti alla pratica: leggi, componenti, bus digitali, microcontrollori, driver di motori e come misurare tutto senza danneggiare nulla.",
       "category": "science",
       "capabilities": [
         "latex",
@@ -2001,7 +2001,7 @@
       "packs": 7,
       "q_lang": "it",
       "a_lang": "it",
-      "bytes": 58479,
+      "bytes": 58474,
       "file": "it/Elettronica.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Circuit theory fundamentals, component behaviour, and published microcontroller datasheet figures.",
@@ -2010,9 +2010,9 @@
     {
       "slug": "electronics-fundamentals",
       "locale": "ja",
-      "title": "エレクトロニクス",
-      "interest": "エレクトロニクス",
-      "description": "回路の基礎から実際の作業まで、法律、コンポーネント、デジタル バス、マイクロコントローラー、モーター ドライバー、そして何も損傷せずにそれらすべてを測定する方法。",
+      "title": "電子工学",
+      "interest": "電子工学",
+      "description": "回路の基礎から実践まで — 法則、部品、デジタルバス、マイコン、モータードライバ、そして何も壊さずに測る方法。",
       "category": "science",
       "capabilities": [
         "latex",
@@ -2022,8 +2022,8 @@
       "packs": 7,
       "q_lang": "ja",
       "a_lang": "ja",
-      "bytes": 70231,
-      "file": "ja/エレクトロニクス.flashcards",
+      "bytes": 70159,
+      "file": "ja/電子工学.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Circuit theory fundamentals, component behaviour, and published microcontroller datasheet figures.",
       "has_license_file": false
@@ -2031,9 +2031,9 @@
     {
       "slug": "electronics-fundamentals",
       "locale": "ko",
-      "title": "전자제품",
-      "interest": "전자제품",
-      "description": "법률, 구성요소, 디지털 버스, 마이크로컨트롤러, 모터 드라이버 및 아무것도 손상시키지 않고 이를 모두 측정하는 방법 등 실제 작업에 이르는 회로 기본 사항입니다.",
+      "title": "전자공학",
+      "interest": "전자공학",
+      "description": "회로의 기초부터 실전까지 — 법칙, 부품, 디지털 버스, 마이크로컨트롤러, 모터 드라이버, 그리고 아무것도 태우지 않고 측정하는 법.",
       "category": "science",
       "capabilities": [
         "latex",
@@ -2043,8 +2043,8 @@
       "packs": 7,
       "q_lang": "ko",
       "a_lang": "ko",
-      "bytes": 61730,
-      "file": "ko/전자제품.flashcards",
+      "bytes": 61718,
+      "file": "ko/전자공학.flashcards",
       "assets_origin": "none",
       "source_of_truth": "Circuit theory fundamentals, component behaviour, and published microcontroller datasheet figures.",
       "has_license_file": false
@@ -2054,7 +2054,7 @@
       "locale": "pt-br",
       "title": "Eletrônica",
       "interest": "Eletrônica",
-      "description": "Fundamentos de circuitos até trabalhos práticos – leis, componentes, barramentos digitais, microcontroladores, drivers de motor e como medir tudo isso sem danificar nada.",
+      "description": "Dos fundamentos de circuitos ao trabalho prático — leis, componentes, barramentos digitais, microcontroladores, drivers de motor e como medir tudo sem danificar nada.",
       "category": "science",
       "capabilities": [
         "latex",

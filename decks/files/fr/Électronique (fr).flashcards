@@ -8,7 +8,7 @@
   "deck_a_lang": "fr",
   "decks": [
     {
-      "deck": "Lois et quantités",
+      "deck": "Lois et grandeurs",
       "deck_icon": "bolt",
       "cards": [
         {
@@ -451,7 +451,7 @@
       "deck_key": "wi-fi-microcontrollers"
     },
     {
-      "deck": "Moteurs et pilotes",
+      "deck": "Moteurs et drivers",
       "deck_icon": "gearshape.2",
       "cards": [
         {

@@ -51,7 +51,7 @@
       "deck_key": "values-types-and-strings"
     },
     {
-      "deck": "Collezioni",
+      "deck": "Collection",
       "deck_icon": "list.bullet.rectangle",
       "cards": [
         {
@@ -78,7 +78,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Enumerazioni",
+      "deck": "Enum",
       "deck_icon": "checklist",
       "cards": [
         {
@@ -194,7 +194,7 @@
       "deck_key": "error-handling"
     },
     {
-      "deck": "Chiusure e Cattura",
+      "deck": "Closure e cattura",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -233,7 +233,7 @@
       "deck_key": "closures-and-capture"
     },
     {
-      "deck": "Strutture e semantica dei valori",
+      "deck": "Struct e semantica dei valori",
       "deck_icon": "cube",
       "cards": [
         {
@@ -276,7 +276,7 @@
       "deck_key": "structs-and-value-semantics"
     },
     {
-      "deck": "Classi e semantica di riferimento",
+      "deck": "Classi e semantica dei riferimenti",
       "deck_icon": "cube",
       "cards": [
         {
@@ -311,7 +311,7 @@
       "deck_key": "classes-and-reference-semantics"
     },
     {
-      "deck": "Protocolli ed estensioni",
+      "deck": "Protocolli ed extension",
       "deck_icon": "checkmark.seal",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "Opzionali",
+      "deck": "Optional",
       "deck_icon": "lightbulb",
       "cards": [
         {

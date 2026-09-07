@@ -8,7 +8,7 @@
   "deck_a_lang": "ja",
   "decks": [
     {
-      "deck": "力と根",
+      "deck": "累乗と根",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a から m までの a から n まで}",
@@ -42,7 +42,7 @@
       "deck_key": "powers-and-roots"
     },
     {
-      "deck": "対数規則",
+      "deck": "対数の法則",
       "cards": [
         {
           "q": "$\\log_a(x \\cdot y) = ?${x の底 a に y を掛けた対数}",
@@ -80,7 +80,7 @@
       "deck_key": "logarithm-rules"
     },
     {
-      "deck": "代数恒等式",
+      "deck": "代数の恒等式",
       "cards": [
         {
           "q": "$(a + b)^2 = ?${a プラス b、すべて 2 乗}",
@@ -184,7 +184,7 @@
       "deck_key": "trigonometric-values"
     },
     {
-      "deck": "三角恒等式",
+      "deck": "三角関数の恒等式",
       "cards": [
         {
           "q": "ピタゴラス恒等式: $\\sin^2 x + \\cos^2 x = ?${サイン二乗 x プラスコサイン二乗 x}",
@@ -238,7 +238,7 @@
       "deck_key": "trigonometric-identities"
     },
     {
-      "deck": "三角関数と逆関数",
+      "deck": "三角関数と逆三角関数",
       "cards": [
         {
           "q": "$\\sin x${sine x} のドメイン:",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "デリバティブ",
+      "deck": "微分",
       "cards": [
         {
           "q": "$f'(x_0)${x の素数} は幾何学的に何を意味しますか?",
@@ -414,7 +414,7 @@
       "deck_key": "derivatives"
     },
     {
-      "deck": "ソリッドジオメトリ",
+      "deck": "立体幾何",
       "cards": [
         {
           "q": "**プリズム**の体積 — $S_p${S p} は底面積、$v$ は高さです。",

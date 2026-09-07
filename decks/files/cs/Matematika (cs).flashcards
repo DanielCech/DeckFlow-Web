@@ -8,7 +8,7 @@
   "deck_a_lang": "cs",
   "decks": [
     {
-      "deck": "Mocniny a kořeny",
+      "deck": "Mocniny a odmocniny",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a až m krát a až n}",
@@ -42,7 +42,7 @@
       "deck_key": "powers-and-roots"
     },
     {
-      "deck": "Pravidla logaritmu",
+      "deck": "Pravidla logaritmů",
       "cards": [
         {
           "q": "$\\log_a(x \\cdot y) = ?${log základ a x krát y}",
@@ -122,7 +122,7 @@
       "deck_key": "algebraic-identities"
     },
     {
-      "deck": "Trigonometrické hodnoty",
+      "deck": "Hodnoty goniometrických funkcí",
       "cards": [
         {
           "q": "$\\sin 0^\\circ = ?${sinus nula stupňů}",
@@ -184,7 +184,7 @@
       "deck_key": "trigonometric-values"
     },
     {
-      "deck": "Trigonometrické identity",
+      "deck": "Goniometrické identity",
       "cards": [
         {
           "q": "Pythagorejská identita: $\\sin^2 x + \\cos^2 x = ?${sinus na druhou x plus kosinus na druhou x}",
@@ -238,7 +238,7 @@
       "deck_key": "trigonometric-identities"
     },
     {
-      "deck": "Goniometrické funkce a inverze",
+      "deck": "Goniometrické funkce a jejich inverze",
       "cards": [
         {
           "q": "Doména $\\sin x${sinus x}:",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "Deriváty",
+      "deck": "Derivace",
       "cards": [
         {
           "q": "Co geometricky znamená $f'(x_0)${f prvočíslo x nula}?",
@@ -414,7 +414,7 @@
       "deck_key": "derivatives"
     },
     {
-      "deck": "Solid Geometrie",
+      "deck": "Stereometrie",
       "cards": [
         {
           "q": "Objem **hranolu** — $S_p${S p} je základní plocha, $v$ výška:",

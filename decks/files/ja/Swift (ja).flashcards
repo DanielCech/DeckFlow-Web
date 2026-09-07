@@ -8,7 +8,7 @@
   "deck_a_lang": "ja",
   "decks": [
     {
-      "deck": "値、型、文字列",
+      "deck": "値・型・文字列",
       "deck_icon": "textformat",
       "cards": [
         {
@@ -140,7 +140,7 @@
       "deck_key": "control-flow"
     },
     {
-      "deck": "機能",
+      "deck": "関数",
       "deck_icon": "function",
       "cards": [
         {
@@ -311,7 +311,7 @@
       "deck_key": "classes-and-reference-semantics"
     },
     {
-      "deck": "プロトコルと拡張機能",
+      "deck": "プロトコルと拡張",
       "deck_icon": "checkmark.seal",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "オプション",
+      "deck": "オプショナル",
       "deck_icon": "lightbulb",
       "cards": [
         {

@@ -55,7 +55,7 @@
       "deck_key": "syntax-basics"
     },
     {
-      "deck": "Sicurezza nulla",
+      "deck": "Null safety",
       "deck_icon": "checkmark.shield",
       "cards": [
         {
@@ -204,7 +204,7 @@
       "deck_key": "classes-and-oop"
     },
     {
-      "deck": "Funzioni dell'ambito",
+      "deck": "Funzioni di scope",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -235,7 +235,7 @@
       "deck_key": "scope-functions"
     },
     {
-      "deck": "Collezioni",
+      "deck": "Collection",
       "deck_icon": "list.bullet.rectangle",
       "cards": [
         {
@@ -278,7 +278,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Coroutine e flusso",
+      "deck": "Coroutine e Flow",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {
@@ -329,7 +329,7 @@
       "deck_key": "coroutines-and-flow"
     },
     {
-      "deck": "Generici e varianza",
+      "deck": "Generics e varianza",
       "deck_icon": "chevron.left.forwardslash.chevron.right",
       "cards": [
         {
@@ -395,7 +395,7 @@
       "deck_key": "multiplatform"
     },
     {
-      "deck": "Gradle e Utensili",
+      "deck": "Gradle e tooling",
       "deck_icon": "hammer",
       "cards": [
         {

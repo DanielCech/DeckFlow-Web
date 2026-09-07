@@ -8,7 +8,7 @@
   "deck_a_lang": "ko",
   "decks": [
     {
-      "deck": "구문 기본",
+      "deck": "구문 기초",
       "deck_icon": "textformat",
       "cards": [
         {
@@ -55,7 +55,7 @@
       "deck_key": "syntax-basics"
     },
     {
-      "deck": "안전이 무효화됨",
+      "deck": "Null 안전성",
       "deck_icon": "checkmark.shield",
       "cards": [
         {
@@ -94,7 +94,7 @@
       "deck_key": "null-safety"
     },
     {
-      "deck": "기능",
+      "deck": "함수",
       "deck_icon": "function",
       "cards": [
         {
@@ -204,7 +204,7 @@
       "deck_key": "classes-and-oop"
     },
     {
-      "deck": "범위 기능",
+      "deck": "스코프 함수",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -278,7 +278,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "코루틴과 흐름",
+      "deck": "코루틴과 Flow",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {
@@ -329,7 +329,7 @@
       "deck_key": "coroutines-and-flow"
     },
     {
-      "deck": "제네릭과 변형",
+      "deck": "제네릭과 변성",
       "deck_icon": "chevron.left.forwardslash.chevron.right",
       "cards": [
         {
@@ -395,7 +395,7 @@
       "deck_key": "multiplatform"
     },
     {
-      "deck": "Gradle 및 툴링",
+      "deck": "Gradle과 툴링",
       "deck_icon": "hammer",
       "cards": [
         {

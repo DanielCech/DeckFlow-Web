@@ -1,6 +1,7 @@
 {
   "nav.features": "Features",
   "nav.aiDecks": "AI Decks",
+  "nav.decks": "Decks",
   "nav.aiPrompt": "AI Prompt",
   "nav.richDecks": "Rich Decks",
   "nav.algorithm": "Algorithm",
@@ -182,6 +183,7 @@
   "footer.tagline": "A flashcard companion for lifelong learners.",
   "footer.features": "Features",
   "footer.aiDecks": "AI Decks",
+  "footer.decks": "Decks",
   "footer.aiPrompt": "AI Prompt",
   "footer.richDecks": "Rich Decks",
   "footer.algorithm": "Algorithm",
@@ -450,5 +452,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>Import</td><td>Import a <code>.flashcards</code>, CSV or Anki file through the document picker.</td>",
   "lang.switchLabel": "Switch language",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "Curated decks for learning | JustFlip!",
+  "decks.metaDescription": "Explore free curated flashcard decks for languages, music, mathematics, programming and science. Or create your own deck with JustFlip's AI tools."
 }

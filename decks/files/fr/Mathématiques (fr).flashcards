@@ -8,7 +8,7 @@
   "deck_a_lang": "fr",
   "decks": [
     {
-      "deck": "Pouvoirs et racines",
+      "deck": "Puissances et racines",
       "cards": [
         {
           "q": "$a^m \\cdot a^n = ?${a au m fois a au n}",
@@ -42,7 +42,7 @@
       "deck_key": "powers-and-roots"
     },
     {
-      "deck": "Règles du logarithme",
+      "deck": "Règles des logarithmes",
       "cards": [
         {
           "q": "$\\log_a(x \\cdot y) = ?${log base a de x fois y}",
@@ -238,7 +238,7 @@
       "deck_key": "trigonometric-identities"
     },
     {
-      "deck": "Fonctions trigonométriques et inverses",
+      "deck": "Fonctions trigonométriques et réciproques",
       "cards": [
         {
           "q": "Domaine de $\\sin x${sinus x} :",
@@ -324,7 +324,7 @@
       "deck_key": "trigonometric-functions-and-inverses"
     },
     {
-      "deck": "Produits dérivés",
+      "deck": "Dérivées",
       "cards": [
         {
           "q": "Que signifie géométriquement $f'(x_0)${f premier de x zéro} ?",
@@ -414,7 +414,7 @@
       "deck_key": "derivatives"
     },
     {
-      "deck": "Géométrie solide",
+      "deck": "Géométrie dans l’espace",
       "cards": [
         {
           "q": "Volume d'un **prisme** — $S_p${S p} est l'aire de base, $v$ la hauteur :",

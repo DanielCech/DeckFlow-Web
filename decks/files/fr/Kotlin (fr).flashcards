@@ -55,7 +55,7 @@
       "deck_key": "syntax-basics"
     },
     {
-      "deck": "Sécurité nulle",
+      "deck": "Null safety",
       "deck_icon": "checkmark.shield",
       "cards": [
         {
@@ -141,7 +141,7 @@
       "deck_key": "functions"
     },
     {
-      "deck": "Cours et POO",
+      "deck": "Classes et POO",
       "deck_icon": "cube",
       "cards": [
         {
@@ -278,7 +278,7 @@
       "deck_key": "collections"
     },
     {
-      "deck": "Coroutines et flux",
+      "deck": "Coroutines et Flow",
       "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
       "cards": [
         {

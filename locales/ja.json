@@ -1,6 +1,7 @@
 {
   "nav.features": "機能",
   "nav.aiDecks": "AI デッキ",
+  "nav.decks": "デッキ",
   "nav.aiPrompt": "AI プロンプト",
   "nav.richDecks": "本格デッキ",
   "nav.algorithm": "アルゴリズム",
@@ -182,6 +183,7 @@
   "footer.tagline": "生涯学習者のためのフラッシュカード相棒。",
   "footer.features": "機能",
   "footer.aiDecks": "AI デッキ",
+  "footer.decks": "デッキ",
   "footer.aiPrompt": "AI プロンプト",
   "footer.richDecks": "本格デッキ",
   "footer.algorithm": "アルゴリズム",
@@ -495,5 +497,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>インポート</td><td>書類ピッカーから<code>.flashcards</code>、CSV、Ankiファイルをインポートする。</td>",
   "lang.switchLabel": "言語を切り替える",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "学習のための厳選デッキ | JustFlip!",
+  "decks.metaDescription": "言語・音楽・数学・プログラミング・科学の無料の厳選フラッシュカードデッキを見てみましょう。JustFlip の AI ツールで自分だけのデッキを作ることもできます。"
 }

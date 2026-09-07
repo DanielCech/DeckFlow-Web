@@ -8,7 +8,7 @@
   "deck_a_lang": "ko",
   "decks": [
     {
-      "deck": "값, 유형 및 문자열",
+      "deck": "값, 타입, 문자열",
       "deck_icon": "textformat",
       "cards": [
         {
@@ -140,7 +140,7 @@
       "deck_key": "control-flow"
     },
     {
-      "deck": "기능",
+      "deck": "함수",
       "deck_icon": "function",
       "cards": [
         {
@@ -194,7 +194,7 @@
       "deck_key": "error-handling"
     },
     {
-      "deck": "폐쇄 및 캡처",
+      "deck": "클로저와 캡처",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -276,7 +276,7 @@
       "deck_key": "structs-and-value-semantics"
     },
     {
-      "deck": "클래스 및 참조 의미론",
+      "deck": "클래스와 참조 의미론",
       "deck_icon": "cube",
       "cards": [
         {
@@ -311,7 +311,7 @@
       "deck_key": "classes-and-reference-semantics"
     },
     {
-      "deck": "프로토콜 및 확장",
+      "deck": "프로토콜과 익스텐션",
       "deck_icon": "checkmark.seal",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "선택사항",
+      "deck": "옵셔널",
       "deck_icon": "lightbulb",
       "cards": [
         {

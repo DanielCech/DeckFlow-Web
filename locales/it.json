@@ -1,6 +1,7 @@
 {
   "nav.features": "Funzionalità",
   "nav.aiDecks": "Deck IA",
+  "nav.decks": "Mazzi",
   "nav.aiPrompt": "Prompt IA",
   "nav.richDecks": "Deck completi",
   "nav.algorithm": "Algoritmo",
@@ -182,6 +183,7 @@
   "footer.tagline": "Un compagno di flashcard per chi impara per tutta la vita.",
   "footer.features": "Funzionalità",
   "footer.aiDecks": "Deck IA",
+  "footer.decks": "Mazzi",
   "footer.aiPrompt": "Prompt IA",
   "footer.richDecks": "Deck completi",
   "footer.algorithm": "Algoritmo",
@@ -495,5 +497,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>Importazione</td><td>Importare un file <code>.flashcards</code>, CSV o Anki dal selettore documenti.</td>",
   "lang.switchLabel": "Cambia lingua",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "Mazzi curati per imparare | JustFlip!",
+  "decks.metaDescription": "Esplora mazzi di flashcard gratuiti e curati per lingue, musica, matematica, programmazione e scienze. Oppure crea il tuo mazzo con gli strumenti di IA di JustFlip."
 }

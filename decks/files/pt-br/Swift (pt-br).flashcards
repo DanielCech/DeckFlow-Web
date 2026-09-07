@@ -194,7 +194,7 @@
       "deck_key": "error-handling"
     },
     {
-      "deck": "Fechamentos e Captura",
+      "deck": "Closures e captura",
       "deck_icon": "curlybraces",
       "cards": [
         {
@@ -233,7 +233,7 @@
       "deck_key": "closures-and-capture"
     },
     {
-      "deck": "Estruturas e Semântica de Valores",
+      "deck": "Structs e semântica de valor",
       "deck_icon": "cube",
       "cards": [
         {
@@ -276,7 +276,7 @@
       "deck_key": "structs-and-value-semantics"
     },
     {
-      "deck": "Classes e Semântica de Referência",
+      "deck": "Classes e semântica de referência",
       "deck_icon": "cube",
       "cards": [
         {
@@ -311,7 +311,7 @@
       "deck_key": "classes-and-reference-semantics"
     },
     {
-      "deck": "Protocolos e Extensões",
+      "deck": "Protocolos e extensões",
       "deck_icon": "checkmark.seal",
       "cards": [
         {
@@ -350,7 +350,7 @@
       "deck_key": "protocols-and-extensions"
     },
     {
-      "deck": "Opcionais",
+      "deck": "Optionals",
       "deck_icon": "lightbulb",
       "cards": [
         {

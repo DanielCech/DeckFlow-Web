@@ -8,7 +8,7 @@
   "deck_a_lang": "pt-br",
   "decks": [
     {
-      "deck": "Leis e Quantidades",
+      "deck": "Leis e grandezas",
       "deck_icon": "bolt",
       "cards": [
         {
@@ -186,7 +186,7 @@
       "deck_key": "components"
     },
     {
-      "deck": "Lógica Digital e Barramentos",
+      "deck": "Lógica digital e barramentos",
       "deck_icon": "memorychip",
       "cards": [
         {
@@ -277,7 +277,7 @@
       "deck_key": "digital-logic-and-buses"
     },
     {
-      "deck": "Noções básicas de microcontrolador",
+      "deck": "Noções básicas de microcontroladores",
       "deck_icon": "wrench.and.screwdriver",
       "cards": [
         {
@@ -451,7 +451,7 @@
       "deck_key": "wi-fi-microcontrollers"
     },
     {
-      "deck": "Motores e Drivers",
+      "deck": "Motores e drivers",
       "deck_icon": "gearshape.2",
       "cards": [
         {

@@ -8,7 +8,7 @@
   "deck_a_lang": "it",
   "decks": [
     {
-      "deck": "Leggi e quantità",
+      "deck": "Leggi e grandezze",
       "deck_icon": "bolt",
       "cards": [
         {
@@ -277,7 +277,7 @@
       "deck_key": "digital-logic-and-buses"
     },
     {
-      "deck": "Nozioni di base sul microcontrollore",
+      "deck": "Nozioni di base sui microcontrollori",
       "deck_icon": "wrench.and.screwdriver",
       "cards": [
         {
@@ -546,7 +546,7 @@
       "deck_key": "motors-and-drivers"
     },
     {
-      "deck": "Misurazione",
+      "deck": "Misura",
       "deck_icon": "ruler",
       "cards": [
         {

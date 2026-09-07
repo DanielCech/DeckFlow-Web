@@ -1,6 +1,7 @@
 {
   "nav.features": "기능",
   "nav.aiDecks": "AI 덱",
+  "nav.decks": "덱",
   "nav.aiPrompt": "AI 프롬프트",
   "nav.richDecks": "완성형 덱",
   "nav.algorithm": "알고리즘",
@@ -182,6 +183,7 @@
   "footer.tagline": "평생 학습자를 위한 플래시카드 동반자.",
   "footer.features": "기능",
   "footer.aiDecks": "AI 덱",
+  "footer.decks": "덱",
   "footer.aiPrompt": "AI 프롬프트",
   "footer.richDecks": "완성형 덱",
   "footer.algorithm": "알고리즘",
@@ -495,5 +497,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>가져오기</td><td>문서 선택기에서 <code>.flashcards</code>, CSV 또는 Anki 파일을 가져옵니다.</td>",
   "lang.switchLabel": "언어 변경",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "학습을 위한 엄선된 덱 | JustFlip!",
+  "decks.metaDescription": "언어, 음악, 수학, 프로그래밍, 과학을 위한 무료 엄선 플래시카드 덱을 살펴보세요. JustFlip의 AI 도구로 나만의 덱을 만들 수도 있습니다."
 }

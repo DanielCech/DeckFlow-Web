@@ -1,6 +1,7 @@
 {
   "nav.features": "Funkce",
   "nav.aiDecks": "AI Balíčky",
+  "nav.decks": "Balíčky",
   "nav.aiPrompt": "AI Prompt",
   "nav.richDecks": "Bohaté balíčky",
   "nav.algorithm": "Algoritmus",
@@ -182,6 +183,7 @@
   "footer.tagline": "Společník s kartičkami pro celoživotní učení.",
   "footer.features": "Funkce",
   "footer.aiDecks": "AI Balíčky",
+  "footer.decks": "Balíčky",
   "footer.aiPrompt": "AI Prompt",
   "footer.richDecks": "Bohaté balíčky",
   "footer.algorithm": "Algoritmus",
@@ -549,5 +551,7 @@
   "accessibility.task8": "<th scope=\"row\">CT8</th><td>Import</td><td>Importovat soubor <code>.flashcards</code>, CSV nebo Anki přes výběr dokumentu.</td>",
   "lang.switchLabel": "Přepnout jazyk",
   "lang.en": "English",
-  "lang.cs": "Čeština"
+  "lang.cs": "Čeština",
+  "decks.metaTitle": "Připravené balíčky pro učení | JustFlip!",
+  "decks.metaDescription": "Prozkoumej bezplatné připravené balíčky kartiček pro jazyky, hudbu, matematiku, programování a vědu. Nebo si vytvoř vlastní balíček s AI nástroji JustFlip."
 }
