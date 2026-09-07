@@ -1,0 +1,441 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Kotlin",
+  "interest_icon": "curlybraces",
+  "interest_key": "kotlin",
+  "deck_q_lang": "cs",
+  "deck_a_lang": "cs",
+  "decks": [
+    {
+      "deck": "Základy syntaxe",
+      "deck_icon": "textformat",
+      "cards": [
+        {
+          "q": "Jaký je rozdíl mezi `val` a `var`?",
+          "a": "`val` je *odkaz* pouze pro čtení; `var` lze znovu přiřadit.\n```kotlin\nval pi = 3.14\nvar count = 0\ncount += 1\n```\n`val` **neznamená** neměnný obsah — `val list = mutableListOf(1)` může stále `add(2)`."
+        },
+        {
+          "q": "Co je to jednovýrazová funkce?",
+          "a": "Funkce, jejíž tělo je jeden výraz za `=`. Typ návratu lze odvodit.\n```kotlin\nfun sum(a: Int, b: Int) = a + b\nfun square(x: Int): Int = x * x\n```"
+        },
+        {
+          "q": "Jak fungují šablony řetězců?",
+          "a": "```kotlin\nval name = \"Dan\"\nval hi = \"Hello, $name!\"\nval len = \"Len: ${name.length}\"\n```\nPro doslovný znak dolaru použijte `\\$`."
+        },
+        {
+          "q": "Jak zapíšete surový (víceřádkový) řetězec?",
+          "a": "```kotlin\nval json = \"\"\"\n  {\n    \"id\": 1\n  }\n\"\"\".trimIndent()\n```\nTrojité uvozovky přebírají text doslovně; `trimIndent()` odstraní společné odsazení."
+        },
+        {
+          "q": "Jak funguje výraz `when`?",
+          "a": "```kotlin\nval msg = when (code) {\n    200 -> \"OK\"\n    in 400..499 -> \"Client\"\n    is Int -> \"Other: $code\"\n    else -> \"Unknown\"\n}\n```\n`when` bez argumentu nahrazuje řetězec `if`/`else if`."
+        },
+        {
+          "q": "Jak vytvoříte a iterujete rozsah?",
+          "a": "```kotlin\nfor (i in 1..10) { }     // inclusive\nfor (i in 1 until 10) { } // 1..9\nfor (i in 10 downTo 1) { }\nfor (i in 1..10 step 2) { }\n```"
+        },
+        {
+          "q": "Co je `Unit` v Kotlin?",
+          "a": "Typ funkce bez smysluplné návratové hodnoty — jedna hodnota, nazývaná také `Unit`.\n\nNa rozdíl od Java `void` jde o skutečný typ: lze jej vrátit, uložit a použít jako obecný argument."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `Nothing` a `Unit`?",
+          "a": "`Unit` — funkce se vrátí, ale hodnota nenese žádnou informaci.\n`Nothing` — funkce se nikdy nevrací normálně (vyhodí se, cyklicky se opakuje nebo skončí).\n\n`Nothing` je podtyp každého typu, takže to zkompiluje:\n```kotlin\nval x: Int = error(\"boom\")\n```"
+        },
+        {
+          "q": "Jak fungují číselné typy a převody?",
+          "a": "`Byte`, `Short`, `Int`, `Long`, `Float`, `Double`. Neexistují **žádné implicitní rozšiřující konverze**:\n```kotlin\nval i: Int = 42\nval l: Long = i.toLong()\n```\nPřiřazení `i` přímo k `Long` je chyba kompilace."
+        },
+        {
+          "q": "Co dělá `typealias`?",
+          "a": "```kotlin\ntypealias UserId = String\ntypealias Handler = (Event) -> Unit\n```\nNový název pro existující typ. Nepřidává žádnou bezpečnost typu – základní typ se nemění."
+        }
+      ],
+      "deck_key": "syntax-basics"
+    },
+    {
+      "deck": "Nulová bezpečnost",
+      "deck_icon": "checkmark.shield",
+      "cards": [
+        {
+          "q": "Jaký je rozdíl mezi `String?` a `String`?",
+          "a": "`String` nemá hodnotu null — kompilátor zaručuje, že nikdy není null.\n`String?` má nulovou hodnotu a před použitím je nutné jej rozbalit.\n\nNulová bezpečnost je vynucena staticky v době kompilace."
+        },
+        {
+          "q": "Jak funguje operátor bezpečného volání `?.`?",
+          "a": "```kotlin\nval len: Int? = user?.name?.length\n```\nJe-li některý článek v řetězci null, celý výraz je null — nevyvolá se žádná výjimka."
+        },
+        {
+          "q": "Jak funguje Elvisův operátor `?:`?",
+          "a": "```kotlin\nval name = user?.name ?: \"Unknown\"\nval id = findId() ?: return\nval id2 = findId() ?: error(\"no id\")\n```\nPravá strana je vyhodnocena pouze tehdy, když je levá nulová."
+        },
+        {
+          "q": "Co dělá nenulové tvrzení `!!`?",
+          "a": "```kotlin\nval len: Int = user!!.name!!.length\n```\nVynutí rozbalení a vyvolá `NullPointerException`, pokud je hodnota null. Ber to jako vůni kódu."
+        },
+        {
+          "q": "Jak funguje inteligentní přetypování na hodnotě s možnou hodnotou Null?",
+          "a": "```kotlin\nfun greet(name: String?) {\n    if (name != null) {\n        println(name.length)\n    }\n}\n```\nUvnitř větve `name` je smart-cast na `String`. Funguje pouze pro `val` nebo místní `var`, které žádná lambda nemohla mezitím upravit."
+        },
+        {
+          "q": "Jak rozbalíte hodnotu nullable pomocí `let`?",
+          "a": "```kotlin\nuser?.let { u ->\n    println(u.name)\n}\n```\nBlok běží pouze v případě, že příjemce není nulový a `let` vrací výsledek bloku, takže volá řetězec."
+        },
+        {
+          "q": "Co je to typ platformy, například `String!`?",
+          "a": "Typ pocházející z Javy bez anotace s možností nullability. Kotlin to považuje za pravděpodobně nulové, ale nevynucuje kontrolu, takže NPE může stále uniknout.\n\nOpravte to anotací Java API pomocí `@Nullable` / `@NonNull` nebo přiřazením k explicitnímu `String?`."
+        },
+        {
+          "q": "Jak bezpečně nastavíte kolekci nebo řetězec s možnou hodnotou Null?",
+          "a": "```kotlin\nval items = response.items.orEmpty()\nval first = list?.firstOrNull() ?: return\n```\n`orEmpty()` existuje pro `String`, `List`, `Set` a `Map` s možností null."
+        }
+      ],
+      "deck_key": "null-safety"
+    },
+    {
+      "deck": "Funkce",
+      "deck_icon": "function",
+      "cards": [
+        {
+          "q": "Jaká je syntaxe výchozích a pojmenovaných argumentů?",
+          "a": "```kotlin\nfun connect(\n    host: String,\n    port: Int = 443,\n    tls: Boolean = true\n) { }\n\nconnect(\"api.dev\", port = 8080)\n```\nPopisky argumentů jsou v Kotlin volitelné, na rozdíl od Swift."
+        },
+        {
+          "q": "Co je to rozšiřující funkce?",
+          "a": "```kotlin\nfun String.shout() = uppercase() + \"!\"\n\"hello\".shout()  // HELLO!\n```\nStatická funkce s přijímačem. Nemění třídu a není její součástí."
+        },
+        {
+          "q": "Pokud má člen třídy a rozšíření stejný podpis, který z nich vyhrává?",
+          "a": "Vyhrává **člen**.\n\nRozšíření jsou řešena staticky z typu v době kompilace a nelze je nikdy přepsat – neexistuje žádné dynamické odesílání na rozšíření."
+        },
+        {
+          "q": "Co je funkce `infix`?",
+          "a": "```kotlin\ninfix fun Int.times(s: String) =\n    s.repeat(this)\nval row = 3 times \"ab\"  // ababab\n```\nVolá se bez tečky nebo závorek. Musí to být člen nebo rozšíření s přesně jedním parametrem. `to`, `shl` a `downTo` jsou příklady standardních knihoven."
+        },
+        {
+          "q": "Co je `vararg` a jak do něj rozložíte pole?",
+          "a": "```kotlin\nfun log(vararg msgs: String) { }\nlog(\"a\", \"b\")\n\nval arr = arrayOf(\"x\", \"y\")\nlog(*arr)  // spread\n```"
+        },
+        {
+          "q": "Jak deklarujete typ funkce a funkci vyššího řádu?",
+          "a": "```kotlin\nfun <T, R> apply(\n    x: T,\n    f: (T) -> R\n): R = f(x)\n\nval len: (String) -> Int = { it.length }\nval p: (Any) -> Unit = ::println\n```\n`::println` je reference funkce."
+        },
+        {
+          "q": "Co dělá `inline` s funkcí a kdy se to vyplatí?",
+          "a": "Kompilátor nahradí tělo funkce – a jakoukoli lambdu, která mu byla předána – na místě volání. To odstraní alokaci objektu `Function` lambda, povolí nelokální `return` a povolí parametry typu `reified`.\n\nVyplatí se to pro malé funkce vyššího řádu; škodlivé pro velká těla, která duplikuje na každém místě volání."
+        },
+        {
+          "q": "Co je parametr typu `reified`?",
+          "a": "```kotlin\ninline fun <reified T> parse(\n    json: String\n): T = decode(json, T::class.java)\n\nval user: User = parse(text)\n```\n`reified` zpřístupňuje `T` za běhu. Vyžaduje `inline`, protože typ je nahrazen na místě volání."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `return`, `return@label` a nemístním výnosem?",
+          "a": "```kotlin\nlist.forEach {\n    if (it == 0) return       // leaves the outer fn\n    if (it < 0) return@forEach // acts as continue\n}\n```\nNelokální `return` se kompiluje pouze uvnitř funkce `inline` vyššího řádu."
+        },
+        {
+          "q": "Jak funguje přetěžování operátorů?",
+          "a": "```kotlin\ndata class Vec(val x: Int, val y: Int) {\n    operator fun plus(o: Vec) =\n        Vec(x + o.x, y + o.y)\n}\nval c = Vec(1, 2) + Vec(3, 4)\n```\nJména jsou pevně dána konvencí: `plus`, `minus`, `times`, `get`, `set`, `invoke`, ⟦JF008⟦8`compareTo`"
+        }
+      ],
+      "deck_key": "functions"
+    },
+    {
+      "deck": "Třídy a OOP",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "Jak funguje primární konstruktor?",
+          "a": "```kotlin\nclass User(\n    val id: String,\n    var name: String\n) {\n    init { require(id.isNotEmpty()) }\n}\n```\n`val`/`var` v konstruktoru také deklaruje vlastnost. Bloky `init` běží v pořadí deklarací."
+        },
+        {
+          "q": "Jaká je výchozí viditelnost a konečnost třídy Kotlin?",
+          "a": "`public` a **`final`**.\n\nChcete-li povolit podtřídu nebo přepsání, musíte explicitně napsat `open class` a `open fun`."
+        },
+        {
+          "q": "Co generuje `data class`?",
+          "a": "```kotlin\ndata class User(\n    val id: String,\n    val name: String\n)\n```\n`equals`, `hashCode`, `toString`, `copy()` a `componentN()` pro destrukci. Vyžaduje alespoň jeden parametr primárního konstruktoru."
+        },
+        {
+          "q": "Co dělá `copy()` na datové třídě?",
+          "a": "```kotlin\nval u = User(\"1\", \"Dan\")\nval u2 = u.copy(name = \"Daniel\")\n```\nVrátí novou instanci s nahrazenými pojmenovanými vlastnostmi a přenesením všeho ostatního – standardní neměnný vzor aktualizace."
+        },
+        {
+          "q": "Co je `sealed class` nebo `sealed interface`?",
+          "a": "```kotlin\nsealed interface Result<out T> {\n    data class Ok<T>(val v: T) : Result<T>\n    data class Err(val e: Throwable) :\n        Result<Nothing>\n    data object Loading : Result<Nothing>\n}\n```\nUzavřená hierarchie: všechny přímé podtypy jsou známé v době kompilace, takže `when` nad ní může být vyčerpávající bez `else`."
+        },
+        {
+          "q": "Co je prohlášení `object`?",
+          "a": "```kotlin\nobject Config {\n    val apiUrl = \"https://api.dev\"\n    fun load() { }\n}\nConfig.load()\n```\nSingleton bezpečný pro vlákna, líně inicializovaný při prvním přístupu."
+        },
+        {
+          "q": "Co je `companion object`?",
+          "a": "```kotlin\nclass User(val id: String) {\n    companion object {\n        fun fromJson(s: String): User =\n            decode(s)\n    }\n}\nUser.fromJson(text)\n```\nČlenové volatelní na samotném typu. Jeden na třídu."
+        },
+        {
+          "q": "`class`, `data class`, `object`, `data object` – k čemu je každý?",
+          "a": "* `class` — běžná třída\n* `data class` — jako hodnota, s vygenerovaným `equals`/`hashCode`/`copy`\n* `object` — singleton\n* `data object` — singleton s čitelným `toString` a stabilním `equals`\n\nOd Kotlin 1.9 preferujte `data object` pro případy bez parametrů uzavřené hierarchie."
+        },
+        {
+          "q": "Co může `enum class` dělat?",
+          "a": "```kotlin\nenum class Direction(val deg: Int) {\n    NORTH(0), EAST(90),\n    SOUTH(180), WEST(270);\n\n    fun opposite() = when (this) {\n        NORTH -> SOUTH\n        SOUTH -> NORTH\n        EAST -> WEST\n        WEST -> EAST\n    }\n}\n```\nParametry konstruktoru, vlastnosti, metody a případná přepsání abstraktního člena."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `abstract class` a `interface`?",
+          "a": "**Abstraktní třída** — může držet stav v podpůrných polích; pouze jediné dědictví.\n\n**Rozhraní** — žádná podpůrná pole (`val` musí být abstraktní nebo vypočítané); třída může implementovat mnoho a výchozí těla metod jsou povolena."
+        },
+        {
+          "q": "Co dělá delegování třídy s `by`?",
+          "a": "```kotlin\ninterface Repo { fun load(): Data }\n\nclass CachedRepo(base: Repo) :\n    Repo by base\n```\nKompilátor generuje implementace předávání pro každý člen rozhraní, takže přepíšete pouze to, co skutečně chcete změnit."
+        },
+        {
+          "q": "Co dělá `by lazy`?",
+          "a": "```kotlin\nval config by lazy { loadConfig() }\n```\nVypočítá hodnotu při prvním přístupu a uloží ji do mezipaměti. Standardně bezpečné pro vlákna (`LazyThreadSafetyMode.SYNCHRONIZED`)."
+        },
+        {
+          "q": "Co dělá `lateinit var`?",
+          "a": "```kotlin\nlateinit var service: Service\n\nfun setUp() { service = Service() }\n```\nOdloží inicializaci nenulového `var`. První přečtení vyvolá `UninitializedPropertyAccessException`; test s `::service.isInitialized`.\n\nNení povoleno na primitivech nebo na `val`."
+        },
+        {
+          "q": "Jaký je rozdíl mezi vnořenou třídou a `inner class`?",
+          "a": "Vnořená třída (výchozí) nemá žádný odkaz na vnější instanci – jako vnořená třída Java `static`.\n\n`inner class` obsahuje tento odkaz a může používat `this@Outer`."
+        }
+      ],
+      "deck_key": "classes-and-oop"
+    },
+    {
+      "deck": "Funkce rozsahu",
+      "deck_icon": "curlybraces",
+      "cards": [
+        {
+          "q": "Shrňte pět funkcí rozsahu podle kontextu objektu a návratové hodnoty.",
+          "a": "```text\nlet   : it   -> block result\nrun   : this -> block result\nwith  : this -> block result\napply : this -> the receiver\nalso  : it   -> the receiver\n```\n`run` a `let` jsou rozšíření; `with` bere svůj předmět jako argument."
+        },
+        {
+          "q": "Kdy používáte `let`?",
+          "a": "```kotlin\nuser?.let {\n    logger.info(it.name)\n}\nval len = name?.let { it.length } ?: 0\n```\nRozbalení nullable a transformace hodnoty na něco jiného."
+        },
+        {
+          "q": "Kdy používáte `apply`?",
+          "a": "```kotlin\nval req = Request().apply {\n    method = \"POST\"\n    header(\"Accept\", \"json\")\n}\n```\nKonfigurace objektu a získání stejného objektu zpět – vzor tvůrce."
+        },
+        {
+          "q": "Kdy používáte `also`?",
+          "a": "```kotlin\nval user = loadUser().also {\n    logger.info(\"Loaded ${it.id}\")\n    cache.put(it.id, it)\n}\n```\nVedlejší efekt, který nesmí změnit to, k čemu se výraz vyhodnocuje. `it` objasňuje, že to není `this`."
+        },
+        {
+          "q": "Kdy používáte `run` a `with`?",
+          "a": "```kotlin\nval area = rect.run { width * height }\nval desc = with(user) { \"$name ($id)\" }\n```\nOba vystaví předmět jako `this` a vrátí výsledek bloku."
+        },
+        {
+          "q": "Proč zvolit `apply` před `also` nebo naopak?",
+          "a": "`apply` vám dává implicitní `this`, takže napíšete `property = value`.\n\n`also` vám dává `it`, takže napíšete `it.property = value`. Upřednostňujte `also`, pokud již existuje smysluplné `this` v rozsahu, nebo abyste signalizovali, že blokování je vedlejším účinkem."
+        }
+      ],
+      "deck_key": "scope-functions"
+    },
+    {
+      "deck": "Sbírky",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "Jaký je rozdíl mezi kolekcí pouze pro čtení a měnitelnou kolekcí?",
+          "a": "```kotlin\nval list: List<Int> = listOf(1, 2)\nval m: MutableList<Int> =\n    mutableListOf()\n```\n`List` je *rozhraní* pouze pro čtení. Objekt za ním může být stále proměnlivý, takže odkaz pouze pro čtení není zárukou neměnnosti."
+        },
+        {
+          "q": "Jak vytváříte běžné typy kolekcí?",
+          "a": "```kotlin\nlistOf(1, 2, 3)\nmutableListOf(1)\nsetOf(1, 2)\nmapOf(\"a\" to 1)\nmutableMapOf<String, Int>()\narrayOf(1, 2, 3)\nIntArray(5) { it * 2 }\n```"
+        },
+        {
+          "q": "Co dělají `map`, `filter` a `flatMap`?",
+          "a": "```kotlin\nlistOf(1,2,3).map { it * 2 }\nlistOf(1,2,3).filter { it > 1 }\nlistOf(\"ab\").flatMap { it.toList() }\n```\nVšichni tři dychtí po `List` — každý vrátí nový seznam."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `fold` a `reduce`?",
+          "a": "```kotlin\nlistOf(1,2,3).reduce { a, x -> a + x }   // 6\nlistOf(1,2,3).fold(10) { a, x -> a + x } // 16\n```\n`reduce` použije první prvek jako seed a vrhne na prázdnou kolekci. `fold` přebírá explicitní semeno, které může být jiného typu než prvky."
+        },
+        {
+          "q": "Kdy byste měli použít `Sequence`?",
+          "a": "```kotlin\nlist.asSequence()\n    .map { heavy(it) }\n    .filter { it > 0 }\n    .take(3)\n    .toList()\n```\nSekvence jsou líné: operace se sloučí a nic neběží až do terminálové operace. Stojí to za dlouhé provozní řetězce, velké sbírky nebo raný `take`."
+        },
+        {
+          "q": "Co dělají `groupBy` a `associateBy`?",
+          "a": "```kotlin\nusers.groupBy { it.city }\n// Map<String, List<User>>\nusers.associateBy { it.id }\n// Map<String, User>\n```\n`groupBy` shromažďuje každý prvek, který sdílí klíč; `associateBy` předpokládá, že klíč je jedinečný a pozdější duplikáty přepisují dřívější."
+        },
+        {
+          "q": "Jak vytvoříte mapu s transformovaným klíčem nebo hodnotou?",
+          "a": "```kotlin\nusers.associate { it.id to it.name }\nusers.associateWith { score(it) }\nusers.groupingBy { it.city }\n     .eachCount()\n```"
+        },
+        {
+          "q": "Co dělají `zip`, `windowed` a `chunked`?",
+          "a": "```kotlin\nlistOf(1,2,3) zip listOf(\"a\",\"b\")\n// [(1,a),(2,b)] — stops at the shorter\n(1..5).windowed(3)\n// [[1,2,3],[2,3,4],[3,4,5]]\n(1..5).chunked(2)\n// [[1,2],[3,4],[5]]\n```"
+        },
+        {
+          "q": "Co je prohlášení o zničení?",
+          "a": "```kotlin\nval (name, age) = user\nfor ((k, v) in map) { }\nval (a, b, _) = triple\n```\nVolá `component1()`, `component2()` a tak dále — dostupné pro datové třídy, `Pair`, `Triple` a položky mapy. Je poziční, nikoli podle jména."
+        }
+      ],
+      "deck_key": "collections"
+    },
+    {
+      "deck": "Coroutines a Flow",
+      "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
+      "cards": [
+        {
+          "q": "Co znamená `suspend`?",
+          "a": "```kotlin\nsuspend fun loadUser(id: String): User\n```\nFunkci lze pozastavit a znovu spustit bez blokování jejího vlákna. Lze jej volat pouze z jiné funkce `suspend` nebo z tvůrce korutiny."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `launch` a `async`?",
+          "a": "```kotlin\nscope.launch { }        // Job\nval d = scope.async { compute() }\nval v = d.await()       // Deferred<T>\n```\n`launch` je oheň a zapomeň a vrací `Job`. `async` vrátí `Deferred<T>` vám `await()`."
+        },
+        {
+          "q": "Co dělá `coroutineScope { }`?",
+          "a": "```kotlin\nsuspend fun loadAll() = coroutineScope {\n    val a = async { fetchA() }\n    val b = async { fetchB() }\n    a.await() to b.await()\n}\n```\nPoskytuje strukturovanou souběžnost: funkce se nevrátí, dokud každé dítě nedokončí, a pokud některé dítě selže, sourozenci jsou zrušeni a selhání je znovu vyvoláno."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `coroutineScope` a `supervisorScope`?",
+          "a": "`coroutineScope` — rychlé selhání. Selhající dítě zruší své sourozence a rozsah.\n\n`supervisorScope` — selhávající dítě je izolováno; jeho sourozenci běží dál."
+        },
+        {
+          "q": "K čemu jsou `Dispatchers.Main`, `IO`, `Default` a `Unconfined`?",
+          "a": "* `Main` — vlákno uživatelského rozhraní\n* `IO` — blokování práce (síť, disk); velký elastický bazén\n* `Default` — práce vázaná na CPU; velikost fondu podle počtu CPU\n* `Unconfined` — pokračuje v jakémkoli vláknu, do kterého pokračování dorazí; většinou na testy"
+        },
+        {
+          "q": "Co dělá `withContext`?",
+          "a": "```kotlin\nsuspend fun read(): String =\n    withContext(Dispatchers.IO) {\n        File(\"data\").readText()\n    }\n```\nSpustí blok na jiném dispečerovi a pozastaví se, dokud se nevrátí, takže kontext volajícího je poté obnoven. Na rozdíl od `launch` vrací hodnotu."
+        },
+        {
+          "q": "Jak zrušíte coroutine a proč je zrušení kooperativní?",
+          "a": "```kotlin\nval job = scope.launch { }\njob.cancel()\njob.cancelAndJoin()\n```\nZrušení nastaví příznak; korutin se zastaví pouze v bodě zavěšení. Těsná smyčka CPU bez volání `suspend` musí kontrolovat `ensureActive()` nebo `isActive` samotné."
+        },
+        {
+          "q": "Co je `Flow`?",
+          "a": "```kotlin\nfun ticks(): Flow<Int> = flow {\n    var i = 0\n    while (true) {\n        emit(i++)\n        delay(1000)\n    }\n}\nticks().collect { println(it) }\n```\nStudený asynchronní tok: nic neběží, dokud není shromážděno, a každý kolektor má svůj vlastní běh."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `StateFlow` a `SharedFlow`?",
+          "a": "`StateFlow<T>` — horké, vždy obsahuje aktuální `value`, slučuje se (uchovává pouze nejnovější) a vysílá pouze tehdy, když se hodnota skutečně změní.\n\n`SharedFlow<T>` — hot, s konfigurovatelným přehráváním a ukládáním do vyrovnávací paměti; vysílá každou hodnotu, včetně opakování."
+        },
+        {
+          "q": "Jak kombinujete dva proudy?",
+          "a": "```kotlin\ncombine(userFlow, settingsFlow) { u, s ->\n    UiState(u, s)\n}.collect { }\n```\nSouvisející operátory: `zip` páruje striktně 1:1, `merge` prokládá oba toky a `flatMapLatest` ruší předchozí vnitřní tok, kdykoli přijde nová hodnota."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `delay` a `Thread.sleep` uvnitř korutiny?",
+          "a": "`delay` pozastaví korutinu a uvolní vlákno pro další práci.\n\n`Thread.sleep` blokuje základní vlákno, které v malém fondu dispečerů může zastavit nesouvisející korutiny. Nikdy jej nepoužívejte v kódu `suspend`."
+        }
+      ],
+      "deck_key": "coroutines-and-flow"
+    },
+    {
+      "deck": "Generika a variance",
+      "deck_icon": "chevron.left.forwardslash.chevron.right",
+      "cards": [
+        {
+          "q": "Jak deklarujete generickou třídu a funkci s vazbou?",
+          "a": "```kotlin\nclass Box<T>(val value: T)\n\nfun <T> single(x: T): List<T> =\n    listOf(x)\n\nfun <T : Comparable<T>> max(a: T, b: T) =\n    if (a > b) a else b\n```"
+        },
+        {
+          "q": "Co znamenají `out` a `in` u parametru typu?",
+          "a": "`out T` — kovariant, producent: `T` se může objevit pouze na výstupní pozici.\n`in T` — kontravariantní, spotřebitel: `T` se může objevit pouze na vstupní pozici.\n```kotlin\ninterface Source<out T> { fun next(): T }\ninterface Sink<in T> { fun accept(x: T) }\n```\n`Source<String>` je pak použitelný jako `Source<Any>`."
+        },
+        {
+          "q": "Co je to hvězdná projekce, `List<*>`?",
+          "a": "```kotlin\nfun printAll(list: List<*>) {\n    for (x in list) println(x) // Any?\n}\n```\nZnamená to „nějaký konkrétní, ale neznámý typ argumentu“. Hodnoty můžete číst jako `Any?`, ale nemůžete do nich nic zapisovat, protože skutečný typ není znám."
+        },
+        {
+          "q": "Jak dáte parametru typu více než jednu vazbu?",
+          "a": "```kotlin\nfun <T> process(x: T)\n    where T : Comparable<T>,\n          T : Cloneable { }\n```\nKlauzule `where` je jediný způsob — zkratka `<T : A>` má pouze jednu hranici."
+        },
+        {
+          "q": "Co je to mazání typu a jak to obejít?",
+          "a": "Argumenty obecného typu jsou na JVM vymazány za běhu, takže `list is List<String>` nelze zkompilovat – pouze `list is List<*>` může.\n\nŘešením je `inline fun <reified T>`, které nahrazuje skutečný typ na každém místě volání."
+        }
+      ],
+      "deck_key": "generics-and-variance"
+    },
+    {
+      "deck": "Multiplatformní",
+      "deck_icon": "building.2",
+      "cards": [
+        {
+          "q": "Co jsou `commonMain`, `androidMain` a `iosMain`?",
+          "a": "Kotlin Multiplatformní zdrojové sady.\n\n* `commonMain` — sdílená deklarace Kotlin plus `expect`\n* `androidMain` — kód JVM/Android a jeho implementace `actual`\n* `iosMain` — Kotlin/Nativní kód, zkompilovaný do rámce Objective-C\n\nTesty zrcadlí stejné rozložení: `commonTest`, `androidTest`, `iosTest`."
+        },
+        {
+          "q": "Co dělají `expect` a `actual`?",
+          "a": "```kotlin\n// commonMain\nexpect class Platform() {\n    val name: String\n}\n\n// androidMain\nactual class Platform {\n    actual val name = \"Android\"\n}\n```\n`expect` deklaruje API, které může volat sdílený kód; každý cíl musí dodat odpovídající `actual`, jinak sestavení selže."
+        },
+        {
+          "q": "Jaké jsou vrstvy čisté multiplatformní architektury?",
+          "a": "1. **UI** — Skládání nebo SwiftUI a zobrazení modelů\n2. **Doména** — čisté případy použití Kotlin, modely domén, *rozhraní* úložiště\n3. **Data** – implementace úložišť, vzdálené a místní zdroje dat a mapovači mezi nimi\n\nVrstva domény nezávisí na ničem specifickém pro platformu, což ji umožňuje žít v `commonMain`."
+        },
+        {
+          "q": "K čemu je vzor úložiště?",
+          "a": "Nachází se mezi případem použití a zdroji dat a vlastní rozhodnutí mezi mezipamětí a sítí. Rozhraní patří do doménové vrstvy; implementace, která ví o HTTP a databázi, patří do datové vrstvy."
+        },
+        {
+          "q": "Jaký je rozdíl mezi DTO, entitou a doménovým modelem?",
+          "a": "* **DTO** — tvar užitečného zatížení API se serializačními anotacemi\n* **Entity** — tvar databázového řádku s perzistentními anotacemi\n* **Doménový model** — obchodní tvar bez závislostí na frameworku\n\nFunkce mapovače se mezi nimi převádějí, což brání přejmenování API v dosažení uživatelského rozhraní."
+        },
+        {
+          "q": "Proč zvolit multiplatformního klienta HTTP před klientem pouze pro Android?",
+          "a": "Klient JVM řízený anotací nemůže kompilovat pro Kotlin/Native, takže nemůže žít v `commonMain`.\n```kotlin\nval client = HttpClient {\n    install(ContentNegotiation) { json() }\n}\nval user: User =\n    client.get(\"/users/1\").body()\n```"
+        },
+        {
+          "q": "Jak se balíček Kotlin mapuje na adresáře?",
+          "a": "Deklarace balíčku by měla odpovídat cestě k adresáři — `package com.example.data` v `src/commonMain/kotlin/com/example/data/`.\n\nReverzní pojmenování domén udržuje balíčky jedinečné v rámci knihoven."
+        },
+        {
+          "q": "Jak se liší import Kotlin od importu Swift?",
+          "a": "```kotlin\nimport com.example.util.Mediator\nimport com.example.util.*\nimport com.example.util.Mediator as M\n```\nKotlin importuje jednotlivá prohlášení a podporuje aliasing. Swift's `import` přináší celý modul."
+        }
+      ],
+      "deck_key": "multiplatform"
+    },
+    {
+      "deck": "Gradle a nástroje",
+      "deck_icon": "hammer",
+      "cards": [
+        {
+          "q": "Jak vytvoříte projekt Gradle a vyjmenujete jeho úkoly?",
+          "a": "```bash\n./gradlew build\n./gradlew tasks\n./gradlew tasks --all\n```\nObal (`gradlew`) připíná verzi Gradle, takže ji použijte spíše než systémové `gradle`."
+        },
+        {
+          "q": "Jak čistíte sestavu a proč je `clean build` zřídka tím správným prvním krokem?",
+          "a": "```bash\n./gradlew clean\n./gradlew clean build\n```\nZahodí mezipaměť přírůstkového sestavení, takže je pomalý. Sáhněte po něm, když máte podezření na zastaralé výstupy, ne jako zvyk."
+        },
+        {
+          "q": "Jak zastavíte démona Gradle?",
+          "a": "```bash\n./gradlew --stop\n```\nUžitečné po selhání s nedostatkem paměti nebo při zaklínění démona; další stavba začíná novou."
+        },
+        {
+          "q": "Jak propojíte rámec Kotlin/Native iOS?",
+          "a": "```bash\n./gradlew :shared:linkDebugFrameworkIosSimulatorArm64\n./gradlew :shared:linkReleaseFrameworkIosArm64\n```\nNázev úlohy kóduje typ sestavení, druh výstupu a cíl, takže každá architektura simulátoru/zařízení má svůj vlastní úkol."
+        },
+        {
+          "q": "Jak spustíte testy jednoho modulu nebo jedné testovací třídy?",
+          "a": "```bash\n./gradlew :shared:test\n./gradlew :shared:allTests\n./gradlew test --tests \"com.example.MyTest\"\n```\n`test` spouští pouze cíl JVM; `allTests` spouští každý multiplatformní cíl."
+        },
+        {
+          "q": "Jak kontrolujete a používáte formátování kódu?",
+          "a": "```bash\n./gradlew spotlessCheck\n./gradlew spotlessApply\n```\n`Check` selže při sestavení na porušení, což je to, co by měla CI spustit; `Apply` přepíše soubory."
+        },
+        {
+          "q": "Jak ukážete Gradle na konkrétní JDK?",
+          "a": "```bash\njava -version\nexport JAVA_HOME=$(/usr/libexec/java_home -v 21)\n```\nJeště lépe, nastavte ve skriptu sestavení toolchain Gradle, aby se každý počítač kompiloval se stejným JDK bez ohledu na to, co je nainstalováno."
+        },
+        {
+          "q": "Jak zkontrolujete strom závislostí modulu?",
+          "a": "```bash\n./gradlew :app:dependencies\n./gradlew :app:dependencies \\\n  --configuration releaseRuntimeClasspath\n```\nVýstup ukazuje, která verze vyhrála konflikt a proč – první věc, kterou je třeba zkontrolovat na chybu třídy duplicit."
+        },
+        {
+          "q": "Co dělá mezipaměť sestavení Gradle a co přírůstková sestavení ne?",
+          "a": "Přírůstková sestavení přeskakuje úlohy, jejichž vstupy se nezměnily **v tomto adresáři projektu**.\n\nMezipaměť sestavení ukládá výstupy úloh naklíčované jejich vstupy, takže čistá pokladna – neboli CI – může znovu použít výsledky vytvořené jinde."
+        }
+      ],
+      "deck_key": "gradle-and-tooling"
+    }
+  ]
+}

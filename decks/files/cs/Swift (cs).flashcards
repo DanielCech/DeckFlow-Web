@@ -1,0 +1,392 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Swift",
+  "interest_icon": "swift",
+  "interest_key": "swift",
+  "deck_q_lang": "cs",
+  "deck_a_lang": "cs",
+  "decks": [
+    {
+      "deck": "Hodnoty, typy a řetězce",
+      "deck_icon": "textformat",
+      "cards": [
+        {
+          "q": "Jaký je rozdíl mezi `let` a `var` v Swift?",
+          "a": "*`let` vytváří **konstantu** — lze ji nastavit jednou a nikdy ji nepřiřadit. `var` vytváří **proměnnou**, která se může měnit.*\n```swift\nlet name = \"Sam\"      // fixed\nvar score = 0\nscore += 10           // fine\n```\n*Upřednostňujte `let`: kompilátor varuje, když se `var` nikdy nezmění, a konstanty lze snáze uvažovat.*"
+        },
+        {
+          "q": "Co je odvození typu v Swift?",
+          "a": "*Kompilátor zjistí typ hodnoty z hodnoty, kterou přiřadíte, takže jen zřídka píšete typy ručně. Typ je stále fixován v době kompilace — Swift je silně typovaný.*\n```swift\nlet age = 38          // Int\nlet pi = 3.14         // Double\nlet name = \"Sam\"      // String\n```"
+        },
+        {
+          "q": "Kdy potřebujete explicitní typovou anotaci?",
+          "a": "*Když neexistuje žádná hodnota, ze které by se dalo vyvozovat, nebo odvozený typ není ten, který chcete.*\n```swift\nlet score: Double = 0        // not Int\nvar names: [String] = []     // empty, nothing to infer\nlet flags: [String: Bool] = [:]\nlet view: any Shape = circle // a protocol type\n```"
+        },
+        {
+          "q": "Co je řetězcová interpolace?",
+          "a": "*Umístění hodnot do řetězce s `\\( )`. Funguje s jakýmkoli typem a pojme celé výrazy a je rychlejší a bezpečnější než zřetězení.*\n```swift\nlet name = \"Sam\"\nlet count = 3\nprint(\"\\(name) has \\(count) items\")\nprint(\"Next year: \\(count + 1)\")\n```"
+        },
+        {
+          "q": "Jak zapíšete víceřádkový řetězec v Swift?",
+          "a": "*S trojitými uvozovkami. Otevírání a zavírání `\"\"\"` musí být na svých vlastních řádcích a odsazení uzavíracího oddělovače je odstraněno z každého řádku.*\n```swift\nlet text = \"\"\"\n    Line one\n    Line two\n    \"\"\"\n```\n*Řádek ukončete `\\`, aby byl zdroj čitelný bez zalomení řádku.*"
+        },
+        {
+          "q": "Vyjmenujte nejužitečnější vlastnosti a metody `String`.",
+          "a": "- `count` — počet znaků\n- `uppercased()` / `lowercased()`\n- `hasPrefix(_:)` / `hasSuffix(_:)`\n- `contains(_:)`, `trimmingCharacters(in:)`\n- `isEmpty` — levnější než `count == 0`\n\n*`count` prochází celý řetězec, takže je O(n) — nikdy jej nepoužívejte pouze k testování prázdnoty.*"
+        },
+        {
+          "q": "Proč nemůžete přidat `Int` k `Double` v Swift?",
+          "a": "*Swift je typově bezpečný a neprovádí **žádný implicitní numerický převod** — míchání typů je chyba kompilace. Převést explicitně.*\n```swift\nlet a = 1\nlet b = 2.0\nlet c = Double(a) + b\n```\n*Výjimka: literály jsou až do použití bez typu, takže `let d = 1 + 2.0` se zkompiluje.*"
+        },
+        {
+          "q": "Co znamenají podtržítka v číselném doslovu a co je `isMultiple(of:)`?",
+          "a": "*Podtržítka jsou kompilátorem ignorována a existují čistě pro čitelnost. `isMultiple(of:)` je jasnější náhrada za `% n == 0`.*\n```swift\nlet big = 1_000_000\nlet even = 12.isMultiple(of: 2)   // true\n```"
+        },
+        {
+          "q": "Co jsou operátory složeného přiřazení?",
+          "a": "*Zkratka, která přečte aktuální hodnotu, použije operaci a zapíše ji zpět. Fungují také pro řetězce, kde `+` znamená zřetězení.*\n```swift\nvar score = 10\nscore += 5      // 15\nscore *= 2      // 30\n\nvar name = \"Sam\"\nname += \" Smith\"\n```"
+        }
+      ],
+      "deck_key": "values-types-and-strings"
+    },
+    {
+      "deck": "Sbírky",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "Jak vytvoříte prázdné typované pole a co s ním můžete dělat?",
+          "a": "*Uveďte typ prvku explicitně, protože neexistuje žádná hodnota, ze které by se dalo vyvozovat.*\n```swift\nvar names = [String]()\n// or:\nvar names: [String] = []\nnames.append(\"Sam\")\nnames.count                     // 1\nnames.remove(at: 0)\nnames.contains(\"Sam\")\nnames.sorted()\n```"
+        },
+        {
+          "q": "Jaké jsou klíčové rozdíly mezi poli, sadami a slovníky?",
+          "a": "- **Pole** — uspořádané, umožňuje duplikáty, přístupné pomocí celočíselného indexu\n- **Set** — neuspořádané, žádné duplikáty, velmi rychlé `contains()`\n- **Dictionary** — neuspořádané páry klíč/hodnota, přístupné pomocí klíče\n\n*Vyberte sadu, když vás zajímá pouze členství, a slovník, když každá hodnota potřebuje smysluplný název.*"
+        },
+        {
+          "q": "Proč čtení ze slovníku vrací nepovinné?",
+          "a": "*Protože klíč nemusí existovat. Dodejte výchozí hodnotu s dolním indexem, abyste získali zpět nepovinnou položku.*\n```swift\nlet heights = [\"Sam\": 1.78]\nlet a = heights[\"Sam\"]                // Double?\nlet b = heights[\"Kim\", default: 0]    // Double\n```"
+        },
+        {
+          "q": "Co dělá `Set` rychlým a čeho se vzdáváte?",
+          "a": "*Prvky jsou uloženy podle hodnoty hash, takže `contains()` je efektivně konstantní čas bez ohledu na velikost. Výměnou ztratíte objednávky a duplikáty — `insert()` existujícího prvku nedělá nic.*\n```swift\nvar words = Set<String>()\nwords.insert(\"swift\")\n// fast even with millions of items\nwords.contains(\"swift\")\n```"
+        },
+        {
+          "q": "Jak procházíte slovníkem a jaké pořadí získáte?",
+          "a": "*Iterujete n-tice `(key, value)` v **nedefinovaném pořadí** — seřaďte klíče, pokud na pořadí záleží.*\n```swift\nfor (key, value) in heights {\n    print(\"\\(key) is \\(value)\")\n}\n\nfor key in heights.keys.sorted() { ... }\n```"
+        }
+      ],
+      "deck_key": "collections"
+    },
+    {
+      "deck": "Výčty",
+      "deck_icon": "checklist",
+      "cards": [
+        {
+          "q": "Jak vytvoříte a používáte základní výčet?",
+          "a": "*Výčet definuje pevnou sadu pojmenovaných případů, takže kompilátor může odmítnout neplatné hodnoty, které by `String` rád přijal.*\n```swift\nenum Weekday {\n    case monday, tuesday, wednesday\n}\n\nvar day = Weekday.monday\nday = .tuesday          // type already known\n```"
+        },
+        {
+          "q": "Co jsou enum nezpracované hodnoty a `CaseIterable`?",
+          "a": "* Hrubá hodnota podporuje každý případ číslem `String` nebo číslem, což vám dává chybný `init?(rawValue:)`. `CaseIterable` syntetizuje pole `allCases`.*\n```swift\nenum Suit: String, CaseIterable {\n    case hearts, spades\n}\n\nSuit(rawValue: \"hearts\")   // Optional(.hearts)\nSuit.allCases.count        // 2\n```"
+        },
+        {
+          "q": "Co jsou výčty s přidruženými hodnotami?",
+          "a": "*Pouzdra mohou přenášet data navíc, takže jeden typ modeluje stav **a** jeho užitečné zatížení.*\n```swift\nenum Activity {\n    case bored\n    case running(destination: String)\n    case talking(topic: String)\n}\n\nlet a = Activity.running(destination: \"park\")\n\nswitch a {\ncase .running(let destination):\n    print(\"Going to \\(destination)\")\ndefault:\n    break\n}\n```"
+        },
+        {
+          "q": "Proč preferovat enum před `String` pro pevnou sadu hodnot?",
+          "a": "*Výčty jsou kontrolovány v době kompilace: překlepy se stávají chybami při sestavování, vynucuje se vyčerpávání `switch`, funguje automatické doplňování a porovnávání je levnější než porovnávání řetězců.*"
+        }
+      ],
+      "deck_key": "enums"
+    },
+    {
+      "deck": "Řízení toku",
+      "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
+      "cards": [
+        {
+          "q": "Na co se musí vyhodnotit podmínka `if` v Swift?",
+          "a": "*A `Bool` — nic jiného. Neexistuje žádná pravdivost, takže `if someString` nebo `if count` se nezkompilují.*\n```swift\nif name.isEmpty {\n    print(\"No name\")\n} else if name.count > 20 {\n    print(\"Too long\")\n} else {\n    print(\"OK\")\n}\n```"
+        },
+        {
+          "q": "Jak se chovají `&&` a `||` v Swift?",
+          "a": "*`&&` je logické AND, `||` je logické OR a obojí **zkrat**: pravá strana je vyhodnocena pouze v případě, že stále může změnit výsledek.*\n```swift\nif isLoggedIn && hasSubscription { ... }\n```\n*Míchání vyžaduje pro srozumitelnost závorky — Swift dává `&&` vyšší prioritu než `||`.*"
+        },
+        {
+          "q": "Jak se liší `switch` od řetězců `if/else` v Swift?",
+          "a": "*`switch` musí být **vyčerpávající** (takže přidejte `default`, když nemůžete uvést všechny případy), každou hodnotu zkontroluje pouze jednou a nedochází k žádnému implicitnímu výpadku – použijte klíčové slovo `fallthrough`, když to skutečně chcete.*\n```swift\nswitch weather {\ncase .rain: print(\"Umbrella\")\ncase .sun: print(\"Sunscreen\")\ndefault:   print(\"Whatever\")\n}\n```"
+        },
+        {
+          "q": "Jak spárujete rozsahy a přidáte další podmínky v `switch`?",
+          "a": "*Případy mohou odpovídat rozsahům a klauzule `where` přidává libovolný test.*\n```swift\nswitch score {\ncase 0..<50:   print(\"Fail\")\ncase 50...100: print(\"Pass\")\ndefault:       print(\"Invalid\")\n}\n\nswitch day {\ncase let d where d.isWeekend: print(\"Rest\")\ndefault: print(\"Work\")\n}\n```"
+        },
+        {
+          "q": "Co je ternární podmíněný operátor?",
+          "a": "*Jednořádkový `if/else`, který vytváří hodnotu. Přečtěte si to jako **WTF — co, pravda, nepravda**: co zkontrolovat, hodnotu, pokud je pravda, hodnotu, pokud nepravda.*\n```swift\nlet status = age >= 18 ? \"Adult\" : \"Minor\"\n```\n*V SwiftUI na tom záleží, protože `body` potřebuje výrazy, ne příkazy.*"
+        },
+        {
+          "q": "Jaký je rozdíl mezi `1...5` a `1..<5`?",
+          "a": "*`...` je **uzavřený rozsah** zahrnující oba konce; `..<` je **polootevřený rozsah** bez horní hranice. Half-open přesně odpovídá indexům pole.*\n```swift\nfor i in 1...5 { }    // 1,2,3,4,5\nfor i in 1..<5 { }    // 1,2,3,4\nfor i in 0..<names.count { }\n```\n*Pokud hodnotu nepotřebujete, použijte `_` jako proměnnou smyčky.*"
+        },
+        {
+          "q": "Kdy používáte `while` versus `repeat`?",
+          "a": "*`while` kontroluje stav **před** každým průchodem, takže tělo nemusí nikdy běžet. `repeat`/`while` kontroluje **po**, takže tělo vždy běží alespoň jednou.*\n```swift\nwhile queue.isEmpty == false { ... }\n\nrepeat {\n    roll = Int.random(in: 1...6)\n} while roll != 6\n```"
+        },
+        {
+          "q": "Co dělají `break` a `continue` a co je to označené prohlášení?",
+          "a": "*`continue` přeskočí na další iteraci; `break` zcela opustí smyčku. Štítek umožňuje `break` opustit **vnější** smyčku zevnitř vnořené smyčky.*\n```swift\nouter: for a in 1...10 {\n    for b in 1...10 {\n        if a * b == 50 { break outer }\n    }\n}\n```"
+        }
+      ],
+      "deck_key": "control-flow"
+    },
+    {
+      "deck": "Funkce",
+      "deck_icon": "function",
+      "cards": [
+        {
+          "q": "Jaká je syntaxe funkce Swift s parametry a návratovou hodnotou?",
+          "a": "*Parametry jsou zadány a návratový typ následuje `->`.*\n```swift\nfunc rollDice(sides: Int, count: Int) -> [Int] {\n    var rolls = [Int]()\n    for _ in 0..<count {\n        rolls.append(Int.random(in: 1...sides))\n    }\n    return rolls\n}\n\nlet rolls = rollDice(sides: 6, count: 4)\n```"
+        },
+        {
+          "q": "Kdy můžete vynechat klíčové slovo `return`?",
+          "a": "*Když je tělo funkce **jednoduchý výraz** — Swift jej implicitně vrátí. Stejné pravidlo umožňuje SwiftUI `body` být jedním pohledem.*\n```swift\nfunc double(_ n: Int) -> Int {\n    n * 2\n}\n```"
+        },
+        {
+          "q": "Jak vrátíte více než jednu hodnotu z funkce?",
+          "a": "*Vrátí **ničku** — na rozdíl od slovníku jsou jeho členové pojmenováni, vždy přítomni a kontrolováni v době kompilace.*\n```swift\nfunc getUser() -> (first: String, last: String) {\n    (first: \"Ada\", last: \"Lovelace\")\n}\n\nlet user = getUser()\nprint(user.first)\nlet (first, last) = getUser()   // destructuring\n```"
+        },
+        {
+          "q": "Jaký je rozdíl mezi externím a interním názvem parametru?",
+          "a": "*První jméno je to, co volající píší, druhé je to, co tělo používá. `_` zcela odstraní štítek na stránce hovoru.*\n```swift\nfunc emit(text: String, times count: Int) {\n    // 'times' at call site,\n    // 'count' inside\n}\nemit(text: \"hi\", times: 3)\n\nfunc greet(_ person: String) { }\ngreet(\"Sam\")\n```"
+        },
+        {
+          "q": "Jak fungují výchozí hodnoty parametrů?",
+          "a": "*Zadejte parametr `= value` a volající jej mohou vynechat. Parametry s výchozími hodnotami by měly být poslední, takže běžný web pro volání zůstane krátký.*\n```swift\nfunc greet(_ person: String, formally: Bool = false) { }\n\ngreet(\"Sam\")\ngreet(\"Sam\", formally: true)\n```"
+        },
+        {
+          "q": "Co je variadický parametr?",
+          "a": "*Parametr, který přijímá nula nebo více hodnot typu, zapsaný pomocí `...`. Uvnitř funkce je to pole.*\n```swift\nfunc square(numbers: Int...) {\n    for n in numbers { print(n * n) }\n}\nsquare(numbers: 1, 2, 3)\n```\n*`print()` sám o sobě je variadický.*"
+        },
+        {
+          "q": "Co dělá `inout`?",
+          "a": "*Předává parametr odkazem, takže funkce může upravit proměnnou volajícího na místě. Argument musí být `var` a předává se s `&`.*\n```swift\nfunc double(_ number: inout Int) {\n    number *= 2\n}\n\nvar score = 10\ndouble(&score)   // score == 20\n```"
+        }
+      ],
+      "deck_key": "functions"
+    },
+    {
+      "deck": "Zpracování chyb",
+      "deck_icon": "exclamationmark.shield",
+      "cards": [
+        {
+          "q": "Jak napíšete a zavoláte funkci házení?",
+          "a": "*Označte ji `throws`, vrhněte hodnotu odpovídající `Error` a zavolejte ji pomocí `try` uvnitř `do`/`catch`.*\n```swift\nenum PasswordError: Error { case short, obvious }\n\nfunc check(_ password: String) throws -> String {\n    if password.count < 5 { throw PasswordError.short }\n    return \"OK\"\n}\n\ndo {\n    let result = try check(\"12345\")\n} catch PasswordError.short {\n    print(\"Too short\")\n} catch {\n    print(\"Error: \\(error.localizedDescription)\")\n}\n```"
+        },
+        {
+          "q": "Co dělají `try?` a `try!`?",
+          "a": "*`try?` převede vyvolanou chybu na `nil`, čímž získáte volitelný výsledek. `try!` tvrdí, že volání nemůže selhat, a pokud ano, **zhroutí** – použijte jej pouze v případě, že by selhání bylo chybou programátora.*\n```swift\nif let result = try? check(password) { ... }\nlet forced = try! check(\"known-good\")\n```"
+        },
+        {
+          "q": "Jak zvládnete házení jako nepovinné?",
+          "a": "*`try?` promění jakoukoli vyhozenou chybu na `nil`, takže hovor zapadne rovnou do `if let` nebo `??`, když vás to nezajímá **proč** selhal.*\n```swift\nif let user = try? getUser(id: 23) {\n    print(user.name)\n}\n```"
+        }
+      ],
+      "deck_key": "error-handling"
+    },
+    {
+      "deck": "Uzávěry a zachycení",
+      "deck_icon": "curlybraces",
+      "cards": [
+        {
+          "q": "Co je uzávěrka v Swift?",
+          "a": "*Blok funkčnosti, který můžete uložit do proměnné, předat funkci nebo vrátit – funkci bez názvu. Jeho parametry a návratový typ žijí **uvnitř** závorek, oddělených od těla `in`.*\n```swift\nlet greet = { (name: String) -> String in\n    \"Hello, \\(name)!\"\n}\n\nprint(greet(\"Sam\"))\n```"
+        },
+        {
+          "q": "Jak vypadá typ funkce a proč na tom záleží?",
+          "a": "*Funkce jsou prvotřídní hodnoty s typem tvaru `(ParamTypes) -> ReturnType`. Parametr **štítky se vynechají**, když je funkce uložena jako hodnota.*\n```swift\nlet fn: (Int, Int) -> Int = max\nfn(1, 2)\n\nvar action: () -> Void = { print(\"Tapped\") }\n```"
+        },
+        {
+          "q": "Co je koncová syntaxe uzavření?",
+          "a": "*Pokud je posledním parametrem uzávěr, můžete jej přesunout mimo závorky – a prázdné závorky zcela vypustit. Díky tomu se SwiftUI `Button { }` čte tak, jak se čte.*\n```swift\nlet sorted = names.sorted { a, b in\n    a < b\n}\n\nButton(\"Tap me\") {\n    print(\"Tapped\")\n}\n```"
+        },
+        {
+          "q": "Co jsou zkrácená jména argumentů?",
+          "a": "*Uvnitř uzávěru Swift poskytuje `$0`, `$1`, … pro parametry, které jste nepojmenovali. Použijte je, když je závěr krátký a význam je zřejmý.*\n```swift\nlet sorted = names.sorted { $0 < $1 }\nlet upper = names.map { $0.uppercased() }\nlet longs = names.filter { $0.count > 4 }\n```"
+        },
+        {
+          "q": "Jak přijímáte funkci jako parametr?",
+          "a": "*Deklarujte parametr typem funkce. Volající obvykle míjejí koncovou uzavírku.*\n```swift\nfunc build(\n    count: Int,\n    using make: () -> Int\n) -> [Int] {\n    (0..<count).map { _ in make() }\n}\n\nlet values = build(count: 5) {\n    Int.random(in: 1...20)\n}\n```"
+        },
+        {
+          "q": "Jak fungují vícenásobné uzavírky?",
+          "a": "*První koncový uzávěr je neoznačený; každý poté, co si zachová svůj štítek. SwiftUI to používá pro věci jako `Button(action:label:)`.*\n```swift\nrun {\n    print(\"First\")\n} then: {\n    print(\"Second\")\n} finally: {\n    print(\"Third\")\n}\n```"
+        },
+        {
+          "q": "Co to znamená, že uzávěry *zachycují* hodnoty?",
+          "a": "*Uzávěr zachovává silný odkaz na proměnné, které používá ze svého okolního rozsahu, a udržuje je při životě – takže je může také mezi hovory mutovat.*\n```swift\nfunc makeCounter() -> () -> Int {\n    var count = 0\n    return {\n        count += 1\n        return count\n    }\n}\n\nlet next = makeCounter()\nnext()   // 1\nnext()   // 2\n```\n*Zachycení `self` uvnitř třídy je způsob, jakým dochází k cyklům uchování – použijte `[weak self]`, když uzavření přežije hovor.*"
+        },
+        {
+          "q": "Co znamená `@escaping`?",
+          "a": "*Označuje uzavírací parametr, který je uložen a volán **po** se funkce vrátí — například obslužná rutina dokončení. Výchozí nastavení je neescapování a escapování musí explicitně zachytit `self`.*\n```swift\nfunc load(then completion: @escaping (Data) -> Void) {\n    pending.append(completion)\n}\n```"
+        }
+      ],
+      "deck_key": "closures-and-capture"
+    },
+    {
+      "deck": "Struktury a hodnotová sémantika",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "Co je to Memberwise inicializátor?",
+          "a": "*Struktura automaticky získá inicializátor, který vezme každou uloženou vlastnost v pořadí deklarací. Vlastnosti s výchozími hodnotami mohou být vynechány.*\n```swift\nstruct Album {\n    let title: String\n    var year = 2024\n}\n\nlet a = Album(title: \"Kind of Blue\")\nlet b = Album(\n    title: \"Blue Train\",\n    year: 1958\n)\n```"
+        },
+        {
+          "q": "Jaký je rozdíl mezi uloženou a vypočítanou vlastností?",
+          "a": "*Uložená vlastnost uchovává hodnotu v paměti. Vypočítaná vlastnost spouští kód při každém čtení, takže vždy odráží aktuální stav – a musí mít explicitní typ.*\n```swift\nstruct Employee {\n    let vacationAllocated = 14\n    var vacationTaken = 0\n\n    var vacationRemaining: Int {\n        vacationAllocated - vacationTaken\n    }\n}\n```"
+        },
+        {
+          "q": "Jak uděláte, aby bylo možné do vypočítané vlastnosti zapisovat?",
+          "a": "*Zadejte jak blok `get`, tak blok `set`. Uvnitř `set` se příchozí hodnota nazývá `newValue`, pokud ji nepřejmenujete.*\n```swift\nvar vacationRemaining: Int {\n    get { vacationAllocated - vacationTaken }\n    set { vacationTaken = vacationAllocated - newValue }\n}\n```"
+        },
+        {
+          "q": "Co jsou pozorovatelé nemovitostí?",
+          "a": "*`didSet` běží po změně vlastnosti (s dostupným `oldValue`) a `willSet` běží před (s `newValue`). Udržujte je rychle – běží při **každém** zápisu, včetně těch, které nemění hodnotu.*\n```swift\nvar score = 0 {\n    didSet { print(\"Was \\(oldValue), now \\(score)\") }\n}\n```"
+        },
+        {
+          "q": "Proč některé metody struct potřebují klíčové slovo `mutating`?",
+          "a": "*Struktury jsou typy hodnot a struktura uložená v `let` je zcela konstantní. Označení metody `mutating` říká Swift, že mění vlastnosti, takže ji lze volat pouze v instanci `var`.*\n```swift\nstruct Person {\n    var name: String\n    mutating func anonymize() { name = \"Anonymous\" }\n}\n```"
+        },
+        {
+          "q": "Co se stane s inicializátorem Memberwise, když napíšete svůj vlastní `init`?",
+          "a": "*Ztratíš to. Chcete-li zachovat obojí, vložte svůj vlastní inicializátor do **rozšíření** — Swift a poté ponechá ten syntetizovaný na místě.*\n```swift\nstruct Player {\n    let name: String\n    let number: Int\n}\n\nextension Player {\n    init(name: String) {\n        self.name = name\n        self.number = Int.random(in: 1...99)\n    }\n}\n```"
+        },
+        {
+          "q": "Jaké jsou úrovně řízení přístupu Swift?",
+          "a": "- `private` — pouze tento typ (a jeho rozšíření).\n- `private(set)` — čitelné kdekoli, zapisovatelné pouze uvnitř\n- `fileprivate` — pouze tento soubor\n- `internal` — tento modul (výchozí)\n- `public` / `open` — další moduly\n\n*Poznámka: Uložená vlastnost `private` odstraní inicializátor členů pro vnější volající.*"
+        },
+        {
+          "q": "Jaký je rozdíl mezi statickou a instanční vlastností?",
+          "a": "*Člen `static` patří k samotnému **typu**, takže existuje jedna sdílená kopie a není potřeba žádná instance. Kód instance se k němu dostane přes název typu (nebo `Self`), nikoli `self`.*\n```swift\nstruct School {\n    static var studentCount = 0\n    static let maxSize = 500\n\n    static func add() { studentCount += 1 }\n}\n\nSchool.add()\n```\n*Je to obvyklý domov pro sdílená ukázková/náhledová data.*"
+        },
+        {
+          "q": "Co to znamená, že struktury jsou hodnotové typy?",
+          "a": "*Přiřazení nebo předání struktury ji **zkopíruje**, takže změna kopie nikdy neovlivní originál. Swift to optimalizuje pomocí kopírování při zápisu, takže ke kopírování skutečně dochází pouze při mutaci.*\n```swift\nvar a = Album(title: \"Kind of Blue\")\nvar b = a\nb.year = 2000  // a is untouched\n```"
+        }
+      ],
+      "deck_key": "structs-and-value-semantics"
+    },
+    {
+      "deck": "Třídy a referenční sémantika",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "Jakých je pět klíčových rozdílů mezi strukturou a třídou?",
+          "a": "1. Třídy mohou **dědit** z jiné třídy\n2. Třídy dostanou **žádný inicializátor členů**\n3. Třídy jsou **referenční typy** – kopie sdílejí jednu instanci\n4. Instance třídy `let` může mít stále změněné vlastnosti `var`\n5. Třídy mohou mít **deinicializátor**\n\n*Vzhledem k #3 a #4 metody třídy nikdy nepotřebují `mutating`.*"
+        },
+        {
+          "q": "Jak funguje dědění v Swift?",
+          "a": "*Podtřída získává vše od svého rodiče a může přidat další. Označením třídy `final` zakážete podtřídu.*\n```swift\nclass Employee {\n    let hours: Int\n    init(hours: Int) { self.hours = hours }\n    func work() { print(\"Working \\(hours)h\") }\n}\n\nfinal class Developer: Employee {\n    func code() { print(\"Coding\") }\n}\n```"
+        },
+        {
+          "q": "Jak přepíšete metodu a kdy je vyžadováno `override`?",
+          "a": "*Kdykoli podtřída nahradí metodu rodiče se stejným názvem a podpisem – Swift ji činí povinnou a chyby, pokud ji použijete tam, kde není nic přepsáno. Zavolejte `super.method()`, abyste zachovali chování rodičů.*\n```swift\nclass Developer: Employee {\n    override func work() {\n        super.work()\n        print(\"…on Swift\")\n    }\n}\n```"
+        },
+        {
+          "q": "Jaká jsou pravidla pro inicializátory tříd?",
+          "a": "*Třída musí dát každé uložené vlastnosti hodnotu a inicializátor podtřídy musí volat `super.init()` **po** nastavení svých vlastních vlastností. Pokud podtřída nepřidá žádné nové inicializátory, zdědí nadřazené.*\n```swift\nclass Car: Vehicle {\n    let isConvertible: Bool\n\n    init(isElectric: Bool, isConvertible: Bool) {\n        self.isConvertible = isConvertible\n        super.init(isElectric: isElectric)\n    }\n}\n```"
+        },
+        {
+          "q": "Co se stane, když zkopírujete instanci třídy?",
+          "a": "*Oba názvy ukazují na **stejný** objekt, takže změna přes jeden je viditelná přes druhý. Pokud potřebujete sémantiku hodnot, použijte `let` plus záměrnou metodu `copy()`.*\n```swift\nclass User { var name = \"Sam\" }\n\nlet a = User()\nlet b = a\nb.name = \"Kim\"\nprint(a.name)   // \"Kim\"\n```"
+        },
+        {
+          "q": "Co je deinicializátor?",
+          "a": "*`deinit` se spustí, když zmizí poslední odkaz na instanci. Nepotřebuje žádné parametry, nikdy se nevolá ručně a jeden mají pouze třídy.*\n```swift\nclass User {\n    deinit { print(\"Destroyed\") }\n}\n```"
+        },
+        {
+          "q": "Proč můžete změnit vlastnost instance třídy uložené v `let`?",
+          "a": "*Protože konstanta se vztahuje na **odkaz**, nikoli na objekt. Nemůžete nasměrovat konstantu na jinou instanci, ale můžete libovolně zmutovat tu, na kterou ukazuje — deklarujte vlastnost `let`, abyste tomu zabránili.*\n```swift\nlet user = User()\nuser.name = \"Kim\"   // fine\nuser = User()       // error\n```"
+        }
+      ],
+      "deck_key": "classes-and-reference-semantics"
+    },
+    {
+      "deck": "Protokoly a rozšíření",
+      "deck_icon": "checkmark.seal",
+      "cards": [
+        {
+          "q": "Co je protokol?",
+          "a": "*Smlouva popisující vlastnosti a metody, které typ musí poskytovat, bez jakékoli implementace. Umožňuje vám psát kód podle schopnosti spíše než podle konkrétního typu.*\n```swift\nprotocol Vehicle {\n    var name: String { get }\n    var currentPassengers: Int { get set }\n    func estimateTime(for distance: Int) -> Int\n}\n```"
+        },
+        {
+          "q": "Co znamenají `{ get }` a `{ get set }` v protokolu?",
+          "a": "*`{ get }` vyžaduje, aby byla vlastnost čitelná — vyhovující typ ji může uspokojit konstantou nebo vypočítanou vlastností. `{ get set }` vyžaduje, aby byl také zapisovatelný, takže `let` to nesplňuje.*"
+        },
+        {
+          "q": "Jak protokol umožňuje polymorfismus?",
+          "a": "*Jakákoli funkce může přijmout typ protokolu a pracovat s každým vyhovujícím typem, aniž by věděla, který má.*\n```swift\nfunc commute(distance: Int, using vehicle: some Vehicle) {\n    print(vehicle.estimateTime(for: distance))\n}\n\ncommute(distance: 100, using: Car())\ncommute(distance: 100, using: Bicycle())\n```"
+        },
+        {
+          "q": "Co může a nemůže rozšíření přidat?",
+          "a": "*Rozšíření může přidat vypočítané vlastnosti, metody, inicializátory, dolní indexy a shodu s protokolem k existujícímu typu – dokonce i k tomu, který nevlastníte. **nemůže** přidávat uložené vlastnosti.*\n```swift\nextension String {\n    var trimmed: String {\n        trimmingCharacters(in: .whitespacesAndNewlines)\n    }\n}\n```"
+        },
+        {
+          "q": "Co je rozšíření protokolu a proč je výkonné?",
+          "a": "*Přidává **výchozí implementace** ke každému vyhovujícímu typu najednou, takže protokol může dodávat chování, nejen požadavky. Vyhovující typy jej mohou stále přepsat.*\n```swift\nextension Collection {\n    var isNotEmpty: Bool { isEmpty == false }\n}\n\n[1, 2, 3].isNotEmpty   // works on Array, Set, Dictionary…\n```"
+        },
+        {
+          "q": "Co je protokolově orientované programování?",
+          "a": "* Navrhování kolem malých protokolů plus rozšíření protokolů spíše než hluboké hierarchie tříd. Typy hodnot získávají sdílené chování bez dědičnosti a typ může přijmout mnoho protokolů, kde může mít pouze jednu nadtřídu.*"
+        },
+        {
+          "q": "Jaký je rozdíl mezi `some Protocol` a prostým typem protokolu?",
+          "a": "*`some Protocol` je **neprůhledný návratový typ**: volající pouze ví, že protokol je splněn, ale kompilátor zná jeden přesný základní typ – takže zůstává rychlý a uchovává úplné informace o typu. Prostý (existenciální) typ protokolu může obsahovat různé typy v různých časech, za cenu nepřímosti.*\n```swift\nfunc makeShape() -> some Shape { Circle() }\nvar body: some View { Text(\"Hi\") }\n```"
+        },
+        {
+          "q": "Jak uděláte svůj vlastní typ tříditelný?",
+          "a": "*Přizpůsobte se `Comparable` a implementujte `<`. Zdarma získáte `sorted()`, `min()`, `max()` a další srovnávací operátory.*\n```swift\nstruct User: Comparable {\n    let name: String\n\n    static func <(lhs: User, rhs: User) -> Bool {\n        lhs.name < rhs.name\n    }\n}\n\nusers.sorted()\n```"
+        }
+      ],
+      "deck_key": "protocols-and-extensions"
+    },
+    {
+      "deck": "Volitelné",
+      "deck_icon": "lightbulb",
+      "cards": [
+        {
+          "q": "Co je nepovinné?",
+          "a": "*Typ, který buď obsahuje hodnotu, nebo obsahuje `nil`. Nutí vás zpracovávat případ „žádná hodnota“ v době kompilace namísto zhroucení za běhu a je to skutečný obal – `Int?` není `Int`.*\n```swift\nlet ages = [\"Sam\": 38]\nlet age = ages[\"Kim\"]   // Int? — nil\n```"
+        },
+        {
+          "q": "Jak `if let` funguje?",
+          "a": "*Rozbalí volitelné a spustí tělo pouze v případě, že existuje hodnota. Nezabalená konstanta žije uvnitř rovnátek a stínování stejného jména je idiomatické.*\n```swift\nif let age {\n    print(\"Age is \\(age)\")   // Int here\n} else {\n    print(\"Unknown\")\n}\n```"
+        },
+        {
+          "q": "Jaký je rozdíl mezi `if let` a `guard let`?",
+          "a": "*`if let` spustí své tělo, když hodnota **existuje**. `guard let` spustí své tělo, když hodnota **chybí** a musí opustit rozsah, ale nezabalená hodnota zůstane použitelná pro zbytek funkce – což udržuje šťastnou cestu bez odsazení.*\n```swift\nfunc greet(_ name: String?) {\n    guard let name else {\n        print(\"No name\")\n        return\n    }\n    print(\"Hello, \\(name)\")\n}\n```"
+        },
+        {
+          "q": "Co dělá operátor nulové koalescence?",
+          "a": "*`??` rozbalí volitelnou položku nebo dodá výchozí hodnotu, když je `nil` — výsledek je nepovinný. Řetězuje a pracuje s čímkoli volitelným, včetně vyhledávání ve slovníku a neúspěšných inicializátorů.*\n```swift\nlet name = user.name ?? \"Anonymous\"\nlet score = Int(input) ?? 0\n```"
+        },
+        {
+          "q": "Co je to volitelné řetězení?",
+          "a": "*Zápis `?.` čte vlastnost nebo volá metodu pouze v případě, že hodnota existuje, jinak je celý výraz `nil`. Řetězy se zastaví na prvním `nil` a výsledek je vždy volitelný.*\n```swift\nlet first = names.first?.uppercased()   // String?\nlet count = user?.address?.city.count ?? 0\n```"
+        },
+        {
+          "q": "Co je to neúspěšný inicializátor?",
+          "a": "*`init?` může vrátit `nil`, když je vstup neplatný, takže volající získá nepovinnou instanci místo selhání.*\n```swift\nstruct Employee {\n    let id: String\n    init?(id: String) {\n        guard id.count == 9 else { return nil }\n        self.id = id\n    }\n}\n\nlet url = URL(string: \"https://example.com\")   // URL?\n```"
+        },
+        {
+          "q": "Proč je násilné rozbalení pomocí `!` nebezpečné?",
+          "a": "*Pokud je hodnota `nil`, okamžitě se zhroutí. Použijte jej pouze tam, kde by `nil` znamenalo chybu programátora, kterou chcete hlasitě objevit — jinak preferujte `if let`, `guard let` nebo `??`.*"
+        },
+        {
+          "q": "Jak rozbalíte několik volitelných položek najednou?",
+          "a": "*Řetěte je do jednoho `if let` nebo `guard let`, oddělené čárkami. Každá vazba může používat předchozí a můžete přidat jednoduché podmínky `Bool`.*\n```swift\nif let first, let last, first.isEmpty == false {\n    print(\"\\(first) \\(last)\")\n}\n```"
+        }
+      ],
+      "deck_key": "optionals"
+    }
+  ]
+}

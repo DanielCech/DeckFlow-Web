@@ -1,0 +1,491 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Mathematik",
+  "interest_icon": "function",
+  "interest_key": "mathematics",
+  "deck_q_lang": "de",
+  "deck_a_lang": "de",
+  "decks": [
+    {
+      "deck": "Kräfte und Wurzeln",
+      "cards": [
+        {
+          "q": "$a^m \\cdot a^n = ?${a zu m mal a zu n}",
+          "a": "$a^{m+n}${a zum m plus n}"
+        },
+        {
+          "q": "$\\frac{a^m}{a^n} = ?${a zum m über a zum n}",
+          "a": "$a^{m-n}${a zum m minus n}"
+        },
+        {
+          "q": "$(a^m)^n = ?${a bis zum m, alle bis zum n}",
+          "a": "$a^{m \\cdot n}${a bis m mal n}"
+        },
+        {
+          "q": "$a^{-m} = ?${a minus m}",
+          "a": "$\\frac{1}{a^m}${eins über a zum m}"
+        },
+        {
+          "q": "$a^0 = ?${a zur Null} für $a \\neq 0${a ungleich Null}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sqrt[n]{a^m} = ?${die n-te Wurzel von a zum m}",
+          "a": "$a^{m/n}${a zum m über n}"
+        },
+        {
+          "q": "$\\sqrt[m]{\\sqrt[n]{a}} = ?${die m-te Wurzel der n-ten Wurzel von a}",
+          "a": "$\\sqrt[m \\cdot n]{a}${die m-fache n-te Wurzel von a}"
+        }
+      ],
+      "deck_key": "powers-and-roots"
+    },
+    {
+      "deck": "Logarithmusregeln",
+      "cards": [
+        {
+          "q": "$\\log_a(x \\cdot y) = ?${Logarithmus zur Basis a von x mal y}",
+          "a": "$\\log_a x + \\log_a y${Logbasis a von x plus Logbasis a von y}"
+        },
+        {
+          "q": "$\\log_a\\!\\left(\\frac{x}{y}\\right) = ?${logarithmische Basis a von x über y}",
+          "a": "$\\log_a x - \\log_a y${logarithmische Basis a von x minus logarithmische Basis a von y}"
+        },
+        {
+          "q": "$\\log_a(x^k) = ?${logarithmische Basis a von x zum k}",
+          "a": "$k \\cdot \\log_a x${k mal logarithmische Basis a von x}"
+        },
+        {
+          "q": "$\\log_a a = ?${Logbasis a von a}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\log_a 1 = ?${Log-Basis a von eins}",
+          "a": "$0$"
+        },
+        {
+          "q": "Basiswechsel: $\\log_a x = ?${logarithmische Basis a von x}",
+          "a": "$\\frac{\\log_b x}{\\log_b a}${logarithmische Basis b von x über logarithmische Basis b von a}\n\nNormalerweise mit $b = 10$ oder $b = e$."
+        },
+        {
+          "q": "$\\ln(e^x) = ?${natürlicher Logarithmus von e zum x}",
+          "a": "$x$"
+        },
+        {
+          "q": "$a^{\\log_a x} = ?${a zur Logbasis a von x} für $x > 0$",
+          "a": "$x$\n\nPotenzierung und Logarithmus gleicher Basis heben sich gegenseitig auf."
+        }
+      ],
+      "deck_key": "logarithm-rules"
+    },
+    {
+      "deck": "Algebraische Identitäten",
+      "cards": [
+        {
+          "q": "$(a + b)^2 = ?${a plus b, alles zum Quadrat}",
+          "a": "$a^2 + 2ab + b^2${a zum Quadrat plus zwei a b plus b zum Quadrat}"
+        },
+        {
+          "q": "$(a - b)^2 = ?${a minus b, ganz zum Quadrat}",
+          "a": "$a^2 - 2ab + b^2${a zum Quadrat minus zwei a b plus b zum Quadrat}"
+        },
+        {
+          "q": "Faktorisieren Sie die Differenz der Quadrate: $a^2 - b^2 = ?${a zum Quadrat minus b zum Quadrat}",
+          "a": "$(a - b)(a + b)${a minus b, mal a plus b}"
+        },
+        {
+          "q": "$(a + b)^3 = ?${a plus b, alles gewürfelt}",
+          "a": "$a^3 + 3a^2b + 3ab^2 + b^3${a kubisch plus drei a zum Quadrat b plus drei a b zum Quadrat plus b zum Quadrat}"
+        },
+        {
+          "q": "$(a - b)^3 = ?${a minus b, alles gewürfelt}",
+          "a": "$a^3 - 3a^2b + 3ab^2 - b^3${a kubisch minus drei a zum Quadrat b plus drei a b zum Quadrat minus b zum Quadrat}"
+        },
+        {
+          "q": "Faktorisieren Sie die Summe der Würfel: $a^3 + b^3 = ?${a gewürfelt plus b gewürfelt}",
+          "a": "$(a + b)(a^2 - ab + b^2)${a plus b, mal a zum Quadrat minus a b plus b zum Quadrat}"
+        },
+        {
+          "q": "Faktorisieren Sie die Würfeldifferenz: $a^3 - b^3 = ?${a kubisch minus b kubisch}",
+          "a": "$(a - b)(a^2 + ab + b^2)${a minus b, mal a zum Quadrat plus a b plus b zum Quadrat}"
+        },
+        {
+          "q": "Quadratische Formel: die Wurzeln von $ax^2 + bx + c = 0${a x quadriert plus b x plus c gleich Null}",
+          "a": "$$\nx = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n$${x gleich minus b plus oder minus der Quadratwurzel von b zum Quadrat minus vier a c, alles über zwei a}"
+        },
+        {
+          "q": "Was sagt Ihnen die Diskriminante $D = b^2 - 4ac${D gleich b zum Quadrat minus vier a c}?",
+          "a": "* $D > 0$ – zwei unterschiedliche echte Wurzeln\n* $D = 0$ – eine echte Doppelwurzel\n* $D < 0$ – zwei komplexe konjugierte Wurzeln"
+        }
+      ],
+      "deck_key": "algebraic-identities"
+    },
+    {
+      "deck": "Trigonometrische Werte",
+      "cards": [
+        {
+          "q": "$\\sin 0^\\circ = ?${Sinus von null Grad}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\sin 30^\\circ = \\sin\\frac{\\pi}{6} = ?${Sinus von dreißig Grad}",
+          "a": "$\\frac{1}{2}${eine Hälfte}"
+        },
+        {
+          "q": "$\\sin 45^\\circ = \\sin\\frac{\\pi}{4} = ?${Sinus von fünfundvierzig Grad}",
+          "a": "$\\frac{\\sqrt{2}}{2}${die Quadratwurzel von zwei über zwei}"
+        },
+        {
+          "q": "$\\sin 60^\\circ = \\sin\\frac{\\pi}{3} = ?${Sinus von sechzig Grad}",
+          "a": "$\\frac{\\sqrt{3}}{2}${die Quadratwurzel von drei über zwei}"
+        },
+        {
+          "q": "$\\sin 90^\\circ = \\sin\\frac{\\pi}{2} = ?${Sinus von neunzig Grad}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 0^\\circ = ?${Kosinus von Null Grad}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 30^\\circ = \\cos\\frac{\\pi}{6} = ?${Kosinus von dreißig Grad}",
+          "a": "$\\frac{\\sqrt{3}}{2}${die Quadratwurzel von drei über zwei}"
+        },
+        {
+          "q": "$\\cos 45^\\circ = \\cos\\frac{\\pi}{4} = ?${Kosinus von fünfundvierzig Grad}",
+          "a": "$\\frac{\\sqrt{2}}{2}${die Quadratwurzel von zwei über zwei}"
+        },
+        {
+          "q": "$\\cos 60^\\circ = \\cos\\frac{\\pi}{3} = ?${Kosinus von sechzig Grad}",
+          "a": "$\\frac{1}{2}${eine Hälfte}"
+        },
+        {
+          "q": "$\\cos 90^\\circ = \\cos\\frac{\\pi}{2} = ?${Kosinus von neunzig Grad}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\tan 30^\\circ = \\tan\\frac{\\pi}{6} = ?${Tangens von dreißig Grad}",
+          "a": "$\\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}${eins über der Quadratwurzel von drei oder die Quadratwurzel von drei über drei}"
+        },
+        {
+          "q": "$\\tan 45^\\circ = \\tan\\frac{\\pi}{4} = ?${Tangens von fünfundvierzig Grad}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\tan 60^\\circ = \\tan\\frac{\\pi}{3} = ?${Tangens von sechzig Grad}",
+          "a": "$\\sqrt{3}${die Quadratwurzel aus drei}"
+        },
+        {
+          "q": "Warum ist $\\tan 90^\\circ${Tangens von neunzig Grad} undefiniert?",
+          "a": "Weil $\\tan x = \\frac{\\sin x}{\\cos x}${Tangens x gleich Sinus x über Kosinus x} und $\\cos 90^\\circ = 0$ – der Quotient einen Nenner von Null hat."
+        }
+      ],
+      "deck_key": "trigonometric-values"
+    },
+    {
+      "deck": "Trigonometrische Identitäten",
+      "cards": [
+        {
+          "q": "Pythagoräische Identität: $\\sin^2 x + \\cos^2 x = ?${Sinus zum Quadrat x plus Kosinus zum Quadrat x}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sin 2x = ?${Sinus von zwei x}",
+          "a": "$2 \\sin x \\cos x${zwei Sinus x Cosinus x}"
+        },
+        {
+          "q": "$\\cos 2x = ?${Kosinus von zwei x}",
+          "a": "$\\cos^2 x - \\sin^2 x${Kosinus zum Quadrat x minus Sinus zum Quadrat x}\n\nAuch $1 - 2\\sin^2 x$ oder $2\\cos^2 x - 1$."
+        },
+        {
+          "q": "Drücken Sie $\\tan x${Tangente x} mit $\\sin x$ und $\\cos x$ aus:",
+          "a": "$\\tan x = \\frac{\\sin x}{\\cos x}${Tangens x gleich Sinus x über Kosinus x}"
+        },
+        {
+          "q": "Drücken Sie $\\cot x${Kotangens x} mit $\\sin x$ und $\\cos x$ aus:",
+          "a": "$\\cot x = \\frac{\\cos x}{\\sin x}${Kotangens x gleich Kosinus x über Sinus x}"
+        },
+        {
+          "q": "$1 + \\tan^2 x = ?${eins plus Tangens im Quadrat x}",
+          "a": "$\\frac{1}{\\cos^2 x}${Eins über Kosinusquadrat x}"
+        },
+        {
+          "q": "$1 + \\cot^2 x = ?${Eins plus Kotangens im Quadrat x}",
+          "a": "$\\frac{1}{\\sin^2 x}${Eins über Sinus zum Quadrat x}"
+        },
+        {
+          "q": "$\\sin(x + y) = ?${Sinus von x plus y}",
+          "a": "$\\sin x \\cos y + \\cos x \\sin y${Sinus x Cosinus y plus Cosinus x Sinus y}"
+        },
+        {
+          "q": "$\\sin(x - y) = ?${Sinus von x minus y}",
+          "a": "$\\sin x \\cos y - \\cos x \\sin y${Sinus x Cosinus y minus Cosinus x Sinus y}"
+        },
+        {
+          "q": "$\\cos(x + y) = ?${Kosinus von x plus y}",
+          "a": "$\\cos x \\cos y - \\sin x \\sin y${Cosinus x Cosinus y minus Sinus x Sinus y}"
+        },
+        {
+          "q": "$\\cos(x - y) = ?${Kosinus von x minus y}",
+          "a": "$\\cos x \\cos y + \\sin x \\sin y${Cosinus x Cosinus y plus Sinus x Sinus y}"
+        },
+        {
+          "q": "$\\tan(x + y) = ?${Tangens von x plus y}",
+          "a": "$\\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y}${Tangente x plus Tangente y, über eins minus Tangente x Tangente y}"
+        }
+      ],
+      "deck_key": "trigonometric-identities"
+    },
+    {
+      "deck": "Trigonometrische Funktionen und Umkehrungen",
+      "cards": [
+        {
+          "q": "Domäne von $\\sin x${sine x}:",
+          "a": "$\\mathbb{R}$ – alle reellen Zahlen."
+        },
+        {
+          "q": "Bereich von $\\sin x${Sinus x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${das geschlossene Intervall von minus eins bis eins}"
+        },
+        {
+          "q": "Ist $\\sin x${sinus x} gerade oder ungerade?",
+          "a": "**Ungerade:** $\\sin(-x) = -\\sin x${Sinus von minus x gleich minus Sinus x}"
+        },
+        {
+          "q": "Ist $\\cos x${cosinus x} gerade oder ungerade?",
+          "a": "**Gerade:** $\\cos(-x) = \\cos x${Kosinus von minus x gleich Kosinus x}"
+        },
+        {
+          "q": "Periode von $\\sin x${Sinus x} und $\\cos x${Cosinus x}:",
+          "a": "$2\\pi${zwei pi}"
+        },
+        {
+          "q": "Periode von $\\tan x${Tangente x}:",
+          "a": "$\\pi${pi}"
+        },
+        {
+          "q": "Domäne von $\\tan x${Tangente x}:",
+          "a": "$\\mathbb{R} \\setminus \\left\\{\\frac{\\pi}{2} + k\\pi \\mid k \\in \\mathbb{Z}\\right\\}${alle reellen Zahlen außer Pi über zwei plus k Pi}"
+        },
+        {
+          "q": "Domäne von $\\cot x${Kotangens x}:",
+          "a": "$\\mathbb{R} \\setminus \\{k\\pi \\mid k \\in \\mathbb{Z}\\}${alle reellen Zahlen außer ganzzahligen Vielfachen von Pi}"
+        },
+        {
+          "q": "Nullstellen von $\\sin x${sinus x}:",
+          "a": "$x = k\\pi, \\quad k \\in \\mathbb{Z}${x gleich k pi, k eine ganze Zahl}"
+        },
+        {
+          "q": "Nullstellen von $\\cos x${cosinus x}:",
+          "a": "$x = \\frac{\\pi}{2} + k\\pi, \\quad k \\in \\mathbb{Z}${x gleich pi über zwei plus k pi, k eine ganze Zahl}"
+        },
+        {
+          "q": "Was ist $\\arcsin x${Arcsinus x}?",
+          "a": "Die Umkehrung von $\\sin x$ beschränkt auf $\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${minus pi über zwei bis pi über zwei}."
+        },
+        {
+          "q": "Bereich von $\\arcsin x${arc sine x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${das geschlossene Intervall von minus eins bis eins}"
+        },
+        {
+          "q": "Bereich von $\\arcsin x${Bogensinus x}:",
+          "a": "$\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${das geschlossene Intervall von minus pi über zwei bis pi über zwei}"
+        },
+        {
+          "q": "Was ist $\\arccos x${Arkuskosinus x}?",
+          "a": "Die Umkehrung von $\\cos x$ beschränkt auf $\\langle 0,\\, \\pi \\rangle${Null bis Pi}."
+        },
+        {
+          "q": "Domäne von $\\arccos x${Arccosinus x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${das geschlossene Intervall von minus eins bis eins}"
+        },
+        {
+          "q": "Bereich von $\\arccos x${Arkuskosinus x}:",
+          "a": "$\\langle 0,\\, \\pi \\rangle${das geschlossene Intervall von Null bis Pi}"
+        },
+        {
+          "q": "Domäne von $\\arctan x${Arkustangens x}:",
+          "a": "$\\mathbb{R}$ – alle reellen Zahlen."
+        },
+        {
+          "q": "Bereich von $\\arctan x${Arkustangens x}:",
+          "a": "$\\left( -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right)${das offene Intervall von minus pi über zwei bis pi über zwei}"
+        },
+        {
+          "q": "Bereich von $\\text{arccot}\\, x${Bogenkotangens x}:",
+          "a": "$\\mathbb{R}$ – alle reellen Zahlen."
+        },
+        {
+          "q": "Wertebereich von $\\text{arccot}\\, x${Bogenkotangens x}:",
+          "a": "$(0,\\, \\pi)${das offene Intervall von Null bis Pi}"
+        }
+      ],
+      "deck_key": "trigonometric-functions-and-inverses"
+    },
+    {
+      "deck": "Derivate",
+      "cards": [
+        {
+          "q": "Was bedeutet $f'(x_0)${f Primzahl von x Null} geometrisch?",
+          "a": "Es ist die Steigung der Tangente ($k = \\tan \\alpha${k gleich Tangente Alpha}) an den Graphen von $f$ bei $x_0${x Null}."
+        },
+        {
+          "q": "Definition der Ableitung – Inkrementform:\n$$\nf'(x_0) = \\lim_{\\Delta x \\to 0} \\frac{f(x_0 + \\Delta x) - f(x_0)}{\\Delta x}\n$${f Primzahl von x Null entspricht dem Grenzwert, wenn Delta x zu Null geht von f von x Null plus Delta x, minus f von x Null, über Delta x}",
+          "a": "Der Grenzwert des Verhältnisses zwischen der Änderung der Funktion und der Änderung ihres Arguments, wenn diese Änderung gegen Null geht."
+        },
+        {
+          "q": "Definition der Ableitung – Differenzen-Quotienten-Form:\n$$\nf'(x_0) = \\lim_{x \\to x_0} \\frac{f(x) - f(x_0)}{x - x_0}\n$${f Primzahl von x Null entspricht dem Grenzwert, wenn x zu x Null von f von x minus f von x Null geht, über x minus x Null}",
+          "a": "Eine äquivalente Aussage desselben Grenzwerts, geschrieben mit $x$, das sich $x_0${x Null} nähert."
+        },
+        {
+          "q": "Gleichung der **Tangente** an den Graphen von $f$ bei $(x_0, y_0)${x Null, y Null}:",
+          "a": "$$\ny - y_0 = f'(x_0)\\,(x - x_0)\n$${y minus y Null ist gleich f Primzahl von x Null, mal x minus x Null}"
+        },
+        {
+          "q": "Gleichung der **Normalen** zum Graphen von $f$ bei $(x_0, y_0)${x Null, y Null}:",
+          "a": "$$\ny - y_0 = -\\frac{1}{f'(x_0)}\\,(x - x_0)\n$${y minus y Null ist gleich minus eins über f Primzahl von x Null, mal x minus x Null}\n\nGültig, wenn $f'(x_0) \\neq 0${f Primzahl von x Null ist nicht Null}."
+        },
+        {
+          "q": "$(c \\cdot u)' = ?${die Ableitung von c mal u}",
+          "a": "$c \\cdot u'${c mal u prim}"
+        },
+        {
+          "q": "$(u + v)' = ?${die Ableitung von u plus v}",
+          "a": "$u' + v'${u prim plus v prim}"
+        },
+        {
+          "q": "$(u - v)' = ?${die Ableitung von u minus v}",
+          "a": "$u' - v'${u prim minus v prim}"
+        },
+        {
+          "q": "Produktregel: $(u \\cdot v)' = ?${die Ableitung von u mal v}",
+          "a": "$u'v + uv'${u prim v plus u v prim}"
+        },
+        {
+          "q": "Quotientenregel: $\\left(\\frac{u}{v}\\right)' = ?${die Ableitung von u über v}",
+          "a": "$$\n\\frac{u'v - uv'}{v^2}\n$${u prim v minus u v prim, über v zum Quadrat}"
+        },
+        {
+          "q": "Kettenregel: $(f \\circ g)'(x) = ?${die Ableitung von f zusammengesetzt mit g, bei x}",
+          "a": "$f'(g(x)) \\cdot g'(x)${f Primzahl von g von x, mal g Primzahl von x}"
+        },
+        {
+          "q": "$(c)' = ?${die Ableitung einer Konstanten c}",
+          "a": "$0$"
+        },
+        {
+          "q": "$(x^n)' = ?${die Ableitung von x nach n}",
+          "a": "$n \\cdot x^{n-1}${n mal x hoch n minus eins}, für $n \\in \\mathbb{R}${n reell}"
+        },
+        {
+          "q": "$(\\sin x)' = ?${die Ableitung des Sinus x}",
+          "a": "$\\cos x${Kosinus x}"
+        },
+        {
+          "q": "$(\\cos x)' = ?${die Ableitung des Kosinus x}",
+          "a": "$-\\sin x${minus Sinus x}"
+        },
+        {
+          "q": "$(\\tan x)' = ?${die Ableitung der Tangente x}",
+          "a": "$\\frac{1}{\\cos^2 x}${Eins über Kosinusquadrat x}\n\nFür $x \\neq \\frac{\\pi}{2} + k\\pi${x ungleich pi über zwei plus k pi}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(\\cot x)' = ?${die Ableitung des Kotangens x}",
+          "a": "$-\\frac{1}{\\sin^2 x}${minus eins über Sinusquadrat x}\n\nFür $x \\neq k\\pi${x kein ganzzahliges Vielfaches von pi}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(e^x)' = ?${die Ableitung von e nach x}",
+          "a": "$e^x${e zum x}"
+        },
+        {
+          "q": "$(a^x)' = ?${die Ableitung von a nach x}, wobei $a > 0, a \\neq 1$",
+          "a": "$a^x \\cdot \\ln a${a zum x-fachen natürlichen Logarithmus von a}"
+        },
+        {
+          "q": "$(\\ln x)' = ?${die Ableitung des natürlichen Logarithmus von x}",
+          "a": "$\\frac{1}{x}${eins über x}, für $x > 0$"
+        },
+        {
+          "q": "$(\\log_a x)' = ?${die Ableitung der logarithmischen Basis a von x}",
+          "a": "$\\frac{1}{x \\cdot \\ln a}${eins über dem x-fachen natürlichen Logarithmus von a}\n\nFür $x > 0$, $a > 0$, $a \\neq 1$."
+        }
+      ],
+      "deck_key": "derivatives"
+    },
+    {
+      "deck": "Solide Geometrie",
+      "cards": [
+        {
+          "q": "Volumen eines **Prismas** – $S_p${S p} ist die Grundfläche, $v$ die Höhe:",
+          "a": "$$\nV = S_p \\cdot v\n$${V gleich S p mal v}"
+        },
+        {
+          "q": "Oberfläche eines **Prismas** – $S_p${S p} Grundfläche, $S_{pl}${S p l} Seitenfläche:",
+          "a": "$$\nS = 2 S_p + S_{pl}\n$${S entspricht zwei S p plus S p l}"
+        },
+        {
+          "q": "Volumen einer **Pyramide** – $S_p${S p} Grundfläche, $v$ Höhe:",
+          "a": "$$\nV = \\frac{1}{3} S_p \\cdot v\n$${V entspricht einem Drittel S p mal v}"
+        },
+        {
+          "q": "Oberfläche einer **Pyramide**:",
+          "a": "$$\nS = S_p + S_{pl}\n$${S gleich S p plus S p l}"
+        },
+        {
+          "q": "Volumen eines **Pyramidenstumpfes** – $S_1, S_2${S eins, S zwei} Grundflächen, $v$ Höhe:",
+          "a": "$$\nV = \\frac{v}{3}\\left(S_1 + \\sqrt{S_1 S_2} + S_2\\right)\n$${V ist gleich v über drei, mal S eins plus der Quadratwurzel von S eins, S zwei, plus S zwei}"
+        },
+        {
+          "q": "Oberfläche eines **Pyramidenstumpfes**:",
+          "a": "$$\nS = S_1 + S_2 + S_{pl}\n$${S gleich S eins plus S zwei plus S p l}"
+        },
+        {
+          "q": "Warum beträgt das Volumen einer Pyramide $\\frac{1}{3}${ein Drittel} des Prismas auf derselben Grundfläche?",
+          "a": "Ein Würfel kann in **drei kongruente Pyramiden** zerschnitten werden, die sich Grundfläche und Höhe teilen.\n\nFormal folgt es aus dem Cavalieri-Prinzip: Der Querschnitt wächst mit $S(x) \\propto x^2${S von x ist proportional zu x im Quadrat}, und die Integration von $x^2$ ergibt den Faktor $\\tfrac{1}{3}$."
+        },
+        {
+          "q": "Wie viele platonische Körper gibt es und was sind sie?",
+          "a": "**Fünf:** Tetraeder, Würfel (Hexaeder), Oktaeder, Dodekaeder, Ikosaeder.\n\nJede Fläche ist das gleiche regelmäßige Polygon und jeder Scheitelpunkt ist identisch."
+        },
+        {
+          "q": "Volumen eines **Tetraeders** mit Kante $a$:",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{12}\n$${V entspricht einem Kubikmeter mal der Quadratwurzel von zwei, über zwölf}"
+        },
+        {
+          "q": "Oberfläche eines **Tetraeders** mit Kante $a$:",
+          "a": "$$\nS = a^2 \\sqrt{3}\n$${S entspricht a zum Quadrat mal der Quadratwurzel aus drei}"
+        },
+        {
+          "q": "Volumen eines **Würfels** mit Kante $a$:",
+          "a": "$$\nV = a^3\n$${V entspricht einem Würfel}"
+        },
+        {
+          "q": "Oberfläche eines **Würfels** mit Kante $a$:",
+          "a": "$$\nS = 6a^2\n$${S entspricht sechs im Quadrat}"
+        },
+        {
+          "q": "Volumen eines **Oktaeders** mit Kante $a$:",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{3}\n$${V entspricht a kubisch mal der Quadratwurzel von zwei, über drei}"
+        },
+        {
+          "q": "Oberfläche eines **Oktaeders** mit Kante $a$:",
+          "a": "$$\nS = 2a^2 \\sqrt{3}\n$${S entspricht zwei a zum Quadrat mal der Quadratwurzel von drei}"
+        },
+        {
+          "q": "Welche Form haben die Flächen eines **Ikosaeders**?",
+          "a": "20 Flächen, jedes ein **gleichseitiges Dreieck**."
+        },
+        {
+          "q": "Welche Form haben die Flächen eines **Dodekaeders**?",
+          "a": "12 Gesichter, jedes ein **regelmäßiges Fünfeck**."
+        },
+        {
+          "q": "**Eulers Formel** für konvexe Polyeder – $V$ Eckpunkte, $E$ Kanten, $F$ Flächen:",
+          "a": "$$\nV - E + F = 2\n$${V minus E plus F gleich zwei}"
+        }
+      ],
+      "deck_key": "solid-geometry"
+    }
+  ]
+}

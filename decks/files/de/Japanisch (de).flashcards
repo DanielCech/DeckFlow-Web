@@ -1,0 +1,1358 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Japanisch",
+  "interest_icon": "character.book.closed",
+  "interest_key": "japanese",
+  "deck_q_lang": "ja",
+  "deck_a_lang": "de",
+  "decks": [
+    {
+      "deck": "Hiragana – Grundlegend",
+      "deck_icon": "character.book.closed",
+      "cards": [
+        {
+          "q": "::: hero\nあ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[a]{ah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nい\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[i]{ee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nう\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[u]{oo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nえ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[e]{eh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nお\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[o]{oh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nか\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ka]{kah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nき\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ki]{kee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nく\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ku]{koo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nけ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ke]{keh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nこ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ko]{koh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nさ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[sa]{sah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nし\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[shi]{shee}\n:::\n\nNicht *si* – die ganze s-Reihe verschiebt sich hier.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nす\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[su]{soo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nせ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[se]{seh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nそ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[so]{soh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nた\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ta]{tah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nち\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[chi]{chee}\n:::\n\nNicht *ti* – die t-Reihe verschiebt sich bei i und u.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nつ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[tsu]{tsoo}\n:::\n\nNicht *tu*.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nて\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[te]{teh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nと\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[to]{toh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nな\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[na]{nah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nに\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ni]{nee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぬ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nu]{noo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nね\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ne]{neh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nの\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nein]{nein}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nは\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ha]{hah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nひ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hi]{hee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nふ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[fu]{foo}\n:::\n\nZwischen Englisch *f* und *h*; Die Lippen berühren die Zähne nicht.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nへ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[he]{heh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nほ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ho]{hoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nま\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ma]{mah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nみ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mi]{mee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nむ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mu]{muh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nめ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[me]{meh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nも\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mo]{moh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nや\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ya]{yah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nゆ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[yu]{yoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nよ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[yo]{yoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nら\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ra]{rah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nり\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ri]{ree}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nる\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ru]{roo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nれ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[re]{reh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nろ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ro]{roh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nわ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[wa]{wah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nを\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[o]{oh}\n:::\n\nIn einigen Systemen wird es *wo* geschrieben, aber *o** ausgesprochen. Wird fast nur als Objektpartikel verwendet.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nん\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[n]{nn}\n:::\n\nDas einzige Kana, das für sich genommen ein Konsonant ist. Es wird ein *m*-Laut vor b, p und m.",
+          "a_lang": "de"
+        }
+      ],
+      "deck_key": "hiragana-basic"
+    },
+    {
+      "deck": "Hiragana – Stimmhaft und Plosiv",
+      "deck_icon": "character.book.closed",
+      "cards": [
+        {
+          "q": "::: hero\nが\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ga]{gah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぎ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gi]{gee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぐ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gu]{goo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nげ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ge]{geh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nご\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[go]{goh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nざ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[za]{zah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nじ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ji]{jee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nず\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[zu]{zoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぜ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ze]{zeh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぞ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[zo]{zoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nだ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[da]{dah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぢ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ji]{jee}\n:::\n\nGleicher Klang wie じ. Selten – es existiert nur in wenigen Wörtern und in zusammengesetzten Formen.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nづ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[zu]{zoo}\n:::\n\nGleicher Klang wie ず. Aus dem gleichen Grund selten.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nで\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[de]{deh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nど\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[do]{doh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nば\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ba]{bah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nび\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bi]{Biene}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぶ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bu]{boo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nべ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[be]{beh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぼ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bo]{boh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぱ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pa]{pah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぴ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pi]{pipi}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぷ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pu]{poo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぺ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pe]{peh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぽ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[po]{poh}\n:::",
+          "a_lang": "de"
+        }
+      ],
+      "deck_key": "hiragana-voiced-and-plosive"
+    },
+    {
+      "deck": "Hiragana – Kombinationen",
+      "deck_icon": "character.book.closed",
+      "cards": [
+        {
+          "q": "::: hero\nきゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[kya]{kyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nきゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[kyu]{kyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nきょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[kyo]{kyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nしゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[sha]{shah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nしゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[shu]{shoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nしょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[sho]{shoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nちゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[cha]{chah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nちゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[chu]{choo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nちょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[cho]{choh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nにゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nya]{nyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nにゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nyu]{nyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nにょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nyo]{nyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nひゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hya]{hyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nひゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hyu]{hyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nひょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hyo]{hyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nみゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mya]{myah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nみゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[myu]{myoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nみょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[myo]{myoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nりゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[rya]{ryah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nりゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ryu]{ryoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nりょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ryo]{ryoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぎゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gya]{gyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぎゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gyu]{gyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぎょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gyo]{gyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nじゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ja]{jah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nじゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ju]{joo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nじょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[jo]{joh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nびゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bya]{byah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nびゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[byu]{byoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nびょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[byo]{byoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぴゃ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pya]{pyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぴゅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pyu]{pyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nぴょ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pyo]{pyoh}\n:::",
+          "a_lang": "de"
+        }
+      ],
+      "deck_key": "hiragana-combinations"
+    },
+    {
+      "deck": "Katakana – Grundlegend",
+      "deck_icon": "character.book.closed",
+      "cards": [
+        {
+          "q": "::: hero\nア\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[a]{ah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nイ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[i]{ee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nウ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[u]{oo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nエ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[e]{eh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nオ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[o]{oh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nカ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ka]{kah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nキ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ki]{kee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nク\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ku]{koo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nケ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ke]{keh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nコ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ko]{koh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nサ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[sa]{sah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nシ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[shi]{shee}\n:::\n\nNicht *si* – die ganze s-Reihe verschiebt sich hier.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nス\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[su]{soo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nセ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[se]{seh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nソ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[so]{soh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nタ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ta]{tah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nチ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[chi]{chee}\n:::\n\nNicht *ti* – die t-Reihe verschiebt sich bei i und u.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nツ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[tsu]{tsoo}\n:::\n\nNicht *tu*.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nテ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[te]{teh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nト\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[to]{toh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nナ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[na]{nah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nニ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ni]{nee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヌ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nu]{noo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nネ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ne]{neh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nノ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nein]{nein}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nハ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ha]{hah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヒ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hi]{hee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nフ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[fu]{foo}\n:::\n\nZwischen Englisch *f* und *h*; Die Lippen berühren die Zähne nicht.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヘ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[he]{heh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nホ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ho]{hoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nマ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ma]{mah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nミ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mi]{mee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nム\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mu]{muh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nメ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[me]{meh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nモ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mo]{moh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヤ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ya]{yah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nユ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[yu]{yoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヨ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[yo]{yoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nラ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ra]{rah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nリ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ri]{ree}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nル\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ru]{roo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nレ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[re]{reh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nロ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ro]{roh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nワ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[wa]{wah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヲ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[o]{oh}\n:::\n\nIn einigen Systemen wird es *wo* geschrieben, aber *o** ausgesprochen. Wird fast nur als Objektpartikel verwendet.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nン\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[n]{nn}\n:::\n\nDas einzige Kana, das für sich genommen ein Konsonant ist. Es wird ein *m*-Laut vor b, p und m.",
+          "a_lang": "de"
+        }
+      ],
+      "deck_key": "katakana-basic"
+    },
+    {
+      "deck": "Katakana – Stimmhaft und Plosiv",
+      "deck_icon": "character.book.closed",
+      "cards": [
+        {
+          "q": "::: hero\nガ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ga]{gah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nギ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gi]{gee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nグ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gu]{goo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nゲ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ge]{geh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nゴ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[go]{goh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nザ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[za]{zah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nジ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ji]{jee}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nズ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[zu]{zoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nゼ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ze]{zeh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nゾ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[zo]{zoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nダ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[da]{dah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヂ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ji]{jee}\n:::\n\nGleicher Klang wie じ. Selten – es existiert nur in wenigen Wörtern und in zusammengesetzten Formen.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヅ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[zu]{zoo}\n:::\n\nGleicher Klang wie ず. Aus dem gleichen Grund selten.",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nデ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[de]{deh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nド\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[do]{doh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nバ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ba]{bah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nビ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bi]{Biene}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nブ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bu]{boo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nベ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[be]{beh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nボ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bo]{boh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nパ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pa]{pah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nピ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pi]{pipi}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nプ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pu]{poo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nペ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pe]{peh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nポ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[po]{poh}\n:::",
+          "a_lang": "de"
+        }
+      ],
+      "deck_key": "katakana-voiced-and-plosive"
+    },
+    {
+      "deck": "Katakana – Kombinationen",
+      "deck_icon": "character.book.closed",
+      "cards": [
+        {
+          "q": "::: hero\nキャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[kya]{kyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nキュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[kyu]{kyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nキョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[kyo]{kyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nシャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[sha]{shah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nシュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[shu]{shoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nショ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[sho]{shoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nチャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[cha]{chah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nチュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[chu]{choo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nチョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[cho]{choh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nニャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nya]{nyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nニュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nyu]{nyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nニョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[nyo]{nyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヒャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hya]{hyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヒュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hyu]{hyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nヒョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[hyo]{hyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nミャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[mya]{myah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nミュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[myu]{myoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nミョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[myo]{myoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nリャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[rya]{ryah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nリュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ryu]{ryoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nリョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ryo]{ryoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nギャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gya]{gyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nギュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gyu]{gyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nギョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[gyo]{gyoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nジャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ja]{jah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nジュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[ju]{joo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nジョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[jo]{joh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nビャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[bya]{byah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nビュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[byu]{byoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nビョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[byo]{byoh}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nピャ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pya]{pyah}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nピュ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pyu]{pyoo}\n:::",
+          "a_lang": "de"
+        },
+        {
+          "q": "::: hero\nピョ\n:::",
+          "q_lang": "ja",
+          "a": "::: hero\n[pyo]{pyoh}\n:::",
+          "a_lang": "de"
+        }
+      ],
+      "deck_key": "katakana-combinations"
+    },
+    {
+      "deck": "Leseregeln",
+      "deck_icon": "book.closed",
+      "cards": [
+        {
+          "q": "Was ist der Zweckunterschied zwischen Hiragana und Katakana?",
+          "a": "Sie kodieren die **gleichen 46 Silben**; lediglich die Verwendung unterscheidet sich.\n\n* **Hiragana** – einheimische japanische Wörter, grammatikalische Endungen und Partikel\n* **Katakana** – Lehnwörter, ausländische Namen, Lautmalerei und Betonung\n\nDie Lektüre, die Sie einmal lernen, dient also beiden.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Was bewirkt das Dakuten-Zeichen (゛)?",
+          "a": "Es spricht den Konsonanten aus: か *ka* wird zu が *ga*, さ *sa* wird zu ざ *za*, た *ta* wird zu だ *da*, は *ha* wird zu ば *ba*.\n\nEine Markierung, vier Reihen – weshalb 20 der stimmhaften Kana kein separates Auswendiglernen erfordern.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Was bewirkt das Handakuten-Zeichen (゜) und welche Zeile nimmt es ein?",
+          "a": "Es verwandelt die **nur h-Zeile** in p: は *ha* wird zu ぱ *pa*.\n\nEs ist die einzige Ausnahme von dem Muster, dass ein diakritisches Zeichen einen Konsonanten ausspricht – p ist nicht das stimmhafte Gegenstück zu h, aber historisch gesehen war die Zeile p.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Was bedeutet ein kleines つ (っ)?",
+          "a": "Das **Sokuon** – es verdoppelt den folgenden Konsonanten und hält einen Moment der Stille davor.\n\nきって ist *kitte*, nicht *kite*. Die Pause ist eine volle Mora, sie verändert also sowohl die Länge des Wortes als auch seine Schreibweise.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Wie schreibt man einen langen Vokal im Hiragana und wie im Katakana?",
+          "a": "**Hiragana** wiederholt den Vokal Kana: تفيقきい *ōkii*. Die O-Zeile ist die unregelmäßige – langes *o* wird normalerweise mit う geschrieben, wie in とうきょう *Tōkyō*.\n\n**Katakana** verwendet einen Balken, ー: コーヒー *kōhī*.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Warum klingen die Teilchen は, へ und を anders als ihr Kana?",
+          "a": "Als **Teilchen** werden sie *wa*, *e* und *o* ausgesprochen – nicht *ha*, *he* und *wo*.\n\nDie Schreibweise bewahrt eine ältere Aussprache. Innerhalb eines gewöhnlichen Wortes liest sich dasselbe Kana normal, es ist also die grammatikalische Rolle, die entscheidet.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Was macht ein kleines ゃ, ゅ oder ょ mit dem Kana davor?",
+          "a": "Es verschmilzt damit zu einer **einzigen Mora**: き + ゃ ist *kya*, ein Schlag, nicht *ki-ya*, zwei.\n\nNur die I-Spalten-Kana (き, し, ち, に, ひ, み, り und ihre stimmhaften Formen) können eine annehmen.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Wie viele Silben hat きゃ und warum ist das wichtig?",
+          "a": "**Eins.** Das kleine ゃ fügt keinen Takt hinzu.\n\nDer japanische Rhythmus wird in Morae gezählt, daher sind *kyo* (eins) und *kiyo* (zwei) unterschiedliche Wörter. Das kleine Kana als ganze Silbe zu lesen, ist der häufigste Anfängerfehler.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Welches Kana wird in den Zeilen s, t und h anders geschrieben als romanisiert?",
+          "a": "*し ist **shi**, nicht *si*\n* ち ist **chi**, nicht *ti*\n* つ ist **tsu**, nicht *tu*\n*ふ ist **fu**, nicht *hu*\n\nDie Zeilen sind im Japanischen regelmäßig; Es ist das lateinische Alphabet, das keinen passenden Laut hat, weshalb die Umschriftsysteme hier und nirgendwo anders unterschiedlich sind.",
+          "a_lang": "de"
+        },
+        {
+          "q": "Was ist das Gojūon und warum lernt man das Kana in dieser Reihenfolge?",
+          "a": "Das traditionelle 5 × 10-Raster – fünf Vokale in der Breite, zehn Konsonantenreihen nach unten – gibt der Silbe ihren Namen („fünfzig Laute“).\n\nEs handelt sich um die Reihenfolge, die in Wörterbüchern, Lehrbüchern und Verbkonjugationstabellen verwendet wird. Das Erlernen dieser Reihenfolge macht diese Tabellen also lesbar und nicht willkürlich.",
+          "a_lang": "de"
+        }
+      ],
+      "deck_key": "reading-rules"
+    }
+  ]
+}

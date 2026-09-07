@@ -1,0 +1,441 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Kotlin",
+  "interest_icon": "curlybraces",
+  "interest_key": "kotlin",
+  "deck_q_lang": "de",
+  "deck_a_lang": "de",
+  "decks": [
+    {
+      "deck": "Syntax-Grundlagen",
+      "deck_icon": "textformat",
+      "cards": [
+        {
+          "q": "Was ist der Unterschied zwischen `val` und `var`?",
+          "a": "`val` ist eine schreibgeschützte *Referenz*; `var` kann neu zugewiesen werden.\n```kotlin\nval pi = 3.14\nvar count = 0\ncount += 1\n```\n`val` bedeutet **nicht** unveränderliche Inhalte – `val list = mutableListOf(1)` kann immer noch `add(2)` sein."
+        },
+        {
+          "q": "Was ist eine Single-Expression-Funktion?",
+          "a": "Eine Funktion, deren Körper ein Ausdruck nach `=` ist. Der Rückgabetyp kann abgeleitet werden.\n```kotlin\nfun sum(a: Int, b: Int) = a + b\nfun square(x: Int): Int = x * x\n```"
+        },
+        {
+          "q": "Wie funktionieren String-Vorlagen?",
+          "a": "```kotlin\nval name = \"Dan\"\nval hi = \"Hello, $name!\"\nval len = \"Len: ${name.length}\"\n```\nVerwenden Sie `\\$` für ein wörtliches Dollarzeichen."
+        },
+        {
+          "q": "Wie schreibt man eine rohe (mehrzeilige) Zeichenfolge?",
+          "a": "```kotlin\nval json = \"\"\"\n  {\n    \"id\": 1\n  }\n\"\"\".trimIndent()\n```\nDreifache Anführungszeichen übernehmen den Text wörtlich; `trimIndent()` entfernt den gemeinsamen Einzug."
+        },
+        {
+          "q": "Wie funktioniert der Ausdruck `when`?",
+          "a": "```kotlin\nval msg = when (code) {\n    200 -> \"OK\"\n    in 400..499 -> \"Client\"\n    is Int -> \"Other: $code\"\n    else -> \"Unknown\"\n}\n```\n`when` ohne Argument ersetzt eine `if`/`else if`-Kette."
+        },
+        {
+          "q": "Wie erstellt und iteriert man einen Bereich?",
+          "a": "```kotlin\nfor (i in 1..10) { }     // inclusive\nfor (i in 1 until 10) { } // 1..9\nfor (i in 10 downTo 1) { }\nfor (i in 1..10 step 2) { }\n```"
+        },
+        {
+          "q": "Was ist `Unit` in Kotlin?",
+          "a": "Der Typ einer Funktion ohne sinnvollen Rückgabewert – ein Wert, auch `Unit` genannt.\n\nIm Gegensatz zu Javas `void` handelt es sich um einen echten Typ: Er kann zurückgegeben, gespeichert und als generisches Argument verwendet werden."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `Nothing` und `Unit`?",
+          "a": "`Unit` – die Funktion gibt zurück, aber der Wert enthält keine Informationen.\n`Nothing` – Die Funktion kehrt nie normal zurück (sie löst aus, führt eine Endlosschleife durch oder wird beendet).\n\n`Nothing` ist ein Untertyp jedes Typs, daher wird Folgendes kompiliert:\n```kotlin\nval x: Int = error(\"boom\")\n```"
+        },
+        {
+          "q": "Wie funktionieren numerische Typen und Konvertierungen?",
+          "a": "`Byte`, `Short`, `Int`, `Long`, `Float`, `Double`. Es gibt **keine impliziten Erweiterungskonvertierungen**:\n```kotlin\nval i: Int = 42\nval l: Long = i.toLong()\n```\nDas direkte Zuweisen von `i` zu einem `Long` ist ein Kompilierungsfehler."
+        },
+        {
+          "q": "Was macht `typealias`?",
+          "a": "```kotlin\ntypealias UserId = String\ntypealias Handler = (Event) -> Unit\n```\nEin neuer Name für einen vorhandenen Typ. Es bietet keine Typsicherheit – der zugrunde liegende Typ bleibt unverändert."
+        }
+      ],
+      "deck_key": "syntax-basics"
+    },
+    {
+      "deck": "Null Sicherheit",
+      "deck_icon": "checkmark.shield",
+      "cards": [
+        {
+          "q": "Was ist der Unterschied zwischen `String?` und `String`?",
+          "a": "`String` ist nicht nullbar – der Compiler garantiert, dass es niemals null ist.\n`String?` ist nullbar und muss vor der Verwendung entpackt werden.\n\nNullsicherheit wird zur Kompilierungszeit statisch erzwungen."
+        },
+        {
+          "q": "Wie funktioniert der Safe-Call-Operator `?.`?",
+          "a": "```kotlin\nval len: Int? = user?.name?.length\n```\nWenn ein Glied in der Kette null ist, ist der gesamte Ausdruck null – es wird keine Ausnahme ausgelöst."
+        },
+        {
+          "q": "Wie funktioniert der Elvis-Operator `?:`?",
+          "a": "```kotlin\nval name = user?.name ?: \"Unknown\"\nval id = findId() ?: return\nval id2 = findId() ?: error(\"no id\")\n```\nDie rechte Seite wird nur ausgewertet, wenn die linke Seite null ist."
+        },
+        {
+          "q": "Was bewirkt die Nicht-Null-Behauptung `!!`?",
+          "a": "```kotlin\nval len: Int = user!!.name!!.length\n```\nErzwingt ein Entpacken und löst `NullPointerException` aus, wenn der Wert null ist. Behandeln Sie es als Codegeruch."
+        },
+        {
+          "q": "Wie funktioniert ein Smart Cast bei einem Nullable-Wert?",
+          "a": "```kotlin\nfun greet(name: String?) {\n    if (name != null) {\n        println(name.length)\n    }\n}\n```\nInnerhalb der Verzweigung wird `name` per Smartcast in `String` umgewandelt. Es funktioniert nur für einen `val` oder einen lokalen `var`, den kein Lambda dazwischen hätte ändern können."
+        },
+        {
+          "q": "Wie entpackt man einen nullbaren Wert mit `let`?",
+          "a": "```kotlin\nuser?.let { u ->\n    println(u.name)\n}\n```\nDer Block wird nur ausgeführt, wenn der Empfänger ungleich Null ist und `let` das Ergebnis des Blocks zurückgibt, also die Kette aufruft."
+        },
+        {
+          "q": "Was ist ein Plattformtyp wie `String!`?",
+          "a": "Ein aus Java stammender Typ ohne Nullbarkeitsanmerkung. Kotlin behandelt es als möglicherweise null, erzwingt jedoch keine Prüfung, sodass ein NPE immer noch entkommen kann.\n\nBeheben Sie das Problem, indem Sie die Java-API mit `@Nullable` / `@NonNull` annotieren oder sie einem expliziten `String?` zuweisen."
+        },
+        {
+          "q": "Wie können Sie eine nullfähige Sammlung oder Zeichenfolge sicher als Standard festlegen?",
+          "a": "```kotlin\nval items = response.items.orEmpty()\nval first = list?.firstOrNull() ?: return\n```\n`orEmpty()` existiert für nullfähige `String`, `List`, `Set` und `Map`."
+        }
+      ],
+      "deck_key": "null-safety"
+    },
+    {
+      "deck": "Funktionen",
+      "deck_icon": "function",
+      "cards": [
+        {
+          "q": "Wie lautet die Syntax für Standardargumente und benannte Argumente?",
+          "a": "```kotlin\nfun connect(\n    host: String,\n    port: Int = 443,\n    tls: Boolean = true\n) { }\n\nconnect(\"api.dev\", port = 8080)\n```\nArgumentbezeichnungen sind in Kotlin im Gegensatz zu Swift optional."
+        },
+        {
+          "q": "Was ist eine Erweiterungsfunktion?",
+          "a": "```kotlin\nfun String.shout() = uppercase() + \"!\"\n\"hello\".shout()  // HELLO!\n```\nEine statische Funktion mit einem Empfänger. Es verändert die Klasse nicht und ist kein Teil davon."
+        },
+        {
+          "q": "Wenn ein Klassenmitglied und eine Erweiterung die gleiche Signatur haben, welches gewinnt?",
+          "a": "Das **Mitglied** gewinnt.\n\nErweiterungen werden statisch vom Typ zur Kompilierungszeit aufgelöst und können niemals überschrieben werden – es erfolgt kein dynamischer Versand an eine Erweiterung."
+        },
+        {
+          "q": "Was ist eine `infix`-Funktion?",
+          "a": "```kotlin\ninfix fun Int.times(s: String) =\n    s.repeat(this)\nval row = 3 times \"ab\"  // ababab\n```\nWird ohne Punkt oder Klammern aufgerufen. Es muss ein Mitglied oder eine Erweiterung sein, die genau einen Parameter annimmt. `to`, `shl` und `downTo` sind Beispiele für Standardbibliotheken."
+        },
+        {
+          "q": "Was ist `vararg` und wie verteilt man ein Array darin?",
+          "a": "```kotlin\nfun log(vararg msgs: String) { }\nlog(\"a\", \"b\")\n\nval arr = arrayOf(\"x\", \"y\")\nlog(*arr)  // spread\n```"
+        },
+        {
+          "q": "Wie deklariert man einen Funktionstyp und eine Funktion höherer Ordnung?",
+          "a": "```kotlin\nfun <T, R> apply(\n    x: T,\n    f: (T) -> R\n): R = f(x)\n\nval len: (String) -> Int = { it.length }\nval p: (Any) -> Unit = ::println\n```\n`::println` ist eine Funktionsreferenz."
+        },
+        {
+          "q": "Was macht `inline` mit einer Funktion und wann lohnt es sich?",
+          "a": "Der Compiler ersetzt den Funktionskörper – und alle an ihn übergebenen Lambda-Werte – an der Aufrufstelle. Dadurch wird die `Function`-Objektzuordnung des Lambda entfernt, ein nicht lokales `return` zugelassen und Parameter vom Typ `reified` aktiviert.\n\nEs lohnt sich für kleine Funktionen höherer Ordnung; schädlich für große Körper, die es an jeder Rufstelle dupliziert."
+        },
+        {
+          "q": "Was ist ein Parameter vom Typ `reified`?",
+          "a": "```kotlin\ninline fun <reified T> parse(\n    json: String\n): T = decode(json, T::class.java)\n\nval user: User = parse(text)\n```\n`reified` macht `T` zur Laufzeit verfügbar. Es erfordert `inline`, da der Typ am Aufrufort ersetzt wird."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `return`, `return@label` und einer nicht-lokalen Rückgabe?",
+          "a": "```kotlin\nlist.forEach {\n    if (it == 0) return       // leaves the outer fn\n    if (it < 0) return@forEach // acts as continue\n}\n```\nDer nicht-lokale `return` wird nur innerhalb einer `inline`-Funktion höherer Ordnung kompiliert."
+        },
+        {
+          "q": "Wie funktioniert die Überlastung des Bedieners?",
+          "a": "```kotlin\ndata class Vec(val x: Int, val y: Int) {\n    operator fun plus(o: Vec) =\n        Vec(x + o.x, y + o.y)\n}\nval c = Vec(1, 2) + Vec(3, 4)\n```\nDie Namen sind durch Konvention festgelegt: `plus`, `minus`, `times`, `get`, `set`, `invoke`, `compareTo`, `contains`."
+        }
+      ],
+      "deck_key": "functions"
+    },
+    {
+      "deck": "Klassen und OOP",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "Wie funktioniert der primäre Konstruktor?",
+          "a": "```kotlin\nclass User(\n    val id: String,\n    var name: String\n) {\n    init { require(id.isNotEmpty()) }\n}\n```\n`val`/`var` im Konstruktor deklariert auch die Eigenschaft. `init` Blöcke werden in der Deklarationsreihenfolge ausgeführt."
+        },
+        {
+          "q": "Was sind die Standardsichtbarkeit und Endgültigkeit einer Kotlin-Klasse?",
+          "a": "`public` und **`final`**.\n\nUm Unterklassen oder Überschreibungen zu ermöglichen, müssen Sie `open class` und `open fun` explizit schreiben."
+        },
+        {
+          "q": "Was erzeugt `data class`?",
+          "a": "```kotlin\ndata class User(\n    val id: String,\n    val name: String\n)\n```\n`equals`, `hashCode`, `toString`, `copy()` und `componentN()` zur Destrukturierung. Es erfordert mindestens einen Primärkonstruktorparameter."
+        },
+        {
+          "q": "Was macht `copy()` für eine Datenklasse?",
+          "a": "```kotlin\nval u = User(\"1\", \"Dan\")\nval u2 = u.copy(name = \"Daniel\")\n```\nGibt eine neue Instanz zurück, wobei die benannten Eigenschaften ersetzt und alles andere übernommen wurde – das Standardmuster für unveränderliche Aktualisierungen."
+        },
+        {
+          "q": "Was ist ein `sealed class` oder `sealed interface`?",
+          "a": "```kotlin\nsealed interface Result<out T> {\n    data class Ok<T>(val v: T) : Result<T>\n    data class Err(val e: Throwable) :\n        Result<Nothing>\n    data object Loading : Result<Nothing>\n}\n```\nEine geschlossene Hierarchie: Alle direkten Untertypen sind zur Kompilierzeit bekannt, sodass `when` darüber erschöpfend sein kann, ohne dass ein `else` vorhanden ist."
+        },
+        {
+          "q": "Was ist eine `object`-Erklärung?",
+          "a": "```kotlin\nobject Config {\n    val apiUrl = \"https://api.dev\"\n    fun load() { }\n}\nConfig.load()\n```\nEin threadsicherer Singleton, der beim ersten Zugriff träge initialisiert wird."
+        },
+        {
+          "q": "Was ist ein `companion object`?",
+          "a": "```kotlin\nclass User(val id: String) {\n    companion object {\n        fun fromJson(s: String): User =\n            decode(s)\n    }\n}\nUser.fromJson(text)\n```\nMitglieder, die für den Typ selbst aufrufbar sind. Eine pro Klasse."
+        },
+        {
+          "q": "`class`, `data class`, `object`, `data object` – wozu dienen sie?",
+          "a": "* `class` – eine gewöhnliche Klasse\n* `data class` – wertähnlich, mit generiertem `equals`/`hashCode`/`copy`\n* `object` – ein Singleton\n* `data object` – ein Singleton mit einem lesbaren `toString` und einem stabilen `equals`\n\nBevorzugen Sie seit Kotlin 1.9 `data object` für die parameterlosen Fälle einer versiegelten Hierarchie."
+        },
+        {
+          "q": "Was kann ein `enum class`?",
+          "a": "```kotlin\nenum class Direction(val deg: Int) {\n    NORTH(0), EAST(90),\n    SOUTH(180), WEST(270);\n\n    fun opposite() = when (this) {\n        NORTH -> SOUTH\n        SOUTH -> NORTH\n        EAST -> WEST\n        WEST -> EAST\n    }\n}\n```\nKonstruktorparameter, Eigenschaften, Methoden und fallweise Überschreibungen eines abstrakten Members."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen einem `abstract class` und einem `interface`?",
+          "a": "**Abstrakte Klasse** – kann den Status in Hintergrundfeldern halten; Nur Einzelvererbung.\n\n**Schnittstelle** – keine Hintergrundfelder (ein `val` muss abstrakt oder berechnet sein); Eine Klasse kann viele implementieren und Standardmethodenkörper sind zulässig."
+        },
+        {
+          "q": "Was bewirkt die Klassendelegation mit `by`?",
+          "a": "```kotlin\ninterface Repo { fun load(): Data }\n\nclass CachedRepo(base: Repo) :\n    Repo by base\n```\nDer Compiler generiert Weiterleitungsimplementierungen für jedes Schnittstellenmitglied, sodass Sie nur das überschreiben, was Sie tatsächlich ändern möchten."
+        },
+        {
+          "q": "Was macht `by lazy`?",
+          "a": "```kotlin\nval config by lazy { loadConfig() }\n```\nBerechnet den Wert beim ersten Zugriff und speichert ihn zwischen. Standardmäßig Thread-sicher (`LazyThreadSafetyMode.SYNCHRONIZED`)."
+        },
+        {
+          "q": "Was macht `lateinit var`?",
+          "a": "```kotlin\nlateinit var service: Service\n\nfun setUp() { service = Service() }\n```\nVerschiebt die Initialisierung eines Nicht-Null-`var`. Wenn man es zuerst liest, wird `UninitializedPropertyAccessException` ausgegeben; Test mit `::service.isInitialized`.\n\nNicht zulässig auf Grundelementen oder auf einem `val`."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen einer verschachtelten Klasse und einem `inner class`?",
+          "a": "Eine verschachtelte Klasse (Standard) hat keinen Verweis auf die äußere Instanz – wie eine verschachtelte Java-Klasse `static`.\n\nEin `inner class` enthält diese Referenz und kann `this@Outer` verwenden."
+        }
+      ],
+      "deck_key": "classes-and-oop"
+    },
+    {
+      "deck": "Scope-Funktionen",
+      "deck_icon": "curlybraces",
+      "cards": [
+        {
+          "q": "Fassen Sie die fünf Bereichsfunktionen nach Kontextobjekt und Rückgabewert zusammen.",
+          "a": "```text\nlet   : it   -> block result\nrun   : this -> block result\nwith  : this -> block result\napply : this -> the receiver\nalso  : it   -> the receiver\n```\n`run` und `let` sind Erweiterungen; `with` nimmt sein Subjekt als Argument."
+        },
+        {
+          "q": "Wann verwenden Sie `let`?",
+          "a": "```kotlin\nuser?.let {\n    logger.info(it.name)\n}\nval len = name?.let { it.length } ?: 0\n```\nEin Nullable auspacken und einen Wert in etwas anderes umwandeln."
+        },
+        {
+          "q": "Wann verwenden Sie `apply`?",
+          "a": "```kotlin\nval req = Request().apply {\n    method = \"POST\"\n    header(\"Accept\", \"json\")\n}\n```\nEin Objekt konfigurieren und dasselbe Objekt zurückerhalten – das Builder-Muster."
+        },
+        {
+          "q": "Wann verwenden Sie `also`?",
+          "a": "```kotlin\nval user = loadUser().also {\n    logger.info(\"Loaded ${it.id}\")\n    cache.put(it.id, it)\n}\n```\nEin Nebeneffekt, der nicht ändern darf, was der Ausdruck auswertet. `it` macht deutlich, dass es sich nicht um `this` handelt."
+        },
+        {
+          "q": "Wann verwendet man `run` und `with`?",
+          "a": "```kotlin\nval area = rect.run { width * height }\nval desc = with(user) { \"$name ($id)\" }\n```\nBeide stellen das Subjekt als `this` bereit und geben das Ergebnis des Blocks zurück."
+        },
+        {
+          "q": "Warum `apply` anstelle von `also` wählen oder umgekehrt?",
+          "a": "`apply` gibt Ihnen ein implizites `this`, also schreiben Sie `property = value`.\n\n`also` gibt dir `it`, also schreibst du `it.property = value`. Bevorzugen Sie `also`, wenn im Geltungsbereich bereits ein sinnvolles `this` vorhanden ist, oder um zu signalisieren, dass es sich bei der Blockierung um einen Nebeneffekt handelt."
+        }
+      ],
+      "deck_key": "scope-functions"
+    },
+    {
+      "deck": "Sammlungen",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "Was ist der Unterschied zwischen einer schreibgeschützten und einer veränderbaren Sammlung?",
+          "a": "```kotlin\nval list: List<Int> = listOf(1, 2)\nval m: MutableList<Int> =\n    mutableListOf()\n```\n`List` ist eine schreibgeschützte *Schnittstelle*. Das Objekt dahinter ist möglicherweise immer noch veränderbar, daher ist eine schreibgeschützte Referenz keine Garantie für Unveränderlichkeit."
+        },
+        {
+          "q": "Wie erstellt man die gängigen Sammlungstypen?",
+          "a": "```kotlin\nlistOf(1, 2, 3)\nmutableListOf(1)\nsetOf(1, 2)\nmapOf(\"a\" to 1)\nmutableMapOf<String, Int>()\narrayOf(1, 2, 3)\nIntArray(5) { it * 2 }\n```"
+        },
+        {
+          "q": "Was machen `map`, `filter` und `flatMap`?",
+          "a": "```kotlin\nlistOf(1,2,3).map { it * 2 }\nlistOf(1,2,3).filter { it > 1 }\nlistOf(\"ab\").flatMap { it.toList() }\n```\nAlle drei sind gespannt auf einen `List` – jeder gibt eine neue Liste zurück."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `fold` und `reduce`?",
+          "a": "```kotlin\nlistOf(1,2,3).reduce { a, x -> a + x }   // 6\nlistOf(1,2,3).fold(10) { a, x -> a + x } // 16\n```\n`reduce` verwendet das erste Element als Startwert und wirft eine leere Sammlung auf. `fold` benötigt einen expliziten Startwert, der möglicherweise einen anderen Typ als die Elemente hat."
+        },
+        {
+          "q": "Wann sollten Sie einen `Sequence` verwenden?",
+          "a": "```kotlin\nlist.asSequence()\n    .map { heavy(it) }\n    .filter { it > 0 }\n    .take(3)\n    .toList()\n```\nSequenzen sind faul: Die Operationen verschmelzen und nichts wird ausgeführt, bis eine Terminaloperation ausgeführt wird. Es lohnt sich bei langen Betriebsketten, großen Sammlungen oder einem frühen `take`."
+        },
+        {
+          "q": "Was machen `groupBy` und `associateBy`?",
+          "a": "```kotlin\nusers.groupBy { it.city }\n// Map<String, List<User>>\nusers.associateBy { it.id }\n// Map<String, User>\n```\n`groupBy` sammelt jedes Element, das einen Schlüssel teilt; `associateBy` geht davon aus, dass der Schlüssel eindeutig ist und spätere Duplikate frühere überschreiben."
+        },
+        {
+          "q": "Wie erstellt man eine Karte mit einem transformierten Schlüssel oder Wert?",
+          "a": "```kotlin\nusers.associate { it.id to it.name }\nusers.associateWith { score(it) }\nusers.groupingBy { it.city }\n     .eachCount()\n```"
+        },
+        {
+          "q": "Was machen `zip`, `windowed` und `chunked`?",
+          "a": "```kotlin\nlistOf(1,2,3) zip listOf(\"a\",\"b\")\n// [(1,a),(2,b)] — stops at the shorter\n(1..5).windowed(3)\n// [[1,2,3],[2,3,4],[3,4,5]]\n(1..5).chunked(2)\n// [[1,2],[3,4],[5]]\n```"
+        },
+        {
+          "q": "Was ist eine Destrukturierungserklärung?",
+          "a": "```kotlin\nval (name, age) = user\nfor ((k, v) in map) { }\nval (a, b, _) = triple\n```\nEs ruft `component1()`, `component2()` usw. auf – verfügbar für Datenklassen, `Pair`, `Triple` und Karteneinträge. Es ist positionell, nicht namentlich."
+        }
+      ],
+      "deck_key": "collections"
+    },
+    {
+      "deck": "Coroutinen und Flow",
+      "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
+      "cards": [
+        {
+          "q": "Was bedeutet `suspend`?",
+          "a": "```kotlin\nsuspend fun loadUser(id: String): User\n```\nDie Funktion kann angehalten und fortgesetzt werden, ohne ihren Thread zu blockieren. Es kann nur von einer anderen `suspend`-Funktion oder von einem Coroutine-Builder aufgerufen werden."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `launch` und `async`?",
+          "a": "```kotlin\nscope.launch { }        // Job\nval d = scope.async { compute() }\nval v = d.await()       // Deferred<T>\n```\n`launch` ist Fire-and-Forget und gibt ein `Job` zurück. `async` gibt einen `Deferred<T>` zurück und Sie `await()`."
+        },
+        {
+          "q": "Was macht `coroutineScope { }`?",
+          "a": "```kotlin\nsuspend fun loadAll() = coroutineScope {\n    val a = async { fetchA() }\n    val b = async { fetchB() }\n    a.await() to b.await()\n}\n```\nEs bietet strukturierte Parallelität: Die Funktion kehrt erst zurück, wenn jedes untergeordnete Element fertig ist. Wenn ein untergeordnetes Element fehlschlägt, werden die Geschwister abgebrochen und der Fehler wird erneut ausgelöst."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `coroutineScope` und `supervisorScope`?",
+          "a": "`coroutineScope` – ausfallsicher. Ein scheiterndes Kind bricht seine Geschwister und den Umfang ab.\n\n`supervisorScope` – ein schwaches Kind wird isoliert; seine Geschwister laufen weiter."
+        },
+        {
+          "q": "Wozu dienen `Dispatchers.Main`, `IO`, `Default` und `Unconfined`?",
+          "a": "* `Main` – der UI-Thread\n* `IO` – blockierende Arbeit (Netzwerk, Festplatte); ein großer elastischer Pool\n* `Default` – CPU-gebundene Arbeit; Poolgröße entsprechend der CPU-Anzahl\n* `Unconfined` – wird in dem Thread fortgesetzt, in dem die Fortsetzung ankommt; Meistens für Tests"
+        },
+        {
+          "q": "Was macht `withContext`?",
+          "a": "```kotlin\nsuspend fun read(): String =\n    withContext(Dispatchers.IO) {\n        File(\"data\").readText()\n    }\n```\nFührt den Block auf einem anderen Dispatcher aus und hält ihn an, bis er zurückkehrt, sodass der Kontext des Aufrufers anschließend wiederhergestellt wird. Im Gegensatz zu `launch` gibt es einen Wert zurück."
+        },
+        {
+          "q": "Wie storniert man eine Coroutine und warum ist die Stornierung kooperativ?",
+          "a": "```kotlin\nval job = scope.launch { }\njob.cancel()\njob.cancelAndJoin()\n```\nStornierung setzt ein Flag; Die Coroutine stoppt nur an einem Aufhängepunkt. Eine enge CPU-Schleife ohne `suspend`-Aufruf muss `ensureActive()` oder `isActive` selbst überprüfen."
+        },
+        {
+          "q": "Was ist ein `Flow`?",
+          "a": "```kotlin\nfun ticks(): Flow<Int> = flow {\n    var i = 0\n    while (true) {\n        emit(i++)\n        delay(1000)\n    }\n}\nticks().collect { println(it) }\n```\nEin kalter asynchroner Stream: Nichts wird ausgeführt, bis er erfasst wird, und jeder Collector erhält seinen eigenen Lauf."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `StateFlow` und `SharedFlow`?",
+          "a": "`StateFlow<T>` – heiß, hält immer einen Strom `value`, verschmilzt (behält nur das Neueste) und wird nur ausgegeben, wenn sich der Wert tatsächlich ändert.\n\n`SharedFlow<T>` – heiß, mit konfigurierbarer Wiedergabe und Pufferung; Es gibt jeden Wert aus, einschließlich Wiederholungen."
+        },
+        {
+          "q": "Wie kombiniert man zwei Flüsse?",
+          "a": "```kotlin\ncombine(userFlow, settingsFlow) { u, s ->\n    UiState(u, s)\n}.collect { }\n```\nVerwandte Operatoren: `zip` paart streng 1:1, `merge` verschachtelt beide Streams und `flatMapLatest` bricht den vorherigen inneren Fluss ab, wenn ein neuer Wert eintrifft."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `delay` und `Thread.sleep` innerhalb einer Coroutine?",
+          "a": "`delay` unterbricht die Coroutine und gibt den Thread für andere Arbeiten frei.\n\n`Thread.sleep` blockiert den zugrunde liegenden Thread, was in einem kleinen Dispatcher-Pool nicht verwandte Coroutinen blockieren kann. Verwenden Sie es niemals im `suspend`-Code."
+        }
+      ],
+      "deck_key": "coroutines-and-flow"
+    },
+    {
+      "deck": "Generika und Varianz",
+      "deck_icon": "chevron.left.forwardslash.chevron.right",
+      "cards": [
+        {
+          "q": "Wie deklariert man eine generische Klasse und Funktion mit einer Grenze?",
+          "a": "```kotlin\nclass Box<T>(val value: T)\n\nfun <T> single(x: T): List<T> =\n    listOf(x)\n\nfun <T : Comparable<T>> max(a: T, b: T) =\n    if (a > b) a else b\n```"
+        },
+        {
+          "q": "Was bedeuten `out` und `in` für einen Typparameter?",
+          "a": "`out T` – kovariant, ein Produzent: `T` darf nur in der Ausgabeposition erscheinen.\n`in T` – Kontravariante, ein Verbraucher: `T` darf nur in der Eingabeposition erscheinen.\n```kotlin\ninterface Source<out T> { fun next(): T }\ninterface Sink<in T> { fun accept(x: T) }\n```\n`Source<String>` ist dann als `Source<Any>` verwendbar."
+        },
+        {
+          "q": "Was ist eine Sternprojektion, `List<*>`?",
+          "a": "```kotlin\nfun printAll(list: List<*>) {\n    for (x in list) println(x) // Any?\n}\n```\nEs bedeutet „ein bestimmtes, aber unbekanntes Argument“. Sie können Werte als `Any?` lesen, aber nichts hineinschreiben, da der tatsächliche Typ unbekannt ist."
+        },
+        {
+          "q": "Wie gibt man einem Typparameter mehr als eine Grenze?",
+          "a": "```kotlin\nfun <T> process(x: T)\n    where T : Comparable<T>,\n          T : Cloneable { }\n```\nDie Klausel `where` ist die einzige Möglichkeit – die Abkürzung `<T : A>` benötigt nur eine Grenze."
+        },
+        {
+          "q": "Was ist Typlöschung und wie kann man sie umgehen?",
+          "a": "Generische Typargumente werden zur Laufzeit auf der JVM gelöscht, sodass `list is List<String>` nicht kompiliert werden kann – nur `list is List<*>`.\n\nDie Problemumgehung ist `inline fun <reified T>`, das den echten Typ an jeder Aufrufstelle ersetzt."
+        }
+      ],
+      "deck_key": "generics-and-variance"
+    },
+    {
+      "deck": "Multiplattform",
+      "deck_icon": "building.2",
+      "cards": [
+        {
+          "q": "Was sind `commonMain`, `androidMain` und `iosMain`?",
+          "a": "Kotlin Multiplattform-Quellensätze.\n\n* `commonMain` – gemeinsame Kotlin- und `expect`-Deklarationen\n* `androidMain` – JVM/Android-Code und seine `actual`-Implementierungen\n* `iosMain` – Kotlin/Nativer Code, kompiliert in ein Objective-C-Framework\n\nTests spiegeln das gleiche Layout wider: `commonTest`, `androidTest`, `iosTest`."
+        },
+        {
+          "q": "Was machen `expect` und `actual`?",
+          "a": "```kotlin\n// commonMain\nexpect class Platform() {\n    val name: String\n}\n\n// androidMain\nactual class Platform {\n    actual val name = \"Android\"\n}\n```\n`expect` deklariert eine API, die der gemeinsam genutzte Code aufrufen darf; Jedes Ziel muss ein passendes `actual` bereitstellen, sonst schlägt der Build fehl."
+        },
+        {
+          "q": "Was sind die Schichten einer sauberen Multiplattform-Architektur?",
+          "a": "1. **UI** – Verfassen oder SwiftUI, plus Modelle anzeigen\n2. **Domäne** – reine Kotlin-Anwendungsfälle, Domänenmodelle, Repository-*Schnittstellen*\n3. **Daten** – Repository-Implementierungen, Remote- und lokale Datenquellen und die Mapper zwischen ihnen\n\nDie Domänenschicht hängt von nichts Plattformspezifischem ab, weshalb sie in `commonMain` leben kann."
+        },
+        {
+          "q": "Wozu dient das Repository-Muster?",
+          "a": "Es steht zwischen einem Anwendungsfall und den Datenquellen und ist für die Entscheidung zwischen Cache und Netzwerk zuständig. Die Schnittstelle gehört zur Domänenschicht; Die Implementierung, die HTTP und die Datenbank kennt, gehört zur Datenschicht."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen einem DTO, einem Entitäts- und einem Domänenmodell?",
+          "a": "* **DTO** – die Form der API-Nutzlast mit Serialisierungsanmerkungen\n* **Entität** – die Form einer Datenbankzeile mit Persistenzanmerkungen\n* **Domänenmodell** – die Geschäftsform, ohne Framework-Abhängigkeiten\n\nMapper-Funktionen konvertieren zwischen ihnen, wodurch verhindert wird, dass eine API-Umbenennung die Benutzeroberfläche erreicht."
+        },
+        {
+          "q": "Warum einen Multiplattform-HTTP-Client einem reinen Android-Client vorziehen?",
+          "a": "Ein annotationsgesteuerter JVM-Client kann nicht für Kotlin/Native kompiliert werden, daher kann er nicht in `commonMain` leben.\n```kotlin\nval client = HttpClient {\n    install(ContentNegotiation) { json() }\n}\nval user: User =\n    client.get(\"/users/1\").body()\n```"
+        },
+        {
+          "q": "Wie wird ein Kotlin-Paket Verzeichnissen zugeordnet?",
+          "a": "Die Paketdeklaration sollte mit dem Verzeichnispfad übereinstimmen – `package com.example.data` in `src/commonMain/kotlin/com/example/data/`.\n\nDurch die umgekehrte Domänenbenennung bleiben Pakete in allen Bibliotheken eindeutig."
+        },
+        {
+          "q": "Wie unterscheiden sich Kotlin-Importe von Swift-Importen?",
+          "a": "```kotlin\nimport com.example.util.Mediator\nimport com.example.util.*\nimport com.example.util.Mediator as M\n```\nKotlin importiert einzelne Deklarationen und unterstützt Aliasing. Swifts `import` bringt ein ganzes Modul mit."
+        }
+      ],
+      "deck_key": "multiplatform"
+    },
+    {
+      "deck": "Gradle und Werkzeuge",
+      "deck_icon": "hammer",
+      "cards": [
+        {
+          "q": "Wie erstellt man ein Gradle-Projekt und listet seine Aufgaben auf?",
+          "a": "```bash\n./gradlew build\n./gradlew tasks\n./gradlew tasks --all\n```\nDer Wrapper (`gradlew`) fixiert die Gradle-Version, also verwenden Sie sie anstelle einer Systemversion `gradle`."
+        },
+        {
+          "q": "Wie bereinigt man einen Build und warum ist `clean build` selten der richtige erste Schritt?",
+          "a": "```bash\n./gradlew clean\n./gradlew clean build\n```\nEs verwirft den inkrementellen Build-Cache und ist daher langsam. Greifen Sie danach, wenn Sie veraltete Ergebnisse vermuten, und nicht aus Gewohnheit."
+        },
+        {
+          "q": "Wie stoppt man den Gradle-Daemon?",
+          "a": "```bash\n./gradlew --stop\n```\nNützlich nach einem Speichermangel oder wenn der Daemon blockiert ist; Der nächste Build startet einen neuen."
+        },
+        {
+          "q": "Wie verknüpfen Sie ein Kotlin/Native iOS-Framework?",
+          "a": "```bash\n./gradlew :shared:linkDebugFrameworkIosSimulatorArm64\n./gradlew :shared:linkReleaseFrameworkIosArm64\n```\nDer Aufgabenname kodiert den Build-Typ, die Ausgabeart und das Ziel, sodass jede Simulator-/Gerätearchitektur ihre eigene Aufgabe hat."
+        },
+        {
+          "q": "Wie führen Sie die Tests eines einzelnen Moduls oder einer einzelnen Testklasse durch?",
+          "a": "```bash\n./gradlew :shared:test\n./gradlew :shared:allTests\n./gradlew test --tests \"com.example.MyTest\"\n```\n`test` führt nur das JVM-Ziel aus; `allTests` führt jedes Multiplattform-Ziel aus."
+        },
+        {
+          "q": "Wie überprüfen und wenden Sie die Codeformatierung an?",
+          "a": "```bash\n./gradlew spotlessCheck\n./gradlew spotlessApply\n```\n`Check` schlägt den Build aufgrund eines Verstoßes fehl, was CI ausführen sollte; `Apply` schreibt die Dateien neu."
+        },
+        {
+          "q": "Wie zeigt man Gradle auf ein bestimmtes JDK?",
+          "a": "```bash\njava -version\nexport JAVA_HOME=$(/usr/libexec/java_home -v 21)\n```\nBesser noch, legen Sie im Build-Skript eine Gradle-Toolchain fest, damit jede Maschine mit demselben JDK kompiliert, unabhängig davon, was installiert ist."
+        },
+        {
+          "q": "Wie überprüft man den Abhängigkeitsbaum eines Moduls?",
+          "a": "```bash\n./gradlew :app:dependencies\n./gradlew :app:dependencies \\\n  --configuration releaseRuntimeClasspath\n```\nDie Ausgabe zeigt, welche Version einen Konflikt gewonnen hat und warum – das erste, was bei einem Fehler aufgrund einer doppelten Klasse überprüft werden muss."
+        },
+        {
+          "q": "Was macht der Gradle Build-Cache, was inkrementelle Builds nicht tun?",
+          "a": "Inkrementelle Builds überspringen Aufgaben, deren Eingaben sich **in diesem Projektverzeichnis** nicht geändert haben.\n\nDer Build-Cache speichert Aufgabenausgaben, die durch ihre Eingaben verschlüsselt sind, sodass ein sauberes Auschecken – oder CI – an anderer Stelle erzeugte Ergebnisse wiederverwenden kann."
+        }
+      ],
+      "deck_key": "gradle-and-tooling"
+    }
+  ]
+}

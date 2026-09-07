@@ -1,0 +1,636 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Electronics",
+  "interest_icon": "cpu",
+  "interest_key": "electronics",
+  "deck_q_lang": "en",
+  "deck_a_lang": "en",
+  "decks": [
+    {
+      "deck": "Laws and Quantities",
+      "deck_icon": "bolt",
+      "cards": [
+        {
+          "q": "What does Ohm's law state?",
+          "a": "$U = R \\cdot I${U equals R times I}\n\nVoltage $U$ (V) equals resistance $R$ (Ω) times current $I$ (A). It holds for linear components at a constant temperature."
+        },
+        {
+          "q": "How do you rearrange Ohm's law for resistance and current?",
+          "a": "$R = \\frac{U}{I}${R equals U over I} and $I = \\frac{U}{R}${I equals U over R}\n\nExample: 5 V across 250 Ω gives $I = 5/250 = 0.02$ A = 20 mA."
+        },
+        {
+          "q": "What does Kirchhoff's voltage law (KVL) state?",
+          "a": "The voltages around any closed loop sum to zero.\n\nIn practice: the source voltage equals the sum of the voltage drops across the components in series with it."
+        },
+        {
+          "q": "What does Kirchhoff's current law (KCL) state?",
+          "a": "The currents at any node sum to zero.\n\nCurrent in equals current out — charge is not created or destroyed at a junction."
+        },
+        {
+          "q": "How do resistances combine in series?",
+          "a": "$R_{total} = R_1 + R_2 + R_3 + \\dots$\n\nThey add, so a series chain always has more resistance than any single member."
+        },
+        {
+          "q": "How do two resistances combine in parallel?",
+          "a": "$R_{total} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}$\n\nThe result is always **smaller than the smaller** resistor. 100 Ω ∥ 100 Ω = 50 Ω."
+        },
+        {
+          "q": "How is electrical power calculated?",
+          "a": "$P = U \\cdot I${P equals U times I}, in watts.\n\nEquivalently $P = I^2 R$ or $P = \\frac{U^2}{R}$.\n\nExample: an LED at 2 V and 20 mA dissipates 0.04 W."
+        },
+        {
+          "q": "How is electrical energy calculated, and what are its units?",
+          "a": "$E = P \\cdot t${E equals P times t}\n\nJoules (J) or watt-hours (Wh); 1 Wh = 3600 J.\n\nExample: a 2000 mAh cell at 5 V stores about 10 Wh."
+        },
+        {
+          "q": "What is capacitance, and what is its unit?",
+          "a": "The charge a capacitor stores per volt applied: $C = \\frac{Q}{U}$, measured in farads (F).\n\nPractical values are tiny: pF, nF and µF. 1 µF = 1000 nF."
+        },
+        {
+          "q": "How does a capacitor charge through a resistor?",
+          "a": "The voltage rises exponentially with time constant $\\tau = R \\cdot C${tau equals R times C}.\n\nAfter $5\\tau$ it is about 99 % charged. With $R = 1$ kΩ and $C = 100$ µF, $\\tau = 0.1$ s, so it is effectively full in half a second."
+        },
+        {
+          "q": "How does a capacitor's impedance depend on frequency?",
+          "a": "Capacitive reactance: $X_C = \\frac{1}{2\\pi f C}$\n\nLow frequency means high impedance, so a capacitor blocks DC. High frequency means low impedance, so it passes AC."
+        },
+        {
+          "q": "How does an inductor's impedance depend on frequency?",
+          "a": "Inductive reactance: $X_L = 2\\pi f L$\n\nHigh frequency means high impedance, so an inductor opposes fast changes in current. At DC an ideal inductor is a short circuit."
+        },
+        {
+          "q": "What is a voltage divider, and what is its formula?",
+          "a": "Two resistors in series divide the voltage across them:\n$$\nU_{out} = U_{in} \\cdot \\frac{R_2}{R_1 + R_2}\n$$\n12 V across 10 kΩ + 10 kΩ gives 6 V across the lower resistor. It only holds while the load draws far less current than the divider itself."
+        },
+        {
+          "q": "What is the relationship between frequency and period?",
+          "a": "$f = \\frac{1}{T}${f equals one over T}\n\n50 Hz mains has a 20 ms period; 60 Hz mains has 16.7 ms."
+        },
+        {
+          "q": "What is the RMS value of an AC voltage?",
+          "a": "The **root mean square** — the DC voltage that would deliver the same power into the same resistance.\n\nFor a sine wave: $U_{RMS} = \\frac{U_{peak}}{\\sqrt{2}} \\approx 0.707 \\cdot U_{peak}$\n\n230 V RMS mains peaks at about 325 V; 120 V RMS peaks at about 170 V."
+        },
+        {
+          "q": "Why do fuses and correctly sized conductors matter?",
+          "a": "Every conductor has resistance. In a short circuit the current is limited only by that resistance ($I = U/R$), and the wire heats as $P = I^2 R$ — which is how a fault becomes a fire.\n\nA fuse or breaker opens the circuit before the wiring reaches that point."
+        },
+        {
+          "q": "What is the difference between DC and AC?",
+          "a": "**DC** — constant polarity: batteries, USB, wall adapters, microcontroller pins.\n\n**AC** — polarity alternates: mains supply, 230 V at 50 Hz or 120 V at 60 Hz depending on region."
+        },
+        {
+          "q": "What is ground (GND) in a circuit?",
+          "a": "The 0 V reference every other voltage is measured against.\n\n**The rule that catches everyone:** when you connect several boards together — controller, motor driver, sensors — they must share a common ground, or the signals have no shared reference and nothing works."
+        },
+        {
+          "q": "How does capacitance combine in series?",
+          "a": "$\\frac{1}{C_{total}} = \\frac{1}{C_1} + \\frac{1}{C_2} + \\dots$\n\nThe total is smaller than the smallest capacitor — the opposite of resistors in series."
+        },
+        {
+          "q": "How does capacitance combine in parallel?",
+          "a": "$C_{total} = C_1 + C_2 + C_3 + \\dots$\n\nCapacitances add — again the opposite of resistors. Parallel capacitors give more capacitance at the same voltage rating."
+        }
+      ],
+      "deck_key": "laws-and-quantities"
+    },
+    {
+      "deck": "Components",
+      "deck_icon": "cpu",
+      "cards": [
+        {
+          "q": "What is a resistor for?",
+          "a": "A passive component that limits current or divides voltage. Its value is in ohms (Ω), marked with colour bands on through-hole parts or a numeric code on surface-mount parts.\n\nTypical use: about 220 Ω in series with an LED to set its current."
+        },
+        {
+          "q": "How do you read a four-band resistor colour code?",
+          "a": "Bands 1 and 2 are digits, band 3 is the multiplier, band 4 is the tolerance.\n\nBlack 0, brown 1, red 2, orange 3, yellow 4, green 5, blue 6, violet 7, grey 8, white 9."
+        },
+        {
+          "q": "What are the three most common uses of a capacitor in a small project?",
+          "a": "* **Decoupling** — 100 nF ceramic right next to an IC's supply pin\n* **Supply smoothing** — 100–1000 µF electrolytic on the power rail\n* **Timing** — as the C in an RC delay or oscillator"
+        },
+        {
+          "q": "What is the difference between an electrolytic and a ceramic capacitor?",
+          "a": "**Electrolytic** — large capacitance (µF to mF), **polarised** (reversing it can make it vent or explode), slower response.\n\n**Ceramic** — small capacitance (pF to µF), non-polarised, fast — which is why decoupling and high-frequency filtering use ceramics."
+        },
+        {
+          "q": "What does a diode do?",
+          "a": "It conducts in one direction only, from anode to cathode.\n\nForward voltage $V_f$: about 0.7 V for silicon, 0.2–0.3 V for a Schottky. Common uses: reverse-polarity protection and rectifying AC."
+        },
+        {
+          "q": "What is a Zener diode for?",
+          "a": "Reverse-biased, it starts conducting once the Zener voltage $U_Z$ is reached, holding the voltage across it roughly constant.\n\nUsed for a voltage reference or simple overvoltage clamping."
+        },
+        {
+          "q": "What does an LED always need, and why?",
+          "a": "**A current-limiting resistor** (or a constant-current driver).\n\nAn LED's current rises very steeply with voltage past its forward voltage, so connecting it straight across a supply lets the current run away and destroy it. Typical operating current is 10–20 mA."
+        },
+        {
+          "q": "How do you calculate an LED's series resistor?",
+          "a": "$R = \\frac{U_{supply} - U_f}{I_f}$\n\n5 V supply, red LED ($U_f = 2$ V), 20 mA: $R = (5 - 2)/0.02 = 150$ Ω. Round **up** to the next standard value (180 Ω or 220 Ω) so the current cannot exceed the target."
+        },
+        {
+          "q": "What are typical LED forward voltages by colour?",
+          "a": "* Red ≈ 2.0 V\n* Yellow / green ≈ 2.1 V\n* Blue ≈ 3.2 V\n* White ≈ 3.2–3.4 V\n* Infrared (880 nm) ≈ 1.2–1.5 V\n\nA blue or white LED will barely light from a 3.3 V rail once a resistor is in series."
+        },
+        {
+          "q": "How does an NPN bipolar transistor work as a switch?",
+          "a": "A small base current controls a much larger collector-to-emitter current.\n\nTo saturate it (fully on) you need $I_B > \\frac{I_C}{h_{FE}}$. With $h_{FE} = 100$ and $I_C = 500$ mA, about 5 mA of base current is enough."
+        },
+        {
+          "q": "What is an N-channel MOSFET, and when do you prefer it over a BJT?",
+          "a": "A voltage-controlled switch: a gate voltage above the threshold $V_{th}$ (typically 2–4 V) opens the drain-to-source channel.\n\nPrefer it for power switching — the gate draws almost no steady current and $R_{DS(on)}$ can be milliohms, so it runs cool where a BJT would not."
+        },
+        {
+          "q": "What is a relay, and why does its coil need a diode across it?",
+          "a": "An electromechanical switch driven by a coil, which isolates a low-voltage control circuit from a mains-voltage load.\n\nThe coil is an inductor: when the drive current stops, the collapsing field produces a large reverse voltage spike. A flyback diode across the coil gives that current somewhere to go instead of destroying the driving transistor."
+        },
+        {
+          "q": "What is an optocoupler for?",
+          "a": "It couples two circuits through light — an LED facing a phototransistor in one package — so they share no electrical connection at all.\n\nUsed to protect a microcontroller from high voltage or from noise on a power circuit."
+        },
+        {
+          "q": "What is a decoupling (bypass) capacitor, and where must it go?",
+          "a": "A 100 nF ceramic capacitor placed **as close as possible** to an IC's supply pin.\n\nIt supplies the fast current spikes the IC draws when it switches, which the supply wiring's inductance cannot deliver quickly enough. Distance defeats the purpose, so it goes at the pin, not at the connector."
+        },
+        {
+          "q": "What does a linear voltage regulator (LDO) do?",
+          "a": "It holds its output voltage constant as the input varies, by dropping the difference across a pass element.\n\nThat difference becomes heat: $P_{loss} = (U_{in} - U_{out}) \\cdot I$."
+        },
+        {
+          "q": "Why does a linear regulator get hot, and what is the alternative?",
+          "a": "It converts the excess voltage into heat: $P_{loss} = (U_{in} - U_{out}) \\cdot I$.\n\n12 V down to 5 V at 1 A wastes 7 W — that needs a heatsink. A switching (buck) converter does the same job at roughly 90 % efficiency because it stores and releases energy instead of dissipating it."
+        },
+        {
+          "q": "What is an NTC thermistor, and how do you read one?",
+          "a": "A resistor with a **negative** temperature coefficient — resistance falls as temperature rises. A common part is 10 kΩ at 25 °C.\n\nWire it as one half of a voltage divider with a 10 kΩ fixed resistor and read the midpoint with an ADC."
+        },
+        {
+          "q": "What is an LDR?",
+          "a": "A light-dependent resistor: resistance falls as illumination rises — tens of kΩ in darkness, hundreds of ohms in bright light.\n\nWith a fixed resistor it forms a divider that an ADC can read as a crude light sensor."
+        },
+        {
+          "q": "What is a Schottky diode, and where is it preferred?",
+          "a": "A diode with a low forward voltage (0.2–0.3 V) and very fast recovery.\n\nPreferred as a flyback diode for motors and relays, for reverse-polarity protection on an input, and in switching supplies — in all three cases because it wastes less power as heat."
+        },
+        {
+          "q": "What is a MOSFET gate driver, and when do you need one?",
+          "a": "An IC that sources and sinks the large, brief current needed to charge and discharge a MOSFET's gate capacitance.\n\nA microcontroller pin can supply ~20 mA, which makes the transition slow — and a MOSFET dissipates most of its heat *during* the transition. Needed once you switch fast, roughly above 50 kHz."
+        },
+        {
+          "q": "What is a crystal oscillator for, and why does it need load capacitors?",
+          "a": "A quartz crystal sets a precise clock frequency (typically ±20 ppm) — far more stable than an internal RC oscillator, which is what serial links and real-time clocks depend on.\n\nThe load capacitors (often 12–22 pF) put the crystal at the capacitance it was specified for; the wrong value shifts the frequency."
+        }
+      ],
+      "deck_key": "components"
+    },
+    {
+      "deck": "Digital Logic and Buses",
+      "deck_icon": "memorychip",
+      "cards": [
+        {
+          "q": "What are the basic Boolean operations?",
+          "a": "* **AND** — 1 only when both inputs are 1\n* **OR** — 1 when at least one input is 1\n* **NOT** — inverts\n* **NAND / NOR** — the negations of AND / OR\n* **XOR** — 1 when the inputs differ"
+        },
+        {
+          "q": "What is an XOR gate used for in practice?",
+          "a": "Its output is high when the inputs differ, which makes it the natural building block for difference detection, parity bits and a half-adder.\n\nTwo useful identities: $A \\oplus A = 0$, and $A \\oplus 1 = \\lnot A$."
+        },
+        {
+          "q": "What is the difference between 5 V TTL and 3.3 V CMOS logic?",
+          "a": "**TTL** — 5 V rails, fixed switching threshold around 1.4 V, higher static current.\n\n**CMOS** — supply anywhere from 1.8 to 5 V, negligible static current, thresholds that scale with the supply. Almost every modern microcontroller is 3.3 V CMOS."
+        },
+        {
+          "q": "What is a pull-up resistor, and when do you need one?",
+          "a": "A resistor from a pin to the supply, holding the pin high when nothing else drives it.\n\nNeeded for a button (otherwise the pin floats and reads randomly), for every I²C bus, and for any open-drain output."
+        },
+        {
+          "q": "How do you use a microcontroller's internal pull-up?",
+          "a": "```cpp\npinMode(pin, INPUT_PULLUP);\n```\nMost MCUs have 20–50 kΩ pull-ups built in, so a button needs no external resistor. **The logic inverts**: pressed reads LOW."
+        },
+        {
+          "q": "What is the I²C bus, and what does it always require?",
+          "a": "A two-wire bus: **SDA** for data and **SCL** for the clock, with 7-bit addressing (so up to about 128 devices) at 100 kHz standard or 400 kHz fast mode.\n\nIt **requires pull-up resistors**, typically 4.7 kΩ, because every device can only pull the lines low, never drive them high."
+        },
+        {
+          "q": "What is the sequence of an I²C transaction?",
+          "a": "START → 7-bit slave address plus the read/write bit → ACK → data bytes, each acknowledged → STOP.\n\nThe controller generates the clock throughout, so a device that needs time can only stall the transfer by holding SCL low (clock stretching)."
+        },
+        {
+          "q": "How does SPI differ from I²C?",
+          "a": "SPI uses four wires — **MOSI**, **MISO**, **SCK**, **CS** — and is full duplex and much faster (tens of MHz), because it is push-pull rather than open-drain.\n\nThe cost: every peripheral needs its own chip-select pin, so pin count grows with device count."
+        },
+        {
+          "q": "What do the SPI signals MOSI, MISO, SCK and CS mean?",
+          "a": "* **MOSI** — controller out, peripheral in\n* **MISO** — controller in, peripheral out\n* **SCK** — clock, generated by the controller\n* **CS / SS** — chip select, active **LOW**"
+        },
+        {
+          "q": "What is UART, and what do its parameters mean?",
+          "a": "Asynchronous serial: **TX** transmits, **RX** receives, and the two must cross — TX to RX.\n\nThere is no clock line, so both ends must agree on the baud rate. `8N1` means 8 data bits, no parity, 1 stop bit."
+        },
+        {
+          "q": "What is PWM?",
+          "a": "A digital signal switched on and off fast, where the **duty cycle** (0–100 %) sets the average voltage.\n\nUsed for LED brightness, DC motor speed and servo position. It is not an analogue voltage — a load that cannot average it will see the switching."
+        },
+        {
+          "q": "What is an ADC, and what resolution do typical boards have?",
+          "a": "An analogue-to-digital converter turns a voltage into a number.\n\nA classic 8-bit AVR board is 10-bit (0–1023) over 0–5 V; an ESP32 is 12-bit (0–4095) over 0–3.3 V. The ESP32's converter is noticeably non-linear, so precise work needs calibration."
+        },
+        {
+          "q": "What is a DAC, and what do you do without one?",
+          "a": "A digital-to-analogue converter produces a real analogue voltage. The ESP32 has two 8-bit DACs.\n\nWithout one, PWM followed by an RC low-pass filter approximates an analogue output — good enough for a control voltage, not for audio without care."
+        },
+        {
+          "q": "What is a level shifter, and when is it mandatory?",
+          "a": "A circuit that translates logic levels between rails, typically 5 V and 3.3 V.\n\nMandatory when feeding a 5 V signal into a 3.3 V input: most 3.3 V parts tolerate at most about 3.6 V on a pin, and 5 V damages them immediately. A resistor divider works for a slow input; a dedicated shifter is needed for a fast or bidirectional line."
+        },
+        {
+          "q": "What are the logic thresholds for 3.3 V CMOS?",
+          "a": "* Input HIGH — above roughly 2.0 V\n* Input LOW — below roughly 0.8 V\n* Output HIGH ≈ 3.3 V\n* Output LOW ≈ 0 V\n\nThe band between the input thresholds is undefined — a signal that lingers there can make the input oscillate."
+        },
+        {
+          "q": "What is switch bounce, and how do you deal with it?",
+          "a": "A mechanical contact does not close cleanly: it makes and breaks several times over a few milliseconds, so one press reads as many.\n\n**In hardware:** a 100 nF capacitor across the switch. **In software:** ignore any change within 10–50 ms of the last one, timed with a millisecond counter rather than a blocking delay."
+        },
+        {
+          "q": "What is an interrupt, and why is it better than polling?",
+          "a": "A hardware event that suspends the main program and runs a handler immediately.\n\nPolling has to keep checking, which wastes cycles and can still miss a short pulse between checks. An interrupt cannot miss the edge and lets the CPU sleep in between."
+        },
+        {
+          "q": "What is an open-drain output, and what does it need?",
+          "a": "It can pull the pin low but cannot drive it high — released, the pin floats.\n\nSo it needs an external pull-up. This is what lets several devices share one line safely: any of them can pull it low, giving wired-AND behaviour. I²C is built on it."
+        },
+        {
+          "q": "What does a serial-in, parallel-out shift register do for you?",
+          "a": "It turns three pins into eight outputs by clocking bits in serially and latching them out in parallel.\n\nThey chain: two registers give 16 outputs from the same three pins, which is how LED matrices and multi-digit displays are driven."
+        },
+        {
+          "q": "Why must a variable shared with an interrupt handler be `volatile`?",
+          "a": "```cpp\nvolatile bool flag = false;\n```\nIt tells the compiler the value can change outside the visible flow of control, so it must be re-read from memory each time.\n\nWithout it the compiler may cache the variable in a register, and the handler's change is never seen by the main loop."
+        },
+        {
+          "q": "What is a watchdog timer for?",
+          "a": "A hardware timer that resets the chip unless the program periodically clears it.\n\nIt recovers a device that has hung — an infinite loop, a deadlock, a blocked bus — without anyone having to power-cycle it. That means the reset path itself must be safe to take at any moment."
+        }
+      ],
+      "deck_key": "digital-logic-and-buses"
+    },
+    {
+      "deck": "Microcontroller Basics",
+      "deck_icon": "wrench.and.screwdriver",
+      "cards": [
+        {
+          "q": "What are the current limits on a classic 5 V AVR board's pins?",
+          "a": "About **40 mA** per pin absolute maximum, and roughly **200 mA** total from the regulator's 5 V pin.\n\nThat is why a motor or a servo is never powered from the board's 5 V pin — it needs its own supply with a shared ground."
+        },
+        {
+          "q": "What are the three pin modes, and what does each do?",
+          "a": "* `INPUT` — high impedance; the pin holds no level and floats unless something drives it\n* `OUTPUT` — actively driven high or low\n* `INPUT_PULLUP` — input with the internal pull-up enabled, so idle reads HIGH"
+        },
+        {
+          "q": "How do you read and write a digital pin?",
+          "a": "```cpp\npinMode(pin, OUTPUT);\ndigitalWrite(pin, HIGH);\n\npinMode(btn, INPUT_PULLUP);\nint s = digitalRead(btn);\n```\nThe mode must be set before use, or the pin behaves as whatever it was last configured to be."
+        },
+        {
+          "q": "How do you convert an ADC reading to a voltage?",
+          "a": "```cpp\nfloat v = analogRead(A0)\n          * 5.0 / 1023.0;\n```\nMultiply by the reference voltage and divide by the full-scale count. The reading is only as accurate as that reference, which on a USB-powered board is not exactly 5 V."
+        },
+        {
+          "q": "What does `analogWrite` actually produce?",
+          "a": "**PWM, not an analogue voltage.** The value 0–255 sets the duty cycle.\n\nOn a classic AVR board only certain pins support it, at either 490 Hz or 980 Hz depending on which timer drives them."
+        },
+        {
+          "q": "Why is a millisecond counter better than `delay()`?",
+          "a": "```cpp\nunsigned long prev = 0;\nif (millis() - prev >= 1000) {\n  prev = millis();\n  // once per second\n}\n```\nIt does not stop the program, so sensors, communication and other timers keep working.\n\nNote the subtraction: comparing `millis() - prev` rather than absolute times is what makes it survive the counter overflowing after ~50 days."
+        },
+        {
+          "q": "What is wrong with `delay()`?",
+          "a": "It blocks everything — no pin changes, no sensor reads, no serial, no responsiveness — for its whole duration.\n\nIt is fine in one-time setup code, where nothing else has to happen. Anywhere else, use a timestamp comparison or a state machine."
+        },
+        {
+          "q": "How do you set up serial communication?",
+          "a": "```cpp\nSerial.begin(115200);\nSerial.println(\"ready\");\nif (Serial.available()) {\n  int b = Serial.read();\n}\n```\nThe baud rate must match the terminal's, or you get plausible-looking garbage rather than silence."
+        },
+        {
+          "q": "How do you start an I²C bus in code?",
+          "a": "```cpp\n#include <Wire.h>\nWire.begin();          // controller\nWire.begin(address);   // peripheral\n```\nTo find an unknown device, walk addresses 1–127 and see which one acknowledges a transmission."
+        },
+        {
+          "q": "How do you start an SPI bus in code?",
+          "a": "```cpp\n#include <SPI.h>\nSPI.begin();\ndigitalWrite(CS, LOW);\nbyte r = SPI.transfer(0x42);\ndigitalWrite(CS, HIGH);\n```\nThe library does not manage chip select — you assert and release it yourself around each transfer."
+        },
+        {
+          "q": "What is the difference between `setup()` and `loop()`?",
+          "a": "`setup()` runs once after reset: pin modes, serial, sensor initialisation, network.\n\n`loop()` runs repeatedly, hundreds of thousands of times a second if nothing blocks it. It must therefore never assume it is called at a fixed rate."
+        },
+        {
+          "q": "What are the rules for writing an interrupt handler?",
+          "a": "Keep it **short**. Set a `volatile` flag or push to a buffer, and do the real work in the main loop.\n\nNo blocking delays, no serial printing, and no relying on the millisecond counter — it stops advancing inside the handler, because it is itself driven by an interrupt."
+        },
+        {
+          "q": "How do you drive a DC motor from a microcontroller?",
+          "a": "Never directly — a motor draws far more than a pin can supply, and its inductance produces spikes.\n\nUse an H-bridge driver, which also gives you direction control. Supply the motor separately and share the ground with the controller."
+        },
+        {
+          "q": "What is EEPROM on a microcontroller, and what is its limit?",
+          "a": "```cpp\n#include <EEPROM.h>\nEEPROM.write(addr, value);\nbyte v = EEPROM.read(addr);\n```\nNon-volatile byte storage that survives a reset — good for settings and calibration.\n\nEndurance is roughly 100 000 writes **per cell**, so never write it inside a loop."
+        },
+        {
+          "q": "What do `map()` and `constrain()` do, and why are they used together?",
+          "a": "```cpp\nint a = map(analogRead(A0),\n            0, 1023, 0, 180);\na = constrain(a, 0, 180);\n```\n`map()` rescales a value between ranges, but it does **not** clamp — an input outside the source range produces an output outside the target range. `constrain()` is what makes it safe."
+        },
+        {
+          "q": "What does `PROGMEM` do, and why does it matter on a small MCU?",
+          "a": "```cpp\nconst char msg[] PROGMEM = \"...\";\nSerial.println(F(\"literal\"));\n```\nIt keeps constant data in flash instead of copying it into RAM at startup.\n\nA classic AVR board has 2 kB of RAM, so a handful of long string literals can exhaust it — and running out of RAM shows up as mysterious corruption, not a clean error."
+        },
+        {
+          "q": "What is a bootloader?",
+          "a": "A small program pre-programmed into the chip that can receive a new sketch over the serial port, so no external programmer is needed.\n\nIt waits briefly after reset, then starts the existing program. It costs a small amount of flash and that startup delay."
+        },
+        {
+          "q": "What is a software serial port, and what does it cost?",
+          "a": "A library that emulates a UART on ordinary digital pins, giving you an extra port.\n\nIt costs CPU time and interrupt latency: the timing is done in software, so it is slower, less reliable at high baud rates, and can interfere with other interrupts."
+        },
+        {
+          "q": "How do you choose between the common 8-bit board form factors?",
+          "a": "* **Uno-class** — 14 digital and 6 analogue pins, 32 kB flash, 2 kB RAM; the default\n* **Mega-class** — 54 digital, 16 analogue, 256 kB flash, four UARTs; when you run out of pins\n* **Nano-class** — the same chip as the Uno in a much smaller footprint; when it must fit in an enclosure"
+        },
+        {
+          "q": "Where do Arduino libraries come from, and where are they installed?",
+          "a": "The Library Manager inside the IDE, or a downloaded ZIP added through *Add .ZIP Library*.\n\nThey land in the `libraries/` folder of your sketchbook, which is worth knowing when two versions of the same library conflict."
+        }
+      ],
+      "deck_key": "microcontroller-basics"
+    },
+    {
+      "deck": "Wi-Fi Microcontrollers",
+      "deck_icon": "wifi",
+      "cards": [
+        {
+          "q": "What are the main differences between the ESP32 and the ESP8266?",
+          "a": "**ESP32** — dual core at 240 MHz, Wi-Fi plus Bluetooth Classic and BLE, two DACs, 18 ADC channels, capacitive touch inputs, many more GPIOs.\n\n**ESP8266** — single core at 80/160 MHz, Wi-Fi only, far fewer pins, cheaper."
+        },
+        {
+          "q": "What is the ESP32's supply voltage, and what is the maximum on a GPIO?",
+          "a": "The chip runs at **3.3 V**. Development boards accept roughly 4.5–7 V on their input pin and regulate it down.\n\nGPIOs tolerate about **3.6 V** maximum. A 5 V signal damages them immediately — use a level shifter or a divider."
+        },
+        {
+          "q": "How do you connect to Wi-Fi on an ESP32?",
+          "a": "```cpp\n#include <WiFi.h>\nWiFi.begin(ssid, password);\nwhile (WiFi.status()\n       != WL_CONNECTED) {\n  delay(500);\n}\nSerial.println(WiFi.localIP());\n```"
+        },
+        {
+          "q": "What is deep sleep, and how much does it save?",
+          "a": "A mode where the CPU and radio are off and only a low-power domain remains, taking the current from roughly 200 mA down to about 10 µA.\n\nIt is the difference between a battery sensor lasting days and lasting a year. Waking is by timer, a GPIO edge, or a touch pad."
+        },
+        {
+          "q": "What happens to your program after an ESP32 wakes from deep sleep?",
+          "a": "```cpp\nRTC_DATA_ATTR int count = 0;\nesp_sleep_enable_timer_wakeup(\n  10 * 1000000ULL);\nesp_deep_sleep_start();\n```\nIt starts from the top — `setup()` runs again, as after a reset. Only variables marked to live in RTC memory keep their values, so anything else must be re-derived or re-read."
+        },
+        {
+          "q": "What are the two constraints on the ESP32's ADC?",
+          "a": "**ADC2 shares hardware with the Wi-Fi radio**, so those channels are unusable while Wi-Fi is on. Use ADC1 (GPIO 32–39) for anything you need to read reliably.\n\nThe converter is also noticeably non-linear near both ends of its range, so accurate measurement needs the factory calibration data."
+        },
+        {
+          "q": "How is PWM configured on an ESP32?",
+          "a": "```cpp\nledcSetup(0, 5000, 8);\nledcAttachPin(LED_PIN, 0);\nledcWrite(0, 128);  // 50 %\n```\nThrough the LEDC peripheral: you configure a channel with a frequency and a resolution in bits, then attach it to a pin. Frequency and resolution trade against each other."
+        },
+        {
+          "q": "What does an over-the-air update need in the sketch?",
+          "a": "```cpp\n#include <ArduinoOTA.h>\nvoid setup() {\n  WiFi.begin(ssid, pass);\n  ArduinoOTA.begin();\n}\nvoid loop() {\n  ArduinoOTA.handle();\n}\n```\n`handle()` must be called regularly, so a blocking `loop()` silently makes the device un-updatable — which matters most on a device you can no longer reach."
+        },
+        {
+          "q": "How do the ESP32's capacitive touch inputs work?",
+          "a": "```cpp\nint v = touchRead(4);\n```\nThe pin's self-capacitance is measured, so a finger nearby **lowers** the reading. No external components are needed, but the baseline drifts with humidity and the enclosure, so the threshold should be calibrated at startup rather than hard-coded."
+        },
+        {
+          "q": "What is ESP-NOW good for?",
+          "a": "Connectionless peer-to-peer messaging between ESP devices with no access point involved: latency around a millisecond and useful range in the hundreds of metres outdoors.\n\nRight for sensor swarms and remote controls, where associating with a router costs more time and power than the message itself."
+        },
+        {
+          "q": "What is the difference between Bluetooth Classic and BLE?",
+          "a": "**Classic** — a continuous connection suited to streaming, at a higher power cost; it can emulate a serial port.\n\n**BLE** — short packets and long idle periods, designed so a coin cell can last months. For sending a sensor reading occasionally, BLE is the right one."
+        },
+        {
+          "q": "Which ESP32 GPIOs are input-only, and what does that imply?",
+          "a": "**GPIO 34, 35, 36 and 39.** They have no output driver and **no internal pull-up or pull-down**.\n\nSo they are fine for analogue inputs and externally driven signals, but a button on one of them needs an external resistor — otherwise the pin floats and reads noise."
+        },
+        {
+          "q": "How does the ESP32 use its two cores?",
+          "a": "```cpp\nxTaskCreatePinnedToCore(\n  taskFn, \"name\", 4096,\n  NULL, 1, &handle, 1);\n```\nIt runs FreeRTOS, with the Wi-Fi and Bluetooth stacks on core 0 and the Arduino-style application task on core 1.\n\nBlocking core 0 for too long therefore breaks the network, not just your own code."
+        },
+        {
+          "q": "How do you store settings persistently on an ESP32?",
+          "a": "```cpp\n#include <Preferences.h>\nPreferences prefs;\nprefs.begin(\"app\", false);\nprefs.putInt(\"count\", 42);\nint n = prefs.getInt(\"count\", 0);\nprefs.end();\n```\nA key-value store in a dedicated flash partition, with wear levelling — which is why it is the right choice rather than writing raw flash."
+        },
+        {
+          "q": "What are strapping pins, and why must you be careful with them?",
+          "a": "Pins whose level is sampled **at reset** to choose the boot mode — notably GPIO 0 (low means the serial bootloader), GPIO 2 and GPIO 12.\n\nHard-wiring one of them to a fixed level can make the board refuse to boot or flash, and the symptom looks like a dead board rather than a wiring mistake."
+        },
+        {
+          "q": "What are the ESP32's default I²C and SPI pins?",
+          "a": "I²C defaults to SDA 21, SCL 22, and can be remapped: `Wire.begin(sda, scl)`.\n\nThe default SPI is MOSI 23, MISO 19, SCK 18, CS 5; a second bus is available. Because the ESP32 routes peripherals through a matrix, almost any pin can serve — the defaults are convention, not wiring."
+        },
+        {
+          "q": "How do you set a static IP address, and when must you do it?",
+          "a": "```cpp\nWiFi.config(ip, gateway,\n            subnet, dns);\nWiFi.begin(ssid, pass);\n```\nIt must be called **before** `WiFi.begin()`, otherwise DHCP has already been requested and the call has no effect."
+        },
+        {
+          "q": "How do you run an ESP32 as its own access point?",
+          "a": "```cpp\nWiFi.softAP(\"MyDevice\", \"password\");\nSerial.println(WiFi.softAPIP());\n```\nFor a combined mode that serves an AP while also joining a network, set `WIFI_AP_STA` — the usual way to offer a setup page before credentials are known."
+        },
+        {
+          "q": "What do the ESP32-S2, S3 and C3 variants offer?",
+          "a": "* **S2** — single core, native USB, no Bluetooth\n* **S3** — dual core, BLE 5, vector instructions for ML workloads, native USB\n* **C3** — single RISC-V core, Wi-Fi and BLE, cheapest\n\nTheir pinouts are **not** compatible with the original ESP32, so a board swap is a redesign."
+        },
+        {
+          "q": "Why does an ESP32 brown out or reboot when the radio transmits?",
+          "a": "The radio draws short current bursts of several hundred milliamps. A weak supply, thin USB cable or missing bulk capacitor lets the rail sag below the brown-out threshold.\n\nThe fix is a supply that can deliver the peak — and a bulk capacitor of a few hundred µF close to the module. The symptom looks like a firmware crash, which is what makes it hard to find."
+        }
+      ],
+      "deck_key": "wi-fi-microcontrollers"
+    },
+    {
+      "deck": "Motors and Drivers",
+      "deck_icon": "gearshape.2",
+      "cards": [
+        {
+          "q": "What makes a servo different from a plain DC motor?",
+          "a": "A servo contains a position sensor and a control loop, so it moves to a commanded **angle** and holds it against a load.\n\nA DC motor only spins; without an encoder nothing knows where it is."
+        },
+        {
+          "q": "How does a hobby servo interpret its control signal?",
+          "a": "A pulse every 20 ms (50 Hz), where the pulse **width** sets the angle:\n\n* 1 ms ≈ 0°\n* 1.5 ms ≈ 90° (centre)\n* 2 ms ≈ 180°\n\nThe pulses must keep coming; if they stop or jitter, the servo hunts or buzzes."
+        },
+        {
+          "q": "How do you drive a servo from the standard library?",
+          "a": "```cpp\n#include <Servo.h>\nServo s;\nvoid setup() { s.attach(9); }\nvoid loop() {\n  s.write(0);\n  delay(1000);\n  s.write(180);\n  delay(1000);\n}\n```"
+        },
+        {
+          "q": "When should you use `writeMicroseconds()` instead of `write()`?",
+          "a": "`write(angle)` maps 0–180 onto the library's assumed pulse range, which rarely matches a particular servo exactly.\n\n`writeMicroseconds(1000–2000)` commands the pulse directly, which is what you need for fine positioning or for a servo whose real travel differs. Centre is 1500 µs."
+        },
+        {
+          "q": "Why must a servo not be powered from the board's 5 V pin?",
+          "a": "A servo draws 100–900 mA while moving, and its stall current is higher still; the board's regulator can supply a few hundred milliamps in total.\n\nGive the servo its own 5 V supply, share the ground with the controller, and run only the signal wire to the pin."
+        },
+        {
+          "q": "What is a stepper motor's advantage and its cost?",
+          "a": "It moves in discrete steps — commonly 1.8°, so 200 per revolution — which gives accurate positioning **open loop**, with no encoder.\n\nThe costs: it needs a driver, it draws current (and gets warm) even while holding still, and it is noisy."
+        },
+        {
+          "q": "What is the difference between a bipolar and a unipolar stepper?",
+          "a": "**Bipolar** — four wires, two coils, current reversed through each; more torque, needs an H-bridge driver. This is the type used in 3D printers.\n\n**Unipolar** — five or six wires with centre taps; a simpler driver but less torque, because only half of each winding is energised at a time."
+        },
+        {
+          "q": "What do full-step, half-step and microstepping give you?",
+          "a": "* **Full step** — 200 steps/rev, full torque\n* **Half step** — 400 steps/rev, smoother\n* **1/16 microstepping** — 3200 steps/rev, quiet and smooth\n\nMicrostepping buys smoothness, not accuracy: the holding torque at each microstep is a fraction of the full-step torque, so the position is easier to push off."
+        },
+        {
+          "q": "What is a step/direction driver, and how is it controlled?",
+          "a": "The driver handles the coil currents; the controller only supplies **STEP** (one pulse = one step) and **DIR** (direction).\n\nMicrostepping is chosen with mode pins. This is why stepper code is just pulse timing — all the analogue work is in the driver."
+        },
+        {
+          "q": "What must never be omitted when wiring a stepper driver?",
+          "a": "**A bulk electrolytic capacitor, around 100 µF, across the motor supply at the driver.**\n\nWithout it, connecting power produces an inductive voltage spike on the motor rail that can destroy the driver instantly. It is the single most common way these boards die."
+        },
+        {
+          "q": "How do you set the current limit on a stepper driver?",
+          "a": "A trimmer sets a reference voltage that defines the peak coil current: $V_{ref} = I_{max} \\times 8 \\times R_{sense}$.\n\nWith $R_{sense} = 0.1$ Ω, 1 A needs $V_{ref} = 0.8$ V. Measure it against ground with a meter. Too low loses steps under load; too high overheats the motor and driver."
+        },
+        {
+          "q": "Why are some stepper drivers nearly silent?",
+          "a": "They drive the coils with a smooth, approximately sinusoidal current instead of switching hard between levels, which removes the audible switching harmonics.\n\nThe trade-off is slightly less torque at high speed, which is why some designs switch modes as speed rises."
+        },
+        {
+          "q": "What does a stepper acceleration library do for you?",
+          "a": "```cpp\n#include <AccelStepper.h>\nAccelStepper st(\n  AccelStepper::DRIVER,\n  STEP_PIN, DIR_PIN);\nvoid setup() {\n  st.setMaxSpeed(500);\n  st.setAcceleration(100);\n  st.moveTo(200);\n}\nvoid loop() { st.run(); }\n```\nIt generates the step timing for a ramped move, so `run()` must be called often — it does one step's worth of work per call."
+        },
+        {
+          "q": "Why does a stepper need acceleration rather than a step change in speed?",
+          "a": "The rotor has inertia. Commanded straight to full speed it cannot follow, loses synchronism with the field, and **skips steps** — after which the controller's idea of position is silently wrong.\n\nAlways set both a maximum speed and an acceleration."
+        },
+        {
+          "q": "What is step loss, and how do you detect it?",
+          "a": "The motor fails to follow a commanded step, so the real position drifts from the commanded one — and nothing reports it, because the control is open loop.\n\nCauses: too much speed, too little current, too much load. Detection needs an external reference — an encoder, or homing against an endstop."
+        },
+        {
+          "q": "What is homing, and why is it needed at every power-up?",
+          "a": "Moving until an endstop triggers, then defining that position as zero.\n\nA stepper has no absolute position feedback, so after power-up the controller has no idea where the axis is. Homing is what turns relative steps into known coordinates."
+        },
+        {
+          "q": "What does a NEMA size actually specify?",
+          "a": "Only the **mounting face** — NEMA 17 means a 42.3 mm square faceplate with a fixed bolt pattern.\n\nIt says nothing about torque, current or length, so two NEMA 17 motors can differ several-fold in strength. Check the datasheet, not the size."
+        },
+        {
+          "q": "How do you convert a step rate into RPM?",
+          "a": "$$\nRPM = \\frac{steps/s \\times 60}{steps/rev}\n$$\n400 steps/s at full step (200 steps/rev) is 120 RPM. The same pulse rate at 1/16 microstepping (3200 steps/rev) is only 7.5 RPM — microstepping costs top speed for a given pulse rate."
+        },
+        {
+          "q": "How do you compare servo torque ratings sensibly?",
+          "a": "Ratings are in kg·cm at a stated voltage: a small plastic-geared servo gives roughly 1.8 kg·cm at 100–250 mA, a metal-geared one around 9.4 kg·cm at 500–900 mA with a 2.5 A stall.\n\nSize for **two to three times** the static load: a moving arm's dynamic load is much higher than its weight suggests."
+        },
+        {
+          "q": "What is the catch when driving a servo from a 3.3 V controller?",
+          "a": "A 3.3 V pulse is usually enough to be read as a valid signal, so the signal wire connects directly.\n\nThe catch is power: the servo still needs its own 5 V supply, **and the grounds must be joined**. Without a shared ground the pulse has no reference and the servo twitches or ignores it."
+        },
+        {
+          "q": "How do you choose between an H-bridge for DC motors and a stepper driver?",
+          "a": "An H-bridge switches the supply polarity across a coil — right for DC motors, where you want direction and PWM speed control.\n\nA stepper driver **regulates current** through each coil in sequence, which is what produces discrete steps. Using a plain H-bridge for a stepper gives you no current limit and a hot motor."
+        },
+        {
+          "q": "Why do motor supplies and logic supplies need to be separated but share ground?",
+          "a": "A motor's current is large and abrupt, so it drags the rail down and injects noise. Sharing that rail with the controller causes resets and corrupted readings.\n\nBut they must share **ground**, or the control signals have no common reference — separate supplies with a common ground is the only combination that works."
+        }
+      ],
+      "deck_key": "motors-and-drivers"
+    },
+    {
+      "deck": "Measurement",
+      "deck_icon": "ruler",
+      "cards": [
+        {
+          "q": "What does a digital multimeter measure?",
+          "a": "DC and AC voltage, DC current, and resistance, plus a diode test and a continuity buzzer.\n\nMany add capacitance, frequency, temperature and transistor gain — useful, but usually less accurate than a dedicated instrument."
+        },
+        {
+          "q": "How do you measure DC voltage safely?",
+          "a": "1. Select **V⎓**\n2. Red probe to the V jack, black to COM\n3. Touch the probes **in parallel** with the part\n4. Start on the highest range, or use autorange\n\nNever leave the red lead in the current jack — a meter set to current is a short circuit."
+        },
+        {
+          "q": "What extra precautions does measuring mains AC voltage need?",
+          "a": "Select **V~**, probes in V and COM, in parallel with the circuit.\n\nMains is lethal. Use a meter rated at least **CAT II 600 V** with intact leads, keep one hand away from anything conductive, and never change range while the probes are connected."
+        },
+        {
+          "q": "How do you measure current, and what is the classic mistake?",
+          "a": "The meter must be **in series**: break the circuit and insert it in the gap.\n\nThe mistake is measuring current in parallel like a voltage. In current mode the meter is nearly a short circuit, so that blows its fuse — or worse."
+        },
+        {
+          "q": "Why do multimeters have separate 10 A and mA current jacks?",
+          "a": "Each has its own shunt and its own fuse: the 10 A jack takes tens of amps, the mA jack only a few hundred milliamps.\n\nUsing the mA jack for a large current blows that fuse — often the reason a meter suddenly \"stops reading current\". When the magnitude is unknown, start on 10 A."
+        },
+        {
+          "q": "What are the two rules for measuring resistance?",
+          "a": "**Power off**, and ideally the component out of circuit.\n\nThe meter measures by injecting its own current, so any supply present corrupts the reading — and any parallel path through the board is measured along with the part. For small values, subtract the leads' own resistance."
+        },
+        {
+          "q": "How do you test a diode with a multimeter?",
+          "a": "In diode mode: red on the anode and black on the cathode should show the forward voltage (0.5–0.7 V for silicon, 0.2–0.3 V for a Schottky). Reversed, it should read open.\n\nNear 0 V both ways means it is shorted; open both ways means it is dead."
+        },
+        {
+          "q": "What is the continuity test for, and what is it not for?",
+          "a": "It beeps below roughly 20–50 Ω — right for finding a break, confirming a joint, or checking for a short.\n\nIt is **not** a resistance measurement: a beep only tells you the resistance is low, not how low."
+        },
+        {
+          "q": "What do the multimeter CAT safety categories mean?",
+          "a": "* **CAT I** — low-energy electronics\n* **CAT II** — appliances and socket-outlet circuits\n* **CAT III** — distribution boards and fixed installation\n* **CAT IV** — service entrance and outdoor lines\n\nThe category describes the **transient energy** the meter can survive, not just the voltage. For bench work with occasional mains, CAT II 600 V is the minimum."
+        },
+        {
+          "q": "What is the trade-off with autoranging?",
+          "a": "It picks the range for you, so you cannot under-range it — but it takes about a second to settle after a change.\n\nFor watching a value that moves, or for repeated readings, manual range responds far faster."
+        },
+        {
+          "q": "What must you do before measuring a capacitor, and how accurate is the result?",
+          "a": "**Discharge it first** — through a 1–10 kΩ resistor. A charged capacitor can damage the meter.\n\nBasic meters are only good to about ±5–20 % on capacitance; an LCR meter is needed for anything more than a sanity check."
+        },
+        {
+          "q": "What are the limits of a clamp meter?",
+          "a": "It measures the magnetic field around a conductor, so nothing has to be disconnected — but accuracy falls away below about an amp, and milliamps are out of reach.\n\nAC-only clamps are cheap; measuring DC needs a Hall-effect clamp. For microcontroller-scale current, use a series measurement instead."
+        },
+        {
+          "q": "How do you measure a small project's current draw?",
+          "a": "Break the supply lead, put the meter in series in the mA range, and read.\n\nExpect roughly 50 mA for a small 8-bit board, around 200 mA for a Wi-Fi module while transmitting, and about 10 µA in deep sleep — a range no single meter range covers well."
+        },
+        {
+          "q": "How do you find the polarity of an unmarked DC adapter?",
+          "a": "Set DC volts and touch the probes to the two contacts. A positive reading means the red probe is on the positive contact; a negative reading means it is on the negative one.\n\nThe sign is the answer — the meter does not care which way round you start."
+        },
+        {
+          "q": "What is a true-RMS meter, and when do you need one?",
+          "a": "An averaging meter is calibrated assuming a clean sine wave, so it misreads anything else. A true-RMS meter computes the real RMS value of any waveform.\n\nNeeded for PWM, switching supplies, motor drives and UPS output. For DC work in small projects it makes no difference."
+        },
+        {
+          "q": "How do you test a battery properly?",
+          "a": "Open-circuit voltage first: an AA cell reads 1.5 V fresh and under 1.2 V flat; a lithium-ion cell is 4.2 V full and 3.0 V empty.\n\nThen measure **under load**. A tired cell can show a healthy open-circuit voltage and collapse as soon as current is drawn — which is why voltage alone is not a verdict."
+        },
+        {
+          "q": "What is the safe probe sequence when working on a live circuit?",
+          "a": "1. Lead into COM first, then into V\n2. Connect the ground probe first, then the live one\n3. Never change range with the probes connected\n4. Remove the live probe first when finished\n\nThe order limits how long anything is energised and unreferenced."
+        },
+        {
+          "q": "How do you test an NPN transistor with a multimeter?",
+          "a": "In diode mode, with red on the base: base to emitter reads 0.6–0.7 V, and base to collector reads 0.6–0.7 V. Collector to emitter reads open in both directions.\n\nAny other pattern means it is faulty. This works because the transistor behaves as two diodes sharing the base."
+        },
+        {
+          "q": "When do you need an oscilloscope rather than a multimeter?",
+          "a": "A multimeter gives one averaged number, so it cannot show anything that varies within a measurement:\n\n* PWM duty cycle and shape\n* Serial bus traffic (I²C, SPI, UART)\n* Supply glitches and spikes\n* Any audio or RF waveform\n\nFor digital buses specifically, a logic analyser is often the cheaper right answer."
+        },
+        {
+          "q": "What are the limits of a multimeter's frequency function?",
+          "a": "Basic meters are reliable only to a few kHz, and they need a reasonably clean signal with enough amplitude to trigger on.\n\nMains frequency reads fine; a few-hundred-hertz PWM signal is marginal; a serial bus is out of range entirely."
+        }
+      ],
+      "deck_key": "measurement"
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Kotlin",
+  "interest_icon": "curlybraces",
+  "interest_key": "kotlin",
+  "deck_q_lang": "ja",
+  "deck_a_lang": "ja",
+  "decks": [
+    {
+      "deck": "構文の基本",
+      "deck_icon": "textformat",
+      "cards": [
+        {
+          "q": "`val` と `var` の違いは何ですか?",
+          "a": "`val` は読み取り専用の *参照* です。 `var` は再割り当てできます。\n```kotlin\nval pi = 3.14\nvar count = 0\ncount += 1\n```\n`val` は、不変のコンテンツを意味する**わけではありません** — `val list = mutableListOf(1)` は、依然として `add(2)` である可能性があります。"
+        },
+        {
+          "q": "単一式関数とは何ですか?",
+          "a": "`=` の後の 1 つの式が本体となる関数。戻り値の型は推測できます。\n```kotlin\nfun sum(a: Int, b: Int) = a + b\nfun square(x: Int): Int = x * x\n```"
+        },
+        {
+          "q": "文字列テンプレートはどのように機能するのでしょうか?",
+          "a": "```kotlin\nval name = \"Dan\"\nval hi = \"Hello, $name!\"\nval len = \"Len: ${name.length}\"\n```\nリテラルのドル記号には `\\$` を使用します。"
+        },
+        {
+          "q": "生の (複数行の) 文字列を記述するにはどうすればよいでしょうか?",
+          "a": "```kotlin\nval json = \"\"\"\n  {\n    \"id\": 1\n  }\n\"\"\".trimIndent()\n```\n三重引用符はテキストをそのまま受け取ります。 `trimIndent()` は共通のインデントを削除します。"
+        },
+        {
+          "q": "`when` 式はどのように機能しますか?",
+          "a": "```kotlin\nval msg = when (code) {\n    200 -> \"OK\"\n    in 400..499 -> \"Client\"\n    is Int -> \"Other: $code\"\n    else -> \"Unknown\"\n}\n```\n引数なしの `when` は、`if`/`else if` チェーンを置き換えます。"
+        },
+        {
+          "q": "範囲を構築して反復するにはどうすればよいでしょうか?",
+          "a": "```kotlin\nfor (i in 1..10) { }     // inclusive\nfor (i in 1 until 10) { } // 1..9\nfor (i in 10 downTo 1) { }\nfor (i in 1..10 step 2) { }\n```"
+        },
+        {
+          "q": "Kotlinの`Unit`とは何ですか？",
+          "a": "意味のある戻り値を持たない関数の型 (1 つの値)。`Unit` とも呼ばれます。\n\nJava の `void` とは異なり、これは実数型であり、ジェネリック引数として返し、保存し、使用することができます。"
+        },
+        {
+          "q": "`Nothing` と `Unit` の違いは何ですか?",
+          "a": "`Unit` — 関数は戻りますが、値には情報がありません。\n`Nothing` — 関数は正常に戻りません (スロー、永久ループ、または終了)。\n\n`Nothing` はあらゆる型のサブタイプであるため、これはコンパイルされます:\n```kotlin\nval x: Int = error(\"boom\")\n```"
+        },
+        {
+          "q": "数値型と変換はどのように機能するのでしょうか?",
+          "a": "`Byte`、`Short`、`Int`、`Long`、`Float`、`Double`。 **暗黙的な拡大変換はありません**:\n```kotlin\nval i: Int = 42\nval l: Long = i.toLong()\n```\n`i` を直接 `Long` に代入するとコンパイル エラーになります。"
+        },
+        {
+          "q": "`typealias` は何をしますか?",
+          "a": "```kotlin\ntypealias UserId = String\ntypealias Handler = (Event) -> Unit\n```\n既存のタイプの新しい名前。型安全性は追加されません。基になる型は変更されません。"
+        }
+      ],
+      "deck_key": "syntax-basics"
+    },
+    {
+      "deck": "ヌルセーフティ",
+      "deck_icon": "checkmark.shield",
+      "cards": [
+        {
+          "q": "`String?` と `String` の違いは何ですか?",
+          "a": "`String` は null 不可です — コンパイラは、それが null にならないことを保証します。\n`String?` は null 可能であり、使用前にラップを解除する必要があります。\n\nNull 安全性はコンパイル時に静的に適用されます。"
+        },
+        {
+          "q": "セーフコールオペレーター`?.`はどのように機能しますか?",
+          "a": "```kotlin\nval len: Int? = user?.name?.length\n```\nチェーン内のリンクのいずれかが null の場合、式全体が null となり、例外はスローされません。"
+        },
+        {
+          "q": "エルヴィスのオペレーター `?:` はどのように機能しますか?",
+          "a": "```kotlin\nval name = user?.name ?: \"Unknown\"\nval id = findId() ?: return\nval id2 = findId() ?: error(\"no id\")\n```\n右側は、左側が null の場合にのみ評価されます。"
+        },
+        {
+          "q": "null でないアサーション `!!` は何をするのでしょうか?",
+          "a": "```kotlin\nval len: Int = user!!.name!!.length\n```\nアンラップを強制し、値が null の場合は `NullPointerException` をスローします。コードの匂いとして扱ってください。"
+        },
+        {
+          "q": "スマート キャストは null 許容値に対してどのように機能しますか?",
+          "a": "```kotlin\nfun greet(name: String?) {\n    if (name != null) {\n        println(name.length)\n    }\n}\n```\nブランチ内では、`name` が `String` にスマートキャストされます。これは、`val`、またはその間のラムダが変更できないローカルの `var` に対してのみ機能します。"
+        },
+        {
+          "q": "`let` を使用して null 許容値をアンラップするにはどうすればよいですか?",
+          "a": "```kotlin\nuser?.let { u ->\n    println(u.name)\n}\n```\nブロックは受信者が非 null の場合にのみ実行され、`let` はブロックの結果を返すため、chain を呼び出します。"
+        },
+        {
+          "q": "`String!`などのプラットフォームタイプとは何ですか?",
+          "a": "null 可能性アノテーションのない Java からの型。 Kotlin はそれを null の可能性があるものとして扱いますが、チェックは強制しないため、NPE は依然としてエスケープできます。\n\nこれを修正するには、Java API に `@Nullable` / `@NonNull` の注釈を付けるか、明示的な `String?` に割り当てます。"
+        },
+        {
+          "q": "Null 許容コレクションまたは文字列を安全にデフォルト設定するにはどうすればよいでしょうか?",
+          "a": "```kotlin\nval items = response.items.orEmpty()\nval first = list?.firstOrNull() ?: return\n```\n`orEmpty()` は、null 許容の `String`、`List`、`Set`、および `Map` に対して存在します。"
+        }
+      ],
+      "deck_key": "null-safety"
+    },
+    {
+      "deck": "機能",
+      "deck_icon": "function",
+      "cards": [
+        {
+          "q": "デフォルト引数と名前付き引数の構文は何ですか?",
+          "a": "```kotlin\nfun connect(\n    host: String,\n    port: Int = 443,\n    tls: Boolean = true\n) { }\n\nconnect(\"api.dev\", port = 8080)\n```\nSwift とは異なり、Kotlin では引数ラベルはオプションです。"
+        },
+        {
+          "q": "拡張機能とは何ですか?",
+          "a": "```kotlin\nfun String.shout() = uppercase() + \"!\"\n\"hello\".shout()  // HELLO!\n```\nレシーバーを備えた静的関数。これはクラスを変更せず、クラスの一部ではありません。"
+        },
+        {
+          "q": "クラスメンバーと拡張機能が同じ署名を持つ場合、どちらが優先されますか?",
+          "a": "**メンバー**が勝ちます。\n\n拡張機能はコンパイル時の型から静的に解決され、オーバーライドすることはできません。拡張機能への動的なディスパッチはありません。"
+        },
+        {
+          "q": "`infix` 機能とは何ですか?",
+          "a": "```kotlin\ninfix fun Int.times(s: String) =\n    s.repeat(this)\nval row = 3 times \"ab\"  // ababab\n```\nドットや括弧なしで呼び出されます。これは、パラメーターを 1 つだけ取るメンバーまたは拡張機能である必要があります。 `to`、`shl`、および `downTo` は標準ライブラリの例です。"
+        },
+        {
+          "q": "`vararg` とは何ですか? 配列をどのように展開するのですか?",
+          "a": "```kotlin\nfun log(vararg msgs: String) { }\nlog(\"a\", \"b\")\n\nval arr = arrayOf(\"x\", \"y\")\nlog(*arr)  // spread\n```"
+        },
+        {
+          "q": "関数の型と高階関数を宣言するにはどうすればよいでしょうか?",
+          "a": "```kotlin\nfun <T, R> apply(\n    x: T,\n    f: (T) -> R\n): R = f(x)\n\nval len: (String) -> Int = { it.length }\nval p: (Any) -> Unit = ::println\n```\n`::println`は関数リファレンスです。"
+        },
+        {
+          "q": "`inline` は関数に対して何をしますか?また、その価値があるのはいつですか?",
+          "a": "コンパイラは、関数本体とそれに渡されたラムダを呼び出しサイトで置き換えます。これにより、ラムダの `Function` オブジェクト割り当てが削除され、非ローカル `return` が許可され、`reified` 型パラメータが有効になります。\n\n小規模な高階関数には価値があります。大きな物体にとっては有害であり、それはすべての呼び出し部位で繰り返されます。"
+        },
+        {
+          "q": "`reified` 型パラメータとは何ですか?",
+          "a": "```kotlin\ninline fun <reified T> parse(\n    json: String\n): T = decode(json, T::class.java)\n\nval user: User = parse(text)\n```\n`reified` により、実行時に `T` が使用可能になります。タイプは呼び出しサイトで置換されるため、`inline` が必要です。"
+        },
+        {
+          "q": "`return`、`return@label` と非ローカルリターンの違いは何ですか?",
+          "a": "```kotlin\nlist.forEach {\n    if (it == 0) return       // leaves the outer fn\n    if (it < 0) return@forEach // acts as continue\n}\n```\n非ローカル `return` は、`inline` 高階関数内でのみコンパイルされます。"
+        },
+        {
+          "q": "演算子のオーバーロードはどのように機能しますか?",
+          "a": "```kotlin\ndata class Vec(val x: Int, val y: Int) {\n    operator fun plus(o: Vec) =\n        Vec(x + o.x, y + o.y)\n}\nval c = Vec(1, 2) + Vec(3, 4)\n```\n名前は規則により固定されています: `plus`、`minus`、`times`、`get`、`set`、`invoke`、`compareTo`、`contains`。"
+        }
+      ],
+      "deck_key": "functions"
+    },
+    {
+      "deck": "クラスとOOP",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "プライマリ コンストラクターはどのように機能しますか?",
+          "a": "```kotlin\nclass User(\n    val id: String,\n    var name: String\n) {\n    init { require(id.isNotEmpty()) }\n}\n```\nコンストラクター内の`val`/`var` もプロパティを宣言します。 `init` ブロックは宣言順に実行されます。"
+        },
+        {
+          "q": "Kotlin クラスのデフォルトの可視性とファイナリティは何ですか?",
+          "a": "`public` および **`final`**。\n\nサブクラス化またはオーバーライドを許可するには、`open class` と `open fun` を明示的に記述する必要があります。"
+        },
+        {
+          "q": "`data class` は何を生成しますか?",
+          "a": "```kotlin\ndata class User(\n    val id: String,\n    val name: String\n)\n```\n`equals`、`hashCode`、`toString`、`copy()`、および`componentN()` は破壊用です。少なくとも 1 つのプライマリ コンストラクター パラメーターが必要です。"
+        },
+        {
+          "q": "データクラスの `copy()` は何をしますか?",
+          "a": "```kotlin\nval u = User(\"1\", \"Dan\")\nval u2 = u.copy(name = \"Daniel\")\n```\n名前付きプロパティが置き換えられ、その他すべてが引き継がれた新しいインスタンスを返します (標準の不変更新パターン)。"
+        },
+        {
+          "q": "`sealed class` または `sealed interface` とは何ですか?",
+          "a": "```kotlin\nsealed interface Result<out T> {\n    data class Ok<T>(val v: T) : Result<T>\n    data class Err(val e: Throwable) :\n        Result<Nothing>\n    data object Loading : Result<Nothing>\n}\n```\n閉じた階層: すべての直接のサブタイプはコンパイル時に認識されるため、その上の `when` は `else` なしで網羅的になる可能性があります。"
+        },
+        {
+          "q": "`object` 宣言とは何ですか?",
+          "a": "```kotlin\nobject Config {\n    val apiUrl = \"https://api.dev\"\n    fun load() { }\n}\nConfig.load()\n```\n最初のアクセス時に遅延初期化される、スレッドセーフなシングルトン。"
+        },
+        {
+          "q": "`companion object`とは何ですか?",
+          "a": "```kotlin\nclass User(val id: String) {\n    companion object {\n        fun fromJson(s: String): User =\n            decode(s)\n    }\n}\nUser.fromJson(text)\n```\n型自体で呼び出し可能なメンバー。クラスごとに 1 つです。"
+        },
+        {
+          "q": "`class`、`data class`、`object`、`data object` — それぞれは何ですか?",
+          "a": "* `class` — 通常クラス\n* `data class` — 値のようなもの、`equals`/`hashCode`/`copy` が生成される\n* `object` — シングルトン\n* `data object` — 読み取り可能な `toString` と安定した `equals` を持つシングルトン\n\nKotlin 1.9 以降、シールされた階層のパラメータのないケースには `data object` が優先されます。"
+        },
+        {
+          "q": "`enum class` は何ができますか?",
+          "a": "```kotlin\nenum class Direction(val deg: Int) {\n    NORTH(0), EAST(90),\n    SOUTH(180), WEST(270);\n\n    fun opposite() = when (this) {\n        NORTH -> SOUTH\n        SOUTH -> NORTH\n        EAST -> WEST\n        WEST -> EAST\n    }\n}\n```\nコンストラクターのパラメーター、プロパティ、メソッド、および抽象メンバーのケースごとのオーバーライド。"
+        },
+        {
+          "q": "`abstract class` と `interface` の違いは何ですか?",
+          "a": "**抽象クラス** — バッキング フィールドに状態を保持できます。単一継承のみ。\n\n**インターフェイス** — バッキング フィールドなし (`val` は抽象または計算済みである必要があります)。クラスは多くのメソッドを実装でき、デフォルトのメソッド本体が許可されます。"
+        },
+        {
+          "q": "`by` によるクラス代表は何をしますか?",
+          "a": "```kotlin\ninterface Repo { fun load(): Data }\n\nclass CachedRepo(base: Repo) :\n    Repo by base\n```\nコンパイラはすべてのインターフェイス メンバーの転送実装を生成するため、実際に変更したいもののみをオーバーライドします。"
+        },
+        {
+          "q": "`by lazy` は何をしますか?",
+          "a": "```kotlin\nval config by lazy { loadConfig() }\n```\n最初のアクセス時に値を計算し、キャッシュします。デフォルトではスレッドセーフです (`LazyThreadSafetyMode.SYNCHRONIZED`)。"
+        },
+        {
+          "q": "`lateinit var` は何をしますか?",
+          "a": "```kotlin\nlateinit var service: Service\n\nfun setUp() { service = Service() }\n```\nnull 以外の `var` の初期化を延期します。最初に読み取ると `UninitializedPropertyAccessException` がスローされます。 `::service.isInitialized` でテストします。\n\nプリミティブまたは `val` では許可されません。"
+        },
+        {
+          "q": "ネストされたクラスと `inner class` の違いは何ですか?",
+          "a": "ネストされたクラス (デフォルト) には、Java `static` ネストされたクラスと同様に、外部インスタンスへの参照がありません。\n\n`inner class` はその参照を保持し、`this@Outer` を使用できます。"
+        }
+      ],
+      "deck_key": "classes-and-oop"
+    },
+    {
+      "deck": "スコープ関数",
+      "deck_icon": "curlybraces",
+      "cards": [
+        {
+          "q": "5 つのスコープ関数をコンテキスト オブジェクトと戻り値ごとにまとめます。",
+          "a": "```text\nlet   : it   -> block result\nrun   : this -> block result\nwith  : this -> block result\napply : this -> the receiver\nalso  : it   -> the receiver\n```\n`run` と `let` は拡張子です。 `with` は主語を引数として受け取ります。"
+        },
+        {
+          "q": "`let`はいつ使用しますか?",
+          "a": "```kotlin\nuser?.let {\n    logger.info(it.name)\n}\nval len = name?.let { it.length } ?: 0\n```\nNullable のラップを解除し、値を別のものに変換します。"
+        },
+        {
+          "q": "`apply`はいつ使用しますか?",
+          "a": "```kotlin\nval req = Request().apply {\n    method = \"POST\"\n    header(\"Accept\", \"json\")\n}\n```\nオブジェクトを構成し、その同じオブジェクトを戻す - ビルダー パターン。"
+        },
+        {
+          "q": "`also`はいつ使用しますか?",
+          "a": "```kotlin\nval user = loadUser().also {\n    logger.info(\"Loaded ${it.id}\")\n    cache.put(it.id, it)\n}\n```\n式の評価結果を変更してはいけない副作用。 `it` は、`this` ではないことを明らかにします。"
+        },
+        {
+          "q": "`run` と `with` はいつ使用しますか?",
+          "a": "```kotlin\nval area = rect.run { width * height }\nval desc = with(user) { \"$name ($id)\" }\n```\nどちらも件名を `this` として公開し、ブロックの結果を返します。"
+        },
+        {
+          "q": "`also` ではなく `apply` を選択する理由、またはその逆を選択する理由は何ですか?",
+          "a": "`apply` は暗黙的な `this` を与えるので、`property = value` と書きます。\n\n`also` は `it` を与えるので、`it.property = value` と書きます。スコープ内にすでに意味のある `this` が存在する場合、またはブロックが副作用であることを示す場合は、`also` を優先します。"
+        }
+      ],
+      "deck_key": "scope-functions"
+    },
+    {
+      "deck": "コレクション",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "読み取り専用コレクションと可変コレクションの違いは何ですか?",
+          "a": "```kotlin\nval list: List<Int> = listOf(1, 2)\nval m: MutableList<Int> =\n    mutableListOf()\n```\n`List` は読み取り専用の *インターフェイス* です。その背後にあるオブジェクトは依然として変更可能である可能性があるため、読み取り専用参照は不変性を保証するものではありません。"
+        },
+        {
+          "q": "共通のコレクション型はどのように作成しますか?",
+          "a": "```kotlin\nlistOf(1, 2, 3)\nmutableListOf(1)\nsetOf(1, 2)\nmapOf(\"a\" to 1)\nmutableMapOf<String, Int>()\narrayOf(1, 2, 3)\nIntArray(5) { it * 2 }\n```"
+        },
+        {
+          "q": "`map`、`filter`、`flatMap` は何をしますか?",
+          "a": "```kotlin\nlistOf(1,2,3).map { it * 2 }\nlistOf(1,2,3).filter { it > 1 }\nlistOf(\"ab\").flatMap { it.toList() }\n```\n3 人全員が `List` に熱心で、それぞれが新しいリストを返します。"
+        },
+        {
+          "q": "`fold` と `reduce` の違いは何ですか?",
+          "a": "```kotlin\nlistOf(1,2,3).reduce { a, x -> a + x }   // 6\nlistOf(1,2,3).fold(10) { a, x -> a + x } // 16\n```\n`reduce` は最初の要素をシードとして使用し、空のコレクションをスローします。 `fold` は明示的なシードを受け取りますが、これは要素とは異なるタイプである可能性があります。"
+        },
+        {
+          "q": "`Sequence` をいつ使用する必要がありますか?",
+          "a": "```kotlin\nlist.asSequence()\n    .map { heavy(it) }\n    .filter { it > 0 }\n    .take(3)\n    .toList()\n```\nシーケンスは遅延的です。操作は融合し、最終操作まで何も実行されません。長い操作チェーン、大規模なコレクション、または初期の `take` に価値があります。"
+        },
+        {
+          "q": "`groupBy` と `associateBy` は何をしますか?",
+          "a": "```kotlin\nusers.groupBy { it.city }\n// Map<String, List<User>>\nusers.associateBy { it.id }\n// Map<String, User>\n```\n`groupBy` はキーを共有するすべての要素を収集します。 `associateBy` は、キーが一意であり、後の重複によって以前のものが上書きされると想定します。"
+        },
+        {
+          "q": "変換されたキーまたは値を使用してマップを構築するにはどうすればよいでしょうか?",
+          "a": "```kotlin\nusers.associate { it.id to it.name }\nusers.associateWith { score(it) }\nusers.groupingBy { it.city }\n     .eachCount()\n```"
+        },
+        {
+          "q": "`zip`、`windowed`、`chunked` は何をしますか?",
+          "a": "```kotlin\nlistOf(1,2,3) zip listOf(\"a\",\"b\")\n// [(1,a),(2,b)] — stops at the shorter\n(1..5).windowed(3)\n// [[1,2,3],[2,3,4],[3,4,5]]\n(1..5).chunked(2)\n// [[1,2],[3,4],[5]]\n```"
+        },
+        {
+          "q": "構造化宣言とは何ですか?",
+          "a": "```kotlin\nval (name, age) = user\nfor ((k, v) in map) { }\nval (a, b, _) = triple\n```\n`component1()`、`component2()` などを呼び出します。これらはデータ クラス、`Pair`、`Triple` およびマップ エントリで使用できます。これは名前ではなく位置的なものです。"
+        }
+      ],
+      "deck_key": "collections"
+    },
+    {
+      "deck": "コルーチンとフロー",
+      "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
+      "cards": [
+        {
+          "q": "`suspend` とはどういう意味ですか?",
+          "a": "```kotlin\nsuspend fun loadUser(id: String): User\n```\n関数は、スレッドをブロックすることなく一時停止および再開できます。別の `suspend` 関数またはコルーチン ビルダーからのみ呼び出すことができます。"
+        },
+        {
+          "q": "`launch` と `async` の違いは何ですか?",
+          "a": "```kotlin\nscope.launch { }        // Job\nval d = scope.async { compute() }\nval v = d.await()       // Deferred<T>\n```\n`launch` はファイアアンドフォーゲットであり、`Job` を返します。 `async` は `Deferred<T>` を `await()` に返します。"
+        },
+        {
+          "q": "`coroutineScope { }` は何をしますか?",
+          "a": "```kotlin\nsuspend fun loadAll() = coroutineScope {\n    val a = async { fetchA() }\n    val b = async { fetchB() }\n    a.await() to b.await()\n}\n```\nこれは構造化された同時実行性を提供します。関数はすべての子が終了するまで戻りません。子が失敗すると兄弟はキャンセルされ、失敗が再スローされます。"
+        },
+        {
+          "q": "`coroutineScope` と `supervisorScope` の違いは何ですか?",
+          "a": "`coroutineScope` — フェイルファスト。失敗した子は、その兄弟とスコープをキャンセルします。\n\n`supervisorScope` — 失敗した子供は孤立します。その兄弟たちは走り続けます。"
+        },
+        {
+          "q": "`Dispatchers.Main`、`IO`、`Default`、`Unconfined` は何ですか?",
+          "a": "* `Main` — UI スレッド\n* `IO` — 作業 (ネットワーク、ディスク) をブロックします。大きな弾性プール\n* `Default` — CPU に依存した作業。 CPU 数に応じたプールのサイズ\n* `Unconfined` — 継続が到着したスレッドで再開します。主にテスト用"
+        },
+        {
+          "q": "`withContext` は何をしますか?",
+          "a": "```kotlin\nsuspend fun read(): String =\n    withContext(Dispatchers.IO) {\n        File(\"data\").readText()\n    }\n```\n別のディスパッチャーでブロックを実行し、戻るまで一時停止するため、呼び出し元のコンテキストは後で復元されます。 `launch` とは異なり、値を返します。"
+        },
+        {
+          "q": "コルーチンをキャンセルするにはどうすればよいですか?また、キャンセルが協力的なのはなぜですか?",
+          "a": "```kotlin\nval job = scope.launch { }\njob.cancel()\njob.cancelAndJoin()\n```\nキャンセルするとフラグが設定されます。コルーチンは一時停止ポイントでのみ停止します。 `suspend` 呼び出しのないタイトな CPU ループでは、`ensureActive()` または `isActive` 自体をチェックする必要があります。"
+        },
+        {
+          "q": "`Flow`とは何ですか?",
+          "a": "```kotlin\nfun ticks(): Flow<Int> = flow {\n    var i = 0\n    while (true) {\n        emit(i++)\n        delay(1000)\n    }\n}\nticks().collect { println(it) }\n```\nコールド非同期ストリーム: 収集されるまで何も実行されず、各コレクターが独自に実行されます。"
+        },
+        {
+          "q": "`StateFlow` と `SharedFlow` の違いは何ですか?",
+          "a": "`StateFlow<T>` — ホット、常に電流を保持します `value`、結合（最新のみを保持）し、値が実際に変化したときにのみ発光します。\n\n`SharedFlow<T>` — 構成可能な再生とバッファリングを備えたホット。繰り返しを含むすべての値を出力します。"
+        },
+        {
+          "q": "2 つのフローをどのように組み合わせるのでしょうか?",
+          "a": "```kotlin\ncombine(userFlow, settingsFlow) { u, s ->\n    UiState(u, s)\n}.collect { }\n```\n関連演算子: `zip` は厳密に 1:1 でペアリングし、`merge` は両方のストリームをインターリーブし、`flatMapLatest` は新しい値が到着するたびに前の内部フローをキャンセルします。"
+        },
+        {
+          "q": "コルーチン内の `delay` と `Thread.sleep` の違いは何ですか?",
+          "a": "`delay` はコルーチンを一時停止し、他の作業のためにスレッドを解放します。\n\n`Thread.sleep` は基礎となるスレッドをブロックします。これにより、小規模なディスパッチャー プールでは無関係なコルーチンが停止する可能性があります。 `suspend` コードでは決して使用しないでください。"
+        }
+      ],
+      "deck_key": "coroutines-and-flow"
+    },
+    {
+      "deck": "ジェネリックとバリアンス",
+      "deck_icon": "chevron.left.forwardslash.chevron.right",
+      "cards": [
+        {
+          "q": "バウンドを使用してジェネリック クラスと関数を宣言するにはどうすればよいでしょうか?",
+          "a": "```kotlin\nclass Box<T>(val value: T)\n\nfun <T> single(x: T): List<T> =\n    listOf(x)\n\nfun <T : Comparable<T>> max(a: T, b: T) =\n    if (a > b) a else b\n```"
+        },
+        {
+          "q": "型パラメータの `out` と `in` は何を意味しますか?",
+          "a": "`out T` — 共変、プロデューサー: `T` は出力位置にのみ表示されます。\n`in T` — 反変、消費者: `T` は入力位置にのみ表示されます。\n```kotlin\ninterface Source<out T> { fun next(): T }\ninterface Sink<in T> { fun accept(x: T) }\n```\n`Source<String>` は`Source<Any>` として使用できます。"
+        },
+        {
+          "q": "星図法`List<*>`とは何ですか?",
+          "a": "```kotlin\nfun printAll(list: List<*>) {\n    for (x in list) println(x) // Any?\n}\n```\nこれは、「特定だが未知の型の引数」を意味します。値を `Any?` として読み取ることはできますが、実際の型が不明であるため、何も書き込むことはできません。"
+        },
+        {
+          "q": "型パラメータに複数の境界を与えるにはどうすればよいでしょうか?",
+          "a": "```kotlin\nfun <T> process(x: T)\n    where T : Comparable<T>,\n          T : Cloneable { }\n```\n`where` 句が唯一の方法です。省略表現 `<T : A>` は境界を 1 つだけ受け取ります。"
+        },
+        {
+          "q": "型の消去とは何ですか?どのように回避しますか?",
+          "a": "ジェネリック型引数は JVM 上で実行時に消去されるため、`list is List<String>` はコンパイルできません。コンパイルできるのは `list is List<*>` だけです。\n\n回避策は `inline fun <reified T>` で、各呼び出しサイトで実際の型を置き換えます。"
+        }
+      ],
+      "deck_key": "generics-and-variance"
+    },
+    {
+      "deck": "マルチプラットフォーム",
+      "deck_icon": "building.2",
+      "cards": [
+        {
+          "q": "`commonMain`、`androidMain`、`iosMain`とは何ですか？",
+          "a": "Kotlin マルチプラットフォームのソースセット。\n\n* `commonMain` — 共有の Kotlin と `expect` の宣言\n* `androidMain` — JVM/Android コードとその `actual` 実装\n* `iosMain` — Kotlin/Objective-C フレームワークにコンパイルされたネイティブ コード\n\nテストは同じレイアウトを反映しています: `commonTest`、`androidTest`、`iosTest`。"
+        },
+        {
+          "q": "`expect` と `actual` は何をしますか?",
+          "a": "```kotlin\n// commonMain\nexpect class Platform() {\n    val name: String\n}\n\n// androidMain\nactual class Platform {\n    actual val name = \"Android\"\n}\n```\n`expect` は、共有コードが呼び出す可能性のある API を宣言します。各ターゲットは一致する `actual` を提供する必要があります。そうでない場合、ビルドは失敗します。"
+        },
+        {
+          "q": "クリーンなマルチプラットフォーム アーキテクチャの層は何ですか?",
+          "a": "1. **UI** — Compose または SwiftUI、およびモデルの表示\n2. **ドメイン** — 純粋な Kotlin のユースケース、ドメイン モデル、リポジトリ *インターフェイス*\n3. **データ** — リポジトリ実装、リモートおよびローカル データ ソース、およびそれらの間のマッパー\n\nドメイン層はプラットフォーム固有のものには依存しないため、`commonMain` で存続できます。"
+        },
+        {
+          "q": "リポジトリ パターンは何のためにあるのでしょうか?",
+          "a": "ユースケースとデータソースの間に位置し、キャッシュとネットワークの決定を行います。インターフェイスはドメイン層に属します。実装は HTTP とデータベースについて認識しており、データ層に属します。"
+        },
+        {
+          "q": "DTO、エンティティ、ドメイン モデルの違いは何ですか?",
+          "a": "* **DTO** — シリアル化アノテーションを含む API ペイロードの形状\n* **エンティティ** — 永続化アノテーションを含むデータベース行の形状\n* **ドメイン モデル** — フレームワークに依存しないビジネス形態\n\nマッパー関数はそれらの間で変換を行うため、API の名前変更が UI に到達するのを防ぎます。"
+        },
+        {
+          "q": "Android 専用の HTTP クライアントではなく、マルチプラットフォームの HTTP クライアントを選択する理由は何ですか?",
+          "a": "アノテーション駆動型の JVM クライアントは、Kotlin/Native 用にコンパイルできないため、`commonMain` に存在できません。\n```kotlin\nval client = HttpClient {\n    install(ContentNegotiation) { json() }\n}\nval user: User =\n    client.get(\"/users/1\").body()\n```"
+        },
+        {
+          "q": "Kotlin パッケージはディレクトリにどのようにマッピングされますか?",
+          "a": "パッケージ宣言は、ディレクトリ パス (`src/commonMain/kotlin/com/example/data/` の `package com.example.data`) と一致する必要があります。\n\n逆ドメイン命名により、パッケージはライブラリ間で一意に保たれます。"
+        },
+        {
+          "q": "Kotlin インポートと Swift の違いは何ですか?",
+          "a": "```kotlin\nimport com.example.util.Mediator\nimport com.example.util.*\nimport com.example.util.Mediator as M\n```\nKotlin は個々の宣言をインポートし、エイリアスをサポートします。 Swift の `import` にはモジュール全体が組み込まれています。"
+        }
+      ],
+      "deck_key": "multiplatform"
+    },
+    {
+      "deck": "Gradle と工具",
+      "deck_icon": "hammer",
+      "cards": [
+        {
+          "q": "Gradle プロジェクトを構築し、そのタスクをリストするにはどうすればよいですか?",
+          "a": "```bash\n./gradlew build\n./gradlew tasks\n./gradlew tasks --all\n```\nラッパー (`gradlew`) は Gradle バージョンを固定するため、システム `gradle` ではなくそれを使用します。"
+        },
+        {
+          "q": "ビルドをクリーンアップするにはどうすればよいですか?また、`clean build` が最初の動きとして適切であることはほとんどないのはなぜですか?",
+          "a": "```bash\n./gradlew clean\n./gradlew clean build\n```\n増分ビルド キャッシュを破棄するため、速度が遅くなります。習慣としてではなく、出力が古くなったと思われるときに実行してください。"
+        },
+        {
+          "q": "Gradle デーモンを停止するにはどうすればよいですか?",
+          "a": "```bash\n./gradlew --stop\n```\nメモリ不足の障害が発生した後、またはデーモンが介入した場合に役立ちます。次のビルドでは新しいビルドが開始されます。"
+        },
+        {
+          "q": "Kotlin/ネイティブ iOS フレームワークをどのようにリンクしますか?",
+          "a": "```bash\n./gradlew :shared:linkDebugFrameworkIosSimulatorArm64\n./gradlew :shared:linkReleaseFrameworkIosArm64\n```\nタスク名はビルド タイプ、出力の種類、ターゲットをエンコードするため、各シミュレーター/デバイス アーキテクチャには独自のタスクがあります。"
+        },
+        {
+          "q": "単一モジュールまたは単一テストクラスのテストはどのように実行しますか?",
+          "a": "```bash\n./gradlew :shared:test\n./gradlew :shared:allTests\n./gradlew test --tests \"com.example.MyTest\"\n```\n`test` は JVM ターゲットのみを実行します。 `allTests` はあらゆるマルチプラットフォーム ターゲットを実行します。"
+        },
+        {
+          "q": "コードの書式設定をどのように確認して適用しますか?",
+          "a": "```bash\n./gradlew spotlessCheck\n./gradlew spotlessApply\n```\n`Check` は違反によりビルドに失敗します。CI はこれを実行する必要があります。 `Apply` はファイルを書き換えます。"
+        },
+        {
+          "q": "Gradle を特定の JDK に指定するにはどうすればよいですか?",
+          "a": "```bash\njava -version\nexport JAVA_HOME=$(/usr/libexec/java_home -v 21)\n```\nさらに良いのは、ビルド スクリプトに Gradle ツールチェーンを設定して、何がインストールされているかに関係なく、すべてのマシンが同じ JDK に対してコンパイルされるようにすることです。"
+        },
+        {
+          "q": "モジュールの依存関係ツリーをどのように検査しますか?",
+          "a": "```bash\n./gradlew :app:dependencies\n./gradlew :app:dependencies \\\n  --configuration releaseRuntimeClasspath\n```\n出力には、どのバージョンが競合に勝ったのか、そしてその理由が示されています。これは、クラスの重複エラーについて最初に確認することです。"
+        },
+        {
+          "q": "Gradle ビルド キャッシュには何があり、増分ビルドにはできないのですか?",
+          "a": "インクリメンタル ビルドでは、**このプロジェクト ディレクトリ**内の入力が変更されていないタスクをスキップします。\n\nビルド キャッシュには、入力をキーとしたタスクの出力が保存されるため、クリーン チェックアウト (つまり CI) で他の場所で生成された結果を再利用できます。"
+        }
+      ],
+      "deck_key": "gradle-and-tooling"
+    }
+  ]
+}

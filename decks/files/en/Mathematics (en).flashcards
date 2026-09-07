@@ -1,0 +1,491 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Mathematics",
+  "interest_icon": "function",
+  "interest_key": "mathematics",
+  "deck_q_lang": "en",
+  "deck_a_lang": "en",
+  "decks": [
+    {
+      "deck": "Powers and Roots",
+      "cards": [
+        {
+          "q": "$a^m \\cdot a^n = ?${a to the m times a to the n}",
+          "a": "$a^{m+n}${a to the m plus n}"
+        },
+        {
+          "q": "$\\frac{a^m}{a^n} = ?${a to the m over a to the n}",
+          "a": "$a^{m-n}${a to the m minus n}"
+        },
+        {
+          "q": "$(a^m)^n = ?${a to the m, all to the n}",
+          "a": "$a^{m \\cdot n}${a to the m times n}"
+        },
+        {
+          "q": "$a^{-m} = ?${a to the minus m}",
+          "a": "$\\frac{1}{a^m}${one over a to the m}"
+        },
+        {
+          "q": "$a^0 = ?${a to the zero} for $a \\neq 0${a not equal to zero}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sqrt[n]{a^m} = ?${the n-th root of a to the m}",
+          "a": "$a^{m/n}${a to the m over n}"
+        },
+        {
+          "q": "$\\sqrt[m]{\\sqrt[n]{a}} = ?${the m-th root of the n-th root of a}",
+          "a": "$\\sqrt[m \\cdot n]{a}${the m times n-th root of a}"
+        }
+      ],
+      "deck_key": "powers-and-roots"
+    },
+    {
+      "deck": "Logarithm Rules",
+      "cards": [
+        {
+          "q": "$\\log_a(x \\cdot y) = ?${log base a of x times y}",
+          "a": "$\\log_a x + \\log_a y${log base a of x plus log base a of y}"
+        },
+        {
+          "q": "$\\log_a\\!\\left(\\frac{x}{y}\\right) = ?${log base a of x over y}",
+          "a": "$\\log_a x - \\log_a y${log base a of x minus log base a of y}"
+        },
+        {
+          "q": "$\\log_a(x^k) = ?${log base a of x to the k}",
+          "a": "$k \\cdot \\log_a x${k times log base a of x}"
+        },
+        {
+          "q": "$\\log_a a = ?${log base a of a}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\log_a 1 = ?${log base a of one}",
+          "a": "$0$"
+        },
+        {
+          "q": "Change of base: $\\log_a x = ?${log base a of x}",
+          "a": "$\\frac{\\log_b x}{\\log_b a}${log base b of x over log base b of a}\n\nUsually with $b = 10$ or $b = e$."
+        },
+        {
+          "q": "$\\ln(e^x) = ?${natural log of e to the x}",
+          "a": "$x$"
+        },
+        {
+          "q": "$a^{\\log_a x} = ?${a to the log base a of x} for $x > 0$",
+          "a": "$x$\n\nExponentiation and the logarithm of the same base undo each other."
+        }
+      ],
+      "deck_key": "logarithm-rules"
+    },
+    {
+      "deck": "Algebraic Identities",
+      "cards": [
+        {
+          "q": "$(a + b)^2 = ?${a plus b, all squared}",
+          "a": "$a^2 + 2ab + b^2${a squared plus two a b plus b squared}"
+        },
+        {
+          "q": "$(a - b)^2 = ?${a minus b, all squared}",
+          "a": "$a^2 - 2ab + b^2${a squared minus two a b plus b squared}"
+        },
+        {
+          "q": "Factor the difference of squares: $a^2 - b^2 = ?${a squared minus b squared}",
+          "a": "$(a - b)(a + b)${a minus b, times a plus b}"
+        },
+        {
+          "q": "$(a + b)^3 = ?${a plus b, all cubed}",
+          "a": "$a^3 + 3a^2b + 3ab^2 + b^3${a cubed plus three a squared b plus three a b squared plus b cubed}"
+        },
+        {
+          "q": "$(a - b)^3 = ?${a minus b, all cubed}",
+          "a": "$a^3 - 3a^2b + 3ab^2 - b^3${a cubed minus three a squared b plus three a b squared minus b cubed}"
+        },
+        {
+          "q": "Factor the sum of cubes: $a^3 + b^3 = ?${a cubed plus b cubed}",
+          "a": "$(a + b)(a^2 - ab + b^2)${a plus b, times a squared minus a b plus b squared}"
+        },
+        {
+          "q": "Factor the difference of cubes: $a^3 - b^3 = ?${a cubed minus b cubed}",
+          "a": "$(a - b)(a^2 + ab + b^2)${a minus b, times a squared plus a b plus b squared}"
+        },
+        {
+          "q": "Quadratic formula: the roots of $ax^2 + bx + c = 0${a x squared plus b x plus c equals zero}",
+          "a": "$$\nx = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n$${x equals minus b plus or minus the square root of b squared minus four a c, all over two a}"
+        },
+        {
+          "q": "What does the discriminant $D = b^2 - 4ac${D equals b squared minus four a c} tell you?",
+          "a": "* $D > 0$ — two distinct real roots\n* $D = 0$ — one real double root\n* $D < 0$ — two complex conjugate roots"
+        }
+      ],
+      "deck_key": "algebraic-identities"
+    },
+    {
+      "deck": "Trigonometric Values",
+      "cards": [
+        {
+          "q": "$\\sin 0^\\circ = ?${sine of zero degrees}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\sin 30^\\circ = \\sin\\frac{\\pi}{6} = ?${sine of thirty degrees}",
+          "a": "$\\frac{1}{2}${one half}"
+        },
+        {
+          "q": "$\\sin 45^\\circ = \\sin\\frac{\\pi}{4} = ?${sine of forty-five degrees}",
+          "a": "$\\frac{\\sqrt{2}}{2}${the square root of two over two}"
+        },
+        {
+          "q": "$\\sin 60^\\circ = \\sin\\frac{\\pi}{3} = ?${sine of sixty degrees}",
+          "a": "$\\frac{\\sqrt{3}}{2}${the square root of three over two}"
+        },
+        {
+          "q": "$\\sin 90^\\circ = \\sin\\frac{\\pi}{2} = ?${sine of ninety degrees}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 0^\\circ = ?${cosine of zero degrees}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 30^\\circ = \\cos\\frac{\\pi}{6} = ?${cosine of thirty degrees}",
+          "a": "$\\frac{\\sqrt{3}}{2}${the square root of three over two}"
+        },
+        {
+          "q": "$\\cos 45^\\circ = \\cos\\frac{\\pi}{4} = ?${cosine of forty-five degrees}",
+          "a": "$\\frac{\\sqrt{2}}{2}${the square root of two over two}"
+        },
+        {
+          "q": "$\\cos 60^\\circ = \\cos\\frac{\\pi}{3} = ?${cosine of sixty degrees}",
+          "a": "$\\frac{1}{2}${one half}"
+        },
+        {
+          "q": "$\\cos 90^\\circ = \\cos\\frac{\\pi}{2} = ?${cosine of ninety degrees}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\tan 30^\\circ = \\tan\\frac{\\pi}{6} = ?${tangent of thirty degrees}",
+          "a": "$\\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}${one over the square root of three, or the square root of three over three}"
+        },
+        {
+          "q": "$\\tan 45^\\circ = \\tan\\frac{\\pi}{4} = ?${tangent of forty-five degrees}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\tan 60^\\circ = \\tan\\frac{\\pi}{3} = ?${tangent of sixty degrees}",
+          "a": "$\\sqrt{3}${the square root of three}"
+        },
+        {
+          "q": "Why is $\\tan 90^\\circ${tangent of ninety degrees} undefined?",
+          "a": "Because $\\tan x = \\frac{\\sin x}{\\cos x}${tangent x equals sine x over cosine x} and $\\cos 90^\\circ = 0$ — the quotient has a zero denominator."
+        }
+      ],
+      "deck_key": "trigonometric-values"
+    },
+    {
+      "deck": "Trigonometric Identities",
+      "cards": [
+        {
+          "q": "Pythagorean identity: $\\sin^2 x + \\cos^2 x = ?${sine squared x plus cosine squared x}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sin 2x = ?${sine of two x}",
+          "a": "$2 \\sin x \\cos x${two sine x cosine x}"
+        },
+        {
+          "q": "$\\cos 2x = ?${cosine of two x}",
+          "a": "$\\cos^2 x - \\sin^2 x${cosine squared x minus sine squared x}\n\nAlso $1 - 2\\sin^2 x$ or $2\\cos^2 x - 1$."
+        },
+        {
+          "q": "Express $\\tan x${tangent x} using $\\sin x$ and $\\cos x$:",
+          "a": "$\\tan x = \\frac{\\sin x}{\\cos x}${tangent x equals sine x over cosine x}"
+        },
+        {
+          "q": "Express $\\cot x${cotangent x} using $\\sin x$ and $\\cos x$:",
+          "a": "$\\cot x = \\frac{\\cos x}{\\sin x}${cotangent x equals cosine x over sine x}"
+        },
+        {
+          "q": "$1 + \\tan^2 x = ?${one plus tangent squared x}",
+          "a": "$\\frac{1}{\\cos^2 x}${one over cosine squared x}"
+        },
+        {
+          "q": "$1 + \\cot^2 x = ?${one plus cotangent squared x}",
+          "a": "$\\frac{1}{\\sin^2 x}${one over sine squared x}"
+        },
+        {
+          "q": "$\\sin(x + y) = ?${sine of x plus y}",
+          "a": "$\\sin x \\cos y + \\cos x \\sin y${sine x cosine y plus cosine x sine y}"
+        },
+        {
+          "q": "$\\sin(x - y) = ?${sine of x minus y}",
+          "a": "$\\sin x \\cos y - \\cos x \\sin y${sine x cosine y minus cosine x sine y}"
+        },
+        {
+          "q": "$\\cos(x + y) = ?${cosine of x plus y}",
+          "a": "$\\cos x \\cos y - \\sin x \\sin y${cosine x cosine y minus sine x sine y}"
+        },
+        {
+          "q": "$\\cos(x - y) = ?${cosine of x minus y}",
+          "a": "$\\cos x \\cos y + \\sin x \\sin y${cosine x cosine y plus sine x sine y}"
+        },
+        {
+          "q": "$\\tan(x + y) = ?${tangent of x plus y}",
+          "a": "$\\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y}${tangent x plus tangent y, over one minus tangent x tangent y}"
+        }
+      ],
+      "deck_key": "trigonometric-identities"
+    },
+    {
+      "deck": "Trigonometric Functions and Inverses",
+      "cards": [
+        {
+          "q": "Domain of $\\sin x${sine x}:",
+          "a": "$\\mathbb{R}$ — all real numbers."
+        },
+        {
+          "q": "Range of $\\sin x${sine x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${the closed interval from minus one to one}"
+        },
+        {
+          "q": "Is $\\sin x${sine x} even or odd?",
+          "a": "**Odd:** $\\sin(-x) = -\\sin x${sine of minus x equals minus sine x}"
+        },
+        {
+          "q": "Is $\\cos x${cosine x} even or odd?",
+          "a": "**Even:** $\\cos(-x) = \\cos x${cosine of minus x equals cosine x}"
+        },
+        {
+          "q": "Period of $\\sin x${sine x} and $\\cos x${cosine x}:",
+          "a": "$2\\pi${two pi}"
+        },
+        {
+          "q": "Period of $\\tan x${tangent x}:",
+          "a": "$\\pi${pi}"
+        },
+        {
+          "q": "Domain of $\\tan x${tangent x}:",
+          "a": "$\\mathbb{R} \\setminus \\left\\{\\frac{\\pi}{2} + k\\pi \\mid k \\in \\mathbb{Z}\\right\\}${all reals except pi over two plus k pi}"
+        },
+        {
+          "q": "Domain of $\\cot x${cotangent x}:",
+          "a": "$\\mathbb{R} \\setminus \\{k\\pi \\mid k \\in \\mathbb{Z}\\}${all reals except integer multiples of pi}"
+        },
+        {
+          "q": "Zeros of $\\sin x${sine x}:",
+          "a": "$x = k\\pi, \\quad k \\in \\mathbb{Z}${x equals k pi, k an integer}"
+        },
+        {
+          "q": "Zeros of $\\cos x${cosine x}:",
+          "a": "$x = \\frac{\\pi}{2} + k\\pi, \\quad k \\in \\mathbb{Z}${x equals pi over two plus k pi, k an integer}"
+        },
+        {
+          "q": "What is $\\arcsin x${arc sine x}?",
+          "a": "The inverse of $\\sin x$ restricted to $\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${minus pi over two to pi over two}."
+        },
+        {
+          "q": "Domain of $\\arcsin x${arc sine x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${the closed interval from minus one to one}"
+        },
+        {
+          "q": "Range of $\\arcsin x${arc sine x}:",
+          "a": "$\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${the closed interval from minus pi over two to pi over two}"
+        },
+        {
+          "q": "What is $\\arccos x${arc cosine x}?",
+          "a": "The inverse of $\\cos x$ restricted to $\\langle 0,\\, \\pi \\rangle${zero to pi}."
+        },
+        {
+          "q": "Domain of $\\arccos x${arc cosine x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${the closed interval from minus one to one}"
+        },
+        {
+          "q": "Range of $\\arccos x${arc cosine x}:",
+          "a": "$\\langle 0,\\, \\pi \\rangle${the closed interval from zero to pi}"
+        },
+        {
+          "q": "Domain of $\\arctan x${arc tangent x}:",
+          "a": "$\\mathbb{R}$ — all real numbers."
+        },
+        {
+          "q": "Range of $\\arctan x${arc tangent x}:",
+          "a": "$\\left( -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right)${the open interval from minus pi over two to pi over two}"
+        },
+        {
+          "q": "Domain of $\\text{arccot}\\, x${arc cotangent x}:",
+          "a": "$\\mathbb{R}$ — all real numbers."
+        },
+        {
+          "q": "Range of $\\text{arccot}\\, x${arc cotangent x}:",
+          "a": "$(0,\\, \\pi)${the open interval from zero to pi}"
+        }
+      ],
+      "deck_key": "trigonometric-functions-and-inverses"
+    },
+    {
+      "deck": "Derivatives",
+      "cards": [
+        {
+          "q": "What does $f'(x_0)${f prime of x nought} mean geometrically?",
+          "a": "It is the slope of the tangent line ($k = \\tan \\alpha${k equals tangent alpha}) to the graph of $f$ at $x_0${x nought}."
+        },
+        {
+          "q": "Definition of the derivative — increment form:\n$$\nf'(x_0) = \\lim_{\\Delta x \\to 0} \\frac{f(x_0 + \\Delta x) - f(x_0)}{\\Delta x}\n$${f prime of x nought equals the limit as delta x goes to zero of f of x nought plus delta x, minus f of x nought, over delta x}",
+          "a": "The limit of the ratio between the change in the function and the change in its argument, as that change goes to zero."
+        },
+        {
+          "q": "Definition of the derivative — difference-quotient form:\n$$\nf'(x_0) = \\lim_{x \\to x_0} \\frac{f(x) - f(x_0)}{x - x_0}\n$${f prime of x nought equals the limit as x goes to x nought of f of x minus f of x nought, over x minus x nought}",
+          "a": "An equivalent statement of the same limit, written with $x$ approaching $x_0${x nought}."
+        },
+        {
+          "q": "Equation of the **tangent** to the graph of $f$ at $(x_0, y_0)${x nought, y nought}:",
+          "a": "$$\ny - y_0 = f'(x_0)\\,(x - x_0)\n$${y minus y nought equals f prime of x nought, times x minus x nought}"
+        },
+        {
+          "q": "Equation of the **normal** to the graph of $f$ at $(x_0, y_0)${x nought, y nought}:",
+          "a": "$$\ny - y_0 = -\\frac{1}{f'(x_0)}\\,(x - x_0)\n$${y minus y nought equals minus one over f prime of x nought, times x minus x nought}\n\nValid where $f'(x_0) \\neq 0${f prime of x nought is not zero}."
+        },
+        {
+          "q": "$(c \\cdot u)' = ?${the derivative of c times u}",
+          "a": "$c \\cdot u'${c times u prime}"
+        },
+        {
+          "q": "$(u + v)' = ?${the derivative of u plus v}",
+          "a": "$u' + v'${u prime plus v prime}"
+        },
+        {
+          "q": "$(u - v)' = ?${the derivative of u minus v}",
+          "a": "$u' - v'${u prime minus v prime}"
+        },
+        {
+          "q": "Product rule: $(u \\cdot v)' = ?${the derivative of u times v}",
+          "a": "$u'v + uv'${u prime v plus u v prime}"
+        },
+        {
+          "q": "Quotient rule: $\\left(\\frac{u}{v}\\right)' = ?${the derivative of u over v}",
+          "a": "$$\n\\frac{u'v - uv'}{v^2}\n$${u prime v minus u v prime, over v squared}"
+        },
+        {
+          "q": "Chain rule: $(f \\circ g)'(x) = ?${the derivative of f composed with g, at x}",
+          "a": "$f'(g(x)) \\cdot g'(x)${f prime of g of x, times g prime of x}"
+        },
+        {
+          "q": "$(c)' = ?${the derivative of a constant c}",
+          "a": "$0$"
+        },
+        {
+          "q": "$(x^n)' = ?${the derivative of x to the n}",
+          "a": "$n \\cdot x^{n-1}${n times x to the n minus one}, for $n \\in \\mathbb{R}${n real}"
+        },
+        {
+          "q": "$(\\sin x)' = ?${the derivative of sine x}",
+          "a": "$\\cos x${cosine x}"
+        },
+        {
+          "q": "$(\\cos x)' = ?${the derivative of cosine x}",
+          "a": "$-\\sin x${minus sine x}"
+        },
+        {
+          "q": "$(\\tan x)' = ?${the derivative of tangent x}",
+          "a": "$\\frac{1}{\\cos^2 x}${one over cosine squared x}\n\nFor $x \\neq \\frac{\\pi}{2} + k\\pi${x not equal to pi over two plus k pi}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(\\cot x)' = ?${the derivative of cotangent x}",
+          "a": "$-\\frac{1}{\\sin^2 x}${minus one over sine squared x}\n\nFor $x \\neq k\\pi${x not an integer multiple of pi}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(e^x)' = ?${the derivative of e to the x}",
+          "a": "$e^x${e to the x}"
+        },
+        {
+          "q": "$(a^x)' = ?${the derivative of a to the x}, where $a > 0, a \\neq 1$",
+          "a": "$a^x \\cdot \\ln a${a to the x times the natural log of a}"
+        },
+        {
+          "q": "$(\\ln x)' = ?${the derivative of the natural log of x}",
+          "a": "$\\frac{1}{x}${one over x}, for $x > 0$"
+        },
+        {
+          "q": "$(\\log_a x)' = ?${the derivative of log base a of x}",
+          "a": "$\\frac{1}{x \\cdot \\ln a}${one over x times the natural log of a}\n\nFor $x > 0$, $a > 0$, $a \\neq 1$."
+        }
+      ],
+      "deck_key": "derivatives"
+    },
+    {
+      "deck": "Solid Geometry",
+      "cards": [
+        {
+          "q": "Volume of a **prism** — $S_p${S p} is the base area, $v$ the height:",
+          "a": "$$\nV = S_p \\cdot v\n$${V equals S p times v}"
+        },
+        {
+          "q": "Surface area of a **prism** — $S_p${S p} base area, $S_{pl}${S p l} lateral area:",
+          "a": "$$\nS = 2 S_p + S_{pl}\n$${S equals two S p plus S p l}"
+        },
+        {
+          "q": "Volume of a **pyramid** — $S_p${S p} base area, $v$ height:",
+          "a": "$$\nV = \\frac{1}{3} S_p \\cdot v\n$${V equals one third S p times v}"
+        },
+        {
+          "q": "Surface area of a **pyramid**:",
+          "a": "$$\nS = S_p + S_{pl}\n$${S equals S p plus S p l}"
+        },
+        {
+          "q": "Volume of a **truncated pyramid** — $S_1, S_2${S one, S two} base areas, $v$ height:",
+          "a": "$$\nV = \\frac{v}{3}\\left(S_1 + \\sqrt{S_1 S_2} + S_2\\right)\n$${V equals v over three, times S one plus the square root of S one S two, plus S two}"
+        },
+        {
+          "q": "Surface area of a **truncated pyramid**:",
+          "a": "$$\nS = S_1 + S_2 + S_{pl}\n$${S equals S one plus S two plus S p l}"
+        },
+        {
+          "q": "Why is a pyramid's volume $\\frac{1}{3}${one third} of the prism on the same base?",
+          "a": "A cube can be cut into **three congruent pyramids** sharing its base and height.\n\nFormally it follows from Cavalieri's principle: the cross-section grows as $S(x) \\propto x^2${S of x is proportional to x squared}, and integrating $x^2$ gives the factor $\\tfrac{1}{3}$."
+        },
+        {
+          "q": "How many Platonic solids are there, and what are they?",
+          "a": "**Five:** tetrahedron, cube (hexahedron), octahedron, dodecahedron, icosahedron.\n\nEvery face is the same regular polygon and every vertex is identical."
+        },
+        {
+          "q": "Volume of a **tetrahedron** with edge $a$:",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{12}\n$${V equals a cubed times the square root of two, over twelve}"
+        },
+        {
+          "q": "Surface area of a **tetrahedron** with edge $a$:",
+          "a": "$$\nS = a^2 \\sqrt{3}\n$${S equals a squared times the square root of three}"
+        },
+        {
+          "q": "Volume of a **cube** with edge $a$:",
+          "a": "$$\nV = a^3\n$${V equals a cubed}"
+        },
+        {
+          "q": "Surface area of a **cube** with edge $a$:",
+          "a": "$$\nS = 6a^2\n$${S equals six a squared}"
+        },
+        {
+          "q": "Volume of an **octahedron** with edge $a$:",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{3}\n$${V equals a cubed times the square root of two, over three}"
+        },
+        {
+          "q": "Surface area of an **octahedron** with edge $a$:",
+          "a": "$$\nS = 2a^2 \\sqrt{3}\n$${S equals two a squared times the square root of three}"
+        },
+        {
+          "q": "What shape are the faces of an **icosahedron**?",
+          "a": "20 faces, each an **equilateral triangle**."
+        },
+        {
+          "q": "What shape are the faces of a **dodecahedron**?",
+          "a": "12 faces, each a **regular pentagon**."
+        },
+        {
+          "q": "**Euler's formula** for convex polyhedra — $V$ vertices, $E$ edges, $F$ faces:",
+          "a": "$$\nV - E + F = 2\n$${V minus E plus F equals two}"
+        }
+      ],
+      "deck_key": "solid-geometry"
+    }
+  ]
+}

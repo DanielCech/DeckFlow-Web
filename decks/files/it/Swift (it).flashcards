@@ -1,0 +1,392 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Swift",
+  "interest_icon": "swift",
+  "interest_key": "swift",
+  "deck_q_lang": "it",
+  "deck_a_lang": "it",
+  "decks": [
+    {
+      "deck": "Valori, tipi e stringhe",
+      "deck_icon": "textformat",
+      "cards": [
+        {
+          "q": "Qual è la differenza tra `let` e `var` in Swift?",
+          "a": "*`let` crea una **costante**: può essere impostata una volta e mai riassegnata. `var` crea una **variabile** che può cambiare.*\n```swift\nlet name = \"Sam\"      // fixed\nvar score = 0\nscore += 10           // fine\n```\n*Preferisci `let`: il compilatore avvisa quando un `var` non cambia mai e le costanti sono più facili da ragionare.*"
+        },
+        {
+          "q": "Cos'è l'inferenza del tipo in Swift?",
+          "a": "*Il compilatore calcola il tipo di valore dal valore assegnato, quindi raramente scrivi i tipi a mano. Il tipo è ancora fisso in fase di compilazione: Swift è fortemente tipizzato.*\n```swift\nlet age = 38          // Int\nlet pi = 3.14         // Double\nlet name = \"Sam\"      // String\n```"
+        },
+        {
+          "q": "Quando è necessaria un'annotazione di tipo esplicito?",
+          "a": "*Quando non è presente alcun valore da cui dedurre o il tipo dedotto non è quello desiderato.*\n```swift\nlet score: Double = 0        // not Int\nvar names: [String] = []     // empty, nothing to infer\nlet flags: [String: Bool] = [:]\nlet view: any Shape = circle // a protocol type\n```"
+        },
+        {
+          "q": "Cos'è l'interpolazione delle stringhe?",
+          "a": "*Inserimento di valori all'interno di una stringa con `\\( )`. Funziona con qualsiasi tipo e può contenere intere espressioni ed è più veloce e sicuro della concatenazione.*\n```swift\nlet name = \"Sam\"\nlet count = 3\nprint(\"\\(name) has \\(count) items\")\nprint(\"Next year: \\(count + 1)\")\n```"
+        },
+        {
+          "q": "Come si scrive una stringa su più righe in Swift?",
+          "a": "*Con virgolette triple. I caratteri `\"\"\"` di apertura e chiusura devono trovarsi su righe separate e il rientro del delimitatore di chiusura viene rimosso da ogni riga.*\n```swift\nlet text = \"\"\"\n    Line one\n    Line two\n    \"\"\"\n```\n*Termina una riga con `\\` per mantenere leggibile la fonte senza emettere un'interruzione di riga.*"
+        },
+        {
+          "q": "Nomina le proprietà e i metodi `String` più utili.",
+          "a": "- `count` — numero di caratteri\n- `uppercased()` / `lowercased()`\n- `hasPrefix(_:)` / `hasSuffix(_:)`\n- `contains(_:)`, `trimmingCharacters(in:)`\n- `isEmpty` — più economico di `count == 0`\n\n*`count` percorre l'intera stringa, quindi è O(n) — non usarlo mai solo per verificare la vacuità.*"
+        },
+        {
+          "q": "Perché non puoi aggiungere un `Int` a un `Double` in Swift?",
+          "a": "*Swift è indipendente dai tipi ed esegue **nessuna conversione numerica implicita**: la combinazione di tipi è un errore di compilazione. Converti esplicitamente.*\n```swift\nlet a = 1\nlet b = 2.0\nlet c = Double(a) + b\n```\n*Eccezione: i valori letterali non sono tipizzati finché non vengono utilizzati, quindi `let d = 1 + 2.0` viene compilato.*"
+        },
+        {
+          "q": "Cosa significano i caratteri di sottolineatura in un numero letterale e cos'è `isMultiple(of:)`?",
+          "a": "*I caratteri di sottolineatura vengono ignorati dal compilatore ed esistono esclusivamente per la leggibilità. `isMultiple(of:)` è un sostituto più chiaro per `% n == 0`.*\n```swift\nlet big = 1_000_000\nlet even = 12.isMultiple(of: 2)   // true\n```"
+        },
+        {
+          "q": "Cosa sono gli operatori di assegnazione composti?",
+          "a": "*Stenografia che legge il valore corrente, applica un'operazione e la riscrive. Funzionano anche per le stringhe, dove `+` significa concatenazione.*\n```swift\nvar score = 10\nscore += 5      // 15\nscore *= 2      // 30\n\nvar name = \"Sam\"\nname += \" Smith\"\n```"
+        }
+      ],
+      "deck_key": "values-types-and-strings"
+    },
+    {
+      "deck": "Collezioni",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "Come si crea un array tipizzato vuoto e cosa si può fare con esso?",
+          "a": "*Fornisci esplicitamente il tipo di elemento, perché non c'è alcun valore da cui dedurre.*\n```swift\nvar names = [String]()\n// or:\nvar names: [String] = []\nnames.append(\"Sam\")\nnames.count                     // 1\nnames.remove(at: 0)\nnames.contains(\"Sam\")\nnames.sorted()\n```"
+        },
+        {
+          "q": "Quali sono le differenze principali tra array, set e dizionari?",
+          "a": "- **Array**: ordinato, consente duplicati, accesso tramite indice intero\n- **Set** — non ordinato, nessun duplicato, molto veloce `contains()`\n- **Dizionario**: coppie chiave/valore non ordinate, accessibili tramite chiave\n\n*Scegli un set quando ti interessa solo l'appartenenza e un dizionario quando ogni valore necessita di un nome significativo.*"
+        },
+        {
+          "q": "Perché la lettura da un dizionario restituisce un facoltativo?",
+          "a": "*Perché la chiave potrebbe non esistere. Fornisci un valore predefinito con il pedice per ottenere un retro non opzionale.*\n```swift\nlet heights = [\"Sam\": 1.78]\nlet a = heights[\"Sam\"]                // Double?\nlet b = heights[\"Kim\", default: 0]    // Double\n```"
+        },
+        {
+          "q": "Cosa rende veloce un `Set` e a cosa rinunci?",
+          "a": "*Gli elementi vengono memorizzati in base al valore hash, quindi `contains()` è effettivamente un tempo costante, indipendentemente dalla dimensione. In cambio perdi l'ordine e i duplicati: `insert()` di un elemento esistente non fa nulla.*\n```swift\nvar words = Set<String>()\nwords.insert(\"swift\")\n// fast even with millions of items\nwords.contains(\"swift\")\n```"
+        },
+        {
+          "q": "Come si esegue il loop su un dizionario e quale ordine si ottiene?",
+          "a": "*Si ripetono le tuple di `(key, value)` in un **ordine non definito**: si ordinano le chiavi se l'ordine è importante.*\n```swift\nfor (key, value) in heights {\n    print(\"\\(key) is \\(value)\")\n}\n\nfor key in heights.keys.sorted() { ... }\n```"
+        }
+      ],
+      "deck_key": "collections"
+    },
+    {
+      "deck": "Enumerazioni",
+      "deck_icon": "checklist",
+      "cards": [
+        {
+          "q": "Come si crea e si utilizza un'enumerazione di base?",
+          "a": "*Un enum definisce un insieme fisso di casi denominati, quindi il compilatore può rifiutare valori non validi che un `String` accetterebbe volentieri.*\n```swift\nenum Weekday {\n    case monday, tuesday, wednesday\n}\n\nvar day = Weekday.monday\nday = .tuesday          // type already known\n```"
+        },
+        {
+          "q": "Cosa sono i valori grezzi enum e `CaseIterable`?",
+          "a": "*Un valore grezzo supporta ogni caso con un `String` o un numero, dandoti un `init?(rawValue:)` fallibile. `CaseIterable` sintetizza un array `allCases`.*\n```swift\nenum Suit: String, CaseIterable {\n    case hearts, spades\n}\n\nSuit(rawValue: \"hearts\")   // Optional(.hearts)\nSuit.allCases.count        // 2\n```"
+        },
+        {
+          "q": "Cosa sono le enumerazioni con valori associati?",
+          "a": "*I casi possono contenere dati aggiuntivi, quindi un tipo modella uno stato **e** il suo carico utile.*\n```swift\nenum Activity {\n    case bored\n    case running(destination: String)\n    case talking(topic: String)\n}\n\nlet a = Activity.running(destination: \"park\")\n\nswitch a {\ncase .running(let destination):\n    print(\"Going to \\(destination)\")\ndefault:\n    break\n}\n```"
+        },
+        {
+          "q": "Perché preferire un'enumerazione rispetto a `String` per un insieme fisso di valori?",
+          "a": "*Le enumerazioni vengono controllate in fase di compilazione: gli errori di battitura diventano errori di compilazione, viene applicata l'esaustività `switch`, il completamento automatico funziona e i confronti sono più economici dei confronti tra stringhe.*"
+        }
+      ],
+      "deck_key": "enums"
+    },
+    {
+      "deck": "Flusso di controllo",
+      "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
+      "cards": [
+        {
+          "q": "Cosa deve valutare una condizione `if` in Swift?",
+          "a": "*A `Bool` — nient'altro. Non c'è veridicità, quindi `if someString` o `if count` non verranno compilati.*\n```swift\nif name.isEmpty {\n    print(\"No name\")\n} else if name.count > 20 {\n    print(\"Too long\")\n} else {\n    print(\"OK\")\n}\n```"
+        },
+        {
+          "q": "Come si comportano `&&` e `||` in Swift?",
+          "a": "*`&&` è AND logico, `||` è OR logico ed entrambi **cortocircuitano**: il lato destro viene valutato solo se può ancora modificare il risultato.*\n```swift\nif isLoggedIn && hasSubscription { ... }\n```\n*Per mescolarli sono necessarie parentesi per chiarezza: Swift dà a `&&` una precedenza maggiore rispetto a `||`.*"
+        },
+        {
+          "q": "In cosa differisce `switch` dalle catene `if/else` in Swift?",
+          "a": "*`switch` deve essere **esaustivo** (quindi aggiungi `default` quando non puoi elencare tutti i casi), controlla ciascun valore solo una volta e non c'è fallthrough implicito: usa la parola chiave `fallthrough` quando lo desideri effettivamente.*\n```swift\nswitch weather {\ncase .rain: print(\"Umbrella\")\ncase .sun: print(\"Sunscreen\")\ndefault:   print(\"Whatever\")\n}\n```"
+        },
+        {
+          "q": "Come si abbinano gli intervalli e si aggiungono condizioni extra in un `switch`?",
+          "a": "*I casi possono corrispondere agli intervalli e una clausola `where` aggiunge un test arbitrario.*\n```swift\nswitch score {\ncase 0..<50:   print(\"Fail\")\ncase 50...100: print(\"Pass\")\ndefault:       print(\"Invalid\")\n}\n\nswitch day {\ncase let d where d.isWeekend: print(\"Rest\")\ndefault: print(\"Work\")\n}\n```"
+        },
+        {
+          "q": "Cos'è l'operatore condizionale ternario?",
+          "a": "*Un `if/else` di una riga che produce un valore. Leggilo come **WTF — Cosa, Vero, Falso**: cosa controllare, il valore se vero, il valore se falso.*\n```swift\nlet status = age >= 18 ? \"Adult\" : \"Minor\"\n```\n*È importante in SwiftUI perché `body` necessita di espressioni, non di istruzioni.*"
+        },
+        {
+          "q": "Qual è la differenza tra `1...5` e `1..<5`?",
+          "a": "*`...` è un **intervallo chiuso** che include entrambe le estremità; `..<` è un **intervallo semiaperto** escluso il limite superiore. Semiaperto corrisponde esattamente agli indici dell'array.*\n```swift\nfor i in 1...5 { }    // 1,2,3,4,5\nfor i in 1..<5 { }    // 1,2,3,4\nfor i in 0..<names.count { }\n```\n*Utilizza `_` come variabile del ciclo quando non ti serve il valore.*"
+        },
+        {
+          "q": "Quando usi `while` rispetto a `repeat`?",
+          "a": "*`while` controlla la condizione **prima** di ogni passaggio, quindi il corpo potrebbe non correre mai. `repeat`/`while` controlla **dopo**, quindi il corpo viene sempre eseguito almeno una volta.*\n```swift\nwhile queue.isEmpty == false { ... }\n\nrepeat {\n    roll = Int.random(in: 1...6)\n} while roll != 6\n```"
+        },
+        {
+          "q": "Cosa fanno `break` e `continue` e cos'è un'istruzione etichettata?",
+          "a": "*`continue` salta all'iterazione successiva; `break` esce completamente dal ciclo. Un'etichetta consente a `break` di uscire da un ciclo **esterno** dall'interno di uno nidificato.*\n```swift\nouter: for a in 1...10 {\n    for b in 1...10 {\n        if a * b == 50 { break outer }\n    }\n}\n```"
+        }
+      ],
+      "deck_key": "control-flow"
+    },
+    {
+      "deck": "Funzioni",
+      "deck_icon": "function",
+      "cards": [
+        {
+          "q": "Qual è la sintassi di una funzione Swift con parametri e un valore restituito?",
+          "a": "*I parametri vengono digitati e il tipo restituito segue `->`.*\n```swift\nfunc rollDice(sides: Int, count: Int) -> [Int] {\n    var rolls = [Int]()\n    for _ in 0..<count {\n        rolls.append(Int.random(in: 1...sides))\n    }\n    return rolls\n}\n\nlet rolls = rollDice(sides: 6, count: 4)\n```"
+        },
+        {
+          "q": "Quando puoi omettere la parola chiave `return`?",
+          "a": "*Quando il corpo della funzione è una **singola espressione** — Swift lo restituisce implicitamente. La stessa regola è ciò che consente a `body` di SwiftUI di essere una vista.*\n```swift\nfunc double(_ n: Int) -> Int {\n    n * 2\n}\n```"
+        },
+        {
+          "q": "Come si restituisce più di un valore da una funzione?",
+          "a": "*Restituisce una **tupla** — a differenza di un dizionario i suoi membri sono nominati, sempre presenti e controllati in fase di compilazione.*\n```swift\nfunc getUser() -> (first: String, last: String) {\n    (first: \"Ada\", last: \"Lovelace\")\n}\n\nlet user = getUser()\nprint(user.first)\nlet (first, last) = getUser()   // destructuring\n```"
+        },
+        {
+          "q": "Qual è la differenza tra il nome di un parametro esterno e uno interno?",
+          "a": "*Il primo nome è quello che scrive chi chiama, il secondo è quello che usa il corpo. `_` rimuove completamente l'etichetta sul sito di chiamata.*\n```swift\nfunc emit(text: String, times count: Int) {\n    // 'times' at call site,\n    // 'count' inside\n}\nemit(text: \"hi\", times: 3)\n\nfunc greet(_ person: String) { }\ngreet(\"Sam\")\n```"
+        },
+        {
+          "q": "Come funzionano i valori dei parametri predefiniti?",
+          "a": "*Fornisci un parametro `= value` e i chiamanti possono ometterlo. I parametri con valori predefiniti dovrebbero essere per ultimi in modo che il sito di chiamata comune rimanga breve.*\n```swift\nfunc greet(_ person: String, formally: Bool = false) { }\n\ngreet(\"Sam\")\ngreet(\"Sam\", formally: true)\n```"
+        },
+        {
+          "q": "Cos'è un parametro variadico?",
+          "a": "*Un parametro che accetta zero o più valori di un tipo, scritto con `...`. All'interno della funzione c'è un array.*\n```swift\nfunc square(numbers: Int...) {\n    for n in numbers { print(n * n) }\n}\nsquare(numbers: 1, 2, 3)\n```\n*`print()` stesso è variadico.*"
+        },
+        {
+          "q": "Cosa fa `inout`?",
+          "a": "*Passa un parametro per riferimento in modo che la funzione possa modificare la variabile del chiamante sul posto. L'argomento deve essere `var` e viene passato con `&`.*\n```swift\nfunc double(_ number: inout Int) {\n    number *= 2\n}\n\nvar score = 10\ndouble(&score)   // score == 20\n```"
+        }
+      ],
+      "deck_key": "functions"
+    },
+    {
+      "deck": "Gestione degli errori",
+      "deck_icon": "exclamationmark.shield",
+      "cards": [
+        {
+          "q": "Come si scrive e si chiama una funzione di lancio?",
+          "a": "*Segnalo `throws`, genera un valore conforme a `Error` e chiamalo con `try` all'interno di `do`/`catch`.*\n```swift\nenum PasswordError: Error { case short, obvious }\n\nfunc check(_ password: String) throws -> String {\n    if password.count < 5 { throw PasswordError.short }\n    return \"OK\"\n}\n\ndo {\n    let result = try check(\"12345\")\n} catch PasswordError.short {\n    print(\"Too short\")\n} catch {\n    print(\"Error: \\(error.localizedDescription)\")\n}\n```"
+        },
+        {
+          "q": "Cosa fanno `try?` e `try!`?",
+          "a": "*`try?` converte un errore generato in `nil`, fornendo un risultato opzionale. `try!` asserisce che la chiamata non può fallire e **si blocca** se lo fa: usalo solo quando il fallimento sarebbe un errore del programmatore.*\n```swift\nif let result = try? check(password) { ... }\nlet forced = try! check(\"known-good\")\n```"
+        },
+        {
+          "q": "Come gestisci una chiamata di lancio come opzionale?",
+          "a": "*`try?` trasforma qualsiasi errore generato in `nil`, quindi la chiamata si inserisce direttamente in `if let` o `??` quando non ti interessa **perché** è fallita.*\n```swift\nif let user = try? getUser(id: 23) {\n    print(user.name)\n}\n```"
+        }
+      ],
+      "deck_key": "error-handling"
+    },
+    {
+      "deck": "Chiusure e Cattura",
+      "deck_icon": "curlybraces",
+      "cards": [
+        {
+          "q": "Cos'è una chiusura in Swift?",
+          "a": "*Un blocco di funzionalità che puoi memorizzare in una variabile, passare a una funzione o restituire una funzione senza nome. I suoi parametri e il tipo restituito si trovano **all'interno** delle parentesi graffe, separati dal corpo da `in`.*\n```swift\nlet greet = { (name: String) -> String in\n    \"Hello, \\(name)!\"\n}\n\nprint(greet(\"Sam\"))\n```"
+        },
+        {
+          "q": "Che aspetto ha un tipo di funzione e perché è importante?",
+          "a": "*Le funzioni sono valori di prima classe con un tipo nella forma `(ParamTypes) -> ReturnType`. **Le etichette dei parametri vengono eliminate** quando una funzione viene archiviata come valore.*\n```swift\nlet fn: (Int, Int) -> Int = max\nfn(1, 2)\n\nvar action: () -> Void = { print(\"Tapped\") }\n```"
+        },
+        {
+          "q": "Cos'è la sintassi della chiusura finale?",
+          "a": "*Se l'ultimo parametro è una chiusura, puoi spostarlo fuori dalle parentesi e eliminare completamente le parentesi vuote. Questo è ciò che fa sì che `Button { }` di SwiftUI venga letto così.*\n```swift\nlet sorted = names.sorted { a, b in\n    a < b\n}\n\nButton(\"Tap me\") {\n    print(\"Tapped\")\n}\n```"
+        },
+        {
+          "q": "Quali sono i nomi degli argomenti in forma abbreviata?",
+          "a": "*All'interno di una chiusura, Swift fornisce `$0`, `$1`, … per i parametri che non hai nominato. Usateli quando la conclusione è breve e il significato è ovvio.*\n```swift\nlet sorted = names.sorted { $0 < $1 }\nlet upper = names.map { $0.uppercased() }\nlet longs = names.filter { $0.count > 4 }\n```"
+        },
+        {
+          "q": "Come si accetta una funzione come parametro?",
+          "a": "*Dichiarare il parametro con un tipo di funzione. I chiamanti solitamente superano una chiusura finale.*\n```swift\nfunc build(\n    count: Int,\n    using make: () -> Int\n) -> [Int] {\n    (0..<count).map { _ in make() }\n}\n\nlet values = build(count: 5) {\n    Int.random(in: 1...20)\n}\n```"
+        },
+        {
+          "q": "Come funzionano le chiusure finali multiple?",
+          "a": "*La prima chiusura finale non è etichettata; ognuno dopo mantiene la sua etichetta. SwiftUI lo usa per cose come `Button(action:label:)`.*\n```swift\nrun {\n    print(\"First\")\n} then: {\n    print(\"Second\")\n} finally: {\n    print(\"Third\")\n}\n```"
+        },
+        {
+          "q": "Cosa significa che le chiusure *catturano* valori?",
+          "a": "*Una chiusura mantiene un forte riferimento alle variabili che utilizza dall'ambito circostante e le mantiene in vita, quindi può anche modificarle tra una chiamata e l'altra.*\n```swift\nfunc makeCounter() -> () -> Int {\n    var count = 0\n    return {\n        count += 1\n        return count\n    }\n}\n\nlet next = makeCounter()\nnext()   // 1\nnext()   // 2\n```\n*Catturare `self` all'interno di una classe è il modo in cui avvengono i cicli di conservazione: usa `[weak self]` quando la chiusura sopravvive alla chiamata.*"
+        },
+        {
+          "q": "Cosa significa `@escaping`?",
+          "a": "*Segna un parametro di chiusura che viene archiviato e chiamato **dopo** che la funzione restituisce, ad esempio un gestore di completamento. L'impostazione predefinita è senza escape e le chiusure con escape devono acquisire `self` in modo esplicito.*\n```swift\nfunc load(then completion: @escaping (Data) -> Void) {\n    pending.append(completion)\n}\n```"
+        }
+      ],
+      "deck_key": "closures-and-capture"
+    },
+    {
+      "deck": "Strutture e semantica dei valori",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "Cos'è l'inizializzatore membri?",
+          "a": "*Una struttura ottiene automaticamente un inizializzatore che accetta ogni proprietà memorizzata, nell'ordine di dichiarazione. Le proprietà con valori predefiniti possono essere omesse.*\n```swift\nstruct Album {\n    let title: String\n    var year = 2024\n}\n\nlet a = Album(title: \"Kind of Blue\")\nlet b = Album(\n    title: \"Blue Train\",\n    year: 1958\n)\n```"
+        },
+        {
+          "q": "Qual è la differenza tra una proprietà memorizzata e una proprietà calcolata?",
+          "a": "*Una proprietà memorizzata contiene un valore in memoria. Una proprietà calcolata esegue il codice ogni volta che viene letta, quindi riflette sempre lo stato corrente e deve avere un tipo esplicito.*\n```swift\nstruct Employee {\n    let vacationAllocated = 14\n    var vacationTaken = 0\n\n    var vacationRemaining: Int {\n        vacationAllocated - vacationTaken\n    }\n}\n```"
+        },
+        {
+          "q": "Come si rende scrivibile una proprietà calcolata?",
+          "a": "*Fornisci sia un blocco `get` che un blocco `set`. All'interno di `set`, il valore in entrata si chiama `newValue` a meno che non lo rinomini.*\n```swift\nvar vacationRemaining: Int {\n    get { vacationAllocated - vacationTaken }\n    set { vacationTaken = vacationAllocated - newValue }\n}\n```"
+        },
+        {
+          "q": "Cosa sono gli osservatori immobiliari?",
+          "a": "*`didSet` viene eseguito dopo la modifica di una proprietà (con `oldValue` disponibile) e `willSet` viene eseguito prima (con `newValue`). Mantienili veloci: vengono eseguiti a **ogni** scrittura, comprese quelle che non modificano il valore.*\n```swift\nvar score = 0 {\n    didSet { print(\"Was \\(oldValue), now \\(score)\") }\n}\n```"
+        },
+        {
+          "q": "Perché alcuni metodi struct necessitano della parola chiave `mutating`?",
+          "a": "*Le strutture sono tipi di valore e una struttura contenuta in `let` è interamente costante. Contrassegnare un metodo `mutating` dice a Swift che cambia proprietà, quindi può essere chiamato solo su un'istanza `var`.*\n```swift\nstruct Person {\n    var name: String\n    mutating func anonymize() { name = \"Anonymous\" }\n}\n```"
+        },
+        {
+          "q": "Cosa succede all'inizializzatore membro quando scrivi il tuo `init`?",
+          "a": "*Lo perdi. Per mantenerli entrambi, inserisci il tuo inizializzatore personalizzato in una **estensione** — Swift quindi lascia quello sintetizzato al suo posto.*\n```swift\nstruct Player {\n    let name: String\n    let number: Int\n}\n\nextension Player {\n    init(name: String) {\n        self.name = name\n        self.number = Int.random(in: 1...99)\n    }\n}\n```"
+        },
+        {
+          "q": "Quali sono i livelli di controllo degli accessi di Swift?",
+          "a": "- `private` — solo questo tipo (e le sue estensioni).\n- `private(set)` — leggibile ovunque, scrivibile solo all'interno\n- `fileprivate`: solo questo file\n- `internal` — questo modulo (predefinito)\n- `public` / `open` — altri moduli\n\n*Nota: una proprietà memorizzata `private` rimuove l'inizializzatore membro per i chiamanti esterni.*"
+        },
+        {
+          "q": "Qual è la differenza tra una proprietà statica e una proprietà di istanza?",
+          "a": "*Un membro `static` appartiene al **tipo** stesso, quindi esiste una copia condivisa e non è necessaria alcuna istanza. Il codice dell'istanza lo raggiunge tramite il nome del tipo (o `Self`), non `self`.*\n```swift\nstruct School {\n    static var studentCount = 0\n    static let maxSize = 500\n\n    static func add() { studentCount += 1 }\n}\n\nSchool.add()\n```\n*È la solita sede per i dati di esempio/anteprima condivisi.*"
+        },
+        {
+          "q": "Cosa significa che le strutture sono tipi di valore?",
+          "a": "*Assegnando o passando una struttura la **copia**, quindi la modifica della copia non influisce mai sull'originale. Swift lo ottimizza con copia su scrittura, quindi la copia avviene realmente solo in caso di mutazione.*\n```swift\nvar a = Album(title: \"Kind of Blue\")\nvar b = a\nb.year = 2000  // a is untouched\n```"
+        }
+      ],
+      "deck_key": "structs-and-value-semantics"
+    },
+    {
+      "deck": "Classi e semantica di riferimento",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "Quali sono le cinque differenze chiave tra una struttura e una classe?",
+          "a": "1. Le classi possono **ereditare** da un'altra classe\n2. Le classi non ottengono **nessun inizializzatore membro**\n3. Le classi sono **tipi di riferimento**: le copie condividono un'istanza\n4. Un'istanza di classe `let` può ancora avere le sue proprietà `var` modificate\n5. Le classi possono avere un **deinizializzatore**\n\n*A causa dei punti #3 e #4, i metodi della classe non necessitano mai di `mutating`.*"
+        },
+        {
+          "q": "Come funziona l'ereditarietà in Swift?",
+          "a": "*Una sottoclasse ottiene tutto dal suo genitore e può aggiungerne altro. Contrassegna una classe `final` per vietare la sottoclasse.*\n```swift\nclass Employee {\n    let hours: Int\n    init(hours: Int) { self.hours = hours }\n    func work() { print(\"Working \\(hours)h\") }\n}\n\nfinal class Developer: Employee {\n    func code() { print(\"Coding\") }\n}\n```"
+        },
+        {
+          "q": "Come si sovrascrive un metodo e quando è richiesto `override`?",
+          "a": "*Ogni volta che una sottoclasse sostituisce il metodo di un genitore con lo stesso nome e firma — Swift lo rende obbligatorio e genera errori se lo usi dove non viene sovrascritto nulla. Chiama `super.method()` per mantenere il comportamento del genitore.*\n```swift\nclass Developer: Employee {\n    override func work() {\n        super.work()\n        print(\"…on Swift\")\n    }\n}\n```"
+        },
+        {
+          "q": "Quali sono le regole per gli inizializzatori di classe?",
+          "a": "*Una classe deve assegnare un valore a ogni proprietà memorizzata e un inizializzatore di sottoclasse deve chiamare `super.init()` **dopo** aver impostato le proprie proprietà. Se una sottoclasse non aggiunge nuovi inizializzatori, eredita quelli del genitore.*\n```swift\nclass Car: Vehicle {\n    let isConvertible: Bool\n\n    init(isElectric: Bool, isConvertible: Bool) {\n        self.isConvertible = isConvertible\n        super.init(isElectric: isElectric)\n    }\n}\n```"
+        },
+        {
+          "q": "Cosa succede quando copi un'istanza di classe?",
+          "a": "*Entrambi i nomi puntano allo **stesso** oggetto, quindi un cambiamento nell'uno è visibile nell'altro. Utilizza `let` più un metodo `copy()` deliberato se hai bisogno della semantica del valore.*\n```swift\nclass User { var name = \"Sam\" }\n\nlet a = User()\nlet b = a\nb.name = \"Kim\"\nprint(a.name)   // \"Kim\"\n```"
+        },
+        {
+          "q": "Cos'è un deinizializzatore?",
+          "a": "*`deinit` viene eseguito quando scompare l'ultimo riferimento a un'istanza. Non richiede parametri, non viene mai chiamato manualmente e solo le classi ne hanno uno.*\n```swift\nclass User {\n    deinit { print(\"Destroyed\") }\n}\n```"
+        },
+        {
+          "q": "Perché puoi modificare una proprietà di un'istanza di classe memorizzata in un `let`?",
+          "a": "*Perché la costante si applica al **riferimento**, non all'oggetto. Non puoi puntare la costante su un'istanza diversa, ma puoi modificare liberamente quella a cui punta: dichiara la proprietà `let` per impedirlo.*\n```swift\nlet user = User()\nuser.name = \"Kim\"   // fine\nuser = User()       // error\n```"
+        }
+      ],
+      "deck_key": "classes-and-reference-semantics"
+    },
+    {
+      "deck": "Protocolli ed estensioni",
+      "deck_icon": "checkmark.seal",
+      "cards": [
+        {
+          "q": "Cos'è un protocollo?",
+          "a": "*Un contratto che descrive le proprietà e i metodi che un tipo deve fornire, senza alcuna implementazione. Ti consente di scrivere codice rispetto a una funzionalità anziché a un tipo concreto.*\n```swift\nprotocol Vehicle {\n    var name: String { get }\n    var currentPassengers: Int { get set }\n    func estimateTime(for distance: Int) -> Int\n}\n```"
+        },
+        {
+          "q": "Cosa significano `{ get }` e `{ get set }` in un protocollo?",
+          "a": "*`{ get }` richiede che la proprietà sia leggibile: un tipo conforme può soddisfarla con una costante o una proprietà calcolata. `{ get set }` richiede che sia anche scrivibile, quindi `let` non lo soddisferà.*"
+        },
+        {
+          "q": "In che modo un protocollo abilita il polimorfismo?",
+          "a": "*Qualsiasi funzione può accettare il tipo di protocollo e funzionare con ogni tipo conforme, senza sapere quale sia.*\n```swift\nfunc commute(distance: Int, using vehicle: some Vehicle) {\n    print(vehicle.estimateTime(for: distance))\n}\n\ncommute(distance: 100, using: Car())\ncommute(distance: 100, using: Bicycle())\n```"
+        },
+        {
+          "q": "Cosa può e cosa non può aggiungere un'estensione?",
+          "a": "*Un'estensione può aggiungere proprietà calcolate, metodi, inizializzatori, pedici e conformità al protocollo a un tipo esistente, anche a uno di cui non sei proprietario. **Non è possibile** aggiungere proprietà archiviate.*\n```swift\nextension String {\n    var trimmed: String {\n        trimmingCharacters(in: .whitespacesAndNewlines)\n    }\n}\n```"
+        },
+        {
+          "q": "Cos'è un'estensione di protocollo e perché è potente?",
+          "a": "*Aggiunge **implementazioni predefinite** a ogni tipo conforme contemporaneamente, in modo che un protocollo possa fornire comportamenti, non solo requisiti. I tipi conformi potrebbero comunque sovrascriverlo.*\n```swift\nextension Collection {\n    var isNotEmpty: Bool { isEmpty == false }\n}\n\n[1, 2, 3].isNotEmpty   // works on Array, Set, Dictionary…\n```"
+        },
+        {
+          "q": "Cos'è la programmazione orientata al protocollo?",
+          "a": "*Progettare attorno a piccoli protocolli più estensioni di protocollo piuttosto che a gerarchie di classi profonde. I tipi valore ottengono un comportamento condiviso senza ereditarietà e un tipo può adottare molti protocolli in cui potrebbe avere solo una superclasse.*"
+        },
+        {
+          "q": "Qual è la differenza tra `some Protocol` e un tipo di protocollo semplice?",
+          "a": "*`some Protocol` è un **tipo restituito opaco**: il chiamante sa solo che il protocollo è soddisfatto, ma il compilatore conosce esattamente l'unico tipo sottostante, quindi rimane veloce e conserva le informazioni complete sul tipo. Un tipo di protocollo semplice (esistenziale) può contenere tipi diversi in momenti diversi, a scapito dell'indirizzamento.*\n```swift\nfunc makeShape() -> some Shape { Circle() }\nvar body: some View { Text(\"Hi\") }\n```"
+        },
+        {
+          "q": "Come rendi ordinabile il tuo tipo?",
+          "a": "*Conforme a `Comparable` e implementa `<`. Ottieni `sorted()`, `min()`, `max()` e gli altri operatori di confronto gratuitamente.*\n```swift\nstruct User: Comparable {\n    let name: String\n\n    static func <(lhs: User, rhs: User) -> Bool {\n        lhs.name < rhs.name\n    }\n}\n\nusers.sorted()\n```"
+        }
+      ],
+      "deck_key": "protocols-and-extensions"
+    },
+    {
+      "deck": "Opzionali",
+      "deck_icon": "lightbulb",
+      "cards": [
+        {
+          "q": "Cos'è un optional?",
+          "a": "*Un tipo che contiene un valore o contiene `nil`. Ti costringe a gestire il caso \"nessun valore\" in fase di compilazione invece di bloccarsi in fase di esecuzione, ed è un vero wrapper: `Int?` non è un `Int`.*\n```swift\nlet ages = [\"Sam\": 38]\nlet age = ages[\"Kim\"]   // Int? — nil\n```"
+        },
+        {
+          "q": "Come funziona `if let`?",
+          "a": "*Srotola l'opzionale ed esegue il corpo solo quando esiste un valore. La costante scartata vive all'interno delle parentesi graffe e l'ombra dello stesso nome è idiomatica.*\n```swift\nif let age {\n    print(\"Age is \\(age)\")   // Int here\n} else {\n    print(\"Unknown\")\n}\n```"
+        },
+        {
+          "q": "Qual è la differenza tra `if let` e `guard let`?",
+          "a": "*`if let` esegue il suo corpo quando il valore **esiste**. `guard let` esegue il suo corpo quando il valore è **mancante** e deve uscire dall'ambito, ma il valore scartato rimane utilizzabile per il resto della funzione, il che mantiene il percorso felice senza rientro.*\n```swift\nfunc greet(_ name: String?) {\n    guard let name else {\n        print(\"No name\")\n        return\n    }\n    print(\"Hello, \\(name)\")\n}\n```"
+        },
+        {
+          "q": "Cosa fa l’operatore coalescente pari a zero?",
+          "a": "*`??` scarta un opzionale o fornisce un valore predefinito quando è `nil` — il risultato non è opzionale. Si concatena e funziona con qualsiasi cosa opzionale, comprese le ricerche nel dizionario e gli inizializzatori fallibili.*\n```swift\nlet name = user.name ?? \"Anonymous\"\nlet score = Int(input) ?? 0\n```"
+        },
+        {
+          "q": "Cos'è il concatenamento opzionale?",
+          "a": "*Scrivendo `?.` si legge una proprietà o si chiama un metodo solo se il valore esiste, altrimenti l'intera espressione è `nil`. Le catene si fermano al primo `nil` e il risultato è sempre facoltativo.*\n```swift\nlet first = names.first?.uppercased()   // String?\nlet count = user?.address?.city.count ?? 0\n```"
+        },
+        {
+          "q": "Che cos'è un inizializzatore fallibile?",
+          "a": "*`init?` può restituire `nil` quando l'input non è valido, quindi il chiamante ottiene un'istanza opzionale invece di un arresto anomalo.*\n```swift\nstruct Employee {\n    let id: String\n    init?(id: String) {\n        guard id.count == 9 else { return nil }\n        self.id = id\n    }\n}\n\nlet url = URL(string: \"https://example.com\")   // URL?\n```"
+        },
+        {
+          "q": "Perché lo scartamento forzato con `!` è pericoloso?",
+          "a": "*Si blocca immediatamente se il valore è `nil`. Usalo solo dove `nil` significherebbe un errore del programmatore che vuoi che emerga ad alta voce, altrimenti preferisci `if let`, `guard let` o `??`.*"
+        },
+        {
+          "q": "Come scartare più optional contemporaneamente?",
+          "a": "*Concatenateli in uno `if let` o `guard let`, separati da virgole. Ogni associazione può utilizzare quelle precedenti ed è possibile aggiungere semplici condizioni `Bool`.*\n```swift\nif let first, let last, first.isEmpty == false {\n    print(\"\\(first) \\(last)\")\n}\n```"
+        }
+      ],
+      "deck_key": "optionals"
+    }
+  ]
+}

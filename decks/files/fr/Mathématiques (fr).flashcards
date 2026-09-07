@@ -1,0 +1,491 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Mathématiques",
+  "interest_icon": "function",
+  "interest_key": "mathematics",
+  "deck_q_lang": "fr",
+  "deck_a_lang": "fr",
+  "decks": [
+    {
+      "deck": "Pouvoirs et racines",
+      "cards": [
+        {
+          "q": "$a^m \\cdot a^n = ?${a au m fois a au n}",
+          "a": "$a^{m+n}${a au m plus n}"
+        },
+        {
+          "q": "$\\frac{a^m}{a^n} = ?${a au m sur a au n}",
+          "a": "$a^{m-n}${a au m moins n}"
+        },
+        {
+          "q": "$(a^m)^n = ?${a au m, tout au n}",
+          "a": "$a^{m \\cdot n}${a aux m fois n}"
+        },
+        {
+          "q": "$a^{-m} = ?${a au moins m}",
+          "a": "$\\frac{1}{a^m}${un sur a au m}"
+        },
+        {
+          "q": "$a^0 = ?${a au zéro} pour $a \\neq 0${a non égal à zéro}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sqrt[n]{a^m} = ?${la n-ième racine de a au m}",
+          "a": "$a^{m/n}${a au m sur n}"
+        },
+        {
+          "q": "$\\sqrt[m]{\\sqrt[n]{a}} = ?${la m-ième racine de la n-ième racine de a}",
+          "a": "$\\sqrt[m \\cdot n]{a}${la m fois la n-ième racine de a}"
+        }
+      ],
+      "deck_key": "powers-and-roots"
+    },
+    {
+      "deck": "Règles du logarithme",
+      "cards": [
+        {
+          "q": "$\\log_a(x \\cdot y) = ?${log base a de x fois y}",
+          "a": "$\\log_a x + \\log_a y${log base a de x plus log base a de y}"
+        },
+        {
+          "q": "$\\log_a\\!\\left(\\frac{x}{y}\\right) = ?${log base a de x sur y}",
+          "a": "$\\log_a x - \\log_a y${log base a de x moins log base a de y}"
+        },
+        {
+          "q": "$\\log_a(x^k) = ?${log base a de x au k}",
+          "a": "$k \\cdot \\log_a x${k fois journal de base a de x}"
+        },
+        {
+          "q": "$\\log_a a = ?${base de journal a de a}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\log_a 1 = ?${base de journal a sur un}",
+          "a": "$0$"
+        },
+        {
+          "q": "Changement de base : $\\log_a x = ?${log base a de x}",
+          "a": "$\\frac{\\log_b x}{\\log_b a}${log base b de x sur log base b de a}\n\nGénéralement avec $b = 10$ ou $b = e$."
+        },
+        {
+          "q": "$\\ln(e^x) = ?${logarithme naturel de e au x}",
+          "a": "$x$"
+        },
+        {
+          "q": "$a^{\\log_a x} = ?${a à la base de journal a de x} pour $x > 0$",
+          "a": "$x$\n\nL'exponentiation et le logarithme de même base s'annulent."
+        }
+      ],
+      "deck_key": "logarithm-rules"
+    },
+    {
+      "deck": "Identités algébriques",
+      "cards": [
+        {
+          "q": "$(a + b)^2 = ?${a plus b, tous au carré}",
+          "a": "$a^2 + 2ab + b^2${a au carré plus deux a b plus b au carré}"
+        },
+        {
+          "q": "$(a - b)^2 = ?${a moins b, tout au carré}",
+          "a": "$a^2 - 2ab + b^2${a au carré moins deux a b plus b au carré}"
+        },
+        {
+          "q": "Factoriser la différence des carrés : $a^2 - b^2 = ?${a au carré moins b au carré}",
+          "a": "$(a - b)(a + b)${a moins b, fois a plus b}"
+        },
+        {
+          "q": "$(a + b)^3 = ?${a plus b, tous au cube}",
+          "a": "$a^3 + 3a^2b + 3ab^2 + b^3${a au cube plus trois a au carré b plus trois a b au carré plus b au cube}"
+        },
+        {
+          "q": "$(a - b)^3 = ?${a moins b, le tout au cube}",
+          "a": "$a^3 - 3a^2b + 3ab^2 - b^3${a au cube moins trois a au carré b plus trois a b au carré moins b au cube}"
+        },
+        {
+          "q": "Factoriser la somme des cubes : $a^3 + b^3 = ?${a au cube plus b au cube}",
+          "a": "$(a + b)(a^2 - ab + b^2)${a plus b, multiplié par a au carré moins a b plus b au carré}"
+        },
+        {
+          "q": "Factoriser la différence des cubes : $a^3 - b^3 = ?${a au cube moins b au cube}",
+          "a": "$(a - b)(a^2 + ab + b^2)${a moins b, multiplié par a au carré plus a b plus b au carré}"
+        },
+        {
+          "q": "Formule quadratique : les racines de $ax^2 + bx + c = 0${a x au carré plus b x plus c est égal à zéro}",
+          "a": "$$\nx = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n$${x est égal à moins b plus ou moins la racine carrée de b au carré moins quatre a c, sur deux a}"
+        },
+        {
+          "q": "Que vous dit le discriminant $D = b^2 - 4ac${D est égal à b au carré moins quatre a c} ?",
+          "a": "* $D > 0$ — deux racines réelles distinctes\n* $D = 0$ — une vraie double racine\n* $D < 0$ — deux racines conjuguées complexes"
+        }
+      ],
+      "deck_key": "algebraic-identities"
+    },
+    {
+      "deck": "Valeurs trigonométriques",
+      "cards": [
+        {
+          "q": "$\\sin 0^\\circ = ?${sinus de zéro degré}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\sin 30^\\circ = \\sin\\frac{\\pi}{6} = ?${sinus de trente degrés}",
+          "a": "$\\frac{1}{2}${une moitié}"
+        },
+        {
+          "q": "$\\sin 45^\\circ = \\sin\\frac{\\pi}{4} = ?${sinus de quarante-cinq degrés}",
+          "a": "$\\frac{\\sqrt{2}}{2}${la racine carrée de deux sur deux}"
+        },
+        {
+          "q": "$\\sin 60^\\circ = \\sin\\frac{\\pi}{3} = ?${sinus de soixante degrés}",
+          "a": "$\\frac{\\sqrt{3}}{2}${la racine carrée de trois sur deux}"
+        },
+        {
+          "q": "$\\sin 90^\\circ = \\sin\\frac{\\pi}{2} = ?${sinus de quatre-vingt-dix degrés}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 0^\\circ = ?${cosinus de zéro degré}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 30^\\circ = \\cos\\frac{\\pi}{6} = ?${cosinus de trente degrés}",
+          "a": "$\\frac{\\sqrt{3}}{2}${la racine carrée de trois sur deux}"
+        },
+        {
+          "q": "$\\cos 45^\\circ = \\cos\\frac{\\pi}{4} = ?${cosinus de quarante-cinq degrés}",
+          "a": "$\\frac{\\sqrt{2}}{2}${la racine carrée de deux sur deux}"
+        },
+        {
+          "q": "$\\cos 60^\\circ = \\cos\\frac{\\pi}{3} = ?${cosinus de soixante degrés}",
+          "a": "$\\frac{1}{2}${une moitié}"
+        },
+        {
+          "q": "$\\cos 90^\\circ = \\cos\\frac{\\pi}{2} = ?${cosinus de quatre-vingt-dix degrés}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\tan 30^\\circ = \\tan\\frac{\\pi}{6} = ?${tangente de trente degrés}",
+          "a": "$\\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}${un sur la racine carrée de trois, ou la racine carrée de trois sur trois}"
+        },
+        {
+          "q": "$\\tan 45^\\circ = \\tan\\frac{\\pi}{4} = ?${tangente de quarante-cinq degrés}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\tan 60^\\circ = \\tan\\frac{\\pi}{3} = ?${tangente de soixante degrés}",
+          "a": "$\\sqrt{3}${la racine carrée de trois}"
+        },
+        {
+          "q": "Pourquoi $\\tan 90^\\circ${tangente de quatre-vingt-dix degrés} n'est-il pas défini ?",
+          "a": "Parce que $\\tan x = \\frac{\\sin x}{\\cos x}${tangente x est égal au sinus x sur le cosinus x} et $\\cos 90^\\circ = 0$ — le quotient a un dénominateur zéro."
+        }
+      ],
+      "deck_key": "trigonometric-values"
+    },
+    {
+      "deck": "Identités trigonométriques",
+      "cards": [
+        {
+          "q": "Identité pythagoricienne : $\\sin^2 x + \\cos^2 x = ?${sinus carré x plus cosinus carré x}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sin 2x = ?${sinus de deux x}",
+          "a": "$2 \\sin x \\cos x${deux sinus x cosinus x}"
+        },
+        {
+          "q": "$\\cos 2x = ?${cosinus de deux x}",
+          "a": "$\\cos^2 x - \\sin^2 x${cosinus au carré x moins sinus au carré x}\n\nÉgalement $1 - 2\\sin^2 x$ ou $2\\cos^2 x - 1$."
+        },
+        {
+          "q": "Exprimez $\\tan x${tangente x} en utilisant $\\sin x$ et $\\cos x$ :",
+          "a": "$\\tan x = \\frac{\\sin x}{\\cos x}${tangente x est égal au sinus x sur le cosinus x}"
+        },
+        {
+          "q": "Exprimez $\\cot x${cotangente x} en utilisant $\\sin x$ et $\\cos x$ :",
+          "a": "$\\cot x = \\frac{\\cos x}{\\sin x}${cotangente x est égal au cosinus x sur le sinus x}"
+        },
+        {
+          "q": "$1 + \\tan^2 x = ?${un plus tangente au carré x}",
+          "a": "$\\frac{1}{\\cos^2 x}${un sur cosinus carré x}"
+        },
+        {
+          "q": "$1 + \\cot^2 x = ?${un plus cotangente au carré x}",
+          "a": "$\\frac{1}{\\sin^2 x}${un sur sinus carré x}"
+        },
+        {
+          "q": "$\\sin(x + y) = ?${sinus de x plus y}",
+          "a": "$\\sin x \\cos y + \\cos x \\sin y${sinus x cosinus y plus cosinus x sinus y}"
+        },
+        {
+          "q": "$\\sin(x - y) = ?${sinus de x moins y}",
+          "a": "$\\sin x \\cos y - \\cos x \\sin y${sinus x cosinus y moins cosinus x sinus y}"
+        },
+        {
+          "q": "$\\cos(x + y) = ?${cosinus de x plus y}",
+          "a": "$\\cos x \\cos y - \\sin x \\sin y${cosinus x cosinus y moins sinus x sinus y}"
+        },
+        {
+          "q": "$\\cos(x - y) = ?${cosinus de x moins y}",
+          "a": "$\\cos x \\cos y + \\sin x \\sin y${cosinus x cosinus y plus sinus x sinus y}"
+        },
+        {
+          "q": "$\\tan(x + y) = ?${tangente de x plus y}",
+          "a": "$\\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y}${tangente x plus tangente y, sur un moins tangente x tangente y}"
+        }
+      ],
+      "deck_key": "trigonometric-identities"
+    },
+    {
+      "deck": "Fonctions trigonométriques et inverses",
+      "cards": [
+        {
+          "q": "Domaine de $\\sin x${sinus x} :",
+          "a": "$\\mathbb{R}$ — tous des nombres réels."
+        },
+        {
+          "q": "Plage de $\\sin x${sinus x} :",
+          "a": "$\\langle -1,\\, 1 \\rangle${l'intervalle fermé de moins un à un}"
+        },
+        {
+          "q": "Est-ce que $\\sin x${sine x} est pair ou impair ?",
+          "a": "**Odd :** $\\sin(-x) = -\\sin x${sinus de moins x est égal à moins sinus x}"
+        },
+        {
+          "q": "Est-ce que $\\cos x${cosinus x} est pair ou impair ?",
+          "a": "**Pair :** $\\cos(-x) = \\cos x${cosinus de moins x est égal à cosinus x}"
+        },
+        {
+          "q": "Période de $\\sin x${sinus x} et $\\cos x${cosinus x} :",
+          "a": "$2\\pi${deux pi}"
+        },
+        {
+          "q": "Période de $\\tan x${tangente x} :",
+          "a": "$\\pi${pi}"
+        },
+        {
+          "q": "Domaine de $\\tan x${tangente x} :",
+          "a": "$\\mathbb{R} \\setminus \\left\\{\\frac{\\pi}{2} + k\\pi \\mid k \\in \\mathbb{Z}\\right\\}${tous les réels sauf pi sur deux plus k pi}"
+        },
+        {
+          "q": "Domaine de $\\cot x${cotangente x} :",
+          "a": "$\\mathbb{R} \\setminus \\{k\\pi \\mid k \\in \\mathbb{Z}\\}${tous les réels sauf les multiples entiers de pi}"
+        },
+        {
+          "q": "Zéros de $\\sin x${sinus x} :",
+          "a": "$x = k\\pi, \\quad k \\in \\mathbb{Z}${x est égal à k pi, k un entier}"
+        },
+        {
+          "q": "Zéros de $\\cos x${cosinus x} :",
+          "a": "$x = \\frac{\\pi}{2} + k\\pi, \\quad k \\in \\mathbb{Z}${x est égal à pi sur deux plus k pi, k un entier}"
+        },
+        {
+          "q": "Qu'est-ce que $\\arcsin x${arc sinus x} ?",
+          "a": "L'inverse de $\\sin x$ limité à $\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${moins pi sur deux à pi sur deux}."
+        },
+        {
+          "q": "Domaine de $\\arcsin x${arc sinus x} :",
+          "a": "$\\langle -1,\\, 1 \\rangle${l'intervalle fermé de moins un à un}"
+        },
+        {
+          "q": "Plage de $\\arcsin x${arc sinus x} :",
+          "a": "$\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${l'intervalle fermé de moins pi sur deux à pi sur deux}"
+        },
+        {
+          "q": "Qu'est-ce que $\\arccos x${arc cosinus x} ?",
+          "a": "L'inverse de $\\cos x$ limité à $\\langle 0,\\, \\pi \\rangle${zéro à pi}."
+        },
+        {
+          "q": "Domaine de $\\arccos x${arc cosinus x} :",
+          "a": "$\\langle -1,\\, 1 \\rangle${l'intervalle fermé de moins un à un}"
+        },
+        {
+          "q": "Plage de $\\arccos x${arc cosinus x} :",
+          "a": "$\\langle 0,\\, \\pi \\rangle${l'intervalle fermé de zéro à pi}"
+        },
+        {
+          "q": "Domaine de $\\arctan x${arc tangent x} :",
+          "a": "$\\mathbb{R}$ — tous des nombres réels."
+        },
+        {
+          "q": "Plage de $\\arctan x${arc tangent x} :",
+          "a": "$\\left( -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right)${l'intervalle ouvert de moins pi sur deux à pi sur deux}"
+        },
+        {
+          "q": "Domaine de $\\text{arccot}\\, x${arc cotangent x} :",
+          "a": "$\\mathbb{R}$ — tous des nombres réels."
+        },
+        {
+          "q": "Plage de $\\text{arccot}\\, x${arc cotangent x} :",
+          "a": "$(0,\\, \\pi)${l'intervalle ouvert de zéro à pi}"
+        }
+      ],
+      "deck_key": "trigonometric-functions-and-inverses"
+    },
+    {
+      "deck": "Produits dérivés",
+      "cards": [
+        {
+          "q": "Que signifie géométriquement $f'(x_0)${f premier de x zéro} ?",
+          "a": "C'est la pente de la ligne tangente ($k = \\tan \\alpha${k est égal à la tangente alpha}) au graphique de $f$ à $x_0${x zéro}."
+        },
+        {
+          "q": "Définition de la forme dérivée — incrément :\n$$\nf'(x_0) = \\lim_{\\Delta x \\to 0} \\frac{f(x_0 + \\Delta x) - f(x_0)}{\\Delta x}\n$${f premier de x zéro est égal à la limite lorsque delta x va à zéro de f de x zéro plus delta x, moins f de x zéro, sur delta x}",
+          "a": "La limite du rapport entre la modification de la fonction et la modification de son argument, à mesure que cette modification tend vers zéro."
+        },
+        {
+          "q": "Définition de la dérivée — forme différence-quotient :\n$$\nf'(x_0) = \\lim_{x \\to x_0} \\frac{f(x) - f(x_0)}{x - x_0}\n$${f premier de x zéro est égal à la limite lorsque x va à x zéro de f de x moins f de x zéro, sur x moins x zéro}",
+          "a": "Une instruction équivalente de la même limite, écrite avec $x$ approchant $x_0${x zéro}."
+        },
+        {
+          "q": "Équation de la **tangente** au graphique de $f$ à $(x_0, y_0)${x zéro, y zéro} :",
+          "a": "$$\ny - y_0 = f'(x_0)\\,(x - x_0)\n$${y moins y rien est égal à f premier de x zéro, fois x moins x zéro}"
+        },
+        {
+          "q": "Équation de la **normale** au graphique de $f$ à $(x_0, y_0)${x zéro, y zéro} :",
+          "a": "$$\ny - y_0 = -\\frac{1}{f'(x_0)}\\,(x - x_0)\n$${y moins y rien est égal à moins un sur f prime de x zéro, fois x moins x zéro}\n\nValable où $f'(x_0) \\neq 0${f premier de x zéro n'est pas zéro}."
+        },
+        {
+          "q": "$(c \\cdot u)' = ?${la dérivée de c fois u}",
+          "a": "$c \\cdot u'${c fois prime}"
+        },
+        {
+          "q": "$(u + v)' = ?${la dérivée de u plus v}",
+          "a": "$u' + v'${u prime plus v prime}"
+        },
+        {
+          "q": "$(u - v)' = ?${la dérivée de u moins v}",
+          "a": "$u' - v'${u premier moins v premier}"
+        },
+        {
+          "q": "Règle du produit : $(u \\cdot v)' = ?${la dérivée de u fois v}",
+          "a": "$u'v + uv'${u prime v plus u v prime}"
+        },
+        {
+          "q": "Règle du quotient : $\\left(\\frac{u}{v}\\right)' = ?${la dérivée de u sur v}",
+          "a": "$$\n\\frac{u'v - uv'}{v^2}\n$${u premier v moins u v premier, sur v au carré}"
+        },
+        {
+          "q": "Règle de chaîne : $(f \\circ g)'(x) = ?${la dérivée de f composée de g, en x}",
+          "a": "$f'(g(x)) \\cdot g'(x)${f premier de g de x, fois g premier de x}"
+        },
+        {
+          "q": "$(c)' = ?${la dérivée d'une constante c}",
+          "a": "$0$"
+        },
+        {
+          "q": "$(x^n)' = ?${la dérivée de x au n}",
+          "a": "$n \\cdot x^{n-1}${n fois x puissance n moins un}, pour $n \\in \\mathbb{R}${n réel}"
+        },
+        {
+          "q": "$(\\sin x)' = ?${la dérivée du sinus x}",
+          "a": "$\\cos x${cosinus x}"
+        },
+        {
+          "q": "$(\\cos x)' = ?${la dérivée du cosinus x}",
+          "a": "$-\\sin x${moins sinus x}"
+        },
+        {
+          "q": "$(\\tan x)' = ?${la dérivée de la tangente x}",
+          "a": "$\\frac{1}{\\cos^2 x}${un sur cosinus carré x}\n\nPour $x \\neq \\frac{\\pi}{2} + k\\pi${x non égal à pi sur deux plus k pi}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(\\cot x)' = ?${la dérivée de la cotangente x}",
+          "a": "$-\\frac{1}{\\sin^2 x}${moins un sur sinus carré x}\n\nPour $x \\neq k\\pi${x n'est pas un multiple entier de pi}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(e^x)' = ?${la dérivée de e au x}",
+          "a": "$e^x${e au x}"
+        },
+        {
+          "q": "$(a^x)' = ?${la dérivée de a vers le x}, où $a > 0, a \\neq 1$",
+          "a": "$a^x \\cdot \\ln a${a aux x fois le logarithme naturel de a}"
+        },
+        {
+          "q": "$(\\ln x)' = ?${la dérivée du logarithme naturel de x}",
+          "a": "$\\frac{1}{x}${un sur x}, pour $x > 0$"
+        },
+        {
+          "q": "$(\\log_a x)' = ?${la dérivée du log base a de x}",
+          "a": "$\\frac{1}{x \\cdot \\ln a}${un sur x fois le log naturel d'un}\n\nPour $x > 0$, $a > 0$, $a \\neq 1$."
+        }
+      ],
+      "deck_key": "derivatives"
+    },
+    {
+      "deck": "Géométrie solide",
+      "cards": [
+        {
+          "q": "Volume d'un **prisme** — $S_p${S p} est l'aire de base, $v$ la hauteur :",
+          "a": "$$\nV = S_p \\cdot v\n$${V est égal à S p fois v}"
+        },
+        {
+          "q": "Aire de surface d'un **prisme** — $S_p${S p} aire de base, $S_{pl}${S p l} aire latérale :",
+          "a": "$$\nS = 2 S_p + S_{pl}\n$${S est égal à deux S p plus S p l}"
+        },
+        {
+          "q": "Volume d'une **pyramide** — $S_p${S p} surface de base, $v$ hauteur :",
+          "a": "$$\nV = \\frac{1}{3} S_p \\cdot v\n$${V est égal à un tiers de S p fois v}"
+        },
+        {
+          "q": "Superficie d'une **pyramide** :",
+          "a": "$$\nS = S_p + S_{pl}\n$${S est égal à S p plus S p l}"
+        },
+        {
+          "q": "Volume d'une **pyramide tronquée** — $S_1, S_2${S un, S deux} surfaces de base, $v$ hauteur :",
+          "a": "$$\nV = \\frac{v}{3}\\left(S_1 + \\sqrt{S_1 S_2} + S_2\\right)\n$${V est égal à v sur trois, multiplié par S un plus la racine carrée de S un S deux, plus S deux}"
+        },
+        {
+          "q": "Superficie d'une **pyramide tronquée** :",
+          "a": "$$\nS = S_1 + S_2 + S_{pl}\n$${S est égal à S un plus S deux plus S p l}"
+        },
+        {
+          "q": "Pourquoi le volume d'une pyramide $\\frac{1}{3}${un tiers} du prisme est-il sur la même base ?",
+          "a": "Un cube peut être découpé en **trois pyramides congruentes** partageant sa base et sa hauteur.\n\nFormellement, cela découle du principe de Cavalieri : la section efficace grandit à mesure que $S(x) \\propto x^2${S de x est proportionnel à x au carré}, et l'intégration de $x^2$ donne le facteur $\\tfrac{1}{3}$."
+        },
+        {
+          "q": "Combien y a-t-il de solides platoniciens et quels sont-ils ?",
+          "a": "**Cinq :** tétraèdre, cube (hexaèdre), octaèdre, dodécaèdre, icosaèdre.\n\nChaque face est le même polygone régulier et chaque sommet est identique."
+        },
+        {
+          "q": "Volume d'un **tétraèdre** d'arête $a$ :",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{12}\n$${V est égal au cube fois la racine carrée de deux, sur douze}"
+        },
+        {
+          "q": "Superficie d'un **tétraèdre** d'arête $a$ :",
+          "a": "$$\nS = a^2 \\sqrt{3}\n$${S est égal à un carré multiplié par la racine carrée de trois}"
+        },
+        {
+          "q": "Volume d'un **cube** d'arête $a$ :",
+          "a": "$$\nV = a^3\n$${V est égal à un cube}"
+        },
+        {
+          "q": "Superficie d'un **cube** d'arête $a$ :",
+          "a": "$$\nS = 6a^2\n$${S est égal à six au carré}"
+        },
+        {
+          "q": "Volume d'un **octaèdre** d'arête $a$ :",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{3}\n$${V est égal au cube fois la racine carrée de deux, sur trois}"
+        },
+        {
+          "q": "Superficie d'un **octaèdre** d'arête $a$ :",
+          "a": "$$\nS = 2a^2 \\sqrt{3}\n$${S est égal à deux fois le carré de la racine carrée de trois}"
+        },
+        {
+          "q": "Quelle forme ont les faces d'un **icosaèdre** ?",
+          "a": "20 faces, chacune un **triangle équilatéral**."
+        },
+        {
+          "q": "Quelle est la forme des faces d'un **dodécaèdre** ?",
+          "a": "12 faces, chacune un **pentagone régulier**."
+        },
+        {
+          "q": "**Formule d'Euler** pour les polyèdres convexes — $V$ sommets, $E$ arêtes, $F$ faces :",
+          "a": "$$\nV - E + F = 2\n$${V moins E plus F est égal à deux}"
+        }
+      ],
+      "deck_key": "solid-geometry"
+    }
+  ]
+}

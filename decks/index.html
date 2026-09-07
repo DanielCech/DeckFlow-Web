@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#131313" />
+  <title>Curated decks for learning | JustFlip!</title>
+  <meta name="description" content="Explore free curated flashcard decks for languages, music, mathematics, programming and science. Or create your own deck with JustFlip's AI tools." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="decks-page">
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="../index.html#top" aria-label="JustFlip! — home">
+      <span class="nav__mark" aria-hidden="true"><img src="../images/Icon.png" alt="" width="26" height="26"></span>
+      <span class="nav__name">JustFlip!</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="../index.html#top" data-i18n="nav.features">Features</a>
+      <a href="../index.html#ai" data-i18n="nav.aiDecks">AI Decks</a>
+      <a href="index.html" aria-current="page" data-decks-key="decksLabel">Decks</a>
+      <a href="../learning.html" data-i18n="nav.learning">Learning</a>
+      <a href="../advanced.html" data-i18n="nav.advanced">Advanced</a>
+      <a href="../accessibility/" data-i18n="accessibility.navLabel">Accessibility</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__cta" href="https://apps.apple.com/cz/app/justflip-flashcards-learning/id6770141421?mt=12" target="_blank" rel="noopener" aria-label="App Store">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.6 13.3c0-2.7 2.2-4 2.3-4-1.3-1.8-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.6 1.1-4.5 2.7-1.9 3.4-.5 8.4 1.4 11.1.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9s2.1.9 3.6.9c1.5 0 2.5-1.3 3.4-2.7.7-1 1.3-2.2 1.6-3.4-1.5-.6-3.2-2.3-3.2-4.3zM14.9 5.2c.8-.9 1.3-2.2 1.1-3.5-1.1.1-2.4.7-3.2 1.6-.7.8-1.4 2.1-1.2 3.4 1.2.1 2.5-.6 3.3-1.5z"/></svg>
+        <span data-i18n="nav.appStore">App Store</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="decks-hero" data-section>
+      <div class="decks-hero__glow" aria-hidden="true"></div>
+      <div class="decks-hero__copy">
+        <p class="eyebrow" data-decks-key="eyebrow">A small library to begin with</p>
+        <h1 class="display" data-decks-key="title">Start with a deck.<br><em>Make it yours.</em></h1>
+        <p class="lede" data-decks-key="lede">Explore curated decks for languages, music, mathematics, programming and science. They are useful starting points — but the real magic is making a deck for exactly what you want to remember.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#library">Explore the library <span aria-hidden="true">↓</span></a>
+          <a class="btn btn--ghost" href="../index.html#ai" data-decks-key="aiCta">Create your own deck</a>
+        </div>
+        <div class="decks-hero__meta" aria-label="Deck library summary">
+          <span><strong>11</strong> curated decks</span>
+          <span><strong>886</strong> cards</span>
+          <span>Free to explore</span>
+        </div>
+      </div>
+      <div class="decks-hero__stack" aria-label="A stack of example flashcards">
+        <div class="deck-card deck-card--back deck-card--one"><span>retrieval</span><strong>What makes a memory last?</strong></div>
+        <div class="deck-card deck-card--back deck-card--two"><span>music theory</span><strong>Intervals, patterns, structure.</strong></div>
+        <div class="deck-card deck-card--front"><span class="deck-card__eyebrow">JustFlip · curated</span><strong>What would you like to remember?</strong><div class="deck-card__line"></div><small>Make the next review count.</small></div>
+      </div>
+    </section>
+
+    <section class="decks-ai-bridge" data-section>
+      <div class="decks-ai-bridge__mark" aria-hidden="true">✦</div>
+      <div>
+        <p class="eyebrow" data-decks-key="aiEyebrow">The better starting point</p>
+        <h2 class="headline" data-decks-key="aiTitle">Your material is the <em>real deck.</em></h2>
+        <p class="kicker" data-decks-key="aiText">JustFlip includes AI-assisted workflows for turning notes, articles, books, lectures and ideas into importable flashcards. Start with a curated deck when it helps. Then make one that belongs to you.</p>
+      </div>
+      <a class="text-link" href="../ai-prompt.html">Learn about the AI workflow <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="decks-library" id="library" data-section>
+      <div class="section__head decks-library__head">
+        <div>
+          <p class="eyebrow" data-decks-key="libraryEyebrow">Curated collection</p>
+          <h2 class="headline" data-decks-key="libraryTitle">Something worth<br><em>remembering.</em></h2>
+        </div>
+        <p class="kicker" data-decks-key="libraryText">Download a deck, open it in JustFlip, and begin reviewing. Every deck is available in the app's supported languages.</p>
+      </div>
+      <div class="decks-filters" role="group" aria-label="Filter decks by topic">
+        <button class="decks-filter is-active" type="button" data-filter="all" data-decks-key="all">All decks</button>
+        <button class="decks-filter" type="button" data-filter="languages" data-decks-key="languages">Languages</button>
+        <button class="decks-filter" type="button" data-filter="music" data-decks-key="music">Music</button>
+        <button class="decks-filter" type="button" data-filter="mathematics" data-decks-key="mathematics">Mathematics</button>
+        <button class="decks-filter" type="button" data-filter="programming" data-decks-key="programming">Programming</button>
+        <button class="decks-filter" type="button" data-filter="science" data-decks-key="science">Science</button>
+      </div>
+      <div class="decks-grid" id="deck-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="decks-final-cta" data-section>
+      <p class="eyebrow" data-decks-key="finalEyebrow">Bring your own curiosity</p>
+      <h2 class="display display--sm" data-decks-key="finalTitle">The best deck is the one<br><em>you need today.</em></h2>
+      <p class="lede" data-decks-key="finalText">Start with a curated deck, import from Anki, or create something completely your own with AI-assisted workflows and JustFlip’s calm review engine.</p>
+      <a class="btn btn--primary" href="https://apps.apple.com/cz/app/justflip-flashcards-learning/id6770141421?mt=12" target="_blank" rel="noopener" data-decks-key="appStore">Download on the App Store</a>
+    </section>
+  </main>
+
+  <footer class="footer" id="about">
+    <div class="footer__inner">
+      <div class="footer__brand"><span class="nav__mark" aria-hidden="true"><img src="../images/Icon.png" alt="" width="20" height="20"></span><strong>JustFlip!</strong><span class="footer__tag">A flashcard companion for lifelong learners.</span></div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="../index.html#top" data-i18n="footer.features">Features</a><a href="../index.html#ai" data-i18n="footer.aiDecks">AI Decks</a><a href="index.html" data-decks-key="decksLabel">Decks</a><a href="../learning.html" data-i18n="footer.learning">Learning</a><a href="../advanced.html" data-i18n="footer.advanced">Advanced</a><a href="../accessibility/" data-i18n="accessibility.navLabel">Accessibility</a><a href="../about.html" data-i18n="footer.about">About</a><a href="../privacy.html" data-i18n="footer.privacy">Privacy</a><a href="../terms.html" data-i18n="footer.terms">Terms &amp; Conditions</a><a href="mailto:daniel.cech@gmail.com" data-i18n="footer.support">Support</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> JustFlip! Crafted in Prague. Apple, the Apple logo, iPhone, iPad and Mac are trademarks of Apple Inc.</p>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="catalog-data.js" defer></script>
+  <script src="decks.js" defer></script>
+</body>
+</html>

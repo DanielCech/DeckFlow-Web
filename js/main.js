@@ -37,6 +37,7 @@
       '.spoken-demo, .code-compare, .import-flow, .safety-panel, ' +
       '.watch__stage, .trailer__copy, .trailer__frame, ' +
       '.trust__title, .trust__item, .hero__usp'
+      + ', .decks-hero__copy, .decks-hero__stack, .decks-ai-bridge, .decks-library__head, .decks-filter, .deck-tile, .decks-final-cta'
     );
     candidates.forEach((el, i) => {
       el.setAttribute('data-reveal', '');

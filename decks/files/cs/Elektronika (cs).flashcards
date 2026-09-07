@@ -1,0 +1,636 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Elektronika",
+  "interest_icon": "cpu",
+  "interest_key": "electronics",
+  "deck_q_lang": "cs",
+  "deck_a_lang": "cs",
+  "decks": [
+    {
+      "deck": "Zákony a veličiny",
+      "deck_icon": "bolt",
+      "cards": [
+        {
+          "q": "Co říká Ohmův zákon?",
+          "a": "$U = R \\cdot I${U se rovná R krát I}\n\nNapětí $U$ (V) se rovná odporu $R$ (Ω) krát proud $I$ (A). Platí pro lineární komponenty při konstantní teplotě."
+        },
+        {
+          "q": "Jak přeuspořádáte Ohmův zákon pro odpor a proud?",
+          "a": "$R = \\frac{U}{I}${R se rovná U nad I} a $I = \\frac{U}{R}${I se rovná U nad R}\n\nPříklad: 5 V na 250 Ω dává $I = 5/250 = 0.02$ A = 20 mA."
+        },
+        {
+          "q": "Co říká Kirchhoffův napěťový zákon (KVL)?",
+          "a": "Součet napětí kolem jakékoli uzavřené smyčky je nula.\n\nV praxi: napětí zdroje se rovná součtu úbytků napětí na součástech v sérii s ním."
+        },
+        {
+          "q": "Co říká současný Kirchhoffův zákon (KCL)?",
+          "a": "Součet proudů v libovolném uzlu je nula.\n\nVstupní proud se rovná výstupnímu proudu – náboj se na spoji nevytvoří ani nezničí."
+        },
+        {
+          "q": "Jak se kombinují odpory v sérii?",
+          "a": "$R_{total} = R_1 + R_2 + R_3 + \\dots$\n\nPřidávají, takže sériový řetěz má vždy větší odpor než kterýkoli jednotlivý člen."
+        },
+        {
+          "q": "Jak se kombinují dva odpory paralelně?",
+          "a": "$R_{total} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}$\n\nVýsledek je vždy **menší než menší** rezistor. 100 Ω ∥ 100 Ω = 50 Ω."
+        },
+        {
+          "q": "Jak se počítá elektrický výkon?",
+          "a": "$P = U \\cdot I${P se rovná U krát I}, ve wattech.\n\nEkvivalentně $P = I^2 R$ nebo $P = \\frac{U^2}{R}$.\n\nPříklad: LED při 2 V a 20 mA ztrácí 0,04 W."
+        },
+        {
+          "q": "Jak se počítá elektrická energie a jaké jsou její jednotky?",
+          "a": "$E = P \\cdot t${E se rovná P krát t}\n\nJouly (J) nebo watthodiny (Wh); 1 Wh = 3600 J.\n\nPříklad: 2000 mAh článek při 5 V uchovává asi 10 Wh."
+        },
+        {
+          "q": "Co je kapacita a jaká je její jednotka?",
+          "a": "Nabití, které kondenzátor ukládá na použitý volt: $C = \\frac{Q}{U}$, měřeno ve faradech (F).\n\nPraktické hodnoty jsou malé: pF, nF a µF. 1 uF = 1000 nF."
+        },
+        {
+          "q": "Jak se nabíjí kondenzátor přes odpor?",
+          "a": "Napětí roste exponenciálně s časovou konstantou $\\tau = R \\cdot C${tau se rovná R krát C}.\n\nPo $5\\tau$ je nabito asi na 99 %. S $R = 1$ kΩ a $C = 100$ µF, $\\tau = 0.1$ s, takže je efektivně plný za půl sekundy."
+        },
+        {
+          "q": "Jak závisí impedance kondenzátoru na frekvenci?",
+          "a": "Kapacitní reaktance: $X_C = \\frac{1}{2\\pi f C}$\n\nNízká frekvence znamená vysokou impedanci, takže kondenzátor blokuje stejnosměrný proud. Vysoká frekvence znamená nízkou impedanci, takže prochází střídavým proudem."
+        },
+        {
+          "q": "Jak závisí impedance induktoru na frekvenci?",
+          "a": "Indukční reaktance: $X_L = 2\\pi f L$\n\nVysoká frekvence znamená vysokou impedanci, takže induktor brání rychlým změnám proudu. U DC je ideální induktor zkrat."
+        },
+        {
+          "q": "Co je to dělič napětí a jaký je jeho vzorec?",
+          "a": "Dva rezistory v sérii rozdělují napětí mezi nimi:\n$$\nU_{out} = U_{in} \\cdot \\frac{R_2}{R_1 + R_2}\n$$\n12 V na 10 kΩ + 10 kΩ dává 6 V na spodním rezistoru. Drží pouze tehdy, když zátěž odebírá mnohem méně proudu než samotný dělič."
+        },
+        {
+          "q": "Jaký je vztah mezi frekvencí a periodou?",
+          "a": "$f = \\frac{1}{T}${f se rovná jedné nad T}\n\n50 Hz síť má periodu 20 ms; Síť 60 Hz má 16,7 ms."
+        },
+        {
+          "q": "Jaká je efektivní hodnota střídavého napětí?",
+          "a": "**Odmocnina** — stejnosměrné napětí, které by dodalo stejný výkon do stejného odporu.\n\nPro sinusovou vlnu: $U_{RMS} = \\frac{U_{peak}}{\\sqrt{2}} \\approx 0.707 \\cdot U_{peak}$\n\nSíť 230 V RMS vrcholí při přibližně 325 V; 120 V RMS vrcholí při přibližně 170 V."
+        },
+        {
+          "q": "Proč záleží na pojistkách a správně dimenzovaných vodičích?",
+          "a": "Každý vodič má odpor. Při zkratu je proud omezen pouze tímto odporem ($I = U/R$) a drát se zahřívá jako $P = I^2 R$ – což je způsob, jakým se porucha stává požárem.\n\nPojistka nebo jistič otevře obvod dříve, než kabeláž dosáhne tohoto bodu."
+        },
+        {
+          "q": "Jaký je rozdíl mezi DC a AC?",
+          "a": "**DC** — konstantní polarita: baterie, USB, nástěnné adaptéry, kolíky mikrokontroléru.\n\n**AC** – polarita se střídá: síťové napájení, 230 V při 50 Hz nebo 120 V při 60 Hz v závislosti na regionu."
+        },
+        {
+          "q": "Co je zem (GND) v obvodu?",
+          "a": "Referenční 0 V každé druhé napětí se měří proti.\n\n**Pravidlo, které chytne každého:** když spojíte několik desek dohromady – ovladač, ovladač motoru, senzory – musí sdílet společnou zem, nebo signály nemají sdílenou referenci a nic nefunguje."
+        },
+        {
+          "q": "Jak se kapacita kombinuje v sérii?",
+          "a": "$\\frac{1}{C_{total}} = \\frac{1}{C_1} + \\frac{1}{C_2} + \\dots$\n\nCelkový počet je menší než nejmenší kondenzátor – opak rezistorů v sérii."
+        },
+        {
+          "q": "Jak se paralelně kombinuje kapacita?",
+          "a": "$C_{total} = C_1 + C_2 + C_3 + \\dots$\n\nKapacity se přidávají — opět opak rezistorů. Paralelní kondenzátory poskytují větší kapacitu při stejném jmenovitém napětí."
+        }
+      ],
+      "deck_key": "laws-and-quantities"
+    },
+    {
+      "deck": "Komponenty",
+      "deck_icon": "cpu",
+      "cards": [
+        {
+          "q": "K čemu je rezistor?",
+          "a": "Pasivní součástka, která omezuje proud nebo rozděluje napětí. Jeho hodnota je v ohmech (Ω), označená barevnými proužky na dílech s průchozími otvory nebo číselným kódem na dílech pro povrchovou montáž.\n\nTypické použití: asi 220 Ω v sérii s LED pro nastavení jejího proudu."
+        },
+        {
+          "q": "Jak čtete barevný kód čtyřpásmového rezistoru?",
+          "a": "Pásma 1 a 2 jsou číslice, pásmo 3 je násobitel, pásmo 4 je tolerance.\n\nČerná 0, hnědá 1, červená 2, oranžová 3, žlutá 4, zelená 5, modrá 6, fialová 7, šedá 8, bílá 9."
+        },
+        {
+          "q": "Jaká jsou tři nejčastější použití kondenzátoru v malém projektu?",
+          "a": "* **Oddělení** — 100 nF keramika hned vedle napájecího kolíku integrovaného obvodu\n* **Vyhlazení napájení** — 100–1000 µF elektrolytické na napájecí liště\n* **Časování** — jako C v RC zpoždění nebo oscilátoru"
+        },
+        {
+          "q": "Jaký je rozdíl mezi elektrolytickým a keramickým kondenzátorem?",
+          "a": "**Elektrolytické** — velká kapacita (µF až mF), **polarizované** (při obrácení může dojít k vyvětrání nebo explozi), pomalejší odezva.\n\n**Keramický** — malá kapacita (pF až µF), nepolarizovaný, rychlý — proto oddělování a vysokofrekvenční filtrování používá keramiku."
+        },
+        {
+          "q": "Co dělá dioda?",
+          "a": "Vede pouze jedním směrem, od anody ke katodě.\n\nDopředné napětí $V_f$: asi 0,7 V pro křemík, 0,2–0,3 V pro Schottkyho. Běžná použití: ochrana proti přepólování a usměrnění AC."
+        },
+        {
+          "q": "K čemu je Zenerova dioda?",
+          "a": "Reverzně zaujatý, začne vést, jakmile je dosaženo Zenerova napětí $U_Z$, přičemž napětí na něm zůstává zhruba konstantní.\n\nPoužívá se pro napěťovou referenci nebo jednoduché uchycení přepětí."
+        },
+        {
+          "q": "Co LED vždy potřebuje a proč?",
+          "a": "**Rezistor omezující proud** (nebo budič s konstantním proudem).\n\nProud LED roste velmi strmě s napětím za jeho dopředným napětím, takže jeho připojení přímo ke zdroji nechá proud uniknout a zničit ho. Typický provozní proud je 10–20 mA."
+        },
+        {
+          "q": "Jak vypočítáte sériový rezistor LED?",
+          "a": "$R = \\frac{U_{supply} - U_f}{I_f}$\n\nNapájení 5 V, červená LED ($U_f = 2$ V), 20 mA: $R = (5 - 2)/0.02 = 150$ Ω. Zaokrouhlete **nahoru** na další standardní hodnotu (180 Ω nebo 220 Ω), aby proud nemohl překročit cíl."
+        },
+        {
+          "q": "Jaká jsou typická propustná napětí LED podle barvy?",
+          "a": "* Červená ≈ 2,0 V\n* Žlutá / zelená ≈ 2,1 V\n* Modrá ≈ 3,2 V\n* Bílá ≈ 3,2–3,4 V\n* Infračervené (880 nm) ≈ 1,2–1,5 V\n\nModrá nebo bílá LED se sotva rozsvítí z 3,3 V lišty, jakmile je odpor v sérii."
+        },
+        {
+          "q": "Jak funguje bipolární tranzistor NPN jako spínač?",
+          "a": "Malý základní proud řídí mnohem větší proud kolektor-emitor.\n\nK jeho nasycení (plné zapnutí) potřebujete $I_B > \\frac{I_C}{h_{FE}}$. S $h_{FE} = 100$ a $I_C = 500$ mA stačí přibližně 5 mA základního proudu."
+        },
+        {
+          "q": "Co je to N-kanálový MOSFET a kdy mu dáváte přednost před BJT?",
+          "a": "Napěťově řízený spínač: hradlové napětí nad prahovou hodnotou $V_{th}$ (typicky 2–4 V) otevře kanál drain-to-source.\n\nUpřednostňujte jej pro přepínání napájení – brána neodebírá téměř žádný stálý proud a $R_{DS(on)}$ může mít miliohmy, takže běží v pohodě tam, kde by BJT ne."
+        },
+        {
+          "q": "Co je relé a proč jeho cívka potřebuje diodu přes něj?",
+          "a": "Elektromechanický spínač poháněný cívkou, který izoluje nízkonapěťový řídicí obvod od zátěže síťového napětí.\n\nCívka je induktor: když se pohonný proud zastaví, zhroucení pole vytvoří velký zpětný napěťový hrot. Flyback dioda přes cívku dává ten proud někam, kde má jít, místo aby zničil budící tranzistor."
+        },
+        {
+          "q": "K čemu je optočlen?",
+          "a": "Spojuje dva obvody prostřednictvím světla – LED směřující k fototranzistoru v jednom balení – takže nesdílejí vůbec žádné elektrické spojení.\n\nPoužívá se k ochraně mikrokontroléru před vysokým napětím nebo šumem v napájecím obvodu."
+        },
+        {
+          "q": "Co je to oddělovací (bypass) kondenzátor a kam musí jít?",
+          "a": "Keramický kondenzátor 100 nF umístěný **co nejblíže** napájecímu kolíku integrovaného obvodu.\n\nDodává rychlé proudové špičky, které IC odebírá při spínání, které indukčnost napájecího vedení nemůže zajistit dostatečně rychle. Vzdálenost maří účel, takže jde na kolík, ne na konektor."
+        },
+        {
+          "q": "Co dělá lineární regulátor napětí (LDO)?",
+          "a": "Udržuje své výstupní napětí konstantní, když se vstup mění, snížením rozdílu na propustném prvku.\n\nTento rozdíl se stává teplem: $P_{loss} = (U_{in} - U_{out}) \\cdot I$."
+        },
+        {
+          "q": "Proč se lineární regulátor zahřívá a jaká je alternativa?",
+          "a": "Převádí přebytečné napětí na teplo: $P_{loss} = (U_{in} - U_{out}) \\cdot I$.\n\n12 V až 5 V při 1 A plýtvá 7 W – to vyžaduje chladič. Spínací (doláčkový) měnič dělá stejnou práci s účinností zhruba 90 %, protože energii ukládá a uvolňuje, místo aby ji rozptyloval."
+        },
+        {
+          "q": "Co je to NTC termistor a jak ho čtete?",
+          "a": "Rezistor s **záporným** teplotním koeficientem — odpor klesá se stoupající teplotou. Běžnou součástí je 10 kΩ při 25 °C.\n\nZapojte jej jako jednu polovinu napěťového děliče s pevným odporem 10 kΩ a odečtěte střední bod pomocí ADC."
+        },
+        {
+          "q": "Co je LDR?",
+          "a": "Rezistor závislý na světle: odpor klesá s rostoucím osvětlením – desítky kΩ ve tmě, stovky ohmů v jasném světle.\n\nS pevným odporem tvoří dělič, který může ADC číst jako hrubý světelný senzor."
+        },
+        {
+          "q": "Co je to Schottkyho dioda a kde je preferována?",
+          "a": "Dioda s nízkým propustným napětím (0,2–0,3 V) a velmi rychlou obnovou.\n\nPreferovaná jako zpětná dioda pro motory a relé, pro ochranu proti přepólování na vstupu a ve spínacích zdrojích – ve všech třech případech, protože plýtvá méně energie jako teplo."
+        },
+        {
+          "q": "Co je ovladač brány MOSFET a kdy jej potřebujete?",
+          "a": "Integrovaný obvod, který získává a pohlcuje velký krátký proud potřebný k nabíjení a vybíjení kapacity hradla MOSFETu.\n\nPin mikrokontroléru může dodávat ~20 mA, což zpomaluje přechod – a MOSFET odvádí většinu tepla *během* přechodu. Potřebné, jakmile přepnete rychle, zhruba nad 50 kHz."
+        },
+        {
+          "q": "K čemu je krystalový oscilátor a proč potřebuje zatěžovací kondenzátory?",
+          "a": "Křemenný krystal nastavuje přesnou hodinovou frekvenci (obvykle ±20 ppm) – mnohem stabilnější než interní RC oscilátor, na kterém závisí sériové spojení a hodiny reálného času.\n\nZátěžové kondenzátory (často 12–22 pF) nastaví krystal na kapacitu, pro kterou byl specifikován; špatná hodnota posune frekvenci."
+        }
+      ],
+      "deck_key": "components"
+    },
+    {
+      "deck": "Digitální logika a sběrnice",
+      "deck_icon": "memorychip",
+      "cards": [
+        {
+          "q": "Jaké jsou základní booleovské operace?",
+          "a": "* **AND** — 1 pouze v případě, že oba vstupy jsou 1\n* **NEBO** — 1, když je alespoň jeden vstup 1\n* **NE** – invertuje\n* **NAND / NOR** — negace AND / OR\n* **XOR** — 1, když se vstupy liší"
+        },
+        {
+          "q": "K čemu se brána XOR v praxi používá?",
+          "a": "Jeho výstup je vysoký, když se vstupy liší, což z něj dělá přirozený stavební blok pro detekci rozdílů, paritní bity a poloviční sčítačku.\n\nDvě užitečné identity: $A \\oplus A = 0$ a $A \\oplus 1 = \\lnot A$."
+        },
+        {
+          "q": "Jaký je rozdíl mezi logikou 5 V TTL a 3,3 V CMOS?",
+          "a": "**TTL** — 5 V lišty, pevný spínací práh kolem 1,4 V, vyšší statický proud.\n\n**CMOS** – napájení kdekoli od 1,8 do 5 V, zanedbatelný statický proud, prahové hodnoty, které se mění s napájením. Téměř každý moderní mikrokontrolér je 3,3 V CMOS."
+        },
+        {
+          "q": "Co je to pull-up rezistor a kdy ho potřebujete?",
+          "a": "Odpor od kolíku k napájení, který drží kolík vysoko, když ho nic jiného neřídí.\n\nPotřebné pro tlačítko (jinak kolík plave a čte se náhodně), pro každou sběrnici I²C a pro jakýkoli výstup s otevřeným odtokem."
+        },
+        {
+          "q": "Jak používáte vnitřní pull-up mikrokontroléru?",
+          "a": "```cpp\npinMode(pin, INPUT_PULLUP);\n```\nVětšina MCU má zabudované 20–50 kΩ pull-up, takže tlačítko nepotřebuje žádný externí odpor. **Logika se invertuje**: stisk znamená LOW."
+        },
+        {
+          "q": "Co je sběrnice I²C a co vždy vyžaduje?",
+          "a": "Dvouvodičová sběrnice: **SDA** pro data a **SCL** pro hodiny, se 7bitovým adresováním (takže až asi 128 zařízení) ve standardním režimu 100 kHz nebo rychlém režimu 400 kHz.\n\n**Vyžaduje pull-up rezistory**, typicky 4,7 kΩ, protože každé zařízení může linky pouze stáhnout nízko, nikdy je posunout vysoko."
+        },
+        {
+          "q": "Jaká je posloupnost transakce I²C?",
+          "a": "START → 7bitová adresa slave plus bit pro čtení/zápis → ACK → datové bajty, každý potvrzen → STOP.\n\nOvladač generuje hodiny, takže zařízení, které potřebuje čas, může zastavit přenos pouze přidržením SCL na nízké úrovni (natahování hodin)."
+        },
+        {
+          "q": "Jak se liší SPI od I²C?",
+          "a": "SPI používá čtyři vodiče — **MOSI**, **MISO**, **SCK**, **CS** — a je plně duplexní a mnohem rychlejší (desítky MHz), protože je spíše push-pull než open-drain.\n\nCena: každé periferní zařízení potřebuje svůj vlastní pin pro výběr čipu, takže počet pinů roste s počtem zařízení."
+        },
+        {
+          "q": "Co znamenají signály SPI MOSI, MISO, SCK a CS?",
+          "a": "* **MOSI** — výstup ovladače, vstup periferie\n* **MISO** — vstup ovladače, výstup periferie\n* **SCK** — hodiny generované ovladačem\n* **CS / SS** — výběr čipu, aktivní **NÍZKÁ**"
+        },
+        {
+          "q": "Co je UART a co znamenají jeho parametry?",
+          "a": "Asynchronní sériový: **TX** vysílá, **RX** přijímá a oba se musí křížit — TX do RX.\n\nNeexistuje žádná hodinová linka, takže oba konce musí souhlasit s přenosovou rychlostí. `8N1` znamená 8 datových bitů, žádná parita, 1 stop bit."
+        },
+        {
+          "q": "Co je PWM?",
+          "a": "Digitální signál se rychle zapíná a vypíná, kde **pracovní cyklus** (0–100 %) nastavuje průměrné napětí.\n\nPoužívá se pro jas LED, rychlost DC motoru a polohu serva. Nejedná se o analogové napětí — zátěž, která nemůže zprůměrovat, uvidí přepínání."
+        },
+        {
+          "q": "Co je to ADC a jaké rozlišení mají typické desky?",
+          "a": "Analogově-digitální převodník převádí napětí na číslo.\n\nKlasická 8bitová deska AVR je 10bitová (0–1023) přes 0–5 V; ESP32 je 12bitový (0–4095) přes 0–3,3 V. Převodník ESP32 je výrazně nelineární, takže přesná práce vyžaduje kalibraci."
+        },
+        {
+          "q": "Co je to DAC a co bez něj děláte?",
+          "a": "Digitálně-analogový převodník vytváří skutečné analogové napětí. ESP32 má dva 8bitové DAC.\n\nBez jednoho se PWM následovaný RC low-pass filtrem přibližuje analogovému výstupu – dost dobrý pro řídicí napětí, ne pro zvuk bez péče."
+        },
+        {
+          "q": "Co je přehazovačka úrovně a kdy je povinná?",
+          "a": "Obvod, který převádí logické úrovně mezi kolejnicemi, obvykle 5 V a 3,3 V.\n\nPovinné při přivádění 5 V signálu do 3,3 V vstupu: většina 3,3 V součástek toleruje maximálně asi 3,6 V na kolíku a 5 V je okamžitě poškodí. Odporový dělič pracuje pro pomalý vstup; pro rychlou nebo obousměrnou linku je potřeba vyhrazený posunovač."
+        },
+        {
+          "q": "Jaké jsou logické prahy pro 3,3 V CMOS?",
+          "a": "* Vstup HIGH — nad zhruba 2,0 V\n* Vstup LOW — pod zhruba 0,8 V\n* Výstup HIGH ≈ 3,3 V\n* Výstup LOW ≈ 0 V\n\nPásmo mezi vstupními prahy je nedefinované – signál, který tam setrvává, může způsobit oscilaci vstupu."
+        },
+        {
+          "q": "Co je to odskok přepínače a jak se s ním vyrovnáváte?",
+          "a": "Mechanický kontakt se nezavírá čistě: během několika milisekund se několikrát sepne a rozbije, takže jedno stisknutí přečte tolik.\n\n**V hardwaru:** 100 nF kondenzátor přes přepínač. **V softwaru:** ignorujte jakoukoli změnu během 10–50 ms od poslední změny, která je měřena milisekundovým čítačem spíše než blokovacím zpožděním."
+        },
+        {
+          "q": "Co je přerušení a proč je lepší než dotazování?",
+          "a": "Hardwarová událost, která pozastaví hlavní program a okamžitě spustí obsluhu.\n\nPolling musí neustále kontrolovat, což plýtvá cykly a stále může chybět krátký puls mezi kontrolami. Přerušení nemůže ujít okraj a mezi tím nechá CPU spát."
+        },
+        {
+          "q": "Co je to výstup s otevřeným odtokem a co potřebuje?",
+          "a": "Může vytáhnout kolík nízko, ale nemůže ho zahnat vysoko – po uvolnění se kolík vznáší.\n\nPotřebuje tedy externí vytažení. To umožňuje, aby několik zařízení bezpečně sdílelo jednu linku: kterékoli z nich ji může stáhnout nízko, čímž se chová kabelově AND. I²C je na tom postaveno."
+        },
+        {
+          "q": "Co pro vás dělá posuvný registr se sériovým vstupem a paralelním výstupem?",
+          "a": "Promění tři piny na osm výstupů sériovým taktováním bitů a jejich paralelním zablokováním.\n\nŘetězují: dva registry poskytují 16 výstupů ze stejných tří pinů, což je způsob, jakým jsou řízeny matice LED a vícemístné displeje."
+        },
+        {
+          "q": "Proč musí být proměnná sdílená s obsluhou přerušení `volatile`?",
+          "a": "```cpp\nvolatile bool flag = false;\n```\nSděluje to kompilátoru, že hodnota se může změnit mimo viditelný tok řízení, takže musí být pokaždé znovu načtena z paměti.\n\nBez něj může kompilátor ukládat proměnnou do mezipaměti v registru a změna handleru není nikdy vidět hlavní smyčkou."
+        },
+        {
+          "q": "K čemu slouží hlídací časovač?",
+          "a": "Hardwarový časovač, který resetuje čip, pokud jej program pravidelně nemaže.\n\nObnoví zařízení, které se zablokovalo – nekonečnou smyčku, uváznutí, zablokovanou sběrnici – aniž by jej někdo musel zapínat a vypínat. To znamená, že samotná cesta k resetování musí být v každém okamžiku bezpečná."
+        }
+      ],
+      "deck_key": "digital-logic-and-buses"
+    },
+    {
+      "deck": "Základy mikrokontroléru",
+      "deck_icon": "wrench.and.screwdriver",
+      "cards": [
+        {
+          "q": "Jaké jsou aktuální limity na pinech klasické 5V desky AVR?",
+          "a": "Přibližně **40 mA** na pin absolutní maximum a zhruba **200 mA** celkem z 5 V pinu regulátoru.\n\nProto motor nebo servo nikdy není napájeno z 5V pinu desky — potřebuje vlastní napájení se sdílenou zemí."
+        },
+        {
+          "q": "Jaké jsou tři režimy kolíků a co každý dělá?",
+          "a": "* `INPUT` — vysoká impedance; kolík nedrží žádnou úroveň a plave, pokud ho něco nepohání\n* `OUTPUT` — aktivně řízen vysoko nebo nízko\n* `INPUT_PULLUP` — vstup s povoleným interním pull-up, takže při nečinnosti je hodnota HIGH"
+        },
+        {
+          "q": "Jak čtete a píšete digitální pin?",
+          "a": "```cpp\npinMode(pin, OUTPUT);\ndigitalWrite(pin, HIGH);\n\npinMode(btn, INPUT_PULLUP);\nint s = digitalRead(btn);\n```\nRežim musí být nastaven před použitím, jinak se pin chová tak, jak byl naposledy nakonfigurován."
+        },
+        {
+          "q": "Jak převedete ADC čtení na napětí?",
+          "a": "```cpp\nfloat v = analogRead(A0)\n          * 5.0 / 1023.0;\n```\nVynásobte referenčním napětím a vydělte celkovým počtem. Odečet je pouze tak přesný jako tato reference, která na desce napájené USB není přesně 5 V."
+        },
+        {
+          "q": "Co vlastně `analogWrite` produkuje?",
+          "a": "**PWM, ne analogové napětí.** Hodnota 0–255 nastavuje pracovní cyklus.\n\nNa klasické desce AVR to podporují pouze některé piny, buď na 490 Hz nebo 980 Hz v závislosti na tom, který časovač je řídí."
+        },
+        {
+          "q": "Proč je počítadlo milisekund lepší než `delay()`?",
+          "a": "```cpp\nunsigned long prev = 0;\nif (millis() - prev >= 1000) {\n  prev = millis();\n  // once per second\n}\n```\nProgram nezastaví, takže senzory, komunikace a další časovače pracují dál.\n\nVšimněte si odečítání: porovnávání `millis() - prev` spíše než absolutní časy je to, co umožňuje přežít přetečení počítadla po ~50 dnech."
+        },
+        {
+          "q": "Co je špatného na `delay()`?",
+          "a": "Blokuje vše – žádné změny pinů, žádné čtení ze senzoru, žádné sériové číslo, žádná odezva – po celou dobu trvání.\n\nJe to v pořádku v jednorázovém nastavovacím kódu, kde se nic jiného stát nemusí. Kdekoli jinde použijte srovnání časových razítek nebo stavový automat."
+        },
+        {
+          "q": "Jak nastavit sériovou komunikaci?",
+          "a": "```cpp\nSerial.begin(115200);\nSerial.println(\"ready\");\nif (Serial.available()) {\n  int b = Serial.read();\n}\n```\nPřenosová rychlost musí odpovídat rychlosti terminálu, jinak získáte věrohodně vypadající odpad spíše než ticho."
+        },
+        {
+          "q": "Jak spustíte sběrnici I²C v kódu?",
+          "a": "```cpp\n#include <Wire.h>\nWire.begin();          // controller\nWire.begin(address);   // peripheral\n```\nChcete-li najít neznámé zařízení, přejděte na adresy 1–127 a zjistěte, které z nich potvrzuje přenos."
+        },
+        {
+          "q": "Jak spustíte sběrnici SPI v kódu?",
+          "a": "```cpp\n#include <SPI.h>\nSPI.begin();\ndigitalWrite(CS, LOW);\nbyte r = SPI.transfer(0x42);\ndigitalWrite(CS, HIGH);\n```\nKnihovna nespravuje výběr čipu – při každém převodu jej prosazujete a uvolňujete sami."
+        },
+        {
+          "q": "Jaký je rozdíl mezi `setup()` a `loop()`?",
+          "a": "`setup()` se spustí jednou po resetu: režimy pinů, sériový, inicializace senzoru, síť.\n\n`loop()` běží opakovaně, stovky tisíckrát za sekundu, pokud jej nic neblokuje. Nesmí proto nikdy předpokládat, že je volána s pevnou sazbou."
+        },
+        {
+          "q": "Jaká jsou pravidla pro psaní obsluhy přerušení?",
+          "a": "Ať je to **krátké**. Nastavte příznak `volatile` nebo push do vyrovnávací paměti a proveďte skutečnou práci v hlavní smyčce.\n\nŽádné blokovací zpoždění, žádný sériový tisk a žádné spoléhání se na počítadlo milisekund – přestane postupovat uvnitř manipulátoru, protože je samo řízeno přerušením."
+        },
+        {
+          "q": "Jak řídíte stejnosměrný motor z mikrokontroléru?",
+          "a": "Nikdy přímo – motor odebírá mnohem více, než kolik dokáže dodat, a jeho indukčnost vytváří špičky.\n\nPoužijte ovladač H-můstku, který vám také umožňuje ovládat směr. Napájejte motor samostatně a sdílejte zem s ovladačem."
+        },
+        {
+          "q": "Co je EEPROM na mikrokontroléru a jaký je jeho limit?",
+          "a": "```cpp\n#include <EEPROM.h>\nEEPROM.write(addr, value);\nbyte v = EEPROM.read(addr);\n```\nNevolatilní bajtové úložiště, které přežije reset – dobré pro nastavení a kalibraci.\n\nVýdrž je zhruba 100 000 zápisů **na buňku**, takže to nikdy nezapisujte do smyčky."
+        },
+        {
+          "q": "Co dělají `map()` a `constrain()` a proč se používají společně?",
+          "a": "```cpp\nint a = map(analogRead(A0),\n            0, 1023, 0, 180);\na = constrain(a, 0, 180);\n```\n`map()` změní měřítko hodnoty mezi rozsahy, ale **není** upnutí — vstup mimo zdrojový rozsah produkuje výstup mimo cílový rozsah. `constrain()` je to, co je bezpečné."
+        },
+        {
+          "q": "Co dělá `PROGMEM` a proč na malém MCU záleží?",
+          "a": "```cpp\nconst char msg[] PROGMEM = \"...\";\nSerial.println(F(\"literal\"));\n```\nNeustálá data uchovává ve flashi místo toho, aby je při spuštění kopírovala do paměti RAM.\n\nKlasická deska AVR má 2 kB RAM, takže ji může vyčerpat hrstka dlouhých řetězcových literálů – a nedostatek paměti RAM se projevuje jako záhadné poškození, nikoli čistá chyba."
+        },
+        {
+          "q": "Co je to bootloader?",
+          "a": "Malý program předprogramovaný v čipu, který může přijímat nový náčrt přes sériový port, takže není potřeba žádný externí programátor.\n\nPo resetu krátce počká a poté spustí stávající program. Stojí to malé množství flash a to zpoždění spuštění."
+        },
+        {
+          "q": "Co je softwarový sériový port a kolik stojí?",
+          "a": "Knihovna, která emuluje UART na běžných digitálních pinech, čímž získáte další port.\n\nStojí to čas CPU a latence přerušení: časování se provádí softwarově, takže je pomalejší, méně spolehlivé při vysokých přenosových rychlostech a může rušit jiná přerušení."
+        },
+        {
+          "q": "Jak si vyberete mezi běžnými 8bitovými tvarovými faktory desky?",
+          "a": "* **Uno-class** — 14 digitálních a 6 analogových pinů, 32 kB flash, 2 kB RAM; výchozí\n* **Mega třída** — 54 digitálních, 16 analogových, 256 kB flash, čtyři UART; když vám dojdou špendlíky\n* **Nano-třída** — stejný čip jako Uno na mnohem menší ploše; když se musí vejít do ohrady"
+        },
+        {
+          "q": "Odkud pocházejí knihovny Arduino a kde jsou nainstalovány?",
+          "a": "Správce knihoven v IDE nebo stažený ZIP přidaný pomocí *Přidat knihovnu .ZIP*.\n\nDostanou se do složky `libraries/` vašeho skicáře, což se vyplatí vědět, když jsou dvě verze stejné knihovny v konfliktu."
+        }
+      ],
+      "deck_key": "microcontroller-basics"
+    },
+    {
+      "deck": "Wi-Fi mikrokontroléry",
+      "deck_icon": "wifi",
+      "cards": [
+        {
+          "q": "Jaké jsou hlavní rozdíly mezi ESP32 a ESP8266?",
+          "a": "**ESP32** — dvoujádrové na 240 MHz, Wi-Fi plus Bluetooth Classic a BLE, dva DAC, 18 kanálů ADC, kapacitní dotykové vstupy, mnoho dalších GPIO.\n\n**ESP8266** — jedno jádro na 80/160 MHz, pouze Wi-Fi, mnohem méně pinů, levnější."
+        },
+        {
+          "q": "Jaké je napájecí napětí ESP32 a jaké je maximum na GPIO?",
+          "a": "Čip běží na **3,3 V**. Vývojové desky přijímají na svém vstupním pinu zhruba 4,5–7 V a regulují jej dolů.\n\nGPIO tolerují maximálně **3,6 V**. Signál 5 V je okamžitě poškodí — použijte přepínač úrovně nebo dělič."
+        },
+        {
+          "q": "Jak se připojíte k Wi-Fi na ESP32?",
+          "a": "```cpp\n#include <WiFi.h>\nWiFi.begin(ssid, password);\nwhile (WiFi.status()\n       != WL_CONNECTED) {\n  delay(500);\n}\nSerial.println(WiFi.localIP());\n```"
+        },
+        {
+          "q": "Co je hluboký spánek a kolik ušetří?",
+          "a": "Režim, ve kterém jsou CPU a rádio vypnuté a zůstává pouze doména s nízkou spotřebou, která snižuje proud ze zhruba 200 mA na přibližně 10 µA.\n\nJe to rozdíl mezi výdrží bateriového senzoru dny a roční výdrží. Probuzení probíhá pomocí časovače, GPIO edge nebo touchpadu."
+        },
+        {
+          "q": "Co se stane s vaším programem poté, co se ESP32 probudí z hlubokého spánku?",
+          "a": "```cpp\nRTC_DATA_ATTR int count = 0;\nesp_sleep_enable_timer_wakeup(\n  10 * 1000000ULL);\nesp_deep_sleep_start();\n```\nZačíná se shora — `setup()` běží znovu, jako po resetu. Pouze proměnné označené jako živé v paměti RTC si uchovávají své hodnoty, takže cokoli jiného musí být znovu odvozeno nebo znovu načteno."
+        },
+        {
+          "q": "Jaká jsou dvě omezení na ADC ESP32?",
+          "a": "**ADC2 sdílí hardware s Wi-Fi rádiem**, takže tyto kanály jsou nepoužitelné, když je Wi-Fi zapnuté. Použijte ADC1 (GPIO 32–39) pro cokoli, co potřebujete spolehlivě přečíst.\n\nPřevodník je také znatelně nelineární na obou koncích svého rozsahu, takže přesné měření vyžaduje tovární kalibrační data."
+        },
+        {
+          "q": "Jak je PWM nakonfigurováno na ESP32?",
+          "a": "```cpp\nledcSetup(0, 5000, 8);\nledcAttachPin(LED_PIN, 0);\nledcWrite(0, 128);  // 50 %\n```\nProstřednictvím periferie LEDC: nakonfigurujete kanál s frekvencí a rozlišením v bitech a poté jej připojíte ke kolíku. Frekvence a rozlišení obchodují proti sobě."
+        },
+        {
+          "q": "Co potřebuje bezdrátová aktualizace ve skice?",
+          "a": "```cpp\n#include <ArduinoOTA.h>\nvoid setup() {\n  WiFi.begin(ssid, pass);\n  ArduinoOTA.begin();\n}\nvoid loop() {\n  ArduinoOTA.handle();\n}\n```\n`handle()` musí být voláno pravidelně, takže blokování `loop()` tiše způsobí, že zařízení nebude aktualizovatelné – což je nejdůležitější na zařízení, které již nemůžete dosáhnout."
+        },
+        {
+          "q": "Jak fungují kapacitní dotykové vstupy ESP32?",
+          "a": "```cpp\nint v = touchRead(4);\n```\nMěří se vlastní kapacita kolíku, takže prst poblíž **sníží** odečet. Nejsou potřeba žádné externí komponenty, ale základní čára se mění s vlhkostí a krytem, ​​takže práh by měl být kalibrován při spuštění, nikoli pevně zakódován."
+        },
+        {
+          "q": "K čemu je ESP-NOW dobré?",
+          "a": "Bezproblémové zasílání zpráv peer-to-peer mezi zařízeními ESP bez zapojení přístupového bodu: latence kolem milisekundy a užitečný dosah ve stovkách metrů venku.\n\nSprávné pro roje senzorů a dálkové ovladače, kde spojení s routerem stojí více času a energie než samotná zpráva."
+        },
+        {
+          "q": "Jaký je rozdíl mezi Bluetooth Classic a BLE?",
+          "a": "**Classic** — nepřetržité připojení vhodné pro streamování s vyššími náklady na energii; umí emulovat sériový port.\n\n**BLE** — krátké pakety a dlouhé doby nečinnosti navržené tak, aby mincová buňka vydržela měsíce. Pro občasné odesílání hodnot senzoru je BLE to pravé."
+        },
+        {
+          "q": "Které ESP32 GPIO jsou pouze vstupní a co to znamená?",
+          "a": "**GPIO 34, 35, 36 a 39.** Nemají žádný výstupní ovladač a **žádné vnitřní vytahování nebo stahování**.\n\nJsou tedy vhodné pro analogové vstupy a externě řízené signály, ale tlačítko na jednom z nich potřebuje externí rezistor – jinak kolík plave a čte šum."
+        },
+        {
+          "q": "Jak využívá ESP32 svá dvě jádra?",
+          "a": "```cpp\nxTaskCreatePinnedToCore(\n  taskFn, \"name\", 4096,\n  NULL, 1, &handle, 1);\n```\nSpouští FreeRTOS se zásobníky Wi-Fi a Bluetooth na jádru 0 a aplikační úlohou ve stylu Arduina na jádru 1.\n\nPříliš dlouhé blokování jádra 0 proto naruší síť, nejen váš vlastní kód."
+        },
+        {
+          "q": "Jak trvale ukládáte nastavení na ESP32?",
+          "a": "```cpp\n#include <Preferences.h>\nPreferences prefs;\nprefs.begin(\"app\", false);\nprefs.putInt(\"count\", 42);\nint n = prefs.getInt(\"count\", 0);\nprefs.end();\n```\nÚložiště klíč-hodnota ve vyhrazeném flash oddílu s vyrovnáváním opotřebení – proto je to správná volba spíše než psát raw flash."
+        },
+        {
+          "q": "Co jsou to vázací špendlíky a proč s nimi musíte být opatrní?",
+          "a": "Piny, jejichž úroveň je vzorkována **při resetu** pro výběr režimu spouštění – zejména GPIO 0 (nízká znamená sériový zavaděč), GPIO 2 a GPIO 12.\n\nPevné zapojení jednoho z nich na pevnou úroveň může způsobit, že deska odmítne nabootovat nebo blikat a příznak vypadá spíše jako mrtvá deska než jako chyba v zapojení."
+        },
+        {
+          "q": "Jaké jsou výchozí I²C a SPI piny ESP32?",
+          "a": "Výchozí I²C je SDA 21, SCL 22 a lze jej přemapovat: `Wire.begin(sda, scl)`.\n\nVýchozí SPI je MOSI 23, MISO 19, SCK 18, CS 5; je k dispozici druhý autobus. Protože ESP32 směruje periferie přes matici, může sloužit téměř jakýkoli pin – výchozí hodnoty jsou konvence, nikoli kabeláž."
+        },
+        {
+          "q": "Jak nastavíte statickou IP adresu a kdy to musíte udělat?",
+          "a": "```cpp\nWiFi.config(ip, gateway,\n            subnet, dns);\nWiFi.begin(ssid, pass);\n```\nMusí být voláno **before** `WiFi.begin()`, jinak již bylo vyžádáno DHCP a volání nemá žádný účinek."
+        },
+        {
+          "q": "Jak spustíte ESP32 jako vlastní přístupový bod?",
+          "a": "```cpp\nWiFi.softAP(\"MyDevice\", \"password\");\nSerial.println(WiFi.softAPIP());\n```\nPro kombinovaný režim, který obsluhuje AP a zároveň se připojuje k síti, nastavte `WIFI_AP_STA` — obvyklý způsob, jak nabídnout stránku nastavení, než budou známy přihlašovací údaje."
+        },
+        {
+          "q": "Co nabízí varianty ESP32-S2, S3 a C3?",
+          "a": "* **S2** — jedno jádro, nativní USB, bez Bluetooth\n* **S3** — dvoujádrové, BLE 5, vektorové instrukce pro úlohy ML, nativní USB\n* **C3** — jedno jádro RISC-V, Wi-Fi a BLE, nejlevnější\n\nJejich vývody **nejsou** kompatibilní s původním ESP32, takže výměna desky je redesign."
+        },
+        {
+          "q": "Proč ESP32 zhasne nebo se restartuje, když rádio vysílá?",
+          "a": "Rádio odebírá krátké proudové výboje několik stovek miliampérů. Slabý napájecí zdroj, tenký USB kabel nebo chybějící velkokapacitní kondenzátor způsobují, že se kolejnice prohýbá pod prahem zhnědnutí.\n\nŘešením je zdroj, který dokáže dodat špičku – a objemový kondenzátor o velikosti několika set µF blízko modulu. Příznak vypadá jako selhání firmwaru, což ztěžuje jeho nalezení."
+        }
+      ],
+      "deck_key": "wi-fi-microcontrollers"
+    },
+    {
+      "deck": "Motory a ovladače",
+      "deck_icon": "gearshape.2",
+      "cards": [
+        {
+          "q": "Čím se servo liší od obyčejného stejnosměrného motoru?",
+          "a": "Servo obsahuje snímač polohy a regulační smyčku, takže se pohybuje do přikázaného **úhlu** a drží jej proti zátěži.\n\nStejnosměrný motor se pouze točí; bez kodéru nic neví, kde to je."
+        },
+        {
+          "q": "Jak hobby servo interpretuje svůj řídicí signál?",
+          "a": "Pulz každých 20 ms (50 Hz), kde **šířka impulsu** nastavuje úhel:\n\n* 1 ms ≈ 0°\n* 1,5 ms ≈ 90° (střed)\n* 2 ms ≈ 180°\n\nImpulsy musí stále přicházet; pokud se zastaví nebo chvějí, servo loví nebo bzučí."
+        },
+        {
+          "q": "Jak řídíte servo ze standardní knihovny?",
+          "a": "```cpp\n#include <Servo.h>\nServo s;\nvoid setup() { s.attach(9); }\nvoid loop() {\n  s.write(0);\n  delay(1000);\n  s.write(180);\n  delay(1000);\n}\n```"
+        },
+        {
+          "q": "Kdy byste měli použít `writeMicroseconds()` místo `write()`?",
+          "a": "`write(angle)` mapuje 0–180 na předpokládaný rozsah pulzů v knihovně, který se zřídka přesně shoduje s konkrétním servem.\n\n`writeMicroseconds(1000–2000)` řídí puls přímo, což je to, co potřebujete pro jemné polohování nebo pro servo, jehož skutečný zdvih se liší. Střed je 1500 µs."
+        },
+        {
+          "q": "Proč nesmí být servo napájeno z 5V pinu desky?",
+          "a": "Servo při pohybu odebírá 100–900 mA a jeho blokovací proud je stále vyšší; regulátor desky může celkem dodávat několik stovek miliampérů.\n\nDejte servu vlastní napájení 5 V, sdílejte zem s ovladačem a na pin veďte pouze signální vodič."
+        },
+        {
+          "q": "Jaká je výhoda krokového motoru a jeho cena?",
+          "a": "Pohybuje se v diskrétních krocích – běžně 1,8°, takže 200 na otáčku – což poskytuje přesné polohování **otevřená smyčka**, bez kodéru.\n\nNáklady: potřebuje driver, odebírá proud (a zahřívá se), i když stojí, a je hlučný."
+        },
+        {
+          "q": "Jaký je rozdíl mezi bipolárním a unipolárním stepperem?",
+          "a": "**Bipolární** — čtyři dráty, dvě cívky, proud obrácený každým; větší točivý moment, potřebuje ovladač H-můstku. Jedná se o typ používaný ve 3D tiskárnách.\n\n**Unipolární** – pět nebo šest vodičů se středovými odbočkami; jednodušší ovladač, ale menší točivý moment, protože pouze polovina každého vinutí je napájena najednou."
+        },
+        {
+          "q": "Co ti dá fullstep, halfstep a microstepping?",
+          "a": "* **Úplný krok** — 200 kroků/ot., plný točivý moment\n* **Půlkrok** — 400 kroků/ot., hladší\n* **1/16 mikrokrokování** — 3200 kroků/ot., tiché a plynulé\n\nMikrokrokování si kupuje hladkost, nikoli přesnost: přídržný moment při každém mikrokroku je zlomkem točivého momentu celého kroku, takže je snazší odtlačit pozici."
+        },
+        {
+          "q": "Co je to krokový/směrový ovladač a jak se ovládá?",
+          "a": "Ovladač ovládá proudy cívky; regulátor dodává pouze **STEP** (jeden impuls = jeden krok) a **DIR** (směr).\n\nMikrokrokování se volí pomocí kolíků režimu. To je důvod, proč je krokový kód pouze pulzní časování – veškerá analogová práce je v ovladači."
+        },
+        {
+          "q": "Co nikdy nesmíte vynechat při zapojování krokového ovladače?",
+          "a": "**Hromadný elektrolytický kondenzátor, přibližně 100 µF, přes napájení motoru u budiče.**\n\nBez něj vytváří připojení napájení induktivní napěťovou špičku na kolejnici motoru, která může řidiče okamžitě zničit. Je to nejběžnější způsob, jak tyto desky zemřít."
+        },
+        {
+          "q": "Jak nastavíte aktuální limit na krokovém ovladači?",
+          "a": "Trimr nastavuje referenční napětí, které definuje špičkový proud cívky: $V_{ref} = I_{max} \\times 8 \\times R_{sense}$.\n\nS $R_{sense} = 0.1$ Ω potřebuje 1 A $V_{ref} = 0.8$ V. Změřte ji proti zemi pomocí měřiče. Příliš nízká ztrácí kroky při zatížení; příliš vysoká přehřívá motor a ovladač."
+        },
+        {
+          "q": "Proč jsou některé stepperové ovladače téměř tiché?",
+          "a": "Pohánějí cívky plynulým, přibližně sinusovým proudem namísto tvrdého přepínání mezi úrovněmi, což odstraňuje slyšitelné spínací harmonické.\n\nKompromisem je o něco menší točivý moment při vysokých otáčkách, což je důvod, proč některé konstrukce přepínají režimy s rostoucí rychlostí."
+        },
+        {
+          "q": "Co pro vás dělá knihovna krokového zrychlení?",
+          "a": "```cpp\n#include <AccelStepper.h>\nAccelStepper st(\n  AccelStepper::DRIVER,\n  STEP_PIN, DIR_PIN);\nvoid setup() {\n  st.setMaxSpeed(500);\n  st.setAcceleration(100);\n  st.moveTo(200);\n}\nvoid loop() { st.run(); }\n```\nGeneruje načasování kroku pro skokový pohyb, takže `run()` musí být voláno často — na jedno volání udělá práci o jeden krok."
+        },
+        {
+          "q": "Proč potřebuje stepper spíše zrychlení než skokovou změnu rychlosti?",
+          "a": "Rotor má setrvačnost. Povelem přímo na plnou rychlost nemůže následovat, ztrácí synchronizaci s polem a **přeskakuje kroky** — poté je představa ovladače o poloze tiše špatná.\n\nVždy nastavte maximální rychlost i zrychlení."
+        },
+        {
+          "q": "Co je to ztráta kroku a jak ji zjistíte?",
+          "a": "Motor nesleduje přikázaný krok, takže skutečná poloha se odchyluje od přikázaného – a nic to nehlásí, protože řízení je v otevřené smyčce.\n\nPříčiny: příliš vysoká rychlost, příliš malý proud, příliš velká zátěž. Detekce potřebuje externí referenci — kodér nebo navádění na koncovou zarážku."
+        },
+        {
+          "q": "Co je navádění a proč je potřeba při každém zapnutí?",
+          "a": "Posouvání, dokud se nespustí koncová zarážka, a poté definování této polohy jako nulové.\n\nStepper nemá absolutní zpětnou vazbu polohy, takže po zapnutí nemá regulátor ponětí, kde je osa. Navádění je to, co mění relativní kroky na známé souřadnice."
+        },
+        {
+          "q": "Co vlastně specifikuje velikost NEMA?",
+          "a": "Pouze **montážní plocha** — NEMA 17 znamená 42,3 mm čtvercovou čelní desku s pevným vzorem šroubů.\n\nNeříká nic o točivém momentu, proudu nebo délce, takže dva motory NEMA 17 se mohou v síle několikanásobně lišit. Zkontrolujte datový list, nikoli velikost."
+        },
+        {
+          "q": "Jak převedete krokovou rychlost na RPM?",
+          "a": "$$\nRPM = \\frac{steps/s \\times 60}{steps/rev}\n$$\n400 kroků/s při plném kroku (200 kroků/ot.) je 120 ot./min. Stejná tepová frekvence při mikrokrokování 1/16 (3200 kroků/ot.) je pouze 7,5 ot./min. – mikrokrokování stojí nejvyšší rychlost pro danou tepovou frekvenci."
+        },
+        {
+          "q": "Jak rozumně porovnáváte točivý moment serva?",
+          "a": "Jmenovité hodnoty jsou v kg·cm při uvedeném napětí: malé servo s plastovým převodem dává zhruba 1,8 kg·cm při 100–250 mA, kovové s ozubeným kolem 9,4 kg·cm při 500–900 mA s 2,5 A blokováním.\n\nVelikost pro **dvou až trojnásobek** statického zatížení: dynamické zatížení pohyblivého ramene je mnohem vyšší, než naznačuje jeho hmotnost."
+        },
+        {
+          "q": "V čem je háček při řízení serva z 3,3V ovladače?",
+          "a": "K přečtení platného signálu obvykle stačí 3,3 V impuls, takže signální vodič se připojí přímo.\n\nHáček je v napájení: servo stále potřebuje vlastní napájení 5 V, **a uzemnění musí být spojeno**. Bez sdílené země nemá puls žádnou referenci a servo cuká nebo jej ignoruje."
+        },
+        {
+          "q": "Jak si vybrat mezi H-můstkem pro stejnosměrné motory a krokovým ovladačem?",
+          "a": "H-můstek přepíná polaritu napájení přes cívku – přesně pro stejnosměrné motory, kde chcete řízení směru a rychlosti PWM.\n\nKrokový ovladač **reguluje proud** každou cívkou v sekvenci, což vytváří diskrétní kroky. Použití obyčejného H-můstku pro stepper vám neposkytuje žádné proudové omezení a horký motor."
+        },
+        {
+          "q": "Proč musí být napájení motoru a napájení logiky oddělené, ale sdílejí zem?",
+          "a": "Proud motoru je velký a náhlý, takže táhne kolejnici dolů a způsobuje hluk. Sdílení této kolejnice s kontrolérem způsobí resetování a poškození naměřených hodnot.\n\nMusí však sdílet **uzemnění**, jinak nemají řídicí signály společnou referenci – oddělené zdroje se společným uzemněním jsou jedinou kombinací, která funguje."
+        }
+      ],
+      "deck_key": "motors-and-drivers"
+    },
+    {
+      "deck": "Měření",
+      "deck_icon": "ruler",
+      "cards": [
+        {
+          "q": "Co měří digitální multimetr?",
+          "a": "Stejnosměrné a střídavé napětí, stejnosměrný proud a odpor, plus test diod a bzučák kontinuity.\n\nMnoho z nich přidává kapacitu, frekvenci, teplotu a zisk tranzistoru – užitečné, ale obvykle méně přesné než vyhrazený nástroj."
+        },
+        {
+          "q": "Jak bezpečně změříte stejnosměrné napětí?",
+          "a": "1. Vyberte **V⎓**\n2. Červená sonda do V konektoru, černá do COM\n3. Dotkněte se sond **paralelně** s dílem\n4. Začněte na nejvyšším rozsahu nebo použijte automatický rozsah\n\nNikdy nenechávejte červený vodič v proudovém konektoru – měřič nastavený na proud je zkrat."
+        },
+        {
+          "q": "Jaká další opatření vyžaduje měření síťového střídavého napětí?",
+          "a": "Vyberte **V~**, sondy ve V a COM, paralelně s obvodem.\n\nSíť je smrtelná. Používejte měřidlo s jmenovitým napětím alespoň **CAT II 600 V** s neporušenými vodiči, držte jednu ruku mimo dosah čehokoli vodivého a nikdy neměňte rozsah, když jsou připojené sondy."
+        },
+        {
+          "q": "Jak se měří proud a jaká je klasická chyba?",
+          "a": "Měřič musí být **v sérii**: přerušte obvod a vložte jej do mezery.\n\nChybou je měření proudu paralelně jako napětí. V aktuálním režimu je elektroměr téměř zkratovaný, takže se spálí pojistka – nebo ještě něco horšího."
+        },
+        {
+          "q": "Proč mají multimetry samostatné proudové zdířky 10 A a mA?",
+          "a": "Každý má svůj bočník a vlastní pojistku: 10A jack odebírá desítky ampérů, mA jack jen několik set miliampérů.\n\nPoužití mA konektoru pro velké proudové rány, které pojistky – často důvod, proč měřič náhle „přestane číst proud“. Když velikost není známa, začněte na 10 A."
+        },
+        {
+          "q": "Jaká jsou dvě pravidla pro měření odporu?",
+          "a": "**Vypněte napájení** a v ideálním případě součást mimo obvod.\n\nMěřidlo měří injektováním vlastního proudu, takže jakékoli přítomné napájení narušuje odečet – a jakákoli paralelní cesta skrz desku je měřena spolu se součástí. Pro malé hodnoty odečtěte vlastní odpor vodičů."
+        },
+        {
+          "q": "Jak testujete diodu multimetrem?",
+          "a": "V režimu diody: červená na anodě a černá na katodě by měly ukazovat propustné napětí (0,5–0,7 V pro křemík, 0,2–0,3 V pro Schottky). V opačném případě by měl číst otevřený.\n\nBlízko 0 V v obou směrech znamená, že je zkrat; otevřít oběma způsoby znamená, že je mrtvý."
+        },
+        {
+          "q": "K čemu je test kontinuity a k čemu ne?",
+          "a": "Píská pod zhruba 20–50 Ω – vhodné pro nalezení přerušení, potvrzení spojení nebo kontrolu zkratu.\n\nNejedná se **ne** o měření odporu: pípnutí vám pouze sdělí, že odpor je nízký, nikoli jak nízký."
+        },
+        {
+          "q": "Co znamenají bezpečnostní kategorie multimetru CAT?",
+          "a": "* **CAT I** — nízkoenergetická elektronika\n* **CAT II** — spotřebiče a zásuvkové obvody\n* **CAT III** — rozvodnice a pevná instalace\n* **CAT IV** — servisní vjezd a venkovní linky\n\nKategorie popisuje **přechodovou energii**, kterou může elektroměr přežít, nejen napětí. Pro práci na stole s občasnou sítí je minimum CAT II 600 V."
+        },
+        {
+          "q": "Jaký je kompromis s automatickým řazením?",
+          "a": "Vybere rozsah za vás, takže jej nemůžete podhodnotit – ale urovnání po změně trvá asi sekundu.\n\nPro sledování hodnoty, která se pohybuje, nebo pro opakované čtení, manuální rozsah reaguje mnohem rychleji."
+        },
+        {
+          "q": "Co musíte udělat před měřením kondenzátoru a jak přesný je výsledek?",
+          "a": "**Nejdříve jej vybijte** — přes odpor 1–10 kΩ. Nabitý kondenzátor může měřič poškodit.\n\nZákladní měřiče jsou dobré pouze do asi ±5–20 % kapacity; LCR metr je potřeba pro cokoliv víc než jen pro kontrolu zdravého rozumu."
+        },
+        {
+          "q": "Jaké jsou limity klešťového měřiče?",
+          "a": "Měří magnetické pole kolem vodiče, takže se nemusí nic odpojovat – ale přesnost klesá asi pod ampér a miliampéry jsou mimo dosah.\n\nSvorky pouze pro AC jsou levné; měření DC potřebuje Hallovu svorku. Pro proud na stupnici mikrokontroléru použijte místo toho sériové měření."
+        },
+        {
+          "q": "Jak změříte aktuální čerpání malého projektu?",
+          "a": "Přerušte přívodní kabel, zapojte měřič do série v rozsahu mA a odečtěte.\n\nOčekávejte zhruba 50 mA pro malou 8bitovou desku, kolem 200 mA pro Wi-Fi modul při vysílání a asi 10 µA v hlubokém spánku – rozsah, který nepokrývá žádný rozsah jednoho metru."
+        },
+        {
+          "q": "Jak zjistíte polaritu neoznačeného DC adaptéru?",
+          "a": "Nastavte stejnosměrné napětí a přiložte sondy ke dvěma kontaktům. Kladná hodnota znamená, že červená sonda je na kladném kontaktu; záporné čtení znamená, že je na záporném.\n\nZnamení je odpovědí — měřič se nestará, kterým směrem začnete."
+        },
+        {
+          "q": "Co je měřič true-RMS a kdy jej potřebujete?",
+          "a": "Průměrovací měřič je kalibrován za předpokladu čisté sinusovky, takže špatně odečítá cokoliv jiného. Měřič true-RMS vypočítá skutečnou efektivní hodnotu jakéhokoli tvaru vlny.\n\nPotřebné pro PWM, spínané zdroje, motorové pohony a výstup UPS. Pro DC práci v malých projektech to nevadí."
+        },
+        {
+          "q": "Jak správně otestovat baterii?",
+          "a": "Nejprve napětí naprázdno: AA článek čte 1,5 V čerstvé a pod 1,2 V ploché; lithium-iontový článek je 4,2 V plný a 3,0 V prázdný.\n\nPoté změřte **v zátěži**. Unavený článek může vykazovat zdravé napětí naprázdno a zkolabovat, jakmile dojde k odběru proudu – a proto samotné napětí není verdikt."
+        },
+        {
+          "q": "Jaká je bezpečná sekvence sondy při práci na obvodu pod napětím?",
+          "a": "1. Nejprve veďte do COM, potom do V\n2. Nejprve připojte zemnící sondu a poté živou sondu\n3. Nikdy neměňte rozsah s připojenými sondami\n4. Po dokončení nejprve vyjměte živou sondu\n\nObjednávka omezuje, jak dlouho je cokoli pod napětím a bez odkazu."
+        },
+        {
+          "q": "Jak otestujete tranzistor NPN pomocí multimetru?",
+          "a": "V režimu diody s červenou na základně: základna k emitoru čte 0,6–0,7 V a základna ke kolektoru 0,6–0,7 V. Kolektor k emitoru čte otevřeno v obou směrech.\n\nJakýkoli jiný vzor znamená, že je vadný. To funguje, protože tranzistor se chová jako dvě diody sdílející základnu."
+        },
+        {
+          "q": "Kdy potřebujete spíše osciloskop než multimetr?",
+          "a": "Multimetr udává jedno zprůměrované číslo, takže nemůže ukázat nic, co se v rámci měření mění:\n\n* Pracovní cyklus a tvar PWM\n* Sériový autobusový provoz (I²C, SPI, UART)\n* Závady a špičky v zásobování\n* Jakýkoli zvukový nebo RF průběh\n\nKonkrétně pro digitální sběrnice je logický analyzátor často levnější správnou odpovědí."
+        },
+        {
+          "q": "Jaké jsou limity frekvenční funkce multimetru?",
+          "a": "Základní měřiče jsou spolehlivé pouze do několika kHz a potřebují přiměřeně čistý signál s dostatečnou amplitudou pro spuštění.\n\nSíťová frekvence čte dobře; několik set hertzů PWM signál je okrajový; sériová sběrnice je zcela mimo dosah."
+        }
+      ],
+      "deck_key": "measurement"
+    }
+  ]
+}

@@ -1,0 +1,797 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "SwiftUI",
+  "interest_icon": "square.stack.3d.up",
+  "interest_key": "swiftui",
+  "deck_q_lang": "fr",
+  "deck_a_lang": "fr",
+  "decks": [
+    {
+      "deck": "Structure et formulaires de l'application",
+      "deck_icon": "app.badge",
+      "cards": [
+        {
+          "q": "Quelle est la structure de base d'une application SwiftUI ?",
+          "a": "*Une structure conforme à `App`, marquée `@main`, dont `body` renvoie un ou plusieurs `Scene`. `WindowGroup` est la scène standard et contient la première vue.*\n```swift\n@main\nstruct MyApp: App {\n    var body: some Scene {\n        WindowGroup {\n            ContentView()\n        }\n    }\n}\n```"
+        },
+        {
+          "q": "Que signifie `some View` sur la propriété `body` ?",
+          "a": "*Il s'agit d'un type de retour opaque : la propriété renvoie **un type spécifique** conforme à `View`, mais les appelants n'ont pas besoin de savoir lequel. C'est important car les types de vues de SwiftUI sont des génériques profondément imbriqués que vous ne voudriez jamais écrire à la main.*"
+        },
+        {
+          "q": "A quoi sert un `Form` ?",
+          "a": "*Une liste déroulante de contrôles qui adopte l'apparence de style paramètres de la plateforme. Il regroupe les lignes d'entrée et gère l'espacement, les séparateurs et le style pour vous.*\n```swift\nForm {\n    Text(\"Hello\")\n    TextField(\"Name\", text: $name)\n}\n```"
+        },
+        {
+          "q": "Comment diviser un formulaire en sections et pourquoi ?",
+          "a": "*Enveloppez les lignes dans `Section`, éventuellement avec un en-tête. Au-delà de l'apparence, c'est aussi la façon dont vous contournez la limite de 10 enfants d'un générateur de vues.*\n```swift\nForm {\n    Section(\"Details\") {\n        TextField(\"Name\", text: $name)\n    }\n    Section {\n        Text(\"Footer content\")\n    }\n}\n```"
+        },
+        {
+          "q": "Quelle est la limite de 10 vues et comment la contourner ?",
+          "a": "*Une fermeture `@ViewBuilder` accepte au plus 10 enfants directs, car SwiftUI définit `TupleView` surcharge jusqu'à 10. Regroupez les vues associées dans un `Group`, `Section` ou une pile — ou extrayez des sous-vues, ce qui est généralement mieux de toute façon.*"
+        },
+        {
+          "q": "Comment obtenir un titre et une barre de navigation ?",
+          "a": "*Enveloppez le contenu dans un `NavigationStack` et attachez `navigationTitle` au **contenu**, pas à la pile elle-même.*\n```swift\nNavigationStack {\n    Form { … }\n        .navigationTitle(\"Settings\")\n        .navigationBarTitleDisplayMode(.inline)\n}\n```"
+        },
+        {
+          "q": "Comment lire le texte de l’utilisateur ?",
+          "a": "*`TextField` se lie à un `String`. Pour les nombres, liez avec un format pour que SwiftUI effectue la conversion.*\n```swift\nTextField(\"Name\", text: $name)\n\nTextField(\"Amount\", value: $amount,\n          format: .currency(code: \"USD\"))\n    .keyboardType(.decimalPad)\n```\n*`keyboardType` n'est qu'un indice : un clavier matériel peut toujours envoyer n'importe quoi.*"
+        },
+        {
+          "q": "Comment faire disparaître le clavier d’un formulaire ?",
+          "a": "*Suivez le champ ciblé avec `@FocusState`, puis définissez-le sur `nil` — généralement à partir d'un bouton de la barre d'outils du clavier.*\n```swift\n@FocusState private var amountIsFocused: Bool\n\nTextField(\"Amount\", value: $amount, format: .number)\n    .focused($amountIsFocused)\n    .toolbar {\n        if amountIsFocused {\n            ToolbarItemGroup(placement: .keyboard) {\n                Spacer()\n                Button(\"Done\") { amountIsFocused = false }\n            }\n        }\n    }\n```"
+        }
+      ],
+      "deck_key": "app-structure-and-forms"
+    },
+    {
+      "deck": "État et liaisons",
+      "deck_icon": "link",
+      "cards": [
+        {
+          "q": "Pourquoi une vue SwiftUI ne peut-elle pas simplement stocker une propriété mutable ?",
+          "a": "*Les vues sont des structures et les méthodes de structure ne peuvent pas modifier les propriétés à moins qu'elles ne soient `mutating` — ce qui `body` ne pourra jamais l'être. `@State` déplace la valeur dans le stockage SwiftUI possède et maintient en vie plusieurs fois votre structure de vue est recréée.*"
+        },
+        {
+          "q": "Que fait `@State` ?",
+          "a": "*Il stocke un petit morceau de données de type valeur en dehors de la structure de vue et réinvoque `body` chaque fois que la valeur change. Il est conçu pour afficher des données locales, alors marquez-le `private`.*\n```swift\n@State private var tapCount = 0\n\nButton(\"Tapped \\(tapCount)\") {\n    tapCount += 1\n}\n```"
+        },
+        {
+          "q": "Que signifie le préfixe `$` ?",
+          "a": "*Il transmet une **liaison bidirectionnelle** au lieu de la valeur : le contrôle peut lire la valeur actuelle et en écrire une nouvelle.*\n```swift\nTextField(\"Name\", text: $name)   // reads and writes\nText(name)                       // reads only\n```"
+        },
+        {
+          "q": "Qu'est-ce que `@Binding` et quand l'utilisez-vous ?",
+          "a": "*Il déclare qu'une propriété appartient à **une autre** vue. L'enfant le lit et l'écrit, et le changement atterrit dans le `@State` du parent. C'est ainsi que vous créez des composants réutilisables qui ne possèdent pas leurs données.*\n```swift\nstruct PushButton: View {\n    let title: String\n    @Binding var isOn: Bool\n\n    var body: some View {\n        Button(title) { isOn.toggle() }\n    }\n}\n\nPushButton(title: \"Remember me\", isOn: $rememberMe)\n```"
+        },
+        {
+          "q": "Comment prévisualiser une vue qui prend un `@Binding` ?",
+          "a": "*Utilisez `.constant(_:)`, qui crée une liaison qui lit toujours la valeur donnée et ignore les écritures.*\n```swift\n#Preview {\n    PushButton(title: \"Test\", isOn: .constant(true))\n}\n```"
+        },
+        {
+          "q": "Pourquoi `@State` ne fonctionne-t-il pas bien avec une classe ?",
+          "a": "*`@State` surveille la **valeur** pour changer. Avec une classe, la référence ne change jamais lorsque vous modifiez une propriété, donc la vue n'est jamais invitée à se mettre à jour. Marquez la classe `@Observable` afin que SwiftUI suive ses propriétés à la place.*"
+        },
+        {
+          "q": "A quoi sert `@Bindable` ?",
+          "a": "*Il crée des liaisons dans un objet `@Observable` que vous ne possédez **pas** – un objet arrivé en tant que paramètre ou provenant de l'environnement – afin que vous puissiez écrire `$object.property`.*\n```swift\nstruct EditView: View {\n    @Bindable var user: User\n\n    var body: some View {\n        TextField(\"Name\", text: $user.name)\n    }\n}\n```"
+        },
+        {
+          "q": "Quelle est la règle générale pour choisir un emballage de propriété ?",
+          "a": "- **Type de valeur, détenu ici** → `@State`\n- **Type de valeur, détenu ailleurs** → `@Binding`\n- **Classe `@Observable`, créée ici** → `@State`\n- **Classe `@Observable`, transmise, nécessite des liaisons** → `@Bindable`\n- **Partagé dans la hiérarchie** → `@Environment`\n- **Petit paramètre persistant** → `@AppStorage`"
+        },
+        {
+          "q": "Qu'arrive-t-il à votre structure de vue lorsque l'état change ?",
+          "a": "*SwiftUI jette la structure et en crée une nouvelle, puis recalcule `body`. C'est bon marché car les vues sont des structures légères - mais cela signifie que tout ce à quoi vous voulez survivre doit vivre dans `@State`, pas dans une simple propriété.*"
+        }
+      ],
+      "deck_key": "state-and-bindings"
+    },
+    {
+      "deck": "Vues et modificateurs",
+      "deck_icon": "square.stack.3d.up",
+      "cards": [
+        {
+          "q": "Pourquoi SwiftUI utilise-t-il des structures pour les vues ?",
+          "a": "*Performance et simplicité. Les structures sont légères, ne contiennent aucun bagage hérité (une vue UIKit a des centaines de propriétés héritées) et leur sémantique de valeur montre clairement qu'une vue est fonction de son état plutôt qu'un objet avec un état mutable caché.*"
+        },
+        {
+          "q": "Que se cache-t-il derrière la vue principale SwiftUI ?",
+          "a": "*Rien. Il n'y a pas de fond plein écran que vous pouvez colorer - un `Color` ou une forme dimensionnée à l'écran n'est qu'une vue qui remplit l'espace. Utilisez `.ignoresSafeArea()` lorsque vous souhaitez qu'il s'étende au-delà de la zone de sécurité.*\n```swift\nZStack {\n    Color.red.ignoresSafeArea()\n    Text(\"Hello\")\n}\n```"
+        },
+        {
+          "q": "Pourquoi l’ordre des modificateurs est-il important ?",
+          "a": "*Chaque modificateur enveloppe le résultat précédent dans une **nouvelle vue**, de sorte que l'ordre décrit un pipeline. La coloration puis l'encollage donne un résultat différent de l'encollage puis la coloration.*\n```swift\nText(\"Hi\").background(.red).frame(width: 200, height: 200)\n// red hugs the text\n\nText(\"Hi\").frame(width: 200, height: 200).background(.red)\n// red fills the frame\n```"
+        },
+        {
+          "q": "Que se passe-t-il réellement lorsque vous appliquez un modificateur ?",
+          "a": "*Rien n'est modifié sur place. Le modificateur renvoie un wrapper — `ModifiedContent<OriginalView, Modifier>` — afin qu'une chaîne de modificateurs crée un type générique imbriqué. C'est pourquoi `body` renvoie `some View` au lieu d'un type épelé.*"
+        },
+        {
+          "q": "Comment appliquer un modificateur de manière conditionnelle ?",
+          "a": "*Avec un ternaire à l'intérieur du modificateur, pas un `if` autour de la vue — qui conserve une identité de vue, donc SwiftUI anime le changement plutôt que de remplacer la vue.*\n```swift\nButton(\"Tap\") { useRed.toggle() }\n    .foregroundStyle(useRed ? .red : .blue)\n```"
+        },
+        {
+          "q": "Qu'est-ce qu'un modificateur d'environnement ?",
+          "a": "*Un modificateur appliqué à un conteneur dont tous les enfants héritent, sauf si un enfant le remplace. Les modificateurs réguliers (comme `blur`) **se combinent** avec les enfants plutôt que d'être remplacés.*\n```swift\nVStack {\n    Text(\"Big\")\n    Text(\"Small\").font(.caption)   // wins\n}\n.font(.title)\n```"
+        },
+        {
+          "q": "Comment stocker une vue dans une propriété ?",
+          "a": "*Déclarez-le comme propriété de la structure de vue. Utilisez `some View` ou un type explicite ; pour plusieurs vues, utilisez `@ViewBuilder` ou enveloppez-les dans une pile.*\n```swift\nlet motto = Text(\"Draco dormiens\")\n\n@ViewBuilder var spells: some View {\n    Text(\"Lumos\")\n    Text(\"Obliviate\")\n}\n```"
+        },
+        {
+          "q": "Pourquoi l'extraction de sous-vues est-elle bon marché dans SwiftUI ?",
+          "a": "*Les vues sont des structures pratiquement gratuites, donc diviser un grand `body` en petites vues nommées ne coûte rien au moment de l'exécution et permet à SwiftUI de mettre à jour uniquement les parties dont les données ont réellement changé.*"
+        },
+        {
+          "q": "Comment créer un modificateur personnalisé ?",
+          "a": "*Conformez-vous à `ViewModifier` et ajoutez une méthode pratique dans une extension `View`.*\n```swift\nstruct Title: ViewModifier {\n    func body(content: Content) -> some View {\n        content\n            .font(.largeTitle)\n            .foregroundStyle(.white)\n            .padding()\n            .background(.blue)\n            .clipShape(.rect(cornerRadius: 10))\n    }\n}\n\nextension View {\n    func titleStyle() -> some View { modifier(Title()) }\n}\n```"
+        },
+        {
+          "q": "Que peut faire un `ViewModifier` personnalisé qu'une simple extension `View` ne peut pas faire ?",
+          "a": "*Il peut conserver son propre état et ajouter une nouvelle structure de vue autour du contenu – par exemple en l'enveloppant dans une pile ou en l'animant avec `@State` – car il s'agit d'une vue réelle, pas seulement d'une chaîne de modificateurs existants.*"
+        },
+        {
+          "q": "Comment écrire une vue de conteneur personnalisée ?",
+          "a": "*Prenez une fermeture `@ViewBuilder` comme dernier paramètre et utilisez son résultat dans votre mise en page.*\n```swift\nstruct GridStack<Content: View>: View {\n    let rows: Int\n    @ViewBuilder let content: (Int) -> Content\n\n    var body: some View {\n        VStack {\n            ForEach(0..<rows, id: \\.self) { row in\n                HStack { content(row) }\n            }\n        }\n    }\n}\n```"
+        }
+      ],
+      "deck_key": "views-and-modifiers"
+    },
+    {
+      "deck": "Piles, grilles et défilement",
+      "deck_icon": "square.stack.3d.up",
+      "cards": [
+        {
+          "q": "Quelle est la différence entre `VStack`, `HStack` et `ZStack` ?",
+          "a": "*Vertical, horizontal et profondeur (de l’arrière vers l’avant). Tous les trois prennent `alignment` et les piles prennent `spacing` ; passez `spacing: 0` pour supprimer l'espace automatique.*\n```swift\nVStack(alignment: .leading, spacing: 20) {\n    Text(\"One\")\n    Text(\"Two\")\n}\n```\n*`ZStack` n'a pas d'espacement — il se superpose.*"
+        },
+        {
+          "q": "Que fait `Spacer` ?",
+          "a": "*Il s'agit d'une vue vide et flexible qui s'étend pour occuper tout l'espace restant le long de l'axe de la pile, séparant ainsi les frères et sœurs. Plusieurs espaceurs partagent l’espace à parts égales.*\n```swift\nHStack {\n    Text(\"Left\")\n    Spacer()\n    Text(\"Right\")\n}\n```"
+        },
+        {
+          "q": "À quoi sert `Group` ?",
+          "a": "*Un conteneur de mise en page transparent : il applique des modificateurs à plusieurs vues et contourne la limite de 10 enfants, sans imposer de mise en page propre. Son parent décide de la manière dont les enfants sont disposés.*"
+        },
+        {
+          "q": "How does a plain `ScrollView` differ from `List`?",
+          "a": "*A `ScrollView` creates **all** of its content immediately, so a hundred rows means a hundred views built up front. `List` and the `Lazy` stacks create rows only as they come into view.*"
+        },
+        {
+          "q": "When do you use `LazyVStack` instead of `VStack`?",
+          "a": "*À l'intérieur d'un `ScrollView` avec beaucoup de contenu. Lazy stacks build children on demand, but they always take up the full available width, whereas a `VStack` sizes to its content.*\n```swift\nScrollView {\n    LazyVStack(spacing: 10) {\n        ForEach(items) { ItemRow(item: $0) }\n    }\n    .frame(maxWidth: .infinity)\n}\n```"
+        },
+        {
+          "q": "Comment construire une grille dans SwiftUI ?",
+          "a": "*`LazyVGrid`/`LazyHGrid` plus un tableau de `GridItem` décrivant les colonnes.*\n```swift\nlet columns = [GridItem(.adaptive(minimum: 80))]\n\nScrollView {\n    LazyVGrid(columns: columns) {\n        ForEach(items) { ItemView(item: $0) }\n    }\n}\n```"
+        },
+        {
+          "q": "Quelle est la différence entre les éléments de grille `.fixed`, `.flexible` et `.adaptive` ?",
+          "a": "- `.fixed(_:)` — une largeur exacte, nombre décidé par vous\n- `.flexible(minimum:maximum:)` — partage l'espace de manière égale, nombre décidé par vous\n- `.adaptive(minimum:maximum:)` — s'adapte **autant que possible** à cette taille, le nombre est déterminé par l'espace\n\n*Utilisez `.adaptive` lorsque vous souhaitez que la mise en page réagisse à la taille de l'écran et Dynamic Type.*"
+        },
+        {
+          "q": "Que fait `containerRelativeFrame` ?",
+          "a": "*Il dimensionne une vue par rapport à son conteneur plutôt qu'à son contenu (par exemple 40 % de la largeur de la vue de défilement), ce qui est ce que vous souhaitez pour les images dans des mises en page à défilement.*\n```swift\nImage(name)\n    .resizable()\n    .scaledToFit()\n    .containerRelativeFrame(.horizontal) { size, axis in\n        size * 0.4\n    }\n```"
+        },
+        {
+          "q": "Que signifie réellement `.frame(maxWidth: .infinity)` ?",
+          "a": "*Il demande **autant de largeur que le parent propose**, jusqu'à l'infini — contrairement à `width:`, qui exige une taille exacte. Il s'agit de la manière standard de faire en sorte qu'une vue remplisse sa ligne, et elle permet également de rendre une zone entière accessible à l'intérieur d'un bouton.*"
+        }
+      ],
+      "deck_key": "stacks-grids-and-scrolling"
+    },
+    {
+      "deck": "Disposition et géométrie",
+      "deck_icon": "ruler",
+      "cards": [
+        {
+          "q": "Comment fonctionne réellement la mise en page dans SwiftUI ?",
+          "a": "*Une conversation en trois étapes : le **parent propose** une taille, l'**enfant choisit** sa propre taille et le **parent positionne** l'enfant. Un parent ne peut jamais imposer une taille à un enfant — c'est pourquoi `frame()` semble parfois être ignoré.*"
+        },
+        {
+          "q": "Que fait réellement `frame()` ?",
+          "a": "*Il ne redimensionne pas la vue. Il enveloppe la vue dans un nouveau cadre invisible de la taille demandée et positionne l'original à l'intérieur, de sorte que l'original puisse toujours être plus petit que le cadre.*"
+        },
+        {
+          "q": "Qu'est-ce qui décide de l'alignement à l'intérieur d'une pile ?",
+          "a": "*Chaque pile a un guide d'alignement — `.leading`, `.center`, `.trailing` pour un `VStack` ; `.top`, `.center`, `.bottom` pour un `HStack`. Chaque enfant est aligné sur ce guide.*\n```swift\nVStack(alignment: .leading) { … }\nHStack(alignment: .lastTextBaseline) { … }\n```"
+        },
+        {
+          "q": "À quoi sert le modificateur `alignmentGuide` ?",
+          "a": "*Il remplace l'endroit où **un enfant** place son guide, en utilisant les propres dimensions de l'enfant — afin qu'une vue puisse délibérément s'écarter de l'alignement de la pile.*\n```swift\nText(\"Hello\")\n    .alignmentGuide(.leading) { d in d[.trailing] }\n```"
+        },
+        {
+          "q": "Comment créer un guide d'alignement personnalisé ?",
+          "a": "*Définissez un `AlignmentID` avec une valeur par défaut, exposez-le sur `VerticalAlignment`/`HorizontalAlignment`, puis utilisez-le dans une pile et sur les vues que vous souhaitez aligner. Cela permet d'aligner les vues dans **différents** sous-arbres.*\n```swift\nextension VerticalAlignment {\n    enum MidAccountAndName: AlignmentID {\n        static func defaultValue(\n            in d: ViewDimensions\n        ) -> CGFloat {\n            d[.top]\n        }\n    }\n    static let midAccountAndName =\n        VerticalAlignment(\n            MidAccountAndName.self\n        )\n}\n```"
+        },
+        {
+          "q": "Quelle est la différence entre `position()` et `offset()` ?",
+          "a": "*`position()` définit le **centre** de la vue dans l'espace de coordonnées de son parent, et la vue d'habillage occupe tout l'espace disponible. `offset()` déplace uniquement le **dessin** — le système de mise en page voit toujours la vue à son emplacement d'origine.*"
+        },
+        {
+          "q": "Qu'est-ce que `GeometryReader` et quel est son piège ?",
+          "a": "*Une vue qui donne à son enfant la taille et la position qui lui ont été proposées. Le problème : il accepte toujours **tout** l'espace qui lui est proposé et aligne son contenu sur le coin supérieur — il perturbe donc la disposition environnante s'il est utilisé avec désinvolture.*\n```swift\nGeometryReader { proxy in\n    Image(\"photo\")\n        .resizable()\n        .scaledToFit()\n        .frame(width: proxy.size.width * 0.8)\n}\n```"
+        },
+        {
+          "q": "Que sont les espaces de coordonnées ?",
+          "a": "*`proxy.frame(in:)` peut signaler la position d'une vue par rapport à `.global` (l'écran entier), `.local` (le lecteur lui-même) ou à un espace `.named(_:)` déclaré par un ancêtre avec `coordinateSpace(_:)` — c'est ainsi que vous mesurez la position d'une ligne dans une vue défilante.*"
+        },
+        {
+          "q": "A quoi sert `visualEffect` ?",
+          "a": "*Il applique des changements visuels basés sur la géométrie (échelle, opacité, rotation) sans `GeometryReader` et sans affecter la mise en page, ce qui rend les effets de défilement beaucoup moins chers.*\n```swift\n.visualEffect { content, proxy in\n    content.opacity(\n        proxy.frame(in: .scrollView)\n            .minY < 0 ? 0.5 : 1\n    )\n}\n```"
+        },
+        {
+          "q": "Que font `scrollTargetLayout` et `scrollTargetBehavior` ?",
+          "a": "*Ensemble, ils ajoutent l'accrochage : le modificateur de mise en page marque les vues qui sont les cibles du défilement, et le comportement décide de la manière dont le défilement s'y applique.*\n```swift\nScrollView {\n    LazyVStack { … }\n        .scrollTargetLayout()\n}\n.scrollTargetBehavior(.viewAligned)\n```"
+        }
+      ],
+      "deck_key": "layout-and-geometry"
+    },
+    {
+      "deck": "Couleur, dégradés et images",
+      "deck_icon": "paintpalette",
+      "cards": [
+        {
+          "q": "Comment se comporte `Color` dans SwiftUI ?",
+          "a": "*Un `Color` est une vue à part entière, il s'agrandit donc pour remplir l'espace qui lui est proposé. Préférez les couleurs sémantiques comme `.primary` et `Color(.systemBackground)` — elles s'adaptent automatiquement aux modes clair et sombre.*"
+        },
+        {
+          "q": "Pourquoi `frame` est-il important lors de l'utilisation d'une couleur comme arrière-plan ?",
+          "a": "*`background` se dimensionne en fonction de la vue qu'il décore, alors ajoutez d'abord le cadre si vous souhaitez que la couleur couvre une plus grande surface — l'ordre du modificateur décide du résultat.*\n```swift\nText(\"Hi\")\n    .frame(maxWidth: .infinity, maxHeight: 200)\n    .background(.red)\n```"
+        },
+        {
+          "q": "Quels types de dégradés SwiftUI propose-t-il ?",
+          "a": "```swift\nLinearGradient(colors: [.white, .black],\n               startPoint: .top, endPoint: .bottom)\n\nRadialGradient(colors: [.blue, .black],\n    center: .center,\n    startRadius: 20,\n    endRadius: 200\n)\n\nAngularGradient(\n    colors: [.red, .yellow, .red],\n    center: .center\n)\n```\n*Toute couleur a également un léger dégradé intégré : `Color.red.gradient`.*"
+        },
+        {
+          "q": "A quoi sert un `Gradient.Stop` ?",
+          "a": "*Il place une couleur à un emplacement exact (0-1) le long du dégradé, au lieu d'espacer les couleurs uniformément.*\n```swift\nLinearGradient(stops: [\n    .init(color: .white, location: 0.45),\n    .init(color: .black, location: 0.55)\n], startPoint: .top, endPoint: .bottom)\n```"
+        },
+        {
+          "q": "Quelles sont les principales façons de créer un `Image` ?",
+          "a": "- `Image(\"name\")` — du catalogue d'actifs, étiquette lue par VoiceOver\n- `Image(systemName:)` — un symbole SF, mis à l'échelle avec du texte\n- `Image(decorative:)` — ignoré par VoiceOver, pour les images purement visuelles\n\n*Préférez les symboles SF là où ils existent : ils prennent en charge Dynamic Type et le style de couleur gratuitement.*"
+        },
+        {
+          "q": "Comment adapter une image à un espace donné ?",
+          "a": "*Faites-le d'abord `resizable()`, puis choisissez un mode de contenu. `scaledToFit` garde toute l'image visible ; `scaledToFill` couvre le cadre et les besoins `clipped()`.*\n```swift\nImage(\"photo\")\n    .resizable()\n    .scaledToFill()\n    .frame(width: 200, height: 200)\n    .clipped()\n```"
+        },
+        {
+          "q": "Quand utiliseriez-vous `.interpolation(.none)` ?",
+          "a": "*Lors de la mise à l'échelle d'un petit pixel art ou d'un bitmap généré tel qu'un code QR, le lissage par défaut le rendrait flou. `.none` conserve les bords des pixels durs.*"
+        }
+      ],
+      "deck_key": "color-gradients-and-images"
+    },
+    {
+      "deck": "Listes et ForEach",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "Quelle est la différence entre `List` et `Form` ?",
+          "a": "*Ils partagent la plupart des comportements, mais `Form` sert à collecter des **entrées** et `List` sert à présenter des **données**. `List` est également l'équivalent SwiftUI de `UITableView` : il recycle les lignes et gère donc efficacement des milliers d'éléments.*"
+        },
+        {
+          "q": "Comment mélanger des lignes statiques et dynamiques dans un seul `List` ?",
+          "a": "*Mettez un `ForEach` à côté des vues ordinaires dans la liste.*\n```swift\nList {\n    Text(\"Static row\")\n\n    ForEach(people, id: \\.self) { person in\n        Text(person)\n    }\n\n    Text(\"Another static row\")\n}\n.listStyle(.grouped)\n```"
+        },
+        {
+          "q": "Pourquoi `ForEach` doit-il identifier ses éléments ?",
+          "a": "*SwiftUI doit savoir quelle ligne correspond à quelle ligne afin de pouvoir animer les insertions, les suppressions et les déplacements, et préserver l'état de chaque ligne. Sans identité stable, il ne peut pas distinguer une modification d'un remplacement.*"
+        },
+        {
+          "q": "Qu'est-ce que `Identifiable` ?",
+          "a": "*Un protocole nécessitant une propriété `id` unique et stable. Les types conformes peuvent être utilisés directement dans `ForEach` et `List` sans paramètre `id:`.*\n```swift\nstruct ExpenseItem: Identifiable {\n    let id = UUID()\n    let name: String\n}\n\nForEach(items) { item in Text(item.name) }\n```"
+        },
+        {
+          "q": "Pourquoi `id: \\.self` est-il risqué ?",
+          "a": "*Il utilise la valeur elle-même comme identité, donc deux valeurs égales entrent en collision et SwiftUI peut perdre la trace des lignes — et toute modification modifie l'identité, interrompant les animations et l'état des lignes. Très bien pour les tableaux constants de chaînes uniques, mauvais pour les données de modèle mutables.*"
+        },
+        {
+          "q": "Comment prenez-vous en charge le balayage pour supprimer ?",
+          "a": "*Attachez `onDelete` à un `ForEach` (pas à `List`) et supprimez les éléments aux décalages donnés.*\n```swift\nForEach(items) { item in\n    Text(item.name)\n}\n.onDelete { offsets in\n    items.remove(atOffsets: offsets)\n}\n```\n*Ajoutez un `EditButton()` dans la barre d'outils pour un mode d'édition explicite.*"
+        },
+        {
+          "q": "Comment ajouter des actions de balayage personnalisées ?",
+          "a": "*Utilisez `swipeActions` sur la ligne. Les actions sont par défaut le bord arrière et `role: .destructive` donne le style rouge.*\n```swift\n.swipeActions {\n    Button(\"Delete\", role: .destructive) { delete(item) }\n    Button(\"Pin\") { pin(item) }\n        .tint(.orange)\n}\n```"
+        },
+        {
+          "q": "Comment ajouter une barre de recherche à une liste ?",
+          "a": "*`searchable` lie une chaîne et ajoute le champ de recherche de la plateforme ; vous filtrez vous-même les données dans une propriété calculée.*\n```swift\nList(filtered) { … }\n    .searchable(text: $searchText, prompt: \"Search\")\n\nvar filtered: [Item] {\n    searchText.isEmpty ? items\n        : items.filter {\n            $0.name\n              .localizedStandardContains(\n                  searchText\n              )\n          }\n}\n```"
+        },
+        {
+          "q": "Comment stylisez-vous les lignes individuelles d’une liste ?",
+          "a": "```swift\nForEach(items) { item in\n    Text(item.name)\n        .listRowBackground(Color.blue.opacity(0.2))\n}\n.listRowSeparator(.hidden)\n```\n*Les modificateurs au niveau de la ligne doivent être appliqués au **contenu de la ligne**, tandis que `listStyle` s'applique à l'ensemble de la liste.*"
+        }
+      ],
+      "deck_key": "lists-and-foreach"
+    },
+    {
+      "deck": "Contrôles d'entrée",
+      "deck_icon": "gearshape",
+      "cards": [
+        {
+          "q": "Qu'est-ce qu'un `Stepper` et quand est-ce le bon contrôle ?",
+          "a": "*Une paire `-`/`+` liée à un numéro, idéale pour de petits réglages précis. Donnez-lui une plage, une étape, ainsi qu'un format pour l'étiquette.*\n```swift\nStepper(\"\\(count) cups\", value: $count, in: 1...20, step: 1)\n```"
+        },
+        {
+          "q": "En quoi `Slider` diffère-t-il de `Stepper` ?",
+          "a": "*`Slider` est destiné aux valeurs continues sur une large plage où la précision n'a pas d'importance ; `Stepper` concerne les incréments exacts. `Slider` fonctionne avec `Double`.*\n```swift\nSlider(value: $amount, in: 0...100, step: 1)\n```"
+        },
+        {
+          "q": "Comment utilisez-vous `DatePicker` ?",
+          "a": "*Liez-le à un `Date`, limitez les composants affichés et limitez éventuellement la plage autorisée avec une plage unilatérale.*\n```swift\nDatePicker(\"Wake up\", selection: $wakeUp,\n           in: Date.now...,\n           displayedComponents: .hourAndMinute)\n    .labelsHidden()\n```"
+        },
+        {
+          "q": "Comment travailler correctement avec les dates dans Swift ?",
+          "a": "*Ne faites jamais d'arithmétique sur les secondes brutes - passez par `Calendar` et `DateComponents`, qui gèrent les fuseaux horaires, les années bissextiles et les paramètres régionaux.*\n```swift\nvar components = DateComponents()\ncomponents.hour = 8\nlet date = Calendar.current.date(from: components) ?? .now\n\nlet hour = Calendar.current\n    .dateComponents([.hour, .minute], from: date).hour ?? 0\n\ndate.formatted(date: .long, time: .shortened)\n```"
+        },
+        {
+          "q": "Quels styles de sélecteurs sont disponibles et quand chacun convient-il ?",
+          "a": "- `.menu` — une pop-up compacte (formulaires extérieurs par défaut)\n- `.navigationLink` — pousse un écran de sélection ; bon pour les longues listes dans un formulaire\n- `.segmented` — quelques options mutuellement exclusives, toutes visibles\n- `.wheel` — un tambour qui tourne\n\n*Un `Picker` nécessite une liaison dont le type correspond au `tag` de chaque option.*"
+        },
+        {
+          "q": "Quelle est la différence entre `TextField` et `TextEditor` ?",
+          "a": "*`TextField` est sur une seule ligne par défaut ; `TextEditor` est une boîte multiligne de forme libre qui se développe pour remplir l'espace qui lui est imparti. Pour un seul champ en croissance, `TextField(_:text:axis: .vertical)` est souvent plus agréable.*"
+        },
+        {
+          "q": "Comment désactiver un contrôle jusqu'à ce que l'entrée soit valide ?",
+          "a": "*Utilisez `disabled(_:)` avec une condition – généralement une propriété calculée afin que `body` reste lisible. Cela fonctionne également sur l'ensemble d'un `Section` ou d'un `Form`.*\n```swift\nButton(\"Continue\") { … }\n    .disabled(hasValidAddress == false)\n\nvar hasValidAddress: Bool {\n    name.isEmpty == false && city.isEmpty == false\n}\n```"
+        },
+        {
+          "q": "À quoi se lie `Toggle` et comment le stylisez-vous ?",
+          "a": "*Un `Bool`. Cachez son étiquette avec `labelsHidden()` et changez son apparence avec `toggleStyle(.button)` alors qu'elle devrait se lire comme un bouton.*\n```swift\nToggle(\"Notifications\", isOn: $isEnabled)\n```"
+        }
+      ],
+      "deck_key": "input-controls"
+    },
+    {
+      "deck": "Alertes, feuilles et boîtes de dialogue",
+      "deck_icon": "bubble.left",
+      "cards": [
+        {
+          "q": "Comment présenter une alerte en SwiftUI ?",
+          "a": "*Les alertes ne sont pas appelées de manière impérative : vous en attachez une à une vue et la liez à un état. SwiftUI l'affiche lorsque le `Bool` devient `true` et le réinitialise en cas de rejet.*\n```swift\n@State private var showingAlert = false\n\nButton(\"Show\") { showingAlert = true }\n    .alert(\"Important\", isPresented: $showingAlert) {\n        Button(\"OK\") { }\n    } message: {\n        Text(\"Please read this.\")\n    }\n```"
+        },
+        {
+          "q": "Que fait une alerte si vous ne fournissez aucun bouton ?",
+          "a": "*SwiftUI ajoute un bouton OK par défaut pour vous. L'ajout d'un `Button(role: .cancel)` modifie l'accentuation et `role: .destructive` le stylise en rouge.*"
+        },
+        {
+          "q": "Comment piloter une alerte à partir d'une valeur facultative ?",
+          "a": "*Utilisez le formulaire `alert(_:isPresented:presenting:)` — l'alerte apparaît lorsque l'option n'est pas `nil` et la fermeture du contenu reçoit la valeur non enveloppée.*\n```swift\n.alert(\n    \"Error\",\n    isPresented: $showing,\n    presenting: message\n) { _ in\n    Button(\"OK\") { }\n} message: { message in\n    Text(message)\n}\n```"
+        },
+        {
+          "q": "Comment afficher une feuille ?",
+          "a": "*Même modèle que les alertes : `sheet(isPresented:)` lié à un `Bool`, avec la vue présentée à l'intérieur.*\n```swift\n.sheet(isPresented: $showingSheet) {\n    DetailView(name: name)\n}\n```"
+        },
+        {
+          "q": "Qu'est-ce que `sheet(item:)` et pourquoi est-il souvent meilleur ?",
+          "a": "*Il se présente lorsqu'une valeur facultative `Identifiable` devient non-`nil` et transmet cette valeur à la fermeture. Cela évite le bug classique où une feuille est présentée avant que l'état dont elle dépend ait été défini.*\n```swift\n@State private var selected: Item?\n\n.sheet(item: $selected) { item in\n    DetailView(item: item)\n}\n```"
+        },
+        {
+          "q": "Comment une vision présentée se rejette-t-elle ?",
+          "a": "*Il lit l'action de rejet de l'environnement et l'appelle — l'enfant n'a pas besoin de savoir comment elle a été présentée.*\n```swift\n@Environment(\\.dismiss) var dismiss\n\nButton(\"Done\") { dismiss() }\n```"
+        },
+        {
+          "q": "Quand utilisez-vous `confirmationDialog` au lieu de `alert` ?",
+          "a": "*Quand on propose un **choix parmi plusieurs actions**, notamment destructrices. Il glisse vers le haut (une feuille d'action), peut comporter de nombreux boutons et, contrairement à une alerte, son titre peut être masqué.*\n```swift\n.confirmationDialog(\n    \"Select a filter\",\n    isPresented: $showing\n) {\n    Button(\"Sepia\") { … }\n    Button(\"Cancel\", role: .cancel) { }\n}\n```"
+        },
+        {
+          "q": "Que sont les détentes de présentation ?",
+          "a": "*Ils laissent une feuille reposer à des hauteurs partielles au lieu de presque en plein écran.*\n```swift\n.sheet(isPresented: $showing) {\n    DetailView()\n        .presentationDetents([.medium, .large])\n}\n```"
+        },
+        {
+          "q": "Qu'est-ce que `ContentUnavailableView` ?",
+          "a": "*L'état vide standard du système – une icône, un titre, une description et une action facultative – de sorte que les listes vides et les écrans sans résultats de recherche semblent natifs sans mise en page personnalisée.*\n```swift\nContentUnavailableView(\"No snippets\",\n    systemImage: \"swift\",\n    description: Text(\"Tap + to add your first snippet.\"))\n```"
+        }
+      ],
+      "deck_key": "alerts-sheets-and-dialogs"
+    },
+    {
+      "deck": "Navigation",
+      "deck_icon": "map",
+      "cards": [
+        {
+          "q": "Que fournit `NavigationStack` ?",
+          "a": "*Un conteneur qui affiche une vue à la fois avec une barre de navigation et conserve une pile de vues poussées sur lesquelles l'utilisateur peut revenir. Il a remplacé `NavigationView` et n'est pas destiné aux mises en page en écran partagé, c'est-à-dire `NavigationSplitView`.*"
+        },
+        {
+          "q": "Quel est le problème avec `NavigationLink(destination:)` à l'intérieur d'un `List` ?",
+          "a": "*La vue de destination est **créée immédiatement** pour chaque ligne visible, même si rien n'a été exploité. Avec des initialiseurs coûteux ou des centaines de lignes, c'est un véritable gaspillage de travail.*"
+        },
+        {
+          "q": "Comment rendre la navigation paresseuse ?",
+          "a": "*Attachez une valeur au lien et laissez la pile créer la destination à la demande.*\n```swift\nNavigationStack {\n    List(0..<100) { i in\n        NavigationLink(\"Row \\(i)\", value: i)\n    }\n    .navigationDestination(for: Int.self) { selection in\n        // built only when tapped\n        DetailView(number: selection)\n    }\n}\n```\n*La valeur doit être conforme à `Hashable`.*"
+        },
+        {
+          "q": "Comment naviguer par programmation ?",
+          "a": "*Liez la pile à un tableau de valeurs. Ajout de push, suppression de pops — aucune pression sur un bouton n'est nécessaire.*\n```swift\n@State private var path = [Int]()\n\nNavigationStack(path: $path) {\n    Button(\"Go to 32\") { path.append(32) }\n        .navigationDestination(\n            for: Int.self\n        ) { DetailView(number: $0) }\n}\n```"
+        },
+        {
+          "q": "A quoi sert `NavigationPath` ?",
+          "a": "*Un chemin de type effacé qui peut contenir des types **mixtes** `Hashable`, de sorte qu'une pile peut pousser plusieurs types de destination. Ajoutez un `navigationDestination` pour chaque type.*\n```swift\n@State private var path = NavigationPath()\npath.append(42)\npath.append(\"Hello\")\n```"
+        },
+        {
+          "q": "Comment revenir à la vue racine ?",
+          "a": "*Videz le chemin — `path.removeAll()` pour un tableau, ou attribuez un nouveau `NavigationPath()`. Notez qu'un enfant profondément imbriqué a besoin du chemin transmis ou partagé à travers l'environnement.*"
+        },
+        {
+          "q": "Comment sauvegarder et restaurer un chemin de navigation ?",
+          "a": "*`NavigationPath` expose une représentation `codable` que vous pouvez encoder ; un chemin de tableau est `Codable` lorsque son élément l'est. Enregistrez lors des modifications, décodez au lancement et l'application rouvre exactement là où l'utilisateur s'est arrêté.*\n```swift\nlet representation = path.codable\ntry JSONEncoder().encode(representation)\n```"
+        },
+        {
+          "q": "Comment placer les boutons dans la barre de navigation ?",
+          "a": "*Avec `toolbar` et `ToolbarItem`, choisissez un emplacement explicite pour qu'il atterrisse là où vous le souhaitez sur chaque plateforme.*\n```swift\n.toolbar {\n    ToolbarItem(placement: .topBarLeading) {\n        Button(\"Cancel\") { dismiss() }\n    }\n    ToolbarItem(placement: .confirmationAction) {\n        Button(\"Save\") { save() }\n    }\n}\n```"
+        },
+        {
+          "q": "Comment contrôler la taille d’un titre de navigation ?",
+          "a": "*`navigationBarTitleDisplayMode(.inline)` le garde petit et centré, `.large` force le grand titre et la valeur par défaut `.automatic` hérite de l'écran précédent.*"
+        },
+        {
+          "q": "Comment changer l'apparence de la barre de navigation ?",
+          "a": "```swift\n.toolbarBackground(.blue, for: .navigationBar)\n.toolbarColorScheme(.dark, for: .navigationBar)\n.toolbar(.hidden, for: .navigationBar)\n```\n*Ceux-ci sont appliqués au **contenu** de la pile et prennent effet une fois que la barre n'est plus dans son état de défilement vers le haut.*"
+        },
+        {
+          "q": "Comment rendre un titre de navigation modifiable ?",
+          "a": "*Passez une liaison à un `String` au lieu d'une chaîne simple. Avec le mode d'affichage `.inline`, l'utilisateur obtient un menu de renommage sur le titre.*\n```swift\n.navigationTitle($title)\n.navigationBarTitleDisplayMode(.inline)\n```"
+        }
+      ],
+      "deck_key": "navigation"
+    },
+    {
+      "deck": "Animations et transitions",
+      "deck_icon": "sparkles",
+      "cards": [
+        {
+          "q": "Qu'est-ce qu'une animation implicite ?",
+          "a": "*`animation(_:value:)` surveille une valeur et anime **chaque** changement animable dans cette vue à chaque fois qu'il change — vous ne dites jamais quoi animer.*\n```swift\nButton(\"Tap\") { scale += 1 }\n    .scaleEffect(scale)\n    .animation(.default, value: scale)\n```"
+        },
+        {
+          "q": "Pourquoi `.animation()` nécessite-t-il un paramètre `value:` ?",
+          "a": "*Il indique SwiftUI **quoi** regarder. Sans cela, SwiftUI devrait s'animer à chaque changement d'état n'importe où dans la vue, c'est pourquoi la version sans valeur est obsolète.*"
+        },
+        {
+          "q": "Qu'est-ce qu'une animation explicite ?",
+          "a": "*`withAnimation` anime tous les changements résultant de l'état que vous modifiez à l'intérieur — la décision se trouve sur le site de changement, pas sur la vue.*\n```swift\nButton(\"Tap\") {\n    withAnimation(.spring(duration: 1, bounce: 0.5)) {\n        rotation += 360\n    }\n}\n```"
+        },
+        {
+          "q": "Nommez les principales courbes d’animation.",
+          "a": "- `.linear` — vitesse constante\n- `.easeIn` / `.easeOut` / `.easeInOut` — la sensation par défaut\n- `.spring`, `.bouncy`, `.smooth`, `.snappy` — modélisés physiquement\n\n*Les ressorts dépassent et s'installent, ce qui semble beaucoup plus naturel pour l'interface utilisateur.*"
+        },
+        {
+          "q": "Comment retarder ou répéter une animation ?",
+          "a": "```swift\n.animation(\n    .easeInOut(duration: 1)\n        .delay(0.5)\n        .repeatCount(3, autoreverses: true),\n    value: animate\n)\n\n.repeatForever(autoreverses: true)   // e.g. a pulse\n```"
+        },
+        {
+          "q": "Que signifie animer une liaison ?",
+          "a": "*L'ajout de `.animation()` à la **reliure** plutôt qu'à la vue anime chaque modification apportée via cette liaison — donc un glissement de curseur anime tout ce qui en dépend.*\n```swift\nSlider(value: $amount.animation(), in: 1...10)\n```"
+        },
+        {
+          "q": "Qu'est-ce que la pile d'animation ?",
+          "a": "*Chaque `.animation()` s'applique aux modificateurs **au-dessus** dans la chaîne, donc différentes parties d'une vue peuvent s'animer différemment – ou pas du tout si vous passez `nil`.*\n```swift\nButton(\"Tap\") { enabled.toggle() }\n    .background(enabled ? .blue : .red)\n    .animation(.default, value: enabled)\n    .clipShape(.rect(cornerRadius: enabled ? 60 : 0))\n    .animation(.spring, value: enabled)\n```"
+        },
+        {
+          "q": "Comment animer un geste de glisser ?",
+          "a": "*Suivez la traduction dans `@State`, appliquez-la avec `offset` et animez la réinitialisation à la fin du glissement.*\n```swift\n.offset(dragAmount)\n.gesture(\n    DragGesture()\n        .onChanged { dragAmount = $0.translation }\n        .onEnded { _ in\n            withAnimation(.bouncy) { dragAmount = .zero }\n        }\n)\n```"
+        },
+        {
+          "q": "Qu’est-ce qu’une transition et quand s’applique-t-elle ?",
+          "a": "*Une transition décrit comment une vue est animée **dans et hors de l'existence** — elle s'applique uniquement lorsqu'une vue est réellement ajoutée ou supprimée, et uniquement lorsque cette modification est animée.*\n```swift\nif showingRed {\n    Rectangle()\n        .transition(.asymmetric(insertion: .scale,\n                                removal: .opacity))\n}\n```"
+        },
+        {
+          "q": "Comment construire une transition personnalisée ?",
+          "a": "*Écrivez un `ViewModifier` dont l'effet dépend d'un paramètre, puis enveloppez-le avec `AnyTransition.modifier(active:identity:)`.*\n```swift\nstruct CornerRotate: ViewModifier {\n    let amount: Double\n    let anchor: UnitPoint\n\n    func body(content: Content) -> some View {\n        content\n            .rotationEffect(\n                .degrees(amount),\n                anchor: anchor\n            )\n            .clipped()\n    }\n}\n\nextension AnyTransition {\n    static var pivot: AnyTransition {\n        .modifier(\n            active: CornerRotate(\n                amount: -90,\n                anchor: .topLeading\n            ),\n            identity: CornerRotate(\n                amount: 0,\n                anchor: .topLeading\n            )\n        )\n    }\n}\n```"
+        }
+      ],
+      "deck_key": "animation-and-transitions"
+    },
+    {
+      "deck": "Gestes, haptiques et minuteries",
+      "deck_icon": "hand.point.up.left",
+      "cards": [
+        {
+          "q": "Quels gestes propose SwiftUI ?",
+          "a": "```swift\n.onTapGesture(count: 2) { }\n.onLongPressGesture(minimumDuration: 1) { }\n.gesture(DragGesture().onChanged { … }.onEnded { … })\n.gesture(MagnifyGesture())\n.gesture(RotateGesture())\n```\n*Les formulaires `on…` sont des raccourcis ; `gesture()` donne accès à la chaîne de valeur.*"
+        },
+        {
+          "q": "Quel geste gagne lorsqu’un parent et un enfant en ont tous deux un ?",
+          "a": "*Le **enfant** par défaut. Utilisez `highPriorityGesture()` pour laisser le parent gagner, ou `simultaneousGesture()` pour laisser les deux tirer.*"
+        },
+        {
+          "q": "Comment combiner des gestes en séquence ?",
+          "a": "*Avec `sequenced(before:)` — par exemple, appuyez longuement puis faites glisser, l'interaction classique « prendre et déplacer ». Le geste combiné a besoin de son propre état pour savoir dans quelle phase il se trouve.*"
+        },
+        {
+          "q": "Que fait `allowsHitTesting(false)` ?",
+          "a": "*Cela rend une vue invisible au toucher, qui passe à travers tout ce qui se trouve derrière. Utile pour les superpositions et pour désactiver l'interaction avec un sous-arbre entier lorsque le temps est écoulé ou que l'application est inactive.*"
+        },
+        {
+          "q": "Pourquoi avez-vous parfois besoin de `contentShape` ?",
+          "a": "*La zone exploitable d'une vue est son contenu dessiné, donc les espaceurs et le remplissage à l'intérieur d'une pile ne peuvent pas être testés. `contentShape(.rect)` déclare l'ensemble du cadre comme région interactive.*\n```swift\nVStack {\n    Text(\"Hello\")\n    Spacer().frame(height: 100)\n}\n.contentShape(.rect)\n.onTapGesture { … }\n```"
+        },
+        {
+          "q": "Comment ajouter un retour haptique ?",
+          "a": "*`sensoryFeedback` est la méthode native SwiftUI : elle se déclenche lorsqu'une valeur change.*\n```swift\n.sensoryFeedback(.success, trigger: didSucceed)\n```\n*Pour des modèles plus riches, descendez jusqu'à Core Haptics (`CHHapticEngine`) et pour des taps système simples `UIImpactFeedbackGenerator`.*"
+        },
+        {
+          "q": "Comment exécuter du code à plusieurs reprises sur une minuterie ?",
+          "a": "*Créez un minuteur de publication et observez-le avec `onReceive`. `autoconnect()` le démarre immédiatement.*\n```swift\nlet timer = Timer.publish(every: 1, on: .main, in: .common)\n    .autoconnect()\n\nText(\"\\(counter)\")\n    .onReceive(timer) { _ in\n        counter += 1\n    }\n```\n*Un `tolerance` permet aux minuteries par lots du système d'économiser de l'énergie.*"
+        },
+        {
+          "q": "Comment savoir quand l’application passe en arrière-plan ?",
+          "a": "*Regardez `scenePhase` dans l'environnement : `.active` lorsqu'il est utilisé, `.inactive` lorsqu'il est partiellement visible (par exemple, le sélecteur d'application), `.background` lorsqu'il est masqué. Mettez les minuteries en pause et enregistrez l'état ici.*\n```swift\n@Environment(\\.scenePhase) var scenePhase\n\n.onChange(of: scenePhase) { _, phase in\n    isActive = (phase == .active)\n}\n```"
+        },
+        {
+          "q": "Que vous apporte `onChange(of:)` ?",
+          "a": "*Un rappel chaque fois qu'une valeur change, recevant les anciennes et les nouvelles valeurs. Il s'exécute **avant** que `body` ne voie la nouvelle valeur, et c'est le bon endroit pour les effets secondaires que l'État à lui seul ne peut pas exprimer.*\n```swift\n.onChange(of: selectedItem) { oldValue, newValue in\n    process(newValue)\n}\n```"
+        }
+      ],
+      "deck_key": "gestures-haptics-and-timers"
+    },
+    {
+      "deck": "Observation et flux de données",
+      "deck_icon": "binoculars",
+      "cards": [
+        {
+          "q": "Que fait la macro `@Observable` ?",
+          "a": "*Appliqué à une classe, il réécrit les propriétés stockées afin que les lectures et les écritures soient suivies. SwiftUI invoque ensuite à nouveau `body` lorsqu'une propriété qu'une vue **lit** change réellement.*\n```swift\n@Observable\nclass User {\n    var name = \"Sam\"\n}\n```"
+        },
+        {
+          "q": "Comment stocker une classe `@Observable` dans une vue ?",
+          "a": "*Avec `@State`, qui maintient l'instance en vie lors des recréations de vues. `@Observable` gère les notifications de modification ; `@State` gère la propriété.*\n```swift\n@State private var user = User()\n```"
+        },
+        {
+          "q": "Pourquoi `@Observable` est-il plus efficace que `ObservableObject` ?",
+          "a": "*`@Published` informe **tous** les observateurs de l'objet de tout changement. `@Observable` suit les propriétés individuellement, de sorte qu'une vue qui lit uniquement `name` n'est pas restituée lorsque `age` change.*"
+        },
+        {
+          "q": "Comment l'ancienne API d'observation est-elle mappée sur `@Observable` ?",
+          "a": "- `ObservableObject` + `@Published` → `@Observable`\n- `@StateObject` → `@State`\n- `@ObservedObject` → une propriété simple (ou `@Bindable` pour les liaisons)\n- `@EnvironmentObject` → `@Environment`\n\n*Vous avez toujours besoin de l'ancienne API pour prendre en charge les versions antérieures à iOS 17.*"
+        },
+        {
+          "q": "Comment partager un objet avec une hiérarchie de vues entière ?",
+          "a": "*Mettez-le dans l'environnement une fois, puis lisez-le partout où vous en avez besoin — sans passer par des vues intermédiaires.*\n```swift\nContentView()\n    .environment(favorites)\n\n// deeper down:\n@Environment(Favorites.self) var favorites\n```\n*La lecture d'un objet qui n'a jamais été placé dans l'environnement plante au moment de l'exécution.*"
+        },
+        {
+          "q": "Comment obtenir des liaisons vers un objet à partir de l'environnement ?",
+          "a": "*La lecture avec `@Environment` vous donne une valeur, pas des liaisons. Créez une copie locale `@Bindable` — c'est bon marché, car elle enveloppe simplement la même référence.*\n```swift\n@Environment(User.self) var user\n\nvar body: some View {\n    @Bindable var user = user\n    TextField(\"Name\", text: $user.name)\n}\n```"
+        },
+        {
+          "q": "Quelles valeurs système pouvez-vous lire avec `@Environment` ?",
+          "a": "```swift\n@Environment(\\.dismiss) var dismiss\n@Environment(\\.colorScheme) var colorScheme\n@Environment(\\.horizontalSizeClass) var sizeClass\n@Environment(\\.modelContext) var modelContext\n@Environment(\\.scenePhase) var scenePhase\n@Environment(\\.accessibilityReduceMotion) var reduceMotion\n```"
+        },
+        {
+          "q": "Quel est le problème lors de la création d'une classe `@Observable` `Codable` ?",
+          "a": "*La macro renomme les propriétés stockées avec un préfixe de trait de soulignement, de sorte que les clés de codage synthétisées ne correspondent pas à votre JSON. Déclarez `CodingKeys` explicitement, en utilisant les noms de casse soulignés mappés aux clés de chaîne simples.*\n```swift\nenum CodingKeys: String, CodingKey {\n    case _name = \"name\"\n    case _city = \"city\"\n}\n```"
+        },
+        {
+          "q": "Comment MVVM s'intègre-t-il dans SwiftUI ?",
+          "a": "*Déplacez l'état et la logique dans une classe `@Observable` détenue par la vue avec `@State`, laissant la vue responsable uniquement de la mise en page. Il convient aux écrans complexes ; pour les plus simples, le simple `@State` est généralement plus clair.*"
+        }
+      ],
+      "deck_key": "observation-and-data-flow"
+    },
+    {
+      "deck": "Persistance et codabilité",
+      "deck_icon": "internaldrive",
+      "cards": [
+        {
+          "q": "A quoi sert `UserDefaults` et quelles sont ses limites ?",
+          "a": "*Petits éléments de paramètres utilisateur qui devraient survivre aux relances : ils sont chargés en mémoire au lancement, alors conservez-les sous environ 512 Ko. Ce n'est pas une base de données et ce n'est pas un stockage sécurisé.*\n```swift\nUserDefaults.standard.set(tapCount, forKey: \"Tap\")\nlet count = UserDefaults.standard.integer(forKey: \"Tap\")\n```\n*Les clés manquantes renvoient une valeur nulle (`0`, `false`, `nil`), vous ne pouvez donc pas distinguer « non défini » de « 0 ».*"
+        },
+        {
+          "q": "Que fait `@AppStorage` ?",
+          "a": "*Il enveloppe une seule clé `UserDefaults` dans l'état SwiftUI : sa lecture donne la valeur stockée, son écriture enregistre **et** déclenche une mise à jour de la vue.*\n```swift\n@AppStorage(\"tapCount\") private var tapCount = 0\n\nButton(\"Tapped \\(tapCount)\") { tapCount += 1 }\n```\n*Il ne gère que les types simples — utilisez `Codable` + JSON pour tout ce qui est structuré.*"
+        },
+        {
+          "q": "Que sont `Codable`, `Encodable` et `Decodable` ?",
+          "a": "*`Codable` est la combinaison des deux. La conformité est synthétisée automatiquement tant que chaque propriété stockée est elle-même `Codable`.*\n```swift\nstruct User: Codable {\n    let name: String\n    let address: Address   // must also be Codable\n}\n```"
+        },
+        {
+          "q": "Comment encoder et décoder JSON ?",
+          "a": "```swift\nlet data = try JSONEncoder().encode(user)\nlet user = try JSONDecoder().decode(User.self, from: data)\n```\n*Remarque `User.self` — le décodeur a besoin du **type**, pas d'une instance. Les deux appels sont lancés, alors gérez les échecs.*"
+        },
+        {
+          "q": "Comment décoder le JSON imbriqué ?",
+          "a": "*Mettre en miroir la forme avec les types `Codable` imbriqués : le décodeur parcourt automatiquement la hiérarchie.*\n```swift\nstruct Response: Codable {\n    let results: [Item]\n}\nstruct Item: Codable {\n    let id: Int\n    let name: String\n}\n```"
+        },
+        {
+          "q": "Comment gérez-vous les clés JSON qui ne correspondent pas aux noms de vos propriétés ?",
+          "a": "*Soit déclarez une énumération `CodingKeys` mappant chaque propriété à sa clé JSON, soit définissez `keyDecodingStrategy = .convertFromSnakeCase` pour le cas courant de Snake_case.*\n```swift\nenum CodingKeys: String, CodingKey {\n    case id\n    case fullName = \"full_name\"\n}\n```"
+        },
+        {
+          "q": "Comment décoder les dates à partir de JSON ?",
+          "a": "*Définissez une stratégie de décodage — correspondant exactement au format du serveur, y compris les paramètres régionaux et le fuseau horaire.*\n```swift\nlet decoder = JSONDecoder()\ndecoder.dateDecodingStrategy = .iso8601\n\n// or a custom formatter:\nlet formatter = DateFormatter()\nformatter.dateFormat = \"y-MM-dd\"\ndecoder.dateDecodingStrategy = .formatted(formatter)\n```"
+        },
+        {
+          "q": "Comment lire et écrire des fichiers dans le répertoire des documents ?",
+          "a": "*Créez une URL à partir de `URL.documentsDirectory`, puis utilisez `String`/`Data` écrivez et lisez. Écrivez de manière atomique et ajoutez une protection des fichiers.*\n```swift\nlet url = URL.documentsDirectory.appending(path: \"saved\")\n\ntry data.write(\n    to: url,\n    options: [\n        .atomic,\n        .completeFileProtection\n    ]\n)\nlet loaded = try Data(contentsOf: url)\n```\n*Atomique signifie qu'il écrit dans un fichier temporaire et le renomme, donc un crash ne peut pas laisser un fichier à moitié écrit.*"
+        },
+        {
+          "q": "Comment charger une ressource fournie avec l'application ?",
+          "a": "*Demandez à `Bundle.main` son URL, puis lisez-la. Ne pas trouver un fichier que vous avez expédié est une erreur du programmeur, donc planter avec `fatalError` est raisonnable ici.*\n```swift\nguard let url = Bundle.main.url(\n    forResource: \"words\",\n    withExtension: \"txt\"\n) else {\n    fatalError(\"Missing words.txt\")\n}\nlet contents = try String(contentsOf: url, encoding: .utf8)\nlet lines = contents.components(separatedBy: \"\\n\")\n```"
+        }
+      ],
+      "deck_key": "persistence-and-codable"
+    },
+    {
+      "deck": "Réseautage",
+      "deck_icon": "network",
+      "cards": [
+        {
+          "q": "Comment récupérer des données sur Internet avec async/await ?",
+          "a": "```swift\nlet url = URL(string: \"https://example.com/api\")!\nlet (data, _) = try await URLSession.shared.data(from: url)\nlet items = try JSONDecoder()\n    .decode([Item].self, from: data)\n```\n*La requête et le lancement de décodage, alors enveloppez-les dans `do`/`catch`.*"
+        },
+        {
+          "q": "Comment démarrer un travail asynchrone lorsqu’une vue apparaît ?",
+          "a": "*Utilisez le modificateur `task` — il exécute le travail lorsque la vue apparaît et **l'annule** automatiquement lorsque la vue disparaît, contrairement à `onAppear`.*\n```swift\n.task {\n    await loadData()\n}\n```\n*Passez `id:` pour réexécuter la tâche lorsqu'une valeur change.*"
+        },
+        {
+          "q": "Comment envoyer une requête POST ?",
+          "a": "*Configurez un `URLRequest` avec la méthode, les en-têtes et le corps, puis utilisez `upload(for:from:)` ou `data(for:)`.*\n```swift\nvar request = URLRequest(url: url)\nrequest.setValue(\"application/json\",\n                 forHTTPHeaderField: \"Content-Type\")\nrequest.httpMethod = \"POST\"\n\nlet (data, _) = try await URLSession\n    .shared\n    .upload(for: request, from: encoded)\n```"
+        },
+        {
+          "q": "Comment vérifier qu’une requête a effectivement abouti ?",
+          "a": "*Une erreur générée ne couvre que les échecs de transport – un 404 est un téléchargement parfaitement réussi. Inspectez vous-même le code d’état de la réponse.*\n```swift\nlet (data, response) =\n    try await URLSession.shared\n        .data(from: url)\n\nguard let http = response as? HTTPURLResponse,\n      (200..<300).contains(http.statusCode) else {\n    throw NetworkError.badResponse\n}\n```"
+        },
+        {
+          "q": "Pourquoi ne devez-vous jamais bloquer le thread principal avec le réseau ?",
+          "a": "*Le thread principal pilote l'interface utilisateur ; le bloquer gèle l'application et le chien de garde peut la tuer. Les fonctions `async` sont suspendues au lieu de bloquer, et les `body` et les mises à jour des vues de SwiftUI sont `@MainActor`, de sorte que les résultats reviennent à l'acteur principal en toute sécurité.*"
+        },
+        {
+          "q": "Qu'est-ce que `AsyncImage` et quel est le problème ?",
+          "a": "*Une vue qui télécharge et affiche une image distante. Étant donné que SwiftUI ne connaît pas la taille avant la fin du téléchargement, le dimensionnement nécessite le formulaire `phase`.*\n```swift\nAsyncImage(url: url) { phase in\n    if let image = phase.image {\n        image.resizable().scaledToFit()\n    } else if phase.error != nil {\n        Text(\"Failed to load\")\n    } else {\n        ProgressView()\n    }\n}\n.frame(width: 200, height: 200)\n```\n*Passez `scale:` pour les actifs 2x/3x afin qu'ils ne soient pas surdimensionnés.*"
+        },
+        {
+          "q": "Quel est le type `Result` de Swift ?",
+          "a": "*Une énumération avec `.success(value)` et `.failure(error)` qui vous permet de **stocker** le résultat d'une opération et de le gérer plus tard — utile avec les API de gestionnaire d'achèvement et pour conserver l'état de charge dans un modèle de vue.*\n```swift\nenum LoadingState {\n    case loading\n    case loaded([Item])\n    case failed(Error)\n}\n```"
+        },
+        {
+          "q": "Comment afficher une erreur rencontrée par l'utilisateur suite à une demande ayant échoué ?",
+          "a": "*Détectez l'erreur, insérez un message dans `@State` et génèrez une alerte à partir de celui-ci — ne plantez jamais en cas de panne de réseau, car il s'agit d'une condition attendue.*\n```swift\ndo {\n    try await load()\n} catch {\n    errorMessage = error.localizedDescription\n}\n```"
+        }
+      ],
+      "deck_key": "networking"
+    },
+    {
+      "deck": "SwiftData",
+      "deck_icon": "externaldrive",
+      "cards": [
+        {
+          "q": "Que fait la macro `@Model` ?",
+          "a": "*Appliqué à une **classe**, cela fait du type un modèle SwiftData persistant : les propriétés deviennent des attributs suivis, la classe gagne en observation et SwiftData peut le stocker, l'interroger et le mettre à jour.*\n```swift\n@Model\nclass Book {\n    var title: String\n    var rating: Int\n\n    init(title: String, rating: Int) {\n        self.title = title\n        self.rating = rating\n    }\n}\n```"
+        },
+        {
+          "q": "Comment configurer SwiftData pour une application ?",
+          "a": "*Attachez un conteneur de modèle à la scène : cela crée le stockage et place un contexte de modèle dans l'environnement.*\n```swift\nWindowGroup {\n    ContentView()\n}\n.modelContainer(for: Book.self)\n```"
+        },
+        {
+          "q": "Comment insérer et supprimer des objets ?",
+          "a": "*À travers le contexte du modèle issu de l'environnement.*\n```swift\n@Environment(\\.modelContext) var modelContext\n\nlet book = Book(title: \"Dune\", rating: 5)\nmodelContext.insert(book)\nmodelContext.delete(book)\ntry? modelContext.save()\n```\n*La sauvegarde est automatique par défaut ; appelez `save()` quand vous en avez besoin maintenant.*"
+        },
+        {
+          "q": "Que fait `@Query` ?",
+          "a": "*Il récupère les objets du modèle et maintient la vue synchronisée : l'insertion ou la suppression n'importe où met à jour chaque vue contenant une requête correspondante, sans rechargement manuel.*\n```swift\n@Query var books: [Book]\n\nList(books) { book in\n    Text(book.title)\n}\n```"
+        },
+        {
+          "q": "Comment trier un `@Query` ?",
+          "a": "*Passez un ou plusieurs `SortDescriptor` – les derniers brisent les égalités des précédents.*\n```swift\n@Query(sort: [\n    SortDescriptor(\\Book.title),\n    SortDescriptor(\\Book.author, order: .reverse)\n]) var books: [Book]\n```"
+        },
+        {
+          "q": "Comment filtrer un `@Query` ?",
+          "a": "*Avec `#Predicate`, qui est compilé dans une véritable requête de base de données plutôt que d'être exécuté dans Swift.*\n```swift\n@Query(filter: #Predicate<Book> { book in\n    book.rating > 3 &&\n    book.title\n        .localizedStandardContains(\"a\")\n}) var books: [Book]\n```\n*Seul un sous-ensemble de Swift fonctionne à l'intérieur d'un prédicat — aucun appel de fonction arbitraire et les options nécessitent une attention particulière.*"
+        },
+        {
+          "q": "Comment modifier le tri ou le filtre d'une requête au moment de l'exécution ?",
+          "a": "*`@Query` est corrigé à l'initialisation, alors placez la liste dans une vue enfant et transmettez les critères dans son `init`, en y construisant le `Query`. La modification des critères recrée l'enfant avec une nouvelle requête.*\n```swift\ninit(minimumRating: Int) {\n    _books = Query(filter: #Predicate<Book> {\n        $0.rating >= minimumRating\n    })\n}\n```"
+        },
+        {
+          "q": "Comment fonctionnent les relations dans SwiftData ?",
+          "a": "*Déclarez simplement une propriété d'un autre type de modèle, ou un tableau de ceux-ci — SwiftData déduit la relation. `@Relationship` vous permet de définir la règle de suppression.*\n```swift\n@Relationship(deleteRule: .cascade)\nvar jobs = [Job]()\n```\n*`.cascade` supprime les enfants avec le parent ; `.nullify` les laisse orphelins.*"
+        },
+        {
+          "q": "Comment éditer un objet SwiftData dans un formulaire ?",
+          "a": "*Les classes de modèles sont observables, alors prenez l'objet comme propriété `@Bindable` et liez-le directement — les modifications sont suivies et enregistrées pour vous.*\n```swift\n@Bindable var book: Book\n\nTextField(\"Title\", text: $book.title)\n```"
+        },
+        {
+          "q": "De quoi a besoin SwiftData pour se synchroniser avec iCloud ?",
+          "a": "*Un modèle compatible CloudKit : chaque attribut doit être facultatif ou avoir une valeur par défaut, les relations doivent être facultatives et les contraintes uniques ne sont pas autorisées. Vous avez également besoin des fonctionnalités d'iCloud et des modes d'arrière-plan.*"
+        }
+      ],
+      "deck_key": "swiftdata"
+    },
+    {
+      "deck": "Accessibilité",
+      "deck_icon": "figure.wave",
+      "cards": [
+        {
+          "q": "Pourquoi VoiceOver lit-il souvent la mauvaise chose et comment y remédier ?",
+          "a": "*Il s'appuie sur le nom du texte ou de l'image qu'il trouve. Donnez à la vue une étiquette explicite décrivant sa **signification**, et non son apparence.*\n```swift\nImage(pictures[index])\n    .accessibilityLabel(labels[index])\n```"
+        },
+        {
+          "q": "Quelle est la différence entre une étiquette, une valeur et un indice ?",
+          "a": "- **Label** — qu'est-ce que l'élément *est* (\"Volume\")\n- **Valeur** — son état actuel (\"7 sur 10\")\n- **Indice** : que se passe-t-il si vous agissez en conséquence (\"Appuyez deux fois pour jouer\")\n\n*Les indices sont lus en dernier et peuvent être désactivés par l'utilisateur, donc n'y mettez jamais d'informations essentielles.*"
+        },
+        {
+          "q": "Que sont les caractéristiques d’accessibilité et pourquoi sont-elles importantes ?",
+          "a": "*Ils indiquent à VoiceOver comment un élément se comporte — qu'il s'agisse d'un bouton, d'une image, d'un en-tête ou actuellement sélectionné — afin qu'il annonce la bonne interaction.*\n```swift\nImage(flag)\n    .accessibilityAddTraits(.isButton)\n    .accessibilityRemoveTraits(.isImage)\n```"
+        },
+        {
+          "q": "Comment masquer une vue purement décorative de VoiceOver ?",
+          "a": "```swift\nImage(decorative: \"ornament\")\nImage(\"ornament\").accessibilityHidden(true)\n```\n*`Image(decorative:)` répond toujours aux pressions mais est ignoré dans l'ordre de lecture ; `accessibilityHidden` le supprime entièrement.*"
+        },
+        {
+          "q": "Comment fusionner plusieurs vues en un seul élément d'accessibilité ?",
+          "a": "*Regroupez-les pour que VoiceOver lit un élément cohérent au lieu de trois fragments.*\n```swift\nVStack {\n    Text(\"Your score is\")\n    Text(\"1000\")\n}\n.accessibilityElement(children: .combine)\n```\n*Utilisez `.ignore` plus votre propre étiquette lorsque vous souhaitez un contrôle total sur le libellé.*"
+        },
+        {
+          "q": "Comment rendre une commande personnalisée réglable avec VoiceOver ?",
+          "a": "*Fournissez une action réglable afin que le glissement vers le haut/bas modifie la valeur et gardez la valeur d'accessibilité synchronisée.*\n```swift\n.accessibilityValue(\"\\(rating) stars\")\n.accessibilityAdjustableAction { direction in\n    switch direction {\n    case .increment: rating += 1\n    case .decrement: rating -= 1\n    default: break\n    }\n}\n```"
+        },
+        {
+          "q": "Qu’est-ce que la « différenciation sans couleur » et comment la soutenez-vous ?",
+          "a": "*Un paramètre pour les utilisateurs daltoniens. Lorsqu'il est activé, ne vous fiez pas uniquement à la couleur : ajoutez une forme, une icône ou du texte.*\n```swift\n@Environment(\n    \\.accessibilityDifferentiateWithoutColor\n) var differentiate\n\nif differentiate {\n    Image(systemName: \"checkmark.circle\")\n}\n```"
+        },
+        {
+          "q": "Comment respectez-vous la réduction du mouvement et la transparence ?",
+          "a": "*Vérifiez les valeurs d'environnement et supprimez l'animation ou le flou lorsqu'ils sont activés.*\n```swift\n@Environment(\\.accessibilityReduceMotion) var reduceMotion\n@Environment(\n    \\.accessibilityReduceTransparency\n) var reduceTransparency\n\nwithAnimation(reduceMotion ? nil : .spring) { scale *= 1.5 }\n```"
+        }
+      ],
+      "deck_key": "accessibility"
+    },
+    {
+      "deck": "Interface utilisateur adaptative et cadres système",
+      "deck_icon": "ipad",
+      "cards": [
+        {
+          "q": "Comment adapter un agencement à l’espace disponible ?",
+          "a": "*Lisez la classe de taille horizontale : `.compact` sur un iPhone en mode portrait, `.regular` sur iPad et iPhones plus grands en mode paysage.*\n```swift\n@Environment(\\.horizontalSizeClass) var sizeClass\n\nif sizeClass == .compact {\n    VStack { content }\n} else {\n    HStack { content }\n}\n```\n*Envelopper les deux branches dans un `Group` maintient les modificateurs au même endroit.*"
+        },
+        {
+          "q": "Qu'est-ce que `NavigationSplitView` ?",
+          "a": "*Un conteneur qui affiche une barre latérale à côté d'une vue détaillée sur les grands écrans et se réduit en une pile push sur les petits. Fournissez une vue détaillée par défaut afin que l'iPad ne démarre pas avec un volet vide.*\n```swift\nNavigationSplitView {\n    List(items) { … }\n} detail: {\n    WelcomeView()\n}\n```"
+        },
+        {
+          "q": "Comment créer une barre d’onglets ?",
+          "a": "*`TabView` avec `tabItem` sur chaque enfant et une liaison si vous devez modifier les onglets dans le code — attribuez à chaque onglet un `tag` qui correspond au type de liaison.*\n```swift\nTabView(selection: $selectedTab) {\n    HomeView()\n        .tabItem { Label(\"Home\", systemImage: \"house\") }\n        .tag(Tab.home)\n}\n```"
+        },
+        {
+          "q": "Qu'est-ce que `ShareLink` ?",
+          "a": "*La feuille de partage du système sous forme de vue. Donnez-lui le contenu ainsi qu'un sujet, un message et un aperçu facultatifs.*\n```swift\nShareLink(item: url,\n          subject: Text(\"Check this out\"),\n          message: Text(\"Thought you'd like it\"))\n```\n*Le partage d'une image nécessite que l'élément soit conforme à `Transferable`.*"
+        },
+        {
+          "q": "Comment fonctionne `PhotosPicker` ?",
+          "a": "*Il se lie à un `PhotosPickerItem`, que vous chargez ensuite dans le type dont vous avez besoin. Le chargement est asynchrone et peut échouer, il appartient donc à un `task` ou `onChange`.*\n```swift\nPhotosPicker(\n    \"Select a photo\",\n    selection: $pickerItem,\n    matching: .images\n)\n\n.onChange(of: pickerItem) {\n    Task {\n        selectedImage = try? await\n            pickerItem?.loadTransferable(\n                type: Image.self\n            )\n    }\n}\n```"
+        },
+        {
+          "q": "Comment ajouter un menu contextuel ?",
+          "a": "*Fixez `contextMenu` avec les boutons — un appui long les révèle. Soyez bref et rappelez-vous qu'il s'agit d'une capacité cachée, alors n'y mettez jamais uniquement les actions essentielles.*\n```swift\n.contextMenu {\n    Button(\"Delete\", role: .destructive) { delete() }\n}\n```"
+        },
+        {
+          "q": "Quelles sont les étapes pour une notification locale ?",
+          "a": "1. Demander une autorisation (`.alert`, `.badge`, `.sound`)\n2. Construisez un `UNMutableNotificationContent`\n3. Créez un déclencheur (`UNTimeIntervalNotificationTrigger`, calendrier ou emplacement)\n4. Enveloppez les deux dans un `UNNotificationRequest` avec un identifiant unique\n5. `UNUserNotificationCenter.current().add(request)`\n\n*L'autorisation peut être révoquée à tout moment, alors traitez toujours le cas refusé.*"
+        },
+        {
+          "q": "Comment ajouter une dépendance de package Swift dans Xcode ?",
+          "a": "*Fichier ▸ Ajoutez des dépendances de package, collez l'URL du référentiel et choisissez une règle de version — \"jusqu'à la version majeure suivante\" est le choix habituel, car le versionnage sémantique ne promet aucun changement majeur dans une version majeure. Les packages arrivent en tant que source et sont créés avec votre application.*"
+        },
+        {
+          "q": "Comment appliquer un filtre Core Image à une image SwiftUI ?",
+          "a": "*Core Image est un framework distinct, vous convertissez donc entre les représentations : `UIImage` → `CIImage` → filtre → `CGImage` → `UIImage` → `Image`. Réutilisez-en un `CIContext`, car sa création coûte cher.*\n```swift\nlet context = CIContext()\ncurrentFilter.setValue(inputImage, forKey: kCIInputImageKey)\n\nguard let output = currentFilter.outputImage,\n      let cgImage = context.createCGImage(\n          output,\n          from: output.extent\n      )\nelse { return }\n\nimage = Image(uiImage: UIImage(cgImage: cgImage))\n```"
+        },
+        {
+          "q": "Comment afficher une carte avec des annotations ?",
+          "a": "*MapKit fournit des vues SwiftUI : `Map` avec une position de caméra et `Annotation`/`Marker` pour les points d'intérêt.*\n```swift\nMap(initialPosition: .region(region)) {\n    ForEach(locations) { location in\n        Annotation(\n            location.name,\n            coordinate: location.coordinate\n        ) {\n            Image(systemName: \"star.circle\")\n        }\n    }\n}\n.mapStyle(.hybrid)\n```"
+        },
+        {
+          "q": "Comment protéger une partie d’une application avec Face ID ou Touch ID ?",
+          "a": "*Utilisez `LocalAuthentication` : demandez à un `LAContext` si la biométrie est disponible, puis évaluez la politique. Ajoutez `NSFaceIDUsageDescription` à Info.plist ou l'application plante sur les appareils Face ID.*\n```swift\nlet context = LAContext()\nvar error: NSError?\n\nif context.canEvaluatePolicy(\n    .deviceOwnerAuthenticationWithBiometrics,\n    error: &error\n) {\n    let reason = \"Unlock your saved places.\"\n    let success = try await context.evaluatePolicy(\n        .deviceOwnerAuthenticationWithBiometrics,\n        localizedReason: reason\n    )\n}\n```\n*Toujours fournir une solution de secours : la biométrie peut être indisponible ou échouer.*"
+        }
+      ],
+      "deck_key": "adaptive-ui-and-system-frameworks"
+    }
+  ]
+}

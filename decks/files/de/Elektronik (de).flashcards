@@ -1,0 +1,636 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Elektronik",
+  "interest_icon": "cpu",
+  "interest_key": "electronics",
+  "deck_q_lang": "de",
+  "deck_a_lang": "de",
+  "decks": [
+    {
+      "deck": "Gesetze und Mengen",
+      "deck_icon": "bolt",
+      "cards": [
+        {
+          "q": "Was besagt das Ohmsche Gesetz?",
+          "a": "$U = R \\cdot I${U gleich R mal I}\n\nSpannung $U$ (V) entspricht Widerstand $R$ (Ω) mal Strom $I$ (A). Dies gilt für lineare Komponenten bei konstanter Temperatur."
+        },
+        {
+          "q": "Wie ordnet man das Ohmsche Gesetz für Widerstand und Strom um?",
+          "a": "$R = \\frac{U}{I}${R gleich U über I} und $I = \\frac{U}{R}${I gleich U über R}\n\nBeispiel: 5 V an 250 Ω ergeben $I = 5/250 = 0.02$ A = 20 mA."
+        },
+        {
+          "q": "Was besagt das Kirchhoffsche Spannungsgesetz (KVL)?",
+          "a": "Die Spannungen um jeden geschlossenen Regelkreis summieren sich zu Null.\n\nIn der Praxis: Die Quellenspannung entspricht der Summe der Spannungsabfälle an den mit ihr in Reihe geschalteten Komponenten."
+        },
+        {
+          "q": "Was besagt Kirchhoffs aktuelles Gesetz (KCL)?",
+          "a": "Die Ströme an jedem Knoten summieren sich zu Null.\n\nStromeingang entspricht Stromausgang – Ladung wird an einer Verbindungsstelle weder erzeugt noch zerstört."
+        },
+        {
+          "q": "Wie werden Widerstände in Reihe geschaltet?",
+          "a": "$R_{total} = R_1 + R_2 + R_3 + \\dots$\n\nSie addieren sich, sodass eine Reihenkette immer mehr Widerstand hat als jedes einzelne Glied."
+        },
+        {
+          "q": "Wie verbinden sich zwei Widerstände parallel?",
+          "a": "$R_{total} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}$\n\nDas Ergebnis ist immer **kleiner als der kleinere** Widerstand. 100 Ω ∥ 100 Ω = 50 Ω."
+        },
+        {
+          "q": "Wie wird die elektrische Leistung berechnet?",
+          "a": "$P = U \\cdot I${P entspricht U mal I}, in Watt.\n\nEntspricht $P = I^2 R$ oder $P = \\frac{U^2}{R}$.\n\nBeispiel: Eine LED bei 2 V und 20 mA verbraucht 0,04 W."
+        },
+        {
+          "q": "Wie wird elektrische Energie berechnet und welche Einheiten hat sie?",
+          "a": "$E = P \\cdot t${E gleich P mal t}\n\nJoule (J) oder Wattstunden (Wh); 1 Wh = 3600 J.\n\nBeispiel: Eine 2000-mAh-Zelle bei 5 V speichert etwa 10 Wh."
+        },
+        {
+          "q": "Was ist Kapazität und welche Einheit hat sie?",
+          "a": "Die Ladung, die ein Kondensator pro angelegtem Volt speichert: $C = \\frac{Q}{U}$, gemessen in Farad (F).\n\nDie praktischen Werte sind winzig: pF, nF und µF. 1 µF = 1000 nF."
+        },
+        {
+          "q": "Wie lädt sich ein Kondensator über einen Widerstand auf?",
+          "a": "Die Spannung steigt exponentiell mit der Zeitkonstante $\\tau = R \\cdot C${tau gleich R mal C}.\n\nNach $5\\tau$ ist es zu ca. 99 % geladen. Mit $R = 1$ kΩ und $C = 100$ µF, $\\tau = 0.1$ s, ist es also praktisch in einer halben Sekunde voll."
+        },
+        {
+          "q": "Wie hängt die Impedanz eines Kondensators von der Frequenz ab?",
+          "a": "Kapazitive Reaktanz: $X_C = \\frac{1}{2\\pi f C}$\n\nNiedrige Frequenz bedeutet hohe Impedanz, daher blockiert ein Kondensator den Gleichstrom. Hohe Frequenz bedeutet niedrige Impedanz, sodass Wechselstrom durchgelassen wird."
+        },
+        {
+          "q": "Wie hängt die Impedanz einer Induktivität von der Frequenz ab?",
+          "a": "Induktiver Blindwiderstand: $X_L = 2\\pi f L$\n\nHohe Frequenz bedeutet hohe Impedanz, daher wirkt ein Induktor schnellen Stromänderungen entgegen. Bei Gleichstrom ist eine ideale Induktivität ein Kurzschluss."
+        },
+        {
+          "q": "Was ist ein Spannungsteiler und wie lautet seine Formel?",
+          "a": "Zwei in Reihe geschaltete Widerstände teilen die Spannung über sich auf:\n$$\nU_{out} = U_{in} \\cdot \\frac{R_2}{R_1 + R_2}\n$$\n12 V an 10 kΩ + 10 kΩ ergeben 6 V am unteren Widerstand. Es hält nur, solange die Last weitaus weniger Strom zieht als der Teiler selbst."
+        },
+        {
+          "q": "Welcher Zusammenhang besteht zwischen Häufigkeit und Periode?",
+          "a": "$f = \\frac{1}{T}${f gleich eins über T}\n\nDas 50-Hz-Netz hat eine Periode von 20 ms; Das 60-Hz-Netz hat 16,7 ms."
+        },
+        {
+          "q": "Was ist der Effektivwert einer Wechselspannung?",
+          "a": "Der **quadratische Mittelwert** – die Gleichspannung, die die gleiche Leistung an den gleichen Widerstand liefern würde.\n\nFür eine Sinuswelle: $U_{RMS} = \\frac{U_{peak}}{\\sqrt{2}} \\approx 0.707 \\cdot U_{peak}$\n\n230-V-RMS-Netz erreicht Spitzenwerte bei ca. 325 V; 120 V RMS erreichen ihren Höhepunkt bei etwa 170 V."
+        },
+        {
+          "q": "Warum sind Sicherungen und richtig dimensionierte Leiter wichtig?",
+          "a": "Jeder Leiter hat einen Widerstand. Bei einem Kurzschluss wird der Strom nur durch diesen Widerstand ($I = U/R$) begrenzt und der Draht erwärmt sich wie $P = I^2 R$ – wodurch ein Fehler zu einem Brand wird.\n\nEine Sicherung oder ein Unterbrecher öffnet den Stromkreis, bevor die Verkabelung diesen Punkt erreicht."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen Gleichstrom und Wechselstrom?",
+          "a": "**DC** – konstante Polarität: Batterien, USB, Wandadapter, Mikrocontroller-Pins.\n\n**Wechselstrom** – Polarität wechselt: Netzversorgung, 230 V bei 50 Hz oder 120 V bei 60 Hz, je nach Region."
+        },
+        {
+          "q": "Was ist Masse (GND) in einem Stromkreis?",
+          "a": "An der 0-V-Referenz wird jede zweite Spannung gemessen.\n\n**Die Regel, die allen auffällt:** Wenn Sie mehrere Platinen miteinander verbinden – Controller, Motortreiber, Sensoren – müssen sie eine gemeinsame Masse haben, sonst haben die Signale keinen gemeinsamen Bezug und nichts funktioniert."
+        },
+        {
+          "q": "Wie werden Kapazitäten in Reihe geschaltet?",
+          "a": "$\\frac{1}{C_{total}} = \\frac{1}{C_1} + \\frac{1}{C_2} + \\dots$\n\nDer Gesamtwert ist kleiner als der kleinste Kondensator – das Gegenteil von Reihenwiderständen."
+        },
+        {
+          "q": "Wie werden Kapazitäten parallel kombiniert?",
+          "a": "$C_{total} = C_1 + C_2 + C_3 + \\dots$\n\nKapazitäten addieren sich – wiederum das Gegenteil von Widerständen. Parallelkondensatoren sorgen für mehr Kapazität bei gleicher Nennspannung."
+        }
+      ],
+      "deck_key": "laws-and-quantities"
+    },
+    {
+      "deck": "Komponenten",
+      "deck_icon": "cpu",
+      "cards": [
+        {
+          "q": "Wozu dient ein Widerstand?",
+          "a": "Eine passive Komponente, die den Strom begrenzt oder die Spannung teilt. Sein Wert wird in Ohm (Ω) angegeben und ist bei durchkontaktierten Teilen mit Farbstreifen oder bei oberflächenmontierten Teilen mit einem numerischen Code gekennzeichnet.\n\nTypische Verwendung: ca. 220 Ω in Reihe mit einer LED, um deren Strom einzustellen."
+        },
+        {
+          "q": "Wie liest man den Farbcode eines Vierbandwiderstands?",
+          "a": "Band 1 und 2 sind Ziffern, Band 3 ist der Multiplikator, Band 4 ist die Toleranz.\n\nSchwarz 0, Braun 1, Rot 2, Orange 3, Gelb 4, Grün 5, Blau 6, Violett 7, Grau 8, Weiß 9."
+        },
+        {
+          "q": "Was sind die drei häufigsten Verwendungszwecke eines Kondensators in einem kleinen Projekt?",
+          "a": "* **Entkopplung** – 100 nF Keramik direkt neben dem Versorgungspin eines ICs\n* **Versorgungsglättung** – 100–1000 µF elektrolytisch auf der Stromschiene\n* **Timing** – wie das C in einem RC-Delay oder Oszillator"
+        },
+        {
+          "q": "Was ist der Unterschied zwischen einem Elektrolyt- und einem Keramikkondensator?",
+          "a": "**Elektrolytisch** – große Kapazität (µF bis mF), **polarisiert** (Umkehrung kann zum Entlüften oder Explodieren führen), langsamere Reaktion.\n\n**Keramik** – kleine Kapazität (pF bis µF), nicht polarisiert, schnell – weshalb bei der Entkopplung und Hochfrequenzfilterung Keramik verwendet wird."
+        },
+        {
+          "q": "Was macht eine Diode?",
+          "a": "Es leitet nur in eine Richtung, von der Anode zur Kathode.\n\nDurchlassspannung $V_f$: etwa 0,7 V für Silizium, 0,2–0,3 V für Schottky. Häufige Anwendungen: Verpolungsschutz und Gleichrichtung von Wechselstrom."
+        },
+        {
+          "q": "Wozu dient eine Zener-Diode?",
+          "a": "Bei umgekehrter Vorspannung beginnt es zu leiten, sobald die Zenerspannung $U_Z$ erreicht ist, und hält die Spannung an ihm ungefähr konstant.\n\nWird als Spannungsreferenz oder einfache Überspannungsklemme verwendet."
+        },
+        {
+          "q": "Was braucht eine LED immer und warum?",
+          "a": "**Ein strombegrenzender Widerstand** (oder ein Konstantstromtreiber).\n\nDer Strom einer LED steigt sehr steil an, wenn die Spannung über ihre Durchlassspannung hinausgeht. Wenn man sie also direkt an eine Versorgungsspannung anschließt, kann der Strom abfließen und sie zerstören. Der typische Betriebsstrom beträgt 10–20 mA."
+        },
+        {
+          "q": "Wie berechnet man den Vorwiderstand einer LED?",
+          "a": "$R = \\frac{U_{supply} - U_f}{I_f}$\n\n5-V-Versorgung, rote LED ($U_f = 2$ V), 20 mA: $R = (5 - 2)/0.02 = 150$ Ω. Runden Sie auf den nächsten Standardwert (180 Ω oder 220 Ω) auf, damit der Strom den Zielwert nicht überschreiten kann."
+        },
+        {
+          "q": "Was sind typische LED-Durchlassspannungen nach Farbe?",
+          "a": "* Rot ≈ 2,0 V\n* Gelb / Grün ≈ 2,1 V\n* Blau ≈ 3,2 V\n* Weiß ≈ 3,2–3,4 V\n* Infrarot (880 nm) ≈ 1,2–1,5 V\n\nEine blaue oder weiße LED leuchtet auf einer 3,3-V-Schiene kaum, wenn ein Widerstand in Reihe geschaltet ist."
+        },
+        {
+          "q": "Wie funktioniert ein NPN-Bipolartransistor als Schalter?",
+          "a": "Ein kleiner Basisstrom steuert einen viel größeren Kollektor-Emitter-Strom.\n\nUm es zu sättigen (vollständig anzuschalten), benötigen Sie $I_B > \\frac{I_C}{h_{FE}}$. Bei $h_{FE} = 100$ und $I_C = 500$ mA genügen etwa 5 mA Basisstrom."
+        },
+        {
+          "q": "Was ist ein N-Kanal-MOSFET und wann bevorzugen Sie ihn gegenüber einem BJT?",
+          "a": "Ein spannungsgesteuerter Schalter: Eine Gate-Spannung über dem Schwellenwert $V_{th}$ (typischerweise 2–4 V) öffnet den Drain-Source-Kanal.\n\nBevorzugen Sie es zum Schalten der Stromversorgung – das Gate zieht fast keinen Dauerstrom und $R_{DS(on)}$ kann Milliohm haben, sodass es kühl bleibt, wo ein BJT das nicht tun würde."
+        },
+        {
+          "q": "Was ist ein Relais und warum benötigt seine Spule eine Diode darüber?",
+          "a": "Ein elektromechanischer Schalter, der von einer Spule angetrieben wird und einen Niederspannungssteuerkreis von einer Netzspannungslast trennt.\n\nDie Spule ist ein Induktor: Wenn der Antriebsstrom stoppt, erzeugt das kollabierende Feld eine große Sperrspannungsspitze. Eine Rücklaufdiode über der Spule leitet diesen Strom weiter, anstatt den Treibertransistor zu zerstören."
+        },
+        {
+          "q": "Wozu dient ein Optokoppler?",
+          "a": "Es koppelt zwei Schaltkreise durch Licht – eine LED gegenüber einem Fototransistor in einem Gehäuse –, sodass sie überhaupt keine gemeinsame elektrische Verbindung haben.\n\nWird verwendet, um einen Mikrocontroller vor Hochspannung oder Rauschen in einem Stromkreis zu schützen."
+        },
+        {
+          "q": "Was ist ein Entkopplungskondensator (Bypass) und wo muss er eingesetzt werden?",
+          "a": "Ein 100-nF-Keramikkondensator, der **so nah wie möglich** am Versorgungspin eines ICs platziert ist.\n\nEs liefert die schnellen Stromspitzen, die der IC beim Schalten zieht, die die Induktivität der Versorgungsverkabelung nicht schnell genug liefern kann. Der Abstand macht seinen Zweck zunichte, er erfolgt also am Pin und nicht am Stecker."
+        },
+        {
+          "q": "Was macht ein linearer Spannungsregler (LDO)?",
+          "a": "Er hält seine Ausgangsspannung konstant, wenn sich der Eingang ändert, indem er die Differenz über ein Durchgangselement verringert.\n\nDieser Unterschied wird zu Wärme: $P_{loss} = (U_{in} - U_{out}) \\cdot I$."
+        },
+        {
+          "q": "Warum wird ein Linearregler heiß und was ist die Alternative?",
+          "a": "Es wandelt die Überspannung in Wärme um: $P_{loss} = (U_{in} - U_{out}) \\cdot I$.\n\nDie Reduzierung von 12 V auf 5 V bei 1 A verschwendet 7 W – dafür ist ein Kühlkörper erforderlich. Ein Schaltwandler (Abwärtswandler) erledigt die gleiche Aufgabe mit einem Wirkungsgrad von etwa 90 %, da er Energie speichert und abgibt, anstatt sie abzuführen."
+        },
+        {
+          "q": "Was ist ein NTC-Thermistor und wie liest man ihn?",
+          "a": "Ein Widerstand mit einem **negativen** Temperaturkoeffizienten – der Widerstand nimmt mit steigender Temperatur ab. Ein gemeinsamer Teil beträgt 10 kΩ bei 25 °C.\n\nVerdrahten Sie es als einen halben Spannungsteiler mit einem 10-kΩ-Festwiderstand und lesen Sie den Mittelpunkt mit einem ADC ab."
+        },
+        {
+          "q": "Was ist ein LDR?",
+          "a": "Ein lichtabhängiger Widerstand: Der Widerstand sinkt mit zunehmender Beleuchtung – Dutzende kΩ bei Dunkelheit, Hunderte Ohm bei hellem Licht.\n\nMit einem festen Widerstand bildet es einen Teiler, den ein ADC als grober Lichtsensor lesen kann."
+        },
+        {
+          "q": "Was ist eine Schottky-Diode und wo wird sie bevorzugt?",
+          "a": "Eine Diode mit niedriger Durchlassspannung (0,2–0,3 V) und sehr schneller Erholung.\n\nBevorzugt als Flyback-Diode für Motoren und Relais, für den Verpolungsschutz an einem Eingang und in Schaltnetzteilen – in allen drei Fällen, weil dadurch weniger Strom als Wärme verschwendet wird."
+        },
+        {
+          "q": "Was ist ein MOSFET-Gate-Treiber und wann benötigen Sie einen?",
+          "a": "Ein IC, der den großen, kurzen Strom liefert und senkt, der zum Laden und Entladen der Gate-Kapazität eines MOSFETs erforderlich ist.\n\nEin Mikrocontroller-Pin kann ca. 20 mA liefern, was den Übergang langsam macht – und ein MOSFET leitet den größten Teil seiner Wärme *während* des Übergangs ab. Wird benötigt, wenn Sie schnell umschalten, etwa über 50 kHz."
+        },
+        {
+          "q": "Wozu dient ein Quarzoszillator und warum benötigt er Lastkondensatoren?",
+          "a": "Ein Quarzkristall stellt eine präzise Taktfrequenz ein (normalerweise ±20 ppm) – weitaus stabiler als ein interner RC-Oszillator, auf den serielle Verbindungen und Echtzeituhren angewiesen sind.\n\nDie Lastkondensatoren (oft 12–22 pF) bringen den Kristall auf die Kapazität, für die er spezifiziert wurde; Der falsche Wert verschiebt die Frequenz."
+        }
+      ],
+      "deck_key": "components"
+    },
+    {
+      "deck": "Digitale Logik und Busse",
+      "deck_icon": "memorychip",
+      "cards": [
+        {
+          "q": "Was sind die grundlegenden booleschen Operationen?",
+          "a": "* **UND** – 1 nur, wenn beide Eingänge 1 sind\n* **OR** – 1, wenn mindestens eine Eingabe 1 ist\n* **NICHT** – invertiert\n* **NAND / NOR** – die Negationen von AND / OR\n* **XOR** – 1, wenn die Eingaben unterschiedlich sind"
+        },
+        {
+          "q": "Wozu dient ein XOR-Gatter in der Praxis?",
+          "a": "Sein Ausgang ist hoch, wenn sich die Eingänge unterscheiden, was ihn zum natürlichen Baustein für Differenzerkennung, Paritätsbits und einen Halbaddierer macht.\n\nZwei nützliche Identitäten: $A \\oplus A = 0$ und $A \\oplus 1 = \\lnot A$."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen 5-V-TTL- und 3,3-V-CMOS-Logik?",
+          "a": "**TTL** – 5-V-Schienen, feste Schaltschwelle um 1,4 V, höherer Ruhestrom.\n\n**CMOS** – Versorgung zwischen 1,8 und 5 V, vernachlässigbarer statischer Strom, Schwellenwerte, die mit der Versorgung skalieren. Fast jeder moderne Mikrocontroller ist ein 3,3-V-CMOS."
+        },
+        {
+          "q": "Was ist ein Pull-up-Widerstand und wann braucht man einen?",
+          "a": "Ein Widerstand von einem Pin zur Versorgung, der den Pin hochhält, wenn ihn nichts anderes ansteuert.\n\nWird für einen Knopf benötigt (ansonsten schwebt der Pin und liest zufällig), für jeden I²C-Bus und für jeden Open-Drain-Ausgang."
+        },
+        {
+          "q": "Wie nutzt man den internen Pullup eines Mikrocontrollers?",
+          "a": "```cpp\npinMode(pin, INPUT_PULLUP);\n```\nDie meisten MCUs verfügen über eingebaute 20–50-kΩ-Pullups, sodass eine Taste keinen externen Widerstand benötigt. **Die Logik kehrt sich um**: gedrückt wird LOW angezeigt."
+        },
+        {
+          "q": "Was ist der I²C-Bus und was benötigt er immer?",
+          "a": "Ein Zweidrahtbus: **SDA** für Daten und **SCL** für den Takt, mit 7-Bit-Adressierung (also bis zu etwa 128 Geräte) im 100-kHz-Standard- oder 400-kHz-Schnellmodus.\n\nEs sind **Pull-up-Widerstände** erforderlich, typischerweise 4,7 kΩ, da jedes Gerät die Leitungen nur nach unten ziehen und niemals nach oben treiben kann."
+        },
+        {
+          "q": "Wie ist der Ablauf einer I²C-Transaktion?",
+          "a": "START → 7-Bit-Slave-Adresse plus Lese-/Schreibbit → ACK → Datenbytes, jeweils quittiert → STOP.\n\nDer Controller generiert die Uhr durchgehend, sodass ein Gerät, das Zeit benötigt, die Übertragung nur stoppen kann, indem es SCL niedrig hält (Taktdehnung)."
+        },
+        {
+          "q": "Wie unterscheidet sich SPI von I²C?",
+          "a": "SPI verwendet vier Drähte – **MOSI**, **MISO**, **SCK**, **CS** – und ist Vollduplex und viel schneller (zig MHz), da es Push-Pull statt Open-Drain ist.\n\nDie Kosten: Jedes Peripheriegerät benötigt seinen eigenen Chip-Select-Pin, sodass die Anzahl der Pins mit der Anzahl der Geräte wächst."
+        },
+        {
+          "q": "Was bedeuten die SPI-Signale MOSI, MISO, SCK und CS?",
+          "a": "* **MOSI** – Controller-Ausgang, Peripherie-Eingang\n* **MISO** – Controller-Eingang, Peripherie-Ausgang\n* **SCK** – Uhr, vom Controller generiert\n* **CS / SS** – Chipauswahl, aktiv **LOW**"
+        },
+        {
+          "q": "Was ist UART und was bedeuten seine Parameter?",
+          "a": "Asynchron seriell: **TX** sendet, **RX** empfängt und die beiden müssen sich kreuzen – TX zu RX.\n\nEs gibt keine Taktleitung, daher müssen sich beide Seiten auf die Baudrate einigen. `8N1` bedeutet 8 Datenbits, keine Parität, 1 Stoppbit."
+        },
+        {
+          "q": "Was ist PWM?",
+          "a": "Ein digitales Signal, das schnell ein- und ausgeschaltet wird, wobei der **Arbeitszyklus** (0–100 %) die durchschnittliche Spannung festlegt.\n\nWird für LED-Helligkeit, Gleichstrommotorgeschwindigkeit und Servoposition verwendet. Es handelt sich nicht um eine analoge Spannung – eine Last, die sie nicht mitteln kann, erkennt die Umschaltung."
+        },
+        {
+          "q": "Was ist ein ADC und welche Auflösung haben typische Boards?",
+          "a": "Ein Analog-Digital-Wandler wandelt eine Spannung in eine Zahl um.\n\nEine klassische 8-Bit-AVR-Karte ist 10-Bit (0–1023) über 0–5 V; Ein ESP32 ist 12-Bit (0–4095) über 0–3,3 V. Der Wandler des ESP32 ist merklich nichtlinear, daher muss eine präzise Arbeit kalibriert werden."
+        },
+        {
+          "q": "Was ist ein DAC und was macht man ohne?",
+          "a": "Ein Digital-Analog-Wandler erzeugt eine echte analoge Spannung. Der ESP32 verfügt über zwei 8-Bit-DACs.\n\nOhne einen solchen nähert sich die PWM gefolgt von einem RC-Tiefpassfilter einem analogen Ausgang an – gut genug für eine Steuerspannung, nicht für Audio ohne Sorgfalt."
+        },
+        {
+          "q": "Was ist ein Levelshifter und wann ist er obligatorisch?",
+          "a": "Eine Schaltung, die Logikpegel zwischen Schienen umsetzt, typischerweise 5 V und 3,3 V.\n\nObligatorisch bei der Einspeisung eines 5-V-Signals in einen 3,3-V-Eingang: Die meisten 3,3-V-Bauteile tolerieren höchstens etwa 3,6 V an einem Pin, und 5 V beschädigen sie sofort. Ein Widerstandsteiler eignet sich für einen langsamen Eingang; Für eine schnelle oder bidirektionale Leitung ist ein dedizierter Shifter erforderlich."
+        },
+        {
+          "q": "Was sind die Logikschwellen für 3,3 V CMOS?",
+          "a": "* Eingang HIGH – über etwa 2,0 V\n* Eingang LOW – unter etwa 0,8 V\n* Ausgang HIGH ≈ 3,3 V\n* Ausgang LOW ≈ 0 V\n\nDas Band zwischen den Eingangsschwellenwerten ist undefiniert – ein dort verbleibendes Signal kann den Eingang zum Schwingen bringen."
+        },
+        {
+          "q": "Was ist Switch Bounce und wie gehen Sie damit um?",
+          "a": "Ein mechanischer Kontakt schließt nicht sauber: Er öffnet und öffnet mehrere Male innerhalb weniger Millisekunden, sodass ein Tastendruck die gleiche Anzahl anzeigt.\n\n**In Hardware:** ein 100-nF-Kondensator über dem Schalter. **In der Software:** Ignorieren Sie jede Änderung innerhalb von 10–50 ms nach der letzten Änderung, gemessen mit einem Millisekundenzähler und nicht mit einer Blockierungsverzögerung."
+        },
+        {
+          "q": "Was ist ein Interrupt und warum ist er besser als Polling?",
+          "a": "Ein Hardwareereignis, das das Hauptprogramm anhält und sofort einen Handler ausführt.\n\nDie Abfrage muss ständig prüfen, was Zyklen verschwendet und immer noch einen kurzen Impuls zwischen den Prüfungen übersehen kann. Ein Interrupt kann die Flanke nicht verpassen und lässt die CPU dazwischen schlafen."
+        },
+        {
+          "q": "Was ist ein Open-Drain-Ausgang und was benötigt er?",
+          "a": "Es kann den Pin nach unten ziehen, aber nicht nach oben treiben – losgelassen, schwimmt der Pin.\n\nEs braucht also einen externen Klimmzug. Dadurch können sich mehrere Geräte sicher eine Leitung teilen: Jedes von ihnen kann sie nach unten ziehen, wodurch ein Wired-AND-Verhalten entsteht. I²C ist darauf aufgebaut."
+        },
+        {
+          "q": "Was bringt Ihnen ein Schieberegister mit seriellem Eingang und parallelem Ausgang?",
+          "a": "Es verwandelt drei Pins in acht Ausgänge, indem es Bits seriell eintaktet und parallel aussperrt.\n\nSie verketten: Zwei Register liefern 16 Ausgänge von denselben drei Pins, wodurch LED-Matrizen und mehrstellige Anzeigen angesteuert werden."
+        },
+        {
+          "q": "Warum muss eine mit einem Interrupt-Handler gemeinsam genutzte Variable `volatile` sein?",
+          "a": "```cpp\nvolatile bool flag = false;\n```\nEs teilt dem Compiler mit, dass sich der Wert außerhalb des sichtbaren Kontrollflusses ändern kann und daher jedes Mal erneut aus dem Speicher gelesen werden muss.\n\nOhne sie kann der Compiler die Variable in einem Register zwischenspeichern und die Änderung des Handlers wird von der Hauptschleife nie gesehen."
+        },
+        {
+          "q": "Wozu dient ein Watchdog-Timer?",
+          "a": "Ein Hardware-Timer, der den Chip zurücksetzt, sofern das Programm ihn nicht regelmäßig löscht.\n\nEs stellt ein Gerät wieder her, das hängengeblieben ist – eine Endlosschleife, ein Deadlock, ein blockierter Bus –, ohne dass jemand es aus- und wieder einschalten muss. Das bedeutet, dass der Reset-Pfad selbst jederzeit sicher benutzbar sein muss."
+        }
+      ],
+      "deck_key": "digital-logic-and-buses"
+    },
+    {
+      "deck": "Mikrocontroller-Grundlagen",
+      "deck_icon": "wrench.and.screwdriver",
+      "cards": [
+        {
+          "q": "Was sind die aktuellen Grenzwerte für die Pins einer klassischen 5-V-AVR-Karte?",
+          "a": "Ungefähr **40 mA** pro Pin absolutes Maximum und ungefähr **200 mA** insgesamt vom 5-V-Pin des Reglers.\n\nAus diesem Grund wird ein Motor oder Servo niemals über den 5-V-Pin der Platine mit Strom versorgt, sondern benötigt eine eigene Versorgung mit gemeinsamer Masse."
+        },
+        {
+          "q": "Was sind die drei Pin-Modi und was bewirken sie?",
+          "a": "* `INPUT` – hohe Impedanz; Der Stift hält keinen Pegel und schwimmt, es sei denn, er wird durch etwas angetrieben\n* `OUTPUT` – aktiv hoch oder niedrig gesteuert\n* `INPUT_PULLUP` – Eingabe mit aktiviertem internen Pull-up, sodass im Leerlauf HIGH angezeigt wird"
+        },
+        {
+          "q": "Wie liest und schreibt man einen digitalen Pin?",
+          "a": "```cpp\npinMode(pin, OUTPUT);\ndigitalWrite(pin, HIGH);\n\npinMode(btn, INPUT_PULLUP);\nint s = digitalRead(btn);\n```\nDer Modus muss vor der Verwendung eingestellt werden, sonst verhält sich der Pin wie zuletzt konfiguriert."
+        },
+        {
+          "q": "Wie wandelt man einen ADC-Messwert in eine Spannung um?",
+          "a": "```cpp\nfloat v = analogRead(A0)\n          * 5.0 / 1023.0;\n```\nMit der Referenzspannung multiplizieren und durch den Gesamtzählwert dividieren. Der Messwert ist nur so genau wie dieser Referenzwert, der auf einer USB-betriebenen Platine nicht genau 5 V beträgt."
+        },
+        {
+          "q": "Was produziert `analogWrite` eigentlich?",
+          "a": "**PWM, keine analoge Spannung.** Der Wert 0–255 legt den Arbeitszyklus fest.\n\nAuf einem klassischen AVR-Board wird dies nur von bestimmten Pins unterstützt, entweder bei 490 Hz oder 980 Hz, je nachdem, welcher Timer sie antreibt."
+        },
+        {
+          "q": "Warum ist ein Millisekundenzähler besser als `delay()`?",
+          "a": "```cpp\nunsigned long prev = 0;\nif (millis() - prev >= 1000) {\n  prev = millis();\n  // once per second\n}\n```\nDas Programm wird nicht gestoppt, sodass Sensoren, Kommunikation und andere Timer weiterarbeiten.\n\nBeachten Sie die Subtraktion: Durch den Vergleich von `millis() - prev` anstelle von absoluten Zeiten überlebt es den Zählerüberlauf nach ca. 50 Tagen."
+        },
+        {
+          "q": "Was stimmt mit `delay()` nicht?",
+          "a": "Es blockiert alles – keine Pin-Änderungen, keine Sensor-Lesevorgänge, keine Seriennummer, keine Reaktionsfähigkeit – für die gesamte Dauer.\n\nBei einmaligem Setup-Code, bei dem nichts anderes passieren muss, ist das in Ordnung. Verwenden Sie andernorts einen Zeitstempelvergleich oder eine Zustandsmaschine."
+        },
+        {
+          "q": "Wie richtet man die serielle Kommunikation ein?",
+          "a": "```cpp\nSerial.begin(115200);\nSerial.println(\"ready\");\nif (Serial.available()) {\n  int b = Serial.read();\n}\n```\nDie Baudrate muss mit der des Terminals übereinstimmen, sonst erhalten Sie plausibel aussehenden Müll statt Stille."
+        },
+        {
+          "q": "Wie startet man einen I²C-Bus im Code?",
+          "a": "```cpp\n#include <Wire.h>\nWire.begin();          // controller\nWire.begin(address);   // peripheral\n```\nUm ein unbekanntes Gerät zu finden, gehen Sie die Adressen 1–127 durch und sehen Sie, welches Gerät eine Übertragung bestätigt."
+        },
+        {
+          "q": "Wie startet man einen SPI-Bus im Code?",
+          "a": "```cpp\n#include <SPI.h>\nSPI.begin();\ndigitalWrite(CS, LOW);\nbyte r = SPI.transfer(0x42);\ndigitalWrite(CS, HIGH);\n```\nDie Bibliothek verwaltet die Chipauswahl nicht – Sie aktivieren und geben sie bei jeder Übertragung selbst frei."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen `setup()` und `loop()`?",
+          "a": "`setup()` wird nach dem Zurücksetzen einmal ausgeführt: Pin-Modi, seriell, Sensorinitialisierung, Netzwerk.\n\n`loop()` läuft wiederholt, Hunderttausende Male pro Sekunde, wenn nichts es blockiert. Es darf daher niemals davon ausgegangen werden, dass es zu einem festen Zinssatz abgerufen wird."
+        },
+        {
+          "q": "Welche Regeln gelten für das Schreiben eines Interrupt-Handlers?",
+          "a": "Halten Sie es **kurz**. Setzen Sie ein `volatile`-Flag oder pushen Sie es in einen Puffer und erledigen Sie die eigentliche Arbeit in der Hauptschleife.\n\nKeine Blockierungsverzögerungen, kein serielles Drucken und kein Verlassen auf den Millisekundenzähler – es stoppt den Fortschritt innerhalb des Handlers, weil es selbst durch einen Interrupt gesteuert wird."
+        },
+        {
+          "q": "Wie treibt man einen Gleichstrommotor über einen Mikrocontroller an?",
+          "a": "Niemals direkt – ein Motor zieht weit mehr, als ein Stift liefern kann, und seine Induktivität erzeugt Spitzen.\n\nVerwenden Sie einen H-Brücken-Treiber, der Ihnen auch Richtungssteuerung ermöglicht. Versorgen Sie den Motor separat und teilen Sie die Masse mit der Steuerung."
+        },
+        {
+          "q": "Was ist EEPROM auf einem Mikrocontroller und wo liegt seine Grenze?",
+          "a": "```cpp\n#include <EEPROM.h>\nEEPROM.write(addr, value);\nbyte v = EEPROM.read(addr);\n```\nNichtflüchtiger Byte-Speicher, der einen Reset übersteht – gut für Einstellungen und Kalibrierung.\n\nDie Ausdauer beträgt ungefähr 100.000 Schreibvorgänge **pro Zelle**, also schreiben Sie niemals innerhalb einer Schleife."
+        },
+        {
+          "q": "Was bewirken `map()` und `constrain()` und warum werden sie zusammen verwendet?",
+          "a": "```cpp\nint a = map(analogRead(A0),\n            0, 1023, 0, 180);\na = constrain(a, 0, 180);\n```\n`map()` skaliert einen Wert zwischen Bereichen neu, aber es führt **keine** Klemmung durch – eine Eingabe außerhalb des Quellbereichs erzeugt eine Ausgabe außerhalb des Zielbereichs. `constrain()` macht es sicher."
+        },
+        {
+          "q": "Was macht `PROGMEM` und warum ist es auf einer kleinen MCU wichtig?",
+          "a": "```cpp\nconst char msg[] PROGMEM = \"...\";\nSerial.println(F(\"literal\"));\n```\nEs speichert die Daten konstant im Flash, anstatt sie beim Start in den RAM zu kopieren.\n\nEin klassisches AVR-Board verfügt über 2 kB RAM, sodass eine Handvoll langer String-Literale ihn erschöpfen können – und wenn nicht mehr genügend RAM vorhanden ist, zeigt sich dies als mysteriöse Beschädigung und nicht als reiner Fehler."
+        },
+        {
+          "q": "Was ist ein Bootloader?",
+          "a": "Ein kleines, im Chip vorprogrammiertes Programm, das über die serielle Schnittstelle eine neue Skizze empfangen kann, sodass kein externer Programmierer erforderlich ist.\n\nNach dem Zurücksetzen wartet es kurz und startet dann das bestehende Programm. Es kostet eine kleine Menge Flash und die Startverzögerung."
+        },
+        {
+          "q": "Was ist ein serieller Software-Port und was kostet er?",
+          "a": "Eine Bibliothek, die einen UART auf gewöhnlichen digitalen Pins emuliert und Ihnen so einen zusätzlichen Port bietet.\n\nEs kostet CPU-Zeit und Interrupt-Latenz: Das Timing erfolgt in der Software, ist also langsamer, bei hohen Baudraten weniger zuverlässig und kann andere Interrupts stören."
+        },
+        {
+          "q": "Wie wählen Sie zwischen den gängigen 8-Bit-Board-Formfaktoren?",
+          "a": "* **Uno-Klasse** – 14 digitale und 6 analoge Pins, 32 kB Flash, 2 kB RAM; die Standardeinstellung\n* **Megaklasse** – 54 digitale, 16 analoge, 256 kB Flash, vier UARTs; wenn Ihnen die Stifte ausgehen\n* **Nano-Klasse** – derselbe Chip wie der Uno mit viel kleinerem Platzbedarf; wenn es in ein Gehäuse passen muss"
+        },
+        {
+          "q": "Woher kommen Arduino-Bibliotheken und wo werden sie installiert?",
+          "a": "Der Bibliotheksmanager in der IDE oder eine heruntergeladene ZIP-Datei, die über *ZIP-Bibliothek hinzufügen* hinzugefügt wurde.\n\nSie landen im Ordner „JF000“ Ihres Skizzenbuchs, was wissenswert ist, wenn zwei Versionen derselben Bibliothek in Konflikt geraten."
+        }
+      ],
+      "deck_key": "microcontroller-basics"
+    },
+    {
+      "deck": "Wi-Fi-Mikrocontroller",
+      "deck_icon": "wifi",
+      "cards": [
+        {
+          "q": "Was sind die Hauptunterschiede zwischen dem ESP32 und dem ESP8266?",
+          "a": "**ESP32** – Dual Core mit 240 MHz, Wi-Fi plus Bluetooth Classic und BLE, zwei DACs, 18 ADC-Kanäle, kapazitive Touch-Eingänge, viele weitere GPIOs.\n\n**ESP8266** – Single-Core mit 80/160 MHz, nur WLAN, viel weniger Pins, günstiger."
+        },
+        {
+          "q": "Wie hoch ist die Versorgungsspannung des ESP32 und wie hoch ist das Maximum bei einem GPIO?",
+          "a": "Der Chip läuft mit **3,3 V**. Entwicklungsplatinen akzeptieren etwa 4,5–7 V an ihrem Eingangspin und regulieren diese herunter.\n\nGPIOs vertragen maximal etwa **3,6 V**. Ein 5-V-Signal beschädigt sie sofort – verwenden Sie einen Pegelumsetzer oder einen Teiler."
+        },
+        {
+          "q": "Wie stellt man auf einem ESP32 eine WLAN-Verbindung her?",
+          "a": "```cpp\n#include <WiFi.h>\nWiFi.begin(ssid, password);\nwhile (WiFi.status()\n       != WL_CONNECTED) {\n  delay(500);\n}\nSerial.println(WiFi.localIP());\n```"
+        },
+        {
+          "q": "Was ist Tiefschlaf und wie viel spart er?",
+          "a": "Ein Modus, in dem CPU und Funk ausgeschaltet sind und nur ein Bereich mit geringem Stromverbrauch übrig bleibt, wodurch der Strom von etwa 200 mA auf etwa 10 µA sinkt.\n\nEs ist der Unterschied zwischen der Lebensdauer eines Batteriesensors von Tagen und einem Jahr. Das Aufwecken erfolgt über einen Timer, eine GPIO-Kante oder ein Touchpad."
+        },
+        {
+          "q": "Was passiert mit Ihrem Programm, nachdem ein ESP32 aus dem Tiefschlaf erwacht?",
+          "a": "```cpp\nRTC_DATA_ATTR int count = 0;\nesp_sleep_enable_timer_wakeup(\n  10 * 1000000ULL);\nesp_deep_sleep_start();\n```\nEs beginnt von oben – `setup()` läuft erneut, wie nach einem Reset. Nur Variablen, die als lebend im RTC-Speicher markiert sind, behalten ihre Werte, sodass alles andere erneut abgeleitet oder erneut gelesen werden muss."
+        },
+        {
+          "q": "Was sind die beiden Einschränkungen für den ADC des ESP32?",
+          "a": "**ADC2 teilt die Hardware mit dem Wi-Fi-Radio**, sodass diese Kanäle bei eingeschaltetem Wi-Fi unbrauchbar sind. Verwenden Sie ADC1 (GPIO 32–39) für alles, was Sie zum zuverlässigen Lesen benötigen.\n\nAußerdem ist der Konverter an beiden Enden seines Bereichs merklich nichtlinear, sodass für genaue Messungen die Werkskalibrierungsdaten erforderlich sind."
+        },
+        {
+          "q": "Wie wird PWM auf einem ESP32 konfiguriert?",
+          "a": "```cpp\nledcSetup(0, 5000, 8);\nledcAttachPin(LED_PIN, 0);\nledcWrite(0, 128);  // 50 %\n```\nÜber das LEDC-Peripheriegerät: Sie konfigurieren einen Kanal mit einer Frequenz und einer Auflösung in Bits und verbinden ihn dann mit einem Pin. Frequenz und Auflösung stehen im Widerspruch zueinander."
+        },
+        {
+          "q": "Was muss ein Over-the-Air-Update im Sketch enthalten?",
+          "a": "```cpp\n#include <ArduinoOTA.h>\nvoid setup() {\n  WiFi.begin(ssid, pass);\n  ArduinoOTA.begin();\n}\nvoid loop() {\n  ArduinoOTA.handle();\n}\n```\n`handle()` muss regelmäßig aufgerufen werden, sodass eine Blockierung von `loop()` stillschweigend dazu führt, dass das Gerät nicht mehr aktualisierbar ist – was bei einem Gerät, das Sie nicht mehr erreichen können, am wichtigsten ist."
+        },
+        {
+          "q": "Wie funktionieren die kapazitiven Touch-Eingaben des ESP32?",
+          "a": "```cpp\nint v = touchRead(4);\n```\nDie Eigenkapazität des Stifts wird gemessen, sodass ein Finger in der Nähe den Messwert **verringert**. Es sind keine externen Komponenten erforderlich, aber die Basislinie schwankt mit der Luftfeuchtigkeit und dem Gehäuse, daher sollte der Schwellenwert beim Start kalibriert und nicht fest codiert werden."
+        },
+        {
+          "q": "Wofür ist ESP-NOW gut?",
+          "a": "Verbindungsloses Peer-to-Peer-Messaging zwischen ESP-Geräten ohne Beteiligung eines Zugangspunkts: Latenzzeit etwa eine Millisekunde und nutzbare Reichweite im Freien von Hunderten von Metern.\n\nGeeignet für Sensorschwärme und Fernbedienungen, bei denen die Verbindung mit einem Router mehr Zeit und Energie kostet als die Nachricht selbst."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen Bluetooth Classic und BLE?",
+          "a": "**Klassisch** – eine kontinuierliche Verbindung, die sich für Streaming eignet, zu höheren Stromkosten; Es kann eine serielle Schnittstelle emulieren.\n\n**BLE** – kurze Pakete und lange Leerlaufzeiten, so konzipiert, dass eine Knopfzelle mehrere Monate halten kann. Für das gelegentliche Senden eines Sensormesswerts ist BLE die richtige Lösung."
+        },
+        {
+          "q": "Welche ESP32-GPIOs sind nur eingabebereit und was bedeutet das?",
+          "a": "**GPIO 34, 35, 36 und 39.** Sie haben keinen Ausgangstreiber und **kein internes Pull-Up oder Pull-Down**.\n\nSie eignen sich also gut für analoge Eingänge und extern angesteuerte Signale, aber eine Taste an einem von ihnen benötigt einen externen Widerstand – andernfalls schwimmt der Pin und liest Rauschen."
+        },
+        {
+          "q": "Wie nutzt der ESP32 seine beiden Kerne?",
+          "a": "```cpp\nxTaskCreatePinnedToCore(\n  taskFn, \"name\", 4096,\n  NULL, 1, &handle, 1);\n```\nEs läuft unter FreeRTOS, mit den Wi-Fi- und Bluetooth-Stacks auf Kern 0 und der Anwendungsaufgabe im Arduino-Stil auf Kern 1.\n\nEine zu lange Blockierung von Core 0 zerstört daher das Netzwerk und nicht nur Ihren eigenen Code."
+        },
+        {
+          "q": "Wie speichert man Einstellungen dauerhaft auf einem ESP32?",
+          "a": "```cpp\n#include <Preferences.h>\nPreferences prefs;\nprefs.begin(\"app\", false);\nprefs.putInt(\"count\", 42);\nint n = prefs.getInt(\"count\", 0);\nprefs.end();\n```\nEin Schlüsselwertspeicher in einer dedizierten Flash-Partition mit Wear Leveling – weshalb er die richtige Wahl ist, anstatt rohen Flash zu schreiben."
+        },
+        {
+          "q": "Was sind Umreifungsnadeln und warum muss man mit ihnen vorsichtig sein?",
+          "a": "Pins, deren Pegel **beim Zurücksetzen** abgetastet wird, um den Startmodus auszuwählen – insbesondere GPIO 0 (niedrig bedeutet den seriellen Bootloader), GPIO 2 und GPIO 12.\n\nDie feste Verkabelung einer davon mit einem festen Pegel kann dazu führen, dass die Platine nicht mehr startet oder blinkt, und das Symptom sieht eher nach einer defekten Platine als nach einem Verdrahtungsfehler aus."
+        },
+        {
+          "q": "Was sind die Standard-I²C- und SPI-Pins des ESP32?",
+          "a": "I²C ist standardmäßig auf SDA 21, SCL 22 eingestellt und kann neu zugeordnet werden: `Wire.begin(sda, scl)`.\n\nDer Standard-SPI ist MOSI 23, MISO 19, SCK 18, CS 5; ein zweiter Bus steht zur Verfügung. Da der ESP32 Peripheriegeräte über eine Matrix leitet, kann fast jeder Pin bedient werden – die Standardeinstellungen sind Konventionen, keine Verkabelung."
+        },
+        {
+          "q": "Wie legen Sie eine statische IP-Adresse fest und wann müssen Sie dies tun?",
+          "a": "```cpp\nWiFi.config(ip, gateway,\n            subnet, dns);\nWiFi.begin(ssid, pass);\n```\nEs muss **vor** `WiFi.begin()` aufgerufen werden, sonst wurde DHCP bereits angefordert und der Aufruf hat keine Wirkung."
+        },
+        {
+          "q": "Wie betreibt man einen ESP32 als eigenen Access Point?",
+          "a": "```cpp\nWiFi.softAP(\"MyDevice\", \"password\");\nSerial.println(WiFi.softAPIP());\n```\nFür einen kombinierten Modus, der einen AP bedient und gleichzeitig einem Netzwerk beitritt, legen Sie `WIFI_AP_STA` fest – die übliche Methode, um eine Setup-Seite anzubieten, bevor die Anmeldeinformationen bekannt sind."
+        },
+        {
+          "q": "Was bieten die Varianten ESP32-S2, S3 und C3?",
+          "a": "* **S2** – Single-Core, natives USB, kein Bluetooth\n* **S3** – Dual Core, BLE 5, Vektoranweisungen für ML-Workloads, natives USB\n* **C3** – einzelner RISC-V-Kern, WLAN und BLE, am günstigsten\n\nIhre Pinbelegung ist **nicht** kompatibel mit dem Original-ESP32, daher handelt es sich bei einem Platinentausch um eine Neukonstruktion."
+        },
+        {
+          "q": "Warum fällt ein ESP32 aus oder startet neu, wenn das Radio sendet?",
+          "a": "Das Radio verbraucht kurze Stromstöße von mehreren hundert Milliampere. Eine schwache Versorgung, ein dünnes USB-Kabel oder ein fehlender Massenkondensator führen dazu, dass die Schiene unter die Brownout-Schwelle durchhängt.\n\nDie Lösung ist eine Versorgung, die den Spitzenwert liefern kann – und ein Massenkondensator von einigen hundert µF in der Nähe des Moduls. Das Symptom sieht aus wie ein Firmware-Absturz und ist deshalb schwer zu finden."
+        }
+      ],
+      "deck_key": "wi-fi-microcontrollers"
+    },
+    {
+      "deck": "Motoren und Treiber",
+      "deck_icon": "gearshape.2",
+      "cards": [
+        {
+          "q": "Was unterscheidet einen Servo von einem einfachen Gleichstrommotor?",
+          "a": "Ein Servo enthält einen Positionssensor und einen Regelkreis, sodass er sich in einen vorgegebenen **Winkel** bewegt und ihn gegen eine Last hält.\n\nEin Gleichstrommotor dreht sich nur; Ohne Encoder weiß nichts, wo es ist."
+        },
+        {
+          "q": "Wie interpretiert ein Hobby-Servo sein Steuersignal?",
+          "a": "Ein Impuls alle 20 ms (50 Hz), wobei die **Breite** des Impulses den Winkel festlegt:\n\n* 1 ms ≈ 0°\n* 1,5 ms ≈ 90° (Mitte)\n* 2 ms ≈ 180°\n\nDie Impulse müssen weiter kommen; Wenn sie anhalten oder zittern, ruckelt oder summt das Servo."
+        },
+        {
+          "q": "Wie treibt man ein Servo aus der Standardbibliothek an?",
+          "a": "```cpp\n#include <Servo.h>\nServo s;\nvoid setup() { s.attach(9); }\nvoid loop() {\n  s.write(0);\n  delay(1000);\n  s.write(180);\n  delay(1000);\n}\n```"
+        },
+        {
+          "q": "Wann sollten Sie `writeMicroseconds()` anstelle von `write()` verwenden?",
+          "a": "`write(angle)` ordnet 0–180 dem angenommenen Impulsbereich der Bibliothek zu, der selten genau einem bestimmten Servo entspricht.\n\n`writeMicroseconds(1000–2000)` steuert den Impuls direkt, was Sie für die Feinpositionierung oder für ein Servo benötigen, dessen tatsächlicher Weg unterschiedlich ist. Die Mitte beträgt 1500 µs."
+        },
+        {
+          "q": "Warum darf ein Servo nicht über den 5-V-Pin der Platine mit Strom versorgt werden?",
+          "a": "Ein Servo verbraucht während der Bewegung 100–900 mA und sein Blockierstrom ist noch höher; Der Regler der Platine kann insgesamt einige hundert Milliampere liefern.\n\nVersorgen Sie das Servo mit einer eigenen 5-V-Versorgung, teilen Sie die Masse mit dem Controller und verlegen Sie nur das Signalkabel zum Pin."
+        },
+        {
+          "q": "Was sind die Vorteile und Kosten eines Schrittmotors?",
+          "a": "Es bewegt sich in diskreten Schritten – üblicherweise 1,8°, also 200 pro Umdrehung – was eine genaue Positionierung im „offenen Regelkreis“ ohne Encoder ermöglicht.\n\nDie Kosten: Es braucht einen Treiber, es zieht Strom (und wird warm), auch wenn es stillsteht, und es ist laut."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen einem bipolaren und einem unipolaren Stepper?",
+          "a": "**Bipolar** – vier Drähte, zwei Spulen, jeweils umgekehrter Strom; mehr Drehmoment, benötigt einen H-Brücken-Treiber. Dies ist der Typ, der in 3D-Druckern verwendet wird.\n\n**Unipolar** – fünf oder sechs Drähte mit Mittelabgriffen; ein einfacherer Treiber, aber weniger Drehmoment, da jeweils nur die Hälfte jeder Wicklung mit Strom versorgt wird."
+        },
+        {
+          "q": "Was bringen Ihnen Vollschritt, Halbschritt und Mikroschritt?",
+          "a": "* **Vollschritt** – 200 Schritte/Umdrehung, volles Drehmoment\n* **Halbschritt** – 400 Schritte/Umdrehung, sanfter\n* **1/16 Mikroschritt** – 3200 Schritte/Umdrehung, leise und sanft\n\nBeim Mikroschritt geht es um Laufruhe, nicht um Genauigkeit: Das Haltemoment bei jedem Mikroschritt beträgt nur einen Bruchteil des Vollschritt-Drehmoments, sodass die Position leichter verschoben werden kann."
+        },
+        {
+          "q": "Was ist ein Schritt-/Richtungstreiber und wie wird er gesteuert?",
+          "a": "Der Treiber verwaltet die Spulenströme; Der Controller liefert nur **STEP** (ein Impuls = ein Schritt) und **DIR** (Richtung).\n\nMikroschritt wird mit Modus-Pins ausgewählt. Aus diesem Grund ist der Stepper-Code nur ein Impuls-Timing – die gesamte analoge Arbeit liegt im Treiber."
+        },
+        {
+          "q": "Was darf bei der Verkabelung eines Schrittmotortreibers auf keinen Fall vernachlässigt werden?",
+          "a": "**Ein großer Elektrolytkondensator, etwa 100 µF, über der Motorversorgung am Treiber.**\n\nOhne sie erzeugt der Anschluss von Strom eine induktive Spannungsspitze auf der Motorschiene, die den Treiber sofort zerstören kann. Dies ist die häufigste Art und Weise, wie diese Boards sterben."
+        },
+        {
+          "q": "Wie stellt man die Strombegrenzung bei einem Schrittmotortreiber ein?",
+          "a": "Ein Trimmer stellt eine Referenzspannung ein, die den Spitzenspulenstrom definiert: $V_{ref} = I_{max} \\times 8 \\times R_{sense}$.\n\nMit $R_{sense} = 0.1$ Ω benötigt 1 A $V_{ref} = 0.8$ V. Messen Sie es mit einem Messgerät gegen Erde. Zu niedrig geht unter Last Schritte verloren; Eine zu hohe Temperatur führt zu einer Überhitzung des Motors und des Treibers."
+        },
+        {
+          "q": "Warum sind manche Schrittmotortreiber nahezu geräuschlos?",
+          "a": "Sie treiben die Spulen mit einem gleichmäßigen, annähernd sinusförmigen Strom an, anstatt hart zwischen den Pegeln umzuschalten, wodurch die hörbaren Schaltoberwellen entfernt werden.\n\nDer Kompromiss ist ein etwas geringeres Drehmoment bei hoher Geschwindigkeit, weshalb einige Designs mit steigender Geschwindigkeit den Modus wechseln."
+        },
+        {
+          "q": "Was bringt Ihnen eine Stepper-Beschleunigungsbibliothek?",
+          "a": "```cpp\n#include <AccelStepper.h>\nAccelStepper st(\n  AccelStepper::DRIVER,\n  STEP_PIN, DIR_PIN);\nvoid setup() {\n  st.setMaxSpeed(500);\n  st.setAcceleration(100);\n  st.moveTo(200);\n}\nvoid loop() { st.run(); }\n```\nEs generiert das Schritt-Timing für eine Rampenbewegung, daher muss `run()` oft aufgerufen werden – es erledigt die Arbeit eines Schritts pro Aufruf."
+        },
+        {
+          "q": "Warum benötigt ein Stepper eine Beschleunigung und nicht eine stufenweise Geschwindigkeitsänderung?",
+          "a": "Der Rotor hat Trägheit. Wird ihm direkt die volle Geschwindigkeit befohlen, kann er nicht folgen, verliert die Synchronität mit dem Feld und **überspringt Schritte** – woraufhin die Vorstellung des Controllers von der Position stillschweigend falsch ist.\n\nStellen Sie immer sowohl eine Höchstgeschwindigkeit als auch eine Beschleunigung ein."
+        },
+        {
+          "q": "Was ist Schrittverlust und wie erkennt man ihn?",
+          "a": "Der Motor folgt einem befohlenen Schritt nicht, sodass die tatsächliche Position von der befohlenen abweicht – und nichts meldet dies, da die Steuerung im offenen Regelkreis erfolgt.\n\nUrsachen: zu viel Drehzahl, zu wenig Strom, zu viel Last. Für die Erkennung ist eine externe Referenz erforderlich – ein Encoder oder die Referenzierung auf einen Endanschlag."
+        },
+        {
+          "q": "Was ist Referenzieren und warum ist es bei jedem Einschalten erforderlich?",
+          "a": "Bewegen, bis ein Endanschlag ausgelöst wird, und dann diese Position als Null definieren.\n\nEin Schrittmotor verfügt über keine absolute Positionsrückmeldung, sodass die Steuerung nach dem Einschalten keine Ahnung hat, wo sich die Achse befindet. Bei der Referenzfahrt werden relative Schritte in bekannte Koordinaten umgewandelt."
+        },
+        {
+          "q": "Was spezifiziert eigentlich eine NEMA-Größe?",
+          "a": "Nur die **Montagefläche** – NEMA 17 bedeutet eine 42,3 mm große quadratische Frontplatte mit einem festen Schraubenmuster.\n\nEs sagt nichts über Drehmoment, Strom oder Länge aus, sodass sich zwei NEMA 17-Motoren in ihrer Stärke um ein Vielfaches unterscheiden können. Überprüfen Sie das Datenblatt, nicht die Größe."
+        },
+        {
+          "q": "Wie rechnet man eine Schrittfrequenz in U/min um?",
+          "a": "$$\nRPM = \\frac{steps/s \\times 60}{steps/rev}\n$$\n400 Schritte/s bei Vollschritt (200 Schritte/Umdrehung) sind 120 U/min. Die gleiche Pulsfrequenz beträgt bei 1/16 Mikroschritten (3200 Schritte/Umdrehung) nur 7,5 U/min – Mikroschritt kostet bei einer gegebenen Pulsfrequenz Höchstgeschwindigkeit."
+        },
+        {
+          "q": "Wie vergleicht man die Drehmomentwerte von Servos sinnvoll?",
+          "a": "Die Nennwerte sind in kg·cm bei einer angegebenen Spannung angegeben: Ein kleines Servo mit Kunststoffgetriebe leistet etwa 1,8 kg·cm bei 100–250 mA, ein Servo mit Metallgetriebe etwa 9,4 kg·cm bei 500–900 mA und einem Strömungswiderstand von 2,5 A.\n\nGröße für **das Zwei- bis Dreifache** der statischen Belastung: Die dynamische Belastung eines beweglichen Arms ist viel höher, als sein Gewicht vermuten lässt."
+        },
+        {
+          "q": "Was ist der Haken beim Antrieb eines Servos über einen 3,3-V-Controller?",
+          "a": "Ein 3,3-V-Impuls reicht normalerweise aus, um als gültiges Signal gelesen zu werden, daher wird die Signalleitung direkt angeschlossen.\n\nDer Haken ist die Stromversorgung: Das Servo benötigt weiterhin eine eigene 5-V-Versorgung, **und die Masse muss verbunden sein**. Ohne gemeinsame Masse hat der Impuls keinen Bezug und das Servo zuckt oder ignoriert ihn."
+        },
+        {
+          "q": "Wie wählt man zwischen einer H-Brücke für Gleichstrommotoren und einem Schrittmotortreiber?",
+          "a": "Eine H-Brücke schaltet die Versorgungspolarität über eine Spule um – genau das Richtige für Gleichstrommotoren, bei denen Sie eine Richtungs- und PWM-Geschwindigkeitssteuerung wünschen.\n\nEin Schritttreiber **regelt den Strom** durch jede Spule der Reihe nach, wodurch diskrete Schritte erzeugt werden. Wenn Sie eine einfache H-Brücke für einen Schrittmotor verwenden, gibt es keine Strombegrenzung und einen heißen Motor."
+        },
+        {
+          "q": "Warum müssen Motorversorgungen und Logikversorgungen getrennt sein, sich aber die Masse teilen?",
+          "a": "Der Strom eines Motors ist groß und abrupt, sodass er die Schiene nach unten zieht und Geräusche erzeugt. Die gemeinsame Nutzung dieser Schiene mit der Steuerung führt zu Resets und fehlerhaften Messwerten.\n\nAber sie müssen sich die **Masse** teilen, sonst haben die Steuersignale keinen gemeinsamen Bezug – getrennte Versorgungen mit einer gemeinsamen Masse sind die einzige Kombination, die funktioniert."
+        }
+      ],
+      "deck_key": "motors-and-drivers"
+    },
+    {
+      "deck": "Messung",
+      "deck_icon": "ruler",
+      "cards": [
+        {
+          "q": "Was misst ein Digitalmultimeter?",
+          "a": "Gleich- und Wechselspannung, Gleichstrom und Widerstand sowie ein Diodentest und ein Durchgangssummer.\n\nViele fügen Kapazität, Frequenz, Temperatur und Transistorverstärkung hinzu – nützlich, aber normalerweise weniger genau als ein spezielles Instrument."
+        },
+        {
+          "q": "Wie misst man Gleichspannung sicher?",
+          "a": "1. Wählen Sie **V⎓**\n2. Rote Sonde an die V-Buchse, schwarze an COM\n3. Berühren Sie die Sonden **parallel** mit dem Teil\n4. Beginnen Sie mit dem höchsten Bereich oder verwenden Sie die automatische Bereichswahl\n\nLassen Sie das rote Kabel niemals in der Strombuchse stecken – ein Messgerät, das auf Strom eingestellt ist, führt zu einem Kurzschluss."
+        },
+        {
+          "q": "Welche zusätzlichen Vorsichtsmaßnahmen sind bei der Messung der Netzwechselspannung erforderlich?",
+          "a": "Wählen Sie **V~**, Sonden in V und COM, parallel zur Schaltung.\n\nHauptspeisen sind tödlich. Verwenden Sie ein Messgerät mit mindestens **CAT II 600 V** und intakten Leitungen, halten Sie eine Hand von leitenden Gegenständen fern und ändern Sie niemals den Bereich, während die Sonden angeschlossen sind."
+        },
+        {
+          "q": "Wie misst man den Strom und was ist der klassische Fehler?",
+          "a": "Der Zähler muss **in Reihe geschaltet sein**: Unterbrechen Sie den Stromkreis und stecken Sie ihn in die Lücke.\n\nDer Fehler besteht darin, den Strom parallel wie eine Spannung zu messen. Im Strommodus liegt im Messgerät fast ein Kurzschluss vor, sodass die Sicherung durchbrennt – oder noch schlimmer."
+        },
+        {
+          "q": "Warum haben Multimeter separate 10-A- und mA-Stromanschlüsse?",
+          "a": "Jeder hat seinen eigenen Shunt und seine eigene Sicherung: Die 10-A-Buchse benötigt mehrere zehn Ampere, die mA-Buchse nur einige hundert Milliampere.\n\nDie Verwendung der mA-Buchse für einen großen Strom führt zum Durchbrennen dieser Sicherung – oft der Grund dafür, dass ein Messgerät plötzlich „aufhört, Strom zu messen“. Wenn die Stärke unbekannt ist, beginnen Sie mit 10 A."
+        },
+        {
+          "q": "Welche beiden Regeln gelten für die Widerstandsmessung?",
+          "a": "**Ausschalten** und im Idealfall ist die Komponente stromlos.\n\nDas Messgerät misst, indem es seinen eigenen Strom einspeist, sodass jede vorhandene Versorgung den Messwert verfälscht – und jeder parallele Pfad durch die Platine wird zusammen mit dem Teil gemessen. Subtrahieren Sie bei kleinen Werten den Eigenwiderstand der Leitungen."
+        },
+        {
+          "q": "Wie testet man eine Diode mit einem Multimeter?",
+          "a": "Im Diodenmodus: Rot an der Anode und Schwarz an der Kathode sollten die Durchlassspannung anzeigen (0,5–0,7 V für Silizium, 0,2–0,3 V für Schottky). Umgekehrt sollte es „offen“ lauten.\n\nNahe 0 V in beide Richtungen bedeutet, dass es kurzgeschlossen ist; Wenn es in beide Richtungen geöffnet ist, ist es tot."
+        },
+        {
+          "q": "Wozu dient der Durchgangstest und wozu nicht?",
+          "a": "Unterhalb von etwa 20–50 Ω piept es – ideal, um eine Unterbrechung zu finden, eine Verbindung zu bestätigen oder auf einen Kurzschluss zu prüfen.\n\nEs handelt sich **keine** Widerstandsmessung: Ein Piepton zeigt nur an, dass der Widerstand niedrig ist, nicht wie niedrig."
+        },
+        {
+          "q": "Was bedeuten die CAT-Sicherheitskategorien des Multimeters?",
+          "a": "* **CAT I** – Niedrigenergieelektronik\n* **CAT II** – Geräte und Steckdosenstromkreise\n* **CAT III** – Verteilertafeln und feste Installation\n* **CAT IV** – Serviceeingang und Außenleitungen\n\nDie Kategorie beschreibt die **transiente Energie**, die das Messgerät überstehen kann, nicht nur die Spannung. Für Werkbankarbeiten mit gelegentlichem Netzanschluss ist CAT II 600 V das Minimum."
+        },
+        {
+          "q": "Welchen Kompromiss gibt es bei der automatischen Bereichswahl?",
+          "a": "Es wählt den Bereich für Sie aus, so dass Sie ihn nicht unterschreiten können – nach einer Änderung dauert es jedoch etwa eine Sekunde, bis er sich eingependelt hat.\n\nBeim Beobachten eines sich bewegenden Werts oder bei wiederholten Messwerten reagiert die manuelle Bereichsauswahl viel schneller."
+        },
+        {
+          "q": "Was müssen Sie vor der Messung eines Kondensators tun und wie genau ist das Ergebnis?",
+          "a": "**Entladen Sie es zuerst** – über einen 1–10 kΩ-Widerstand. Ein geladener Kondensator kann das Messgerät beschädigen.\n\nEinfache Messgeräte sind hinsichtlich der Kapazität nur bis etwa ±5–20 % gut; Ein LCR-Messgerät wird für mehr als nur eine Plausibilitätsprüfung benötigt."
+        },
+        {
+          "q": "Wo liegen die Grenzen einer Strommesszange?",
+          "a": "Es misst das Magnetfeld um einen Leiter herum, sodass nichts abgeklemmt werden muss – die Genauigkeit sinkt jedoch unter etwa einen Ampere, und Milliampere sind unerreichbar.\n\nReine AC-Klemmen sind billig; Für die Gleichstrommessung ist eine Hall-Effekt-Klemme erforderlich. Für Ströme im Mikrocontroller-Maßstab verwenden Sie stattdessen eine Reihenmessung."
+        },
+        {
+          "q": "Wie misst man die aktuelle Auslastung eines kleinen Projekts?",
+          "a": "Unterbrechen Sie die Versorgungsleitung, schalten Sie das Messgerät im mA-Bereich in Reihe und lesen Sie ab.\n\nErwarten Sie ungefähr 50 mA für ein kleines 8-Bit-Board, ungefähr 200 mA für ein Wi-Fi-Modul während der Übertragung und ungefähr 10 µA im Tiefschlaf – ein Bereich, der von keinem einzelnen Messgerät ausreichend abgedeckt wird."
+        },
+        {
+          "q": "Wie finden Sie die Polarität eines nicht gekennzeichneten DC-Adapters?",
+          "a": "Stellen Sie Gleichspannung ein und berühren Sie mit den Sonden die beiden Kontakte. Ein positiver Messwert bedeutet, dass sich die rote Sonde am positiven Kontakt befindet; Ein negativer Wert bedeutet, dass er negativ ist.\n\nDas Schild ist die Antwort – dem Messgerät ist es egal, in welcher Richtung Sie beginnen."
+        },
+        {
+          "q": "Was ist ein Echteffektivwertmessgerät und wann benötigen Sie eines?",
+          "a": "Ein Durchschnittsmessgerät wird unter der Annahme einer sauberen Sinuswelle kalibriert, sodass es alles andere falsch misst. Ein Echteffektivwertmessgerät berechnet den tatsächlichen Effektivwert jeder Wellenform.\n\nWird für PWM, Schaltnetzteile, Motorantriebe und USV-Ausgang benötigt. Für DC-Arbeiten in kleinen Projekten macht das keinen Unterschied."
+        },
+        {
+          "q": "Wie testet man eine Batterie richtig?",
+          "a": "Zuerst die Leerlaufspannung: Eine AA-Zelle zeigt im frischen Zustand 1,5 V und im leeren Zustand weniger als 1,2 V an; Eine Lithium-Ionen-Zelle hat eine Spannung von 4,2 V voll und 3,0 V leer.\n\nDann messen Sie **unter Last**. Eine müde Zelle kann eine gesunde Leerlaufspannung aufweisen und zusammenbrechen, sobald Strom entnommen wird – weshalb die Spannung allein kein Urteil ist."
+        },
+        {
+          "q": "Was ist die sichere Prüfreihenfolge bei Arbeiten an einem stromführenden Stromkreis?",
+          "a": "1. Führen Sie zuerst in COM, dann in V\n2. Schließen Sie zuerst die Erdungssonde und dann die stromführende Sonde an\n3. Ändern Sie niemals den Bereich, während die Sonden angeschlossen sind\n4. Entfernen Sie zuerst die stromführende Sonde, wenn Sie fertig sind\n\nDie Reihenfolge begrenzt, wie lange etwas unter Spannung steht und nicht referenziert wird."
+        },
+        {
+          "q": "Wie testet man einen NPN-Transistor mit einem Multimeter?",
+          "a": "Im Diodenmodus mit Rot auf der Basis: Basis zu Emitter zeigt 0,6–0,7 V an und Basis zu Kollektor zeigt 0,6–0,7 V an. Kollektor zu Emitter zeigt in beide Richtungen geöffnet an.\n\nJedes andere Muster bedeutet, dass es fehlerhaft ist. Dies funktioniert, weil sich der Transistor wie zwei Dioden verhält, die sich die Basis teilen."
+        },
+        {
+          "q": "Wann benötigen Sie ein Oszilloskop anstelle eines Multimeters?",
+          "a": "Ein Multimeter liefert einen gemittelten Wert und kann daher nichts anzeigen, was innerhalb einer Messung variiert:\n\n* PWM-Arbeitszyklus und -Form\n* Serieller Busverkehr (I²C, SPI, UART)\n* Versorgungsstörungen und -spitzen\n* Jede Audio- oder HF-Wellenform\n\nSpeziell für digitale Busse ist ein Logikanalysator oft die günstigere Lösung."
+        },
+        {
+          "q": "Wo liegen die Grenzen der Frequenzfunktion eines Multimeters?",
+          "a": "Einfache Messgeräte sind nur bis zu einigen kHz zuverlässig und benötigen ein einigermaßen sauberes Signal mit ausreichender Amplitude zum Auslösen.\n\nDie Netzfrequenz ist in Ordnung; ein PWM-Signal mit einigen Hundert Hertz ist marginal; Ein serieller Bus liegt völlig außerhalb der Reichweite."
+        }
+      ],
+      "deck_key": "measurement"
+    }
+  ]
+}

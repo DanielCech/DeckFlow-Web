@@ -1,0 +1,94 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Teoria Musical",
+  "interest_icon": "music.note",
+  "interest_key": "music-theory",
+  "deck_q_lang": "pt-br",
+  "deck_a_lang": "pt-br",
+  "deck": "Estrutura de acordes por intervalos",
+  "deck_key": "chord-structure-by-intervals",
+  "deck_icon": "pianokeys",
+  "cards": [
+    {
+      "q": "Quais graus de escala constroem uma **tríade principal**?",
+      "a": "[1 – 3 – 5]{um, terça maior, quinta perfeita}\n\nRaiz, terça maior, quinta perfeita."
+    },
+    {
+      "q": "Quais graus de escala constroem uma **tríade menor**?",
+      "a": "[1 – ♭3 – 5]{um, terça menor, quinta perfeita}\n\nA tríade maior com terça rebaixada."
+    },
+    {
+      "q": "Quais graus de escala constroem uma **tríade diminuta**?",
+      "a": "[1 – ♭3 – ♭5]{um, terça menor, quinta diminuta}\n\nDuas terças menores empilhadas."
+    },
+    {
+      "q": "Quais graus de escala constroem uma **tríade aumentada**?",
+      "a": "[1 – 3 – ♯5]{um, terça maior, quinta aumentada}\n\nDuas terças maiores empilhadas."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de sétima **dominante** (7)?",
+      "a": "[1 – 3 – 5 – ♭7]{um, terça maior, quinta perfeita, sétima menor}\n\nTríade maior mais uma sétima menor."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de **sétima maior** (m7 maior)?",
+      "a": "[1 – 3 – 5 – 7]{um, terça maior, quinta perfeita, sétima maior}\n\nTríade maior mais sétima maior."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de **sétima menor** (m7)?",
+      "a": "[1 – ♭3 – 5 – ♭7]{um, terça menor, quinta perfeita, sétima menor}\n\nTríade menor mais uma sétima menor."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde **menor-maior com sétima** (m♯7 / minMaj7)?",
+      "a": "[1 – ♭3 – 5 – 7]{um, terça menor, quinta perfeita, sétima maior}\n\nTríade menor mais uma sétima **maior** – o acorde tônico do menor harmônico."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de **sétima meio diminuta** (m7♭5 / ø7)?",
+      "a": "[1 – ♭3 – ♭5 – ♭7]{um, terça menor, quinta diminuta, sétima menor}\n\nTríade diminuta mais uma sétima **menor**."
+    },
+    {
+      "q": "Quais graus da escala constroem um acorde de sétima **totalmente diminuta** (dim7 / °7)?",
+      "a": "[1 – ♭3 – ♭5 – ♭♭7]{um, terça menor, quinta diminuta, sétima diminuta}\n\nTrês terças menores empilhadas. O ♭♭7 soa igual a uma sexta."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de **sétima aumentada** (7♯5)?",
+      "a": "[1 – 3 – ♯5 – ♭7]{um, terça maior, quinta aumentada, sétima menor}\n\nTríade aumentada mais uma sétima menor."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de **sexta maior** (6)?",
+      "a": "[1 – 3 – 5 – 6]{um, terça maior, quinta perfeita, sexta maior}\n\nTríade maior mais uma sexta maior – sem sétima."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde **menor de sexta** (m6)?",
+      "a": "[1 – ♭3 – 5 – 6]{um, terça menor, quinta perfeita, sexta maior}\n\nTríade menor com uma sexta **maior** no topo."
+    },
+    {
+      "q": "Qual é a diferença entre **sus2** e **sus4**?",
+      "a": "Ambos **omitem o terceiro**.\n\n* `sus2` — terceira substituída pela segunda maior: 1 – 2 – 5\n* `sus4` — terceira substituída pela quarta perfeita: 1 – 4 – 5"
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde **add9** – e como ele difere de um acorde **9**?",
+      "a": "`add9` = [1 – 3 – 5 – 9]{um, terça maior, quinta perfeita, nona}\n\nUma tríade maior com uma nona maior adicionada e **sem sétima**. Um acorde `9` é uma sétima dominante mais a nona: 1 – 3 – 5 – ♭7 – 9."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de nona **dominante** (9)?",
+      "a": "[1 – 3 – 5 – ♭7 – 9]{um, terça maior, quinta perfeita, sétima menor, nona}\n\nUma sétima dominante estendida por uma nona maior."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de **décima primeira** (11)?",
+      "a": "[1 – 5 – ♭7 – 9 – 11]{um, quinta perfeita, sétima menor, nona, décima primeira}\n\nA terça geralmente é abandonada: entra em conflito com a décima primeira, um semitom acima dela."
+    },
+    {
+      "q": "Quais graus de escala constroem um acorde de **décima terceira** (13)?",
+      "a": "[1 – 3 – 5 – ♭7 – 9 – 13]{um, terça maior, quinta perfeita, sétima menor, nona, décima terceira}\n\nO décimo primeiro é normalmente omitido. Na prática a sonoridade mantém 1, 3, ♭7 e 13."
+    },
+    {
+      "q": "Quais graus de escala constroem um **acorde poderoso** (5)?",
+      "a": "[1 – 5]{um, quinta perfeita}\n\nNão há terceiro, portanto não é maior nem menor."
+    },
+    {
+      "q": "Quais são as duas notas que decidem se um acorde de sétima soa maior, menor, dominante ou diminuto?",
+      "a": "O **terceiro** e o **sétimo**.\n\nSão os tons guias: 3 + 7 é maior, ♭3 + ♭7 é menor, 3 + ♭7 é dominante, ♭3 + ♭♭7 é diminuto. A quinta pode ser omitida sem alterar a qualidade do acorde."
+    }
+  ]
+}

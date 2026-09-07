@@ -1,0 +1,392 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Swift",
+  "interest_icon": "swift",
+  "interest_key": "swift",
+  "deck_q_lang": "ja",
+  "deck_a_lang": "ja",
+  "decks": [
+    {
+      "deck": "値、型、文字列",
+      "deck_icon": "textformat",
+      "cards": [
+        {
+          "q": "Swift の `let` と `var` の違いは何ですか?",
+          "a": "*`let` は **定数** を作成します。これは一度設定すると再割り当てできません。 `var` は、変更可能な**変数**を作成します。*\n```swift\nlet name = \"Sam\"      // fixed\nvar score = 0\nscore += 10           // fine\n```\n*`let` を優先します: `var` が決して変更されない場合、コンパイラーは警告を発し、定数の方が推論しやすくなります。"
+        },
+        {
+          "q": "Swift の型推論とは何ですか?",
+          "a": "*コンパイラは割り当てた値から値の型を計算するため、手動で型を記述することはほとんどありません。型はコンパイル時に固定されたままです — Swift は厳密に型指定されています。*\n```swift\nlet age = 38          // Int\nlet pi = 3.14         // Double\nlet name = \"Sam\"      // String\n```"
+        },
+        {
+          "q": "明示的な型アノテーションが必要になるのはどのような場合ですか?",
+          "a": "*推論する値がない場合、または推論された型が必要な型ではない場合。*\n```swift\nlet score: Double = 0        // not Int\nvar names: [String] = []     // empty, nothing to infer\nlet flags: [String: Bool] = [:]\nlet view: any Shape = circle // a protocol type\n```"
+        },
+        {
+          "q": "文字列補間とは何ですか?",
+          "a": "*`\\( )` を使用して文字列内に値を配置します。これはあらゆる型で動作し、式全体を保持でき、連結よりも高速かつ安全です。*\n```swift\nlet name = \"Sam\"\nlet count = 3\nprint(\"\\(name) has \\(count) items\")\nprint(\"Next year: \\(count + 1)\")\n```"
+        },
+        {
+          "q": "Swift に複数行の文字列を記述するにはどうすればよいですか?",
+          "a": "*三重引用符付き。開始文字と終了文字 `\"\"\"` はそれぞれ別の行に配置する必要があり、終了デリミタのインデントはすべての行から削除されます。\n```swift\nlet text = \"\"\"\n    Line one\n    Line two\n    \"\"\"\n```\n*改行を行わずにソースを読み取れるようにするには、`\\` で行を終了します。*"
+        },
+        {
+          "q": "最も役立つ `String` プロパティとメソッドに名前を付けます。",
+          "a": "- `count` — 文字数\n- `uppercased()` / `lowercased()`\n- `hasPrefix(_:)` / `hasSuffix(_:)`\n- `contains(_:)`、`trimmingCharacters(in:)`\n- `isEmpty` — `count == 0` より安い\n\n*`count` は文字列全体を探索するため、O(n) になります。空かどうかをテストするためだけに使用しないでください。*"
+        },
+        {
+          "q": "Swift の `Double` に `Int` を追加できないのはなぜですか?",
+          "a": "*Swift はタイプセーフであり、**暗黙的な数値変換は実行されません**。型を混合するとコンパイル エラーになります。明示的に変換します。*\n```swift\nlet a = 1\nlet b = 2.0\nlet c = Double(a) + b\n```\n*例外: リテラルは使用されるまで型指定されないため、`let d = 1 + 2.0` はコンパイルされます。*"
+        },
+        {
+          "q": "数値リテラルのアンダースコアは何を意味しますか? `isMultiple(of:)` とは何ですか?",
+          "a": "*アンダースコアはコンパイラによって無視され、純粋に読みやすくするために存在します。 `isMultiple(of:)` は、`% n == 0` のより明確な代替品です。*\n```swift\nlet big = 1_000_000\nlet even = 12.isMultiple(of: 2)   // true\n```"
+        },
+        {
+          "q": "複合代入演算子とは何ですか?",
+          "a": "* 現在の値を読み取り、演算を適用し、それを書き戻す短縮表現。これらは文字列に対しても機能し、`+` は連結を意味します。*\n```swift\nvar score = 10\nscore += 5      // 15\nscore *= 2      // 30\n\nvar name = \"Sam\"\nname += \" Smith\"\n```"
+        }
+      ],
+      "deck_key": "values-types-and-strings"
+    },
+    {
+      "deck": "コレクション",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "空の型付き配列を作成するにはどうすればよいですか?また、それを使って何ができるでしょうか?",
+          "a": "*推論する値がないため、要素の型を明示的に指定します。*\n```swift\nvar names = [String]()\n// or:\nvar names: [String] = []\nnames.append(\"Sam\")\nnames.count                     // 1\nnames.remove(at: 0)\nnames.contains(\"Sam\")\nnames.sorted()\n```"
+        },
+        {
+          "q": "配列、セット、辞書の主な違いは何ですか?",
+          "a": "- **配列** — 順序付けされ、重複を許可し、整数インデックスによってアクセスされます。\n- **セット** — 順序なし、重複なし、非常に高速 `contains()`\n- **辞書** — 順序付けされていないキーと値のペア、キーによってアクセスされます\n\n*メンバーシップのみを考慮する場合はセットを選択し、各値に意味のある名前が必要な場合は辞書を選択します。*"
+        },
+        {
+          "q": "辞書から読み取るとオプションが返されるのはなぜですか?",
+          "a": "※キーが存在しない可能性があるため。オプションではない戻り値を取得するには、添字を付けてデフォルトを指定します。*\n```swift\nlet heights = [\"Sam\": 1.78]\nlet a = heights[\"Sam\"]                // Double?\nlet b = heights[\"Kim\", default: 0]    // Double\n```"
+        },
+        {
+          "q": "何が `Set` を速くし、何を諦めますか?",
+          "a": "*要素はハッシュ値によって格納されるため、`contains()` はサイズに関係なく実質的に定数時間になります。その代わりに、順序と重複が失われます — 既存の要素の `insert()` は何もしません。*\n```swift\nvar words = Set<String>()\nwords.insert(\"swift\")\n// fast even with millions of items\nwords.contains(\"swift\")\n```"
+        },
+        {
+          "q": "辞書をループするにはどうすればよいですか?また、どのような順序で取得できますか?",
+          "a": "***未定義の順序**で `(key, value)` のタプルを繰り返します。順序が重要な場合はキーを並べ替えます。*\n```swift\nfor (key, value) in heights {\n    print(\"\\(key) is \\(value)\")\n}\n\nfor key in heights.keys.sorted() { ... }\n```"
+        }
+      ],
+      "deck_key": "collections"
+    },
+    {
+      "deck": "列挙型",
+      "deck_icon": "checklist",
+      "cards": [
+        {
+          "q": "基本的な列挙型を作成して使用するにはどうすればよいですか?",
+          "a": "*列挙型は、名前付きケースの固定セットを定義するため、コンパイラは、`String` が喜んで受け入れる無効な値を拒否できます。\n```swift\nenum Weekday {\n    case monday, tuesday, wednesday\n}\n\nvar day = Weekday.monday\nday = .tuesday          // type already known\n```"
+        },
+        {
+          "q": "enum の生の値と `CaseIterable` とは何ですか?",
+          "a": "*生の値は各ケースを `String` または番号で裏付け、失敗可能な `init?(rawValue:)` を与えます。 `CaseIterable` は、`allCases` アレイを合成します。*\n```swift\nenum Suit: String, CaseIterable {\n    case hearts, spades\n}\n\nSuit(rawValue: \"hearts\")   // Optional(.hearts)\nSuit.allCases.count        // 2\n```"
+        },
+        {
+          "q": "値が関連付けられた列挙型とは何ですか?",
+          "a": "*ケースは追加のデータを運ぶことができるため、1 つのタイプは状態 ** と** そのペイロードをモデル化します。*\n```swift\nenum Activity {\n    case bored\n    case running(destination: String)\n    case talking(topic: String)\n}\n\nlet a = Activity.running(destination: \"park\")\n\nswitch a {\ncase .running(let destination):\n    print(\"Going to \\(destination)\")\ndefault:\n    break\n}\n```"
+        },
+        {
+          "q": "固定値セットとして `String` より列挙型を好むのはなぜでしょうか?",
+          "a": "*列挙型はコンパイル時にチェックされます。タイプミスはビルド エラーになり、`switch` 網羅性が強制され、オートコンプリートが機能し、比較は文字列比較よりも低コストです。"
+        }
+      ],
+      "deck_key": "enums"
+    },
+    {
+      "deck": "制御フロー",
+      "deck_icon": "arrow.trianglehead.topright.capsulepath.clockwise",
+      "cards": [
+        {
+          "q": "`if` 条件は Swift で何を評価する必要がありますか?",
+          "a": "*A `Bool` — 他には何もありません。真実性がないため、`if someString` または `if count` はコンパイルできません。*\n```swift\nif name.isEmpty {\n    print(\"No name\")\n} else if name.count > 20 {\n    print(\"Too long\")\n} else {\n    print(\"OK\")\n}\n```"
+        },
+        {
+          "q": "`&&` と `||` は Swift でどのように動作しますか?",
+          "a": "*`&&` は論理 AND、`||` は論理 OR、および両方 **短絡**: 右側は結果を変更できる場合にのみ評価されます。*\n```swift\nif isLoggedIn && hasSubscription { ... }\n```\n*明確にするためにこれらを混合するには括弧が必要です — Swift は `||` よりも `&&` の優先順位が高くなります。"
+        },
+        {
+          "q": "`switch` は、Swift の `if/else` チェーンとどのように異なりますか?",
+          "a": "*`switch` は **網羅的**である必要があります (すべてのケースをリストできない場合は `default` を追加します)。各値は 1 回だけチェックされ、暗黙的なフォールスルーはありません。実際に必要な場合は、`fallthrough` キーワードを使用してください。*\n```swift\nswitch weather {\ncase .rain: print(\"Umbrella\")\ncase .sun: print(\"Sunscreen\")\ndefault:   print(\"Whatever\")\n}\n```"
+        },
+        {
+          "q": "`switch` で範囲を一致させ、追加の条件を追加するにはどうすればよいですか?",
+          "a": "*ケースは範囲に一致する可能性があり、`where` 句により任意のテストが追加されます。*\n```swift\nswitch score {\ncase 0..<50:   print(\"Fail\")\ncase 50...100: print(\"Pass\")\ndefault:       print(\"Invalid\")\n}\n\nswitch day {\ncase let d where d.isWeekend: print(\"Rest\")\ndefault: print(\"Work\")\n}\n```"
+        },
+        {
+          "q": "三項条件演算子とは何ですか?",
+          "a": "*値を生成する 1 行の `if/else`。 **WTF — What、True、False** と読みます。何をチェックするか、True の場合は値、False の場合は値。*\n```swift\nlet status = age >= 18 ? \"Adult\" : \"Minor\"\n```\n*SwiftUI で重要なのは、`body` にはステートメントではなく式が必要であるためです。*"
+        },
+        {
+          "q": "`1...5` と `1..<5` の違いは何ですか?",
+          "a": "*`...` は両端を含む**クローズドレンジ**です。 `..<` は上限を除いた**ハーフオープンレンジ**です。ハーフオープンは配列インデックスと正確に一致します。*\n```swift\nfor i in 1...5 { }    // 1,2,3,4,5\nfor i in 1..<5 { }    // 1,2,3,4\nfor i in 0..<names.count { }\n```\n*値が必要ない場合は、ループ変数として`_`を使用してください。*"
+        },
+        {
+          "q": "`while` と `repeat` をいつ使用しますか?",
+          "a": "*`while` は各パスの前**に状態をチェックするため、ボディが走行しない可能性があります。 `repeat`/`while` は**後**をチェックするため、本体は常に少なくとも 1 回実行されます*。\n```swift\nwhile queue.isEmpty == false { ... }\n\nrepeat {\n    roll = Int.random(in: 1...6)\n} while roll != 6\n```"
+        },
+        {
+          "q": "`break` と `continue` は何をしますか?また、ラベル付きステートメントとは何ですか?",
+          "a": "*`continue` は次の反復にスキップします。 `break` はループを完全に終了します。ラベルを使用すると、`break` はネストされたループの内側から **外側** ループを抜け出すことができます。\n```swift\nouter: for a in 1...10 {\n    for b in 1...10 {\n        if a * b == 50 { break outer }\n    }\n}\n```"
+        }
+      ],
+      "deck_key": "control-flow"
+    },
+    {
+      "deck": "機能",
+      "deck_icon": "function",
+      "cards": [
+        {
+          "q": "パラメーターと戻り値を含む Swift 関数の構文は何ですか?",
+          "a": "*パラメータは型指定されており、戻り値の型は `->` に従います。*\n```swift\nfunc rollDice(sides: Int, count: Int) -> [Int] {\n    var rolls = [Int]()\n    for _ in 0..<count {\n        rolls.append(Int.random(in: 1...sides))\n    }\n    return rolls\n}\n\nlet rolls = rollDice(sides: 6, count: 4)\n```"
+        },
+        {
+          "q": "`return` キーワードを省略できるのはどのような場合ですか?",
+          "a": "*関数本体が **単一の式**の場合、Swift はそれを暗黙的に返します。同じルールにより、SwiftUI の `body` も 1 つのビューになります*。\n```swift\nfunc double(_ n: Int) -> Int {\n    n * 2\n}\n```"
+        },
+        {
+          "q": "関数から複数の値を返すにはどうすればよいでしょうか?",
+          "a": "***タプル**を返します。辞書とは異なり、そのメンバーには名前が付けられ、常に存在し、コンパイル時にチェックされます。*\n```swift\nfunc getUser() -> (first: String, last: String) {\n    (first: \"Ada\", last: \"Lovelace\")\n}\n\nlet user = getUser()\nprint(user.first)\nlet (first, last) = getUser()   // destructuring\n```"
+        },
+        {
+          "q": "外部パラメータ名と内部パラメータ名の違いは何ですか?",
+          "a": "*最初の名前は呼び出し側が記述する名前、2 番目は本体が使用する名前です。 `_` は、呼び出しサイトのラベルを完全に削除します。*\n```swift\nfunc emit(text: String, times count: Int) {\n    // 'times' at call site,\n    // 'count' inside\n}\nemit(text: \"hi\", times: 3)\n\nfunc greet(_ person: String) { }\ngreet(\"Sam\")\n```"
+        },
+        {
+          "q": "デフォルトのパラメータ値はどのように機能しますか?",
+          "a": "*パラメーター `= value` を指定すると、呼び出し側はそれを省略できます。共通の呼び出しサイトが短くなるように、デフォルトを持つパラメーターは最後に来る必要があります。*\n```swift\nfunc greet(_ person: String, formally: Bool = false) { }\n\ngreet(\"Sam\")\ngreet(\"Sam\", formally: true)\n```"
+        },
+        {
+          "q": "可変個引数パラメーターとは何ですか?",
+          "a": "*`...` で書かれた型の 0 個以上の値を受け入れるパラメーター。関数内では配列です。*\n```swift\nfunc square(numbers: Int...) {\n    for n in numbers { print(n * n) }\n}\nsquare(numbers: 1, 2, 3)\n```\n*`print()` 自体は可変長引数です。*"
+        },
+        {
+          "q": "`inout` は何をしますか?",
+          "a": "*関数が呼び出し元の変数をその場で変更できるように、パラメーターを参照によって渡します。引数は `var` である必要があり、`&` とともに渡されます。*\n```swift\nfunc double(_ number: inout Int) {\n    number *= 2\n}\n\nvar score = 10\ndouble(&score)   // score == 20\n```"
+        }
+      ],
+      "deck_key": "functions"
+    },
+    {
+      "deck": "エラー処理",
+      "deck_icon": "exclamationmark.shield",
+      "cards": [
+        {
+          "q": "スロー関数はどのように作成して呼び出すのでしょうか?",
+          "a": "*`throws`とマークし、`Error`に準拠した値を投げ、`do`/`catch`の中に`try`を入れて呼び出します。\n```swift\nenum PasswordError: Error { case short, obvious }\n\nfunc check(_ password: String) throws -> String {\n    if password.count < 5 { throw PasswordError.short }\n    return \"OK\"\n}\n\ndo {\n    let result = try check(\"12345\")\n} catch PasswordError.short {\n    print(\"Too short\")\n} catch {\n    print(\"Error: \\(error.localizedDescription)\")\n}\n```"
+        },
+        {
+          "q": "`try?` と `try!` は何をしますか?",
+          "a": "*`try?` は、スローされたエラーを `nil` に変換し、オプションの結果を提供します。 `try!` は呼び出しが失敗するはずがなく、失敗した場合は **クラッシュ** することをアサートします。失敗がプログラマ エラーである場合にのみ使用してください。*\n```swift\nif let result = try? check(password) { ... }\nlet forced = try! check(\"known-good\")\n```"
+        },
+        {
+          "q": "スロー呼び出しをオプションとしてどのように処理しますか?",
+          "a": "*`try?` はスローされたエラーをすべて `nil` に変換するため、失敗した**理由**を気にしない場合、呼び出しは直接 `if let` または `??` に適合します。*\n```swift\nif let user = try? getUser(id: 23) {\n    print(user.name)\n}\n```"
+        }
+      ],
+      "deck_key": "error-handling"
+    },
+    {
+      "deck": "クロージャとキャプチャ",
+      "deck_icon": "curlybraces",
+      "cards": [
+        {
+          "q": "Swift のクロージャとは何ですか?",
+          "a": "*変数に保存したり、関数に渡したり、名前のない関数を返したりできる機能のブロック。そのパラメータと戻り値の型は、`in` によって本体から区切られ、中括弧の**内側**に存在します。\n```swift\nlet greet = { (name: String) -> String in\n    \"Hello, \\(name)!\"\n}\n\nprint(greet(\"Sam\"))\n```"
+        },
+        {
+          "q": "関数の型とはどのようなものですか?また、それがなぜ重要なのでしょうか?",
+          "a": "*関数は、形式 `(ParamTypes) -> ReturnType` の型を持つ第一級の値です。関数が値として保存される場合、パラメーター **ラベルは削除されます**。\n```swift\nlet fn: (Int, Int) -> Int = max\nfn(1, 2)\n\nvar action: () -> Void = { print(\"Tapped\") }\n```"
+        },
+        {
+          "q": "後続クロージャ構文とは何ですか?",
+          "a": "*最後のパラメータがクロージャの場合は、それを括弧の外に移動し、空の括弧を完全に削除できます。これが、SwiftUI の `Button { }` をそのように読み取る理由です。*\n```swift\nlet sorted = names.sorted { a, b in\n    a < b\n}\n\nButton(\"Tap me\") {\n    print(\"Tapped\")\n}\n```"
+        },
+        {
+          "q": "短縮引数名とは何ですか?",
+          "a": "*クロージャ内では、Swift は、名前を付けなかったパラメータに対して `$0`、`$1`、… を提供します。クロージャーが短く、意味が明らかな場合に使用します。*\n```swift\nlet sorted = names.sorted { $0 < $1 }\nlet upper = names.map { $0.uppercased() }\nlet longs = names.filter { $0.count > 4 }\n```"
+        },
+        {
+          "q": "関数をパラメータとして受け入れるにはどうすればよいでしょうか?",
+          "a": "※パラメータは関数型で宣言してください。通常、呼び出し元は末尾のクロージャを渡します。*\n```swift\nfunc build(\n    count: Int,\n    using make: () -> Int\n) -> [Int] {\n    (0..<count).map { _ in make() }\n}\n\nlet values = build(count: 5) {\n    Int.random(in: 1...20)\n}\n```"
+        },
+        {
+          "q": "複数の末尾クロージャはどのように機能しますか?",
+          "a": "*最初の末尾クロージャにはラベルが付いていません。ラベルを保持した後はすべて。 SwiftUI は、`Button(action:label:)` などにこれを使用します。*\n```swift\nrun {\n    print(\"First\")\n} then: {\n    print(\"Second\")\n} finally: {\n    print(\"Third\")\n}\n```"
+        },
+        {
+          "q": "クロージャが値を「キャプチャ」するとはどういう意味ですか?",
+          "a": "*クロージャは、周囲のスコープから使用する変数への強い参照を保持し、それらを生きたままにします。そのため、呼び出し間で変数を変更することもできます。*\n```swift\nfunc makeCounter() -> () -> Int {\n    var count = 0\n    return {\n        count += 1\n        return count\n    }\n}\n\nlet next = makeCounter()\nnext()   // 1\nnext()   // 2\n```\n*クラス内で `self` をキャプチャすると、保持サイクルが発生します。クロージャが呼び出しよりも存続する場合は、`[weak self]` を使用します。*"
+        },
+        {
+          "q": "`@escaping` とはどういう意味ですか?",
+          "a": "*これは、関数が戻った**後**に保存され呼び出されるクロージャー パラメーター (完了ハンドラーなど) をマークします。非エスケープがデフォルトであり、エスケープするクロージャは `self` を明示的にキャプチャする必要があります。\n```swift\nfunc load(then completion: @escaping (Data) -> Void) {\n    pending.append(completion)\n}\n```"
+        }
+      ],
+      "deck_key": "closures-and-capture"
+    },
+    {
+      "deck": "構造体と値のセマンティクス",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "メンバーごとの初期化子とは何ですか?",
+          "a": "*構造体は、宣言順に、保存されているすべてのプロパティを取得する初期化子を自動的に取得します。デフォルト値を持つプロパティは省略できます。*\n```swift\nstruct Album {\n    let title: String\n    var year = 2024\n}\n\nlet a = Album(title: \"Kind of Blue\")\nlet b = Album(\n    title: \"Blue Train\",\n    year: 1958\n)\n```"
+        },
+        {
+          "q": "保存されたプロパティと計算されたプロパティの違いは何ですか?",
+          "a": "*保存されたプロパティはメモリ内に値を保持します。計算プロパティは読み取られるたびにコードを実行するため、常に現在の状態が反映されます。また、明示的な型が必要です。*\n```swift\nstruct Employee {\n    let vacationAllocated = 14\n    var vacationTaken = 0\n\n    var vacationRemaining: Int {\n        vacationAllocated - vacationTaken\n    }\n}\n```"
+        },
+        {
+          "q": "計算されたプロパティを書き込み可能にするにはどうすればよいですか?",
+          "a": "*`get` ブロックと `set` ブロックの両方を提供します。 `set` 内では、名前を変更しない限り、受信値は `newValue` と呼ばれます。*\n```swift\nvar vacationRemaining: Int {\n    get { vacationAllocated - vacationTaken }\n    set { vacationTaken = vacationAllocated - newValue }\n}\n```"
+        },
+        {
+          "q": "財産監視員とは何ですか?",
+          "a": "*`didSet` はプロパティの変更後に実行され (`oldValue` が使用可能)、`willSet` はその前に実行されます (`newValue` が使用されます)。高速に保ちます。値を変更しないものも含め、**すべて**の書き込みで実行されます。*\n```swift\nvar score = 0 {\n    didSet { print(\"Was \\(oldValue), now \\(score)\") }\n}\n```"
+        },
+        {
+          "q": "一部の構造体メソッドに `mutating` キーワードが必要なのはなぜですか?",
+          "a": "*構造体は値型であり、`let` に保持される構造体は完全に定数です。メソッド `mutating` をマークすると、プロパティが変更されることが Swift に伝えられるため、メソッドは `var` インスタンスでのみ呼び出すことができます。*\n```swift\nstruct Person {\n    var name: String\n    mutating func anonymize() { name = \"Anonymous\" }\n}\n```"
+        },
+        {
+          "q": "独自の `init` を作成すると、メンバーごとの初期化子はどうなりますか?",
+          "a": "*あなたはそれを失います。両方を保持するには、カスタム初期化子を **拡張子** に配置します — Swift で、合成された初期化子はそのままにします*。\n```swift\nstruct Player {\n    let name: String\n    let number: Int\n}\n\nextension Player {\n    init(name: String) {\n        self.name = name\n        self.number = Int.random(in: 1...99)\n    }\n}\n```"
+        },
+        {
+          "q": "Swift のアクセス制御レベルは何ですか?",
+          "a": "- `private` — このタイプ (およびその拡張子) のみ\n- `private(set)` — どこでも読み取り可能、内部のみ書き込み可能\n- `fileprivate` — このファイルのみ\n- `internal` — このモジュール (デフォルト)\n- `public` / `open` — その他のモジュール\n\n*注意: `private` 格納プロパティは、外部呼び出し元のメンバーごとの初期化子を削除します。*"
+        },
+        {
+          "q": "静的プロパティとインスタンス プロパティの違いは何ですか?",
+          "a": "*`static` メンバーは **type** 自体に属しているため、共有コピーが 1 つあり、インスタンスは必要ありません。インスタンス コードは、`self` ではなく、タイプ名 (または `Self`) を介してそれに到達します。*\n```swift\nstruct School {\n    static var studentCount = 0\n    static let maxSize = 500\n\n    static func add() { studentCount += 1 }\n}\n\nSchool.add()\n```\n*これは、共有サンプル/プレビュー データの通常のホームです。*"
+        },
+        {
+          "q": "構造体が値型であるとはどういう意味ですか?",
+          "a": "*構造体を代入または渡すと**コピー**されるため、コピーを変更しても元の構造には影響しません。 Swift はコピーオンライトでこれを最適化するため、コピーは実際には変異時にのみ発生します。*\n```swift\nvar a = Album(title: \"Kind of Blue\")\nvar b = a\nb.year = 2000  // a is untouched\n```"
+        }
+      ],
+      "deck_key": "structs-and-value-semantics"
+    },
+    {
+      "deck": "クラスと参照セマンティクス",
+      "deck_icon": "cube",
+      "cards": [
+        {
+          "q": "構造体とクラスの 5 つの主な違いは何ですか?",
+          "a": "1. クラスは別のクラスから**継承**できます\n2. クラスは **メンバーごとの初期化子を取得しません**\n3. クラスは **参照型** - コピーは 1 つのインスタンスを共有します\n4. `let` クラス インスタンスは引き続き `var` プロパティを変更できます\n5. クラスには **初期化解除子** を含めることができます\n\n*#3 と #4 のため、クラス メソッドには `mutating` が必要ありません。*"
+        },
+        {
+          "q": "Swift では継承はどのように機能しますか?",
+          "a": "*サブクラスは親からすべてを取得し、さらに追加することができます。サブクラス化を禁止するには、クラス `final` をマークします。*\n```swift\nclass Employee {\n    let hours: Int\n    init(hours: Int) { self.hours = hours }\n    func work() { print(\"Working \\(hours)h\") }\n}\n\nfinal class Developer: Employee {\n    func code() { print(\"Coding\") }\n}\n```"
+        },
+        {
+          "q": "メソッドをオーバーライドするにはどうすればよいですか?また、`override` が必要になるのはどのような場合ですか?",
+          "a": "*サブクラスが親のメソッドを同じ名前とシグネチャで置き換えるときは常に — Swift によりそれが必須になり、何もオーバーライドされていない場所で使用するとエラーになります。 `super.method()` に電話して、親の行動を維持してください。*\n```swift\nclass Developer: Employee {\n    override func work() {\n        super.work()\n        print(\"…on Swift\")\n    }\n}\n```"
+        },
+        {
+          "q": "クラス初期化子の規則は何ですか?",
+          "a": "*クラスは格納されているすべてのプロパティに値を与える必要があり、サブクラス初期化子は独自のプロパティを設定した **後** `super.init()` を呼び出す必要があります。サブクラスが新しい初期化子を追加しない場合、親の初期化子を継承します。*\n```swift\nclass Car: Vehicle {\n    let isConvertible: Bool\n\n    init(isElectric: Bool, isConvertible: Bool) {\n        self.isConvertible = isConvertible\n        super.init(isElectric: isElectric)\n    }\n}\n```"
+        },
+        {
+          "q": "クラスインスタンスをコピーするとどうなるでしょうか?",
+          "a": "*どちらの名前も **同じ** オブジェクトを指しているため、一方の名前による変更はもう一方の名前からも認識できます。値のセマンティクスが必要な場合は、`let` と意図的な `copy()` メソッドを使用します。*\n```swift\nclass User { var name = \"Sam\" }\n\nlet a = User()\nlet b = a\nb.name = \"Kim\"\nprint(a.name)   // \"Kim\"\n```"
+        },
+        {
+          "q": "ディイニシャライザーとは何ですか?",
+          "a": "*`deinit` は、インスタンスへの最後の参照がなくなると実行されます。これはパラメーターをとらず、手動で呼び出されることはなく、クラスのみがパラメーターを持ちます。*\n```swift\nclass User {\n    deinit { print(\"Destroyed\") }\n}\n```"
+        },
+        {
+          "q": "`let` に格納されているクラス インスタンスのプロパティを変更できるのはなぜですか?",
+          "a": "*定数はオブジェクトではなく**参照**に適用されるためです。定数を別のインスタンスで指すことはできませんが、定数が指す定数を自由に変更できます。それを防ぐには、プロパティ `let` を宣言します。*\n```swift\nlet user = User()\nuser.name = \"Kim\"   // fine\nuser = User()       // error\n```"
+        }
+      ],
+      "deck_key": "classes-and-reference-semantics"
+    },
+    {
+      "deck": "プロトコルと拡張機能",
+      "deck_icon": "checkmark.seal",
+      "cards": [
+        {
+          "q": "プロトコルとは何ですか?",
+          "a": "*実装を伴わない、型が提供する必要があるプロパティとメソッドを記述する規約。これにより、具体的な型ではなく機能に対してコードを書くことができます。*\n```swift\nprotocol Vehicle {\n    var name: String { get }\n    var currentPassengers: Int { get set }\n    func estimateTime(for distance: Int) -> Int\n}\n```"
+        },
+        {
+          "q": "プロトコルにおける`{ get }` と `{ get set }` は何を意味しますか?",
+          "a": "*`{ get }` は、プロパティが読み取り可能であることを必要とします。準拠する型は、定数または計算されたプロパティでそれを満たすことができます。 `{ get set }` は書き込み可能であることも必要とするため、`let` はそれを満たしません。*"
+        },
+        {
+          "q": "プロトコルはどのようにポリモーフィズムを可能にするのでしょうか?",
+          "a": "*どの関数もプロトコル タイプを受け入れ、どのタイプを取得したかを知らなくても、準拠するすべてのタイプで動作します。\n```swift\nfunc commute(distance: Int, using vehicle: some Vehicle) {\n    print(vehicle.estimateTime(for: distance))\n}\n\ncommute(distance: 100, using: Car())\ncommute(distance: 100, using: Bicycle())\n```"
+        },
+        {
+          "q": "拡張機能で追加できるものとできないものは何ですか?",
+          "a": "*拡張機能は、計算されたプロパティ、メソッド、イニシャライザ、添え字、およびプロトコル準拠を既存の型 (所有していない型であっても) に追加できます。保存されたプロパティを追加することは**できません**。\n```swift\nextension String {\n    var trimmed: String {\n        trimmingCharacters(in: .whitespacesAndNewlines)\n    }\n}\n```"
+        },
+        {
+          "q": "プロトコル拡張とは何ですか?なぜそれが強力なのでしょうか?",
+          "a": "***デフォルト実装**をすべての適合型に一度に追加するため、プロトコルは要件だけでなく動作を出荷できます。適合する型は引き続きそれをオーバーライドする可能性があります。*\n```swift\nextension Collection {\n    var isNotEmpty: Bool { isEmpty == false }\n}\n\n[1, 2, 3].isNotEmpty   // works on Array, Set, Dictionary…\n```"
+        },
+        {
+          "q": "プロトコル指向プログラミングとは何ですか?",
+          "a": "*深いクラス階層ではなく、小規模なプロトコルとプロトコル拡張を中心に設計します。値型は継承なしで共有動作を取得し、型はスーパークラスを 1 つしか持つことができない多くのプロトコルを採用できます。*"
+        },
+        {
+          "q": "`some Protocol` とプレーンプロトコルタイプの違いは何ですか?",
+          "a": "*`some Protocol` は **不透明な戻り値** です。呼び出し元はプロトコルが満たされていることのみを知っていますが、コンパイラーは基礎となる型を 1 つだけ正確に知っています。そのため、コンパイラーは高速であり、完全な型情報を保持します。プレーンな (存在する) プロトコル タイプは、間接性を犠牲にして、異なる時点で異なるタイプを保持できます。*\n```swift\nfunc makeShape() -> some Shape { Circle() }\nvar body: some View { Text(\"Hi\") }\n```"
+        },
+        {
+          "q": "独自の型をソート可能にするにはどうすればよいでしょうか?",
+          "a": "※`Comparable`に準拠し、`<`を実装してください。 `sorted()`、`min()`、`max()` およびその他の比較演算子を無料で入手できます。*\n```swift\nstruct User: Comparable {\n    let name: String\n\n    static func <(lhs: User, rhs: User) -> Bool {\n        lhs.name < rhs.name\n    }\n}\n\nusers.sorted()\n```"
+        }
+      ],
+      "deck_key": "protocols-and-extensions"
+    },
+    {
+      "deck": "オプション",
+      "deck_icon": "lightbulb",
+      "cards": [
+        {
+          "q": "オプションとは何ですか?",
+          "a": "※値を保持するか、`nil`を保持する型です。これは、実行時にクラッシュするのではなく、コンパイル時に「値なし」の場合を処理することを強制します。これは本物のラッパーであり、`Int?` は `Int` ではありません。*\n```swift\nlet ages = [\"Sam\": 38]\nlet age = ages[\"Kim\"]   // Int? — nil\n```"
+        },
+        {
+          "q": "`if let` はどのように機能しますか?",
+          "a": "*オプションのラップを解除し、値が存在する場合にのみ本体を実行します。ラップされていない定数は中括弧内にあり、同じ名前をシャドウイングするのは慣用的です。*\n```swift\nif let age {\n    print(\"Age is \\(age)\")   // Int here\n} else {\n    print(\"Unknown\")\n}\n```"
+        },
+        {
+          "q": "`if let` と `guard let` の違いは何ですか?",
+          "a": "*`if let` は値**が存在する**場合に本体を実行します。 `guard let` は、値が**欠落**している場合に本体を実行し、スコープを終了する必要がありますが、ラップされていない値は関数の残りの部分で使用可能なままです。これにより、ハッピー パスはインデントされません。*\n```swift\nfunc greet(_ name: String?) {\n    guard let name else {\n        print(\"No name\")\n        return\n    }\n    print(\"Hello, \\(name)\")\n}\n```"
+        },
+        {
+          "q": "nil合体演算子は何をするのでしょうか?",
+          "a": "*`??` はオプションのラップを解除するか、`nil` の場合はデフォルトを提供します。結果はオプションではありません。これは連鎖し、辞書検索や失敗可能なイニシャライザを含む任意のオプションで動作します。*\n```swift\nlet name = user.name ?? \"Anonymous\"\nlet score = Int(input) ?? 0\n```"
+        },
+        {
+          "q": "オプションのチェーンとは何ですか?",
+          "a": "* `?.` と書くと、値が存在する場合にのみプロパティを読み取るかメソッドを呼び出します。それ以外の場合、式全体は `nil` になります。チェーンは最初の `nil` で停止し、結果は常にオプションです。*\n```swift\nlet first = names.first?.uppercased()   // String?\nlet count = user?.address?.city.count ?? 0\n```"
+        },
+        {
+          "q": "失敗可能なイニシャライザとは何ですか?",
+          "a": "*`init?` は入力が無効な場合に `nil` を返す可能性があるため、呼び出し元はクラッシュする代わりにオプションのインスタンスを取得します。*\n```swift\nstruct Employee {\n    let id: String\n    init?(id: String) {\n        guard id.count == 9 else { return nil }\n        self.id = id\n    }\n}\n\nlet url = URL(string: \"https://example.com\")   // URL?\n```"
+        },
+        {
+          "q": "`!` による強制アンラップが危険なのはなぜですか?",
+          "a": "※値が`nil`の場合はすぐにクラッシュします。 `nil` が大々的に表面化させたいプログラマーエラーを意味する場合にのみ使用してください。それ以外の場合は、`if let`、`guard let`、または `??` を使用してください。*"
+        },
+        {
+          "q": "複数のオプションを一度に展開するにはどうすればよいでしょうか?",
+          "a": "※`if let` または `guard let` をカンマで区切って 1 つに連結します。各バインディングは以前のバインディングを使用でき、プレーンな `Bool` 条件を追加できます。*\n```swift\nif let first, let last, first.isEmpty == false {\n    print(\"\\(first) \\(last)\")\n}\n```"
+        }
+      ],
+      "deck_key": "optionals"
+    }
+  ]
+}

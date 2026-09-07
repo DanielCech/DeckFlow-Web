@@ -1,0 +1,797 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "SwiftUI",
+  "interest_icon": "square.stack.3d.up",
+  "interest_key": "swiftui",
+  "deck_q_lang": "cs",
+  "deck_a_lang": "cs",
+  "decks": [
+    {
+      "deck": "Struktura aplikace a formuláře",
+      "deck_icon": "app.badge",
+      "cards": [
+        {
+          "q": "Jaká je základní struktura aplikace SwiftUI?",
+          "a": "*Struktura odpovídající `App`, označená `@main`, jejíž `body` vrací jeden nebo více `Scene`. `WindowGroup` je standardní scéna a má první pohled.*\n```swift\n@main\nstruct MyApp: App {\n    var body: some Scene {\n        WindowGroup {\n            ContentView()\n        }\n    }\n}\n```"
+        },
+        {
+          "q": "Co znamená `some View` na majetku `body`?",
+          "a": "*Je to neprůhledný návratový typ: vlastnost vrací **jeden konkrétní** typ odpovídající `View`, ale volající nemusí vědět který. Na tom záleží, protože typy zobrazení SwiftUI jsou hluboce vnořené generika, která byste nikdy nechtěli psát ručně.*"
+        },
+        {
+          "q": "K čemu je `Form`?",
+          "a": "*Posouvací seznam ovládacích prvků, který přejímá vzhled ve stylu nastavení platformy. Seskupuje vstupní řádky a zpracovává mezery, oddělovače a styly za vás.*\n```swift\nForm {\n    Text(\"Hello\")\n    TextField(\"Name\", text: $name)\n}\n```"
+        },
+        {
+          "q": "Jak rozdělíte formulář na části a proč?",
+          "a": "*Zalamujte řádky do `Section`, volitelně se záhlavím. Kromě vzhledu jde také o to, jak obejít limit 10 dětí tvůrce pohledů.*\n```swift\nForm {\n    Section(\"Details\") {\n        TextField(\"Name\", text: $name)\n    }\n    Section {\n        Text(\"Footer content\")\n    }\n}\n```"
+        },
+        {
+          "q": "Jaký je limit 10 zhlédnutí a jak jej obejít?",
+          "a": "*Uzávěr `@ViewBuilder` akceptuje maximálně 10 přímých potomků, protože SwiftUI definuje přetížení `TupleView` až na 10. Seskupení souvisejících pohledů v `Group`, `Section`, nebo zásobník, což je obvykle lepší – nebo extrahovat"
+        },
+        {
+          "q": "Jak získáte název a navigační lištu?",
+          "a": "*Zabalte obsah do `NavigationStack` a připojte `navigationTitle` k **obsahu**, nikoli k samotnému balíčku.*\n```swift\nNavigationStack {\n    Form { … }\n        .navigationTitle(\"Settings\")\n        .navigationBarTitleDisplayMode(.inline)\n}\n```"
+        },
+        {
+          "q": "Jak čtete text od uživatele?",
+          "a": "*`TextField` se váže na `String`. U čísel svažte formát, aby převod provedl SwiftUI.*\n```swift\nTextField(\"Name\", text: $name)\n\nTextField(\"Amount\", value: $amount,\n          format: .currency(code: \"USD\"))\n    .keyboardType(.decimalPad)\n```\n*`keyboardType` je pouze nápověda – hardwarová klávesnice může stále odeslat cokoliv.*"
+        },
+        {
+          "q": "Jak odstraníte klávesnici z formuláře?",
+          "a": "*Sledujte zaostřené pole pomocí `@FocusState` a poté jej nastavte na `nil` – obvykle pomocí tlačítka na panelu nástrojů klávesnice.*\n```swift\n@FocusState private var amountIsFocused: Bool\n\nTextField(\"Amount\", value: $amount, format: .number)\n    .focused($amountIsFocused)\n    .toolbar {\n        if amountIsFocused {\n            ToolbarItemGroup(placement: .keyboard) {\n                Spacer()\n                Button(\"Done\") { amountIsFocused = false }\n            }\n        }\n    }\n```"
+        }
+      ],
+      "deck_key": "app-structure-and-forms"
+    },
+    {
+      "deck": "Stav a vazby",
+      "deck_icon": "link",
+      "cards": [
+        {
+          "q": "Proč pohled SwiftUI nemůže pouze uložit měnitelnou vlastnost?",
+          "a": "*Pohledy jsou struktury a metody struct nemohou změnit vlastnosti, pokud nejsou `mutating` – což `body` nikdy nemůže být. `@State` přesune hodnotu do úložiště, které SwiftUI vlastní a uchovává při životě během mnoha případů, kdy je vaše struktura pohledu znovu vytvořena.*"
+        },
+        {
+          "q": "Co dělá `@State`?",
+          "a": "*Ukládá malý kousek dat hodnotového typu mimo strukturu pohledu a znovu vyvolává `body`, kdykoli se hodnota změní. Je určen pro zobrazení místních dat, proto jej označte `private`.*\n```swift\n@State private var tapCount = 0\n\nButton(\"Tapped \\(tapCount)\") {\n    tapCount += 1\n}\n```"
+        },
+        {
+          "q": "Co znamená předpona `$`?",
+          "a": "*Namísto hodnoty předává **obousměrnou vazbu**: ovládací prvek může přečíst aktuální hodnotu a zapsat zpět novou.*\n```swift\nTextField(\"Name\", text: $name)   // reads and writes\nText(name)                       // reads only\n```"
+        },
+        {
+          "q": "Co je `@Binding` a kdy jej používáte?",
+          "a": "*Prohlašuje, že nemovitost je vlastněna **jiným** pohledem. Dítě jej přečte a zapíše a změna přistane v rodičovském `@State`. Takto vytváříte opakovaně použitelné komponenty, které nevlastní svá data.*\n```swift\nstruct PushButton: View {\n    let title: String\n    @Binding var isOn: Bool\n\n    var body: some View {\n        Button(title) { isOn.toggle() }\n    }\n}\n\nPushButton(title: \"Remember me\", isOn: $rememberMe)\n```"
+        },
+        {
+          "q": "Jak zobrazíte náhled pohledu, který zabírá `@Binding`?",
+          "a": "*Použijte `.constant(_:)`, což vytvoří vazbu, která vždy čte danou hodnotu a ignoruje zápisy.*\n```swift\n#Preview {\n    PushButton(title: \"Test\", isOn: .constant(true))\n}\n```"
+        },
+        {
+          "q": "Proč `@State` nefunguje dobře se třídou?",
+          "a": "*`@State` sleduje, aby se **hodnota** změnila. U třídy se odkaz nikdy nemění, když upravujete vlastnost, takže zobrazení není nikdy vyzváno k aktualizaci. Označte třídu `@Observable`, takže SwiftUI místo toho sleduje její vlastnosti.*"
+        },
+        {
+          "q": "K čemu je `@Bindable`?",
+          "a": "*Vytváří vazby na objekt `@Observable`, který **ne** nevlastníte – ten, který přišel jako parametr nebo z prostředí – takže můžete napsat `$object.property`.*\n```swift\nstruct EditView: View {\n    @Bindable var user: User\n\n    var body: some View {\n        TextField(\"Name\", text: $user.name)\n    }\n}\n```"
+        },
+        {
+          "q": "Jaké je základní pravidlo pro výběr obalu nemovitosti?",
+          "a": "- **Typ hodnoty, vlastněný zde** → `@State`\n- **Typ hodnoty, vlastněný jinde** → `@Binding`\n- třída **`@Observable`, vytvořená zde** → `@State`\n- **`@Observable` třída, prošel, potřebuje vazby** → `@Bindable`\n- **Sdíleno v hierarchii** → `@Environment`\n- **Malé trvalé nastavení** → `@AppStorage`"
+        },
+        {
+          "q": "Co se stane s vaší strukturou pohledu, když se změní stav?",
+          "a": "*SwiftUI zahodí strukturu a vytvoří novou, poté přepočítá `body`. To je levné, protože pohledy jsou lehké struktury – ale to znamená, že cokoli, co chcete přežít, musí žít v `@State`, ne v prostém pozemku.*"
+        }
+      ],
+      "deck_key": "state-and-bindings"
+    },
+    {
+      "deck": "Pohledy a modifikátory",
+      "deck_icon": "square.stack.3d.up",
+      "cards": [
+        {
+          "q": "Proč SwiftUI používá pro pohledy struktury?",
+          "a": "* Výkon a jednoduchost. Struktury jsou lehké, nenesou žádná zděděná zavazadla (pohled UIKit má stovky zděděných vlastností) a jejich hodnotová sémantika jasně ukazuje, že pohled je funkcí svého stavu spíše než objekt se skrytým proměnlivým stavem.*"
+        },
+        {
+          "q": "Co se skrývá za hlavním pohledem SwiftUI?",
+          "a": "*Nic. Neexistuje žádné pozadí na celou obrazovku, které byste si mohli vybarvit – `Color` nebo tvar přizpůsobený velikosti obrazovky je pouze pohled, který náhodou vyplní prostor. Použijte `.ignoresSafeArea()`, když chcete, aby přesahoval bezpečnou oblast.*\n```swift\nZStack {\n    Color.red.ignoresSafeArea()\n    Text(\"Hello\")\n}\n```"
+        },
+        {
+          "q": "Proč na pořadí modifikátorů záleží?",
+          "a": "*Každý modifikátor zabalí předchozí výsledek do **nového zobrazení**, takže pořadí popisuje kanál. Barvení a poté klížení poskytuje jiný výsledek než klížení a barvení.*\n```swift\nText(\"Hi\").background(.red).frame(width: 200, height: 200)\n// red hugs the text\n\nText(\"Hi\").frame(width: 200, height: 200).background(.red)\n// red fills the frame\n```"
+        },
+        {
+          "q": "Co se vlastně stane, když použijete modifikátor?",
+          "a": "*Na místě se nic nemění. Modifikátor vrací obal — `ModifiedContent<OriginalView, Modifier>` — takže řetězec modifikátorů vytváří vnořený generický typ. To je důvod, proč `body` vrací `some View` namísto hláskovaného typu.*"
+        },
+        {
+          "q": "Jak podmíněně aplikujete modifikátor?",
+          "a": "*S ternárním prvkem uvnitř modifikátoru, nikoli `if` kolem pohledu – to zachovává identitu jednoho pohledu, takže SwiftUI animuje změnu spíše než nahrazuje pohled.*\n```swift\nButton(\"Tap\") { useRed.toggle() }\n    .foregroundStyle(useRed ? .red : .blue)\n```"
+        },
+        {
+          "q": "Co je modifikátor prostředí?",
+          "a": "*Modifikátor aplikovaný na kontejner, který zdědí všechny potomky, pokud jej dítě nepřepíše. Běžné modifikátory (jako `blur`) se místo toho **kombinují** s dětmi, místo aby byly přepsány.*\n```swift\nVStack {\n    Text(\"Big\")\n    Text(\"Small\").font(.caption)   // wins\n}\n.font(.title)\n```"
+        },
+        {
+          "q": "Jak ukládáte pohled do nemovitosti?",
+          "a": "*Deklarujte to jako vlastnost struktury pohledu. Použijte `some View` nebo explicitní typ; pro několik pohledů použijte `@ViewBuilder` nebo je zabalte do zásobníku.*\n```swift\nlet motto = Text(\"Draco dormiens\")\n\n@ViewBuilder var spells: some View {\n    Text(\"Lumos\")\n    Text(\"Obliviate\")\n}\n```"
+        },
+        {
+          "q": "Proč je extrahování dílčích zobrazení levné v SwiftUI?",
+          "a": "*Pohledy jsou struktury v podstatě bez nákladů, takže rozdělení velkého `body` na malé pojmenované pohledy za běhu nic nestojí a umožňuje SwiftUI aktualizovat pouze ty části, jejichž data se skutečně změnila.*"
+        },
+        {
+          "q": "Jak vytvoříte vlastní modifikátor?",
+          "a": "*Přizpůsobte se `ViewModifier` a přidejte metodu pohodlí v rozšíření `View`.*\n```swift\nstruct Title: ViewModifier {\n    func body(content: Content) -> some View {\n        content\n            .font(.largeTitle)\n            .foregroundStyle(.white)\n            .padding()\n            .background(.blue)\n            .clipShape(.rect(cornerRadius: 10))\n    }\n}\n\nextension View {\n    func titleStyle() -> some View { modifier(Title()) }\n}\n```"
+        },
+        {
+          "q": "Co umí vlastní `ViewModifier`, co obyčejná přípona `View` nedokáže?",
+          "a": "*Může si ponechat svůj vlastní stav a přidat novou strukturu zobrazení kolem obsahu – například jej zabalit do zásobníku nebo animovat pomocí `@State` – protože jde o skutečný pohled, nikoli pouze o řetězec existujících modifikátorů.*"
+        },
+        {
+          "q": "Jak vytvoříte vlastní zobrazení kontejneru?",
+          "a": "*Jako poslední parametr vezměte uzávěr `@ViewBuilder` a použijte jeho výsledek ve svém rozvržení.*\n```swift\nstruct GridStack<Content: View>: View {\n    let rows: Int\n    @ViewBuilder let content: (Int) -> Content\n\n    var body: some View {\n        VStack {\n            ForEach(0..<rows, id: \\.self) { row in\n                HStack { content(row) }\n            }\n        }\n    }\n}\n```"
+        }
+      ],
+      "deck_key": "views-and-modifiers"
+    },
+    {
+      "deck": "Hromady, mřížky a rolování",
+      "deck_icon": "square.stack.3d.up",
+      "cards": [
+        {
+          "q": "Jaký je rozdíl mezi `VStack`, `HStack` a `ZStack`?",
+          "a": "*Vertikální, horizontální a hloubka (zezadu dopředu). Všichni tři berou `alignment` a stacky `spacing`; předejte `spacing: 0` pro odstranění automatické mezery.*\n```swift\nVStack(alignment: .leading, spacing: 20) {\n    Text(\"One\")\n    Text(\"Two\")\n}\n```\n*`ZStack` nemá žádné mezery – překrývá.*"
+        },
+        {
+          "q": "Co dělá `Spacer`?",
+          "a": "*Jedná se o flexibilní prázdný pohled, který se rozšiřuje tak, aby zabral veškerý zbývající prostor podél osy zásobníku, čímž se sourozenci od sebe oddálí. Několik distančních vložek sdílí prostor rovnoměrně.*\n```swift\nHStack {\n    Text(\"Left\")\n    Spacer()\n    Text(\"Right\")\n}\n```"
+        },
+        {
+          "q": "K čemu se `Group` používá?",
+          "a": "*Průhledný kontejner rozvržení: aplikuje modifikátory na několik pohledů a pohybuje se kolem limitu 10 dětí, aniž by vnucoval jakékoli vlastní rozvržení. O tom, jak budou děti uspořádány, rozhoduje její rodič.*"
+        },
+        {
+          "q": "Jak se liší obyčejný `ScrollView` od `List`?",
+          "a": "*`ScrollView` vytváří **všech** svůj obsah okamžitě, takže sto řádků znamená sto pohledů vytvořených dopředu. Zásobníky `List` a `Lazy` vytvářejí řádky pouze tehdy, když se objeví.*"
+        },
+        {
+          "q": "Kdy používáte `LazyVStack` místo `VStack`?",
+          "a": "*Uvnitř `ScrollView` se spoustou obsahu. Lazy stacks staví děti na vyžádání, ale vždy zaberou celou dostupnou šířku, zatímco `VStack` se přizpůsobí svému obsahu.*\n```swift\nScrollView {\n    LazyVStack(spacing: 10) {\n        ForEach(items) { ItemRow(item: $0) }\n    }\n    .frame(maxWidth: .infinity)\n}\n```"
+        },
+        {
+          "q": "Jak vytvoříte mřížku v SwiftUI?",
+          "a": "*`LazyVGrid`/`LazyHGrid` plus pole `GridItem` popisující sloupce.*\n```swift\nlet columns = [GridItem(.adaptive(minimum: 80))]\n\nScrollView {\n    LazyVGrid(columns: columns) {\n        ForEach(items) { ItemView(item: $0) }\n    }\n}\n```"
+        },
+        {
+          "q": "Jaký je rozdíl mezi položkami mřížky `.fixed`, `.flexible` a `.adaptive`?",
+          "a": "- `.fixed(_:)` — přesná šířka, počet určíte vy\n- `.flexible(minimum:maximum:)` — sdílí prostor rovným dílem, počet určíte vy\n- `.adaptive(minimum:maximum:)` — vejde se **co nejvíce** v této velikosti, počet závisí na prostoru\n\n*Použijte `.adaptive`, pokud chcete, aby rozložení reagovalo na velikost obrazovky a Dynamic Type.*"
+        },
+        {
+          "q": "Co dělá `containerRelativeFrame`?",
+          "a": "*Míří zobrazení vzhledem ke svému kontejneru spíše než k jeho obsahu – například 40 % šířky zobrazení posouvání – což je to, co chcete pro obrázky v rolovacích rozvrženích.*\n```swift\nImage(name)\n    .resizable()\n    .scaledToFit()\n    .containerRelativeFrame(.horizontal) { size, axis in\n        size * 0.4\n    }\n```"
+        },
+        {
+          "q": "Co vlastně znamená `.frame(maxWidth: .infinity)`?",
+          "a": "*Požaduje **tak velkou šířku, jakou nabízí rodič**, až do nekonečna – na rozdíl od `width:`, který vyžaduje přesnou velikost. Je to standardní způsob, jak přimět pohled, aby vyplnil jeho řádek, a také umožňuje klepnutí na celou oblast uvnitř tlačítka.*"
+        }
+      ],
+      "deck_key": "stacks-grids-and-scrolling"
+    },
+    {
+      "deck": "Rozložení a geometrie",
+      "deck_icon": "ruler",
+      "cards": [
+        {
+          "q": "Jak vlastně rozložení v SwiftUI funguje?",
+          "a": "*Konverzace ve třech krocích: **rodič navrhne** velikost, **dítě si vybere** svou vlastní velikost a **rodič postaví** dítě. Rodič nikdy nemůže dítěti vnutit velikost – proto se někdy zdá, že `frame()` je ignorováno.*"
+        },
+        {
+          "q": "Co `frame()` skutečně dělá?",
+          "a": "*Nemění velikost pohledu. Zabalí pohled do nového, neviditelného pohledu na rámeček požadované velikosti a umístí do něj originál – takže originál může být stále menší než rámeček.*"
+        },
+        {
+          "q": "Co rozhoduje o zarovnání uvnitř zásobníku?",
+          "a": "*Každý stoh má vodítko zarovnání — `.leading`, `.center`, `.trailing` pro `VStack`; `.top`, `.center`, `.bottom` pro `HStack`. Každé dítě je zarovnáno na tomto jediném vodítku.*\n```swift\nVStack(alignment: .leading) { … }\nHStack(alignment: .lastTextBaseline) { … }\n```"
+        },
+        {
+          "q": "Co dělá modifikátor `alignmentGuide`?",
+          "a": "*Přepíše místo, kde **jedno dítě** umístí své vodítko, s použitím vlastních rozměrů dítěte – takže pohled může záměrně sedět mimo zarovnání stohu.*\n```swift\nText(\"Hello\")\n    .alignmentGuide(.leading) { d in d[.trailing] }\n```"
+        },
+        {
+          "q": "Jak vytvoříte vlastní vodítko zarovnání?",
+          "a": "*Definujte `AlignmentID` s výchozí hodnotou, vystavte jej na `VerticalAlignment`/`HorizontalAlignment`, poté jej použijte v zásobníku a na pohledech, které chcete zarovnat. To umožňuje seřadit pohledy v **různých** podstromech.*\n```swift\nextension VerticalAlignment {\n    enum MidAccountAndName: AlignmentID {\n        static func defaultValue(\n            in d: ViewDimensions\n        ) -> CGFloat {\n            d[.top]\n        }\n    }\n    static let midAccountAndName =\n        VerticalAlignment(\n            MidAccountAndName.self\n        )\n}\n```"
+        },
+        {
+          "q": "Jaký je rozdíl mezi `position()` a `offset()`?",
+          "a": "*`position()` nastavuje **střed** pohledu do souřadnicového prostoru jeho rodiče a obtékání zabírá veškerý dostupný prostor. `offset()` přesune pouze **výkres** — systém rozložení stále vidí pohled na svém původním místě.*"
+        },
+        {
+          "q": "Co je `GeometryReader` a jaký je jeho úlovek?",
+          "a": "*Pohled, který dítěti předá velikost a polohu, kterou mu nabízel. Háček: vždy přijme **veškerý** prostor, který je mu navržen, a zarovná svůj obsah do horního rohu – takže při náhodném použití narušuje okolní uspořádání.*\n```swift\nGeometryReader { proxy in\n    Image(\"photo\")\n        .resizable()\n        .scaledToFit()\n        .frame(width: proxy.size.width * 0.8)\n}\n```"
+        },
+        {
+          "q": "Co jsou souřadnicové prostory?",
+          "a": "*`proxy.frame(in:)` může hlásit polohu pohledu vzhledem k `.global` (celá obrazovka), `.local` (samotná čtečka) nebo `.named(_:)` prostoru deklarovaném předkem pomocí `coordinateSpace(_:)` — což je způsob, jakým měříte pozici v řádku.*"
+        },
+        {
+          "q": "K čemu je `visualEffect`?",
+          "a": "*Aplikuje vizuální změny řízené geometrií – měřítko, neprůhlednost, rotace – bez `GeometryReader` a bez ovlivnění rozvržení, díky čemuž jsou efekty řízené posouváním mnohem levnější.*\n```swift\n.visualEffect { content, proxy in\n    content.opacity(\n        proxy.frame(in: .scrollView)\n            .minY < 0 ? 0.5 : 1\n    )\n}\n```"
+        },
+        {
+          "q": "Co dělají `scrollTargetLayout` a `scrollTargetBehavior`?",
+          "a": "*Dohromady přidávají přichytávání: modifikátor rozvržení označuje, které pohledy jsou cíli posouvání, a chování rozhoduje o tom, jak se na nich posouvání usadí.*\n```swift\nScrollView {\n    LazyVStack { … }\n        .scrollTargetLayout()\n}\n.scrollTargetBehavior(.viewAligned)\n```"
+        }
+      ],
+      "deck_key": "layout-and-geometry"
+    },
+    {
+      "deck": "Barva, přechody a obrázky",
+      "deck_icon": "paintpalette",
+      "cards": [
+        {
+          "q": "Jak se chová `Color` v SwiftUI?",
+          "a": "*A `Color` je pohled sám o sobě, takže se rozšiřuje, aby vyplnil nabízený prostor. Preferujte sémantické barvy jako `.primary` a `Color(.systemBackground)` — automaticky se přizpůsobí světlému a tmavému režimu.*"
+        },
+        {
+          "q": "Proč záleží na `frame` při použití barvy jako pozadí?",
+          "a": "*`background` se přizpůsobuje pohledu, který zdobí, takže pokud chcete, aby barva pokryla větší plochu, přidejte nejprve rám – o výsledku rozhoduje pořadí modifikátorů.*\n```swift\nText(\"Hi\")\n    .frame(maxWidth: .infinity, maxHeight: 200)\n    .background(.red)\n```"
+        },
+        {
+          "q": "Jaké typy gradientů poskytuje SwiftUI?",
+          "a": "```swift\nLinearGradient(colors: [.white, .black],\n               startPoint: .top, endPoint: .bottom)\n\nRadialGradient(colors: [.blue, .black],\n    center: .center,\n    startRadius: 20,\n    endRadius: 200\n)\n\nAngularGradient(\n    colors: [.red, .yellow, .red],\n    center: .center\n)\n```\n*Jakákoli barva má také zabudovaný jemný přechod: `Color.red.gradient`.*"
+        },
+        {
+          "q": "K čemu je `Gradient.Stop`?",
+          "a": "*Umístí barvu na přesné místo (0–1) podél přechodu místo rovnoměrného rozmístění barev.*\n```swift\nLinearGradient(stops: [\n    .init(color: .white, location: 0.45),\n    .init(color: .black, location: 0.55)\n], startPoint: .top, endPoint: .bottom)\n```"
+        },
+        {
+          "q": "Jaké jsou hlavní způsoby vytvoření `Image`?",
+          "a": "- `Image(\"name\")` — z katalogu majetku, štítek načtený VoiceOver\n- `Image(systemName:)` — symbol SF, měřítko s textem\n- `Image(decorative:)` – přeskočeno VoiceOver, pro čistě vizuální obrázky\n\n*Upřednostňujte symboly SF tam, kde existují: podporují Dynamic Type a barevný styl zdarma.*"
+        },
+        {
+          "q": "Jak uděláte, aby obraz zapadl do daného prostoru?",
+          "a": "*Nejdříve to udělejte `resizable()` a poté vyberte režim obsahu. `scaledToFit` udržuje celý obrázek viditelný; `scaledToFill` pokrývá rám a potřebuje `clipped()`.*\n```swift\nImage(\"photo\")\n    .resizable()\n    .scaledToFill()\n    .frame(width: 200, height: 200)\n    .clipped()\n```"
+        },
+        {
+          "q": "Kdy byste použili `.interpolation(.none)`?",
+          "a": "*Při zvětšení malých pixelových obrázků nebo vygenerované bitmapy, jako je QR kód — výchozí vyhlazení by to rozmazalo. `.none` zachovává okraje tvrdých pixelů.*"
+        }
+      ],
+      "deck_key": "color-gradients-and-images"
+    },
+    {
+      "deck": "Seznamy a pro každého",
+      "deck_icon": "list.bullet.rectangle",
+      "cards": [
+        {
+          "q": "Jaký je rozdíl mezi `List` a `Form`?",
+          "a": "*Sdílejí většinu chování, ale `Form` je pro sběr **vstupů** a `List` je pro prezentaci **dat**. `List` je také ekvivalentem SwiftUI k `UITableView`: recykluje řádky, takže efektivně zpracovává tisíce položek.*"
+        },
+        {
+          "q": "Jak smícháte statické a dynamické řádky do jednoho `List`?",
+          "a": "*Do seznamu vložte `ForEach` vedle běžných pohledů.*\n```swift\nList {\n    Text(\"Static row\")\n\n    ForEach(people, id: \\.self) { person in\n        Text(person)\n    }\n\n    Text(\"Another static row\")\n}\n.listStyle(.grouped)\n```"
+        },
+        {
+          "q": "Proč `ForEach` potřebuje identifikovat své položky?",
+          "a": "*SwiftUI musí vědět, který řádek je který, aby mohl animovat vkládání, mazání a přesuny a zachovat stav každého řádku. Bez stabilní identity nerozezná úpravu od nahrazení.*"
+        },
+        {
+          "q": "Co je `Identifiable`?",
+          "a": "*Protokol vyžadující vlastnost `id`, která je jedinečná a stabilní. Vyhovující typy lze použít přímo v `ForEach` a `List` bez parametru `id:`.*\n```swift\nstruct ExpenseItem: Identifiable {\n    let id = UUID()\n    let name: String\n}\n\nForEach(items) { item in Text(item.name) }\n```"
+        },
+        {
+          "q": "Proč je `id: \\.self` rizikové?",
+          "a": "*Jako identitu používá samotnou hodnotu, takže se srazí dvě stejné hodnoty a SwiftUI může ztratit přehled o řádcích – a jakákoli úprava změní identitu, naruší animace a stav řádku. V pořádku pro konstantní pole jedinečných řetězců, špatně pro proměnná data modelu.*"
+        },
+        {
+          "q": "Jak podporujete smazání přejetím prstem?",
+          "a": "*Připojte `onDelete` k `ForEach` (ne k `List`) a odeberte položky v daných offsetech.*\n```swift\nForEach(items) { item in\n    Text(item.name)\n}\n.onDelete { offsets in\n    items.remove(atOffsets: offsets)\n}\n```\n*Přidejte `EditButton()` do panelu nástrojů pro explicitní režim úprav.*"
+        },
+        {
+          "q": "Jak přidáte vlastní akce přejetí prstem?",
+          "a": "*Na řádku použijte `swipeActions`. Akce je výchozí na zadní hraně a `role: .destructive` dává červený styl.*\n```swift\n.swipeActions {\n    Button(\"Delete\", role: .destructive) { delete(item) }\n    Button(\"Pin\") { pin(item) }\n        .tint(.orange)\n}\n```"
+        },
+        {
+          "q": "Jak přidáte vyhledávací pole do seznamu?",
+          "a": "*`searchable` sváže řetězec a přidá pole pro vyhledávání platformy; data filtrujete sami ve vypočítané vlastnosti.*\n```swift\nList(filtered) { … }\n    .searchable(text: $searchText, prompt: \"Search\")\n\nvar filtered: [Item] {\n    searchText.isEmpty ? items\n        : items.filter {\n            $0.name\n              .localizedStandardContains(\n                  searchText\n              )\n          }\n}\n```"
+        },
+        {
+          "q": "Jak stylujete jednotlivé řádky seznamu?",
+          "a": "```swift\nForEach(items) { item in\n    Text(item.name)\n        .listRowBackground(Color.blue.opacity(0.2))\n}\n.listRowSeparator(.hidden)\n```\n*Modifikátory na úrovni řádku musí být použity na **obsah řádku**, zatímco `listStyle` se vztahuje na celý seznam.*"
+        }
+      ],
+      "deck_key": "lists-and-foreach"
+    },
+    {
+      "deck": "Vstupní ovládací prvky",
+      "deck_icon": "gearshape",
+      "cards": [
+        {
+          "q": "Co je `Stepper` a kdy je to správné ovládání?",
+          "a": "*Pár `-`/`+` vázaný na číslo, ideální pro malé přesné úpravy. Zadejte rozsah a krok a formát štítku.*\n```swift\nStepper(\"\\(count) cups\", value: $count, in: 1...20, step: 1)\n```"
+        },
+        {
+          "q": "Jak se liší `Slider` od `Stepper`?",
+          "a": "*`Slider` je pro spojité hodnoty v širokém rozsahu, kde na přesnosti nezáleží; `Stepper` je pro přesné přírůstky. `Slider` spolupracuje s `Double`.*\n```swift\nSlider(value: $amount, in: 0...100, step: 1)\n```"
+        },
+        {
+          "q": "Jak používáte `DatePicker`?",
+          "a": "*Připojte jej k `Date`, omezte, které součásti se zobrazí, a volitelně omezte povolený rozsah jednostranným rozsahem.*\n```swift\nDatePicker(\"Wake up\", selection: $wakeUp,\n           in: Date.now...,\n           displayedComponents: .hourAndMinute)\n    .labelsHidden()\n```"
+        },
+        {
+          "q": "Jak správně pracujete s daty v Swift?",
+          "a": "*Nikdy neprovádějte aritmetiku na hrubých sekundách – projděte si `Calendar` a `DateComponents`, které zpracovávají časová pásma, přestupné roky a lokality.*\n```swift\nvar components = DateComponents()\ncomponents.hour = 8\nlet date = Calendar.current.date(from: components) ?? .now\n\nlet hour = Calendar.current\n    .dateComponents([.hour, .minute], from: date).hour ?? 0\n\ndate.formatted(date: .long, time: .shortened)\n```"
+        },
+        {
+          "q": "Jaké styly výběru jsou k dispozici a kdy se každý hodí?",
+          "a": "- `.menu` — kompaktní vyskakovací okno (výchozí vnější formuláře)\n- `.navigationLink` — vyvolá výběrovou obrazovku; dobré pro dlouhé seznamy ve formě\n- `.segmented` — několik vzájemně se vylučujících možností, všechny viditelné\n- `.wheel` — točící se buben\n\n* `Picker` potřebuje vazbu, jejíž typ odpovídá `tag` každé možnosti.*"
+        },
+        {
+          "q": "Jaký je rozdíl mezi `TextField` a `TextEditor`?",
+          "a": "*`TextField` je standardně jednořádkový; `TextEditor` je volně tvarovaný víceřádkový rámeček, který se rozšiřuje tak, aby vyplnil prostor, který je mu dán. Pro rostoucí jedno pole je `TextField(_:text:axis: .vertical)` často hezčí.*"
+        },
+        {
+          "q": "Jak deaktivujete ovládací prvek, dokud není vstup platný?",
+          "a": "*Použijte `disabled(_:)` s podmínkou — obvykle vypočítaná vlastnost, takže `body` zůstane čitelný. Funguje také na celém `Section` nebo `Form`.*\n```swift\nButton(\"Continue\") { … }\n    .disabled(hasValidAddress == false)\n\nvar hasValidAddress: Bool {\n    name.isEmpty == false && city.isEmpty == false\n}\n```"
+        },
+        {
+          "q": "Na co se `Toggle` váže a jak jej stylizujete?",
+          "a": "*A `Bool`. Skryjte jeho štítek pomocí `labelsHidden()` a změňte jeho vzhled pomocí `toggleStyle(.button)`, když se má číst jako tlačítko.*\n```swift\nToggle(\"Notifications\", isOn: $isEnabled)\n```"
+        }
+      ],
+      "deck_key": "input-controls"
+    },
+    {
+      "deck": "Upozornění, tabulky a dialogy",
+      "deck_icon": "bubble.left",
+      "cards": [
+        {
+          "q": "Jak zobrazíte výstrahu v SwiftUI?",
+          "a": "*Výstrahy nejsou volány imperativně – připojíte je k pohledu a připojíte je ke stavu. SwiftUI jej zobrazí, když se `Bool` změní na `true` a resetuje jej při zrušení.*\n```swift\n@State private var showingAlert = false\n\nButton(\"Show\") { showingAlert = true }\n    .alert(\"Important\", isPresented: $showingAlert) {\n        Button(\"OK\") { }\n    } message: {\n        Text(\"Please read this.\")\n    }\n```"
+        },
+        {
+          "q": "Co udělá upozornění, když neposkytnete žádná tlačítka?",
+          "a": "*SwiftUI vám přidá výchozí tlačítko OK. Přidáním `Button(role: .cancel)` změníte důraz a `role: .destructive` jej změníte na červenou.*"
+        },
+        {
+          "q": "Jak vyvoláte upozornění z volitelné hodnoty?",
+          "a": "*Použijte formulář `alert(_:isPresented:presenting:)` — výstraha se zobrazí, když volitelná položka není `nil` a uzavření obsahu obdrží nezabalenou hodnotu.*\n```swift\n.alert(\n    \"Error\",\n    isPresented: $showing,\n    presenting: message\n) { _ in\n    Button(\"OK\") { }\n} message: { message in\n    Text(message)\n}\n```"
+        },
+        {
+          "q": "Jak ukážete list?",
+          "a": "*Stejný vzor jako upozornění: `sheet(isPresented:)` svázaný s `Bool`, s prezentovaným pohledem uvnitř.*\n```swift\n.sheet(isPresented: $showingSheet) {\n    DetailView(name: name)\n}\n```"
+        },
+        {
+          "q": "Co je `sheet(item:)` a proč je často lepší?",
+          "a": "*Zobrazí se, když se volitelná hodnota `Identifiable` stane ne`nil` a předá tuto hodnotu uzavření. Tím se vyhnete klasické chybě, kdy je list prezentován před nastavením stavu, na kterém závisí.*\n```swift\n@State private var selected: Item?\n\n.sheet(item: $selected) { item in\n    DetailView(item: item)\n}\n```"
+        },
+        {
+          "q": "Jak se prezentovaný pohled odmítá?",
+          "a": "*Přečte propouštěcí akci z prostředí a zavolá ji – dítě nepotřebuje vědět, jak byla předložena.*\n```swift\n@Environment(\\.dismiss) var dismiss\n\nButton(\"Done\") { dismiss() }\n```"
+        },
+        {
+          "q": "Kdy používáte `confirmationDialog` místo `alert`?",
+          "a": "*Při nabízení **výběru mezi několika akcemi**, zejména destruktivní. Posouvá se zespodu nahoru (akční list), může mít mnoho tlačítek a – na rozdíl od upozornění – může být jeho název skrytý.*\n```swift\n.confirmationDialog(\n    \"Select a filter\",\n    isPresented: $showing\n) {\n    Button(\"Sepia\") { … }\n    Button(\"Cancel\", role: .cancel) { }\n}\n```"
+        },
+        {
+          "q": "Co jsou to prezentační zarážky?",
+          "a": "*Nechají list odpočívat v částečné výšce namísto téměř celé obrazovky.*\n```swift\n.sheet(isPresented: $showing) {\n    DetailView()\n        .presentationDetents([.medium, .large])\n}\n```"
+        },
+        {
+          "q": "Co je `ContentUnavailableView`?",
+          "a": "*Systémově standardní prázdný stav – ikona, nadpis, popis a volitelná akce – takže prázdné seznamy a obrazovky bez výsledků hledání vypadají nativní bez vlastního rozvržení.*\n```swift\nContentUnavailableView(\"No snippets\",\n    systemImage: \"swift\",\n    description: Text(\"Tap + to add your first snippet.\"))\n```"
+        }
+      ],
+      "deck_key": "alerts-sheets-and-dialogs"
+    },
+    {
+      "deck": "Navigace",
+      "deck_icon": "map",
+      "cards": [
+        {
+          "q": "Co `NavigationStack` poskytuje?",
+          "a": "*Kontejner, který zobrazuje jeden pohled po druhém s navigační lištou a uchovává hromadu posunutých pohledů, kterými se uživatel může vrátit. Nahradil `NavigationView` a není určen pro rozvržení rozdělené obrazovky – to je `NavigationSplitView`.*"
+        },
+        {
+          "q": "Jaký je problém s `NavigationLink(destination:)` uvnitř `List`?",
+          "a": "*Zobrazení cíle se **okamžitě vytvoří** pro každý viditelný řádek, i když nebylo nic klepnuto. S drahými inicializátory nebo stovkami řádků je to opravdu zbytečná práce.*"
+        },
+        {
+          "q": "Jak děláte navigaci línou?",
+          "a": "*Připojte hodnotu k odkazu a nechte zásobník vytvořit cíl na vyžádání.*\n```swift\nNavigationStack {\n    List(0..<100) { i in\n        NavigationLink(\"Row \\(i)\", value: i)\n    }\n    .navigationDestination(for: Int.self) { selection in\n        // built only when tapped\n        DetailView(number: selection)\n    }\n}\n```\n*Hodnota musí odpovídat `Hashable`.*"
+        },
+        {
+          "q": "Jak se programově orientujete?",
+          "a": "*Svažte zásobník na pole hodnot. Připojování stisků, odstraňování vyskakování – není třeba klepat na tlačítko.*\n```swift\n@State private var path = [Int]()\n\nNavigationStack(path: $path) {\n    Button(\"Go to 32\") { path.append(32) }\n        .navigationDestination(\n            for: Int.self\n        ) { DetailView(number: $0) }\n}\n```"
+        },
+        {
+          "q": "K čemu je `NavigationPath`?",
+          "a": "*Typově vymazaná cesta, která pojme **smíšené** `Hashable` typy, takže jeden zásobník může poslat několik druhů cílů. Ke každému typu přidejte `navigationDestination`.*\n```swift\n@State private var path = NavigationPath()\npath.append(42)\npath.append(\"Hello\")\n```"
+        },
+        {
+          "q": "Jak se vrátíte zpět do kořenového zobrazení?",
+          "a": "*Vyprázdněte cestu — `path.removeAll()` pro pole nebo přiřaďte nové `NavigationPath()`. Všimněte si, že hluboce vnořené dítě potřebuje cestu předávanou nebo sdílenou prostředím.*"
+        },
+        {
+          "q": "Jak uložíte a obnovíte navigační cestu?",
+          "a": "*`NavigationPath` odhaluje reprezentaci `codable`, kterou můžete kódovat; cesta pole je `Codable`, když je jeho prvkem. Uložte při změně, dekódujte při spuštění a aplikace se znovu otevře přesně tam, kde uživatel skončil.*\n```swift\nlet representation = path.codable\ntry JSONEncoder().encode(representation)\n```"
+        },
+        {
+          "q": "Jak umístíte tlačítka do navigační lišty?",
+          "a": "*S `toolbar` a `ToolbarItem`, výběr explicitního umístění tak, aby se dostal tam, kde zamýšlíte na každé platformě.*\n```swift\n.toolbar {\n    ToolbarItem(placement: .topBarLeading) {\n        Button(\"Cancel\") { dismiss() }\n    }\n    ToolbarItem(placement: .confirmationAction) {\n        Button(\"Save\") { save() }\n    }\n}\n```"
+        },
+        {
+          "q": "Jak ovládáte velikost názvu navigace?",
+          "a": "*`navigationBarTitleDisplayMode(.inline)` ho udržuje malý a vycentrovaný, `.large` vynutí velký název a výchozí `.automatic` zdědí z předchozí obrazovky.*"
+        },
+        {
+          "q": "Jak změníte vzhled navigační lišty?",
+          "a": "```swift\n.toolbarBackground(.blue, for: .navigationBar)\n.toolbarColorScheme(.dark, for: .navigationBar)\n.toolbar(.hidden, for: .navigationBar)\n```\n*Ty se použijí na **obsah** zásobníku a projeví se, jakmile pruh není ve stavu posunutí nahoru.*"
+        },
+        {
+          "q": "Jak lze upravit název navigace?",
+          "a": "*Předejte vazbu na `String` namísto prostého řetězce. V režimu zobrazení `.inline` uživatel získá nabídku přejmenování v titulu.*\n```swift\n.navigationTitle($title)\n.navigationBarTitleDisplayMode(.inline)\n```"
+        }
+      ],
+      "deck_key": "navigation"
+    },
+    {
+      "deck": "Animace a přechody",
+      "deck_icon": "sparkles",
+      "cards": [
+        {
+          "q": "Co je to implicitní animace?",
+          "a": "*`animation(_:value:)` sleduje jednu hodnotu a animuje **každou** animovatelnou změnu v tomto pohledu, kdykoli se změní – nikdy neříkáte, co se má animovat.*\n```swift\nButton(\"Tap\") { scale += 1 }\n    .scaleEffect(scale)\n    .animation(.default, value: scale)\n```"
+        },
+        {
+          "q": "Proč `.animation()` vyžaduje parametr `value:`?",
+          "a": "*Říká SwiftUI **na co** se dívat. Bez něj by se SwiftUI musel animovat při každé změně stavu kdekoli v pohledu, což je důvod, proč byla verze bez hodnoty zamítnuta.*"
+        },
+        {
+          "q": "Co je explicitní animace?",
+          "a": "*`withAnimation` animuje jakékoli změny v důsledku stavu, který v něm upravíte – rozhodnutí žije na místě změny, nikoli na zobrazení.*\n```swift\nButton(\"Tap\") {\n    withAnimation(.spring(duration: 1, bounce: 0.5)) {\n        rotation += 360\n    }\n}\n```"
+        },
+        {
+          "q": "Pojmenujte hlavní křivky animace.",
+          "a": "- `.linear` — konstantní rychlost\n- `.easeIn` / `.easeOut` / `.easeInOut` — výchozí nastavení\n- `.spring`, `.bouncy`, `.smooth`, `.snappy` – fyzicky modelované\n\n*Pružiny překmitají a usadí se, což je pro uživatelské rozhraní mnohem přirozenější.*"
+        },
+        {
+          "q": "Jak odložíte nebo zopakujete animaci?",
+          "a": "```swift\n.animation(\n    .easeInOut(duration: 1)\n        .delay(0.5)\n        .repeatCount(3, autoreverses: true),\n    value: animate\n)\n\n.repeatForever(autoreverses: true)   // e.g. a pulse\n```"
+        },
+        {
+          "q": "Co to znamená animovat vazbu?",
+          "a": "*Přidáním `.animation()` do **vazby** namísto zobrazení se oživí každá změna provedená prostřednictvím této vazby – takže tažením posuvníku se animuje vše, co na něm závisí.*\n```swift\nSlider(value: $amount.animation(), in: 1...10)\n```"
+        },
+        {
+          "q": "Co je zásobník animací?",
+          "a": "*Každý `.animation()` se vztahuje na modifikátory **nad** v řetězci, takže různé části jednoho pohledu se mohou animovat odlišně – nebo vůbec ne, pokud projdete `nil`.*\n```swift\nButton(\"Tap\") { enabled.toggle() }\n    .background(enabled ? .blue : .red)\n    .animation(.default, value: enabled)\n    .clipShape(.rect(cornerRadius: enabled ? 60 : 0))\n    .animation(.spring, value: enabled)\n```"
+        },
+        {
+          "q": "Jak animujete gesto přetažení?",
+          "a": "*Sledujte překlad v `@State`, použijte jej pomocí `offset` a animujte reset, když přetažení skončí.*\n```swift\n.offset(dragAmount)\n.gesture(\n    DragGesture()\n        .onChanged { dragAmount = $0.translation }\n        .onEnded { _ in\n            withAnimation(.bouncy) { dragAmount = .zero }\n        }\n)\n```"
+        },
+        {
+          "q": "Co je to přechod a kdy platí?",
+          "a": "*Přechod popisuje, jak je pohled animován **v existenci a zaniká** – platí pouze tehdy, když je pohled skutečně přidán nebo odebrán, a pouze tehdy, když je tato změna animována.*\n```swift\nif showingRed {\n    Rectangle()\n        .transition(.asymmetric(insertion: .scale,\n                                removal: .opacity))\n}\n```"
+        },
+        {
+          "q": "Jak vytvoříte vlastní přechod?",
+          "a": "*Napište `ViewModifier`, jehož účinek závisí na parametru, a poté jej zabalte do `AnyTransition.modifier(active:identity:)`.*\n```swift\nstruct CornerRotate: ViewModifier {\n    let amount: Double\n    let anchor: UnitPoint\n\n    func body(content: Content) -> some View {\n        content\n            .rotationEffect(\n                .degrees(amount),\n                anchor: anchor\n            )\n            .clipped()\n    }\n}\n\nextension AnyTransition {\n    static var pivot: AnyTransition {\n        .modifier(\n            active: CornerRotate(\n                amount: -90,\n                anchor: .topLeading\n            ),\n            identity: CornerRotate(\n                amount: 0,\n                anchor: .topLeading\n            )\n        )\n    }\n}\n```"
+        }
+      ],
+      "deck_key": "animation-and-transitions"
+    },
+    {
+      "deck": "Gesta, haptika a časovače",
+      "deck_icon": "hand.point.up.left",
+      "cards": [
+        {
+          "q": "Jaká gesta SwiftUI poskytuje?",
+          "a": "```swift\n.onTapGesture(count: 2) { }\n.onLongPressGesture(minimumDuration: 1) { }\n.gesture(DragGesture().onChanged { … }.onEnded { … })\n.gesture(MagnifyGesture())\n.gesture(RotateGesture())\n```\n*Formuláře `on…` jsou těsnopisné; `gesture()` umožňuje přístup k toku hodnot.*"
+        },
+        {
+          "q": "Které gesto zvítězí, když ho mají rodič i dítě?",
+          "a": "*Ve výchozím nastavení **dítě**. Použijte `highPriorityGesture()`, abyste nechali rodiče vyhrát, nebo `simultaneousGesture()`, aby stříleli oba.*"
+        },
+        {
+          "q": "Jak kombinujete gesta za sebou?",
+          "a": "*S `sequenced(before:)` — například dlouze stiskněte a poté přetáhněte, klasická interakce „zvedněte a přesuňte“. Kombinované gesto potřebuje svůj vlastní stav, aby bylo možné sledovat, ve které fázi se nachází.*"
+        },
+        {
+          "q": "Co dělá `allowsHitTesting(false)`?",
+          "a": "*To dělá pohled neviditelný pro doteky, které procházejí k tomu, co je za ním. Užitečné pro překryvy a pro vypnutí interakce s celým podstromem, když vyprší čas nebo je aplikace neaktivní.*"
+        },
+        {
+          "q": "Proč někdy potřebujete `contentShape`?",
+          "a": "*Poklepatelná oblast pohledu je jeho nakreslený obsah, takže mezerníky a vycpávky uvnitř zásobníku nelze testovat. `contentShape(.rect)` deklaruje celý snímek jako interaktivní oblast.*\n```swift\nVStack {\n    Text(\"Hello\")\n    Spacer().frame(height: 100)\n}\n.contentShape(.rect)\n.onTapGesture { … }\n```"
+        },
+        {
+          "q": "Jak přidáváte hmatovou zpětnou vazbu?",
+          "a": "*`sensoryFeedback` je nativní způsob SwiftUI: spustí se, když se změní hodnota.*\n```swift\n.sensoryFeedback(.success, trigger: didSucceed)\n```\n*Pro bohatší vzory rozbalte na Core Haptics (`CHHapticEngine`) a pro jednoduché systémové klepnutí `UIImpactFeedbackGenerator`.*"
+        },
+        {
+          "q": "Jak spouštíte kód opakovaně na časovači?",
+          "a": "*Vytvořte časovač publikování a sledujte jej pomocí `onReceive`. `autoconnect()` to okamžitě spustí.*\n```swift\nlet timer = Timer.publish(every: 1, on: .main, in: .common)\n    .autoconnect()\n\nText(\"\\(counter)\")\n    .onReceive(timer) { _ in\n        counter += 1\n    }\n```\n*A `tolerance` umožňuje dávkovým časovačům systému šetřit energii.*"
+        },
+        {
+          "q": "Jak poznáte, že se aplikace přesune na pozadí?",
+          "a": "*Sledujte `scenePhase` v prostředí: `.active` když se používá, `.inactive` když je částečně vidět (např. přepínač aplikací), `.background` když je skrytý. Zde pozastavte časovače a uložte stav.*\n```swift\n@Environment(\\.scenePhase) var scenePhase\n\n.onChange(of: scenePhase) { _, phase in\n    isActive = (phase == .active)\n}\n```"
+        },
+        {
+          "q": "What does `onChange(of:)` give you?",
+          "a": "*Zpětné volání, kdykoli se změní hodnota, přijímá staré a nové hodnoty. Běží **než** `body` uvidí novou hodnotu a je to správné místo pro vedlejší účinky, které samotný stav nemůže vyjádřit.*\n```swift\n.onChange(of: selectedItem) { oldValue, newValue in\n    process(newValue)\n}\n```"
+        }
+      ],
+      "deck_key": "gestures-haptics-and-timers"
+    },
+    {
+      "deck": "Pozorování a tok dat",
+      "deck_icon": "binoculars",
+      "cards": [
+        {
+          "q": "What does the `@Observable` macro do?",
+          "a": "*Aplikováno na třídu, přepíše uložené vlastnosti, takže čtení a zápisy jsou sledovány. SwiftUI poté znovu vyvolá `body`, když se vlastnost, kterou pohled skutečně **přečte**, změní.*\n```swift\n@Observable\nclass User {\n    var name = \"Sam\"\n}\n```"
+        },
+        {
+          "q": "How do you store an `@Observable` class in a view?",
+          "a": "*S `@State`, který udržuje instanci naživu napříč pohledy. `@Observable` handles the change notifications; `@State` handles ownership.*\n```swift\n@State private var user = User()\n```"
+        },
+        {
+          "q": "Proč je `@Observable` efektivnější než `ObservableObject`?",
+          "a": "*`@Published` informuje **každého** pozorovatele objektu o jakékoli změně. `@Observable` sleduje vlastnosti jednotlivě, takže pohled, který čte pouze `name`, není znovu vykreslen, když se změní `age`.*"
+        },
+        {
+          "q": "Jak se starší rozhraní API mapuje na `@Observable`?",
+          "a": "- `ObservableObject` + `@Published` → `@Observable`\n- `@StateObject` → `@State`\n- `@ObservedObject` → vlastnost plain (nebo `@Bindable` pro vazby)\n- `@EnvironmentObject` → `@Environment`\n\n*Při podpoře verzí před iOS 17 stále potřebujete staré API.*"
+        },
+        {
+          "q": "Jak sdílíte objekt s celou hierarchií zobrazení?",
+          "a": "*Jednou ji vložte do prostředí a poté si ji přečtěte, kdekoli je potřeba – žádné přechody mezi pohledy.*\n```swift\nContentView()\n    .environment(favorites)\n\n// deeper down:\n@Environment(Favorites.self) var favorites\n```\n*Čtení objektu, který nebyl nikdy umístěn do prostředí, se za běhu zhroutí.*"
+        },
+        {
+          "q": "Jak získáte vazby na objekt z prostředí?",
+          "a": "*Čtení s `@Environment` vám dává hodnotu, nikoli vazby. Vytvořte místní kopii `@Bindable` — je to levné, protože obsahuje pouze stejný odkaz.*\n```swift\n@Environment(User.self) var user\n\nvar body: some View {\n    @Bindable var user = user\n    TextField(\"Name\", text: $user.name)\n}\n```"
+        },
+        {
+          "q": "Jaké systémové hodnoty můžete číst pomocí `@Environment`?",
+          "a": "```swift\n@Environment(\\.dismiss) var dismiss\n@Environment(\\.colorScheme) var colorScheme\n@Environment(\\.horizontalSizeClass) var sizeClass\n@Environment(\\.modelContext) var modelContext\n@Environment(\\.scenePhase) var scenePhase\n@Environment(\\.accessibilityReduceMotion) var reduceMotion\n```"
+        },
+        {
+          "q": "Jaký je háček při vytváření třídy `@Observable` `Codable`?",
+          "a": "*Makro přejmenuje uložené vlastnosti pomocí předpony podtržítka, takže syntetizované kódovací klíče neodpovídají vašemu JSON. Deklarujte `CodingKeys` explicitně pomocí podtržených názvů velkých a malých písmen mapovaných na klíče s jednoduchým řetězcem.*\n```swift\nenum CodingKeys: String, CodingKey {\n    case _name = \"name\"\n    case _city = \"city\"\n}\n```"
+        },
+        {
+          "q": "Jak MVVM zapadá do SwiftUI?",
+          "a": "*Přesuňte stav a logiku do třídy `@Observable` držené pohledem pomocí `@State`, přičemž ponecháte pohled odpovědný pouze za rozložení. Hodí se na složité obrazovky; pro jednoduché je obyčejné `@State` obvykle jasnější.*"
+        }
+      ],
+      "deck_key": "observation-and-data-flow"
+    },
+    {
+      "deck": "Vytrvalost a kódovatelnost",
+      "deck_icon": "internaldrive",
+      "cards": [
+        {
+          "q": "K čemu je `UserDefaults` a jaké jsou jeho limity?",
+          "a": "*Malé kousky uživatelských nastavení, které by měly přežít opětovné spuštění – při spuštění se načítají do paměti, takže je udržujte pod zhruba 512 kB. Není to databáze a není to bezpečné úložiště.*\n```swift\nUserDefaults.standard.set(tapCount, forKey: \"Tap\")\nlet count = UserDefaults.standard.integer(forKey: \"Tap\")\n```\n*Chybějící klíče vrátí nulovou hodnotu (`0`, `false`, `nil`), takže nemůžete rozlišit \"unset\" od \"0\".*"
+        },
+        {
+          "q": "Co dělá `@AppStorage`?",
+          "a": "*Zabalí jeden klíč `UserDefaults` do stavu SwiftUI: jeho čtením se získá uložená hodnota, zápisem se uloží **a** spustí aktualizace zobrazení.*\n```swift\n@AppStorage(\"tapCount\") private var tapCount = 0\n\nButton(\"Tapped \\(tapCount)\") { tapCount += 1 }\n```\n*Zvládá pouze jednoduché typy – pro cokoli strukturovaného použijte `Codable` + JSON.*"
+        },
+        {
+          "q": "Co jsou `Codable`, `Encodable` a `Decodable`?",
+          "a": "*`Codable` je kombinací obou. Shoda je syntetizována automaticky, pokud je každá uložená vlastnost sama sebou `Codable`.*\n```swift\nstruct User: Codable {\n    let name: String\n    let address: Address   // must also be Codable\n}\n```"
+        },
+        {
+          "q": "Jak kódujete a dekódujete JSON?",
+          "a": "```swift\nlet data = try JSONEncoder().encode(user)\nlet user = try JSONDecoder().decode(User.self, from: data)\n```\n*Poznámka `User.self` — dekodér potřebuje **typ**, nikoli instanci. Obě volání vyhodí, takže zvládněte selhání.*"
+        },
+        {
+          "q": "Jak dekódujete vnořený JSON?",
+          "a": "*Zrcadlení tvaru pomocí vnořených typů `Codable` – dekodér prochází hierarchií automaticky.*\n```swift\nstruct Response: Codable {\n    let results: [Item]\n}\nstruct Item: Codable {\n    let id: Int\n    let name: String\n}\n```"
+        },
+        {
+          "q": "Jak zacházíte s klíči JSON, které neodpovídají názvům vašich vlastností?",
+          "a": "*Buď deklarujte výčet `CodingKeys` mapující každou vlastnost na její klíč JSON, nebo nastavte `keyDecodingStrategy = .convertFromSnakeCase` pro společný případ hada.*\n```swift\nenum CodingKeys: String, CodingKey {\n    case id\n    case fullName = \"full_name\"\n}\n```"
+        },
+        {
+          "q": "Jak dekódujete data z JSON?",
+          "a": "*Nastavte strategii dekódování — přesně odpovídající formátu serveru, včetně národního prostředí a časového pásma.*\n```swift\nlet decoder = JSONDecoder()\ndecoder.dateDecodingStrategy = .iso8601\n\n// or a custom formatter:\nlet formatter = DateFormatter()\nformatter.dateFormat = \"y-MM-dd\"\ndecoder.dateDecodingStrategy = .formatted(formatter)\n```"
+        },
+        {
+          "q": "Jak čtete a zapisujete soubory v adresáři dokumentů?",
+          "a": "*Vytvořte URL z `URL.documentsDirectory` a poté použijte `String`/`Data` zápis a čtení. Psát atomicky a přidat ochranu souborů.*\n```swift\nlet url = URL.documentsDirectory.appending(path: \"saved\")\n\ntry data.write(\n    to: url,\n    options: [\n        .atomic,\n        .completeFileProtection\n    ]\n)\nlet loaded = try Data(contentsOf: url)\n```\n*Atomický znamená, že zapisuje do dočasného souboru a přejmenovává, takže pád nemůže zanechat napůl zapsaný soubor.*"
+        },
+        {
+          "q": "Jak načtete zdroj dodávaný s aplikací?",
+          "a": "*Zeptejte se `Bundle.main` na jeho URL a poté si jej přečtěte. Nenalezení vámi dodaného souboru je chyba programátora, takže pád s `fatalError` je zde rozumný.*\n```swift\nguard let url = Bundle.main.url(\n    forResource: \"words\",\n    withExtension: \"txt\"\n) else {\n    fatalError(\"Missing words.txt\")\n}\nlet contents = try String(contentsOf: url, encoding: .utf8)\nlet lines = contents.components(separatedBy: \"\\n\")\n```"
+        }
+      ],
+      "deck_key": "persistence-and-codable"
+    },
+    {
+      "deck": "vytváření sítí",
+      "deck_icon": "network",
+      "cards": [
+        {
+          "q": "Jak načítáte data z internetu pomocí async/wait?",
+          "a": "```swift\nlet url = URL(string: \"https://example.com/api\")!\nlet (data, _) = try await URLSession.shared.data(from: url)\nlet items = try JSONDecoder()\n    .decode([Item].self, from: data)\n```\n*Požadavek i dekódování hází, takže je zabalte do `do`/`catch`.*"
+        },
+        {
+          "q": "Jak spustíte asynchronní práci, když se zobrazí pohled?",
+          "a": "*Použijte modifikátor `task` — spustí práci, když se pohled objeví, a **zruší** ji automaticky, když pohled zmizí, na rozdíl od `onAppear`.*\n```swift\n.task {\n    await loadData()\n}\n```\n*Předejte `id:` pro opětovné spuštění úlohy, když se hodnota změní.*"
+        },
+        {
+          "q": "Jak odešlete požadavek POST?",
+          "a": "*Nakonfigurujte `URLRequest` pomocí metody, záhlaví a těla, poté použijte `upload(for:from:)` nebo `data(for:)`.*\n```swift\nvar request = URLRequest(url: url)\nrequest.setValue(\"application/json\",\n                 forHTTPHeaderField: \"Content-Type\")\nrequest.httpMethod = \"POST\"\n\nlet (data, _) = try await URLSession\n    .shared\n    .upload(for: request, from: encoded)\n```"
+        },
+        {
+          "q": "Jak ověříte, že žádost skutečně uspěla?",
+          "a": "*Vyhozená chyba pokrývá pouze selhání přenosu — 404 je dokonale úspěšné stahování. Zkontrolujte stavový kód odpovědi sami.*\n```swift\nlet (data, response) =\n    try await URLSession.shared\n        .data(from: url)\n\nguard let http = response as? HTTPURLResponse,\n      (200..<300).contains(http.statusCode) else {\n    throw NetworkError.badResponse\n}\n```"
+        },
+        {
+          "q": "Proč nikdy nesmíte blokovat hlavní vlákno sítí?",
+          "a": "*Hlavní vlákno řídí uživatelské rozhraní; zablokování aplikace zamrzne a hlídací pes ji může zabít. Funkce `async` se místo blokování pozastaví a aktualizace `body` a zobrazení SwiftUI jsou `@MainActor`, takže výsledky se bezpečně vrátí k hlavnímu aktérovi.*"
+        },
+        {
+          "q": "Co je `AsyncImage` a v čem je háček?",
+          "a": "* Pohled, který stáhne a zobrazí vzdálený obrázek. Protože SwiftUI nezná velikost, dokud se stahování nedokončí, je potřeba k určení velikosti formulář `phase`.*\n```swift\nAsyncImage(url: url) { phase in\n    if let image = phase.image {\n        image.resizable().scaledToFit()\n    } else if phase.error != nil {\n        Text(\"Failed to load\")\n    } else {\n        ProgressView()\n    }\n}\n.frame(width: 200, height: 200)\n```\n*Předejte `scale:` pro 2x/3x aktiva, aby nebyla čerpána příliš velká.*"
+        },
+        {
+          "q": "Jaký je typ Swift `Result`?",
+          "a": "*Výčet s `.success(value)` a `.failure(error)`, který vám umožní **uložit** výsledek operace a zpracovat jej později – užitečné s API pro zpracování dokončení a pro udržení stavu zatížení v modelu pohledu.*\n```swift\nenum LoadingState {\n    case loading\n    case loaded([Item])\n    case failed(Error)\n}\n```"
+        },
+        {
+          "q": "Jak zobrazíte uživatelskou chybu z neúspěšného požadavku?",
+          "a": "*Zachyťte chybu, vložte zprávu do `@State` a vyvolejte z ní výstrahu – nikdy se nezhroutí při selhání sítě, protože jde o očekávaný stav.*\n```swift\ndo {\n    try await load()\n} catch {\n    errorMessage = error.localizedDescription\n}\n```"
+        }
+      ],
+      "deck_key": "networking"
+    },
+    {
+      "deck": "SwiftData",
+      "deck_icon": "externaldrive",
+      "cards": [
+        {
+          "q": "Co dělá makro `@Model`?",
+          "a": "*Aplikováno na **třídu**, dělá z typu trvalý model SwiftData: vlastnosti se stávají sledovanými atributy, třída získává pozorování a SwiftData jej může ukládat, dotazovat a aktualizovat.*\n```swift\n@Model\nclass Book {\n    var title: String\n    var rating: Int\n\n    init(title: String, rating: Int) {\n        self.title = title\n        self.rating = rating\n    }\n}\n```"
+        },
+        {
+          "q": "Jak nastavíte SwiftData pro aplikaci?",
+          "a": "*Připojte ke scéně kontejner modelu – který vytvoří úložiště a vloží kontext modelu do prostředí.*\n```swift\nWindowGroup {\n    ContentView()\n}\n.modelContainer(for: Book.self)\n```"
+        },
+        {
+          "q": "Jak vkládáte a odstraňujete objekty?",
+          "a": "*Prostřednictvím kontextu modelu z prostředí.*\n```swift\n@Environment(\\.modelContext) var modelContext\n\nlet book = Book(title: \"Dune\", rating: 5)\nmodelContext.insert(book)\nmodelContext.delete(book)\ntry? modelContext.save()\n```\n*Ukládání je ve výchozím nastavení automatické; volejte `save()`, když to potřebujete, aby se to stalo hned.*"
+        },
+        {
+          "q": "Co dělá `@Query`?",
+          "a": "*Načítá objekty modelu a udržuje zobrazení v synchronizaci – vložení nebo odstranění kdekoli aktualizuje každý pohled obsahující odpovídající dotaz, bez nutnosti ručního opětovného načítání.*\n```swift\n@Query var books: [Book]\n\nList(books) { book in\n    Text(book.title)\n}\n```"
+        },
+        {
+          "q": "Jak třídíte `@Query`?",
+          "a": "*Předejte jedno nebo více `SortDescriptor` — pozdější přeruší vazby v dřívějších.*\n```swift\n@Query(sort: [\n    SortDescriptor(\\Book.title),\n    SortDescriptor(\\Book.author, order: .reverse)\n]) var books: [Book]\n```"
+        },
+        {
+          "q": "Jak filtrujete `@Query`?",
+          "a": "*S `#Predicate`, který je kompilován do skutečného databázového dotazu spíše než spuštěn v Swift.*\n```swift\n@Query(filter: #Predicate<Book> { book in\n    book.rating > 3 &&\n    book.title\n        .localizedStandardContains(\"a\")\n}) var books: [Book]\n```\n*Uvnitř predikátu funguje pouze podmnožina Swift – žádná libovolná volání funkcí a volitelné doplňky vyžadují péči.*"
+        },
+        {
+          "q": "Jak změníte řazení nebo filtr dotazu za běhu?",
+          "a": "*`@Query` je fixní při inicializaci, takže umístěte seznam do podřízeného pohledu a předejte kritéria do jeho `init`, kde vytvoříte `Query`. Změna kritérií znovu vytvoří podřízeného s novým dotazem.*\n```swift\ninit(minimumRating: Int) {\n    _books = Query(filter: #Predicate<Book> {\n        $0.rating >= minimumRating\n    })\n}\n```"
+        },
+        {
+          "q": "Jak fungují vztahy v SwiftData?",
+          "a": "*Stačí deklarovat vlastnost jiného typu modelu nebo jejich pole — SwiftData odvodí vztah. `@Relationship` umožňuje nastavit pravidlo odstranění.*\n```swift\n@Relationship(deleteRule: .cascade)\nvar jobs = [Job]()\n```\n*`.cascade` odstraní děti s rodičem; `.nullify` je zanechává osiřelé.*"
+        },
+        {
+          "q": "Jak upravíte objekt SwiftData ve formuláři?",
+          "a": "*Třídy modelů jsou pozorovatelné, takže vezměte objekt jako vlastnost `@Bindable` a připojte se přímo k němu – změny jsou sledovány a ukládány za vás.*\n```swift\n@Bindable var book: Book\n\nTextField(\"Title\", text: $book.title)\n```"
+        },
+        {
+          "q": "Co SwiftData vyžaduje pro synchronizaci s iCloud?",
+          "a": "*Model kompatibilní s CloudKit: každý atribut musí být volitelný nebo mít výchozí hodnotu, vztahy musí být volitelné a jedinečná omezení nejsou povolena. Potřebujete také iCloud a možnosti režimů na pozadí.*"
+        }
+      ],
+      "deck_key": "swiftdata"
+    },
+    {
+      "deck": "Přístupnost",
+      "deck_icon": "figure.wave",
+      "cards": [
+        {
+          "q": "Proč VoiceOver často čte nesprávnou věc a jak to napravíte?",
+          "a": "*Vrátí se na jakýkoli název textu nebo obrázku, který najde. Dejte zobrazení explicitní štítek popisující jeho **význam**, nikoli jeho vzhled.*\n```swift\nImage(pictures[index])\n    .accessibilityLabel(labels[index])\n```"
+        },
+        {
+          "q": "Jaký je rozdíl mezi štítkem, hodnotou a nápovědou?",
+          "a": "- **Štítek** – co je prvek *je* („Objem“)\n– **Value** – aktuální stav („7 z 10“)\n- **Nápověda** – co se stane, když na to zareagujete („Přehrajte dvojitým klepnutím“)\n\n*Tipy se čtou jako poslední a uživatel je může vypnout, proto tam nikdy neuvádějte podstatné informace.*"
+        },
+        {
+          "q": "Co jsou vlastnosti přístupnosti a proč na nich záleží?",
+          "a": "*Říkají VoiceOver, jak se prvek chová – zda je to tlačítko, obrázek, záhlaví nebo aktuálně vybraný – takže oznamuje správnou interakci.*\n```swift\nImage(flag)\n    .accessibilityAddTraits(.isButton)\n    .accessibilityRemoveTraits(.isImage)\n```"
+        },
+        {
+          "q": "Jak skryjete čistě dekorativní pohled z VoiceOver?",
+          "a": "```swift\nImage(decorative: \"ornament\")\nImage(\"ornament\").accessibilityHidden(true)\n```\n*`Image(decorative:)` stále reaguje na klepnutí, ale v pořadí čtení je přeskočeno; `accessibilityHidden` jej zcela odstraní.*"
+        },
+        {
+          "q": "Jak sloučíte několik pohledů do jednoho prvku usnadnění?",
+          "a": "*Seskupit je tak, aby VoiceOver přečetl jednu souvislou položku místo tří fragmentů.*\n```swift\nVStack {\n    Text(\"Your score is\")\n    Text(\"1000\")\n}\n.accessibilityElement(children: .combine)\n```\n*Pokud chcete mít plnou kontrolu nad zněním, použijte `.ignore` a svůj vlastní štítek.*"
+        },
+        {
+          "q": "Jak uděláte vlastní ovládání nastavitelné pomocí VoiceOver?",
+          "a": "*Poskytněte nastavitelnou akci, takže přejetím nahoru/dolů změníte hodnotu a udržíte hodnotu přístupnosti synchronizovanou.*\n```swift\n.accessibilityValue(\"\\(rating) stars\")\n.accessibilityAdjustableAction { direction in\n    switch direction {\n    case .increment: rating += 1\n    case .decrement: rating -= 1\n    default: break\n    }\n}\n```"
+        },
+        {
+          "q": "Co je to „odlišení bez barev“ a jak to podporujete?",
+          "a": "*Nastavení pro barvoslepé uživatele. Když je zapnutá, nespoléhejte pouze na barvu – přidejte tvar, ikonu nebo text.*\n```swift\n@Environment(\n    \\.accessibilityDifferentiateWithoutColor\n) var differentiate\n\nif differentiate {\n    Image(systemName: \"checkmark.circle\")\n}\n```"
+        },
+        {
+          "q": "Jak respektujete snížení pohybu a snížení transparentnosti?",
+          "a": "*Zkontrolujte hodnoty prostředí a pusťte animaci nebo rozostření, když jsou povoleny.*\n```swift\n@Environment(\\.accessibilityReduceMotion) var reduceMotion\n@Environment(\n    \\.accessibilityReduceTransparency\n) var reduceTransparency\n\nwithAnimation(reduceMotion ? nil : .spring) { scale *= 1.5 }\n```"
+        }
+      ],
+      "deck_key": "accessibility"
+    },
+    {
+      "deck": "Adaptivní uživatelské rozhraní a systémové rámce",
+      "deck_icon": "ipad",
+      "cards": [
+        {
+          "q": "Jak přizpůsobíte dispoziční řešení dostupnému prostoru?",
+          "a": "*Přečtěte si třídu horizontální velikosti: `.compact` na iPhone na výšku, `.regular` na iPadu a větších iPhonech na šířku.*\n```swift\n@Environment(\\.horizontalSizeClass) var sizeClass\n\nif sizeClass == .compact {\n    VStack { content }\n} else {\n    HStack { content }\n}\n```\n*Zabalení obou větví do `Group` udrží modifikátory na jednom místě.*"
+        },
+        {
+          "q": "Co je `NavigationSplitView`?",
+          "a": "*Kontejner, který na velkých obrazovkách zobrazuje postranní panel vedle detailního pohledu a na malých se sbalí do zásobníku založeného na push. Poskytněte výchozí podrobné zobrazení, aby iPad nezačínal s prázdným panelem.*\n```swift\nNavigationSplitView {\n    List(items) { … }\n} detail: {\n    WelcomeView()\n}\n```"
+        },
+        {
+          "q": "Jak vytvoříte panel záložek?",
+          "a": "*`TabView` s `tabItem` u každého potomka a vazbou, pokud potřebujete změnit tabulátory v kódu – přiřaďte každé kartě `tag`, které odpovídá typu vazby.*\n```swift\nTabView(selection: $selectedTab) {\n    HomeView()\n        .tabItem { Label(\"Home\", systemImage: \"house\") }\n        .tag(Tab.home)\n}\n```"
+        },
+        {
+          "q": "Co je `ShareLink`?",
+          "a": "*Systém sdílený list jako pohled. Dejte mu obsah plus volitelný předmět, zprávu a náhled.*\n```swift\nShareLink(item: url,\n          subject: Text(\"Check this out\"),\n          message: Text(\"Thought you'd like it\"))\n```\n*Sdílení obrázku vyžaduje, aby položka odpovídala `Transferable`.*"
+        },
+        {
+          "q": "Jak `PhotosPicker` funguje?",
+          "a": "*Naváže se na `PhotosPickerItem`, který pak načtete do typu, který potřebujete. Načítání je asynchronní a může selhat, takže patří do `task` nebo `onChange`.*\n```swift\nPhotosPicker(\n    \"Select a photo\",\n    selection: $pickerItem,\n    matching: .images\n)\n\n.onChange(of: pickerItem) {\n    Task {\n        selectedImage = try? await\n            pickerItem?.loadTransferable(\n                type: Image.self\n            )\n    }\n}\n```"
+        },
+        {
+          "q": "Jak přidáte kontextové menu?",
+          "a": "*Připevněte `contextMenu` pomocí tlačítek – dlouhým stisknutím je odhalíte. Udržujte to krátké a pamatujte, že je to skrytá rezerva, takže tam nikdy neuvádějte pouze zásadní akce.*\n```swift\n.contextMenu {\n    Button(\"Delete\", role: .destructive) { delete() }\n}\n```"
+        },
+        {
+          "q": "Jaké jsou kroky pro místní oznámení?",
+          "a": "1. Požádejte o autorizaci (`.alert`, `.badge`, `.sound`)\n2. Sestavte `UNMutableNotificationContent`\n3. Vytvořte spouštěč (`UNTimeIntervalNotificationTrigger`, kalendář nebo umístění)\n4. Oba zabalte do `UNNotificationRequest` s jedinečným identifikátorem\n5. `UNUserNotificationCenter.current().add(request)`\n\n*Povolení lze kdykoli odvolat, proto vždy vyřizujte zamítnutý případ.*"
+        },
+        {
+          "q": "Jak přidáte závislost balíčku Swift v Xcode?",
+          "a": "*Soubor ▸ Přidejte závislosti balíčku, vložte adresu URL úložiště a vyberte pravidlo verze – obvyklou volbou je „až do další hlavní“, protože sémantické verzování neslibuje žádné zásadní změny v rámci hlavní verze. Balíčky přicházejí jako zdroj a jsou vytvořeny s vaší aplikací.*"
+        },
+        {
+          "q": "Jak použijete filtr Core Image na obrázek SwiftUI?",
+          "a": "*Core Image je samostatný rámec, takže převádíte mezi reprezentacemi: `UIImage` → `CIImage` → filtr → `CGImage` → `UIImage` → `Image`. Znovu použijte jeden `CIContext`, protože jeho vytvoření je drahé.*\n```swift\nlet context = CIContext()\ncurrentFilter.setValue(inputImage, forKey: kCIInputImageKey)\n\nguard let output = currentFilter.outputImage,\n      let cgImage = context.createCGImage(\n          output,\n          from: output.extent\n      )\nelse { return }\n\nimage = Image(uiImage: UIImage(cgImage: cgImage))\n```"
+        },
+        {
+          "q": "Jak zobrazíte mapu s poznámkami?",
+          "a": "*MapKit dodává SwiftUI zobrazení: `Map` s pozicí kamery a `Annotation`/`Marker` pro body zájmu.*\n```swift\nMap(initialPosition: .region(region)) {\n    ForEach(locations) { location in\n        Annotation(\n            location.name,\n            coordinate: location.coordinate\n        ) {\n            Image(systemName: \"star.circle\")\n        }\n    }\n}\n.mapStyle(.hybrid)\n```"
+        },
+        {
+          "q": "Jak chráníte část aplikace pomocí Face ID nebo Touch ID?",
+          "a": "*Použijte `LocalAuthentication`: zeptejte se `LAContext`, zda jsou k dispozici biometrické údaje, a poté vyhodnoťte zásady. Přidejte `NSFaceIDUsageDescription` do Info.plist, jinak dojde k selhání aplikace na zařízeních Face ID.*\n```swift\nlet context = LAContext()\nvar error: NSError?\n\nif context.canEvaluatePolicy(\n    .deviceOwnerAuthenticationWithBiometrics,\n    error: &error\n) {\n    let reason = \"Unlock your saved places.\"\n    let success = try await context.evaluatePolicy(\n        .deviceOwnerAuthenticationWithBiometrics,\n        localizedReason: reason\n    )\n}\n```\n*Vždy poskytněte záložní řešení – biometrické údaje mohou být nedostupné nebo selhat.*"
+        }
+      ],
+      "deck_key": "adaptive-ui-and-system-frameworks"
+    }
+  ]
+}

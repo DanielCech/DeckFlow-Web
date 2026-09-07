@@ -1,0 +1,491 @@
+{
+  "format": "flashcard-content",
+  "version": "2",
+  "interest": "Matematika",
+  "interest_icon": "function",
+  "interest_key": "mathematics",
+  "deck_q_lang": "cs",
+  "deck_a_lang": "cs",
+  "decks": [
+    {
+      "deck": "Mocniny a kořeny",
+      "cards": [
+        {
+          "q": "$a^m \\cdot a^n = ?${a až m krát a až n}",
+          "a": "$a^{m+n}${a až m plus n}"
+        },
+        {
+          "q": "$\\frac{a^m}{a^n} = ?${a až m přes a až n}",
+          "a": "$a^{m-n}${a až m mínus n}"
+        },
+        {
+          "q": "$(a^m)^n = ?${a až m, vše až n}",
+          "a": "$a^{m \\cdot n}${a až m krát n}"
+        },
+        {
+          "q": "$a^{-m} = ?${a až mínus m}",
+          "a": "$\\frac{1}{a^m}${jeden přes a na m}"
+        },
+        {
+          "q": "$a^0 = ?${a na nulu} pro $a \\neq 0${a nerovná se nule}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sqrt[n]{a^m} = ?${n-tá odmocnina z a k m}",
+          "a": "$a^{m/n}${a až m nad n}"
+        },
+        {
+          "q": "$\\sqrt[m]{\\sqrt[n]{a}} = ?${m-tá odmocnina n-té odmocniny a}",
+          "a": "$\\sqrt[m \\cdot n]{a}${m krát n-tá odmocnina z a}"
+        }
+      ],
+      "deck_key": "powers-and-roots"
+    },
+    {
+      "deck": "Pravidla logaritmu",
+      "cards": [
+        {
+          "q": "$\\log_a(x \\cdot y) = ?${log základ a x krát y}",
+          "a": "$\\log_a x + \\log_a y${log základ a z x plus log základ a z y}"
+        },
+        {
+          "q": "$\\log_a\\!\\left(\\frac{x}{y}\\right) = ?${log základ a z x nad y}",
+          "a": "$\\log_a x - \\log_a y${log základ a z x mínus log základ a z y}"
+        },
+        {
+          "q": "$\\log_a(x^k) = ?${log základ z x ke k}",
+          "a": "$k \\cdot \\log_a x${k krát logaritmický základ a z x}"
+        },
+        {
+          "q": "$\\log_a a = ?${logová základna z a}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\log_a 1 = ?${logová základna jedna}",
+          "a": "$0$"
+        },
+        {
+          "q": "Změna základu: $\\log_a x = ?${log základ a z x}",
+          "a": "$\\frac{\\log_b x}{\\log_b a}${log základ b z x nad logaritmickým základem b z a}\n\nObvykle s $b = 10$ nebo $b = e$."
+        },
+        {
+          "q": "$\\ln(e^x) = ?${přirozený log e do x}",
+          "a": "$x$"
+        },
+        {
+          "q": "$a^{\\log_a x} = ?${a na logaritmickou základnu a z x} pro $x > 0$",
+          "a": "$x$\n\nUmocňování a logaritmus stejného základu se vzájemně ruší."
+        }
+      ],
+      "deck_key": "logarithm-rules"
+    },
+    {
+      "deck": "Algebraické identity",
+      "cards": [
+        {
+          "q": "$(a + b)^2 = ?${a plus b, vše na druhou}",
+          "a": "$a^2 + 2ab + b^2${a na druhou plus dvě a b plus b na druhou}"
+        },
+        {
+          "q": "$(a - b)^2 = ?${a minus b, vše na druhou}",
+          "a": "$a^2 - 2ab + b^2${a na druhou mínus dvě a b plus b na druhou}"
+        },
+        {
+          "q": "Faktor rozdílu druhých mocnin: $a^2 - b^2 = ?${a na druhou mínus b na druhou}",
+          "a": "$(a - b)(a + b)${a mínus b, krát a plus b}"
+        },
+        {
+          "q": "$(a + b)^3 = ?${a plus b, všechny kostky}",
+          "a": "$a^3 + 3a^2b + 3ab^2 + b^3${a krychle plus tři a na druhou b plus tři ab na druhou plus b na druhou}"
+        },
+        {
+          "q": "$(a - b)^3 = ?${a minus b, vše na kostky}",
+          "a": "$a^3 - 3a^2b + 3ab^2 - b^3${a na druhou mínus tři a na druhou b plus tři a b na druhou mínus b na druhou}"
+        },
+        {
+          "q": "Faktor součtu kostek: $a^3 + b^3 = ?${a cubed plus b cubed}",
+          "a": "$(a + b)(a^2 - ab + b^2)${a plus b, krát druhá na druhou mínus a b plus b na druhou}"
+        },
+        {
+          "q": "Faktor rozdílu kostek: $a^3 - b^3 = ?${a kostka minus b kostka}",
+          "a": "$(a - b)(a^2 + ab + b^2)${a mínus b, krát a na druhou plus ab plus b na druhou}"
+        },
+        {
+          "q": "Kvadratický vzorec: odmocniny $ax^2 + bx + c = 0${a x na druhou plus b x plus c se rovná nule}",
+          "a": "$$\nx = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n$${x se rovná mínus b plus nebo mínus druhá odmocnina z b na druhou mínus čtyři a c, vše přes dvě a}"
+        },
+        {
+          "q": "Co vám říká diskriminant $D = b^2 - 4ac${D se rovná b na druhou mínus čtyři a c}?",
+          "a": "* $D > 0$ — dva odlišné skutečné kořeny\n* $D = 0$ — jeden skutečný dvojitý kořen\n* $D < 0$ — dva komplexně konjugované kořeny"
+        }
+      ],
+      "deck_key": "algebraic-identities"
+    },
+    {
+      "deck": "Trigonometrické hodnoty",
+      "cards": [
+        {
+          "q": "$\\sin 0^\\circ = ?${sinus nula stupňů}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\sin 30^\\circ = \\sin\\frac{\\pi}{6} = ?${sinus třiceti stupňů}",
+          "a": "$\\frac{1}{2}${jedna polovina}"
+        },
+        {
+          "q": "$\\sin 45^\\circ = \\sin\\frac{\\pi}{4} = ?${sinus čtyřicet pět stupňů}",
+          "a": "$\\frac{\\sqrt{2}}{2}${druhá odmocnina ze dvou na dva}"
+        },
+        {
+          "q": "$\\sin 60^\\circ = \\sin\\frac{\\pi}{3} = ?${sinus šedesáti stupňů}",
+          "a": "$\\frac{\\sqrt{3}}{2}${druhá odmocnina ze tří na dvě}"
+        },
+        {
+          "q": "$\\sin 90^\\circ = \\sin\\frac{\\pi}{2} = ?${sinus devadesáti stupňů}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 0^\\circ = ?${kosinus nula stupňů}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\cos 30^\\circ = \\cos\\frac{\\pi}{6} = ?${kosinus třiceti stupňů}",
+          "a": "$\\frac{\\sqrt{3}}{2}${druhá odmocnina ze tří na dvě}"
+        },
+        {
+          "q": "$\\cos 45^\\circ = \\cos\\frac{\\pi}{4} = ?${kosinus čtyřiceti pěti stupňů}",
+          "a": "$\\frac{\\sqrt{2}}{2}${druhá odmocnina ze dvou na dva}"
+        },
+        {
+          "q": "$\\cos 60^\\circ = \\cos\\frac{\\pi}{3} = ?${kosinus šedesáti stupňů}",
+          "a": "$\\frac{1}{2}${jedna polovina}"
+        },
+        {
+          "q": "$\\cos 90^\\circ = \\cos\\frac{\\pi}{2} = ?${kosinus devadesáti stupňů}",
+          "a": "$0$"
+        },
+        {
+          "q": "$\\tan 30^\\circ = \\tan\\frac{\\pi}{6} = ?${tangens třiceti stupňů}",
+          "a": "$\\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}${jedna nad druhou odmocninou ze tří nebo odmocnina ze tří nad tři}"
+        },
+        {
+          "q": "$\\tan 45^\\circ = \\tan\\frac{\\pi}{4} = ?${tangens čtyřicet pět stupňů}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\tan 60^\\circ = \\tan\\frac{\\pi}{3} = ?${tangens šedesáti stupňů}",
+          "a": "$\\sqrt{3}${druhá odmocnina ze tří}"
+        },
+        {
+          "q": "Proč je $\\tan 90^\\circ${tangens devadesáti stupňů} nedefinovaný?",
+          "a": "Protože $\\tan x = \\frac{\\sin x}{\\cos x}${tangens x se rovná sinus x nad kosinus x} a $\\cos 90^\\circ = 0$ — má podíl nulový jmenovatel."
+        }
+      ],
+      "deck_key": "trigonometric-values"
+    },
+    {
+      "deck": "Trigonometrické identity",
+      "cards": [
+        {
+          "q": "Pythagorejská identita: $\\sin^2 x + \\cos^2 x = ?${sinus na druhou x plus kosinus na druhou x}",
+          "a": "$1$"
+        },
+        {
+          "q": "$\\sin 2x = ?${sinus ze dvou x}",
+          "a": "$2 \\sin x \\cos x${dva sinusové x kosinusové x}"
+        },
+        {
+          "q": "$\\cos 2x = ?${kosinus dvou x}",
+          "a": "$\\cos^2 x - \\sin^2 x${kosinus na druhou x minus sinus na druhou x}\n\nTaké $1 - 2\\sin^2 x$ nebo $2\\cos^2 x - 1$."
+        },
+        {
+          "q": "Vyjádřete $\\tan x${tangens x} pomocí $\\sin x$ a $\\cos x$:",
+          "a": "$\\tan x = \\frac{\\sin x}{\\cos x}${tangens x rovná se sinus x přes kosinus x}"
+        },
+        {
+          "q": "Vyjádřete $\\cot x${kotangens x} pomocí $\\sin x$ a $\\cos x$:",
+          "a": "$\\cot x = \\frac{\\cos x}{\\sin x}${kotangens x rovná se kosinus x nad sinus x}"
+        },
+        {
+          "q": "$1 + \\tan^2 x = ?${jedna plus tečna na druhou x}",
+          "a": "$\\frac{1}{\\cos^2 x}${jedna nad kosinus na druhou x}"
+        },
+        {
+          "q": "$1 + \\cot^2 x = ?${jedna plus kotangens na druhou x}",
+          "a": "$\\frac{1}{\\sin^2 x}${jedna nad sinus na druhou x}"
+        },
+        {
+          "q": "$\\sin(x + y) = ?${sinus x plus y}",
+          "a": "$\\sin x \\cos y + \\cos x \\sin y${sinus x kosinus y plus kosinus x sinus y}"
+        },
+        {
+          "q": "$\\sin(x - y) = ?${sinus x minus y}",
+          "a": "$\\sin x \\cos y - \\cos x \\sin y${sinus x kosinus y minus kosinus x sinus y}"
+        },
+        {
+          "q": "$\\cos(x + y) = ?${kosinus x plus y}",
+          "a": "$\\cos x \\cos y - \\sin x \\sin y${kosinus x kosinus y minus sinus x sinus y}"
+        },
+        {
+          "q": "$\\cos(x - y) = ?${kosinus x minus y}",
+          "a": "$\\cos x \\cos y + \\sin x \\sin y${kosinus x kosinus y plus sinus x sinus y}"
+        },
+        {
+          "q": "$\\tan(x + y) = ?${tangens x plus y}",
+          "a": "$\\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y}${tečna x plus tečna y, přes jednu minus tečna x tečna y}"
+        }
+      ],
+      "deck_key": "trigonometric-identities"
+    },
+    {
+      "deck": "Goniometrické funkce a inverze",
+      "cards": [
+        {
+          "q": "Doména $\\sin x${sinus x}:",
+          "a": "$\\mathbb{R}$ — všechna reálná čísla."
+        },
+        {
+          "q": "Rozsah $\\sin x${sinus x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${uzavřený interval od mínus jedna do jedné}"
+        },
+        {
+          "q": "Je $\\sin x${sinus x} sudé nebo liché?",
+          "a": "**Liché:** $\\sin(-x) = -\\sin x${sinus mínus x se rovná mínus sinus x}"
+        },
+        {
+          "q": "Je $\\cos x${kosinus x} sudé nebo liché?",
+          "a": "**Sudy:** $\\cos(-x) = \\cos x${kosinus mínus x se rovná kosinus x}"
+        },
+        {
+          "q": "Perioda $\\sin x${sinus x} a $\\cos x${kosinus x}:",
+          "a": "$2\\pi${dvě pi}"
+        },
+        {
+          "q": "Období $\\tan x${tangens x}:",
+          "a": "$\\pi${pi}"
+        },
+        {
+          "q": "Doména $\\tan x${tangens x}:",
+          "a": "$\\mathbb{R} \\setminus \\left\\{\\frac{\\pi}{2} + k\\pi \\mid k \\in \\mathbb{Z}\\right\\}${všechny reálné hodnoty kromě pí nad dvě plus k pi}"
+        },
+        {
+          "q": "Doména $\\cot x${kotangens x}:",
+          "a": "$\\mathbb{R} \\setminus \\{k\\pi \\mid k \\in \\mathbb{Z}\\}${všechny reálné hodnoty kromě celých násobků pí}"
+        },
+        {
+          "q": "Nuly $\\sin x${sinus x}:",
+          "a": "$x = k\\pi, \\quad k \\in \\mathbb{Z}${x se rovná k pi, k an celé číslo}"
+        },
+        {
+          "q": "Nuly $\\cos x${kosinus x}:",
+          "a": "$x = \\frac{\\pi}{2} + k\\pi, \\quad k \\in \\mathbb{Z}${x se rovná pi přes dvě plus k pi, k an celé číslo}"
+        },
+        {
+          "q": "Co je $\\arcsin x${obloukový sinus x}?",
+          "a": "Převrácená hodnota $\\sin x$ je omezena na $\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${minus pí přes dva až pí přes dva}."
+        },
+        {
+          "q": "Doména $\\arcsin x${obloukový sinus x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${uzavřený interval od mínus jedna do jedné}"
+        },
+        {
+          "q": "Rozsah $\\arcsin x${obloukový sinus x}:",
+          "a": "$\\left\\langle -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right\\rangle${uzavřený interval od mínus pí přes dvě do pí přes dvě}"
+        },
+        {
+          "q": "Co je $\\arccos x${obloukový kosinus x}?",
+          "a": "Inverzní hodnota $\\cos x$ je omezena na $\\langle 0,\\, \\pi \\rangle${nula k pi}."
+        },
+        {
+          "q": "Doména $\\arccos x${obloukový kosinus x}:",
+          "a": "$\\langle -1,\\, 1 \\rangle${uzavřený interval od mínus jedna do jedné}"
+        },
+        {
+          "q": "Rozsah $\\arccos x${obloukový kosinus x}:",
+          "a": "$\\langle 0,\\, \\pi \\rangle${uzavřený interval od nuly do pi}"
+        },
+        {
+          "q": "Doména $\\arctan x${obloukový tangens x}:",
+          "a": "$\\mathbb{R}$ — všechna reálná čísla."
+        },
+        {
+          "q": "Rozsah $\\arctan x${arkus tangens x}:",
+          "a": "$\\left( -\\frac{\\pi}{2},\\, \\frac{\\pi}{2} \\right)${otevřený interval od mínus pí přes dvě do pí přes dvě}"
+        },
+        {
+          "q": "Doména $\\text{arccot}\\, x${obloukový kotangens x}:",
+          "a": "$\\mathbb{R}$ — všechna reálná čísla."
+        },
+        {
+          "q": "Rozsah $\\text{arccot}\\, x${obloukový kotangens x}:",
+          "a": "$(0,\\, \\pi)${otevřený interval od nuly do pi}"
+        }
+      ],
+      "deck_key": "trigonometric-functions-and-inverses"
+    },
+    {
+      "deck": "Deriváty",
+      "cards": [
+        {
+          "q": "Co geometricky znamená $f'(x_0)${f prvočíslo x nula}?",
+          "a": "Je to sklon tečny ($k = \\tan \\alpha${k se rovná tečně alfa}) ke grafu $f$ na $x_0${x nought}."
+        },
+        {
+          "q": "Definice derivátu — inkrementální forma:\n$$\nf'(x_0) = \\lim_{\\Delta x \\to 0} \\frac{f(x_0 + \\Delta x) - f(x_0)}{\\Delta x}\n$${f prvočíslo x nula se rovná limitu, protože delta x jde k nule z f x nula plus delta x, mínus f x nula, přes delta x}",
+          "a": "Limit poměru mezi změnou funkce a změnou jejího argumentu, protože tato změna jde k nule."
+        },
+        {
+          "q": "Definice derivace — forma rozdílového kvocientu:\n$$\nf'(x_0) = \\lim_{x \\to x_0} \\frac{f(x) - f(x_0)}{x - x_0}\n$${f prvočíslo x nula se rovná limitu, protože x jde na x nula z f z x mínus f z x nic, přes x mínus x nic}",
+          "a": "Ekvivalentní příkaz stejné limity, napsaný s $x$ blížící se $x_0${x nought}."
+        },
+        {
+          "q": "Rovnice **tangens** ke grafu $f$ v $(x_0, y_0)${x nic, y nic}:",
+          "a": "$$\ny - y_0 = f'(x_0)\\,(x - x_0)\n$${y mínus y nic se rovná f prvočíslo x nic, krát x mínus x nic}"
+        },
+        {
+          "q": "Rovnice **normálu** ke grafu $f$ na $(x_0, y_0)${x nic, y nic}:",
+          "a": "$$\ny - y_0 = -\\frac{1}{f'(x_0)}\\,(x - x_0)\n$${y mínus y nic se rovná mínus jedna nad f prvočíslo x nic, krát x mínus x nic}\n\nPlatí tam, kde $f'(x_0) \\neq 0${f prvočíslo x nic není nula}."
+        },
+        {
+          "q": "$(c \\cdot u)' = ?${derivace c krát u}",
+          "a": "$c \\cdot u'${c krát u prvočíslo}"
+        },
+        {
+          "q": "$(u + v)' = ?${derivát u plus v}",
+          "a": "$u' + v'${u prvočíslo plus v prvočíslo}"
+        },
+        {
+          "q": "$(u - v)' = ?${derivát u mínus v}",
+          "a": "$u' - v'${u prvočíslo minus v prvočíslo}"
+        },
+        {
+          "q": "Produktové pravidlo: $(u \\cdot v)' = ?${derivát u krát v}",
+          "a": "$u'v + uv'${u prvočíslo v plus u v prvočíslo}"
+        },
+        {
+          "q": "Pravidlo podílu: $\\left(\\frac{u}{v}\\right)' = ?${derivace u nad v}",
+          "a": "$$\n\\frac{u'v - uv'}{v^2}\n$${u prvočíslo v minus u v prvočíslo, přes v na druhou}"
+        },
+        {
+          "q": "Řetězové pravidlo: $(f \\circ g)'(x) = ?${derivace f složená s g v x}",
+          "a": "$f'(g(x)) \\cdot g'(x)${f prvočíslo g z x, krát g prvočíslo x}"
+        },
+        {
+          "q": "$(c)' = ?${derivace konstanty c}",
+          "a": "$0$"
+        },
+        {
+          "q": "$(x^n)' = ?${derivace x na n}",
+          "a": "$n \\cdot x^{n-1}${n krát x až n mínus jedna}, pro $n \\in \\mathbb{R}${n skutečné}"
+        },
+        {
+          "q": "$(\\sin x)' = ?${derivace sinus x}",
+          "a": "$\\cos x${kosinus x}"
+        },
+        {
+          "q": "$(\\cos x)' = ?${derivace kosinu x}",
+          "a": "$-\\sin x${mínus sinus x}"
+        },
+        {
+          "q": "$(\\tan x)' = ?${derivace tečny x}",
+          "a": "$\\frac{1}{\\cos^2 x}${jedna nad kosinus na druhou x}\n\nPro $x \\neq \\frac{\\pi}{2} + k\\pi${x se nerovná pi nad dvě plus k pi}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(\\cot x)' = ?${derivát kotangens x}",
+          "a": "$-\\frac{1}{\\sin^2 x}${mínus jedna nad sinusovou druhou mocninou x}\n\nPro $x \\neq k\\pi${x není celočíselný násobek pí}, $k \\in \\mathbb{Z}$."
+        },
+        {
+          "q": "$(e^x)' = ?${derivace e na x}",
+          "a": "$e^x${e na x}"
+        },
+        {
+          "q": "$(a^x)' = ?${derivace a na x}, kde $a > 0, a \\neq 1$",
+          "a": "$a^x \\cdot \\ln a${a na x krát přirozený logaritmus a}"
+        },
+        {
+          "q": "$(\\ln x)' = ?${derivát přirozeného logaritmu x}",
+          "a": "$\\frac{1}{x}${jedna přes x}, za $x > 0$"
+        },
+        {
+          "q": "$(\\log_a x)' = ?${derivace logaritmického základu a z x}",
+          "a": "$\\frac{1}{x \\cdot \\ln a}${jeden více než x krát přirozený logaritmus a}\n\nPro $x > 0$, $a > 0$, $a \\neq 1$."
+        }
+      ],
+      "deck_key": "derivatives"
+    },
+    {
+      "deck": "Solid Geometrie",
+      "cards": [
+        {
+          "q": "Objem **hranolu** — $S_p${S p} je základní plocha, $v$ výška:",
+          "a": "$$\nV = S_p \\cdot v\n$${V se rovná S p krát v}"
+        },
+        {
+          "q": "Povrchová plocha **hranolu** — $S_p${S p} základní plocha, $S_{pl}${S p l} boční plocha:",
+          "a": "$$\nS = 2 S_p + S_{pl}\n$${S se rovná dvěma S p plus S p l}"
+        },
+        {
+          "q": "Objem **pyramidy** — $S_p${S p} základní plocha, $v$ výška:",
+          "a": "$$\nV = \\frac{1}{3} S_p \\cdot v\n$${V se rovná jedné třetině S p krát v}"
+        },
+        {
+          "q": "Povrch **pyramidy**:",
+          "a": "$$\nS = S_p + S_{pl}\n$${S se rovná S p plus S p l}"
+        },
+        {
+          "q": "Objem **zkrácené pyramidy** — $S_1, S_2${S jedna, S dvě} základní plochy, $v$ výška:",
+          "a": "$$\nV = \\frac{v}{3}\\left(S_1 + \\sqrt{S_1 S_2} + S_2\\right)\n$${V se rovná v přes tři, krát S jedna plus druhá odmocnina z S jedna S dvě plus S dvě}"
+        },
+        {
+          "q": "Povrchová plocha **zkrácené pyramidy**:",
+          "a": "$$\nS = S_1 + S_2 + S_{pl}\n$${S se rovná S jedna plus S dvě plus S pl}"
+        },
+        {
+          "q": "Proč je objem pyramidy $\\frac{1}{3}${jedna třetina} hranolu na stejné základně?",
+          "a": "Kostku lze rozřezat na **tři shodné pyramidy**, které mají stejnou základnu a výšku.\n\nFormálně to vyplývá z Cavalieriho principu: průřez roste jako $S(x) \\propto x^2${S z x je úměrné x na druhou} a integrací $x^2$ dostaneme faktor $\\tfrac{1}{3}$."
+        },
+        {
+          "q": "Kolik platónských těles existuje a co to je?",
+          "a": "**Pět:** čtyřstěn, krychle (šestistěn), osmistěn, dvanáctistěn, dvacetistěn.\n\nKaždá plocha je stejný pravidelný mnohoúhelník a každý vrchol je identický."
+        },
+        {
+          "q": "Objem **čtyřstěnu** s hranou $a$:",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{12}\n$${V se rovná krychli krát odmocnina ze dvou, přes dvanáct}"
+        },
+        {
+          "q": "Povrchová plocha **čtyřstěnu** s hranou $a$:",
+          "a": "$$\nS = a^2 \\sqrt{3}\n$${S se rovná druhé mocnině krát odmocnina ze tří}"
+        },
+        {
+          "q": "Objem **krychle** s hranou $a$:",
+          "a": "$$\nV = a^3\n$${V se rovná krychli}"
+        },
+        {
+          "q": "Povrch **krychle** s hranou $a$:",
+          "a": "$$\nS = 6a^2\n$${S se rovná šesti na druhou}"
+        },
+        {
+          "q": "Objem **osmistěnu** s hranou $a$:",
+          "a": "$$\nV = \\frac{a^3 \\sqrt{2}}{3}\n$${V se rovná krychli krát odmocnina ze dvou, přes tři}"
+        },
+        {
+          "q": "Povrch **osmistěnu** s hranou $a$:",
+          "a": "$$\nS = 2a^2 \\sqrt{3}\n$${S rovná se dvě na druhou krát druhá odmocnina ze tří}"
+        },
+        {
+          "q": "Jaký tvar mají tváře **ikosaedru**?",
+          "a": "20 ploch, každá **rovnostranný trojúhelník**."
+        },
+        {
+          "q": "Jaký tvar mají tváře **dvanáctistěnu**?",
+          "a": "12 tváří, každá **pravidelný pětiúhelník**."
+        },
+        {
+          "q": "**Eulerův vzorec** pro konvexní mnohostěny — $V$ vrcholy, $E$ hrany, $F$ plochy:",
+          "a": "$$\nV - E + F = 2\n$${V mínus E plus F se rovná dvěma}"
+        }
+      ],
+      "deck_key": "solid-geometry"
+    }
+  ]
+}
